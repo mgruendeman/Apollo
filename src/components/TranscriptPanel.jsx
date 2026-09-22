@@ -30,7 +30,7 @@ function initials(name) {
 // Keyed by moment.id from the parent, so switching clips mounts a fresh
 // instance with the right default channel instead of needing an effect to
 // reset it.
-export default function TranscriptPanel({ lines, currentTime, onTermClick }) {
+export default function TranscriptPanel({ lines, currentTime, onTermClick, onChannelSeek }) {
   const [channel, setChannel] = useState(() => firstChannel(lines))
   const listRef = useRef(null)
   const activeLineRef = useRef(null)
@@ -44,6 +44,16 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick }) {
     () => lines.filter((l) => l.channel === channel),
     [lines, channel],
   )
+
+  // There's no separate audio per channel — air-to-ground, onboard and PAO
+  // chatter all come from the same single recording — so "switching"
+  // channel means seeking to where that channel's dialogue starts within
+  // the clip that's already playing, not swapping the audio source.
+  function selectChannel(c) {
+    setChannel(c)
+    const firstLine = lines.find((l) => l.channel === c)
+    if (firstLine) onChannelSeek?.(firstLine.offsetSeconds)
+  }
 
   const activeIndex = useMemo(() => {
     let idx = -1
@@ -71,13 +81,19 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick }) {
               key={c}
               type="button"
               className={c === channel ? 'channel-chip is-active' : 'channel-chip'}
-              onClick={() => setChannel(c)}
+              onClick={() => selectChannel(c)}
             >
               {CHANNEL_LABELS[c]}
             </button>
           ))}
+          <span className="channel-hint">
+            same recording — jumps to where this channel talks
+          </span>
         </div>
       )}
+      <p className="glossary-hint">
+        Dotted-underline words are clickable for more.
+      </p>
       <div className="transcript-list" ref={listRef}>
         {filtered.map((line, i) => (
           <div

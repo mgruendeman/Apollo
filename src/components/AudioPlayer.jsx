@@ -20,6 +20,7 @@ export default function AudioPlayer({
   hasNext = false,
   hasPrevious = false,
   onTimeUpdate,
+  seekRequest,
 }) {
   const audioRef = useRef(null)
   const [playing, setPlaying] = useState(false)
@@ -75,6 +76,14 @@ export default function AudioPlayer({
       navigator.mediaSession.playbackState = playing ? 'playing' : 'paused'
     }
   }, [playing])
+
+  // The channel toggle can't switch to different audio — air-to-ground,
+  // onboard and PAO chatter are all baked into the same single recording
+  // — but it can jump playback to where that channel's dialogue starts.
+  useEffect(() => {
+    if (seekRequest == null || !audioRef.current) return
+    audioRef.current.currentTime = seekRequest.seconds
+  }, [seekRequest])
 
   function togglePlay() {
     const audio = audioRef.current

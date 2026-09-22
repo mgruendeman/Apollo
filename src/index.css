@@ -504,8 +504,21 @@ a {
 
 .channel-toggle {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 10px;
+}
+
+.channel-hint {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.glossary-hint {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin: 0 0 8px;
 }
 
 .channel-chip {
@@ -661,7 +674,7 @@ a {
 
 .phase-diagram {
   flex-shrink: 0;
-  width: 140px;
+  width: 220px;
   text-align: center;
 }
 
@@ -674,6 +687,12 @@ a {
   stroke: var(--border);
   stroke-width: 1;
   stroke-dasharray: 2 2;
+}
+
+.phase-orbit-ring {
+  stroke: rgba(200, 215, 255, 0.55);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 2.5;
 }
 
 .phase-earth {
@@ -702,7 +721,7 @@ a {
     align-items: center;
   }
   .phase-diagram {
-    width: 110px;
+    width: 180px;
   }
 }
 

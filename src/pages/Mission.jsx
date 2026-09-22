@@ -40,6 +40,7 @@ export default function Mission() {
   const [autoPlay, setAutoPlay] = useState(false)
   const [continuous, setContinuous] = useState(true)
   const [currentTime, setCurrentTime] = useState(0)
+  const [seekRequest, setSeekRequest] = useState(null)
   const [activeGlossaryEntry, setActiveGlossaryEntry] = useState(null)
   const [now, setNow] = useState(() => new Date())
   const didAutoJump = useRef(false)
@@ -208,6 +209,7 @@ export default function Mission() {
           hasNext={activeIndex < clips.length - 1}
           hasPrevious={activeIndex > 0}
           onTimeUpdate={setCurrentTime}
+          seekRequest={seekRequest}
         />
         {activeLines.length > 0 ? (
           <TranscriptPanel
@@ -215,6 +217,7 @@ export default function Mission() {
             lines={activeLines}
             currentTime={currentTime}
             onTermClick={setActiveGlossaryEntry}
+            onChannelSeek={(seconds) => setSeekRequest({ seconds })}
           />
         ) : (
           <p className="moment-description">

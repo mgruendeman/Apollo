@@ -2,19 +2,23 @@
 // page title, for the schematic "where are they right now" diagram. This
 // is intentionally approximate — a narrative aid, not a physically
 // accurate trajectory — derived from the Flight/Surface Journal's own
-// chapter naming, which is consistent enough across all six missions to
+// chapter naming, which is consistent enough across all missions to
 // pattern-match reliably.
+//
+// Coordinates are in the diagram's 200x100 viewBox: Earth is centered at
+// (26, 50) with an orbit ring at r=18; the Moon is centered at (174, 50)
+// with an orbit ring at r=12.
 
 export const PHASES = {
-  launch: { label: 'Launch', x: 16, y: 44 },
-  'earth-orbit': { label: 'Earth Orbit', x: 10, y: 34 },
-  'transit-to-moon': { label: 'Translunar Coast', x: 50, y: 22 },
-  'lunar-orbit': { label: 'Lunar Orbit', x: 90, y: 36 },
-  landing: { label: 'Descent to the Surface', x: 87, y: 52 },
-  surface: { label: 'On the Lunar Surface', x: 90, y: 62 },
-  ascent: { label: 'Ascent & Rendezvous', x: 87, y: 38 },
-  'transit-to-earth': { label: 'Transearth Coast', x: 50, y: 80 },
-  splashdown: { label: 'Splashdown', x: 14, y: 56 },
+  launch: { label: 'Launch', x: 34, y: 60 },
+  'earth-orbit': { label: 'Earth Orbit', x: 40, y: 35 },
+  'transit-to-moon': { label: 'Translunar Coast', x: 100, y: 16 },
+  'lunar-orbit': { label: 'Lunar Orbit', x: 165, y: 39 },
+  landing: { label: 'Descent to the Surface', x: 178, y: 58 },
+  surface: { label: 'On the Lunar Surface', x: 178, y: 52 },
+  ascent: { label: 'Ascent & Rendezvous', x: 165, y: 42 },
+  'transit-to-earth': { label: 'Transearth Coast', x: 100, y: 84 },
+  splashdown: { label: 'Splashdown', x: 30, y: 62 },
 }
 
 const RULES = [

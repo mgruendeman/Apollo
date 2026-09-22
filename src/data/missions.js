@@ -20,7 +20,6 @@ export const missions = [
     clipCount: 1406,
     launchUtc: '1968-12-21T12:51:00Z',
     durationSeconds: 529242, // 147:00:42
-
     highlights: [
       { id: 'a08_0000000', title: 'Launch' },
       { id: 'a08_0850219-onboard-nr', title: 'Christmas Eve: the Genesis reading' },
@@ -50,10 +49,28 @@ export const missions = [
     clipCount: 184,
     launchUtc: '1969-05-18T16:49:00Z',
     durationSeconds: 691403, // 192:03:23
-
     highlights: [
       { id: 'a10-0000254', title: 'Launch' },
       { id: 'a10-s-ivb-sep-0035600', title: '"Snoopy\'s coming out of the doghouse"' },
+    ],
+  },
+  {
+    id: '11',
+    number: 11,
+    name: 'Apollo 11',
+    dates: 'July 16–24, 1969',
+    crew: ['Neil Armstrong', 'Michael Collins', 'Buzz Aldrin'],
+    summary:
+      'The first crewed Moon landing. Armstrong and Aldrin spend two and a quarter hours on the surface at Tranquility Base while Collins orbits alone above them.',
+    status: 'available',
+    clipsFile: 'apollo11',
+    clipCount: 673,
+    launchUtc: '1969-07-16T13:32:00Z',
+    durationSeconds: 703115, // 195:18:35
+    highlights: [
+      { id: 'a11_0000000', title: 'Launch' },
+      { id: 'a11a1023540HSK', title: '"The Eagle has landed"' },
+      { id: 'Apollo11_FD_Audio_Loop_John_Sarkissian', title: '"One small step..."' },
     ],
   },
   {
@@ -69,12 +86,29 @@ export const missions = [
     clipCount: 259,
     launchUtc: '1969-11-14T16:22:00Z',
     durationSeconds: 880584, // 244:36:24
-
     highlights: [
       { id: 'a12a_000_00_00', title: '"SCE to Aux" — lightning strike at launch' },
       { id: 'a12a.1151543', title: 'First steps & "Whoopie!"' },
       { id: 'a12a.1334601', title: 'Inspecting Surveyor 3' },
       { id: 'a12a_244_22_30_to_244_36_24', title: 'Splashdown' },
+    ],
+  },
+  {
+    id: '13',
+    number: 13,
+    name: 'Apollo 13',
+    dates: 'April 11–17, 1970',
+    crew: ['Jim Lovell', 'Jack Swigert', 'Fred Haise'],
+    summary:
+      'An oxygen tank explosion two days out crippled the Service Module and scrapped the Moon landing — the crew looped around the Moon and used the Lunar Module as a lifeboat to get home.',
+    status: 'available',
+    clipsFile: 'apollo13',
+    clipCount: 237,
+    launchUtc: '1970-04-11T19:13:00Z',
+    durationSeconds: 514481, // 142:54:41
+    highlights: [
+      { id: 'a13_0000002ag', title: 'Launch' },
+      { id: 'a13_0555519', title: '"Houston, we\'ve had a problem"' },
     ],
   },
   {
@@ -90,7 +124,6 @@ export const missions = [
     clipCount: 308,
     launchUtc: '1971-01-31T21:03:02Z',
     durationSeconds: 777718, // 216:01:58
-
     highlights: [
       { id: 'a14-0000025', title: 'Launch' },
       { id: 'a14a_1354348', title: 'Shepard hits golf balls on the Moon' },
@@ -109,7 +142,6 @@ export const missions = [
     clipCount: 1153,
     launchUtc: '1971-07-26T13:34:00Z',
     durationSeconds: 1062713, // 295:11:53
-
     highlights: [
       { id: 'a15_0000013', title: 'Launch — "Tower Clear"' },
       { id: 'a15a1195255', title: 'Deploying the Lunar Roving Vehicle' },
@@ -130,19 +162,31 @@ export const missions = [
     clipCount: 912,
     launchUtc: '1972-04-16T17:54:00Z',
     durationSeconds: 957065, // 265:51:05
-
     highlights: [
       { id: 'a16_0000015', title: 'Launch' },
       { id: 'a16a1232408', title: 'The "Big Muley" rock' },
     ],
   },
+  {
+    id: '17',
+    number: 17,
+    name: 'Apollo 17',
+    dates: 'December 7–19, 1972',
+    crew: ['Gene Cernan', 'Ronald Evans', 'Harrison Schmitt'],
+    summary:
+      'The last Apollo Moon mission and the only night launch, carrying the program\'s first scientist-astronaut for the longest stay, longest EVAs, and most samples of any landing.',
+    status: 'available',
+    clipsFile: 'apollo17',
+    clipCount: 970,
+    launchUtc: '1972-12-07T05:33:00Z',
+    durationSeconds: 1086719, // 301:51:59
+    highlights: [
+      { id: 'a17_0000027', title: 'Launch — the only night launch' },
+      { id: 'a17_1125539csm', title: '"The Challenger has landed"' },
+      { id: 'A17A1702454', title: "Cernan's farewell to the Moon" },
+    ],
+  },
 ]
-
-export const alreadyCovered = {
-  label: 'Apollo 11, 13 & 17',
-  note: 'Already covered in full, second-by-second, by Apollo in Real Time.',
-  url: 'https://apolloinrealtime.org/',
-}
 
 export function findMission(id) {
   return missions.find((m) => m.id === id)

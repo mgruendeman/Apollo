@@ -1,12 +1,10 @@
 # Apollo Audio Archive
 
-Nearly the entire Apollo lunar missions, in the astronauts' own voices — a
-companion to [Apollo in Real Time](https://apolloinrealtime.org/) (which
-already covers Apollo 11, 13 & 17 second-by-second) for the other lunar
-missions: 8, 9, 10, 12, 14, 15 and 16.
+The Apollo lunar missions, in the astronauts' own voices — all eleven
+flights (8, 9, 10, 11, 12, 13, 14, 15, 16, 17).
 
-Six of those seven are live — Apollo 8, 10, 12, 14, 15 and 16 — each
-covering launch through splashdown with:
+Ten of those eleven are live — everything except Apollo 9 — each covering
+launch through splashdown with:
 
 - A chronological, chaptered timeline (thousands of clips total) with
   continuous auto-advance playback and lock-screen media controls
@@ -14,7 +12,10 @@ covering launch through splashdown with:
   with a colored badge per speaker
 - A channel toggle where a clip has more than one: **Air-to-Ground** (the
   crew's radio calls to Houston), **Onboard** (hot-mic chatter never
-  transmitted), and **Mission Control** (PAO narration)
+  transmitted), and **Mission Control** (PAO narration). There's no
+  separate audio per channel — they're all baked into the same single
+  recording — so switching seeks playback to where that channel's
+  dialogue starts rather than swapping the audio source.
 - A schematic diagram showing roughly where the spacecraft is right now
   (earth orbit, translunar coast, lunar orbit, on the surface, etc.),
   classified from the source page's own title
@@ -98,9 +99,9 @@ share a timestamp).
   physically accurate trajectory.
 - `src/lib/liveStatus.js` — the "years ago today" math. Each mission in
   `missions.js` carries `launchUtc` (verified launch time) and
-  `durationSeconds` (verified mission duration); none of these six
-  missions' real flights crossed a calendar year boundary, so only the
-  current year's anniversary needs checking.
+  `durationSeconds` (verified mission duration); none of these missions'
+  real flights crossed a calendar year boundary, so only the current
+  year's anniversary needs checking.
 
 ## Development
 

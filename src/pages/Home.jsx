@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import MissionCard from '../components/MissionCard'
-import { missions, alreadyCovered } from '../data/missions'
+import { missions } from '../data/missions'
 import { getAllLiveMissions, formatGet } from '../lib/liveStatus'
 
 export default function Home() {
@@ -20,19 +20,9 @@ export default function Home() {
         <p className="eyebrow">GET 000:00:00 — a work in progress</p>
         <h1>Apollo Audio Archive</h1>
         <p className="lede">
-          Nearly the entire Apollo lunar missions, told in the astronauts'
-          own voices — hundreds of clips per mission, from launch to
+          The Apollo lunar missions, told in the astronauts' own voices —
+          thousands of clips across all eleven flights, from launch to
           splashdown, pulled straight from the original NASA recordings.
-        </p>
-        <p className="lede-note">
-          <a href={alreadyCovered.url} target="_blank" rel="noreferrer">
-            {alreadyCovered.label}
-          </a>{' '}
-          are already covered second-by-second by{' '}
-          <a href={alreadyCovered.url} target="_blank" rel="noreferrer">
-            Apollo in Real Time
-          </a>
-          . This is a starting point for the other lunar missions.
         </p>
       </header>
 
