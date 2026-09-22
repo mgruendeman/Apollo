@@ -633,6 +633,7 @@ a {
 }
 
 .transcript-list {
+  position: relative;
   max-height: 340px;
   overflow-y: auto;
   border: 1px solid var(--border);
@@ -1067,4 +1068,69 @@ a {
 .report-issue-link:hover {
   color: var(--accent);
   border-bottom-color: var(--accent);
+}
+
+.now-playing-spacer {
+  height: 72px;
+}
+
+.now-playing {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: var(--bg-panel-raised);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.now-playing-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+}
+
+.now-playing-toggle {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.now-playing-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.now-playing-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.now-playing-sub {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glossary-bullets {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+.glossary-bullets li {
+  margin-bottom: 6px;
 }

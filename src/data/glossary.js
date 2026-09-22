@@ -469,9 +469,15 @@ export const glossary = [
   },
   {
     id: 'abort-modes',
-    terms: ['Abort Mode', 'Mode I', 'Mode II', 'Mode IV'],
+    terms: ['Abort Mode', 'Mode I Bravo', 'Mode I Charlie', 'Mode IA', 'Mode IB', 'Mode IC', 'Mode I', 'Mode II', 'Mode III', 'Mode IV'],
     short: 'The numbered plans for getting the crew home safely if the Saturn V or SPS failed.',
-    long: 'Apollo abort planning defined a numbered sequence of options that shifted as a mission progressed: Mode I meant firing the Launch Escape Tower off the pad or in early flight; Mode II relied on the Command Module\'s own lift to glide to a safe splashdown once the tower was gone; Mode III added an SPS burn to steer the entry point into safer water; and Mode IV covered a failure during the S-IVB\'s burn, using the SPS to reach a safe Earth orbit instead of an immediate return. Crews and controllers tracked exactly which mode applied at every second of ascent.',
+    long: 'Apollo abort planning defined a numbered set of options, each covering a stretch of the climb to orbit. As the rocket gained speed and height, one mode stopped being the right answer and the next took over — which is why you hear the crew and CAPCOM calling them out one after another during launch ("Mode I Bravo", "Mode II").',
+    bullets: [
+      'Mode I (IA, IB, IC) — from the pad until the Launch Escape Tower is jettisoned about three minutes in: the tower\'s rocket pulls the Command Module off the stack and it lands under parachutes. The letters are altitude bands with slightly different sequences.',
+      'Mode II — once the tower is gone: the spacecraft separates from the rocket, and the Command Module flies itself back down through the atmosphere to a splashdown in the Atlantic.',
+      'Mode III — later in the climb: a Service Module engine burn to steer the landing point to a planned recovery area in the eastern Atlantic.',
+      'Mode IV — near the end of the climb: the Service Module engine pushes the spacecraft the rest of the way into Earth orbit, and the crew come home from there instead.',
+    ],
   },
   {
     id: 'gimbal-lock',

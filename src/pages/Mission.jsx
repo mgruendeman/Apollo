@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams, Navigate } from 'react-router-dom'
 import AudioPlayer from '../components/AudioPlayer'
 import TranscriptPanel from '../components/TranscriptPanel'
@@ -9,7 +9,8 @@ import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
 import { findMission } from '../data/missions'
 import { photosByClipId } from '../data/photos'
-import { classifyPhase } from '../data/phases'
+import { computePhases } from '../data/phases'
+import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
 import { SOURCE_PREFIX_RE } from '../lib/sourceLabel'
 
@@ -25,11 +26,8 @@ export default function Mission() {
   const mission = findMission(id)
   const [clips, setClips] = useState(null)
   const [transcripts, setTranscripts] = useState(null)
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [autoPlay, setAutoPlay] = useState(false)
-  const [continuous, setContinuous] = useState(true)
-  const [currentTime, setCurrentTime] = useState(0)
-  const [seekRequest, setSeekRequest] = useState(null)
+  const player = usePlayer()
+  const [cuedIndex, setCuedIndex] = useState(0)
   const [activeGlossaryEntry, setActiveGlossaryEntry] = useState(null)
   const [now, setNow] = useState(() => new Date())
   const didAutoJump = useRef(false)
@@ -68,6 +66,14 @@ export default function Mission() {
   }, [mission])
 
   const liveStatus = mission ? getLiveStatus(mission, now) : null
+  const phases = useMemo(
+    () => (clips ? computePhases(clips, mission.durationSeconds) : []),
+    [clips, mission],
+  )
+  // While this mission is the one loaded in the app-wide player, the page
+  // follows the player; otherwise it shows its own cued clip.
+  const isLoaded = !!mission && player.session?.mission.id === mission.id
+  const activeIndex = isLoaded ? player.session.index : cuedIndex
 
   // Coming in from the home page's "happening right now" banner: jump to
   // wherever the mission actually is at this instant, once, as soon as the
@@ -77,7 +83,9 @@ export default function Mission() {
     didAutoJump.current = true
     const status = getLiveStatus(mission, new Date())
     if (status) {
-      setActiveIndex(nearestClipIndex(clips, status.getSeconds))
+      const i = nearestClipIndex(clips, status.getSeconds)
+      if (isLoaded || !player.playing) player.cue(mission, clips, i)
+      else setCuedIndex(i)
     }
     searchParams.delete('live')
     setSearchParams(searchParams, { replace: true })
@@ -100,21 +108,22 @@ export default function Mission() {
   }
 
   const moment = clips[activeIndex]
-  const activeLines = transcripts?.[moment.id] || []
-  const phase = classifyPhase(moment.sourceLabel)
+  // A Mission Control commentary recording ("-pao") with no transcript of
+  // its own covers the same stretch as its air-to-ground twin, so show that.
+  const activeLines =
+    transcripts?.[moment.id]?.length > 0
+      ? transcripts[moment.id]
+      : transcripts?.[moment.id.replace(/-pao$/i, '')] || []
+  const phase = phases[activeIndex]
+  const currentTime = isLoaded ? player.currentTime : 0
 
   function selectClip(i) {
-    setActiveIndex(i)
-    setAutoPlay(true)
-    setCurrentTime(0)
+    player.play(mission, clips, i)
   }
 
-  function handleEnded() {
-    if (continuous && activeIndex < clips.length - 1) {
-      selectClip(activeIndex + 1)
-    } else {
-      setAutoPlay(false)
-    }
+  function seekToLine(seconds) {
+    if (isLoaded) player.seek(seconds)
+    else player.play(mission, clips, activeIndex, seconds)
   }
 
   function jumpToHighlight(id) {
@@ -176,20 +185,7 @@ export default function Mission() {
           </div>
           <MissionPhaseDiagram phase={phase} />
         </div>
-        <AudioPlayer
-          key={`player-${moment.id}`}
-          moment={moment}
-          title={moment.sourceLabel.replace(SOURCE_PREFIX_RE, '')}
-          missionName={mission.name}
-          autoPlay={autoPlay}
-          onEnded={handleEnded}
-          onNext={() => selectClip(activeIndex + 1)}
-          onPrevious={() => selectClip(activeIndex - 1)}
-          hasNext={activeIndex < clips.length - 1}
-          hasPrevious={activeIndex > 0}
-          onTimeUpdate={setCurrentTime}
-          seekRequest={seekRequest}
-        />
+        <AudioPlayer mission={mission} clips={clips} index={activeIndex} />
         <MissionPhoto photo={photosByClipId[moment.id]} />
         {activeLines.length > 0 ? (
           <TranscriptPanel
@@ -197,7 +193,7 @@ export default function Mission() {
             lines={activeLines}
             currentTime={currentTime}
             onTermClick={setActiveGlossaryEntry}
-            onLineSeek={(seconds) => setSeekRequest({ seconds })}
+            onLineSeek={seekToLine}
           />
         ) : (
           <p className="moment-description">
@@ -208,8 +204,8 @@ export default function Mission() {
           <label className="continuous-toggle">
             <input
               type="checkbox"
-              checked={continuous}
-              onChange={(e) => setContinuous(e.target.checked)}
+              checked={player.continuous}
+              onChange={(e) => player.setContinuous(e.target.checked)}
             />
             Keep playing through the mission
           </label>
@@ -256,7 +252,11 @@ export default function Mission() {
         onSelect={selectClip}
       />
 
-      <GlossaryPanel entry={activeGlossaryEntry} onClose={() => setActiveGlossaryEntry(null)} />
+      <GlossaryPanel
+        entry={activeGlossaryEntry}
+        onClose={() => setActiveGlossaryEntry(null)}
+        onTermClick={setActiveGlossaryEntry}
+      />
     </div>
   )
 }

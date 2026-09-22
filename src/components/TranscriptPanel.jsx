@@ -16,6 +16,31 @@ function speakerColor(name) {
   return `hsl(${hue}, 55%, 42%)`
 }
 
+// The journals only timestamp radio calls; Mission Control commentary and
+// other untimed lines inherit the previous line's GET, so several lines can
+// share one timestamp and would all light up at once, ahead of the audio.
+// Spread each such run evenly across the gap until the next timestamp.
+function effectiveOffsets(lines) {
+  const out = lines.map((l) => l.offsetSeconds)
+  let i = 0
+  while (i < lines.length) {
+    let j = i + 1
+    while (j < lines.length && lines[j].offsetSeconds === lines[i].offsetSeconds) j++
+    const count = j - i
+    if (count > 1) {
+      const start = lines[i].offsetSeconds
+      const next = j < lines.length ? lines[j].offsetSeconds : null
+      const end = next != null && next > start ? next : start + count * 4
+      for (let k = 1; k < count; k++) out[i + k] = start + ((end - start) * k) / count
+    }
+    i = j
+  }
+  return out
+}
+
+// How long a manual scroll of the transcript box pauses auto-scrolling.
+const USER_SCROLL_HOLD_MS = 6000
+
 function initials(name) {
   const words = name.trim().split(/\s+/)
   if (words.length === 1) return words[0].slice(0, 2).toUpperCase()
@@ -33,19 +58,35 @@ function initials(name) {
 export default function TranscriptPanel({ lines, currentTime, onTermClick, onLineSeek }) {
   const listRef = useRef(null)
   const activeLineRef = useRef(null)
+  const userScrolledAt = useRef(0)
+
+  const offsets = useMemo(() => effectiveOffsets(lines), [lines])
 
   const activeIndex = useMemo(() => {
     let idx = -1
-    for (let i = 0; i < lines.length; i++) {
-      if (lines[i].offsetSeconds <= currentTime) idx = i
+    for (let i = 0; i < offsets.length; i++) {
+      if (offsets[i] <= currentTime) idx = i
       else break
     }
     return idx
-  }, [lines, currentTime])
+  }, [offsets, currentTime])
 
+  // Scroll only the transcript box itself, never the page, so reading
+  // elsewhere on the page isn't interrupted each time a new line starts.
   useEffect(() => {
-    activeLineRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+    const list = listRef.current
+    const line = activeLineRef.current
+    if (!list || !line) return
+    if (Date.now() - userScrolledAt.current < USER_SCROLL_HOLD_MS) return
+    list.scrollTo({
+      top: line.offsetTop - list.clientHeight / 2 + line.clientHeight / 2,
+      behavior: 'smooth',
+    })
   }, [activeIndex])
+
+  function markUserScroll() {
+    userScrolledAt.current = Date.now()
+  }
 
   if (lines.length === 0) {
     return null
@@ -57,7 +98,12 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
         Dotted-underline words are clickable for more · click a line to jump
         there
       </p>
-      <div className="transcript-list" ref={listRef}>
+      <div
+        className="transcript-list"
+        ref={listRef}
+        onWheel={markUserScroll}
+        onTouchMove={markUserScroll}
+      >
         {lines.map((line, i) => {
           const avatar = speakerAvatar(line.speaker)
           return (
@@ -65,11 +111,11 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
               key={`${line.get}-${i}`}
               ref={i === activeIndex ? activeLineRef : null}
               className={i === activeIndex ? 'transcript-line is-active' : 'transcript-line'}
-              onClick={() => onLineSeek?.(line.offsetSeconds)}
+              onClick={() => onLineSeek?.(offsets[i])}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') onLineSeek?.(line.offsetSeconds)
+                if (e.key === 'Enter' || e.key === ' ') onLineSeek?.(offsets[i])
               }}
             >
               {avatar ? (

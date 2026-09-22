@@ -36,8 +36,17 @@ export default function Glossary() {
               <p className="glossary-aliases">also: {entry.terms.slice(1).join(', ')}</p>
             )}
             <p className="glossary-long">
-              <GlossaryText text={entry.long} onTermClick={setActiveGlossaryEntry} />
+              <GlossaryText text={entry.long} onTermClick={setActiveGlossaryEntry} excludeId={entry.id} />
             </p>
+            {entry.bullets && (
+              <ul className="glossary-bullets">
+                {entry.bullets.map((item) => (
+                  <li key={item}>
+                    <GlossaryText text={item} onTermClick={setActiveGlossaryEntry} excludeId={entry.id} />
+                  </li>
+                ))}
+              </ul>
+            )}
             {entry.deepDive && (
               <Link to={`/glossary/${entry.id}`} className="glossary-read-more">
                 Read the deep dive, with photos &amp; diagrams →
@@ -68,7 +77,11 @@ export default function Glossary() {
         ))}
       </section>
 
-      <GlossaryPanel entry={activeGlossaryEntry} onClose={() => setActiveGlossaryEntry(null)} />
+      <GlossaryPanel
+        entry={activeGlossaryEntry}
+        onClose={() => setActiveGlossaryEntry(null)}
+        onTermClick={setActiveGlossaryEntry}
+      />
     </div>
   )
 }

@@ -3,7 +3,8 @@ import { glossaryMatchRegex, findGlossaryEntry } from '../data/glossary'
 // Splits text on glossary terms and wraps each match in a clickable span,
 // so any transcript line (or description) can offer a rabbit hole into the
 // glossary without every caller re-implementing the regex split.
-export default function GlossaryText({ text, onTermClick }) {
+// `excludeId` leaves an entry's own terms as plain text inside its own card.
+export default function GlossaryText({ text, onTermClick, excludeId }) {
   // A fresh RegExp per call (not the shared module instance) so this
   // component never mutates lastIndex on state outside its own scope.
   const re = new RegExp(glossaryMatchRegex.source, glossaryMatchRegex.flags)
@@ -17,7 +18,7 @@ export default function GlossaryText({ text, onTermClick }) {
       parts.push(text.slice(lastIndex, match.index))
     }
     const entry = findGlossaryEntry(match[0])
-    if (entry) {
+    if (entry && entry.id !== excludeId && onTermClick) {
       parts.push(
         <button
           key={key++}

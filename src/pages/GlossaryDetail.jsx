@@ -75,9 +75,18 @@ export default function GlossaryDetail() {
           : [entry.long]
         ).map((paragraph, i) => (
           <p key={i}>
-            <GlossaryText text={paragraph} onTermClick={setActiveGlossaryEntry} />
+            <GlossaryText text={paragraph} onTermClick={setActiveGlossaryEntry} excludeId={entry.id} />
           </p>
         ))}
+        {entry.bullets && (
+          <ul className="glossary-bullets">
+            {entry.bullets.map((item) => (
+              <li key={item}>
+                <GlossaryText text={item} onTermClick={setActiveGlossaryEntry} excludeId={entry.id} />
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       {entry.quote && (
@@ -104,7 +113,11 @@ export default function GlossaryDetail() {
         Report an inaccuracy
       </ReportIssueButton>
 
-      <GlossaryPanel entry={activeGlossaryEntry} onClose={() => setActiveGlossaryEntry(null)} />
+      <GlossaryPanel
+        entry={activeGlossaryEntry}
+        onClose={() => setActiveGlossaryEntry(null)}
+        onTermClick={setActiveGlossaryEntry}
+      />
     </div>
   )
 }

@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ReportIssueButton from './ReportIssueButton'
+import GlossaryText from './GlossaryText'
 
-export default function GlossaryPanel({ entry, onClose }) {
+export default function GlossaryPanel({ entry, onClose, onTermClick }) {
   useEffect(() => {
     function onKey(e) {
       if (e.key === 'Escape') onClose()
@@ -30,7 +31,18 @@ export default function GlossaryPanel({ entry, onClose }) {
             also: {entry.terms.slice(1).join(', ')}
           </p>
         )}
-        <p className="glossary-long">{entry.long}</p>
+        <p className="glossary-long">
+          <GlossaryText text={entry.long} onTermClick={onTermClick} excludeId={entry.id} />
+        </p>
+        {entry.bullets && (
+          <ul className="glossary-bullets">
+            {entry.bullets.map((b) => (
+              <li key={b}>
+                <GlossaryText text={b} onTermClick={onTermClick} excludeId={entry.id} />
+              </li>
+            ))}
+          </ul>
+        )}
         {entry.deepDive && (
           <Link to={`/glossary/${entry.id}`} className="glossary-read-more" onClick={onClose}>
             Read the deep dive, with photos &amp; diagrams →
