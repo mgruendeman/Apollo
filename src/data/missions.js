@@ -6,6 +6,8 @@
 // Journal (apollojournals.org), a volunteer archive of public-domain NASA
 // mission recordings. Re-run that script to refresh or add a mission.
 
+// Landing coordinates are the LM positions from NASA NSSDCA's Apollo
+// landing site table (LRO-derived, Wagner et al. 2017).
 export const missions = [
   {
     id: '08',
@@ -17,9 +19,13 @@ export const missions = [
       'The first crewed spacecraft to leave low Earth orbit, reach the Moon, and orbit it — ten lunar orbits on Christmas Eve, capped by a live reading from Genesis and the Earthrise photograph.',
     status: 'available',
     clipsFile: 'apollo08',
-    clipCount: 1406,
+    clipCount: 1388,
     launchUtc: '1968-12-21T12:51:00Z',
     durationSeconds: 529242, // 147:00:42
+    csmName: null,
+    lmName: null,
+    spacecraftNote: 'The Command Module had no name (it flew as "Apollo 8"), and there was no Lunar Module; a dummy test article rode in its place.',
+    objective: 'Fly the first crew to the Moon: ten orbits to prove the spacecraft, navigation and communications for a landing, and to photograph candidate landing sites.',
     highlights: [
       { id: 'a08_0000000', title: 'Launch' },
       { id: 'a08_0850219-onboard-nr', title: 'Christmas Eve: the Genesis reading' },
@@ -49,6 +55,9 @@ export const missions = [
     clipCount: 184,
     launchUtc: '1969-05-18T16:49:00Z',
     durationSeconds: 691403, // 192:03:23
+    csmName: 'Charlie Brown',
+    lmName: 'Snoopy',
+    objective: 'Rehearse every step of a landing except the touchdown itself, with Snoopy swooping low over the planned Apollo 11 landing area before rejoining Charlie Brown.',
     highlights: [
       { id: 'a10-0000254', title: 'Launch' },
       { id: 'a10-s-ivb-sep-0035600', title: '"Snoopy\'s coming out of the doghouse"' },
@@ -64,9 +73,13 @@ export const missions = [
       'The first crewed Moon landing. Armstrong and Aldrin spend two and a quarter hours on the surface at Tranquility Base while Collins orbits alone above them.',
     status: 'available',
     clipsFile: 'apollo11',
-    clipCount: 673,
+    clipCount: 672,
     launchUtc: '1969-07-16T13:32:00Z',
     durationSeconds: 703115, // 195:18:35
+    csmName: 'Columbia',
+    lmName: 'Eagle',
+    objective: 'Land two astronauts on the Moon and return them safely to Earth, the goal President Kennedy set in 1961.',
+    landingSite: { name: 'Tranquility Base, Sea of Tranquility (Mare Tranquillitatis)', lat: 0.67416, lon: 23.47314 },
     highlights: [
       { id: 'a11_0000000', title: 'Launch' },
       { id: 'a11a1023540HSK', title: '"The Eagle has landed"' },
@@ -86,6 +99,10 @@ export const missions = [
     clipCount: 259,
     launchUtc: '1969-11-14T16:22:00Z',
     durationSeconds: 880584, // 244:36:24
+    csmName: 'Yankee Clipper',
+    lmName: 'Intrepid',
+    objective: 'Prove a pinpoint landing by setting down next to the robotic Surveyor 3 lander, and set up the first full ALSEP science station.',
+    landingSite: { name: 'Ocean of Storms (Oceanus Procellarum), beside the Surveyor 3 probe', lat: -3.0128, lon: -23.4219 },
     highlights: [
       { id: 'a12a_000_00_00', title: '"SCE to Aux" — lightning strike at launch' },
       { id: 'a12a.1151543', title: 'First steps & "Whoopie!"' },
@@ -106,6 +123,10 @@ export const missions = [
     clipCount: 237,
     launchUtc: '1970-04-11T19:13:00Z',
     durationSeconds: 514481, // 142:54:41
+    csmName: 'Odyssey',
+    lmName: 'Aquarius',
+    objective: 'Planned as the third landing, at the Fra Mauro highlands. After the oxygen tank explosion two days out, the objective became getting the crew home alive.',
+    plannedSite: { name: 'Fra Mauro highlands (planned; Apollo 14 later landed there)', lat: -3.64589, lon: -17.47194 },
     highlights: [
       { id: 'a13_0000002ag', title: 'Launch' },
       { id: 'a13_0555519', title: '"Houston, we\'ve had a problem"' },
@@ -121,9 +142,13 @@ export const missions = [
       'America\'s first astronaut in space returns to fly the third Moon landing, hauling a two-wheeled cart up Cone Crater and famously hitting two golf balls before leaving the surface.',
     status: 'available',
     clipsFile: 'apollo14',
-    clipCount: 308,
+    clipCount: 307,
     launchUtc: '1971-01-31T21:03:02Z',
     durationSeconds: 777718, // 216:01:58
+    csmName: 'Kitty Hawk',
+    lmName: 'Antares',
+    objective: 'Sample the Fra Mauro formation, thought to be debris thrown out by the impact that formed Mare Imbrium, including the rim of Cone Crater.',
+    landingSite: { name: 'Fra Mauro highlands', lat: -3.64589, lon: -17.47194 },
     highlights: [
       { id: 'a14-0000025', title: 'Launch' },
       { id: 'a14a_1354348', title: 'Shepard hits golf balls on the Moon' },
@@ -139,9 +164,13 @@ export const missions = [
       'The first of the extended "J missions": a longer stay, a heavier scientific payload, and the first Lunar Roving Vehicle, which let the crew range miles from the lander to Hadley Rille.',
     status: 'available',
     clipsFile: 'apollo15',
-    clipCount: 1153,
+    clipCount: 1149,
     launchUtc: '1971-07-26T13:34:00Z',
     durationSeconds: 1062713, // 295:11:53
+    csmName: 'Endeavour',
+    lmName: 'Falcon',
+    objective: 'Fly the first extended "J" mission: three days on the surface, the first Lunar Roving Vehicle, and geology at Hadley Rille and the Apennine front.',
+    landingSite: { name: 'Hadley–Apennine, between Hadley Rille and the Apennine Mountains', lat: 26.13239, lon: 3.6333 },
     highlights: [
       { id: 'a15_0000013', title: 'Launch — "Tower Clear"' },
       { id: 'a15a1195255', title: 'Deploying the Lunar Roving Vehicle' },
@@ -159,9 +188,13 @@ export const missions = [
       'The first landing in the lunar highlands, at the Descartes region, returning the largest single rock collected during the program — the 11.7 kg "Big Muley."',
     status: 'available',
     clipsFile: 'apollo16',
-    clipCount: 912,
+    clipCount: 911,
     launchUtc: '1972-04-16T17:54:00Z',
     durationSeconds: 957065, // 265:51:05
+    csmName: 'Casper',
+    lmName: 'Orion',
+    objective: 'Make the first landing in the lunar highlands, to sample rock that geologists expected to be volcanic (it turned out to be impact breccia).',
+    landingSite: { name: 'Descartes Highlands', lat: -8.9734, lon: 15.5011 },
     highlights: [
       { id: 'a16_0000015', title: 'Launch' },
       { id: 'a16a1232408', title: 'The "Big Muley" rock' },
@@ -177,9 +210,13 @@ export const missions = [
       'The last Apollo Moon mission and the only night launch, carrying the program\'s first scientist-astronaut for the longest stay, longest EVAs, and most samples of any landing.',
     status: 'available',
     clipsFile: 'apollo17',
-    clipCount: 970,
+    clipCount: 965,
     launchUtc: '1972-12-07T05:33:00Z',
     durationSeconds: 1086719, // 301:51:59
+    csmName: 'America',
+    lmName: 'Challenger',
+    objective: 'Close out Apollo with the longest landing: sample ancient highland rock from the valley walls and look for young volcanic material, with the first geologist on the Moon.',
+    landingSite: { name: 'Taurus–Littrow valley, on the edge of the Sea of Serenity', lat: 20.1911, lon: 30.7723 },
     highlights: [
       { id: 'a17_0000027', title: 'Launch — the only night launch' },
       { id: 'a17_1125539csm', title: '"The Challenger has landed"' },

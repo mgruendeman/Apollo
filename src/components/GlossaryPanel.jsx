@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ReportIssueButton from './ReportIssueButton'
+import GlossaryAbbr from './GlossaryAbbr'
 import GlossaryText from './GlossaryText'
 
 export default function GlossaryPanel({ entry, onClose, onTermClick }) {
@@ -31,6 +32,7 @@ export default function GlossaryPanel({ entry, onClose, onTermClick }) {
             also: {entry.terms.slice(1).join(', ')}
           </p>
         )}
+        <GlossaryAbbr entry={entry} />
         <p className="glossary-long">
           <GlossaryText text={entry.long} onTermClick={onTermClick} excludeId={entry.id} />
         </p>

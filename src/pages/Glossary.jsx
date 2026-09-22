@@ -4,6 +4,7 @@ import { glossary } from '../data/glossary'
 import GlossaryText from '../components/GlossaryText'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
+import GlossaryAbbr from '../components/GlossaryAbbr'
 
 // A full listing of every glossary entry in one place — mainly so the
 // definitions can actually be read end-to-end and proofread, rather than
@@ -35,6 +36,7 @@ export default function Glossary() {
             {entry.terms.length > 1 && (
               <p className="glossary-aliases">also: {entry.terms.slice(1).join(', ')}</p>
             )}
+            <GlossaryAbbr entry={entry} />
             <p className="glossary-long">
               <GlossaryText text={entry.long} onTermClick={setActiveGlossaryEntry} excludeId={entry.id} />
             </p>

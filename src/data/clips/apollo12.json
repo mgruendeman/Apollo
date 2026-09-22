@@ -5,7 +5,8 @@
 "getSeconds": 0,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_000_00_00.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/01launch_to_earth_orbit.html#0000000audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 297.4
 },
 {
 "id": "a12a_000_52_39",
@@ -13,7 +14,8 @@
 "getSeconds": 3159,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_000_52_39.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/02earth_orbit_tli.html#0005239audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 458.1
 },
 {
 "id": "a12a_001_00_51",
@@ -21,7 +23,8 @@
 "getSeconds": 3651,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_001_00_51.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/02earth_orbit_tli.html#0010051audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 260.2
 },
 {
 "id": "a12a_002_24_48",
@@ -29,7 +32,8 @@
 "getSeconds": 8688,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_002_24_48.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/02earth_orbit_tli.html#0022448audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 191.1
 },
 {
 "id": "a12a_011_11_09",
@@ -37,7 +41,8 @@
 "getSeconds": 40269,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_011_11_09.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/05ptc_back_over_to_lm.html#0111109audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM",
+"durationSeconds": 57.4
 },
 {
 "id": "a12a_011_58_41",
@@ -45,7 +50,8 @@
 "getSeconds": 43121,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_011_58_41.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/05ptc_back_over_to_lm.html#0115841audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM",
+"durationSeconds": 296.3
 },
 {
 "id": "a12a_012_08_02",
@@ -53,7 +59,8 @@
 "getSeconds": 43682,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_012_08_02.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/05ptc_back_over_to_lm.html#0120802audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM",
+"durationSeconds": 138.8
 },
 {
 "id": "a12a_014_46_04",
@@ -61,7 +68,8 @@
 "getSeconds": 53164,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_014_46_04.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/05ptc_back_over_to_lm.html#0144604audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM",
+"durationSeconds": 209.9
 },
 {
 "id": "a12a_015_52_52",
@@ -69,7 +77,8 @@
 "getSeconds": 57172,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_015_52_52.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/05ptc_back_over_to_lm.html#0155252audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM",
+"durationSeconds": 99.3
 },
 {
 "id": "a12a_015_55_03",
@@ -77,7 +86,8 @@
 "getSeconds": 57303,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_015_55_03.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/05ptc_back_over_to_lm.html#0155503audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM",
+"durationSeconds": 295.6
 },
 {
 "id": "a12a_016_26_29",
@@ -85,7 +95,8 @@
 "getSeconds": 59189,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_016_26_29.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/05ptc_back_over_to_lm.html#0162629audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM",
+"durationSeconds": 20.6
 },
 {
 "id": "a12a_017_06_32",
@@ -93,7 +104,8 @@
 "getSeconds": 61592,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_017_06_32.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/05ptc_back_over_to_lm.html#0170632audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 1, part 5: PTC and back over to the LM",
+"durationSeconds": 45.9
 },
 {
 "id": "a12a_028_00_11",
@@ -101,7 +113,8 @@
 "getSeconds": 100811,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_028_00_11.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0280011audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 252.1
 },
 {
 "id": "a12a_036_12_01",
@@ -109,7 +122,8 @@
 "getSeconds": 130321,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_036_12_01.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0361201audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 113.2
 },
 {
 "id": "a12a_037_58_19",
@@ -117,7 +131,8 @@
 "getSeconds": 136699,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_037_58_19.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0375819audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 138.5
 },
 {
 "id": "a12a_038_01_52",
@@ -125,7 +140,8 @@
 "getSeconds": 136912,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_038_01_52.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0380152audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 14.4
 },
 {
 "id": "a12a_039_15_41",
@@ -133,7 +149,8 @@
 "getSeconds": 141341,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_039_15_41.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0391541audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 89.5
 },
 {
 "id": "a12a_040_00_03",
@@ -141,7 +158,8 @@
 "getSeconds": 144003,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_040_00_03.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0400003audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 571
 },
 {
 "id": "a12a_041_20_14",
@@ -149,7 +167,8 @@
 "getSeconds": 148814,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_041_20_14.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0412014audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 48.2
 },
 {
 "id": "a12a_041_46_39",
@@ -157,7 +176,8 @@
 "getSeconds": 150399,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_041_46_39.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0414639audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 51.5
 },
 {
 "id": "a12a_041_54_25",
@@ -165,7 +185,8 @@
 "getSeconds": 150865,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_041_54_25.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0415425audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 39.1
 },
 {
 "id": "a12a_042_06_03",
@@ -173,7 +194,8 @@
 "getSeconds": 151563,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_042_06_03.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0420603audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 134.5
 },
 {
 "id": "a12a_042_27_06",
@@ -181,7 +203,8 @@
 "getSeconds": 152826,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_042_27_06.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/06day2_mcc_2_burn.html#0422706audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 Burn",
+"durationSeconds": 16.8
 },
 {
 "id": "a12a_059_44_09",
@@ -189,7 +212,8 @@
 "getSeconds": 215049,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_059_44_09.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/08day3_dottf.html#0594409audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3, part 1: Day of the Tuna Fish"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3, part 1: Day of the Tuna Fish",
+"durationSeconds": 268.5
 },
 {
 "id": "a12a_062_24_38",
@@ -197,7 +221,8 @@
 "getSeconds": 224678,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_062_24_38.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/09day3_tvs.html#0622438audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3, part 2: TV Show"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3, part 2: TV Show",
+"durationSeconds": 215.8
 },
 {
 "id": "a12a_062_34_31",
@@ -205,7 +230,8 @@
 "getSeconds": 225271,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_062_34_31.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/09day3_tvs.html#0623431audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3, part 2: TV Show"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3, part 2: TV Show",
+"durationSeconds": 33.8
 },
 {
 "id": "a12a_062_50_01",
@@ -213,7 +239,8 @@
 "getSeconds": 226201,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_062_50_01.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/09day3_tvs.html#0625001audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3, part 2: TV Show"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3, part 2: TV Show",
+"durationSeconds": 3560.4
 },
 {
 "id": "a12a_083_03_11",
@@ -221,7 +248,8 @@
 "getSeconds": 298991,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_083_03_11.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/10day4_approach-moon.html#0830311audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 1: Approaching the Moon"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 1: Approaching the Moon",
+"durationSeconds": 34.5
 },
 {
 "id": "a12a_083_09_52",
@@ -229,7 +257,8 @@
 "getSeconds": 299392,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_083_09_52.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/10day4_approach-moon.html#0830952audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 1: Approaching the Moon"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 1: Approaching the Moon",
+"durationSeconds": 25.7
 },
 {
 "id": "a12a_083_44_19",
@@ -237,7 +266,8 @@
 "getSeconds": 301459,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_083_44_19.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/11day4_loi.html#0834419audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 2: Lunar Orbit Insertion"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 2: Lunar Orbit Insertion",
+"durationSeconds": 169
 },
 {
 "id": "a12a_083_52_17",
@@ -245,7 +275,8 @@
 "getSeconds": 301937,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_083_52_17.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/12day4_lunar_orbit_1_2.html#0835217audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2",
+"durationSeconds": 247.6
 },
 {
 "id": "a12a_084_00_28",
@@ -253,7 +284,8 @@
 "getSeconds": 302428,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_084_00_28.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/12day4_lunar_orbit_1_2.html#0840028audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2",
+"durationSeconds": 2060.3
 },
 {
 "id": "a12a_084_35_43",
@@ -261,7 +293,8 @@
 "getSeconds": 304543,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_084_35_43.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/12day4_lunar_orbit_1_2.html#0843543audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2",
+"durationSeconds": 183.5
 },
 {
 "id": "a12a_085_03_46",
@@ -269,7 +302,8 @@
 "getSeconds": 306226,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_085_03_46.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/12day4_lunar_orbit_1_2.html#0850346audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2",
+"durationSeconds": 36.3
 },
 {
 "id": "a12a_086_28_52",
@@ -277,7 +311,8 @@
 "getSeconds": 311332,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_086_28_52.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/12day4_lunar_orbit_1_2.html#0862852audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2",
+"durationSeconds": 99.3
 },
 {
 "id": "a12a_086_50_51",
@@ -285,7 +320,8 @@
 "getSeconds": 312651,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_086_50_51.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/12day4_lunar_orbit_1_2.html#0865051audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2",
+"durationSeconds": 55.7
 },
 {
 "id": "a12a_086_58_59",
@@ -293,7 +329,8 @@
 "getSeconds": 313139,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_086_58_59.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/12day4_lunar_orbit_1_2.html#0865859audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2",
+"durationSeconds": 89.2
 },
 {
 "id": "a12a_087_12_10",
@@ -301,7 +338,8 @@
 "getSeconds": 313930,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_087_12_10.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/12day4_lunar_orbit_1_2.html#0871210audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 4, part 3: Lunar Orbit Revolutions 1 and 2",
+"durationSeconds": 137.9
 },
 {
 "id": "a12a_088_01_31",
@@ -309,7 +347,8 @@
 "getSeconds": 316891,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_088_01_31.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0880131audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 128.2
 },
 {
 "id": "a12a_088_09_24",
@@ -317,7 +356,8 @@
 "getSeconds": 317364,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_088_09_24.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0880924audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 30.9
 },
 {
 "id": "a12a_088_22_00",
@@ -325,7 +365,8 @@
 "getSeconds": 318120,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_088_22_00.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0882200audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 148.9
 },
 {
 "id": "a12a_088_55_01",
@@ -333,7 +374,8 @@
 "getSeconds": 320101,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_088_55_01.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0885501audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 37.7
 },
 {
 "id": "a12a_089_05_25",
@@ -341,7 +383,8 @@
 "getSeconds": 320725,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_089_05_25.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0890525audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 19.9
 },
 {
 "id": "a12a_090_00_34",
@@ -349,7 +392,8 @@
 "getSeconds": 324034,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_090_00_34.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0900034audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 75.4
 },
 {
 "id": "a12a_090_05_44",
@@ -357,7 +401,8 @@
 "getSeconds": 324344,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_090_05_44.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0900544audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 26.3
 },
 {
 "id": "a12a_090_14_34",
@@ -365,7 +410,8 @@
 "getSeconds": 324874,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_090_14_34.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0901434audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 491.5
 },
 {
 "id": "a12a_090_28_20",
@@ -373,7 +419,8 @@
 "getSeconds": 325700,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_090_28_20.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0902820audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 72
 },
 {
 "id": "a12a_090_32_26",
@@ -381,7 +428,8 @@
 "getSeconds": 325946,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_090_32_26.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0903226audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 27.4
 },
 {
 "id": "a12a_090_44_17",
@@ -389,7 +437,8 @@
 "getSeconds": 326657,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_090_44_17.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0904417audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 89.8
 },
 {
 "id": "a12a_090_53_18",
@@ -397,7 +446,8 @@
 "getSeconds": 327198,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_090_53_18.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0905318audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 99.3
 },
 {
 "id": "a12a_091_00_30",
@@ -405,7 +455,8 @@
 "getSeconds": 327630,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_091_00_30.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0910030audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 150.6
 },
 {
 "id": "a12a_091_10_23",
@@ -413,7 +464,8 @@
 "getSeconds": 328223,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_091_10_23.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/13day4_lunar_orbit_3_5.html#0911023audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 3/4: Lunar Orbit Revolution 2 to 5",
+"durationSeconds": 87.6
 },
 {
 "id": "a12a_107_54_36",
@@ -421,7 +473,8 @@
 "getSeconds": 388476,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_107_54_36.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1075436audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 1300
 },
 {
 "id": "a12a_108_19_42",
@@ -429,7 +482,8 @@
 "getSeconds": 389982,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_108_19_42.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1081942audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 80.4
 },
 {
 "id": "a12a_108_22_25",
@@ -437,7 +491,8 @@
 "getSeconds": 390145,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_108_22_25.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1082225audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 761.5
 },
 {
 "id": "a12a_108_42_25",
@@ -445,7 +500,8 @@
 "getSeconds": 391345,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_108_42_25.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1084225audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 105.4
 },
 {
 "id": "a12a_108_44_44",
@@ -453,7 +509,8 @@
 "getSeconds": 391484,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_108_44_44.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1084444audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 107.1
 },
 {
 "id": "a12a_108_48_31",
@@ -461,7 +518,8 @@
 "getSeconds": 391711,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_108_48_31.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1084831audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 36.9
 },
 {
 "id": "a12a_108_52_34",
@@ -469,7 +527,8 @@
 "getSeconds": 391954,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_108_52_34.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1085234audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 121.6
 },
 {
 "id": "a12a_108_55_58",
@@ -477,7 +536,8 @@
 "getSeconds": 392158,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_108_55_58.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1085558audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 69.8
 },
 {
 "id": "a12a.1140206",
@@ -485,7 +545,8 @@
 "getSeconds": 410526,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1140206.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva1prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Preparations for EVA-1"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Preparations for EVA-1",
+"durationSeconds": 1639.5
 },
 {
 "id": "a12a.1142756",
@@ -493,7 +554,8 @@
 "getSeconds": 412076,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1142756.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva1prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Preparations for EVA-1"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Preparations for EVA-1",
+"durationSeconds": 2719.7
 },
 {
 "id": "a12a.1151207",
@@ -501,7 +563,8 @@
 "getSeconds": 414727,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1151207.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva1prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Preparations for EVA-1"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Preparations for EVA-1",
+"durationSeconds": 222
 },
 {
 "id": "a12a.1151543",
@@ -509,7 +572,8 @@
 "getSeconds": 414943,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1151543.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva1prelim.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 \"That may have been a small one for Neil...\""
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 \"That may have been a small one for Neil...\"",
+"durationSeconds": 2394.9
 },
 {
 "id": "a12a.1155426",
@@ -517,7 +581,8 @@
 "getSeconds": 417266,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1155426.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.tvtrbls.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 TV Troubles"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 TV Troubles",
+"durationSeconds": 137.2
 },
 {
 "id": "a12a.1155619",
@@ -525,7 +590,8 @@
 "getSeconds": 417379,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1155619.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.tvtrbls.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 TV Troubles"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 TV Troubles",
+"durationSeconds": 2050.5
 },
 {
 "id": "a12a.1163009",
@@ -533,7 +599,8 @@
 "getSeconds": 419409,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1163009.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.alsepoff.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 ALSEP Off-load"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 ALSEP Off-load",
+"durationSeconds": 675.2
 },
 {
 "id": "a12a.1164100",
@@ -541,7 +608,8 @@
 "getSeconds": 420060,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1164100.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.alsepoff.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 ALSEP Off-load"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 ALSEP Off-load",
+"durationSeconds": 810.9
 },
 {
 "id": "a12a.1165401",
@@ -549,7 +617,8 @@
 "getSeconds": 420841,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1165401.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.alsepdep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 ALSEP Deployment"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 ALSEP Deployment",
+"durationSeconds": 1918.4
 },
 {
 "id": "a12a.1172334",
@@ -557,7 +626,8 @@
 "getSeconds": 422614,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1172334.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.alsepdep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 ALSEP Deployment"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 ALSEP Deployment",
+"durationSeconds": 2600.8
 },
 {
 "id": "a12a.1180554",
@@ -565,7 +635,8 @@
 "getSeconds": 425154,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1180554.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.clsout1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 EVA-1 Closeout"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 EVA-1 Closeout",
+"durationSeconds": 138.5
 },
 {
 "id": "a12a.1180736",
@@ -573,7 +644,8 @@
 "getSeconds": 425256,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1180736.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.clsout1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 EVA-1 Closeout"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 EVA-1 Closeout",
+"durationSeconds": 2608.1
 },
 {
 "id": "a12a.1184813",
@@ -581,7 +653,8 @@
 "getSeconds": 427693,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1184813.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.clsout1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 EVA-1 Closeout"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 EVA-1 Closeout",
+"durationSeconds": 1300.5
 },
 {
 "id": "a12a.1190918",
@@ -589,7 +662,8 @@
 "getSeconds": 428958,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1190918.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 1226.1
 },
 {
 "id": "a12a.1193000",
@@ -597,7 +671,8 @@
 "getSeconds": 430200,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1193000.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 220.7
 },
 {
 "id": "a12a.1200200",
@@ -605,7 +680,8 @@
 "getSeconds": 432120,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1200200.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 441.2
 },
 {
 "id": "a12a.1201009",
@@ -613,7 +689,8 @@
 "getSeconds": 432609,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1201009.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 2287
 },
 {
 "id": "a12a.1205026",
@@ -621,7 +698,8 @@
 "getSeconds": 435026,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1205026.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 2741.7
 },
 {
 "id": "a12a.1213148",
@@ -629,7 +707,8 @@
 "getSeconds": 437508,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1213148.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 1172.7
 },
 {
 "id": "a12a.1215044",
@@ -637,7 +716,8 @@
 "getSeconds": 438644,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1215044.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 679.8
 },
 {
 "id": "a12a.1221334",
@@ -645,7 +725,8 @@
 "getSeconds": 440014,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1221334.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 2724.3
 },
 {
 "id": "a12a.1240100",
@@ -653,7 +734,8 @@
 "getSeconds": 446460,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1240100.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 2746.6
 },
 {
 "id": "a12a.1270900",
@@ -661,7 +743,8 @@
 "getSeconds": 457740,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1270900.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 480.5
 },
 {
 "id": "a12a.1275900",
@@ -669,7 +752,8 @@
 "getSeconds": 460740,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1275900.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.posteva1.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Post-EVA Activities in the LM",
+"durationSeconds": 621.3
 },
 {
 "id": "a12a.1285100",
@@ -677,7 +761,8 @@
 "getSeconds": 463860,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1285100.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva2prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations",
+"durationSeconds": 655.6
 },
 {
 "id": "a12a.1290150",
@@ -685,7 +770,8 @@
 "getSeconds": 464510,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1290150.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva2prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations",
+"durationSeconds": 1491.7
 },
 {
 "id": "a12a.1292755",
@@ -693,7 +779,8 @@
 "getSeconds": 466075,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1292755.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva2prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations",
+"durationSeconds": 1672
 },
 {
 "id": "a12a.1295200",
@@ -701,7 +788,8 @@
 "getSeconds": 467520,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1295200.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva2prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations",
+"durationSeconds": 135.6
 },
 {
 "id": "a12a.1295431",
@@ -709,7 +797,8 @@
 "getSeconds": 467671,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1295431.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva2prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations",
+"durationSeconds": 961.8
 },
 {
 "id": "a12a.1301008",
@@ -717,7 +806,8 @@
 "getSeconds": 468608,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1301008.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva2prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations",
+"durationSeconds": 1664.5
 },
 {
 "id": "a12a.1303500",
@@ -725,7 +815,8 @@
 "getSeconds": 470100,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1303500.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva2prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations",
+"durationSeconds": 1415.3
 },
 {
 "id": "a12a.1305927",
@@ -733,7 +824,8 @@
 "getSeconds": 471567,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1305927.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.eva2prep.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Wake-up and EVA-2 Preparations",
+"durationSeconds": 2253.4
 },
 {
 "id": "a12a.1313536",
@@ -741,7 +833,8 @@
 "getSeconds": 473736,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1313536.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.trvhead.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Rocking and Rolling at Head Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Rocking and Rolling at Head Crater",
+"durationSeconds": 107.4
 },
 {
 "id": "a12a.1313706",
@@ -749,7 +842,8 @@
 "getSeconds": 473826,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1313706.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.trvhead.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Rocking and Rolling at Head Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Rocking and Rolling at Head Crater",
+"durationSeconds": 2101
 },
 {
 "id": "a12a.1321041",
@@ -757,7 +851,8 @@
 "getSeconds": 475841,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1321041.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.head_bench.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Sampling at Head Crater and Bench Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Sampling at Head Crater and Bench Crater",
+"durationSeconds": 594.4
 },
 {
 "id": "a12a.1321952",
@@ -765,7 +860,8 @@
 "getSeconds": 476392,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1321952.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.head_bench.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Sampling at Head Crater and Bench Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Sampling at Head Crater and Bench Crater",
+"durationSeconds": 1845.3
 },
 {
 "id": "a12a.1324941",
@@ -773,7 +869,8 @@
 "getSeconds": 478181,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1324941.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.sharp.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Sharp Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Sharp Crater",
+"durationSeconds": 669.3
 },
 {
 "id": "a12a.1330005",
@@ -781,7 +878,8 @@
 "getSeconds": 478805,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1330005.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.sharp.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Sharp Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Sharp Crater",
+"durationSeconds": 590.4
 },
 {
 "id": "a12a.1330926",
@@ -789,7 +887,8 @@
 "getSeconds": 479366,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1330926.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.halo.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Halo Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Halo Crater",
+"durationSeconds": 2214
 },
 {
 "id": "a12a_133_09_26_to_133_44_43",
@@ -797,7 +896,8 @@
 "getSeconds": 479366,
 "audioUrl": "https://apollojournals.org/alsj/a12/../../afj/ap12fj/audio/a12a_133_09_26_to_133_44_43.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.halo.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Halo Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Halo Crater",
+"durationSeconds": 2119.5
 },
 {
 "id": "a12a.1334409",
@@ -805,7 +905,8 @@
 "getSeconds": 481449,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1334409.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.halo.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Halo Crater"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Halo Crater",
+"durationSeconds": 120.4
 },
 {
 "id": "a12a.1334601",
@@ -813,7 +914,8 @@
 "getSeconds": 481561,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1334601.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.surveyor.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Surveyor Crater and Surveyor III"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Surveyor Crater and Surveyor III",
+"durationSeconds": 2655.4
 },
 {
 "id": "a12a.1342858",
@@ -821,7 +923,8 @@
 "getSeconds": 484138,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1342858.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.surveyor.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Surveyor Crater and Surveyor III"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Surveyor Crater and Surveyor III",
+"durationSeconds": 318.3
 },
 {
 "id": "a12a.1343407",
@@ -829,7 +932,8 @@
 "getSeconds": 484447,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1343407.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.clsout2.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Return to the LM and Closeout"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Return to the LM and Closeout",
+"durationSeconds": 2374.8
 },
 {
 "id": "a12a.1351237",
@@ -837,7 +941,8 @@
 "getSeconds": 486757,
 "audioUrl": "https://apollojournals.org/alsj/a12/a12a.1351237.mp3",
 "sourceUrl": "https://apollojournals.org/alsj/a12/a12.clsout2.html",
-"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Return to the LM and Closeout"
+"sourceLabel": "Apollo 12 Lunar Surface Journal \u2014 Return to the LM and Closeout",
+"durationSeconds": 880.4
 },
 {
 "id": "a12a_137_18_05_to_137_19_53",
@@ -845,7 +950,8 @@
 "getSeconds": 494285,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_137_18_05_to_137_19_53.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1372116audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 108.4
 },
 {
 "id": "a12a_137_38_34_to_137_40_12",
@@ -853,7 +959,8 @@
 "getSeconds": 495514,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_137_38_34_to_137_40_12.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1372502audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 113.9
 },
 {
 "id": "a12a_137_44_39_to_137_45_29",
@@ -861,7 +968,8 @@
 "getSeconds": 495879,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_137_44_39_to_137_45_29.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1372502audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 59.7
 },
 {
 "id": "a12a_137_50_47_to_137_51_10",
@@ -869,7 +977,8 @@
 "getSeconds": 496247,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_137_50_47_to_137_51_10.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1372502audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 30.9
 },
 {
 "id": "a12a_138_25_19_to_138_44_38",
@@ -877,7 +986,8 @@
 "getSeconds": 498319,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_138_25_19_to_138_44_38.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/14day5_prep_landing.html#1382519audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 5: Prepare for Lunar Descent",
+"durationSeconds": 1168.3
 },
 {
 "id": "a12a_138_46_05_to_138_52_45",
@@ -885,7 +995,8 @@
 "getSeconds": 499565,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_138_46_05_to_138_52_45.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1384605audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 324.1
 },
 {
 "id": "a12a_139_03_02_to_139_03_11",
@@ -893,7 +1004,8 @@
 "getSeconds": 500582,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_03_02_to_139_03_11.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1390302audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 16.8
 },
 {
 "id": "a12a_139_12_05_to_139_12_12",
@@ -901,7 +1013,8 @@
 "getSeconds": 501125,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_12_05_to_139_12_12.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1391205audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 15.4
 },
 {
 "id": "a12a_139_14_05_to_139_14_58",
@@ -909,7 +1022,8 @@
 "getSeconds": 501245,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_14_05_to_139_14_58.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1391405audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 77.3
 },
 {
 "id": "a12a_139_16_31_to_139_16_45",
@@ -917,7 +1031,8 @@
 "getSeconds": 501391,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_16_31_to_139_16_45.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1391631audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 106.4
 },
 {
 "id": "a12a_139_16_45_cb_139_20_09",
@@ -925,7 +1040,8 @@
 "getSeconds": 501405,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_16_45_cb_139_20_09.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1391645audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 196.2
 },
 {
 "id": "a12a_139_20_09_to_139_21_10",
@@ -933,7 +1049,8 @@
 "getSeconds": 501609,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_20_09_to_139_21_10.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1392009audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 75
 },
 {
 "id": "a12a_139_23_14_to_139_23_57",
@@ -941,7 +1058,8 @@
 "getSeconds": 501794,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_23_14_to_139_23_57.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1392314audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 60.1
 },
 {
 "id": "a12a_139_23_14_to_139_25_41",
@@ -949,7 +1067,8 @@
 "getSeconds": 501794,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_23_14_to_139_25_41.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1392314audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 163.4
 },
 {
 "id": "a12a_139_27_17_to_139_34_13",
@@ -957,7 +1076,8 @@
 "getSeconds": 502037,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_27_17_to_139_34_13.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1392717audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 503.2
 },
 {
 "id": "a12a_139_35_19_to_139_35_35",
@@ -965,7 +1085,8 @@
 "getSeconds": 502519,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_35_19_to_139_35_35.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1393519audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 79.9
 },
 {
 "id": "a12a_139_35_35_cb_139_39_19",
@@ -973,7 +1094,8 @@
 "getSeconds": 502535,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_35_35_cb_139_39_19.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1393535audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 219.4
 },
 {
 "id": "a12a_139_39_19_to_139_41_35",
@@ -981,7 +1103,8 @@
 "getSeconds": 502759,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_39_19_to_139_41_35.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1393919audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 142.5
 },
 {
 "id": "a12a_139_52_15_to_139_53_15",
@@ -989,7 +1112,8 @@
 "getSeconds": 503535,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_52_15_to_139_53_15.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1394932audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 104.8
 },
 {
 "id": "a12a_139_58_26",
@@ -997,7 +1121,8 @@
 "getSeconds": 503906,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_139_58_26.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1395826audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 55.1
 },
 {
 "id": "a12a_140_09_30_to_140_14_47",
@@ -1005,7 +1130,8 @@
 "getSeconds": 504570,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_140_09_30_to_140_14_47.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1400930audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 341.3
 },
 {
 "id": "a12a_140_15_50_to_140_17_54",
@@ -1013,7 +1139,8 @@
 "getSeconds": 504950,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_140_15_50_to_140_17_54.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1401550audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 156.2
 },
 {
 "id": "a12a_140_19_08_to_140_24_48",
@@ -1021,7 +1148,8 @@
 "getSeconds": 505148,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_140_19_08_to_140_24_48.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1401908audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 344.7
 },
 {
 "id": "a12a_140_27_22_to_140_29_47",
@@ -1029,7 +1157,8 @@
 "getSeconds": 505642,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_140_27_22_to_140_29_47.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1402722audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 167.7
 },
 {
 "id": "a12a_140_38_16_to_140_38_18",
@@ -1037,7 +1166,8 @@
 "getSeconds": 506296,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_140_38_16_to_140_38_18.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1403816audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 20
 },
 {
 "id": "a12a_141_00_14_to_141_00_58",
@@ -1045,7 +1175,8 @@
 "getSeconds": 507614,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_141_00_14_to_141_00_58.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1410014audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 61.3
 },
 {
 "id": "a12a_141_02_29_to_141_03_02",
@@ -1053,7 +1184,8 @@
 "getSeconds": 507749,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_141_02_29_to_141_03_02.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1410229audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 132
 },
 {
 "id": "a12a_141_19_35_to_141_20_15",
@@ -1061,7 +1193,8 @@
 "getSeconds": 508775,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_141_19_35_to_141_20_15.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1411935audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 14.8
 },
 {
 "id": "a12a_141_21_30_to_141_22_16",
@@ -1069,7 +1202,8 @@
 "getSeconds": 508890,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_141_21_30_to_141_22_16.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1412130audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 111.7
 },
 {
 "id": "a12a_141_29_40",
@@ -1077,7 +1211,8 @@
 "getSeconds": 509380,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_141_29_40.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1412940audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 10.4
 },
 {
 "id": "a12a_141_42_52_to_141_43_08",
@@ -1085,7 +1220,8 @@
 "getSeconds": 510172,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_141_42_52_to_141_43_08.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1414252audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 47.6
 },
 {
 "id": "a12a_141_49_09_to_141_50_03",
@@ -1093,7 +1229,8 @@
 "getSeconds": 510549,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_141_49_09_to_141_50_03.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1414909audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 53.7
 },
 {
 "id": "a12a_142_00_57_to_142_23_52",
@@ -1101,7 +1238,8 @@
 "getSeconds": 511257,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_142_00_57_to_142_23_52.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1420057audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 1350.2
 },
 {
 "id": "a12a_142_26_17",
@@ -1109,7 +1247,8 @@
 "getSeconds": 512777,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_142_26_17.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1422617audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 35.8
 },
 {
 "id": "a12a_142_26_17_to_142_26_42",
@@ -1117,7 +1256,8 @@
 "getSeconds": 512777,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_142_26_17_to_142_26_42.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1422617audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 30.7
 },
 {
 "id": "a12a_142_28_31_to_142_30_35",
@@ -1125,7 +1265,8 @@
 "getSeconds": 512911,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_142_28_31_to_142_30_35.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1422831audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 150.6
 },
 {
 "id": "a12a_143_16_57_to_143_17_28",
@@ -1133,7 +1274,8 @@
 "getSeconds": 515817,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_143_16_57_to_143_17_28.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1431657audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 73.8
 },
 {
 "id": "a12a_143_19_25_to_144_03_03",
@@ -1141,7 +1283,8 @@
 "getSeconds": 515965,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_143_19_25_to_144_03_03.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/17day6_ftstd.html#1431925audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 6: From the Snowman to Docking",
+"durationSeconds": 2630.2
 },
 {
 "id": "a12a_159_03_31_to_159_07_24",
@@ -1149,7 +1292,8 @@
 "getSeconds": 572611,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_03_31_to_159_07_24.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1590331audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 320.8
 },
 {
 "id": "a12a_159_08_51_to_159_09_55",
@@ -1157,7 +1301,8 @@
 "getSeconds": 572931,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_08_51_to_159_09_55.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1590851audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 285.7
 },
 {
 "id": "a12a_159_09_55_cb",
@@ -1165,7 +1310,8 @@
 "getSeconds": 572995,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_09_55_cb.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1590955audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 207.8
 },
 {
 "id": "a12a_159_17_08_to_159_20_19",
@@ -1173,7 +1319,8 @@
 "getSeconds": 573428,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_17_08_to_159_20_19.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1591708audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 191.8
 },
 {
 "id": "a12a_159_20_19_cb",
@@ -1181,7 +1328,8 @@
 "getSeconds": 573619,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_20_19_cb.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1592019audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 381.8
 },
 {
 "id": "a12a_159_26_46_to_159_30_25",
@@ -1189,7 +1337,8 @@
 "getSeconds": 574006,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_26_46_to_159_30_25.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1592646audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 223
 },
 {
 "id": "a12a_159_30_25_cb",
@@ -1197,7 +1346,8 @@
 "getSeconds": 574225,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_30_25_cb.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1593025audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 111.3
 },
 {
 "id": "a12a_159_32_23_to_159_33_02",
@@ -1205,7 +1355,8 @@
 "getSeconds": 574343,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_32_23_to_159_33_02.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1593223audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 43.5
 },
 {
 "id": "a12a_159_33_02_cb",
@@ -1213,7 +1364,8 @@
 "getSeconds": 574382,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_33_02_cb.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1593302audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 407.2
 },
 {
 "id": "a12a_159_53_49_to_159_54_34",
@@ -1221,7 +1373,8 @@
 "getSeconds": 575629,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_159_53_49_to_159_54_34.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1595349audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 56.3
 },
 {
 "id": "a12a_160_01_02_to_160_02_25",
@@ -1229,7 +1382,8 @@
 "getSeconds": 576062,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_160_01_02_to_160_02_25.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1600102audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 131.8
 },
 {
 "id": "a12a_160_07_41_to_160_08_37",
@@ -1237,7 +1391,8 @@
 "getSeconds": 576461,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_160_07_41_to_160_08_37.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1600741audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 60.4
 },
 {
 "id": "a12a_160_09_42_to_160_11_10",
@@ -1245,7 +1400,8 @@
 "getSeconds": 576582,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_160_09_42_to_160_11_10.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1600942audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 155.6
 },
 {
 "id": "a12a_160_14_01_to_160_14_23",
@@ -1253,7 +1409,8 @@
 "getSeconds": 576841,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_160_14_01_to_160_14_23.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1601401audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 33.2
 },
 {
 "id": "a12a_161_02_45_cb",
@@ -1261,7 +1418,8 @@
 "getSeconds": 579765,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_161_02_45_cb.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1610245audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 208.5
 },
 {
 "id": "a12a_161_03_40_to_161_05_21",
@@ -1269,7 +1427,8 @@
 "getSeconds": 579820,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_161_03_40_to_161_05_21.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1610340audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 95.7
 },
 {
 "id": "a12a_161_32_44_to_161_33_54",
@@ -1277,7 +1436,8 @@
 "getSeconds": 581564,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_161_32_44_to_161_33_54.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1613244audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 101.1
 },
 {
 "id": "a12a_161_37_07_to_161_37_17",
@@ -1285,7 +1445,8 @@
 "getSeconds": 581827,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_161_37_07_to_161_37_17.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1613707audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 32.3
 },
 {
 "id": "a12a_161_43_05",
@@ -1293,7 +1454,8 @@
 "getSeconds": 582185,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_161_43_05.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1614305audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 8
 },
 {
 "id": "a12a_161_45_02_to_161_47_50",
@@ -1301,7 +1463,8 @@
 "getSeconds": 582302,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_161_45_02_to_161_47_50.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1614502audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 129
 },
 {
 "id": "a12a_161_51_22_to_161_51_31",
@@ -1309,7 +1472,8 @@
 "getSeconds": 582682,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_161_51_22_to_161_51_31.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1615122audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 11.6
 },
 {
 "id": "a12a_162_02_29_to_162_02_45",
@@ -1317,7 +1481,8 @@
 "getSeconds": 583349,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_162_02_29_to_162_02_45.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1620229audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 19.7
 },
 {
 "id": "a12a_163_19_29_to_163_19_39",
@@ -1325,7 +1490,8 @@
 "getSeconds": 587969,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_163_19_29_to_163_19_39.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1631929audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 14.6
 },
 {
 "id": "a12a_163_45_00_to_163_45_53",
@@ -1333,7 +1499,8 @@
 "getSeconds": 589500,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_163_45_00_to_163_45_53.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1634500audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 72.5
 },
 {
 "id": "a12a_163_47_10_to_163_49_25",
@@ -1341,7 +1508,8 @@
 "getSeconds": 589630,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_163_47_10_to_163_49_25.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1634710audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 137
 },
 {
 "id": "a12a_163_53_23",
@@ -1349,7 +1517,8 @@
 "getSeconds": 590003,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_163_53_23.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1635323audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 3.8
 },
 {
 "id": "a12a_163_54_48_to_163_55_29",
@@ -1357,7 +1526,8 @@
 "getSeconds": 590088,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_163_54_48_to_163_55_29.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/18day7_lmjett_rev33_44.html#1635448audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: LM Jettison, Rev 33 to 43",
+"durationSeconds": 45.6
 },
 {
 "id": "a12a_172_41_01_to_172_46_19",
@@ -1365,7 +1535,8 @@
 "getSeconds": 621661,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_172_41_01_to_172_46_19.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/19day7_rev44_tei.html#1724101audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection",
+"durationSeconds": 251.2
 },
 {
 "id": "a12a_172_47_56_to_172_49_37",
@@ -1373,7 +1544,8 @@
 "getSeconds": 622076,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_172_47_56_to_172_49_37.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/19day7_rev44_tei.html#1724756audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection",
+"durationSeconds": 160.8
 },
 {
 "id": "a12a_172_50_55_to_172_55_14",
@@ -1381,7 +1553,8 @@
 "getSeconds": 622255,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_172_50_55_to_172_55_14.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/19day7_rev44_tei.html#1725055audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection",
+"durationSeconds": 308.3
 },
 {
 "id": "a12a_172_56_23_to_173_00_xx",
@@ -1389,7 +1562,8 @@
 "getSeconds": 622583,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_172_56_23_to_173_00_xx.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/19day7_rev44_tei.html#1725623audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection",
+"durationSeconds": 257.8
 },
 {
 "id": "a12a_173_01_00_to_173_29_00",
@@ -1397,7 +1571,8 @@
 "getSeconds": 622860,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_173_01_00_to_173_29_00.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/19day7_rev44_tei.html#1730100audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection",
+"durationSeconds": 1717.7
 },
 {
 "id": "a12a_173_29_47_to_173_31_12",
@@ -1405,7 +1580,8 @@
 "getSeconds": 624587,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_173_29_47_to_173_31_12.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/19day7_rev44_tei.html#1732947audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection",
+"durationSeconds": 87.7
 },
 {
 "id": "a12a_174_47_00_to_174_47_56",
@@ -1413,7 +1589,8 @@
 "getSeconds": 629220,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_174_47_00_to_174_47_56.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/19day7_rev44_tei.html#1744700audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 7: Rev 44 to Trans-Earth Injection",
+"durationSeconds": 57.5
 },
 {
 "id": "a12a_187_39_33_chorus",
@@ -1421,7 +1598,8 @@
 "getSeconds": 675573,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_187_39_33_chorus.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1873933audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 8.4
 },
 {
 "id": "a12a_187_39_33_to_187_45_47",
@@ -1429,7 +1607,8 @@
 "getSeconds": 675573,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_187_39_33_to_187_45_47.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1873933audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 391.1
 },
 {
 "id": "a12a_187_40_08_2ta_chorus",
@@ -1437,7 +1616,8 @@
 "getSeconds": 675608,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_187_40_08_2ta_chorus.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1874008audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 121.9
 },
 {
 "id": "a12a_187_58_16_to_188_01_55",
@@ -1445,7 +1625,8 @@
 "getSeconds": 676696,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_187_58_16_to_188_01_55.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1875816audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 198.9
 },
 {
 "id": "a12a_188_05_50",
@@ -1453,7 +1634,8 @@
 "getSeconds": 677150,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_188_05_50.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1880550audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 29.5
 },
 {
 "id": "a12a_188_20_17_to_188_20_47",
@@ -1461,7 +1643,8 @@
 "getSeconds": 678017,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_188_20_17_to_188_20_47.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1882017audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 39.8
 },
 {
 "id": "a12a_188_23_15_to_188_24_10",
@@ -1469,7 +1652,8 @@
 "getSeconds": 678195,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_188_23_15_to_188_24_10.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1882315audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 41.4
 },
 {
 "id": "a12a_188_28_10_to_188_28_18",
@@ -1477,7 +1661,8 @@
 "getSeconds": 678490,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_188_28_10_to_188_28_18.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1882810audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 15.4
 },
 {
 "id": "a12a_188_35_43_to_188_36_08",
@@ -1485,7 +1670,8 @@
 "getSeconds": 678943,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_188_35_43_to_188_36_08.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1883543audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 35.6
 },
 {
 "id": "a12a_189_01_44_to_189_01_57",
@@ -1493,7 +1679,8 @@
 "getSeconds": 680504,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_189_01_44_to_189_01_57.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1890144audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 17.5
 },
 {
 "id": "a12a_189_03_40_to_189_05_01",
@@ -1501,7 +1688,8 @@
 "getSeconds": 680620,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_189_03_40_to_189_05_01.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1890340audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 128.9
 },
 {
 "id": "a12a_189_06_25_to_189_06_59",
@@ -1509,7 +1697,8 @@
 "getSeconds": 680785,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_189_06_25_to_189_06_59.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1890625audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 80.5
 },
 {
 "id": "a12a_189_12_53_to_189_13_15",
@@ -1517,7 +1706,8 @@
 "getSeconds": 681173,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_189_12_53_to_189_13_15.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1891253audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 26.2
 },
 {
 "id": "a12a_189_31_07_to_189_31_42",
@@ -1525,7 +1715,8 @@
 "getSeconds": 682267,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_189_31_07_to_189_31_42.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1893107audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 41.8
 },
 {
 "id": "a12a_189_35_03_to_189_38_24",
@@ -1533,7 +1724,8 @@
 "getSeconds": 682503,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_189_35_03_to_189_38_24.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1893503audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 148.5
 },
 {
 "id": "a12a_189_41_40_to_189_41_47",
@@ -1541,7 +1733,8 @@
 "getSeconds": 682900,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_189_41_40_to_189_41_47.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1894140audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 12.5
 },
 {
 "id": "a12a_189_55_11_to_189_55_26",
@@ -1549,7 +1742,8 @@
 "getSeconds": 683711,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_189_55_11_to_189_55_26.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1895511audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 20.6
 },
 {
 "id": "a12a_190_03_34_to_190_04_41",
@@ -1557,7 +1751,8 @@
 "getSeconds": 684214,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_03_34_to_190_04_41.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1900334audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 59.9
 },
 {
 "id": "a12a_190_06_23",
@@ -1565,7 +1760,8 @@
 "getSeconds": 684383,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_06_23.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1900623audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 30.8
 },
 {
 "id": "a12a_190_08_24_to_190_10_06",
@@ -1573,7 +1769,8 @@
 "getSeconds": 684504,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_08_24_to_190_10_06.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1900824audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 118.5
 },
 {
 "id": "a12a_190_18_45_to_190_20_42",
@@ -1581,7 +1778,8 @@
 "getSeconds": 685125,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_18_45_to_190_20_42.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1901845audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 129.3
 },
 {
 "id": "a12a_190_23_10_to_190_25_12",
@@ -1589,7 +1787,8 @@
 "getSeconds": 685390,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_23_10_to_190_25_12.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1902310audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 72.2
 },
 {
 "id": "a12a_190_27_48_to_190_30_08",
@@ -1597,7 +1796,8 @@
 "getSeconds": 685668,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_27_48_to_190_30_08.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1902748audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 156.1
 },
 {
 "id": "a12a_190_32_20_to_190_35_54",
@@ -1605,7 +1805,8 @@
 "getSeconds": 685940,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_32_20_to_190_35_54.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1903220audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 237.5
 },
 {
 "id": "a12a_190_43_10_to_190_45_09",
@@ -1613,7 +1814,8 @@
 "getSeconds": 686590,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_43_10_to_190_45_09.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1904310audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 133.6
 },
 {
 "id": "a12a_190_46_02_to_190_53_03",
@@ -1621,7 +1823,8 @@
 "getSeconds": 686762,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_46_02_to_190_53_03.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1904602audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 447.5
 },
 {
 "id": "a12a_190_58_37_to_190_59_27",
@@ -1629,7 +1832,8 @@
 "getSeconds": 687517,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_190_58_37_to_190_59_27.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1905837audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 39.1
 },
 {
 "id": "a12a_191_00_20_to_191_00_36",
@@ -1637,7 +1841,8 @@
 "getSeconds": 687620,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_00_20_to_191_00_36.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1910020audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 36.2
 },
 {
 "id": "a12a_191_01_34_to_191_03_55",
@@ -1645,7 +1850,8 @@
 "getSeconds": 687694,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_01_34_to_191_03_55.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1910134audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 153.1
 },
 {
 "id": "a12a_191_05_24_to_191_07_48",
@@ -1653,7 +1859,8 @@
 "getSeconds": 687924,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_05_24_to_191_07_48.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1910524audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 226.2
 },
 {
 "id": "a12a_191_11_05_to_191_15_51",
@@ -1661,7 +1868,8 @@
 "getSeconds": 688265,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_11_05_to_191_15_51.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1911105audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 177.5
 },
 {
 "id": "a12a_191_19_31_to_191_24_59",
@@ -1669,7 +1877,8 @@
 "getSeconds": 688771,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_19_31_to_191_24_59.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1911931audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 218.4
 },
 {
 "id": "a12a_191_28_41_to_191_33_50",
@@ -1677,7 +1886,8 @@
 "getSeconds": 689321,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_28_41_to_191_33_50.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1912841audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 317.9
 },
 {
 "id": "a12a_191_40_06_to_191_40_45",
@@ -1685,7 +1895,8 @@
 "getSeconds": 690006,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_40_06_to_191_40_45.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1914006audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 60
 },
 {
 "id": "a12a_191_44_06_to_191_46_48",
@@ -1693,7 +1904,8 @@
 "getSeconds": 690246,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_44_06_to_191_46_48.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1914406audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 236
 },
 {
 "id": "a12a_191_57_00_to_191_57_07",
@@ -1701,7 +1913,8 @@
 "getSeconds": 691020,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_191_57_00_to_191_57_07.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1915700audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 36.6
 },
 {
 "id": "a12a_192_16_45_to_192_46_08",
@@ -1709,7 +1922,8 @@
 "getSeconds": 692205,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_192_16_45_to_192_46_08.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1921645audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 1762.4
 },
 {
 "id": "a12a_192_47_09_to_192_49_10",
@@ -1717,7 +1931,8 @@
 "getSeconds": 694029,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_192_47_09_to_192_49_10.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1924709audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 183.8
 },
 {
 "id": "a12a_192_50_44_to_192_54_52",
@@ -1725,7 +1940,8 @@
 "getSeconds": 694244,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_192_50_44_to_192_54_52.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1925044audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 126.8
 },
 {
 "id": "a12a_192_53_28_to_192_57_20",
@@ -1733,7 +1949,8 @@
 "getSeconds": 694408,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_192_53_28_to_192_57_20.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/20day8_cislunar.html#1925328audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 8: Cislunar Navigation and Geology Questions",
+"durationSeconds": 464.1
 },
 {
 "id": "a12a_209_29_57_to_209_38_08",
@@ -1741,7 +1958,8 @@
 "getSeconds": 754197,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_209_29_57_to_209_38_08.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2092957audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 523.9
 },
 {
 "id": "a12a_209_41_15_to_209_41_21",
@@ -1749,7 +1967,8 @@
 "getSeconds": 754875,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_209_41_15_to_209_41_21.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2094115audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 12.8
 },
 {
 "id": "a12a_209_47_13_to_209_47_48",
@@ -1757,7 +1976,8 @@
 "getSeconds": 755233,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_209_47_13_to_209_47_48.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2094713audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 45.2
 },
 {
 "id": "a12a_210_27_37_to_210_27_55",
@@ -1765,7 +1985,8 @@
 "getSeconds": 757657,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_210_27_37_to_210_27_55.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2102737audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 74.5
 },
 {
 "id": "a12a_210_27_55_cb_211_18_39",
@@ -1773,7 +1994,8 @@
 "getSeconds": 757675,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_210_27_55_cb_211_18_39.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2102755audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 97.8
 },
 {
 "id": "a12a_211_18_41_to_211_18_52",
@@ -1781,7 +2003,8 @@
 "getSeconds": 760721,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_211_18_41_to_211_18_52.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2111841audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 15.7
 },
 {
 "id": "a12a_211_55_28_to_212_04_51",
@@ -1789,7 +2012,8 @@
 "getSeconds": 762928,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_211_55_28_to_212_04_51.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2115528audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 561.6
 },
 {
 "id": "a12a_212_06_05_to_212_14_17",
@@ -1797,7 +2021,8 @@
 "getSeconds": 763565,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_212_06_05_to_212_14_17.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2120605audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 188.1
 },
 {
 "id": "a12a_212_47_44_to_212_48_34",
@@ -1805,7 +2030,8 @@
 "getSeconds": 766064,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_212_47_44_to_212_48_34.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2124744audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 69.4
 },
 {
 "id": "a12a_213_20_10_to_213_21_53",
@@ -1813,7 +2039,8 @@
 "getSeconds": 768010,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_213_20_10_to_213_21_53.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2132010audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 137.5
 },
 {
 "id": "a12a_213_24_10_to_213_24_35",
@@ -1821,7 +2048,8 @@
 "getSeconds": 768250,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_213_24_10_to_213_24_35.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2132410audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 48.6
 },
 {
 "id": "a12a_213_45_48_to_213_46_50",
@@ -1829,7 +2057,8 @@
 "getSeconds": 769548,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_213_45_48_to_213_46_50.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2134548audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 65.3
 },
 {
 "id": "a12a_213_49_36_to_213_49_47",
@@ -1837,7 +2066,8 @@
 "getSeconds": 769776,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_213_49_36_to_213_49_47.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2134936audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 31.7
 },
 {
 "id": "a12a_213_56_55_to_214_01_19",
@@ -1845,7 +2075,8 @@
 "getSeconds": 770215,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_213_56_55_to_214_01_19.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2135655audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 310.2
 },
 {
 "id": "a12a_214_03_33_to_214_03_55",
@@ -1853,7 +2084,8 @@
 "getSeconds": 770613,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_214_03_33_to_214_03_55.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2140333audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 45.2
 },
 {
 "id": "a12a_214_11_39_to_214_11_49",
@@ -1861,7 +2093,8 @@
 "getSeconds": 771099,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_214_11_39_to_214_11_49.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2141139audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 16.8
 },
 {
 "id": "a12a_214_13_45_to_214_14_00",
@@ -1869,7 +2102,8 @@
 "getSeconds": 771225,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_214_13_45_to_214_14_00.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2141345audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 84.7
 },
 {
 "id": "a12a_214_42_17_to_214_45_11",
@@ -1877,7 +2111,8 @@
 "getSeconds": 772937,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_214_42_17_to_214_45_11.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2144217audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 1367.7
 },
 {
 "id": "a12a_224_07_21_to_224_44_01",
@@ -1885,7 +2120,8 @@
 "getSeconds": 806841,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_224_07_21_to_224_44_01.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2240721audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 2180.4
 },
 {
 "id": "a12a_224_44_49_to_224_47_43",
@@ -1893,7 +2129,8 @@
 "getSeconds": 809089,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_224_44_49_to_224_47_43.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2244449audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 114.2
 },
 {
 "id": "a12a_224_52_17_to_224_56_31",
@@ -1901,7 +2138,8 @@
 "getSeconds": 809537,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_224_52_17_to_224_56_31.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2245217audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 278
 },
 {
 "id": "a12a_224_57_47_to_224_59_24",
@@ -1909,7 +2147,8 @@
 "getSeconds": 809867,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_224_57_47_to_224_59_24.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2245747audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 188
 },
 {
 "id": "a12a_225_02_50_to_225_03_55",
@@ -1917,7 +2156,8 @@
 "getSeconds": 810170,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_225_02_50_to_225_03_55.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2250250audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 49.6
 },
 {
 "id": "a12a_225_04_04_to_225_05_31",
@@ -1925,7 +2165,8 @@
 "getSeconds": 810244,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_225_04_04_to_225_05_31.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2250404audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 45.7
 },
 {
 "id": "a12a_225_07_51_to_225_08_50",
@@ -1933,7 +2174,8 @@
 "getSeconds": 810471,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_225_07_51_to_225_08_50.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/21day9_qt.html#2250751audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 9: Navigate to Question Time",
+"durationSeconds": 29.4
 },
 {
 "id": "a12a_235_32_02_to_235_33_04",
@@ -1941,7 +2183,8 @@
 "getSeconds": 847922,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_235_32_02_to_235_33_04.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2353202audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 72.9
 },
 {
 "id": "a12a_236_03_55_to_236_04_12",
@@ -1949,7 +2192,8 @@
 "getSeconds": 849835,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_236_03_55_to_236_04_12.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2360355audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 34.5
 },
 {
 "id": "a12a_238_10_52_to_238_11_18",
@@ -1957,7 +2201,8 @@
 "getSeconds": 857452,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_238_10_52_to_238_11_18.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2381052audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 32.5
 },
 {
 "id": "a12a_238_12_55_to_238_13_18",
@@ -1965,7 +2210,8 @@
 "getSeconds": 857575,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_238_12_55_to_238_13_18.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2381255audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 31.9
 },
 {
 "id": "a12a_238_51_25_to_238_52_55",
@@ -1973,7 +2219,8 @@
 "getSeconds": 859885,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_238_51_25_to_238_52_55.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2385125audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 101.7
 },
 {
 "id": "a12a_238_54_02_to_238_54_15",
@@ -1981,7 +2228,8 @@
 "getSeconds": 860042,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_238_54_02_to_238_54_15.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2385402audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 16
 },
 {
 "id": "a12a_238_56_21_to_238_56_39",
@@ -1989,7 +2237,8 @@
 "getSeconds": 860181,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_238_56_21_to_238_56_39.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2385621audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 34.9
 },
 {
 "id": "a12a_239_08_11_to_239_08_44",
@@ -1997,7 +2246,8 @@
 "getSeconds": 860891,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_239_08_11_to_239_08_44.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2390811audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 58.3
 },
 {
 "id": "a12a_239_16_07_to_239_16_18",
@@ -2005,7 +2255,8 @@
 "getSeconds": 861367,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_239_16_07_to_239_16_18.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2391607audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 442.3
 },
 {
 "id": "a12a_239_17_35_to_239_17_40",
@@ -2013,7 +2264,8 @@
 "getSeconds": 861455,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_239_17_35_to_239_17_40.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2391735audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 138.5
 },
 {
 "id": "a12a_239_23_04_to_239_23_15",
@@ -2021,7 +2273,8 @@
 "getSeconds": 861784,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_239_23_04_to_239_23_15.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2392304audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 101.7
 },
 {
 "id": "a12a_239_29_16_to_239_29_55",
@@ -2029,7 +2282,8 @@
 "getSeconds": 862156,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_239_29_16_to_239_29_55.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2392916audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 129.1
 },
 {
 "id": "a12a_239_31_28_to_239_36_02",
@@ -2037,7 +2291,8 @@
 "getSeconds": 862288,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_239_31_28_to_239_36_02.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2393128audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 290.7
 },
 {
 "id": "a12a_239_40_25_to_239_40_40",
@@ -2045,7 +2300,8 @@
 "getSeconds": 862825,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_239_40_25_to_239_40_40.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2394025audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 50
 },
 {
 "id": "a12a_244_11_14_to_244_11_20",
@@ -2053,7 +2309,8 @@
 "getSeconds": 879074,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_244_11_14_to_244_11_20.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2441114audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 15.9
 },
 {
 "id": "a12a_244_19_26_to_244_19_58",
@@ -2061,7 +2318,8 @@
 "getSeconds": 879566,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_244_19_26_to_244_19_58.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2441926audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 114.2
 },
 {
 "id": "a12a_244_22_30_to_244_36_24",
@@ -2069,6 +2327,7 @@
 "getSeconds": 879750,
 "audioUrl": "https://apollojournals.org/afj/ap12fj/audio/a12a_244_22_30_to_244_36_24.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap12fj/22day10_sf3th.html#2442230audio",
-"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers"
+"sourceLabel": "Apollo 12 Flight Journal \u2014 Day 10: Splashdown for 3 Tail Hookers",
+"durationSeconds": 1912.8
 }
 ]

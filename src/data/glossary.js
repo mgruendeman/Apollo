@@ -11,6 +11,7 @@
 export const glossary = [
   {
     id: 'get',
+    abbr: [{ short: 'GET', full: 'Ground Elapsed Time' }],
     terms: ['Ground Elapsed Time', 'GET'],
     short: 'Mission clock, counted from the moment of liftoff.',
     long: 'Ground Elapsed Time is the master clock for the whole mission: it starts at 000:00:00 at the instant of liftoff and counts up in hours, minutes and seconds from there — never resetting, even past 24 hours (a splashdown at GET 244:36:24 means 244 hours after launch, about 10 days in). Every timestamp in this archive is GET, not clock time. NASA later renamed the concept "Mission Elapsed Time" for the Space Shuttle.',
@@ -18,6 +19,7 @@ export const glossary = [
   },
   {
     id: 'csm',
+    abbr: [{ short: 'CSM', full: 'Command and Service Module' }, { short: 'CM', full: 'Command Module' }, { short: 'SM', full: 'Service Module' }],
     terms: ['Command and Service Module', 'Command Module', 'Service Module', 'CSM'],
     short: 'The mothership: crew cabin plus the engine/power/supplies module behind it.',
     long: 'The CSM was the part of the stack that flew all the way to the Moon and back to Earth. It had two pieces bolted together: the cone-shaped Command Module (CM), where the three-person crew lived, flew, and rode through reentry; and the cylindrical Service Module (SM), an unpressurized bay behind it carrying the main engine (the SPS), fuel cells, oxygen and hydrogen tanks, and other consumables. The SM was jettisoned and burned up in the atmosphere just before reentry — only the Command Module came home.',
@@ -45,6 +47,7 @@ export const glossary = [
   },
   {
     id: 'lm',
+    abbr: [{ short: 'LM', full: 'Lunar Module' }, { short: 'LEM', full: 'Lunar Excursion Module' }],
     terms: ['Lunar Module', 'LM', 'LEM'],
     short: 'The two-person lander that actually touched down on the Moon.',
     long: 'The Lunar Module was a dedicated, ungainly-looking spacecraft built only to fly from lunar orbit to the surface and back — it never touched Earth and was never designed to fly through an atmosphere. It had two stages: a descent stage with landing legs and the main landing engine, left behind on the Moon as a launch platform, and an ascent stage carrying the crew cabin, which lifted the two moonwalkers back into lunar orbit to redock with the CSM. Early in the program it was called the Lunar Excursion Module (LEM); NASA dropped "Excursion" from the official name but the old acronym stuck around in speech.',
@@ -72,12 +75,14 @@ export const glossary = [
   },
   {
     id: 'eva',
+    abbr: [{ short: 'EVA', full: 'Extravehicular Activity' }],
     terms: ['Extravehicular Activity', 'EVA'],
     short: 'Any time an astronaut leaves the pressurized cabin — a moonwalk, most often.',
-    long: 'EVA is NASA-speak for any activity outside a pressurized spacecraft. On landing missions it almost always means a moonwalk: astronauts in pressure suits, breathing from a backpack, working on the surface for several hours at a stretch. Missions with no landing (like Apollo 9 and 10) still had EVAs — spacewalks in Earth or lunar orbit to test the suit and hardware.',
+    long: 'EVA is NASA-speak for any activity outside a pressurized spacecraft. On landing missions it almost always means a moonwalk: astronauts in pressure suits, breathing from a backpack, working on the surface for several hours at a stretch. There were spacewalks too: Apollo 9 tested the lunar suit and backpack outside the spacecraft in Earth orbit, and on Apollo 15, 16 and 17 the Command Module Pilot stepped out on the way home to retrieve film cassettes from the Service Module. Apollo 8, 10 and 13 had no EVAs at all.',
   },
   {
     id: 'alsep',
+    abbr: [{ short: 'ALSEP', full: 'Apollo Lunar Surface Experiments Package' }],
     terms: ['ALSEP'],
     short: 'A set of science instruments the crew set up and left running on the Moon.',
     long: 'The Apollo Lunar Surface Experiments Package was a kit of instruments — typically a seismometer, a magnetometer, a solar wind detector, and others depending on the mission — that the crew unpacked and deployed a short walk from the lander. Powered by a small plutonium generator (so it kept working long after the crew left), each ALSEP radioed data back to Earth for years afterward.',
@@ -98,18 +103,21 @@ export const glossary = [
   },
   {
     id: 'sps',
+    abbr: [{ short: 'SPS', full: 'Service Propulsion System' }],
     terms: ['Service Propulsion System', 'SPS'],
     short: 'The CSM\'s main rocket engine, used for every major course-changing burn.',
     long: 'A single restartable engine in the Service Module, the SPS did the heavy lifting for the CSM: lunar orbit insertion, the burn back out of lunar orbit (TEI), and any mid-course corrections along the way. It had no backup — a failed SPS burn to leave lunar orbit would have stranded the crew — which is part of why Apollo 13\'s LM engine became so critical when the SM was damaged.',
   },
   {
     id: 'rcs',
+    abbr: [{ short: 'RCS', full: 'Reaction Control System' }],
     terms: ['Reaction Control System', 'RCS'],
     short: 'Small thrusters used for fine steering, not big burns.',
     long: 'Clusters of small thrusters (on both the CSM and the LM) used for attitude control — pointing the spacecraft — and small translation moves like final approach during docking. Unlike the SPS or the LM\'s main engines, RCS thrusters fire in short, precise bursts.',
   },
   {
     id: 'agc',
+    abbr: [{ short: 'AGC', full: 'Apollo Guidance Computer' }, { short: 'DSKY', full: 'Display and Keyboard' }],
     terms: ['Apollo Guidance Computer', 'AGC', 'DSKY'],
     short: 'The onboard computer — and its keypad/display unit, the DSKY.',
     long: 'A computer flown in both the CM and the LM, remarkably small and primitive by modern standards (about 2K of RAM) but revolutionary for 1966: it was among the first uses of integrated circuits in a flight-critical system. Astronauts talked to it through the DSKY ("disky," Display and Keyboard) by punching in two-digit Verb and Noun codes — you\'ll hear crews read these off constantly ("Verb 37, Noun 63...").',
@@ -131,36 +139,42 @@ export const glossary = [
   },
   {
     id: 'tli',
+    abbr: [{ short: 'TLI', full: 'Translunar Injection' }],
     terms: ['Translunar Injection', 'TLI'],
     short: 'The burn that leaves Earth orbit and sends the spacecraft toward the Moon.',
     long: 'After one or two laps in a low "parking" orbit to check the spacecraft out, the S-IVB third stage reignites for one long burn — Translunar Injection — that raises the trajectory\'s apogee out past the Moon. From this point the spacecraft is coasting, unpowered, for the roughly three-day trip out.',
   },
   {
     id: 'loi',
+    abbr: [{ short: 'LOI', full: 'Lunar Orbit Insertion' }],
     terms: ['Lunar Orbit Insertion', 'LOI'],
     short: 'The burn that slows the spacecraft into orbit around the Moon.',
     long: 'A critical SPS burn performed behind the Moon, out of radio contact with Earth — Mission Control (and everyone listening at home) simply had to wait for the spacecraft to reappear and call home on schedule to know it worked. It slows the CSM enough for the Moon\'s gravity to capture it into orbit.',
   },
   {
     id: 'doi',
+    abbr: [{ short: 'DOI', full: 'Descent Orbit Insertion' }],
     terms: ['Descent Orbit Insertion', 'DOI'],
     short: 'A burn that lowers the LM\'s orbit to set up the final approach.',
     long: 'Performed by the LM (or, on some missions, the docked CSM/LM stack) to drop the low point of the orbit down to around 50,000 feet, setting up the trajectory for Powered Descent Initiation.',
   },
   {
     id: 'pdi',
+    abbr: [{ short: 'PDI', full: 'Powered Descent Initiation' }],
     terms: ['Powered Descent Initiation', 'PDI'],
     short: 'The start of the actual landing burn.',
     long: 'The moment the LM\'s descent engine ignites for the final, roughly 12-minute powered descent to the surface — throttling, pitching over so the crew can see the landing site, and (on more than one mission) dealing with computer alarms or terrain that didn\'t match the plan, right up to touchdown.',
   },
   {
     id: 'tei',
+    abbr: [{ short: 'TEI', full: 'Trans-Earth Injection' }],
     terms: ['Trans-Earth Injection', 'Trans Earth Injection', 'TEI'],
     short: 'The burn that leaves lunar orbit and heads home.',
     long: 'The SPS burn — again performed out of contact behind the Moon — that raises the CSM\'s trajectory out of lunar orbit and onto a path back to Earth. Like LOI, everyone on the ground just had to wait for the spacecraft to come back around and confirm it worked.',
   },
   {
     id: 'aos-los',
+    abbr: [{ short: 'AOS', full: 'Acquisition of Signal' }, { short: 'LOS', full: 'Loss of Signal' }],
     terms: ['Acquisition of Signal', 'Loss of Signal', 'AOS', 'LOS'],
     short: 'When radio contact starts (AOS) or stops (LOS), often behind the Moon.',
     long: 'The spacecraft loses radio contact with Earth every time it passes behind the Moon (Loss of Signal) and regains it on the other side (Acquisition of Signal). Mission Control timed these to the second — an LOI or TEI burn landing right on its predicted AOS time was a strong signal that everything had gone to plan.',
@@ -173,12 +187,14 @@ export const glossary = [
   },
   {
     id: 'capcom',
+    abbr: [{ short: 'CAPCOM', full: 'Capsule Communicator' }],
     terms: ['CAPCOM', 'Capsule Communicator'],
     short: 'The one person in Mission Control who talks directly to the crew.',
     long: 'By long-standing convention, only one voice — the CAPCOM, always an astronaut — spoke directly to the crew over the radio, relaying whatever the rest of Mission Control needed said. The idea was to keep the crew\'s radio loop clean and speak to them in a fellow pilot\'s voice.',
   },
   {
     id: 'eecom',
+    abbr: [{ short: 'EECOM', full: 'Electrical, Environmental and Consumables Manager' }],
     terms: ['EECOM'],
     short: 'The Mission Control station tracking the spacecraft\'s electrical and life-support systems.',
     long: 'Short for "Electrical, Environmental and Consumables Manager" — the flight controller responsible for the CSM\'s power, oxygen, and cooling systems. EECOM John Aaron became famous for the "SCE to Aux" call on Apollo 12 after the launch lightning strikes, recognizing a garbled telemetry pattern from a simulation he\'d seen a year earlier.',
@@ -203,6 +219,7 @@ export const glossary = [
   },
   {
     id: 'pao',
+    abbr: [{ short: 'PAO', full: 'Public Affairs Officer' }],
     terms: ['Public Affairs Officer', 'PAO'],
     short: 'The Mission Control voice narrating events for the public and press.',
     long: 'A separate announcer, not part of the crew\'s radio loop, who narrated milestones and status for the news media and public listening in — the "Mission Control" channel in this archive.',
@@ -215,6 +232,7 @@ export const glossary = [
   },
   {
     id: 'barbecue-roll',
+    abbr: [{ short: 'PTC', full: 'Passive Thermal Control' }],
     terms: ['Passive Thermal Control', 'Barbecue Roll', 'PTC'],
     short: 'A slow, continuous roll during the coast phases to even out sun exposure.',
     long: 'With no atmosphere to carry away heat, one side of the spacecraft baking in direct sunlight for hours could overheat while the shaded side got dangerously cold. The fix was to put the whole stack into a slow rotisserie-like roll (about one revolution every 20 minutes) so every side got even sun exposure — hence "barbecue roll," the crews\' own nickname for it.',
@@ -245,12 +263,14 @@ export const glossary = [
   },
   {
     id: 'star-sighting',
+    abbr: [{ short: 'P52', full: 'Program 52, the guidance computer\'s platform-alignment program' }],
     terms: ['Star Sighting', 'P52', 'Platform Alignment'],
     short: 'Sighting known stars through a sextant to check and correct the guidance platform.',
     long: 'The AGC\'s inertial platform could drift slightly over time, so crews periodically sighted pairs of known stars through an onboard sextant (a computer program numbered P52 walked them through it) to measure and correct that drift — essentially a manual GPS fix using the stars, a skill going back to ocean navigation.',
   },
   {
     id: 'plss',
+    abbr: [{ short: 'PLSS', full: 'Portable Life Support System' }],
     terms: ['PLSS', 'Portable Life Support System'],
     short: 'The backpack that kept a moonwalking astronaut alive.',
     long: 'The white backpack worn during EVAs, supplying oxygen, cooling water, and removing carbon dioxide and humidity — essentially a self-contained life-support system, since the suit had no hose connecting it to anything else while walking on the surface.',
@@ -299,24 +319,28 @@ export const glossary = [
   },
   {
     id: 's-ic',
+    abbr: [{ short: 'S-IC', full: 'a stage designation rather than an acronym: "S" for Saturn, read "S-one-C"' }],
     terms: ['S-IC'],
     short: 'The Saturn V\'s first stage — five F-1 engines, gone two and a half minutes after liftoff.',
     long: 'The S-IC was the Saturn V\'s giant first stage, 138 feet tall and burning RP-1 kerosene and liquid oxygen through five F-1 engines for about two and a half minutes — long enough to get the stack up to roughly 40 miles and 6,000 mph before it separated and fell into the Atlantic. Built by Boeing, it produced the bulk of the rocket\'s liftoff thrust, 7.5 million pounds combined, before the stack ever cleared the thickest part of the atmosphere.',
   },
   {
     id: 's-ii',
+    abbr: [{ short: 'S-II', full: 'a stage designation rather than an acronym: "S" for Saturn, read "S-two"' }],
     terms: ['S-II'],
     short: 'The Saturn V\'s second stage — five J-2 engines burning liquid hydrogen.',
     long: 'Built by North American Aviation, the S-II picked up where the S-IC left off, burning liquid hydrogen and liquid oxygen through five J-2 engines for about six minutes to carry the stack most of the way to orbital velocity. To save weight, its hydrogen and oxygen tanks shared a single insulated common bulkhead instead of two separate tank walls.',
   },
   {
     id: 's-ivb',
+    abbr: [{ short: 'S-IVB', full: 'a stage designation rather than an acronym: "S" for Saturn, read "S-four-B"' }],
     terms: ['S-IVB'],
     short: 'The Saturn V\'s third stage — did double duty: parking orbit, then the burn to the Moon.',
     long: 'The S-IVB carried a single restartable J-2 engine and fired twice: first for a roughly two-minute burn that placed the stack into low Earth "parking" orbit, and then again, after a coast to check everything out, for the several-minute Translunar Injection burn that sent the spacecraft toward the Moon. That in-flight restart capability is what let one stage do both jobs.',
   },
   {
     id: 'les',
+    abbr: [{ short: 'LES', full: 'Launch Escape System' }],
     terms: ['Launch Escape System', 'Launch Escape Tower'],
     short: 'The rocket tower atop the Command Module, there to pull the crew clear of a failing booster.',
     long: 'A slim tower of solid-fuel motors mounted above the Command Module, the Launch Escape System existed for one purpose: if the Saturn V failed on the pad or in the first few minutes of flight, its escape motor could pull the CM — and crew — safely away and clear for a parachute landing. It was jettisoned in a routine burn of its own once the vehicle was safely past the point where it was still needed, a moment crews called out over the radio.',
@@ -337,24 +361,28 @@ export const glossary = [
   // -- Flight controller roles ------------------------------------------
   {
     id: 'fido',
+    abbr: [{ short: 'FIDO', full: 'Flight Dynamics Officer' }],
     terms: ['Flight Dynamics Officer', 'FIDO'],
     short: 'The Mission Control station that owns the spacecraft\'s trajectory.',
     long: 'Short for Flight Dynamics Officer, FIDO sat in the front row of Mission Control and was responsible for the spacecraft\'s trajectory end to end — launch monitoring, orbit determination, burn targeting, and the go/no-go calls tied to where the vehicle actually was and where it was headed. FIDO worked hand in hand with GUIDO, the console immediately alongside, cross-checking the onboard guidance against ground tracking.',
   },
   {
     id: 'guido',
+    abbr: [{ short: 'GUIDO', full: 'Guidance Officer' }],
     terms: ['Guidance Officer', 'GUIDO'],
     short: 'Mission Control\'s watchdog on the spacecraft\'s onboard guidance and navigation.',
     long: 'The Guidance Officer, called GUIDO over the loop, monitored the onboard guidance computer and inertial platform against Mission Control\'s own trajectory data, flagging any divergence between what the spacecraft thought it was doing and what the ground could see. GUIDO Steve Bales became well known for the split-second call to keep going through Apollo 11\'s 1202 and 1201 program alarms during the landing, backed by his support team\'s read of exactly what those alarms meant.',
   },
   {
     id: 'gnc',
+    abbr: [{ short: 'GNC', full: 'Guidance, Navigation and Control' }],
     terms: ['Guidance, Navigation and Control Officer', 'GNC'],
     short: 'The console watching the spacecraft\'s guidance hardware itself — engines, gyros, thrusters.',
     long: 'GNC (Guidance, Navigation and Control) was the systems engineer responsible for the hardware side of guidance and control — the CSM\'s or LM\'s actual gyros, thrusters, and engine gimbal drives — as distinct from GUIDO, who watched the software and navigation solution. Mission Control ran separate CSM GNC and LM GNC consoles side by side once a mission included a Lunar Module, since each vehicle\'s control hardware needed its own eyes.',
   },
   {
     id: 'telmu',
+    abbr: [{ short: 'TELMU', full: 'Telemetry, Electrical, and EVA Mobility Unit Officer' }],
     terms: ['TELMU'],
     short: 'The LM\'s life-support and electrical console — EECOM\'s counterpart for the lander.',
     long: 'TELMU (Telemetry, Electrical, and EVA Mobility Unit Officer) tracked the Lunar Module\'s electrical power and environmental control systems, plus the spacesuits once the crew was outside on the surface — essentially doing for the LM and its moonwalkers what EECOM did for the CSM.',
@@ -367,6 +395,7 @@ export const glossary = [
   },
   {
     id: 'retro',
+    abbr: [{ short: 'RETRO', full: 'Retrofire Officer' }],
     terms: ['Retrofire Officer', 'RETRO'],
     short: 'The console responsible for reentry and abort trajectories.',
     long: 'RETRO, short for Retrofire Officer, calculated and monitored the burns needed to bring the crew home safely — nominal reentry targeting as well as the retrograde burns tied to every abort mode off the pad or during ascent. The role dated back to Mercury and Gemini, where "retrofire" literally meant firing retro-rockets to drop out of orbit.',
@@ -383,6 +412,7 @@ export const glossary = [
   },
   {
     id: 'inco',
+    abbr: [{ short: 'INCO', full: 'Instrumentation and Communications Officer' }],
     terms: ['Instrumentation and Communications Officer', 'INCO'],
     short: 'The console responsible for the spacecraft\'s onboard communications and telemetry equipment.',
     long: 'INCO monitored and commanded the spacecraft\'s communications and data systems — antennas, transponders, telemetry formatting — troubleshooting the hardware that got voice, tracking, and data to and from the ground, as distinct from the network controllers who ran the ground stations themselves.',
@@ -415,12 +445,14 @@ export const glossary = [
   },
   {
     id: 'emu',
+    abbr: [{ short: 'EMU', full: 'Extravehicular Mobility Unit' }],
     terms: ['Extravehicular Mobility Unit', 'EMU'],
     short: 'The full spacesuit assembly worn on the surface — distinct from the PLSS backpack alone.',
     long: 'EMU is NASA\'s term for the entire pressure-suit system an astronaut wore on the lunar surface: the multi-layer A7L suit itself, helmet, visor assembly, and gloves, plus the PLSS backpack and its OPS emergency bottle strapped on top. "EMU" and "PLSS" get used loosely in conversation, but strictly the PLSS is only the life-support backpack — one component of the larger EMU.',
   },
   {
     id: 'ops',
+    abbr: [{ short: 'OPS', full: 'Oxygen Purge System' }],
     terms: ['Oxygen Purge System', 'OPS'],
     short: 'The backpack\'s emergency bailout bottle — about 30 minutes of backup oxygen.',
     long: 'Mounted on top of the PLSS, the Oxygen Purge System was a self-contained pair of high-pressure oxygen bottles that could be switched on if the PLSS itself failed, feeding the suit directly for roughly 30 minutes — long enough, by design, to get back to the LM. In a real PLSS failure, a "buddy" hose run from a working PLSS could extend that window further by taking over cooling.',
@@ -429,6 +461,7 @@ export const glossary = [
   // -- Lunar Roving Vehicle (deep dive) -----------------------------------
   {
     id: 'lrv',
+    abbr: [{ short: 'LRV', full: 'Lunar Roving Vehicle' }],
     terms: ['Lunar Roving Vehicle', 'LRV', 'Rover'],
     short: 'The battery-powered "Moon buggy" used on the last three landing missions.',
     long: 'A folding, four-wheeled electric car carried collapsed on the LM\'s descent stage and unpacked on the surface, the LRV let the Apollo 15, 16 and 17 crews range miles from the lander instead of walking everywhere on foot. It had wire-mesh wheels, a top speed of about 8 mph, a TV camera Houston could steer remotely, and no landing back home — all three that flew are still on the Moon.',
@@ -457,6 +490,7 @@ export const glossary = [
   },
   {
     id: 'quarantine',
+    abbr: [{ short: 'MQF', full: 'Mobile Quarantine Facility' }, { short: 'LRL', full: 'Lunar Receiving Laboratory' }],
     terms: ['Mobile Quarantine Facility', 'Lunar Receiving Laboratory', 'Quarantine', 'MQF'],
     short: 'The 21-day medical isolation imposed on early lunar crews and their samples, just in case.',
     long: 'Out of caution that lunar material might carry something dangerous, the Apollo 11, 12 and 14 crews went straight from splashdown into the Mobile Quarantine Facility — a converted Airstream trailer — for the trip home, then into the Lunar Receiving Laboratory in Houston to finish a 21-day isolation alongside their rock samples. No lunar pathogen ever turned up, and NASA dropped the practice after Apollo 14.',
@@ -505,12 +539,14 @@ export const glossary = [
   // -- Guidance systems ------------------------------------------------
   {
     id: 'pgns',
+    abbr: [{ short: 'PGNS / PGNCS', full: 'Primary Guidance, Navigation and Control System' }],
     terms: ['PGNS', 'Primary Guidance, Navigation and Control System', 'PGNCS'],
     short: 'The LM\'s main computer-driven guidance system — same computer family as the AGC, its own inertial platform.',
     long: 'PGNS (pronounced "pings," sometimes written PGNCS) was the Lunar Module\'s primary guidance system: an Apollo Guidance Computer, its own inertial platform, and the software that flew the descent, ascent, and rendezvous. It\'s the system a crew is referencing whenever they call out switching between "primary" and "abort" guidance.',
   },
   {
     id: 'ags',
+    abbr: [{ short: 'AGS', full: 'Abort Guidance System' }],
     terms: ['Abort Guidance System', 'AGS'],
     short: 'The LM\'s independent backup computer, built to get the crew off the surface if PGNS failed.',
     long: 'A separate, simpler computer and platform built by TRW, deliberately independent of the AGC\'s design team as a hedge against a shared flaw, the Abort Guidance System could fly the LM off the surface and into a rendezvous with the CSM, but had no software for landing itself. It flew on every mission as a backup and was never actually needed to fly an abort.',
@@ -519,18 +555,21 @@ export const glossary = [
   // -- Crew roles ------------------------------------------------------
   {
     id: 'cdr',
+    abbr: [{ short: 'CDR', full: 'Commander' }],
     terms: ['CDR', 'Commander'],
     short: 'The mission commander — overall responsible for the flight, and the one who flew the LM to landing.',
     long: 'The Commander (CDR) was the senior astronaut on the crew, in overall charge of the mission and specifically the one at the LM\'s hand controllers for the landing itself. The Commander was always first down the ladder; of the twelve moonwalkers, six were commanders and six were Lunar Module Pilots.',
   },
   {
     id: 'lmp',
+    abbr: [{ short: 'LMP', full: 'Lunar Module Pilot' }],
     terms: ['LMP', 'Lunar Module Pilot'],
     short: 'The crew seat responsible for the LM\'s systems — and, on landing missions, the second moonwalker.',
     long: 'Despite the title, the Lunar Module Pilot didn\'t fly the LM during landing — the Commander did — the LMP\'s job was running the LM\'s systems, backing up navigation and computer inputs, and calling out altitude and descent-rate numbers during the approach. On the surface, the LMP was the second person out the hatch.',
   },
   {
     id: 'cmp',
+    abbr: [{ short: 'CMP', full: 'Command Module Pilot' }],
     terms: ['CMP', 'Command Module Pilot'],
     short: 'The crew member who stayed in lunar orbit, flying the CSM solo while the other two landed.',
     long: 'The Command Module Pilot flew the CSM alone in lunar orbit for the one to three days the other two crew members were on the surface — running experiments, navigating, and above all keeping the ship ready to bring everyone home, including the tense job of rendezvous and redocking with the ascent stage on its way back up.',
@@ -581,6 +620,7 @@ export const glossary = [
   // -- Mission Control (deep dive) ---------------------------------------
   {
     id: 'mission-control',
+    abbr: [{ short: 'MOCR', full: 'Mission Operations Control Room' }],
     terms: ['Mission Control', 'MOCR', 'Mission Operations Control Room'],
     short: 'The Houston control room — and the roomful of flight controllers in it — that ran every mission in real time.',
     long: 'Formally the Mission Operations Control Room (MOCR, pronounced "moh-ker"), in Building 30 at the Manned Spacecraft Center in Houston, this was the room full of console positions — Flight, CAPCOM, FIDO, EECOM, and dozens more — that flew every Gemini and Apollo mission from the ground. Two MOCRs existed on different floors of the building; the one that ran most Apollo missions, including Apollo 11, is now preserved as a National Historic Landmark.',

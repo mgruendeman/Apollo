@@ -4,6 +4,7 @@ import { glossary } from '../data/glossary'
 import GlossaryText from '../components/GlossaryText'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
+import GlossaryAbbr from '../components/GlossaryAbbr'
 
 // A dedicated deep-dive page for the handful of major-hardware/major-topic
 // glossary entries that warrant more than the modal's short writeup — a
@@ -42,6 +43,7 @@ export default function GlossaryDetail() {
         {entry.terms.length > 1 && (
           <p className="glossary-aliases">also: {entry.terms.slice(1).join(', ')}</p>
         )}
+        <GlossaryAbbr entry={entry} />
         <p className="lede">{entry.short}</p>
       </header>
 

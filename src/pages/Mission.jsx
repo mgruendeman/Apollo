@@ -5,6 +5,7 @@ import TranscriptPanel from '../components/TranscriptPanel'
 import MissionPhaseDiagram from '../components/MissionPhaseDiagram'
 import MissionTimeline from '../components/MissionTimeline'
 import MissionPhoto from '../components/MissionPhoto'
+import MissionOverview from '../components/MissionOverview'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
 import { findMission } from '../data/missions'
@@ -108,12 +109,7 @@ export default function Mission() {
   }
 
   const moment = clips[activeIndex]
-  // A Mission Control commentary recording ("-pao") with no transcript of
-  // its own covers the same stretch as its air-to-ground twin, so show that.
-  const activeLines =
-    transcripts?.[moment.id]?.length > 0
-      ? transcripts[moment.id]
-      : transcripts?.[moment.id.replace(/-pao$/i, '')] || []
+  const activeLines = transcripts?.[moment.id] || []
   const phase = phases[activeIndex]
   const currentTime = isLoaded ? player.currentTime : 0
 
@@ -146,7 +142,6 @@ export default function Mission() {
         <p className="eyebrow">Apollo {mission.number}</p>
         <h1>{mission.name}</h1>
         <p className="mission-header-dates">{mission.dates}</p>
-        <p className="mission-header-crew">{mission.crew.join(' · ')}</p>
         <p className="lede">{mission.summary}</p>
         <p className="clip-stats">
           {clips.length} audio clips · GET {clips[0].get} to{' '}
@@ -161,6 +156,8 @@ export default function Mission() {
           </button>
         )}
       </header>
+
+      <MissionOverview mission={mission} />
 
       {mission.highlights && (
         <section className="highlights-row">

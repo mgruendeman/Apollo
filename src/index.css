@@ -1134,3 +1134,143 @@ a {
 .glossary-bullets li {
   margin-bottom: 6px;
 }
+
+.glossary-abbr {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 4px 0 10px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.glossary-abbr strong {
+  font-family: var(--font-mono);
+  color: var(--accent-dim);
+  font-weight: 600;
+}
+
+.mission-overview {
+  margin-top: 28px;
+  display: grid;
+  gap: 20px;
+}
+
+.crew-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.crew-card {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-panel);
+}
+
+.crew-card img,
+.crew-card-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
+  background: var(--bg-panel-raised);
+}
+
+.crew-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px 10px;
+}
+
+.crew-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.crew-role {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.crew-moonwalker {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+.mission-facts {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.mission-facts dt {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+
+.mission-facts dd {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.mission-facts strong {
+  color: var(--accent-dim);
+}
+
+.mission-facts-note {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.moon-map {
+  position: relative;
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  justify-self: center;
+}
+
+.moon-map img,
+.moon-map svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.moon-map-other circle {
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+.moon-map-other text {
+  font-family: var(--font-mono);
+  font-size: 3.2px;
+  fill: rgba(255, 255, 255, 0.75);
+}
+
+.moon-map-pin {
+  fill: var(--accent);
+  stroke: #fff;
+  stroke-width: 0.6;
+}
+
+.moon-map-pin.is-planned {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 0.9;
+  stroke-dasharray: 1.2 0.8;
+}

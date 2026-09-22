@@ -5,7 +5,8 @@
 "getSeconds": 2,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0000002ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 826.4
 },
 {
 "id": "a13_0000019",
@@ -13,7 +14,8 @@
 "getSeconds": 19,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0000019.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 146
 },
 {
 "id": "a13_0000248",
@@ -21,7 +23,8 @@
 "getSeconds": 168,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0000248.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 434
 },
 {
 "id": "a13_t-0000527",
@@ -29,7 +32,8 @@
 "getSeconds": 362,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0000527.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 351
 },
 {
 "id": "a13_t-0000805ag",
@@ -37,7 +41,8 @@
 "getSeconds": 574,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0000805ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 459.8
 },
 {
 "id": "a13_0001000",
@@ -45,7 +50,8 @@
 "getSeconds": 600,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0001000.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 251.9
 },
 {
 "id": "a13_t-0000958",
@@ -53,7 +59,8 @@
 "getSeconds": 604,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0000958.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 45.6
 },
 {
 "id": "a13_t-0001411ag",
@@ -61,7 +68,8 @@
 "getSeconds": 851,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0001411ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 286.7
 },
 {
 "id": "a13_0001457",
@@ -69,7 +77,8 @@
 "getSeconds": 897,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0001457.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 162.1
 },
 {
 "id": "a13_t-0001457",
@@ -77,7 +86,8 @@
 "getSeconds": 931,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0001457.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 95.2
 },
 {
 "id": "a13_t-0001656ag",
@@ -85,7 +95,8 @@
 "getSeconds": 1016,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0001656ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 108.7
 },
 {
 "id": "a13_t-0001959",
@@ -93,7 +104,8 @@
 "getSeconds": 1229,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0001959.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 64
 },
 {
 "id": "a13_0002127",
@@ -101,7 +113,8 @@
 "getSeconds": 1287,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0002127.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 241.4
 },
 {
 "id": "a13_t-0002500",
@@ -109,7 +122,8 @@
 "getSeconds": 1505,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0002500.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 47.2
 },
 {
 "id": "a13_t-0002505ag",
@@ -117,7 +131,8 @@
 "getSeconds": 1734,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0002505ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 289
 },
 {
 "id": "a13_t-0002919ag",
@@ -125,7 +140,8 @@
 "getSeconds": 1759,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0002919ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 33.8
 },
 {
 "id": "a13_t-0003458",
@@ -133,7 +149,8 @@
 "getSeconds": 2110,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0003458.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 37.6
 },
 {
 "id": "a13_t-0003957",
@@ -141,7 +158,8 @@
 "getSeconds": 2401,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0003957.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 41.8
 },
 {
 "id": "a13_t-0004300ag",
@@ -149,7 +167,8 @@
 "getSeconds": 2580,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0004300ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 480.8
 },
 {
 "id": "a13_t-0004500",
@@ -157,7 +176,8 @@
 "getSeconds": 2707,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0004500.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 156.9
 },
 {
 "id": "a13_t-0004701ag",
@@ -165,7 +185,8 @@
 "getSeconds": 2821,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0004701ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 122.4
 },
 {
 "id": "a13_0005200",
@@ -173,7 +194,8 @@
 "getSeconds": 3120,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0005200.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 73.5
 },
 {
 "id": "a13_t-0005500",
@@ -181,7 +203,8 @@
 "getSeconds": 3414,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0005500.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 105.5
 },
 {
 "id": "a13_0005715",
@@ -189,7 +212,8 @@
 "getSeconds": 3435,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0005715.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 253.1
 },
 {
 "id": "a13_t-0005852ag",
@@ -197,7 +221,8 @@
 "getSeconds": 3532,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0005852ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 125.6
 },
 {
 "id": "a13_t-0010000",
@@ -205,7 +230,8 @@
 "getSeconds": 3625,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0010000.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 174.4
 },
 {
 "id": "a13_0010321",
@@ -213,7 +239,8 @@
 "getSeconds": 3801,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0010321.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 249.7
 },
 {
 "id": "a13_0010700press",
@@ -221,7 +248,8 @@
 "getSeconds": 4020,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0010700press.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 752.5
 },
 {
 "id": "a13_t-0010612ag",
@@ -229,7 +257,8 @@
 "getSeconds": 4042,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0010612ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 353.9
 },
 {
 "id": "a13_t-0010959",
@@ -237,7 +266,8 @@
 "getSeconds": 4204,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0010959.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 87.8
 },
 {
 "id": "a13_t-0011905ag",
@@ -245,7 +275,8 @@
 "getSeconds": 4745,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0011905ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 709
 },
 {
 "id": "a13_t-0011958",
@@ -253,7 +284,8 @@
 "getSeconds": 4957,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0011958.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 59.6
 },
 {
 "id": "a13_t-0012749ag",
@@ -261,7 +293,8 @@
 "getSeconds": 5269,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0012749ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 319.6
 },
 {
 "id": "a13_0012800",
@@ -269,7 +302,8 @@
 "getSeconds": 5280,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0012800.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 967.6
 },
 {
 "id": "a13_t-0012957",
@@ -277,7 +311,8 @@
 "getSeconds": 5408,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_t-0012957.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/01launch_ascent.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 1: Launch and Reaching Earth Orbit",
+"durationSeconds": 73.8
 },
 {
 "id": "a13_0014808",
@@ -285,7 +320,8 @@
 "getSeconds": 6488,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0014808.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 599.2
 },
 {
 "id": "a13_0022500",
@@ -293,7 +329,8 @@
 "getSeconds": 8700,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0022500.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 141.1
 },
 {
 "id": "a13_0022945",
@@ -301,7 +338,8 @@
 "getSeconds": 8985,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0022945.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/02earth_orbit_tli.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 2: Earth Orbit and Translunar Injection",
+"durationSeconds": 1039.1
 },
 {
 "id": "a13_0024834",
@@ -309,7 +347,8 @@
 "getSeconds": 10114,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0024834.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 94.8
 },
 {
 "id": "a13_0025400",
@@ -317,7 +356,8 @@
 "getSeconds": 10440,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0025400.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 69.2
 },
 {
 "id": "a13_0025752",
@@ -325,7 +365,8 @@
 "getSeconds": 10672,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0025752.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 246.8
 },
 {
 "id": "a13_0030520",
@@ -333,7 +374,8 @@
 "getSeconds": 11120,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0030520.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 1298.1
 },
 {
 "id": "a13_0033011",
@@ -341,7 +383,8 @@
 "getSeconds": 12611,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0033011.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 551.5
 },
 {
 "id": "a13_0034129",
@@ -349,7 +392,8 @@
 "getSeconds": 13289,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0034129.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 464.8
 },
 {
 "id": "a13_0035404",
@@ -357,7 +401,8 @@
 "getSeconds": 14044,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0035404.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 739.6
 },
 {
 "id": "a13_0040826",
@@ -365,7 +410,8 @@
 "getSeconds": 14906,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0040826.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 987.5
 },
 {
 "id": "a13_0043047",
@@ -373,7 +419,8 @@
 "getSeconds": 16247,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0043047.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 11
 },
 {
 "id": "a13_0043700",
@@ -381,7 +428,8 @@
 "getSeconds": 16620,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0043700.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/03tde.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 3: Transposition, Docking and Extraction",
+"durationSeconds": 216.2
 },
 {
 "id": "a13_0044500",
@@ -389,7 +437,8 @@
 "getSeconds": 17100,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0044500.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 36.6
 },
 {
 "id": "a13_0045043ag",
@@ -397,7 +446,8 @@
 "getSeconds": 17443,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0045043ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 313.9
 },
 {
 "id": "a13_0045800",
@@ -405,7 +455,8 @@
 "getSeconds": 17880,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0045800.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 95.9
 },
 {
 "id": "a13_0045902ag",
@@ -413,7 +464,8 @@
 "getSeconds": 17942,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0045902ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 101.8
 },
 {
 "id": "a13_0053013",
@@ -421,7 +473,8 @@
 "getSeconds": 19813,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0053013.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 55.2
 },
 {
 "id": "a13_0053947",
@@ -429,7 +482,8 @@
 "getSeconds": 20387,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0053947.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 180.7
 },
 {
 "id": "a13_0054500",
@@ -437,7 +491,8 @@
 "getSeconds": 20700,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0054500.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 89.9
 },
 {
 "id": "a13_0055445",
@@ -445,7 +500,8 @@
 "getSeconds": 21285,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0055445.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 33.4
 },
 {
 "id": "a13_0055900",
@@ -453,7 +509,8 @@
 "getSeconds": 21540,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0055900.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 77.7
 },
 {
 "id": "a13_0060300",
@@ -461,7 +518,8 @@
 "getSeconds": 21780,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0060300.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 73.8
 },
 {
 "id": "a13_0061540",
@@ -469,7 +527,8 @@
 "getSeconds": 22540,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0061540.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 146.9
 },
 {
 "id": "a13_0063800",
@@ -477,7 +536,8 @@
 "getSeconds": 23880,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0063800.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 170.1
 },
 {
 "id": "a13_0064430",
@@ -485,7 +545,8 @@
 "getSeconds": 24270,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0064430.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 144.1
 },
 {
 "id": "a13_0064912ag",
@@ -493,7 +554,8 @@
 "getSeconds": 24552,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0064912ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 101.9
 },
 {
 "id": "a13_0065900",
@@ -501,7 +563,8 @@
 "getSeconds": 25140,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0065900.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 21.2
 },
 {
 "id": "a13_0065923ag",
@@ -509,7 +572,8 @@
 "getSeconds": 25163,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0065923ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 68.8
 },
 {
 "id": "a13_0070900",
@@ -517,7 +581,8 @@
 "getSeconds": 25740,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0070900.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 73.9
 },
 {
 "id": "a13_0071700",
@@ -525,7 +590,8 @@
 "getSeconds": 26220,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0071700.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 106.3
 },
 {
 "id": "a13_0073129",
@@ -533,7 +599,8 @@
 "getSeconds": 27089,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0073129.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 153.6
 },
 {
 "id": "a13_0073921",
@@ -541,7 +608,8 @@
 "getSeconds": 27561,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0073921.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 86.9
 },
 {
 "id": "a13_0074600",
@@ -549,7 +617,8 @@
 "getSeconds": 27960,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0074600.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 96.5
 },
 {
 "id": "a13_0075429",
@@ -557,7 +626,8 @@
 "getSeconds": 28469,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0075429.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 81.3
 },
 {
 "id": "a13_0080233",
@@ -565,7 +635,8 @@
 "getSeconds": 28953,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0080233.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 48.2
 },
 {
 "id": "a13_0080733",
@@ -573,7 +644,8 @@
 "getSeconds": 29253,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0080733.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 281.1
 },
 {
 "id": "a13_0081949",
@@ -581,7 +653,8 @@
 "getSeconds": 29989,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0081949.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 66.5
 },
 {
 "id": "a13_0082506",
@@ -589,7 +662,8 @@
 "getSeconds": 30306,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0082506.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 179.5
 },
 {
 "id": "a13_0083136",
@@ -597,7 +671,8 @@
 "getSeconds": 30696,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0083136.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 21.4
 },
 {
 "id": "a13_0084000",
@@ -605,7 +680,8 @@
 "getSeconds": 31200,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0084000.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 113
 },
 {
 "id": "a13_0085100",
@@ -613,7 +689,8 @@
 "getSeconds": 31860,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0085100.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 169.5
 },
 {
 "id": "a13_0090247",
@@ -621,7 +698,8 @@
 "getSeconds": 32567,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0090247.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 43.2
 },
 {
 "id": "a13_0092458",
@@ -629,7 +707,8 @@
 "getSeconds": 33898,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0092458.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 267.3
 },
 {
 "id": "a13_0093200",
@@ -637,7 +716,8 @@
 "getSeconds": 34320,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0093200.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 77.5
 },
 {
 "id": "a13_0093650",
@@ -645,7 +725,8 @@
 "getSeconds": 34610,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0093650.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 13.6
 },
 {
 "id": "a13_0094558",
@@ -653,7 +734,8 @@
 "getSeconds": 35158,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0094558.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 364.9
 },
 {
 "id": "a13_0100338",
@@ -661,7 +743,8 @@
 "getSeconds": 36218,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0100338.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 32.2
 },
 {
 "id": "a13_0100609",
@@ -669,7 +752,8 @@
 "getSeconds": 36369,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0100609.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 335.5
 },
 {
 "id": "a13_0102931",
@@ -677,7 +761,8 @@
 "getSeconds": 37771,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0102931.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 142.7
 },
 {
 "id": "a13_0103503",
@@ -685,7 +770,8 @@
 "getSeconds": 38103,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0103503.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 12.2
 },
 {
 "id": "a13_0103729",
@@ -693,7 +779,8 @@
 "getSeconds": 38249,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0103729.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 179.5
 },
 {
 "id": "a13_0105133",
@@ -701,7 +788,8 @@
 "getSeconds": 39093,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0105133.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 97.7
 },
 {
 "id": "a13_0105908",
@@ -709,7 +797,8 @@
 "getSeconds": 39548,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0105908.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 97.7
 },
 {
 "id": "a13_0111352",
@@ -717,7 +806,8 @@
 "getSeconds": 40432,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0111352.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 669.2
 },
 {
 "id": "a13_0113033",
@@ -725,7 +815,8 @@
 "getSeconds": 41433,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0113033.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 145
 },
 {
 "id": "a13_0113530",
@@ -733,7 +824,8 @@
 "getSeconds": 41730,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0113530.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 184.7
 },
 {
 "id": "a13_0114157",
@@ -741,7 +833,8 @@
 "getSeconds": 42117,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0114157.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 47.2
 },
 {
 "id": "a13_0115928",
@@ -749,7 +842,8 @@
 "getSeconds": 43168,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0115928.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 402.3
 },
 {
 "id": "a13_0120815",
@@ -757,7 +851,8 @@
 "getSeconds": 43695,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0120815.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 295.4
 },
 {
 "id": "a13_0121717",
@@ -765,7 +860,8 @@
 "getSeconds": 44237,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0121717.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 160.1
 },
 {
 "id": "a13_0123433",
@@ -773,7 +869,8 @@
 "getSeconds": 45273,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0123433.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 31.3
 },
 {
 "id": "a13_0124105",
@@ -781,7 +878,8 @@
 "getSeconds": 45665,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0124105.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 50.1
 },
 {
 "id": "a13_0124737",
@@ -789,7 +887,8 @@
 "getSeconds": 46057,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0124737.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 76.2
 },
 {
 "id": "a13_0130800",
@@ -797,7 +896,8 @@
 "getSeconds": 47280,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0130800.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/04day1-end.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 1, part 4: Settling down for the Flight",
+"durationSeconds": 65
 },
 {
 "id": "a13_0135700",
@@ -805,7 +905,8 @@
 "getSeconds": 50220,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0135700.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 228.9
 },
 {
 "id": "a13_0143300",
@@ -813,7 +914,8 @@
 "getSeconds": 52380,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0143300.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 121.3
 },
 {
 "id": "a13_0153300",
@@ -821,7 +923,8 @@
 "getSeconds": 55980,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0153300.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 47
 },
 {
 "id": "a13_0162400",
@@ -829,7 +932,8 @@
 "getSeconds": 59040,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0162400.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 68.1
 },
 {
 "id": "a13_0172300",
@@ -837,7 +941,8 @@
 "getSeconds": 62580,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0172300.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 106.5
 },
 {
 "id": "a13_0182200",
@@ -845,7 +950,8 @@
 "getSeconds": 66120,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0182200.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 52
 },
 {
 "id": "a13_0192200",
@@ -853,7 +959,8 @@
 "getSeconds": 69720,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0192200.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 195.7
 },
 {
 "id": "a13_0202200",
@@ -861,7 +968,8 @@
 "getSeconds": 73320,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0202200.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 171.4
 },
 {
 "id": "a13_0212100",
@@ -869,7 +977,8 @@
 "getSeconds": 76860,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0212100.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 80.1
 },
 {
 "id": "a13_0215500",
@@ -877,7 +986,8 @@
 "getSeconds": 78900,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0215500.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 79.3
 },
 {
 "id": "a13_0231114ag",
@@ -885,7 +995,8 @@
 "getSeconds": 83474,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0231114ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 106
 },
 {
 "id": "a13_0231538",
@@ -893,7 +1004,8 @@
 "getSeconds": 83738,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0231538.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 926.4
 },
 {
 "id": "a13_0234700",
@@ -901,7 +1013,8 @@
 "getSeconds": 85620,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0234700.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 41.1
 },
 {
 "id": "a13_0235445",
@@ -909,7 +1022,8 @@
 "getSeconds": 86085,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0235445.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 23.2
 },
 {
 "id": "a13_0240512",
@@ -917,7 +1031,8 @@
 "getSeconds": 86712,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0240512.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 184.6
 },
 {
 "id": "a13_0241602",
@@ -925,7 +1040,8 @@
 "getSeconds": 87362,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0241602.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 454.7
 },
 {
 "id": "a13_0244149",
@@ -933,7 +1049,8 @@
 "getSeconds": 88909,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0244149.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 66.1
 },
 {
 "id": "a13_0251056",
@@ -941,7 +1058,8 @@
 "getSeconds": 90656,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0251056.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 1338.7
 },
 {
 "id": "a13_0262908",
@@ -949,7 +1067,8 @@
 "getSeconds": 95348,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0262908.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 154
 },
 {
 "id": "a13_0264326",
@@ -957,7 +1076,8 @@
 "getSeconds": 96206,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0264326.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 33.8
 },
 {
 "id": "a13_0272000",
@@ -965,7 +1085,8 @@
 "getSeconds": 98400,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0272000.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 109.6
 },
 {
 "id": "a13_0275941",
@@ -973,7 +1094,8 @@
 "getSeconds": 100781,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0275941.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 81.6
 },
 {
 "id": "a13_0284644",
@@ -981,7 +1103,8 @@
 "getSeconds": 103604,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0284644.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 462.7
 },
 {
 "id": "a13_0290004",
@@ -989,7 +1112,8 @@
 "getSeconds": 104404,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0290004.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 40.1
 },
 {
 "id": "a13_0292300",
@@ -997,7 +1121,8 @@
 "getSeconds": 105780,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0292300.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 71.4
 },
 {
 "id": "a13_0292935",
@@ -1005,7 +1130,8 @@
 "getSeconds": 106175,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0292935.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 173
 },
 {
 "id": "a13_0294032",
@@ -1013,7 +1139,8 @@
 "getSeconds": 106832,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0294032.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 43.7
 },
 {
 "id": "a13_0294546",
@@ -1021,7 +1148,8 @@
 "getSeconds": 107146,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0294546.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 86.3
 },
 {
 "id": "a13_0295014",
@@ -1029,7 +1157,8 @@
 "getSeconds": 107414,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0295014.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 19.1
 },
 {
 "id": "a13_0300400",
@@ -1037,7 +1166,8 @@
 "getSeconds": 108240,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0300400.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 57.7
 },
 {
 "id": "a13_0301204",
@@ -1045,7 +1175,8 @@
 "getSeconds": 108724,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0301204.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 819.9
 },
 {
 "id": "a13_0302808",
@@ -1053,7 +1184,8 @@
 "getSeconds": 109688,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0302808.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 1502.1
 },
 {
 "id": "a13_0305412ag",
@@ -1061,7 +1193,8 @@
 "getSeconds": 111252,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0305412ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 493.8
 },
 {
 "id": "a13_0310400",
@@ -1069,7 +1202,8 @@
 "getSeconds": 111840,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0310400.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 619.5
 },
 {
 "id": "a13_0312014ag",
@@ -1077,7 +1211,8 @@
 "getSeconds": 112814,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0312014ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 56
 },
 {
 "id": "a13_0313052ag",
@@ -1085,7 +1220,8 @@
 "getSeconds": 113452,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0313052ag.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/05day2-mcc2-tv.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 2, part 1: Midcourse Correction 2 on TV",
+"durationSeconds": 82.8
 },
 {
 "id": "a13_0380800-pao",
@@ -1093,7 +1229,8 @@
 "getSeconds": 137280,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0380800-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 40.1
 },
 {
 "id": "a13_0392000-pao",
@@ -1101,7 +1238,8 @@
 "getSeconds": 141600,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0392000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 60.1
 },
 {
 "id": "a13_0400000-pao",
@@ -1109,7 +1247,8 @@
 "getSeconds": 144000,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0400000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 65.1
 },
 {
 "id": "a13_0410000-pao",
@@ -1117,7 +1256,8 @@
 "getSeconds": 147600,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0410000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 36.4
 },
 {
 "id": "a13_0420000-pao",
@@ -1125,7 +1265,8 @@
 "getSeconds": 151200,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0420000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 43.6
 },
 {
 "id": "a13_0430000-pao",
@@ -1133,7 +1274,8 @@
 "getSeconds": 154800,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0430000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 84.5
 },
 {
 "id": "a13_0431700-pao",
@@ -1141,7 +1283,8 @@
 "getSeconds": 155820,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0431700-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 38.9
 },
 {
 "id": "a13_0434200-pao",
@@ -1149,7 +1292,8 @@
 "getSeconds": 157320,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0434200-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 58
 },
 {
 "id": "a13_0444200-pao",
@@ -1157,7 +1301,8 @@
 "getSeconds": 160920,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0444200-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 90.6
 },
 {
 "id": "a13_0454700-pao",
@@ -1165,7 +1310,8 @@
 "getSeconds": 164820,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0454700-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 35.9
 },
 {
 "id": "a13_0464300-pao",
@@ -1173,7 +1319,8 @@
 "getSeconds": 168180,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0464300-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 11.6
 },
 {
 "id": "a13_0464318",
@@ -1181,7 +1328,8 @@
 "getSeconds": 168198,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0464318.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 105.8
 },
 {
 "id": "a13_0464656",
@@ -1189,7 +1337,8 @@
 "getSeconds": 168416,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0464656.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 43.4
 },
 {
 "id": "a13_0465000-pao",
@@ -1197,7 +1346,8 @@
 "getSeconds": 168600,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0465000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 8.9
 },
 {
 "id": "a13_0470000-pao",
@@ -1205,7 +1355,8 @@
 "getSeconds": 169200,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0470000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 10.6
 },
 {
 "id": "a13_0472000-pao",
@@ -1213,7 +1364,8 @@
 "getSeconds": 170400,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0472000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 21.6
 },
 {
 "id": "a13_0473810",
@@ -1221,7 +1373,8 @@
 "getSeconds": 171490,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0473810.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 602
 },
 {
 "id": "a13_0474914",
@@ -1229,7 +1382,8 @@
 "getSeconds": 172154,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0474914.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 346
 },
 {
 "id": "a13_0475608",
@@ -1237,7 +1391,8 @@
 "getSeconds": 172568,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0475608.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 481.6
 },
 {
 "id": "a13_0480620",
@@ -1245,7 +1400,8 @@
 "getSeconds": 173180,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0480620.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 19
 },
 {
 "id": "a13_0483200-pao",
@@ -1253,7 +1409,8 @@
 "getSeconds": 174720,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0483200-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 16.8
 },
 {
 "id": "a13_0484800-pao",
@@ -1261,7 +1418,8 @@
 "getSeconds": 175680,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0484800-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 30.5
 },
 {
 "id": "a13_0490000-pao",
@@ -1269,7 +1427,8 @@
 "getSeconds": 176400,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0490000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 9.6
 },
 {
 "id": "a13_0490101",
@@ -1277,7 +1436,8 @@
 "getSeconds": 176461,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0490101.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 206.4
 },
 {
 "id": "a13_0490400-pao",
@@ -1285,7 +1445,8 @@
 "getSeconds": 176640,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0490400-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 13.5
 },
 {
 "id": "a13_0490530",
@@ -1293,7 +1454,8 @@
 "getSeconds": 176730,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0490530.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 52.5
 },
 {
 "id": "a13_0490700-pao",
@@ -1301,7 +1463,8 @@
 "getSeconds": 176820,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0490700-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 37.7
 },
 {
 "id": "a13_0490817",
@@ -1309,7 +1472,8 @@
 "getSeconds": 176897,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0490817.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 27
 },
 {
 "id": "a13_0490900-pao",
@@ -1317,7 +1481,8 @@
 "getSeconds": 176940,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0490900-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 96.2
 },
 {
 "id": "a13_0491013",
@@ -1325,7 +1490,8 @@
 "getSeconds": 177013,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0491013.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 24.3
 },
 {
 "id": "a13_0491500-pao",
@@ -1333,7 +1499,8 @@
 "getSeconds": 177300,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0491500-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 18.3
 },
 {
 "id": "a13_0493200-pao",
@@ -1341,7 +1508,8 @@
 "getSeconds": 178320,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0493200-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 38.6
 },
 {
 "id": "a13_0493600-pao",
@@ -1349,7 +1517,8 @@
 "getSeconds": 178560,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0493600-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 40.2
 },
 {
 "id": "a13_0494244",
@@ -1357,7 +1526,8 @@
 "getSeconds": 178964,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0494244.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 88.8
 },
 {
 "id": "a13_0494524",
@@ -1365,7 +1535,8 @@
 "getSeconds": 179124,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0494524.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 44.3
 },
 {
 "id": "a13_0494817",
@@ -1373,7 +1544,8 @@
 "getSeconds": 179297,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0494817.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 383
 },
 {
 "id": "a13_0495600-pao",
@@ -1381,7 +1553,8 @@
 "getSeconds": 179760,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0495600-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 53.4
 },
 {
 "id": "a13_0500900-pao",
@@ -1389,7 +1562,8 @@
 "getSeconds": 180540,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0500900-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 19.6
 },
 {
 "id": "a13_0502500-pao",
@@ -1397,7 +1571,8 @@
 "getSeconds": 181500,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0502500-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 39.4
 },
 {
 "id": "a13_0502648",
@@ -1405,7 +1580,8 @@
 "getSeconds": 181608,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0502648.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 1455.6
 },
 {
 "id": "a13_0504000-pao",
@@ -1413,7 +1589,8 @@
 "getSeconds": 182400,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0504000-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 3
 },
 {
 "id": "a13_0505100-pao",
@@ -1421,7 +1598,8 @@
 "getSeconds": 183060,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0505100-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 72
 },
 {
 "id": "a13_0505738",
@@ -1429,7 +1607,8 @@
 "getSeconds": 183458,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0505738.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 38
 },
 {
 "id": "a13_0510300-pao",
@@ -1437,7 +1616,8 @@
 "getSeconds": 183780,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0510300-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 43.9
 },
 {
 "id": "a13_0510702",
@@ -1445,7 +1625,8 @@
 "getSeconds": 184022,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0510702.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 74.8
 },
 {
 "id": "a13_0511700-pao",
@@ -1453,7 +1634,8 @@
 "getSeconds": 184620,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0511700-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 48.2
 },
 {
 "id": "a13_0512900-pao",
@@ -1461,7 +1643,8 @@
 "getSeconds": 185340,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0512900-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 49
 },
 {
 "id": "a13_0520700-pao",
@@ -1469,7 +1652,8 @@
 "getSeconds": 187620,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0520700-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 65.8
 },
 {
 "id": "a13_0520742",
@@ -1477,7 +1661,8 @@
 "getSeconds": 187662,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0520742.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 65.4
 },
 {
 "id": "a13_0520900-pao",
@@ -1485,7 +1670,8 @@
 "getSeconds": 187740,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0520900-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 46.8
 },
 {
 "id": "a13_0521655",
@@ -1493,7 +1679,8 @@
 "getSeconds": 188215,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0521655.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 18.5
 },
 {
 "id": "a13_0521800-pao",
@@ -1501,7 +1688,8 @@
 "getSeconds": 188280,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0521800-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 28.1
 },
 {
 "id": "a13_0522300-pao",
@@ -1509,7 +1697,8 @@
 "getSeconds": 188580,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0522300-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 27.3
 },
 {
 "id": "a13_0523600-pao",
@@ -1517,7 +1706,8 @@
 "getSeconds": 189360,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0523600-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 70.8
 },
 {
 "id": "a13_0524520",
@@ -1525,7 +1715,8 @@
 "getSeconds": 189920,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0524520.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 184.4
 },
 {
 "id": "a13_0524800-pao",
@@ -1533,7 +1724,8 @@
 "getSeconds": 190080,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0524800-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 43.1
 },
 {
 "id": "a13_0530800-pao",
@@ -1541,7 +1733,8 @@
 "getSeconds": 191280,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0530800-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 26.8
 },
 {
 "id": "a13_0531928",
@@ -1549,7 +1742,8 @@
 "getSeconds": 191968,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0531928.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 50.7
 },
 {
 "id": "a13_0532100-pao",
@@ -1557,7 +1751,8 @@
 "getSeconds": 192060,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0532100-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 37.1
 },
 {
 "id": "a13_0532335",
@@ -1565,7 +1760,8 @@
 "getSeconds": 192215,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0532335.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 22.3
 },
 {
 "id": "a13_0532630",
@@ -1573,7 +1769,8 @@
 "getSeconds": 192390,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0532630.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 65.7
 },
 {
 "id": "a13_0532800-pao",
@@ -1581,7 +1778,8 @@
 "getSeconds": 192480,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0532800-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 50.9
 },
 {
 "id": "a13_0533432",
@@ -1589,7 +1787,8 @@
 "getSeconds": 192872,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0533432.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 31
 },
 {
 "id": "a13_0533600-pao",
@@ -1597,7 +1796,8 @@
 "getSeconds": 192960,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0533600-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 43.8
 },
 {
 "id": "a13_0533858",
@@ -1605,7 +1805,8 @@
 "getSeconds": 193138,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0533858.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 40.9
 },
 {
 "id": "a13_0534058",
@@ -1613,7 +1814,8 @@
 "getSeconds": 193258,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0534058.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 161.5
 },
 {
 "id": "a13_0534400-pao",
@@ -1621,7 +1823,8 @@
 "getSeconds": 193440,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0534400-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 31.9
 },
 {
 "id": "a13_0534511",
@@ -1629,7 +1832,8 @@
 "getSeconds": 193511,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0534511.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 89.9
 },
 {
 "id": "a13_0534600-pao",
@@ -1637,7 +1841,8 @@
 "getSeconds": 193560,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0534600-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 12.8
 },
 {
 "id": "a13_0534800-pao",
@@ -1645,7 +1850,8 @@
 "getSeconds": 193680,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0534800-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 33
 },
 {
 "id": "a13_0535100-pao",
@@ -1653,7 +1859,8 @@
 "getSeconds": 193860,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0535100-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 34.1
 },
 {
 "id": "a13_0535434",
@@ -1661,7 +1868,8 @@
 "getSeconds": 194074,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0535434.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 12.9
 },
 {
 "id": "a13_0535500-pao",
@@ -1669,7 +1877,8 @@
 "getSeconds": 194100,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0535500-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 68.9
 },
 {
 "id": "a13_0540554",
@@ -1677,7 +1886,8 @@
 "getSeconds": 194754,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0540554.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 31.5
 },
 {
 "id": "a13_0540600-pao",
@@ -1685,7 +1895,8 @@
 "getSeconds": 194760,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0540600-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 52.5
 },
 {
 "id": "a13_0542415",
@@ -1693,7 +1904,8 @@
 "getSeconds": 195855,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0542415.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 167.7
 },
 {
 "id": "a13_0542600-pao",
@@ -1701,7 +1913,8 @@
 "getSeconds": 195960,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0542600-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 32.8
 },
 {
 "id": "a13_0542700-pao",
@@ -1709,7 +1922,8 @@
 "getSeconds": 196020,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0542700-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 17.5
 },
 {
 "id": "a13_0544200-pao",
@@ -1717,7 +1931,8 @@
 "getSeconds": 196920,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0544200-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 59.7
 },
 {
 "id": "a13_0544628",
@@ -1725,7 +1940,8 @@
 "getSeconds": 197188,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0544628.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 42.1
 },
 {
 "id": "a13_0544917",
@@ -1733,7 +1949,8 @@
 "getSeconds": 197357,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0544917.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 231.4
 },
 {
 "id": "a13_0545300-pao",
@@ -1741,7 +1958,8 @@
 "getSeconds": 197580,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0545300-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 55.5
 },
 {
 "id": "a13_0545500-pao",
@@ -1749,7 +1967,8 @@
 "getSeconds": 197700,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0545500-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 51
 },
 {
 "id": "a13_0545700-pao",
@@ -1757,7 +1976,8 @@
 "getSeconds": 197820,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0545700-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 33.1
 },
 {
 "id": "a13_0545901",
@@ -1765,7 +1985,8 @@
 "getSeconds": 197941,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0545901.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 225.7
 },
 {
 "id": "a13_0550512",
@@ -1773,7 +1994,8 @@
 "getSeconds": 198312,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0550512.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 350.4
 },
 {
 "id": "a13_0551400",
@@ -1781,7 +2003,8 @@
 "getSeconds": 198840,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0551400.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 1957.3
 },
 {
 "id": "a13_0553800-pao",
@@ -1789,7 +2012,8 @@
 "getSeconds": 200280,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0553800-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 14
 },
 {
 "id": "a13_0553900-pao",
@@ -1797,7 +2021,8 @@
 "getSeconds": 200340,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0553900-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/07day3-before-the-storm.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 1: Before the Storm",
+"durationSeconds": 47
 },
 {
 "id": "a13_0554700-pao",
@@ -1805,7 +2030,8 @@
 "getSeconds": 200820,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0554700-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 22.5
 },
 {
 "id": "a13_0554840",
@@ -1813,7 +2039,8 @@
 "getSeconds": 200920,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0554840.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 280.7
 },
 {
 "id": "a13_0555519",
@@ -1821,7 +2048,8 @@
 "getSeconds": 201319,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0555519.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 379.1
 },
 {
 "id": "a13_0560317",
@@ -1829,7 +2057,8 @@
 "getSeconds": 201797,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0560317.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 406.9
 },
 {
 "id": "a13_0561200-pao",
@@ -1837,7 +2066,8 @@
 "getSeconds": 202320,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0561200-pao.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 35.1
 },
 {
 "id": "a13_0561247",
@@ -1845,7 +2075,8 @@
 "getSeconds": 202367,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0561247.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 398.5
 },
 {
 "id": "a13_0562206",
@@ -1853,7 +2084,8 @@
 "getSeconds": 202926,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0562206.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 409.6
 },
 {
 "id": "a13_0563211",
@@ -1861,7 +2093,8 @@
 "getSeconds": 203531,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0563211.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 482.4
 },
 {
 "id": "a13_0564152",
@@ -1869,7 +2102,8 @@
 "getSeconds": 204112,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0564152.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 17.4
 },
 {
 "id": "a13_0564432",
@@ -1877,7 +2111,8 @@
 "getSeconds": 204272,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0564432.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 1054.3
 },
 {
 "id": "a13_0570429",
@@ -1885,7 +2120,8 @@
 "getSeconds": 205469,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0570429.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 121.7
 },
 {
 "id": "a13_0570801",
@@ -1893,6 +2129,7 @@
 "getSeconds": 205681,
 "audioUrl": "https://apollojournals.org/afj/ap13fj/audio/a13_0570801.mp3",
 "sourceUrl": "https://apollojournals.org/afj/ap13fj/08day3-problem.html",
-"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'"
+"sourceLabel": "Apollo 13 Flight Journal \u2014 Day 3, part 2: 'Houston, we've had a problem'",
+"durationSeconds": 849.8
 }
 ]

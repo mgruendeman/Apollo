@@ -68,7 +68,7 @@ def extract_clips(html, base_url, source_url, source_label):
     seen_positions = set()
     all_ts = list(TS_RE.finditer(html))
     for m in MP3_HREF_RE.finditer(html):
-        url_frag = m.group(1)
+        url_frag = re.sub(r'\s+', '', m.group(1))
         if url_frag in seen_positions:
             continue
         pos = m.start()
