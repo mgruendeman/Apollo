@@ -1,30 +1,15 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams, Navigate } from 'react-router-dom'
 import AudioPlayer from '../components/AudioPlayer'
 import TranscriptPanel from '../components/TranscriptPanel'
 import MissionPhaseDiagram from '../components/MissionPhaseDiagram'
+import MissionTimeline from '../components/MissionTimeline'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
 import { findMission } from '../data/missions'
 import { classifyPhase } from '../data/phases'
-import { classifyEventType, EVENT_TYPE_META } from '../data/eventType'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
-
-const SOURCE_PREFIX_RE = /^Apollo \d+ (Flight Journal|Lunar Surface Journal) — /
-
-function buildChapters(clips) {
-  const chapters = []
-  for (let i = 0; i < clips.length; i++) {
-    const label = clips[i].sourceLabel
-    const last = chapters[chapters.length - 1]
-    if (last && last.label === label) {
-      last.endIndex = i + 1
-    } else {
-      chapters.push({ label, startIndex: i, endIndex: i + 1 })
-    }
-  }
-  return chapters
-}
+import { SOURCE_PREFIX_RE } from '../lib/sourceLabel'
 
 function nearestClipIndex(clips, getSeconds) {
   let i = clips.findIndex((c) => c.getSeconds >= getSeconds)
@@ -80,7 +65,6 @@ export default function Mission() {
     }
   }, [mission])
 
-  const chapters = useMemo(() => (clips ? buildChapters(clips) : []), [clips])
   const liveStatus = mission ? getLiveStatus(mission, now) : null
 
   // Coming in from the home page's "happening right now" banner: jump to
@@ -115,9 +99,6 @@ export default function Mission() {
 
   const moment = clips[activeIndex]
   const activeLines = transcripts?.[moment.id] || []
-  const activeChapterIndex = chapters.findIndex(
-    (ch) => activeIndex >= ch.startIndex && activeIndex < ch.endIndex,
-  )
   const phase = classifyPhase(moment.sourceLabel)
 
   function selectClip(i) {
@@ -142,27 +123,6 @@ export default function Mission() {
   function jumpToLive() {
     const status = getLiveStatus(mission, new Date())
     if (status) selectClip(nearestClipIndex(clips, status.getSeconds))
-  }
-
-  function previewFor(c) {
-    const lines = transcripts?.[c.id]
-    if (lines && lines.length) return `${lines[0].speaker}: ${lines[0].text}`
-    return null
-  }
-
-  // A chapter that happens to contain one of the mission's curated
-  // highlight clips gets that highlight's opening line shown as a
-  // pull-quote, so the timeline surfaces its "big moments" at a glance
-  // instead of requiring you to open every chapter to find them.
-  function highlightFor(ch) {
-    if (!mission.highlights) return null
-    const hit = mission.highlights.find((h) => {
-      const idx = clips.findIndex((c) => c.id === h.id)
-      return idx >= ch.startIndex && idx < ch.endIndex
-    })
-    if (!hit) return null
-    const lines = transcripts?.[hit.id]
-    return { title: hit.title, quote: lines?.[0]?.text }
   }
 
   return (
@@ -285,66 +245,13 @@ export default function Mission() {
         </div>
       </section>
 
-      <section className="timeline">
-        <h3>Full mission timeline</h3>
-        <p className="timeline-legend">
-          <span className="legend-item">★ major milestone</span>
-          <span className="legend-item">☾ rest / routine period</span>
-        </p>
-        {chapters.map((ch, ci) => {
-          const count = ch.endIndex - ch.startIndex
-          const eventType = classifyEventType(ch.label)
-          const meta = EVENT_TYPE_META[eventType]
-          const highlight = highlightFor(ch)
-          return (
-            <details
-              key={ch.startIndex}
-              open={ci === activeChapterIndex}
-              className={meta.className}
-            >
-              <summary>
-                <span className="chapter-get">{clips[ch.startIndex].get}</span>
-                {meta.icon && <span className="chapter-icon">{meta.icon}</span>}
-                <span className="chapter-label">
-                  {ch.label.replace(SOURCE_PREFIX_RE, '')}
-                </span>
-                <span className="chapter-count">
-                  {count} clip{count === 1 ? '' : 's'}
-                </span>
-              </summary>
-              {highlight && (
-                <blockquote className="chapter-quote">
-                  <p className="chapter-quote-title">{highlight.title}</p>
-                  {highlight.quote && <p>"{highlight.quote}"</p>}
-                </blockquote>
-              )}
-              <ol>
-                {clips.slice(ch.startIndex, ch.endIndex).map((c, j) => {
-                  const i = ch.startIndex + j
-                  return (
-                    <li key={c.id}>
-                      <button
-                        type="button"
-                        className={
-                          i === activeIndex
-                            ? 'moment-item is-active'
-                            : 'moment-item'
-                        }
-                        onClick={() => selectClip(i)}
-                      >
-                        <span className="moment-get">{c.get}</span>
-                        <span className="moment-title">
-                          {(previewFor(c) || ch.label).slice(0, 100)}
-                        </span>
-                      </button>
-                    </li>
-                  )
-                })}
-              </ol>
-            </details>
-          )
-        })}
-      </section>
+      <MissionTimeline
+        mission={mission}
+        clips={clips}
+        transcripts={transcripts}
+        activeIndex={activeIndex}
+        onSelect={selectClip}
+      />
 
       <GlossaryPanel entry={activeGlossaryEntry} onClose={() => setActiveGlossaryEntry(null)} />
     </div>

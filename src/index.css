@@ -549,6 +549,33 @@ a {
   font-size: 0.85rem;
 }
 
+.moment-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.timeline-run-toggle {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  text-align: left;
+  background: var(--bg-panel);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.timeline-run-toggle:hover {
+  background: var(--bg-panel-raised);
+  color: var(--text);
+}
+
 .transcript-panel {
   margin-top: 20px;
 }
