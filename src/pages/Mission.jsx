@@ -4,9 +4,11 @@ import AudioPlayer from '../components/AudioPlayer'
 import TranscriptPanel from '../components/TranscriptPanel'
 import MissionPhaseDiagram from '../components/MissionPhaseDiagram'
 import MissionTimeline from '../components/MissionTimeline'
+import MissionPhoto from '../components/MissionPhoto'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
 import { findMission } from '../data/missions'
+import { photosByClipId } from '../data/photos'
 import { classifyPhase } from '../data/phases'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
 import { SOURCE_PREFIX_RE } from '../lib/sourceLabel'
@@ -188,6 +190,7 @@ export default function Mission() {
           onTimeUpdate={setCurrentTime}
           seekRequest={seekRequest}
         />
+        <MissionPhoto photo={photosByClipId[moment.id]} />
         {activeLines.length > 0 ? (
           <TranscriptPanel
             key={`transcript-${moment.id}`}

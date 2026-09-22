@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { classifyEventType, EVENT_TYPE_META } from '../data/eventType'
 import { stripSourcePrefix } from '../lib/sourceLabel'
+import { photosByClipId } from '../data/photos'
 
 // Collapse a run of this many or more back-to-back routine clips into a
 // single expandable row, so a quiet multi-hour stretch doesn't bury the
@@ -59,6 +60,7 @@ export default function MissionTimeline({ mission, clips, transcripts, activeInd
   const [expandedRuns, setExpandedRuns] = useState(() => new Set())
 
   const chapters = useMemo(() => buildChapters(clips), [clips])
+  const highlightIds = new Set((mission.highlights || []).map((h) => h.id))
   const activeChapterIndex = chapters.findIndex(
     (ch) => activeIndex >= ch.startIndex && activeIndex < ch.endIndex,
   )
@@ -107,7 +109,9 @@ export default function MissionTimeline({ mission, clips, transcripts, activeInd
         const highlight = highlightFor(ch)
         const chapterClips = clips.slice(ch.startIndex, ch.endIndex)
         const types = chapterClips.map((c) =>
-          classifyEventType(`${c.sourceLabel} ${previewFor(c) || ''}`),
+          highlightIds.has(c.id)
+            ? 'major'
+            : classifyEventType(`${c.sourceLabel} ${previewFor(c) || ''}`),
         )
         const rows = buildRows(types)
 
@@ -160,6 +164,7 @@ export default function MissionTimeline({ mission, clips, transcripts, activeInd
                       <TimelineClipRow
                         key={c.id}
                         clip={c}
+                        type={types[row.start + k]}
                         preview={previewFor(c)}
                         chapterLabel={ch.label}
                         isActive={i === activeIndex}
@@ -175,6 +180,7 @@ export default function MissionTimeline({ mission, clips, transcripts, activeInd
                   <TimelineClipRow
                     key={c.id}
                     clip={c}
+                    type={types[row.index]}
                     preview={previewFor(c)}
                     chapterLabel={ch.label}
                     isActive={i === activeIndex}
@@ -190,9 +196,9 @@ export default function MissionTimeline({ mission, clips, transcripts, activeInd
   )
 }
 
-function TimelineClipRow({ clip, preview, chapterLabel, isActive, onSelect }) {
-  const type = classifyEventType(`${clip.sourceLabel} ${preview || ''}`)
+function TimelineClipRow({ clip, type, preview, chapterLabel, isActive, onSelect }) {
   const meta = EVENT_TYPE_META[type]
+  const photo = photosByClipId[clip.id]
   return (
     <li>
       <button
@@ -205,6 +211,14 @@ function TimelineClipRow({ clip, preview, chapterLabel, isActive, onSelect }) {
         <span className="moment-title">
           {(preview || stripSourcePrefix(chapterLabel)).slice(0, 100)}
         </span>
+        {photo && (
+          <img
+            className="moment-thumb"
+            src={`${import.meta.env.BASE_URL}${photo.src}`}
+            alt=""
+            loading="lazy"
+          />
+        )}
       </button>
     </li>
   )
