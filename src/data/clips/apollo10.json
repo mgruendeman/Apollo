@@ -1,0 +1,1474 @@
+[
+{
+"id": "a10_07_reaquisition",
+"get": "000:00:00",
+"getSeconds": 0,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10_07_reaquisition.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day4-pt13.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 4, part 13: Acclimatising in lunar orbit"
+},
+{
+"id": "a10a_14301XX",
+"get": "000:00:00",
+"getSeconds": 0,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_14301XX.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10-minus0000010",
+"get": "000:00:10",
+"getSeconds": 10,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-minus0000010.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day1-pt1.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 1, part 1: Countdown, launch and climb to orbit"
+},
+{
+"id": "a10-s-ii-ignition",
+"get": "000:02:51",
+"getSeconds": 171,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-s-ii-ignition.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day1-pt1.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 1, part 1: Countdown, launch and climb to orbit"
+},
+{
+"id": "a10-0000254",
+"get": "000:02:54",
+"getSeconds": 174,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0000254.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day1-pt1.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 1, part 1: Countdown, launch and climb to orbit"
+},
+{
+"id": "a10-0023032",
+"get": "002:30:32",
+"getSeconds": 9032,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0023032.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day1-pt3-earthorbit-rev2.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 1, part 3: Earth orbit, rev 2"
+},
+{
+"id": "a10-tpd",
+"get": "003:05:49",
+"getSeconds": 11149,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-tpd.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day1-pt4-tli-docking.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 1, part 4: Translunar Injection & Docking"
+},
+{
+"id": "a10-s-ivb-sep-0035600",
+"get": "003:56:00",
+"getSeconds": 14160,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-s-ivb-sep-0035600.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day1-pt5-lmext-sivb-sep.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 1, part 5: LM extraction and S-IVB separation"
+},
+{
+"id": "a10-earth-views-0050634",
+"get": "005:06:34",
+"getSeconds": 18394,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-earth-views-0050634.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day1-pt5-lmext-sivb-sep.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 1, part 5: LM extraction and S-IVB separation"
+},
+{
+"id": "a10-earth-tv-0071115",
+"get": "007:11:15",
+"getSeconds": 25875,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-earth-tv-0071115.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day1-pt6-housekeep-tv.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 1, part 6: Housekeeping and TV transmission"
+},
+{
+"id": "a10-0270048",
+"get": "027:00:48",
+"getSeconds": 97248,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0270048.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day2-pt8.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 2, part 8: Mid-course correction and TV transmission"
+},
+{
+"id": "a10-0270525",
+"get": "027:05:25",
+"getSeconds": 97525,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0270525.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day2-pt8.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 2, part 8: Mid-course correction and TV transmission"
+},
+{
+"id": "a10-0271029",
+"get": "027:10:29",
+"getSeconds": 97829,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0271029.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day2-pt8.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 2, part 8: Mid-course correction and TV transmission"
+},
+{
+"id": "a10-0271534",
+"get": "027:15:34",
+"getSeconds": 98134,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0271534.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day2-pt8.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 2, part 8: Mid-course correction and TV transmission"
+},
+{
+"id": "a10-0272033",
+"get": "027:20:33",
+"getSeconds": 98433,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0272033.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day2-pt8.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 2, part 8: Mid-course correction and TV transmission"
+},
+{
+"id": "a10-0272530",
+"get": "027:25:30",
+"getSeconds": 98730,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0272530.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day2-pt8.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 2, part 8: Mid-course correction and TV transmission"
+},
+{
+"id": "a10-0470315",
+"get": "047:03:15",
+"getSeconds": 169395,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0470315.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day2-pt9.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 2, part 9: Housekeeping, sleep and TV"
+},
+{
+"id": "a10-0470949",
+"get": "047:09:49",
+"getSeconds": 169789,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0470949.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day2-pt9.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 2, part 9: Housekeeping, sleep and TV"
+},
+{
+"id": "a10-0495451",
+"get": "049:54:51",
+"getSeconds": 179691,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0495451.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day3-pt10.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 3, part 10: Revision and TV in the blind"
+},
+{
+"id": "a10-0533536",
+"get": "053:35:36",
+"getSeconds": 192936,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0533536.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day3-pt11.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 3, part 11: TV and a long, long rest"
+},
+{
+"id": "a10-0534012",
+"get": "053:40:12",
+"getSeconds": 193212,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0534012.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day3-pt11.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 3, part 11: TV and a long, long rest"
+},
+{
+"id": "a10-0534540",
+"get": "053:45:40",
+"getSeconds": 193540,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0534540.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day3-pt11.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 3, part 11: TV and a long, long rest"
+},
+{
+"id": "a10-0535026",
+"get": "053:50:26",
+"getSeconds": 193826,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0535026.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day3-pt11.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 3, part 11: TV and a long, long rest"
+},
+{
+"id": "a10-0535544",
+"get": "053:55:44",
+"getSeconds": 194144,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0535544.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day3-pt11.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 3, part 11: TV and a long, long rest"
+},
+{
+"id": "a10-0723735",
+"get": "072:37:35",
+"getSeconds": 261455,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0723735.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day4-pt12a.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 4, part 12a: Lunar encounter - Approach"
+},
+{
+"id": "a10-0724312",
+"get": "072:43:12",
+"getSeconds": 261792,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0724312.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day4-pt12a.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 4, part 12a: Lunar encounter - Approach"
+},
+{
+"id": "a10-0724753",
+"get": "072:47:53",
+"getSeconds": 262073,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0724753.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day4-pt12a.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 4, part 12a: Lunar encounter - Approach"
+},
+{
+"id": "a10-0725317",
+"get": "072:53:17",
+"getSeconds": 262397,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10-0725317.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day4-pt12a.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 4, part 12a: Lunar encounter - Approach"
+},
+{
+"id": "a10_08_moonviews",
+"get": "076:29:10",
+"getSeconds": 275350,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10_08_moonviews.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day4-pt13.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 4, part 13: Acclimatising in lunar orbit"
+},
+{
+"id": "a10o_0995600",
+"get": "099:56:00",
+"getSeconds": 359760,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_0995600.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1000700",
+"get": "100:07:00",
+"getSeconds": 360420,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1000700.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1002050",
+"get": "100:20:50",
+"getSeconds": 361250,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1002050.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10_1002305",
+"get": "100:23:05",
+"getSeconds": 361385,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10_1002305.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1002504",
+"get": "100:25:04",
+"getSeconds": 361504,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1002504.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10_1003359",
+"get": "100:33:59",
+"getSeconds": 362039,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10_1003359.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1003643",
+"get": "100:36:43",
+"getSeconds": 362203,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1003643.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1004822",
+"get": "100:48:22",
+"getSeconds": 362902,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1004822.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10_1005003",
+"get": "100:50:03",
+"getSeconds": 363003,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10_1005003.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1005944",
+"get": "100:59:44",
+"getSeconds": 363584,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1005944.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10_1010737",
+"get": "101:07:37",
+"getSeconds": 364057,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10_1010737.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1011053",
+"get": "101:10:53",
+"getSeconds": 364253,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1011053.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10_1012136",
+"get": "101:21:36",
+"getSeconds": 364896,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10_1012136.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1012318",
+"get": "101:23:18",
+"getSeconds": 364998,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1012318.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o_1012838",
+"get": "101:28:38",
+"getSeconds": 365318,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o_1012838.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt19.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 19: 'We is down among them'"
+},
+{
+"id": "a10o-1014451",
+"get": "101:44:51",
+"getSeconds": 366291,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1014451.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1015822",
+"get": "101:58:22",
+"getSeconds": 367102,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1015822.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1021010",
+"get": "102:10:10",
+"getSeconds": 367810,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1021010.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1021815",
+"get": "102:18:15",
+"getSeconds": 368295,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1021815.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1022909",
+"get": "102:29:09",
+"getSeconds": 368949,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1022909.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10a-1023557",
+"get": "102:35:57",
+"getSeconds": 369357,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1023557.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1023655",
+"get": "102:36:55",
+"getSeconds": 369415,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1023655.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1024751",
+"get": "102:47:51",
+"getSeconds": 370071,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1024751.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10a-1025539",
+"get": "102:55:39",
+"getSeconds": 370539,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1025539.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1025753",
+"get": "102:57:53",
+"getSeconds": 370673,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1025753.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1030758",
+"get": "103:07:58",
+"getSeconds": 371278,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1030758.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10a-1031319",
+"get": "103:13:19",
+"getSeconds": 371599,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1031319.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1031756",
+"get": "103:17:56",
+"getSeconds": 371876,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1031756.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1032126",
+"get": "103:21:26",
+"getSeconds": 372086,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1032126.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10o-1033417",
+"get": "103:34:17",
+"getSeconds": 372857,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10o-1033417.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 5, part 20: A surprise at staging"
+},
+{
+"id": "a10a-1163306",
+"get": "116:33:06",
+"getSeconds": 419586,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1163306.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-1164635",
+"get": "116:46:35",
+"getSeconds": 420395,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1164635.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-1165711",
+"get": "116:57:11",
+"getSeconds": 421031,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1165711.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-1170954",
+"get": "117:09:54",
+"getSeconds": 421794,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1170954.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-1180800",
+"get": "118:08:00",
+"getSeconds": 425280,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1180800.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-1181912",
+"get": "118:19:12",
+"getSeconds": 425952,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1181912.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-1183738",
+"get": "118:37:38",
+"getSeconds": 427058,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1183738.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-1185241",
+"get": "118:52:41",
+"getSeconds": 427961,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1185241.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-1190622",
+"get": "119:06:22",
+"getSeconds": 428782,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1190622.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt24.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 24: Sleep and picture taking"
+},
+{
+"id": "a10a-12007XX",
+"get": "120:06:57",
+"getSeconds": 432417,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-12007XX.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1201734",
+"get": "120:17:34",
+"getSeconds": 433054,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1201734.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1203324",
+"get": "120:33:24",
+"getSeconds": 434004,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1203324.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1204935",
+"get": "120:49:35",
+"getSeconds": 434975,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1204935.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1210626",
+"get": "121:06:26",
+"getSeconds": 435986,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1210626.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1220743",
+"get": "122:07:43",
+"getSeconds": 439663,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1220743.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1223318",
+"get": "122:33:18",
+"getSeconds": 441198,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1223318.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1224936",
+"get": "122:49:36",
+"getSeconds": 442176,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1224936.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1230038",
+"get": "123:00:38",
+"getSeconds": 442838,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1230038.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt25.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 25: Photos, landmarks and fuel cells"
+},
+{
+"id": "a10a-1280057",
+"get": "128:00:57",
+"getSeconds": 460857,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1280057.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt27.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 27: Tracking, snapping and napping"
+},
+{
+"id": "a10a-1282932",
+"get": "128:29:32",
+"getSeconds": 462572,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1282932.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt27.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 27: Tracking, snapping and napping"
+},
+{
+"id": "a10a-1284119",
+"get": "128:41:19",
+"getSeconds": 463279,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1284119.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt27.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 27: Tracking, snapping and napping"
+},
+{
+"id": "a10a-1285422",
+"get": "128:54:22",
+"getSeconds": 464062,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1285422.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt27.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 27: Tracking, snapping and napping"
+},
+{
+"id": "a10a_1355425",
+"get": "135:54:25",
+"getSeconds": 489265,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1355425.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1361453",
+"get": "136:14:53",
+"getSeconds": 490493,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1361453.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1363125",
+"get": "136:31:25",
+"getSeconds": 491485,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1363125.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1364657",
+"get": "136:46:57",
+"getSeconds": 492417,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1364657.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1373600",
+"get": "137:36:00",
+"getSeconds": 495360,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1373600.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a-13015XX",
+"get": "137:36:28",
+"getSeconds": 495388,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-13015XX.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt27.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 27: Tracking, snapping and napping"
+},
+{
+"id": "a10a_1374554",
+"get": "137:45:54",
+"getSeconds": 495954,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1374554.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1375642",
+"get": "137:56:42",
+"getSeconds": 496602,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1375642.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1381024",
+"get": "138:10:24",
+"getSeconds": 497424,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1381024.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1383222",
+"get": "138:32:22",
+"getSeconds": 498742,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1383222.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1384719",
+"get": "138:47:19",
+"getSeconds": 499639,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1384719.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1390259",
+"get": "139:02:59",
+"getSeconds": 500579,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1390259.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1393016",
+"get": "139:30:16",
+"getSeconds": 502216,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1393016.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1393721",
+"get": "139:37:21",
+"getSeconds": 502641,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1393721.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day6-pt29-tei.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 6, part 29: Going back to Houston"
+},
+{
+"id": "a10a_1454715",
+"get": "145:47:15",
+"getSeconds": 524835,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1454715.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1455716",
+"get": "145:57:16",
+"getSeconds": 525436,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1455716.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1460934",
+"get": "146:09:34",
+"getSeconds": 526174,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1460934.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1462920",
+"get": "146:29:20",
+"getSeconds": 527360,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1462920.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1464944",
+"get": "146:49:44",
+"getSeconds": 528584,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1464944.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1470950",
+"get": "147:09:50",
+"getSeconds": 529790,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1470950.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1472500",
+"get": "147:25:00",
+"getSeconds": 530700,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1472500.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1474457",
+"get": "147:44:57",
+"getSeconds": 531897,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1474457.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1480635",
+"get": "148:06:35",
+"getSeconds": 533195,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1480635.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1482342",
+"get": "148:23:42",
+"getSeconds": 534222,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1482342.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_14849XX",
+"get": "148:47:40",
+"getSeconds": 535660,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_14849XX.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1491041",
+"get": "149:10:41",
+"getSeconds": 537041,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1491041.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1494011",
+"get": "149:40:11",
+"getSeconds": 538811,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1494011.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1500010",
+"get": "150:00:10",
+"getSeconds": 540010,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1500010.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1501716",
+"get": "150:17:16",
+"getSeconds": 541036,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1501716.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1503724",
+"get": "150:37:24",
+"getSeconds": 542244,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1503724.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1505900",
+"get": "150:59:00",
+"getSeconds": 543540,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1505900.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1512436",
+"get": "151:24:36",
+"getSeconds": 545076,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1512436.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a_1514444",
+"get": "151:44:44",
+"getSeconds": 546284,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a_1514444.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt30.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 30: The Tom, John and Gene evening show"
+},
+{
+"id": "a10a-1521255",
+"get": "152:12:55",
+"getSeconds": 547975,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1521255.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1522758",
+"get": "152:27:58",
+"getSeconds": 548878,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1522758.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1524652",
+"get": "152:46:52",
+"getSeconds": 550012,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1524652.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1530840",
+"get": "153:08:40",
+"getSeconds": 551320,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1530840.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1532545",
+"get": "153:25:45",
+"getSeconds": 552345,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1532545.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1534348",
+"get": "153:43:48",
+"getSeconds": 553428,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1534348.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1540455",
+"get": "154:04:55",
+"getSeconds": 554695,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1540455.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1541436",
+"get": "154:14:36",
+"getSeconds": 555276,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1541436.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1542941",
+"get": "154:29:41",
+"getSeconds": 556181,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1542941.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day7-pt31.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 7, part 31: Space Pirate on TV"
+},
+{
+"id": "a10a-1625427",
+"get": "162:54:27",
+"getSeconds": 586467,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1625427.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1630607",
+"get": "163:06:07",
+"getSeconds": 587167,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1630607.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1631845",
+"get": "163:18:45",
+"getSeconds": 587925,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1631845.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1633345",
+"get": "163:33:45",
+"getSeconds": 588825,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1633345.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1635452",
+"get": "163:54:52",
+"getSeconds": 590092,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1635452.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1640952",
+"get": "164:09:52",
+"getSeconds": 590992,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1640952.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1643513",
+"get": "164:35:13",
+"getSeconds": 592513,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1643513.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1644816",
+"get": "164:48:16",
+"getSeconds": 593296,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1644816.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1650004",
+"get": "165:00:04",
+"getSeconds": 594004,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1650004.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1652928",
+"get": "165:29:28",
+"getSeconds": 595768,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1652928.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1655032",
+"get": "165:50:32",
+"getSeconds": 597032,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1655032.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1661903",
+"get": "166:19:03",
+"getSeconds": 598743,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1661903.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1663305",
+"get": "166:33:05",
+"getSeconds": 599585,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1663305.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1665814",
+"get": "166:58:14",
+"getSeconds": 601094,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1665814.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1671818",
+"get": "167:18:18",
+"getSeconds": 602298,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1671818.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1674346",
+"get": "167:43:46",
+"getSeconds": 603826,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1674346.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1680758",
+"get": "168:07:58",
+"getSeconds": 605278,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1680758.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1682602",
+"get": "168:26:02",
+"getSeconds": 606362,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1682602.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1685038",
+"get": "168:50:38",
+"getSeconds": 607838,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1685038.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1685911",
+"get": "168:59:11",
+"getSeconds": 608351,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1685911.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1692411",
+"get": "169:24:11",
+"getSeconds": 609851,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1692411.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1694034",
+"get": "169:40:34",
+"getSeconds": 610834,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1694034.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1700424",
+"get": "170:04:24",
+"getSeconds": 612264,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1700424.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1704107",
+"get": "170:41:07",
+"getSeconds": 614467,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1704107.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1705531",
+"get": "170:55:31",
+"getSeconds": 615331,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1705531.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1712506",
+"get": "171:25:06",
+"getSeconds": 617106,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1712506.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1714939",
+"get": "171:49:39",
+"getSeconds": 618579,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1714939.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1720447",
+"get": "172:04:47",
+"getSeconds": 619487,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1720447.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1722551",
+"get": "172:25:51",
+"getSeconds": 620751,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1722551.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1724558",
+"get": "172:45:58",
+"getSeconds": 621958,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1724558.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1730525",
+"get": "173:05:25",
+"getSeconds": 623125,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1730525.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt32.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 32: Housekeeping, navigation and comms tests"
+},
+{
+"id": "a10a-1731430",
+"get": "173:14:30",
+"getSeconds": 623670,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1731430.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt33.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 33: TV, with Charlie Brown and Snoopy"
+},
+{
+"id": "a10a-1732713",
+"get": "173:27:13",
+"getSeconds": 624433,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1732713.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt33.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 33: TV, with Charlie Brown and Snoopy"
+},
+{
+"id": "a10a-1734903",
+"get": "173:49:03",
+"getSeconds": 625743,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1734903.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt33.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 33: TV, with Charlie Brown and Snoopy"
+},
+{
+"id": "a10a-1740916",
+"get": "174:09:16",
+"getSeconds": 626956,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1740916.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt33.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 33: TV, with Charlie Brown and Snoopy"
+},
+{
+"id": "a10a-1762704",
+"get": "176:27:04",
+"getSeconds": 635224,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1762704.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt33.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 33: TV, with Charlie Brown and Snoopy"
+},
+{
+"id": "a10a-1765408",
+"get": "176:54:08",
+"getSeconds": 636848,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1765408.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt33.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 33: TV, with Charlie Brown and Snoopy"
+},
+{
+"id": "a10a-1772716",
+"get": "177:27:16",
+"getSeconds": 638836,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1772716.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day8-pt33.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 33: TV, with Charlie Brown and Snoopy"
+},
+{
+"id": "a10a-1843405",
+"get": "184:34:05",
+"getSeconds": 664445,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1843405.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt34.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 34: Awake on Splashdown day"
+},
+{
+"id": "a10a-1852400",
+"get": "185:24:00",
+"getSeconds": 667440,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1852400.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt34.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 34: Awake on Splashdown day"
+},
+{
+"id": "a10a-1860354",
+"get": "186:03:54",
+"getSeconds": 669834,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1860354.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt34.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 34: Awake on Splashdown day"
+},
+{
+"id": "a10a-1862805",
+"get": "186:28:05",
+"getSeconds": 671285,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1862805.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt34.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 34: Awake on Splashdown day"
+},
+{
+"id": "a10a-1870322",
+"get": "187:03:22",
+"getSeconds": 673402,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1870322.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1871108-a2g",
+"get": "187:11:08",
+"getSeconds": 673868,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1871108-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1872813-a2g",
+"get": "187:28:13",
+"getSeconds": 674893,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1872813-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1875821-a2g",
+"get": "187:58:21",
+"getSeconds": 676701,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1875821-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1881834-a2g",
+"get": "188:18:34",
+"getSeconds": 677914,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1881834-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1883033-a2g",
+"get": "188:30:33",
+"getSeconds": 678633,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1883033-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1884437-a2g",
+"get": "188:44:37",
+"getSeconds": 679477,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1884437-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1890044-a2g",
+"get": "189:00:44",
+"getSeconds": 680444,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1890044-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1891848-a2g",
+"get": "189:18:48",
+"getSeconds": 681528,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1891848-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1894203-a2g",
+"get": "189:42:03",
+"getSeconds": 682923,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1894203-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1900518-a2g",
+"get": "190:05:18",
+"getSeconds": 684318,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1900518-a2g.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1902123",
+"get": "190:21:23",
+"getSeconds": 685283,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1902123.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1903727",
+"get": "190:37:27",
+"getSeconds": 686247,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1903727.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1905431",
+"get": "190:54:31",
+"getSeconds": 687271,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1905431.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1911336",
+"get": "191:13:36",
+"getSeconds": 688416,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1911336.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt35.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 35: Entry Preparations"
+},
+{
+"id": "a10a-1913240",
+"get": "191:32:40",
+"getSeconds": 689560,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1913240.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt36-entry-splash.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 36: Homecoming"
+},
+{
+"id": "a10a-1914853",
+"get": "191:48:53",
+"getSeconds": 690533,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1914853.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt36-entry-splash.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 36: Homecoming"
+},
+{
+"id": "a10a-1921133",
+"get": "192:11:33",
+"getSeconds": 691893,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1921133.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt36-entry-splash.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 36: Homecoming"
+},
+{
+"id": "a10a-1922903",
+"get": "192:29:03",
+"getSeconds": 692943,
+"audioUrl": "https://apollojournals.org/afj/ap10fj/audio/a10a-1922903.mp3",
+"sourceUrl": "https://apollojournals.org/afj/ap10fj/as10-day9-pt36-entry-splash.html",
+"sourceLabel": "Apollo 10 Flight Journal \u2014 Day 8, part 36: Homecoming"
+}
+]

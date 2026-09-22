@@ -19,6 +19,7 @@ export default function AudioPlayer({
   onPrevious,
   hasNext = false,
   hasPrevious = false,
+  onTimeUpdate,
 }) {
   const audioRef = useRef(null)
   const [playing, setPlaying] = useState(false)
@@ -111,7 +112,10 @@ export default function AudioPlayer({
           setDuration(e.currentTarget.duration)
           setLoading(false)
         }}
-        onTimeUpdate={(e) => setCurrent(e.currentTarget.currentTime)}
+        onTimeUpdate={(e) => {
+          setCurrent(e.currentTarget.currentTime)
+          onTimeUpdate?.(e.currentTarget.currentTime)
+        }}
         onError={() => {
           setLoading(false)
           setError(true)

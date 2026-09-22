@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import AudioPlayer from '../components/AudioPlayer'
+import TranscriptPanel from '../components/TranscriptPanel'
 import { findMission } from '../data/missions'
 
 const SOURCE_PREFIX_RE = /^Apollo \d+ (Flight Journal|Lunar Surface Journal) — /
@@ -23,9 +24,11 @@ export default function Mission() {
   const { id } = useParams()
   const mission = findMission(id)
   const [clips, setClips] = useState(null)
+  const [transcripts, setTranscripts] = useState(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [autoPlay, setAutoPlay] = useState(false)
   const [continuous, setContinuous] = useState(true)
+  const [currentTime, setCurrentTime] = useState(0)
 
   useEffect(() => {
     if (!mission?.clipsFile) return
@@ -33,6 +36,23 @@ export default function Mission() {
     import(`../data/clips/${mission.clipsFile}.json`).then((mod) => {
       if (!cancelled) setClips(mod.default)
     })
+    return () => {
+      cancelled = true
+    }
+  }, [mission])
+
+  // Transcripts are fetched as a static asset (not bundled) so the clip
+  // index — needed for first paint — isn't held up by a multi-MB file the
+  // player doesn't need until a line is due to be shown.
+  useEffect(() => {
+    if (!mission?.clipsFile) return
+    let cancelled = false
+    fetch(`${import.meta.env.BASE_URL}transcripts/${mission.clipsFile}.json`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (!cancelled) setTranscripts(data)
+      })
+      .catch(() => {})
     return () => {
       cancelled = true
     }
@@ -56,6 +76,7 @@ export default function Mission() {
   }
 
   const moment = clips[activeIndex]
+  const activeLines = transcripts?.[moment.id] || []
   const activeChapterIndex = chapters.findIndex(
     (ch) => activeIndex >= ch.startIndex && activeIndex < ch.endIndex,
   )
@@ -63,6 +84,7 @@ export default function Mission() {
   function selectClip(i) {
     setActiveIndex(i)
     setAutoPlay(true)
+    setCurrentTime(0)
   }
 
   function handleEnded() {
@@ -73,10 +95,15 @@ export default function Mission() {
     }
   }
 
-  function jumpToHighlight(getSeconds) {
-    let i = clips.findIndex((c) => c.getSeconds >= getSeconds)
-    if (i === -1) i = clips.length - 1
-    selectClip(i)
+  function jumpToHighlight(id) {
+    const i = clips.findIndex((c) => c.id === id)
+    if (i !== -1) selectClip(i)
+  }
+
+  function previewFor(c) {
+    const lines = transcripts?.[c.id]
+    if (lines && lines.length) return `${lines[0].speaker}: ${lines[0].text}`
+    return null
   }
 
   return (
@@ -104,7 +131,7 @@ export default function Mission() {
               key={h.title}
               type="button"
               className="highlight-chip"
-              onClick={() => jumpToHighlight(h.getSeconds)}
+              onClick={() => jumpToHighlight(h.id)}
             >
               {h.title}
             </button>
@@ -126,10 +153,15 @@ export default function Mission() {
           onPrevious={() => selectClip(activeIndex - 1)}
           hasNext={activeIndex < clips.length - 1}
           hasPrevious={activeIndex > 0}
+          onTimeUpdate={setCurrentTime}
         />
-        <p className="moment-description">
-          {moment.context || moment.sourceLabel}
-        </p>
+        {activeLines.length > 0 ? (
+          <TranscriptPanel key={moment.id} lines={activeLines} currentTime={currentTime} />
+        ) : (
+          <p className="moment-description">
+            {transcripts ? 'No transcript for this clip.' : 'Loading transcript…'}
+          </p>
+        )}
         <div className="player-controls-row">
           <label className="continuous-toggle">
             <input
@@ -197,7 +229,7 @@ export default function Mission() {
                       >
                         <span className="moment-get">{c.get}</span>
                         <span className="moment-title">
-                          {(c.context || ch.label).slice(0, 100)}
+                          {(previewFor(c) || ch.label).slice(0, 100)}
                         </span>
                       </button>
                     </li>
