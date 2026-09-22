@@ -124,7 +124,7 @@ AUDIOINDEX_ITEM_RE = re.compile(
     re.I,
 )
 
-def parse_audioindex(html, base_url, afj_base):
+def parse_audioindex(html, base_url, afj_base, mission_number):
     """Dedicated parser for the AFJ audioindex.html list format, which
     interleaves day-page section headers with per-clip <li> entries and
     sometimes GET ranges ("244:22:30 to 244:36:24") that would confuse the
@@ -162,7 +162,7 @@ def parse_audioindex(html, base_url, afj_base):
             'audioUrl': full_url,
             'context': f"{label_text} [{duration}]".strip(),
             'sourceUrl': f"{source_url}#{anchor}",
-            'sourceLabel': f"Apollo Flight Journal — {current_title}",
+            'sourceLabel': f"Apollo {mission_number} Flight Journal — {current_title}",
         })
     return clips
 
@@ -233,7 +233,7 @@ if __name__ == '__main__':
     if mission == '12':
         print("scraping AFJ12 audioindex...", file=sys.stderr)
         html = fetch(BASE_AFJ12 + 'audio/audioindex.html')
-        afj_clips = parse_audioindex(html, BASE_AFJ12 + 'audio/', BASE_AFJ12)
+        afj_clips = parse_audioindex(html, BASE_AFJ12 + 'audio/', BASE_AFJ12, 12)
         print(f"  audioindex: {len(afj_clips)} clips", file=sys.stderr)
         print("scraping ALSJ12 pages...", file=sys.stderr)
         alsj_clips = scrape_pages(ALSJ12_PAGES, BASE_ALSJ12, "Apollo 12 Lunar Surface Journal")

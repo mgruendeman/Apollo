@@ -118,8 +118,14 @@ export default function Mission() {
         <AudioPlayer
           key={moment.id}
           moment={moment}
+          title={moment.sourceLabel.replace(SOURCE_PREFIX_RE, '')}
+          missionName={mission.name}
           autoPlay={autoPlay}
           onEnded={handleEnded}
+          onNext={() => selectClip(activeIndex + 1)}
+          onPrevious={() => selectClip(activeIndex - 1)}
+          hasNext={activeIndex < clips.length - 1}
+          hasPrevious={activeIndex > 0}
         />
         <p className="moment-description">
           {moment.context || moment.sourceLabel}

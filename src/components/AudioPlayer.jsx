@@ -9,7 +9,17 @@ function formatTime(seconds) {
 
 // Keyed by moment.id from the parent, so a new moment mounts a fresh
 // instance instead of needing an effect to reset playback state.
-export default function AudioPlayer({ moment, autoPlay = false, onEnded }) {
+export default function AudioPlayer({
+  moment,
+  title,
+  missionName,
+  autoPlay = false,
+  onEnded,
+  onNext,
+  onPrevious,
+  hasNext = false,
+  hasPrevious = false,
+}) {
   const audioRef = useRef(null)
   const [playing, setPlaying] = useState(false)
   const [current, setCurrent] = useState(0)
@@ -25,6 +35,45 @@ export default function AudioPlayer({ moment, autoPlay = false, onEnded }) {
       audioRef.current.play().catch(() => setError(true))
     }
   }, [autoPlay])
+
+  // Media Session integration is what lets playback (and its lock-screen
+  // controls) survive the screen turning off or the tab being backgrounded
+  // on phones — without it, mobile browsers are much more likely to treat
+  // this as an ordinary inactive tab and suspend it.
+  useEffect(() => {
+    if (!('mediaSession' in navigator)) return
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: title || moment.get,
+      artist: missionName || 'Apollo Audio Archive',
+      album: 'Apollo Audio Archive',
+    })
+    navigator.mediaSession.setActionHandler('play', () => {
+      audioRef.current?.play().catch(() => setError(true))
+    })
+    navigator.mediaSession.setActionHandler('pause', () => {
+      audioRef.current?.pause()
+    })
+    navigator.mediaSession.setActionHandler(
+      'previoustrack',
+      hasPrevious ? () => onPrevious?.() : null,
+    )
+    navigator.mediaSession.setActionHandler(
+      'nexttrack',
+      hasNext ? () => onNext?.() : null,
+    )
+    return () => {
+      navigator.mediaSession.setActionHandler('play', null)
+      navigator.mediaSession.setActionHandler('pause', null)
+      navigator.mediaSession.setActionHandler('previoustrack', null)
+      navigator.mediaSession.setActionHandler('nexttrack', null)
+    }
+  }, [moment, title, missionName, hasNext, hasPrevious, onNext, onPrevious])
+
+  useEffect(() => {
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.playbackState = playing ? 'playing' : 'paused'
+    }
+  }, [playing])
 
   function togglePlay() {
     const audio = audioRef.current
