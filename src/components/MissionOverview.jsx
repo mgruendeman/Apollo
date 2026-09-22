@@ -1,5 +1,7 @@
 import { missions } from '../data/missions'
+import { Link } from 'react-router-dom'
 import { speakerAvatar } from '../data/speakers'
+import { findAstronautKey } from '../data/astronauts'
 
 const ROLES = ['Commander', 'Command Module Pilot', 'Lunar Module Pilot']
 
@@ -54,8 +56,9 @@ export default function MissionOverview({ mission }) {
       <div className="crew-row">
         {mission.crew.map((name, i) => {
           const photo = speakerAvatar(name.split(' ').pop())
-          return (
-            <figure key={name} className="crew-card">
+          const personId = findAstronautKey(name)
+          const card = (
+            <figure className="crew-card">
               {photo ? (
                 <img src={photo} alt={name} />
               ) : (
@@ -67,6 +70,13 @@ export default function MissionOverview({ mission }) {
                 {landed && i !== 1 && <span className="crew-moonwalker">Walked on the Moon</span>}
               </figcaption>
             </figure>
+          )
+          return personId ? (
+            <Link key={name} to={`/astronaut/${personId}`} className="crew-card-link">
+              {card}
+            </Link>
+          ) : (
+            <div key={name}>{card}</div>
           )
         })}
       </div>

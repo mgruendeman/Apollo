@@ -745,3 +745,9 @@ const termToEntry = new Map(allTerms.map((t) => [t.term.toLowerCase(), t.entry])
 export function findGlossaryEntry(matchedText) {
   return termToEntry.get(matchedText.toLowerCase())
 }
+
+// Deep dives, and any entry carrying a mission quote, get their own page;
+// quotes live there rather than on the short card.
+export function hasDetailPage(entry) {
+  return !!(entry.deepDive || entry.quote)
+}

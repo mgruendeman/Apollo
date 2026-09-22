@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { glossary } from '../data/glossary'
+import { glossary, hasDetailPage } from '../data/glossary'
 import GlossaryText from '../components/GlossaryText'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
@@ -9,14 +9,13 @@ import GlossaryAbbr from '../components/GlossaryAbbr'
 // A dedicated deep-dive page for the handful of major-hardware/major-topic
 // glossary entries that warrant more than the modal's short writeup — a
 // fuller history, verified NASA/Wikimedia imagery, and room to breathe.
-// Only entries flagged `deepDive: true` in glossary.js are reachable here;
-// everything else stays a modal-only entry.
+// Reachable for deep dives and for entries carrying a mission quote.
 export default function GlossaryDetail() {
   const { id } = useParams()
   const [activeGlossaryEntry, setActiveGlossaryEntry] = useState(null)
   const entry = glossary.find((e) => e.id === id)
 
-  if (!entry || !entry.deepDive) {
+  if (!entry || !hasDetailPage(entry)) {
     return (
       <div className="page">
         <Link to="/glossary" className="back-link">
@@ -38,7 +37,7 @@ export default function GlossaryDetail() {
       </Link>
 
       <header className="mission-header">
-        <p className="eyebrow">Deep dive</p>
+        <p className="eyebrow">{entry.deepDive ? 'Deep dive' : 'Glossary'}</p>
         <h1>{entry.terms[0]}</h1>
         {entry.terms.length > 1 && (
           <p className="glossary-aliases">also: {entry.terms.slice(1).join(', ')}</p>

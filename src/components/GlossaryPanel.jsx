@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import ReportIssueButton from './ReportIssueButton'
 import GlossaryAbbr from './GlossaryAbbr'
+import { hasDetailPage } from '../data/glossary'
 import GlossaryText from './GlossaryText'
 
 export default function GlossaryPanel({ entry, onClose, onTermClick }) {
@@ -45,16 +46,10 @@ export default function GlossaryPanel({ entry, onClose, onTermClick }) {
             ))}
           </ul>
         )}
-        {entry.deepDive && (
+        {hasDetailPage(entry) && (
           <Link to={`/glossary/${entry.id}`} className="glossary-read-more" onClick={onClose}>
-            Read the deep dive, with photos &amp; diagrams →
+            {entry.deepDive ? 'Read the deep dive, with photos & diagrams →' : 'Read more, with a quote from the mission →'}
           </Link>
-        )}
-        {entry.quote && (
-          <blockquote className="glossary-quote">
-            <p>{entry.quote.text}</p>
-            <cite>— {entry.quote.attribution}</cite>
-          </blockquote>
         )}
         {entry.links && entry.links.length > 0 && (
           <div className="glossary-links">

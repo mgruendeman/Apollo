@@ -1560,3 +1560,139 @@ a {
   opacity: 0.3;
   cursor: default;
 }
+
+.home-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.crew-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.crew-card-link:hover .crew-card {
+  border-color: var(--accent);
+}
+
+.crew-card-link:hover .crew-name {
+  color: var(--accent-dim);
+}
+
+.astronaut-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.astronaut-header h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+}
+
+.astronaut-portrait {
+  width: 120px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.astronaut-bio {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 68ch;
+}
+
+.astronaut-section h3,
+.astronaut-group {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  margin: 28px 0 10px;
+}
+
+.astronaut-roles,
+.astronaut-books {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.astronaut-roles li,
+.astronaut-books li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-panel);
+}
+
+.astronaut-roles span,
+.astronaut-books span {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.astronaut-books cite {
+  font-style: italic;
+}
+
+.astronaut-none {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.astronaut-more {
+  margin: 24px 0 8px;
+}
+
+.astronaut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
+}
+
+.astronaut-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-panel);
+}
+
+.astronaut-card:hover {
+  border-color: var(--accent);
+}
+
+.astronaut-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.astronaut-card-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 10px 0;
+}
+
+.astronaut-card-meta {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  padding: 0 10px 10px;
+}

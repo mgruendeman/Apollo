@@ -24,9 +24,14 @@ export default function Home() {
           thousands of clips across all eleven flights, from launch to
           splashdown, pulled straight from the original NASA recordings.
         </p>
-        <Link to="/glossary" className="glossary-nav-link">
-          Browse the glossary ↗
-        </Link>
+        <nav className="home-nav">
+          <Link to="/glossary" className="glossary-nav-link">
+            Browse the glossary ↗
+          </Link>
+          <Link to="/astronauts" className="glossary-nav-link">
+            Meet the astronauts ↗
+          </Link>
+        </nav>
       </header>
 
       {liveMissions.length > 0 && (

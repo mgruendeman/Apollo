@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { glossary } from '../data/glossary'
+import { glossary, hasDetailPage } from '../data/glossary'
 import GlossaryText from '../components/GlossaryText'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
@@ -49,16 +49,10 @@ export default function Glossary() {
                 ))}
               </ul>
             )}
-            {entry.deepDive && (
+            {hasDetailPage(entry) && (
               <Link to={`/glossary/${entry.id}`} className="glossary-read-more">
-                Read the deep dive, with photos &amp; diagrams →
+                {entry.deepDive ? 'Read the deep dive, with photos & diagrams →' : 'Read more, with a quote from the mission →'}
               </Link>
-            )}
-            {entry.quote && (
-              <blockquote className="glossary-quote">
-                <p>{entry.quote.text}</p>
-                <cite>— {entry.quote.attribution}</cite>
-              </blockquote>
             )}
             {entry.links && entry.links.length > 0 && (
               <div className="glossary-links">
