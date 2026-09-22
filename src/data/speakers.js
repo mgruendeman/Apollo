@@ -10,7 +10,21 @@
 
 export const speakerPhotos = {}
 
+// Transcripts tag some lines with a channel/location suffix on the same
+// person's name ("Duke (LM onboard)", "Mitchell-LM", "Cernan (in Snoopy)"),
+// which would otherwise miss the plain-name key. Strip those down to the
+// bare name so all of a person's lines resolve to one photo.
+function normalizeSpeakerName(name) {
+  return name
+    .trim()
+    .toLowerCase()
+    .replace(/\(.*?\)/g, '')
+    .split(/[/,]/)[0]
+    .replace(/-.*$/, '')
+    .trim()
+}
+
 export function speakerAvatar(name) {
-  const key = name.trim().toLowerCase()
+  const key = normalizeSpeakerName(name)
   return speakerPhotos[key] ? `${import.meta.env.BASE_URL}speakers/${speakerPhotos[key]}` : null
 }
