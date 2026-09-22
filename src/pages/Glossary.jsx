@@ -38,6 +38,11 @@ export default function Glossary() {
             <p className="glossary-long">
               <GlossaryText text={entry.long} onTermClick={setActiveGlossaryEntry} />
             </p>
+            {entry.deepDive && (
+              <Link to={`/glossary/${entry.id}`} className="glossary-read-more">
+                Read the deep dive, with photos &amp; diagrams →
+              </Link>
+            )}
             {entry.quote && (
               <blockquote className="glossary-quote">
                 <p>{entry.quote.text}</p>

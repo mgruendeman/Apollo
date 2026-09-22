@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import ReportIssueButton from './ReportIssueButton'
 
 export default function GlossaryPanel({ entry, onClose }) {
@@ -30,6 +31,11 @@ export default function GlossaryPanel({ entry, onClose }) {
           </p>
         )}
         <p className="glossary-long">{entry.long}</p>
+        {entry.deepDive && (
+          <Link to={`/glossary/${entry.id}`} className="glossary-read-more" onClick={onClose}>
+            Read the deep dive, with photos &amp; diagrams →
+          </Link>
+        )}
         {entry.quote && (
           <blockquote className="glossary-quote">
             <p>{entry.quote.text}</p>
