@@ -589,3 +589,233 @@ a {
 .transcript-line.is-active .transcript-text {
   color: var(--text);
 }
+
+/* Live "years ago today" banner + badge */
+
+.live-banner-row {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.live-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+}
+
+.live-banner:hover {
+  border-color: var(--available);
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  color: var(--available);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--available);
+  flex-shrink: 0;
+  animation: live-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* Mission phase diagram */
+
+.player-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.player-top-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.phase-diagram {
+  flex-shrink: 0;
+  width: 140px;
+  text-align: center;
+}
+
+.phase-diagram svg {
+  width: 100%;
+  height: auto;
+}
+
+.phase-path {
+  stroke: var(--border);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+}
+
+.phase-earth {
+  fill: #2b6cb0;
+}
+
+.phase-moon {
+  fill: #9ca3af;
+}
+
+.phase-marker {
+  fill: var(--accent);
+}
+
+.phase-label {
+  margin: 4px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  line-height: 1.3;
+}
+
+@media (max-width: 640px) {
+  .player-top {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .phase-diagram {
+    width: 110px;
+  }
+}
+
+/* Glossary */
+
+.glossary-term {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: var(--accent-dim);
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.glossary-term:hover {
+  color: var(--accent);
+}
+
+.glossary-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+}
+
+@media (min-width: 640px) {
+  .glossary-overlay {
+    align-items: center;
+  }
+}
+
+.glossary-panel {
+  position: relative;
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 16px 16px 0 0;
+  padding: 28px 24px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@media (min-width: 640px) {
+  .glossary-panel {
+    border-radius: 16px;
+  }
+}
+
+.glossary-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.glossary-close:hover {
+  color: var(--text);
+}
+
+.glossary-panel h3 {
+  margin: 0 0 4px;
+  font-size: 1.3rem;
+  padding-right: 24px;
+}
+
+.glossary-aliases {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin: 0 0 16px;
+}
+
+.glossary-long {
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 16px;
+}
+
+.glossary-quote {
+  border-left: 3px solid var(--accent);
+  margin: 0 0 16px;
+  padding: 4px 0 4px 14px;
+  font-style: italic;
+  color: var(--text);
+}
+
+.glossary-quote cite {
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.glossary-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.glossary-links a {
+  font-size: 0.85rem;
+}

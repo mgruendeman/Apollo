@@ -18,6 +18,9 @@ export const missions = [
     status: 'available',
     clipsFile: 'apollo08',
     clipCount: 1406,
+    launchUtc: '1968-12-21T12:51:00Z',
+    durationSeconds: 529242, // 147:00:42
+
     highlights: [
       { id: 'a08_0000000', title: 'Launch' },
       { id: 'a08_0850219-onboard-nr', title: 'Christmas Eve: the Genesis reading' },
@@ -45,6 +48,9 @@ export const missions = [
     status: 'available',
     clipsFile: 'apollo10',
     clipCount: 184,
+    launchUtc: '1969-05-18T16:49:00Z',
+    durationSeconds: 691403, // 192:03:23
+
     highlights: [
       { id: 'a10-0000254', title: 'Launch' },
       { id: 'a10-s-ivb-sep-0035600', title: '"Snoopy\'s coming out of the doghouse"' },
@@ -61,6 +67,9 @@ export const missions = [
     status: 'available',
     clipsFile: 'apollo12',
     clipCount: 259,
+    launchUtc: '1969-11-14T16:22:00Z',
+    durationSeconds: 880584, // 244:36:24
+
     highlights: [
       { id: 'a12a_000_00_00', title: '"SCE to Aux" — lightning strike at launch' },
       { id: 'a12a.1151543', title: 'First steps & "Whoopie!"' },
@@ -79,6 +88,9 @@ export const missions = [
     status: 'available',
     clipsFile: 'apollo14',
     clipCount: 308,
+    launchUtc: '1971-01-31T21:03:02Z',
+    durationSeconds: 777718, // 216:01:58
+
     highlights: [
       { id: 'a14-0000025', title: 'Launch' },
       { id: 'a14a_1354348', title: 'Shepard hits golf balls on the Moon' },
@@ -95,6 +107,9 @@ export const missions = [
     status: 'available',
     clipsFile: 'apollo15',
     clipCount: 1153,
+    launchUtc: '1971-07-26T13:34:00Z',
+    durationSeconds: 1062713, // 295:11:53
+
     highlights: [
       { id: 'a15_0000013', title: 'Launch — "Tower Clear"' },
       { id: 'a15a1195255', title: 'Deploying the Lunar Roving Vehicle' },
@@ -113,6 +128,9 @@ export const missions = [
     status: 'available',
     clipsFile: 'apollo16',
     clipCount: 912,
+    launchUtc: '1972-04-16T17:54:00Z',
+    durationSeconds: 957065, // 265:51:05
+
     highlights: [
       { id: 'a16_0000015', title: 'Launch' },
       { id: 'a16a1232408', title: 'The "Big Muley" rock' },

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import GlossaryText from './GlossaryText'
 
 function firstChannel(lines) {
   const set = new Set(lines.map((l) => l.channel))
@@ -29,7 +30,7 @@ function initials(name) {
 // Keyed by moment.id from the parent, so switching clips mounts a fresh
 // instance with the right default channel instead of needing an effect to
 // reset it.
-export default function TranscriptPanel({ lines, currentTime }) {
+export default function TranscriptPanel({ lines, currentTime, onTermClick }) {
   const [channel, setChannel] = useState(() => firstChannel(lines))
   const listRef = useRef(null)
   const activeLineRef = useRef(null)
@@ -94,7 +95,9 @@ export default function TranscriptPanel({ lines, currentTime }) {
             <span className="transcript-body">
               <span className="transcript-speaker">{line.speaker}</span>
               <span className="transcript-get">{line.get}</span>
-              <span className="transcript-text">{line.text}</span>
+              <span className="transcript-text">
+                <GlossaryText text={line.text} onTermClick={onTermClick} />
+              </span>
             </span>
           </div>
         ))}

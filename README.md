@@ -15,6 +15,17 @@ covering launch through splashdown with:
 - A channel toggle where a clip has more than one: **Air-to-Ground** (the
   crew's radio calls to Houston), **Onboard** (hot-mic chatter never
   transmitted), and **Mission Control** (PAO narration)
+- A schematic diagram showing roughly where the spacecraft is right now
+  (earth orbit, translunar coast, lunar orbit, on the surface, etc.),
+  classified from the source page's own title
+- A glossary: jargon and hardware terms (GET, TLI, EECOM, PLSS, and more)
+  are clickable right in the transcript, opening a panel with a fuller
+  explanation and, where a real one exists, a quote from the people who
+  were there
+- A "happening right now" banner: if the current moment falls within a
+  mission's real duration on its anniversary (same month/day/time, any
+  later year), a banner on the home page — and a badge on that mission's
+  page — links straight to that live GET
 
 Apollo 9 has no digitized audio in the source archive yet, so it stays
 "coming soon."
@@ -74,6 +85,22 @@ Then in `src/data/missions.js`, set the mission's `status` to
 `highlights` (`{ id, title }`, using exact clip ids from the generated
 JSON — matching by `getSeconds` alone can be ambiguous when two clips
 share a timestamp).
+
+### Other data files
+
+- `src/data/glossary.js` — the term list for the clickable glossary.
+  Definitions are written from general knowledge; a `quote` field is only
+  ever a real, specific quote, not a paraphrase, and `links` only point
+  at URLs that were actually verified to exist.
+- `src/data/phases.js` — regex rules that classify a clip's source-page
+  title into a rough mission phase (launch, translunar coast, lunar
+  orbit, surface, etc.) for the diagram. It's a narrative aid, not a
+  physically accurate trajectory.
+- `src/lib/liveStatus.js` — the "years ago today" math. Each mission in
+  `missions.js` carries `launchUtc` (verified launch time) and
+  `durationSeconds` (verified mission duration); none of these six
+  missions' real flights crossed a calendar year boundary, so only the
+  current year's anniversary needs checking.
 
 ## Development
 
