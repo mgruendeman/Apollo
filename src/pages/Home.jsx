@@ -8,9 +8,9 @@ export default function Home() {
         <p className="eyebrow">GET 000:00:00 — a work in progress</p>
         <h1>Apollo Audio Archive</h1>
         <p className="lede">
-          Key moments from the Apollo lunar missions, told in the astronauts'
-          own voices — cleaned up and pulled from the original NASA mission
-          recordings.
+          Nearly the entire Apollo lunar missions, told in the astronauts'
+          own voices — hundreds of clips per mission, from launch to
+          splashdown, pulled straight from the original NASA recordings.
         </p>
         <p className="lede-note">
           <a href={alreadyCovered.url} target="_blank" rel="noreferrer">

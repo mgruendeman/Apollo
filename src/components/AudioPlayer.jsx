@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return '0:00'
@@ -9,13 +9,22 @@ function formatTime(seconds) {
 
 // Keyed by moment.id from the parent, so a new moment mounts a fresh
 // instance instead of needing an effect to reset playback state.
-export default function AudioPlayer({ moment }) {
+export default function AudioPlayer({ moment, autoPlay = false, onEnded }) {
   const audioRef = useRef(null)
   const [playing, setPlaying] = useState(false)
   const [current, setCurrent] = useState(0)
   const [duration, setDuration] = useState(0)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
+
+  // Starting playback of a freshly-mounted track (continuous mode advancing
+  // to the next clip) is a side effect on the audio element, not state
+  // derived during render, so it belongs in an effect.
+  useEffect(() => {
+    if (autoPlay && audioRef.current) {
+      audioRef.current.play().catch(() => setError(true))
+    }
+  }, [autoPlay])
 
   function togglePlay() {
     const audio = audioRef.current
@@ -45,7 +54,10 @@ export default function AudioPlayer({ moment }) {
         preload="metadata"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
+        onEnded={() => {
+          setPlaying(false)
+          onEnded?.()
+        }}
         onLoadedMetadata={(e) => {
           setDuration(e.currentTarget.duration)
           setLoading(false)

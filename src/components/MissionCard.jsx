@@ -12,7 +12,7 @@ export default function MissionCard({ mission }) {
       <div className="mission-card-footer">
         {available ? (
           <span className="badge badge-available">
-            {mission.moments.length} key moments
+            {mission.clipCount.toLocaleString()} audio clips
           </span>
         ) : (
           <span className="badge badge-soon">Coming soon</span>
