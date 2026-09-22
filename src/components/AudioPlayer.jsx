@@ -77,9 +77,9 @@ export default function AudioPlayer({
     }
   }, [playing])
 
-  // The channel toggle can't switch to different audio — air-to-ground,
-  // onboard and PAO chatter are all baked into the same single recording
-  // — but it can jump playback to where that channel's dialogue starts.
+  // Clicking a transcript line seeks playback to that line's moment,
+  // requested by the parent via this prop rather than reaching into the
+  // audio element directly from a sibling component.
   useEffect(() => {
     if (seekRequest == null || !audioRef.current) return
     audioRef.current.currentTime = seekRequest.seconds

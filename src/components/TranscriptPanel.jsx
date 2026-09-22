@@ -1,14 +1,9 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import GlossaryText from './GlossaryText'
+import { speakerAvatar } from '../data/speakers'
 
-function firstChannel(lines) {
-  const set = new Set(lines.map((l) => l.channel))
-  return ['air-to-ground', 'onboard', 'pao'].find((c) => set.has(c)) || 'air-to-ground'
-}
-
-const CHANNEL_LABELS = {
-  'air-to-ground': 'Air-to-Ground',
-  onboard: 'Onboard',
+const CHANNEL_TAGS = {
+  onboard: 'onboard',
   pao: 'Mission Control',
 }
 
@@ -28,41 +23,25 @@ function initials(name) {
 }
 
 // Keyed by moment.id from the parent, so switching clips mounts a fresh
-// instance with the right default channel instead of needing an effect to
-// reset it.
-export default function TranscriptPanel({ lines, currentTime, onTermClick, onChannelSeek }) {
-  const [channel, setChannel] = useState(() => firstChannel(lines))
+// instance instead of needing an effect to reset scroll position.
+//
+// All channels (air-to-ground, onboard, PAO) are shown together in one
+// chronological stream — they're all the same single recording anyway, so
+// splitting them into separate filtered views just made it harder to
+// follow the conversation. A small tag marks anything that wasn't a
+// transmitted radio call.
+export default function TranscriptPanel({ lines, currentTime, onTermClick, onLineSeek }) {
   const listRef = useRef(null)
   const activeLineRef = useRef(null)
 
-  const channelsPresent = useMemo(() => {
-    const set = new Set(lines.map((l) => l.channel))
-    return ['air-to-ground', 'onboard', 'pao'].filter((c) => set.has(c))
-  }, [lines])
-
-  const filtered = useMemo(
-    () => lines.filter((l) => l.channel === channel),
-    [lines, channel],
-  )
-
-  // There's no separate audio per channel — air-to-ground, onboard and PAO
-  // chatter all come from the same single recording — so "switching"
-  // channel means seeking to where that channel's dialogue starts within
-  // the clip that's already playing, not swapping the audio source.
-  function selectChannel(c) {
-    setChannel(c)
-    const firstLine = lines.find((l) => l.channel === c)
-    if (firstLine) onChannelSeek?.(firstLine.offsetSeconds)
-  }
-
   const activeIndex = useMemo(() => {
     let idx = -1
-    for (let i = 0; i < filtered.length; i++) {
-      if (filtered[i].offsetSeconds <= currentTime) idx = i
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].offsetSeconds <= currentTime) idx = i
       else break
     }
     return idx
-  }, [filtered, currentTime])
+  }, [lines, currentTime])
 
   useEffect(() => {
     activeLineRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' })
@@ -74,49 +53,49 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onCha
 
   return (
     <div className="transcript-panel">
-      {channelsPresent.length > 1 && (
-        <div className="channel-toggle">
-          {channelsPresent.map((c) => (
-            <button
-              key={c}
-              type="button"
-              className={c === channel ? 'channel-chip is-active' : 'channel-chip'}
-              onClick={() => selectChannel(c)}
-            >
-              {CHANNEL_LABELS[c]}
-            </button>
-          ))}
-          <span className="channel-hint">
-            same recording — jumps to where this channel talks
-          </span>
-        </div>
-      )}
       <p className="glossary-hint">
-        Dotted-underline words are clickable for more.
+        Dotted-underline words are clickable for more · click a line to jump
+        there
       </p>
       <div className="transcript-list" ref={listRef}>
-        {filtered.map((line, i) => (
-          <div
-            key={`${line.get}-${i}`}
-            ref={i === activeIndex ? activeLineRef : null}
-            className={i === activeIndex ? 'transcript-line is-active' : 'transcript-line'}
-          >
-            <span
-              className="speaker-badge"
-              style={{ background: speakerColor(line.speaker) }}
-              title={line.speaker}
+        {lines.map((line, i) => {
+          const avatar = speakerAvatar(line.speaker)
+          return (
+            <div
+              key={`${line.get}-${i}`}
+              ref={i === activeIndex ? activeLineRef : null}
+              className={i === activeIndex ? 'transcript-line is-active' : 'transcript-line'}
+              onClick={() => onLineSeek?.(line.offsetSeconds)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') onLineSeek?.(line.offsetSeconds)
+              }}
             >
-              {initials(line.speaker)}
-            </span>
-            <span className="transcript-body">
-              <span className="transcript-speaker">{line.speaker}</span>
-              <span className="transcript-get">{line.get}</span>
-              <span className="transcript-text">
-                <GlossaryText text={line.text} onTermClick={onTermClick} />
+              {avatar ? (
+                <img className="speaker-avatar" src={avatar} alt={line.speaker} title={line.speaker} />
+              ) : (
+                <span
+                  className="speaker-badge"
+                  style={{ background: speakerColor(line.speaker) }}
+                  title={line.speaker}
+                >
+                  {initials(line.speaker)}
+                </span>
+              )}
+              <span className="transcript-body">
+                <span className="transcript-speaker">{line.speaker}</span>
+                {CHANNEL_TAGS[line.channel] && (
+                  <span className="transcript-channel-tag">{CHANNEL_TAGS[line.channel]}</span>
+                )}
+                <span className="transcript-get">{line.get}</span>
+                <span className="transcript-text">
+                  <GlossaryText text={line.text} onTermClick={onTermClick} />
+                </span>
               </span>
-            </span>
-          </div>
-        ))}
+            </div>
+          )
+        })}
       </div>
     </div>
   )

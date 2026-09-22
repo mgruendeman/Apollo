@@ -4,8 +4,10 @@ import AudioPlayer from '../components/AudioPlayer'
 import TranscriptPanel from '../components/TranscriptPanel'
 import MissionPhaseDiagram from '../components/MissionPhaseDiagram'
 import GlossaryPanel from '../components/GlossaryPanel'
+import ReportIssueButton from '../components/ReportIssueButton'
 import { findMission } from '../data/missions'
 import { classifyPhase } from '../data/phases'
+import { classifyEventType, EVENT_TYPE_META } from '../data/eventType'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
 
 const SOURCE_PREFIX_RE = /^Apollo \d+ (Flight Journal|Lunar Surface Journal) — /
@@ -148,6 +150,21 @@ export default function Mission() {
     return null
   }
 
+  // A chapter that happens to contain one of the mission's curated
+  // highlight clips gets that highlight's opening line shown as a
+  // pull-quote, so the timeline surfaces its "big moments" at a glance
+  // instead of requiring you to open every chapter to find them.
+  function highlightFor(ch) {
+    if (!mission.highlights) return null
+    const hit = mission.highlights.find((h) => {
+      const idx = clips.findIndex((c) => c.id === h.id)
+      return idx >= ch.startIndex && idx < ch.endIndex
+    })
+    if (!hit) return null
+    const lines = transcripts?.[hit.id]
+    return { title: hit.title, quote: lines?.[0]?.text }
+  }
+
   return (
     <div className="page">
       <Link to="/" className="back-link">
@@ -217,7 +234,7 @@ export default function Mission() {
             lines={activeLines}
             currentTime={currentTime}
             onTermClick={setActiveGlossaryEntry}
-            onChannelSeek={(seconds) => setSeekRequest({ seconds })}
+            onLineSeek={(seconds) => setSeekRequest({ seconds })}
           />
         ) : (
           <p className="moment-description">
@@ -233,14 +250,22 @@ export default function Mission() {
             />
             Keep playing through the mission
           </label>
-          <a
-            className="source-link"
-            href={moment.sourceUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Full transcript ↗
-          </a>
+          <span className="player-links">
+            <a
+              className="source-link"
+              href={moment.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Full transcript ↗
+            </a>
+            <ReportIssueButton
+              title={`${mission.name} GET ${moment.get}: audio/transcript issue`}
+              body={`Clip: ${moment.id}\nGET: ${moment.get}\nSource: ${moment.sourceUrl}\nAudio: ${moment.audioUrl}\n\nWhat's wrong?\n`}
+            >
+              Report an issue with this clip
+            </ReportIssueButton>
+          </span>
         </div>
         <div className="prev-next-row">
           <button
@@ -262,12 +287,24 @@ export default function Mission() {
 
       <section className="timeline">
         <h3>Full mission timeline</h3>
+        <p className="timeline-legend">
+          <span className="legend-item">★ major milestone</span>
+          <span className="legend-item">☾ rest / routine period</span>
+        </p>
         {chapters.map((ch, ci) => {
           const count = ch.endIndex - ch.startIndex
+          const eventType = classifyEventType(ch.label)
+          const meta = EVENT_TYPE_META[eventType]
+          const highlight = highlightFor(ch)
           return (
-            <details key={ch.startIndex} open={ci === activeChapterIndex}>
+            <details
+              key={ch.startIndex}
+              open={ci === activeChapterIndex}
+              className={meta.className}
+            >
               <summary>
                 <span className="chapter-get">{clips[ch.startIndex].get}</span>
+                {meta.icon && <span className="chapter-icon">{meta.icon}</span>}
                 <span className="chapter-label">
                   {ch.label.replace(SOURCE_PREFIX_RE, '')}
                 </span>
@@ -275,6 +312,12 @@ export default function Mission() {
                   {count} clip{count === 1 ? '' : 's'}
                 </span>
               </summary>
+              {highlight && (
+                <blockquote className="chapter-quote">
+                  <p className="chapter-quote-title">{highlight.title}</p>
+                  {highlight.quote && <p>"{highlight.quote}"</p>}
+                </blockquote>
+              )}
               <ol>
                 {clips.slice(ch.startIndex, ch.endIndex).map((c, j) => {
                   const i = ch.startIndex + j

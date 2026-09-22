@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import ReportIssueButton from './ReportIssueButton'
 
 export default function GlossaryPanel({ entry, onClose }) {
   useEffect(() => {
@@ -44,6 +45,12 @@ export default function GlossaryPanel({ entry, onClose }) {
             ))}
           </div>
         )}
+        <ReportIssueButton
+          title={`Glossary: "${entry.terms[0]}" looks wrong`}
+          body={`What's wrong with the "${entry.terms[0]}" glossary entry?\n\n(current text)\n${entry.long}`}
+        >
+          Report an inaccuracy in this entry
+        </ReportIssueButton>
       </div>
     </div>
   )
