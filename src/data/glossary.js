@@ -47,6 +47,7 @@ export const glossary = [
   },
   {
     id: 'lm',
+    quote: { text: 'Houston, Tranquility Base here. The Eagle has landed.', attribution: 'Neil Armstrong, Apollo 11, GET 102:45:58' },
     abbr: [{ short: 'LM', full: 'Lunar Module' }, { short: 'LEM', full: 'Lunar Excursion Module' }],
     terms: ['Lunar Module', 'LM', 'LEM'],
     short: 'The two-person lander that actually touched down on the Moon.',
@@ -75,6 +76,7 @@ export const glossary = [
   },
   {
     id: 'eva',
+    quote: { text: 'That\'s one small step for (a) man; one giant leap for mankind.', attribution: 'Neil Armstrong, Apollo 11, GET 109:24:23' },
     abbr: [{ short: 'EVA', full: 'Extravehicular Activity' }],
     terms: ['Extravehicular Activity', 'EVA'],
     short: 'Any time an astronaut leaves the pressurized cabin — a moonwalk, most often.',
@@ -139,6 +141,7 @@ export const glossary = [
   },
   {
     id: 'tli',
+    quote: { text: 'Apollo 11, this is Houston. You are Go for TLI. Over.', attribution: 'CAPCOM Bruce McCandless, Apollo 11, GET 002:26:38' },
     abbr: [{ short: 'TLI', full: 'Translunar Injection' }],
     terms: ['Translunar Injection', 'TLI'],
     short: 'The burn that leaves Earth orbit and sends the spacecraft toward the Moon.',
@@ -146,6 +149,7 @@ export const glossary = [
   },
   {
     id: 'loi',
+    quote: { text: 'Apollo 8, this is Houston. At 68:04, you\'re Go for LOI.', attribution: 'CAPCOM Jerry Carr, Apollo 8, GET 068:04:07' },
     abbr: [{ short: 'LOI', full: 'Lunar Orbit Insertion' }],
     terms: ['Lunar Orbit Insertion', 'LOI'],
     short: 'The burn that slows the spacecraft into orbit around the Moon.',
@@ -160,6 +164,7 @@ export const glossary = [
   },
   {
     id: 'pdi',
+    quote: { text: 'Eagle, Houston. We read you now. You\'re Go for PDI. Over.', attribution: 'CAPCOM Charlie Duke, Apollo 11, GET 102:28:51' },
     abbr: [{ short: 'PDI', full: 'Powered Descent Initiation' }],
     terms: ['Powered Descent Initiation', 'PDI'],
     short: 'The start of the actual landing burn.',
@@ -167,6 +172,7 @@ export const glossary = [
   },
   {
     id: 'tei',
+    quote: { text: 'Roger. Please be informed there is a Santa Claus.', attribution: 'Jim Lovell, Apollo 8, on Christmas Day, confirming the TEI burn behind the Moon had worked, GET 089:34:25' },
     abbr: [{ short: 'TEI', full: 'Trans-Earth Injection' }],
     terms: ['Trans-Earth Injection', 'Trans Earth Injection', 'TEI'],
     short: 'The burn that leaves lunar orbit and heads home.',
@@ -187,6 +193,7 @@ export const glossary = [
   },
   {
     id: 'capcom',
+    quote: { text: 'Roger, Twan... Tranquility. We copy you on the ground. You got a bunch of guys about to turn blue. We\'re breathing again. Thanks a lot.', attribution: 'CAPCOM Charlie Duke, answering the Apollo 11 landing call, GET 102:46:06' },
     abbr: [{ short: 'CAPCOM', full: 'Capsule Communicator' }],
     terms: ['CAPCOM', 'Capsule Communicator'],
     short: 'The one person in Mission Control who talks directly to the crew.',
@@ -226,12 +233,14 @@ export const glossary = [
   },
   {
     id: 'high-gain-antenna',
+    quote: { text: 'Okay. We just broke lock on S-band High Gain. We\'re on Omni D now.', attribution: 'Frank Borman, Apollo 8, GET 007:27:22' },
     terms: ['High-Gain Antenna', 'High Gain Antenna', 'Omni Antenna', 'Omnidirectional Antenna'],
     short: 'The steerable dish (vs. the simple always-on antennas) used for long-range or TV communication.',
     long: 'Spacecraft carried several antennas: simple "omni" antennas that radiate in most directions but have limited range, and a steerable high-gain antenna that had to be aimed at Earth for strong signal — necessary for the best voice quality and especially for TV transmissions across translunar distance.',
   },
   {
     id: 'barbecue-roll',
+    quote: { text: 'Okay. We\'re back in the barbecue attitude, starting PTC.', attribution: 'Frank Borman, Apollo 8, GET 052:56:06' },
     abbr: [{ short: 'PTC', full: 'Passive Thermal Control' }],
     terms: ['Passive Thermal Control', 'Barbecue Roll', 'PTC'],
     short: 'A slow, continuous roll during the coast phases to even out sun exposure.',
@@ -239,6 +248,7 @@ export const glossary = [
   },
   {
     id: 'contingency-sample',
+    quote: { text: 'This is very interesting. It\'s a very soft surface, but here and there where I plug with the contingency sample collector, I run into a very hard surface.', attribution: 'Neil Armstrong, Apollo 11, GET 109:34:12' },
     terms: ['Contingency Sample'],
     short: 'A quick scoop of lunar soil taken immediately after the first steps, just in case.',
     long: 'The very first thing a commander did on the surface, before any other surface work, was scoop a small sample of soil and rock into a bag on their suit leg — insurance against an emergency that cut a moonwalk short, so the mission would come home with at least some lunar material no matter what.',
@@ -251,18 +261,31 @@ export const glossary = [
   },
   {
     id: 'rille',
+    deepDive: true,
+    deepDiveText: [
+      'A rille is a long, narrow channel in the lunar surface. Some are straight and follow faults; the winding, "sinuous" kind, like Hadley Rille, are now generally thought to have been cut by flowing lava, either as open channels or as lava tubes whose roofs later collapsed.',
+      'Hadley Rille winds along the foot of the Apennine Mountains at the edge of Mare Imbrium. Apollo 15 landed beside it so Dave Scott and Jim Irwin could sample its rim and study its walls, where layers of old lava flows are exposed, a rare look at a mare below its surface.',
+      'On their first and third moonwalks they drove the Lunar Roving Vehicle to the rim, photographing the far wall with a long lens and collecting samples near the edge. They stayed on the rim; the rille itself was far too deep and steep to enter.',
+    ],
+    images: [
+      { src: 'glossary/rille/hadley-rille-rover.jpg', caption: 'Dave Scott at the Lunar Roving Vehicle, parked on the edge of Hadley Rille on Apollo 15\'s first moonwalk. Jim Irwin took the photo from the flank of St. George Crater, looking north along the rille.', credit: 'NASA (AS15-85-11451)', sourceUrl: 'https://images.nasa.gov/details/as15-85-11451' },
+      { src: 'glossary/rille/schroters-valley.jpg', caption: 'Schröter\'s Valley, a sinuous rille near the crater Aristarchus, photographed from lunar orbit by Al Worden on Apollo 15.', credit: 'NASA (AS15-93-12628)', sourceUrl: 'https://images.nasa.gov/details/as15-93-12628' },
+    ],
+    quote: { text: 'And the rille is quite distinctive as we pass right over it.', attribution: 'Jim Irwin, looking down on Hadley Rille from lunar orbit, Apollo 15, GET 085:39:05' },
     terms: ['Rille'],
     short: 'A long, narrow, canyon-like channel on the lunar surface.',
     long: 'A sinuous trench cut into the Moon\'s surface, thought to be a collapsed lava tube or ancient lava channel — Hadley Rille, which Apollo 15 explored by rover, is the best-known example, roughly a mile wide and 1,200 feet deep.',
   },
   {
     id: 'terminator',
+    quote: { text: 'I\'m looking out my center window, which is a round window, and the window is bigger than the Earth is right now. I can clearly see the terminator.', attribution: 'Jim Lovell, Apollo 8, GET 004:58:35' },
     terms: ['Terminator'],
     short: 'The line between lunar day and lunar night.',
     long: 'The boundary on the Moon\'s surface (or Earth\'s, in orbital descriptions) between the sunlit side and the side in darkness — crews frequently describe watching it, since low sun angle near the terminator makes surface terrain and shadows much easier to see.',
   },
   {
     id: 'star-sighting',
+    quote: { text: 'We are in sunlight, and it looks like they are all S-IVB, but we don\'t know. I am going to attempt a P52 realign at this time and see what I can do.', attribution: 'Jim Lovell, Apollo 8, on picking out stars among the S-IVB\'s vented propellant, GET 004:21:09' },
     abbr: [{ short: 'P52', full: 'Program 52, the guidance computer\'s platform-alignment program' }],
     terms: ['Star Sighting', 'P52', 'Platform Alignment'],
     short: 'Sighting known stars through a sextant to check and correct the guidance platform.',
@@ -340,6 +363,7 @@ export const glossary = [
   },
   {
     id: 'les',
+    quote: { text: 'And the tower jettison was quite noticeable.', attribution: 'Jim Lovell, Apollo 8, GET 001:26:32' },
     abbr: [{ short: 'LES', full: 'Launch Escape System' }],
     terms: ['Launch Escape System', 'Launch Escape Tower'],
     short: 'The rocket tower atop the Command Module, there to pull the crew clear of a failing booster.',
@@ -439,6 +463,7 @@ export const glossary = [
   },
   {
     id: 'docking-probe',
+    quote: { text: 'We\'re hard docked, Houston.', attribution: 'Jim Lovell, Apollo 13, GET 003:19:18' },
     terms: ['Docking Probe', 'Probe and Drogue'],
     short: 'The retractable spike-and-cone mechanism that linked the CSM and LM nose to nose.',
     long: 'Docking used a probe, mounted in the CSM\'s nose, that speared into a cone-shaped drogue on the LM\'s docking tunnel. Three latches on the probe gave a "soft dock" on first contact; the CMP then retracted the probe electrically, drawing the two craft together until twelve latches around the rim clamped down for an airtight "hard dock." The probe-and-drogue assembly could then be unbolted and stowed to let the crew crawl through the tunnel.',
@@ -461,6 +486,7 @@ export const glossary = [
   // -- Lunar Roving Vehicle (deep dive) -----------------------------------
   {
     id: 'lrv',
+    quote: { text: 'Okay. (Pause) out of detent; we\'re moving.', attribution: 'Dave Scott, starting the first drive of a rover on the Moon, Apollo 15, GET 120:35:22' },
     abbr: [{ short: 'LRV', full: 'Lunar Roving Vehicle' }],
     terms: ['Lunar Roving Vehicle', 'LRV', 'Rover'],
     short: 'The battery-powered "Moon buggy" used on the last three landing missions.',
@@ -490,6 +516,16 @@ export const glossary = [
   },
   {
     id: 'quarantine',
+    deepDive: true,
+    deepDiveText: [
+      'No one could be certain in 1969 that the Moon was lifeless, so NASA quarantined the first landing crews and their samples to make sure nothing harmful came back with them.',
+      'After splashdown each crew went from the recovery helicopter straight into the Mobile Quarantine Facility, a converted Airstream trailer on the recovery ship, sealed off from everyone else. The trailer was flown to Houston with them inside and connected to the Lunar Receiving Laboratory, where they finished 21 days of isolation counted from their liftoff from the Moon.',
+      'Scientists at the Lunar Receiving Laboratory also exposed plants and animals to lunar material. Nothing harmful turned up, and after Apollo 14 the quarantine was dropped.',
+    ],
+    images: [
+      { src: 'glossary/quarantine/apollo14-mqf.jpg', caption: 'Sealed inside the Mobile Quarantine Facility, the Apollo 14 crew (Stuart Roosa, Alan Shepard and Edgar Mitchell) greet newsmen and sailors aboard the USS New Orleans, February 9, 1971.', credit: 'NASA (S71-18557)', sourceUrl: 'https://images.nasa.gov/details/S71-18557' },
+      { src: 'photos/12/recovery.jpg', caption: 'The Apollo 12 crew wave as they walk into their Mobile Quarantine Facility aboard the USS Hornet.', credit: 'NASA (6903665)', sourceUrl: 'https://images.nasa.gov/details/6903665' },
+    ],
     abbr: [{ short: 'MQF', full: 'Mobile Quarantine Facility' }, { short: 'LRL', full: 'Lunar Receiving Laboratory' }],
     terms: ['Mobile Quarantine Facility', 'Lunar Receiving Laboratory', 'Quarantine', 'MQF'],
     short: 'The 21-day medical isolation imposed on early lunar crews and their samples, just in case.',
@@ -497,6 +533,16 @@ export const glossary = [
   },
   {
     id: 'splashdown',
+    deepDive: true,
+    deepDiveText: [
+      'Coming home, the Command Module separated from the Service Module shortly before entry, turned its blunt heat shield forward, and hit the atmosphere at close to 25,000 miles per hour. Friction slowed it and wrapped it in a sheath of glowing plasma that blocked radio contact for a few minutes.',
+      'Two small drogue parachutes opened first to steady and slow the capsule, followed by three large main parachutes. The spacecraft was designed to land safely on two, and on Apollo 15 it had to: one main parachute collapsed during the descent, and the crew came down on the remaining two without harm.',
+      'Navy helicopters and swimmers met every crew, fitting a flotation collar around the capsule before the astronauts were lifted aboard the recovery ship. The capsule itself was then hoisted onto the deck.',
+    ],
+    images: [
+      { src: 'glossary/splashdown/apollo13-splashdown.jpg', caption: 'Apollo 13\'s Command Module splashes down in the South Pacific under its three main parachutes, April 17, 1970, about four miles from the USS Iwo Jima.', credit: 'NASA (S70-35644)', sourceUrl: 'https://images.nasa.gov/details/s70-35644' },
+      { src: 'glossary/splashdown/apollo8-hoist.jpg', caption: 'The Apollo 8 capsule is hoisted aboard the recovery carrier USS Yorktown after splashdown, December 27, 1968.', credit: 'NASA (S68-56304)', sourceUrl: 'https://images.nasa.gov/details/S68-56304' },
+    ],
     terms: ['Splashdown'],
     short: 'The Command Module\'s parachute landing in the ocean, ending every mission.',
     long: 'Every Apollo mission ended the same way: after separating from the Service Module, the Command Module rode its heat shield through reentry, then a sequence of drogue and main parachutes eased it down for splashdown in the Pacific Ocean — except Apollo 7 and Apollo 9, which came down in the Atlantic — where a Navy carrier and frogman swim team were standing by to recover the crew.',
@@ -578,6 +624,15 @@ export const glossary = [
   // -- Named places / samples ------------------------------------------
   {
     id: 'cone-crater',
+    deepDive: true,
+    deepDiveText: [
+      'Cone Crater is a young crater about 1,000 feet across on a ridge above Apollo 14\'s Fra Mauro landing site. Its impact dug up material from deep in the Fra Mauro formation and scattered it around the rim, which is why geologists wanted samples from its edge.',
+      'On the second moonwalk, Alan Shepard and Edgar Mitchell pulled a two-wheeled cart, the Modular Equipment Transporter, up the slope toward it. The ground was hummocky, landmarks were hard to pick out, and they fell behind schedule; with their consumables running down, Houston called them back before they were sure where the rim was.',
+      'Later analysis of their photographs showed they had come within about 100 feet of it, and they did collect samples from the boulder field on its flank.',
+    ],
+    images: [
+      { src: 'glossary/cone-crater/cone-boulders.jpg', caption: 'The field of boulders on the flank of Cone Crater, photographed by Alan Shepard on Apollo 14\'s second moonwalk, February 6, 1971.', credit: 'NASA (AS14-64-9103)', sourceUrl: 'https://images.nasa.gov/details/as14-64-9103' },
+    ],
     terms: ['Cone Crater'],
     short: 'The rim Apollo 14\'s crew never quite reached, hunting the mission\'s prime rock target.',
     long: 'A young, sharp-walled crater above Apollo 14\'s Fra Mauro landing site, Cone Crater was the mission\'s main geology objective, since its ejecta promised deep, ancient material. Alan Shepard and Ed Mitchell spent their second moonwalk trudging uphill through confusing, cratered terrain toward it, exhausted and behind schedule, and were called back by Houston when they were — as later mapping showed — within about 100 feet of the rim without ever being sure they\'d find it.',
@@ -590,18 +645,46 @@ export const glossary = [
   },
   {
     id: 'taurus-littrow',
+    deepDive: true,
+    deepDiveText: [
+      'Apollo 17 landed in a narrow valley on the southeastern edge of the Sea of Serenity, walled in by mountains thousands of feet high, the North and South Massifs. Geologists wanted two things from it: ancient rock from the massifs, and a look at dark deposits on the valley floor that might come from young volcanic eruptions.',
+      'Gene Cernan and Harrison Schmitt spent three long moonwalks there, driving the rover to the foot of both massifs. At Shorty Crater on the second moonwalk, Schmitt noticed orange soil. It turned out to be made of tiny beads of volcanic glass, sprayed out in a fire-fountain eruption.',
+      'The beads proved older than hoped, around 3.6 billion years rather than recent, but they remain one of the clearest records of the Moon\'s volcanic past.',
+    ],
+    images: [
+      { src: 'glossary/taurus-littrow/orange-soil.jpg', caption: 'Looking into Shorty Crater at Station 4, where Harrison Schmitt found the orange soil on Apollo 17\'s second moonwalk, December 12, 1972.', credit: 'NASA (AS17-137-20992)', sourceUrl: 'https://images.nasa.gov/details/as17-137-20992' },
+      { src: 'photos/17/challenger-on-surface.jpg', caption: 'The Lunar Module Challenger on the floor of the Taurus-Littrow valley, with Harrison Schmitt, the flag and the rover.', credit: 'NASA (AS17-134-20382)', sourceUrl: 'https://images.nasa.gov/details/as17-134-20382' },
+    ],
     terms: ['Taurus-Littrow'],
     short: 'The mountain-ringed valley where Apollo 17, the last landing mission, touched down.',
     long: 'Apollo 17 landed in the Taurus-Littrow valley, on the southeastern edge of Mare Serenitatis, named for the surrounding Taurus mountains and the nearby crater Littrow. Its steep valley walls and evidence of possible volcanic activity made it a prime target for the program\'s final, most geologically ambitious landing, with Harrison Schmitt aboard as the only professional geologist to walk on the Moon.',
   },
   {
     id: 'big-muley',
+    deepDive: true,
+    deepDiveText: [
+      'At 11.7 kilograms (about 26 pounds), sample 61016 is the largest single rock Apollo brought back. It was collected near Plum Crater on Apollo 16\'s first moonwalk.',
+      'It is a breccia, rock welded together by the heat and shock of impacts, with a large piece of shocked anorthosite. That fits what Apollo 16 found across the Descartes Highlands, where the volcanic rocks geologists expected turned out to be impact breccias instead.',
+      'It\'s named after Bill Muehlberger, the University of Texas geologist who led the Apollo 16 field geology team.',
+    ],
+    images: [
+      { src: 'photos/16/big-muley.jpg', caption: 'Engineer David White (left) and geologist Bill Muehlberger with Big Muley in the Lunar Receiving Laboratory, May 1972.', credit: 'NASA (S72-38465)', sourceUrl: 'https://images.nasa.gov/details/s72-38465' },
+    ],
     terms: ['Big Muley'],
     short: 'The largest rock brought back from the Moon — 26 pounds, from Apollo 16.',
     long: 'Lunar sample 61016, nicknamed Big Muley, is the largest single rock any Apollo mission returned: an 11.7-kilogram breccia picked up by John Young and Charlie Duke at Plum Crater. It\'s named for Bill Muehlberger, the geologist who led the Apollo 16 crew\'s field geology training and mission support.',
   },
   {
     id: 'genesis-rock',
+    deepDive: true,
+    deepDiveText: [
+      'On Apollo 15\'s second moonwalk, at Spur Crater on the flank of Mount Hadley Delta, Dave Scott spotted a white rock sitting on top of a larger one, standing out from the gray around it.',
+      'It was anorthosite, a rock made almost entirely of the mineral plagioclase feldspar. Geologists expected that the Moon\'s earliest crust formed this way, as lightweight crystals floated to the top of an ocean of molten rock, so a piece of it was exactly what the crew had been trained to look for.',
+      'Later dating put it at around 4 billion years old: very old, though not quite the primordial crust its nickname promised.',
+    ],
+    images: [
+      { src: 'photos/15/genesis-rock.jpg', caption: 'The Genesis Rock (sample 15415) in the Lunar Receiving Laboratory, August 1971.', credit: 'NASA (S71-42955)', sourceUrl: 'https://images.nasa.gov/details/S71-42955' },
+    ],
     terms: ['Genesis Rock'],
     short: 'A pale anorthosite chunk from Apollo 15, once thought to be a piece of the Moon\'s original crust.',
     long: 'Spotted perched on a small pedestal at Spur Crater, sample 15415 was a strikingly white rock that stood out from the surrounding gray regolith. Nicknamed the Genesis Rock, it was later dated at roughly 4 billion years old, though further study showed it wasn\'t quite the pristine, primordial crust sample it was first taken for.',
