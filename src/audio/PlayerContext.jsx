@@ -73,7 +73,9 @@ export function PlayerProvider({ children }) {
   useEffect(() => {
     if (!('mediaSession' in navigator) || !clip) return
     navigator.mediaSession.metadata = new MediaMetadata({
-      title: `GET ${clip.get} · ${stripSourcePrefix(clip.sourceLabel)}`,
+      title: clip.get
+        ? `GET ${clip.get} · ${stripSourcePrefix(clip.sourceLabel)}`
+        : clip.sourceLabel,
       artist: session.mission.name,
       album: 'Apollo Audio Archive',
     })

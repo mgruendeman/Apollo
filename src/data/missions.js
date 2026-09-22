@@ -39,8 +39,13 @@ export const missions = [
     crew: ['James McDivitt', 'David Scott', 'Rusty Schweickart'],
     summary:
       'The first crewed flight of the full Apollo hardware stack, testing the Lunar Module — including docking, undocking, and a solo flight — in Earth orbit.',
-    status: 'coming-soon',
-    note: 'No audio has been digitized for this mission in the archive yet.',
+    status: 'archive',
+    launchUtc: '1969-03-03T16:00:00Z',
+    durationSeconds: 867654, // 241:00:54
+    csmName: 'Gumdrop',
+    lmName: 'Spider',
+    objective: 'Fly the complete Apollo spacecraft for the first time, in Earth orbit: dock with the Lunar Module, test the lunar spacesuit and backpack outside the spacecraft, and fly Spider on its own and rendezvous back with Gumdrop, as a lunar landing crew would.',
+    landingNote: 'None: Apollo 9 stayed in Earth orbit, testing the Lunar Module.',
   },
   {
     id: '10',

@@ -1,51 +1,15 @@
 import { useEffect, useMemo, useRef } from 'react'
 import GlossaryText from './GlossaryText'
-import { speakerAvatar } from '../data/speakers'
+import SpeakerAvatar from './SpeakerAvatar'
+import { effectiveOffsets, activeLineIndex } from '../lib/transcriptTiming'
 
 const CHANNEL_TAGS = {
   onboard: 'onboard',
   pao: 'Mission Control',
 }
 
-function speakerColor(name) {
-  let hash = 0
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  const hue = Math.abs(hash) % 360
-  return `hsl(${hue}, 55%, 42%)`
-}
-
-// The journals only timestamp radio calls; Mission Control commentary and
-// other untimed lines inherit the previous line's GET, so several lines can
-// share one timestamp and would all light up at once, ahead of the audio.
-// Spread each such run evenly across the gap until the next timestamp.
-function effectiveOffsets(lines) {
-  const out = lines.map((l) => l.offsetSeconds)
-  let i = 0
-  while (i < lines.length) {
-    let j = i + 1
-    while (j < lines.length && lines[j].offsetSeconds === lines[i].offsetSeconds) j++
-    const count = j - i
-    if (count > 1) {
-      const start = lines[i].offsetSeconds
-      const next = j < lines.length ? lines[j].offsetSeconds : null
-      const end = next != null && next > start ? next : start + count * 4
-      for (let k = 1; k < count; k++) out[i + k] = start + ((end - start) * k) / count
-    }
-    i = j
-  }
-  return out
-}
-
 // How long a manual scroll of the transcript box pauses auto-scrolling.
 const USER_SCROLL_HOLD_MS = 6000
-
-function initials(name) {
-  const words = name.trim().split(/\s+/)
-  if (words.length === 1) return words[0].slice(0, 2).toUpperCase()
-  return (words[0][0] + words[words.length - 1][0]).toUpperCase()
-}
 
 // Keyed by moment.id from the parent, so switching clips mounts a fresh
 // instance instead of needing an effect to reset scroll position.
@@ -62,14 +26,7 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
 
   const offsets = useMemo(() => effectiveOffsets(lines), [lines])
 
-  const activeIndex = useMemo(() => {
-    let idx = -1
-    for (let i = 0; i < offsets.length; i++) {
-      if (offsets[i] <= currentTime) idx = i
-      else break
-    }
-    return idx
-  }, [offsets, currentTime])
+  const activeIndex = activeLineIndex(offsets, currentTime)
 
   // Scroll only the transcript box itself, never the page, so reading
   // elsewhere on the page isn't interrupted each time a new line starts.
@@ -105,7 +62,6 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
         onTouchMove={markUserScroll}
       >
         {lines.map((line, i) => {
-          const avatar = speakerAvatar(line.speaker)
           return (
             <div
               key={`${line.get}-${i}`}
@@ -118,17 +74,7 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
                 if (e.key === 'Enter' || e.key === ' ') onLineSeek?.(offsets[i])
               }}
             >
-              {avatar ? (
-                <img className="speaker-avatar" src={avatar} alt={line.speaker} title={line.speaker} />
-              ) : (
-                <span
-                  className="speaker-badge"
-                  style={{ background: speakerColor(line.speaker) }}
-                  title={line.speaker}
-                >
-                  {initials(line.speaker)}
-                </span>
-              )}
+              <SpeakerAvatar name={line.speaker} />
               <span className="transcript-body">
                 <span className="transcript-speaker">{line.speaker}</span>
                 {CHANNEL_TAGS[line.channel] && (

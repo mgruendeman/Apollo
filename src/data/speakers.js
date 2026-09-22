@@ -35,6 +35,8 @@ export const speakerPhotos = {
   duke: 'duke.jpg',
   evans: 'evans.jpg',
   schmitt: 'schmitt.jpg',
+  mcdivitt: 'mcdivitt.jpg',
+  schweickart: 'schweickart.jpg',
 
   // Frequent CAPCOMs / Mission Control voices
   allen: 'allen.jpg',

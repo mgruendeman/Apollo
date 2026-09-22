@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams, Navigate } from 'react-router-dom'
 import AudioPlayer from '../components/AudioPlayer'
 import TranscriptPanel from '../components/TranscriptPanel'
@@ -6,10 +6,13 @@ import MissionPhaseDiagram from '../components/MissionPhaseDiagram'
 import MissionTimeline from '../components/MissionTimeline'
 import MissionPhoto from '../components/MissionPhoto'
 import MissionOverview from '../components/MissionOverview'
+import ArchiveRecordings from '../components/ArchiveRecordings'
+import ImmersiveView from '../components/ImmersiveView'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
 import { findMission } from '../data/missions'
 import { photosByClipId } from '../data/photos'
+import { archiveRecordings } from '../data/archiveRecordings'
 import { computePhases } from '../data/phases'
 import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
@@ -29,6 +32,8 @@ export default function Mission() {
   const [transcripts, setTranscripts] = useState(null)
   const player = usePlayer()
   const [cuedIndex, setCuedIndex] = useState(0)
+  const [immersive, setImmersive] = useState(false)
+  const closeImmersive = useCallback(() => setImmersive(false), [])
   const [activeGlossaryEntry, setActiveGlossaryEntry] = useState(null)
   const [now, setNow] = useState(() => new Date())
   const didAutoJump = useRef(false)
@@ -93,8 +98,28 @@ export default function Mission() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clips])
 
-  if (!mission || mission.status !== 'available') {
+  if (!mission || (mission.status !== 'available' && mission.status !== 'archive')) {
     return <Navigate to="/" replace />
+  }
+
+  const archive = archiveRecordings[mission.id]
+
+  if (!mission.clipsFile) {
+    return (
+      <div className="page">
+        <Link to="/" className="back-link">
+          ← All missions
+        </Link>
+        <header className="mission-header">
+          <p className="eyebrow">Apollo {mission.number}</p>
+          <h1>{mission.name}</h1>
+          <p className="mission-header-dates">{mission.dates}</p>
+          <p className="lede">{mission.summary}</p>
+        </header>
+        <MissionOverview mission={mission} />
+        {archive && <ArchiveRecordings mission={mission} archive={archive} />}
+      </div>
+    )
   }
 
   if (!clips) {
@@ -179,6 +204,9 @@ export default function Mission() {
           <div className="player-top-text">
             <p className="get-clock">GET {moment.get}</p>
             <h2>{moment.sourceLabel.replace(SOURCE_PREFIX_RE, '')}</h2>
+            <button type="button" className="immersive-open" onClick={() => setImmersive(true)}>
+              ⛶ Full-screen view
+            </button>
           </div>
           <MissionPhaseDiagram phase={phase} />
         </div>
@@ -248,6 +276,24 @@ export default function Mission() {
         activeIndex={activeIndex}
         onSelect={selectClip}
       />
+
+      {archive && <ArchiveRecordings mission={mission} archive={archive} />}
+
+      {immersive && (
+        <ImmersiveView
+          mission={mission}
+          clips={clips}
+          index={activeIndex}
+          lines={activeLines}
+          currentTime={currentTime}
+          phase={phase}
+          highlightPhoto={photosByClipId[moment.id]}
+          onClose={closeImmersive}
+          onLineSeek={seekToLine}
+          onPrevious={activeIndex > 0 ? () => selectClip(activeIndex - 1) : null}
+          onNext={activeIndex < clips.length - 1 ? () => selectClip(activeIndex + 1) : null}
+        />
+      )}
 
       <GlossaryPanel
         entry={activeGlossaryEntry}

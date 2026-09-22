@@ -7,6 +7,9 @@ export default function NowPlayingBar() {
   const { pathname } = useLocation()
   if (!player.session) return null
   const { mission } = player.session
+  const route = `/mission/${mission.routeId || mission.id}`
+  // On its own mission page the full player is already visible (whole
+  // archive recordings keep the bar, since they have no player there).
   if (pathname === `/mission/${mission.id}`) return null
 
   const progress = player.duration ? (player.currentTime / player.duration) * 100 : 0
@@ -24,9 +27,10 @@ export default function NowPlayingBar() {
         >
           {player.playing ? '❚❚' : '▶'}
         </button>
-        <Link to={`/mission/${mission.id}`} className="now-playing-info">
+        <Link to={route} className="now-playing-info">
           <span className="now-playing-title">
-            {mission.name} · GET {player.clip.get}
+            {mission.name}
+            {player.clip.get && ` · GET ${player.clip.get}`}
           </span>
           <span className="now-playing-sub">{stripSourcePrefix(player.clip.sourceLabel)}</span>
         </Link>

@@ -79,9 +79,16 @@ export default function MissionOverview({ mission }) {
         <div>
           <dt>Spacecraft</dt>
           <dd>
-            {mission.csmName && <>Command Module <strong>{mission.csmName}</strong></>}
-            {mission.csmName && mission.lmName && ' · '}
-            {mission.lmName && <>Lunar Module <strong>{mission.lmName}</strong></>}
+            {mission.csmName && (
+              <span className="mission-facts-line">
+                Command Module <strong>{mission.csmName}</strong>
+              </span>
+            )}
+            {mission.lmName && (
+              <span className="mission-facts-line">
+                Lunar Module <strong>{mission.lmName}</strong>
+              </span>
+            )}
             {mission.spacecraftNote && <span className="mission-facts-note">{mission.spacecraftNote}</span>}
           </dd>
         </div>
@@ -94,7 +101,7 @@ export default function MissionOverview({ mission }) {
                 {landed && <span className="mission-facts-note">{formatCoord(site.lat, site.lon)}</span>}
               </>
             ) : (
-              'None: this mission orbited the Moon without landing.'
+              mission.landingNote || 'None: this mission orbited the Moon without landing.'
             )}
           </dd>
         </div>
