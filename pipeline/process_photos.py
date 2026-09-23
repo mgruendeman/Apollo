@@ -88,8 +88,8 @@ def frame_box(im):
     rows = np.abs(np.diff(g[:, int(w * 0.3):int(w * 0.7)], axis=0)).mean(1)
     cols = np.abs(np.diff(g[int(h * 0.3):int(h * 0.7)], axis=1)).mean(0)
 
-    def refine(profile, start, length, span):
-        win = int(0.05 * span)
+    def refine(profile, start, length, span, reach):
+        win = int(reach * span)
 
         def peak(center):
             lo, hi = max(0, int(center - win)), min(len(profile), int(center + win))
@@ -102,8 +102,10 @@ def frame_box(im):
             return a
         return start
 
-    top = refine(rows, top, side, h)
-    left = refine(cols, left, side, w)
+    # Along the roll, frame spacing varies, so look further; across it the
+    # sprocket holes fix the position (a wider search finds their edges).
+    top = refine(rows, top, side, h, 0.08)
+    left = refine(cols, left, side, w, 0.05)
     m = MARGIN * side
     return int(left + m), int(top + m), int(left + side - m), int(top + side - m)
 
@@ -240,6 +242,9 @@ def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True, revie
     im = load_rgb(src)
     box = frame_box(im) if fmt == 'a' else None
     pic = enhance(trim_dark_edges(im.crop(box)) if box else im)
+    turn = (review or {}).get('rotate', 0) % 360   # a reviewer's rotation, degrees clockwise
+    if turn:
+        pic = pic.rotate(-turn, expand=True)
     out.mkdir(parents=True, exist_ok=True)
     web = pic.copy()
     web.thumbnail((WEB_PX, WEB_PX), Image.LANCZOS)

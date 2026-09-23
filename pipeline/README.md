@@ -104,13 +104,15 @@ cuts that to hours. Already-finished files are skipped.
    NASA's releases into R2 alongside our cleaned scans (a few hundred MB),
    so the site doesn't depend on NASA's servers.
 4. **People check the automatic results.** Reviewers mark each cleaned
-   photo *Looks good*, or flag it *Brighter*, *Darker*, *More contrast*,
-   *Less contrast*, *Colour off* or *Bad crop*, with an optional note.
-   Save the marks as JSON (`{"AS12-46-6726": {"brightness": 1,
-   "contrast": 0, "colour": true, "crop": false, "note": "..."}}`) and
-   re-run with `--reviews marks.json`:
+   photo *Looks good*, or set what it needs: brightness and contrast
+   steps, a rotation, and *Colour off* or *Bad crop*, with an optional
+   note. Save the marks as JSON (`{"AS12-46-6726": {"brightness": 1,
+   "contrast": 0, "rotate": 0, "colour": true, "crop": false, "note":
+   "..."}}`, as in `photo_reviews.json`, the pilot's first round) and
+   re-run with `--reviews pipeline/photo_reviews.json`:
    - brightness and contrast marks are applied automatically, about 5 L*
-     per step;
+     per step, and `rotate` (degrees clockwise: 90, 180 or 270) turns the
+     photo;
    - colour and crop marks are written to `needs-hand-fix.tsv` in the
      output folder for a fix by hand.
 
