@@ -60,7 +60,7 @@ function frameUrl(id, format, size) {
 
 // One shape for both photo sources, so the strip, gallery, lightbox and
 // full-screen view don't care where a picture came from.
-export function frameToPhoto([id, format, kind, date, desc], missionId) {
+export function frameToPhoto([id, format, kind, date, desc, quality], missionId) {
   return {
     key: id,
     thumb: frameUrl(id, format, 'thumb'),
@@ -70,6 +70,7 @@ export function frameToPhoto([id, format, kind, date, desc], missionId) {
     title: id,
     credit: `Film scan: NASA JSC / ASU (${id})`,
     scan: true,
+    quality,
     sourceUrl: `${ARCHIVE}/gallery/Apollo/${Number(missionId)}`,
     date,
   }

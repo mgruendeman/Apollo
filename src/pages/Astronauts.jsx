@@ -15,6 +15,7 @@ function Card({ id }) {
       </span>
       {facts[id] && (
         <span className="astronaut-card-service">
+          {facts[id].hometown && <span className="astronaut-card-home">{facts[id].hometown}</span>}
           {facts[id].service[0]?.replace(/^civilian scientist-astronaut.*/, 'Civilian scientist')}
           {facts[id].missions.length > 0 && ` · ${facts[id].missions.length} flight${facts[id].missions.length === 1 ? '' : 's'}`}
         </span>

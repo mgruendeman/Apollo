@@ -44,6 +44,50 @@ BRANCH = {'United States Navy': 'U.S. Navy', 'United States Air Force': 'U.S. Ai
 # Aldrin, and the colony's formal name for Anders.
 BORN = {'aldrin': 'Glen Ridge, New Jersey', 'anders': 'Hong Kong'}
 
+# Where each grew up, from the early-life section of each Wikipedia article
+# (Wikidata has no such field). Where the article says so, it's the town
+# they "considered their hometown"; otherwise where they grew up and went
+# to high school. (town, note)
+HOMETOWN = {
+    'armstrong': ('Wapakoneta, Ohio', None),
+    'aldrin': ('Montclair, New Jersey', None),
+    'collins': ('Washington, D.C.', 'an Army family that moved often'),
+    'borman': ('Tucson, Arizona', None),
+    'lovell': ('Milwaukee, Wisconsin', None),
+    'anders': ('El Cajon, California', 'a Navy family: Hong Kong and Annapolis before California'),
+    'mcdivitt': ('Kalamazoo, Michigan', None),
+    'scott': ('Riverside, California, and Washington, D.C.', 'an Air Force family'),
+    'schweickart': ('Neptune Township, New Jersey', 'on the family farm'),
+    'stafford': ('Weatherford, Oklahoma', None),
+    'young': ('Orlando, Florida', None),
+    'cernan': ('Bellwood and Maywood, Illinois', None),
+    'conrad': ('Philadelphia, Pennsylvania', None),
+    'gordon': ('Seattle and Poulsbo, Washington', None),
+    'bean': ('Fort Worth, Texas', None),
+    'swigert': ('Denver, Colorado', None),
+    'haise': ('Biloxi, Mississippi', None),
+    'shepard': ('Derry, New Hampshire', None),
+    'roosa': ('Claremore, Oklahoma', None),
+    'mitchell': ('Artesia, New Mexico', None),
+    'worden': ('Jackson, Michigan', None),
+    'irwin': ('Salt Lake City, Utah', None),
+    'mattingly': ('Miami, Florida', None),
+    'duke': ('Lancaster, South Carolina', None),
+    'evans': ('Topeka, Kansas', None),
+    'schmitt': ('Silver City, New Mexico', None),
+    'allen': ('Crawfordsville, Indiana', None),
+    'fullerton': ('Portland, Oregon', None),
+    'mccandless': ('Long Beach, California', 'a Navy family'),
+    'carr': ('Santa Ana, California', None),
+    'henize': ('Cincinnati, Ohio', 'on a dairy farm outside the city'),
+    'overmyer': ('Westlake, Ohio', None),
+    'hartsfield': ('Birmingham, Alabama', None),
+    'lousma': ('Ann Arbor, Michigan', None),
+    'peterson': ('Winona, Mississippi', None),
+    'gibson': ('Kenmore, New York', None),
+    'kerwin': ('Oak Park, Illinois', None),
+}
+
 # Wikidata lists military branches only; these were civilians when chosen.
 CIVILIAN = {
     'armstrong': 'civilian NASA test pilot',
@@ -106,7 +150,9 @@ def main():
         missions = [m for m, _ in sorted(f['missions'].items(), key=lambda kv: kv[1] or '9999')
                     if FLIGHT.match(m) and m not in CANCELLED]
         service = [BRANCH.get(b, b) for b in f['service']] + ([CIVILIAN[key]] if key in CIVILIAN else [])
-        facts[key] = {'wikidata': qid, 'born': BORN.get(key, f['born']), 'service': service, 'missions': missions}
+        town, note = HOMETOWN.get(key, (None, None))
+        facts[key] = {'wikidata': qid, 'hometown': town, 'hometownNote': note, 'born': BORN.get(key, f['born']),
+                      'service': service, 'missions': missions}
         print(f"{key:12} born: {facts[key]['born']}  | {'; '.join(service)} | {', '.join(missions)}")
     OUT.write_text(json.dumps(facts, indent=1, ensure_ascii=False) + '\n')
 

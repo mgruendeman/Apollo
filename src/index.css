@@ -2232,3 +2232,85 @@ a.astronaut-flight:hover {
     gap: 4px;
   }
 }
+
+/* Glossary search */
+.glossary-search {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 10px 0;
+  background: var(--bg);
+}
+
+.glossary-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-panel);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.glossary-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.glossary-search-count {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.glossary-empty {
+  color: var(--text-dim);
+}
+
+.photo-gallery-mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: -4px 0 14px;
+}
+
+.photo-gallery-mode button {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: none;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.photo-gallery-mode button.is-active {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.photo-gallery-mode .photo-gallery-shuffle {
+  margin-left: auto;
+  border-color: var(--accent);
+  color: var(--accent-dim);
+}
+
+.astronaut-fact-note {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.astronaut-card-home {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text);
+  opacity: 0.8;
+}

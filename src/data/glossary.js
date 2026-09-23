@@ -362,6 +362,26 @@ export const glossary = [
     long: 'The S-IVB carried a single restartable J-2 engine and fired twice: first for a roughly two-minute burn that placed the stack into low Earth "parking" orbit, and then again, after a coast to check everything out, for the several-minute Translunar Injection burn that sent the spacecraft toward the Moon. That in-flight restart capability is what let one stage do both jobs.',
   },
   {
+    id: 'seco',
+    abbr: [{ short: 'SECO', full: 'S-IVB Engine Cut-Off' }],
+    terms: ['SECO'],
+    short: 'The Saturn V\'s third stage shutting its engine down, reaching orbit.',
+    long: 'The call that the S-IVB third stage\'s engine has shut down on schedule. On the climb to orbit it comes about eleven and a half minutes after liftoff, and means the spacecraft is in Earth parking orbit; the same engine\'s shutdown at the end of the Translunar Injection burn is also a SECO. On the earlier Mercury-Atlas flights the same letters meant "sustainer engine cutoff".',
+  },
+  {
+    id: 'meco',
+    abbr: [{ short: 'MECO', full: 'Main Engine Cut-Off' }],
+    terms: ['MECO', 'Main Engine Cut-Off', 'Main Engine Cutoff'],
+    short: 'The moment a rocket\'s main engines shut down at the end of powered flight.',
+    long: 'The general term for a rocket\'s main engines shutting down, best known from the Space Shuttle, whose MECO came about eight and a half minutes after launch. The Saturn V\'s call-outs named each stage instead: the first stage\'s centre ("inboard") engine shut down first, then its four outboard engines; then the second stage cut off; and the third stage\'s cutoff at orbit was called SECO.',
+  },
+  {
+    id: 'staging',
+    terms: ['Staging', 'staging'],
+    short: 'Casting off a spent rocket stage and lighting the next one.',
+    long: 'A multi-stage rocket drops each stage once its fuel is spent, so the next stage has less weight to push. The Saturn V staged twice on the way to orbit: the first stage (S-IC) fell away about two and a half minutes after liftoff and the second stage (S-II) about nine minutes in, each followed by the next stage\'s engines lighting. The Lunar Module "staged" too: leaving the Moon, its ascent stage fired and lifted off from the descent stage, which stayed behind as a launch pad.',
+  },
+  {
     id: 'les',
     quote: { text: 'And the tower jettison was quite noticeable.', attribution: 'Jim Lovell, Apollo 8, GET 001:26:32' },
     abbr: [{ short: 'LES', full: 'Launch Escape System' }],

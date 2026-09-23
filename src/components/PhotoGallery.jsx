@@ -4,6 +4,17 @@ import missionPhotos from '../data/missionPhotos.json'
 import { useFrames, frameToPhoto, nasaPhotoToPhoto, frameKey, KIND_LABELS } from '../lib/archiveFrames'
 
 const PAGE = 60
+const RANDOM_COUNT = 24
+
+// A random selection that favours NASA's processed photos and the clearest
+// scans (weighted sampling: each photo draws rand^(1/weight), top n win).
+function randomPick(photos, n) {
+  return photos
+    .map((p) => ({ p, k: Math.random() ** (1 / (p.scan ? 1 + (p.quality ?? 3) : 12)) }))
+    .sort((a, b) => b.k - a.k)
+    .slice(0, n)
+    .map((x) => x.p)
+}
 const OTHER_KINDS = { launch: 'Launch', recovery: 'Recovery', 'mission-control': 'Mission Control', crew: 'Crew' }
 
 // Every photo we have for a mission: NASA's captioned selection, then each
@@ -13,6 +24,8 @@ export default function PhotoGallery({ mission }) {
   const [kind, setKind] = useState('all')
   const [shown, setShown] = useState(PAGE)
   const [open, setOpen] = useState(null)
+  const [mode, setMode] = useState('random')
+  const [seed, setSeed] = useState(0)
 
   const all = useMemo(() => {
     const curated = (missionPhotos[mission.id] || []).map(nasaPhotoToPhoto)
@@ -29,7 +42,11 @@ export default function PhotoGallery({ mission }) {
     return c
   }, [all])
 
-  const photos = kind === 'all' ? all : all.filter((p) => p.kind === kind)
+  const filtered = useMemo(() => (kind === 'all' ? all : all.filter((p) => p.kind === kind)), [all, kind])
+  // seed changes on each Shuffle, drawing a new batch.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const random = useMemo(() => randomPick(filtered, RANDOM_COUNT), [filtered, seed])
+  const photos = mode === 'random' ? random : filtered
   if (all.length === 0) return null
 
   function pick(k) {
@@ -58,6 +75,19 @@ export default function PhotoGallery({ mission }) {
             </button>
           ))}
       </div>
+      <div className="photo-gallery-mode" role="group" aria-label="How to browse">
+        <button type="button" className={mode === 'random' ? 'is-active' : ''} onClick={() => setMode('random')}>
+          Random selection
+        </button>
+        <button type="button" className={mode === 'all' ? 'is-active' : ''} onClick={() => setMode('all')}>
+          All, in order
+        </button>
+        {mode === 'random' && (
+          <button type="button" className="photo-gallery-shuffle" onClick={() => setSeed((n) => n + 1)}>
+            ⟳ Shuffle
+          </button>
+        )}
+      </div>
       <div className="photo-gallery-grid">
         {photos.slice(0, shown).map((p, i) => (
           <button key={p.key} type="button" className={p.scan ? 'photo-thumb is-scan' : 'photo-thumb'} onClick={() => setOpen(i)} title={p.title}>
@@ -65,7 +95,7 @@ export default function PhotoGallery({ mission }) {
           </button>
         ))}
       </div>
-      {shown < photos.length && (
+      {mode === 'all' && shown < photos.length && (
         <button type="button" className="photo-gallery-more" onClick={() => setShown((s) => s + PAGE * 2)}>
           Show more ({(photos.length - shown).toLocaleString()} left)
         </button>

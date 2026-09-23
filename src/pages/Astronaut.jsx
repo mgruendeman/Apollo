@@ -53,7 +53,16 @@ export default function Astronaut() {
 
       {fact && (
         <dl className="astronaut-facts">
-          {fact.born && (
+          {fact.hometown && (
+            <div>
+              <dt>Hometown</dt>
+              <dd>
+                {fact.hometown}
+                {fact.hometownNote && <span className="astronaut-fact-note"> ({fact.hometownNote})</span>}
+              </dd>
+            </div>
+          )}
+          {fact.born && !(fact.hometown || '').includes(fact.born.split(',')[0]) && (
             <div>
               <dt>Born</dt>
               <dd>{fact.born}</dd>

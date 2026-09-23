@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useMemo, useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { glossary, hasDetailPage } from '../data/glossary'
 import GlossaryText from '../components/GlossaryText'
 import GlossaryPanel from '../components/GlossaryPanel'
@@ -10,8 +10,42 @@ import GlossaryAbbr from '../components/GlossaryAbbr'
 // definitions can actually be read end-to-end and proofread, rather than
 // only ever being discovered one at a time by clicking a term buried in a
 // transcript somewhere.
+// Everything a reader might search for in an entry.
+function searchText(entry) {
+  return [
+    ...entry.terms,
+    ...(entry.abbr || []).flatMap((a) => [a.short, a.full]),
+    entry.short,
+    entry.long,
+    ...(entry.bullets || []),
+  ]
+    .join(' ')
+    .toLowerCase()
+}
+
 export default function Glossary() {
   const [activeGlossaryEntry, setActiveGlossaryEntry] = useState(null)
+  // Kept in the address (#/glossary?q=...) so a search can be shared.
+  const [params, setParams] = useSearchParams()
+  const query = params.get('q') || ''
+
+  const results = useMemo(() => {
+    const words = query.toLowerCase().split(/\s+/).filter(Boolean)
+    if (!words.length) return glossary
+    const esc = (w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    // Whole words first ("seco" shouldn't find every "second"), then words
+    // starting with the query, then anywhere.
+    const tiers = [(w) => new RegExp(`\\b${esc(w)}\\b`), (w) => new RegExp(`\\b${esc(w)}`), (w) => new RegExp(esc(w))]
+    let matches = []
+    for (const tier of tiers) {
+      const res = words.map(tier)
+      matches = glossary.filter((e) => res.every((re) => re.test(searchText(e))))
+      if (matches.length) break
+    }
+    // Entries whose name matches come before ones that only mention it.
+    const named = (e) => e.terms.some((t) => t.toLowerCase().includes(words[0]))
+    return [...matches.filter(named), ...matches.filter((e) => !named(e))]
+  }, [query])
 
   return (
     <div className="page">
@@ -29,8 +63,30 @@ export default function Glossary() {
         </p>
       </header>
 
+      <div className="glossary-search">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setParams(e.target.value ? { q: e.target.value } : {}, { replace: true })}
+          placeholder="Search terms and definitions, e.g. SECO, abort, rover"
+          aria-label="Search the glossary"
+        />
+        <span className="glossary-search-count">
+          {query ? `${results.length} of ${glossary.length}` : `${glossary.length} terms`}
+        </span>
+      </div>
+
+      {results.length === 0 && (
+        <p className="glossary-empty">
+          Nothing matches &ldquo;{query}&rdquo;.{' '}
+          <ReportIssueButton title={`Glossary: add "${query}"`} body={`Please add "${query}" to the glossary.`}>
+            Suggest it as a new term
+          </ReportIssueButton>
+        </p>
+      )}
+
       <section className="glossary-index">
-        {glossary.map((entry) => (
+        {results.map((entry) => (
           <article key={entry.id} className="glossary-entry" id={entry.id}>
             <h3>{entry.terms[0]}</h3>
             {entry.terms.length > 1 && (

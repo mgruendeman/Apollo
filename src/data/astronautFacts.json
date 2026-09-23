@@ -1,6 +1,8 @@
 {
  "armstrong": {
   "wikidata": "Q1615",
+  "hometown": "Wapakoneta, Ohio",
+  "hometownNote": null,
   "born": "Wapakoneta, Ohio",
   "service": [
    "U.S. Navy",
@@ -13,6 +15,8 @@
  },
  "aldrin": {
   "wikidata": "Q2252",
+  "hometown": "Montclair, New Jersey",
+  "hometownNote": null,
   "born": "Glen Ridge, New Jersey",
   "service": [
    "U.S. Air Force"
@@ -24,6 +28,8 @@
  },
  "collins": {
   "wikidata": "Q104859",
+  "hometown": "Washington, D.C.",
+  "hometownNote": "an Army family that moved often",
   "born": "Rome, Italy",
   "service": [
    "U.S. Air Force"
@@ -35,6 +41,8 @@
  },
  "borman": {
   "wikidata": "Q18762",
+  "hometown": "Tucson, Arizona",
+  "hometownNote": null,
   "born": "Gary, Indiana",
   "service": [
    "U.S. Air Force"
@@ -46,6 +54,8 @@
  },
  "lovell": {
   "wikidata": "Q111240",
+  "hometown": "Milwaukee, Wisconsin",
+  "hometownNote": null,
   "born": "Cleveland, Ohio",
   "service": [
    "U.S. Navy"
@@ -59,6 +69,8 @@
  },
  "anders": {
   "wikidata": "Q19242",
+  "hometown": "El Cajon, California",
+  "hometownNote": "a Navy family: Hong Kong and Annapolis before California",
   "born": "Hong Kong",
   "service": [
    "U.S. Air Force"
@@ -69,6 +81,8 @@
  },
  "mcdivitt": {
   "wikidata": "Q364476",
+  "hometown": "Kalamazoo, Michigan",
+  "hometownNote": null,
   "born": "Chicago, Illinois",
   "service": [
    "U.S. Air Force"
@@ -80,6 +94,8 @@
  },
  "scott": {
   "wikidata": "Q278656",
+  "hometown": "Riverside, California, and Washington, D.C.",
+  "hometownNote": "an Air Force family",
   "born": "San Antonio, Texas",
   "service": [
    "U.S. Air Force"
@@ -92,6 +108,8 @@
  },
  "schweickart": {
   "wikidata": "Q363506",
+  "hometown": "Neptune Township, New Jersey",
+  "hometownNote": "on the family farm",
   "born": "Neptune Township, New Jersey",
   "service": [
    "U.S. Air Force"
@@ -102,6 +120,8 @@
  },
  "stafford": {
   "wikidata": "Q316417",
+  "hometown": "Weatherford, Oklahoma",
+  "hometownNote": null,
   "born": "Weatherford, Oklahoma",
   "service": [
    "U.S. Air Force"
@@ -115,6 +135,8 @@
  },
  "young": {
   "wikidata": "Q107667",
+  "hometown": "Orlando, Florida",
+  "hometownNote": null,
   "born": "San Francisco, California",
   "service": [
    "U.S. Navy"
@@ -130,6 +152,8 @@
  },
  "cernan": {
   "wikidata": "Q158486",
+  "hometown": "Bellwood and Maywood, Illinois",
+  "hometownNote": null,
   "born": "Chicago, Illinois",
   "service": [
    "U.S. Navy"
@@ -142,6 +166,8 @@
  },
  "conrad": {
   "wikidata": "Q213076",
+  "hometown": "Philadelphia, Pennsylvania",
+  "hometownNote": null,
   "born": "Philadelphia, Pennsylvania",
   "service": [
    "U.S. Navy"
@@ -155,6 +181,8 @@
  },
  "gordon": {
   "wikidata": "Q502963",
+  "hometown": "Seattle and Poulsbo, Washington",
+  "hometownNote": null,
   "born": "Seattle, Washington",
   "service": [
    "U.S. Navy"
@@ -166,6 +194,8 @@
  },
  "bean": {
   "wikidata": "Q310924",
+  "hometown": "Fort Worth, Texas",
+  "hometownNote": null,
   "born": "Wheeler, Texas",
   "service": [
    "U.S. Navy"
@@ -177,6 +207,8 @@
  },
  "swigert": {
   "wikidata": "Q348358",
+  "hometown": "Denver, Colorado",
+  "hometownNote": null,
   "born": "Denver, Colorado",
   "service": [
    "U.S. Air Force"
@@ -187,6 +219,8 @@
  },
  "haise": {
   "wikidata": "Q318965",
+  "hometown": "Biloxi, Mississippi",
+  "hometownNote": null,
   "born": "Biloxi, Mississippi",
   "service": [
    "U.S. Marine Corps",
@@ -198,6 +232,8 @@
  },
  "shepard": {
   "wikidata": "Q174979",
+  "hometown": "Derry, New Hampshire",
+  "hometownNote": null,
   "born": "Derry, New Hampshire",
   "service": [
    "U.S. Navy"
@@ -209,6 +245,8 @@
  },
  "roosa": {
   "wikidata": "Q375065",
+  "hometown": "Claremore, Oklahoma",
+  "hometownNote": null,
   "born": "Durango, Colorado",
   "service": [
    "U.S. Air Force"
@@ -219,6 +257,8 @@
  },
  "mitchell": {
   "wikidata": "Q295873",
+  "hometown": "Artesia, New Mexico",
+  "hometownNote": null,
   "born": "Hereford, Texas",
   "service": [
    "U.S. Navy"
@@ -229,6 +269,8 @@
  },
  "worden": {
   "wikidata": "Q539385",
+  "hometown": "Jackson, Michigan",
+  "hometownNote": null,
   "born": "Jackson, Michigan",
   "service": [
    "U.S. Air Force"
@@ -239,6 +281,8 @@
  },
  "irwin": {
   "wikidata": "Q297801",
+  "hometown": "Salt Lake City, Utah",
+  "hometownNote": null,
   "born": "Pittsburgh, Pennsylvania",
   "service": [
    "U.S. Air Force"
@@ -249,6 +293,8 @@
  },
  "mattingly": {
   "wikidata": "Q318513",
+  "hometown": "Miami, Florida",
+  "hometownNote": null,
   "born": "Chicago, Illinois",
   "service": [
    "U.S. Navy"
@@ -261,6 +307,8 @@
  },
  "duke": {
   "wikidata": "Q112284",
+  "hometown": "Lancaster, South Carolina",
+  "hometownNote": null,
   "born": "Charlotte, North Carolina",
   "service": [
    "U.S. Air Force"
@@ -271,6 +319,8 @@
  },
  "evans": {
   "wikidata": "Q313543",
+  "hometown": "Topeka, Kansas",
+  "hometownNote": null,
   "born": "St. Francis, Kansas",
   "service": [
    "U.S. Navy"
@@ -281,6 +331,8 @@
  },
  "schmitt": {
   "wikidata": "Q108886",
+  "hometown": "Silver City, New Mexico",
+  "hometownNote": null,
   "born": "Santa Rita, New Mexico",
   "service": [
    "civilian scientist-astronaut (geologist)"
@@ -291,6 +343,8 @@
  },
  "allen": {
   "wikidata": "Q443994",
+  "hometown": "Crawfordsville, Indiana",
+  "hometownNote": null,
   "born": "Crawfordsville, Indiana",
   "service": [
    "civilian scientist-astronaut (physicist)"
@@ -302,6 +356,8 @@
  },
  "fullerton": {
   "wikidata": "Q519268",
+  "hometown": "Portland, Oregon",
+  "hometownNote": null,
   "born": "Rochester, New York",
   "service": [
    "U.S. Air Force"
@@ -313,6 +369,8 @@
  },
  "mccandless": {
   "wikidata": "Q433608",
+  "hometown": "Long Beach, California",
+  "hometownNote": "a Navy family",
   "born": "Boston, Massachusetts",
   "service": [
    "U.S. Navy"
@@ -324,6 +382,8 @@
  },
  "carr": {
   "wikidata": "Q644837",
+  "hometown": "Santa Ana, California",
+  "hometownNote": null,
   "born": "Denver, Colorado",
   "service": [
    "U.S. Marine Corps"
@@ -334,6 +394,8 @@
  },
  "henize": {
   "wikidata": "Q722390",
+  "hometown": "Cincinnati, Ohio",
+  "hometownNote": "on a dairy farm outside the city",
   "born": "Cincinnati, Ohio",
   "service": [
    "civilian scientist-astronaut (astronomer)"
@@ -344,6 +406,8 @@
  },
  "overmyer": {
   "wikidata": "Q519149",
+  "hometown": "Westlake, Ohio",
+  "hometownNote": null,
   "born": "Lorain, Ohio",
   "service": [
    "U.S. Marine Corps"
@@ -355,6 +419,8 @@
  },
  "hartsfield": {
   "wikidata": "Q460161",
+  "hometown": "Birmingham, Alabama",
+  "hometownNote": null,
   "born": "Birmingham, Alabama",
   "service": [
    "U.S. Air Force"
@@ -367,6 +433,8 @@
  },
  "lousma": {
   "wikidata": "Q363976",
+  "hometown": "Ann Arbor, Michigan",
+  "hometownNote": null,
   "born": "Grand Rapids, Michigan",
   "service": [
    "U.S. Marine Corps"
@@ -378,6 +446,8 @@
  },
  "peterson": {
   "wikidata": "Q557058",
+  "hometown": "Winona, Mississippi",
+  "hometownNote": null,
   "born": "Winona, Mississippi",
   "service": [
    "U.S. Air Force"
@@ -388,6 +458,8 @@
  },
  "gibson": {
   "wikidata": "Q390344",
+  "hometown": "Kenmore, New York",
+  "hometownNote": null,
   "born": "Buffalo, New York",
   "service": [
    "civilian scientist-astronaut (solar physicist)"
@@ -398,6 +470,8 @@
  },
  "kerwin": {
   "wikidata": "Q446917",
+  "hometown": "Oak Park, Illinois",
+  "hometownNote": null,
   "born": "Oak Park, Illinois",
   "service": [
    "U.S. Navy"
