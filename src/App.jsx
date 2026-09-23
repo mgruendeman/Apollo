@@ -6,11 +6,13 @@ import GlossaryDetail from './pages/GlossaryDetail'
 import Astronauts from './pages/Astronauts'
 import Astronaut from './pages/Astronaut'
 import NowPlayingBar from './components/NowPlayingBar'
+import ScrollMemory from './components/ScrollMemory'
 import { PlayerProvider } from './audio/PlayerContext'
 
 function App() {
   return (
     <PlayerProvider>
+      <ScrollMemory />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mission/:id" element={<Mission />} />

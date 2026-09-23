@@ -2314,3 +2314,13 @@ a.astronaut-flight:hover {
   color: var(--text);
   opacity: 0.8;
 }
+
+.player-section,
+.glossary-entry {
+  scroll-margin-top: 12px;
+}
+
+/* The glossary's search bar is sticky; keep a focused entry below it */
+.glossary-entry {
+  scroll-margin-top: 72px;
+}

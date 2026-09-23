@@ -39,6 +39,7 @@ export default function Mission() {
   const [activeGlossaryEntry, setActiveGlossaryEntry] = useState(null)
   const [now, setNow] = useState(() => new Date())
   const didAutoJump = useRef(false)
+  const playerRef = useRef(null)
 
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 60000)
@@ -147,6 +148,13 @@ export default function Mission() {
     sourceUrl: moment.sourceUrl,
   }
 
+  // Picking a clip further down the page (the timeline) brings the player
+  // and its transcript into view.
+  function selectFromTimeline(i) {
+    selectClip(i)
+    playerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
   function selectClip(i) {
     player.play(mission, clips, i)
   }
@@ -208,7 +216,7 @@ export default function Mission() {
         </section>
       )}
 
-      <section className="player-section">
+      <section className="player-section" ref={playerRef}>
         <div className="player-top">
           <div className="player-top-text">
             <p className="get-clock">GET {moment.get}</p>
@@ -286,7 +294,7 @@ export default function Mission() {
         transcripts={transcripts}
         phases={phases}
         activeIndex={activeIndex}
-        onSelect={selectClip}
+        onSelect={selectFromTimeline}
       />
 
       {archive && <ArchiveRecordings mission={mission} archive={archive} />}

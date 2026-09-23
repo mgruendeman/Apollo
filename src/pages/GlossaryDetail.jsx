@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { glossary, hasDetailPage } from '../data/glossary'
 import GlossaryText from '../components/GlossaryText'
 import GlossaryPanel from '../components/GlossaryPanel'
@@ -14,6 +14,18 @@ export default function GlossaryDetail() {
   const { id } = useParams()
   const [activeGlossaryEntry, setActiveGlossaryEntry] = useState(null)
   const entry = glossary.find((e) => e.id === id)
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  // Back to wherever the reader came from (the glossary list, scrolled as
+  // they left it, or a mission page); from a direct link, to this entry in
+  // the glossary.
+  function goBack(e) {
+    if (location.key !== 'default') {
+      e.preventDefault()
+      navigate(-1)
+    }
+  }
 
   if (!entry || !hasDetailPage(entry)) {
     return (
@@ -32,8 +44,8 @@ export default function GlossaryDetail() {
 
   return (
     <div className="page">
-      <Link to="/glossary" className="back-link">
-        ← Glossary
+      <Link to={`/glossary?focus=${entry.id}`} className="back-link" onClick={goBack}>
+        ← Back
       </Link>
 
       <header className="mission-header">
