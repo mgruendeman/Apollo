@@ -46,6 +46,12 @@ export function useFrames(missionId) {
   return loaded.id === missionId ? loaded.frames : null
 }
 
+// "KSC-as11-40-5875", "AS11-40-5875" and "as11-040-05875" are one frame.
+export function frameKey(id) {
+  const m = /^(?:KSC-)?AS(\d\d)-0*(\d+[A-D]?)-0*(\d+)/i.exec(id)
+  return m ? `${m[1]}-${m[2].toUpperCase()}-${m[3]}` : id.toUpperCase()
+}
+
 function frameUrl(id, format, size) {
   const roll = id.slice(0, 4).toUpperCase()
   if (format === 'b') return `${ARCHIVE}/data_a/${roll}/png/${id}_${size === 'thumb' ? 'THM' : 'SML'}.png`
@@ -62,7 +68,8 @@ export function frameToPhoto([id, format, kind, date, desc], missionId) {
     kind,
     caption: desc || KIND_LABELS[kind] || '',
     title: id,
-    credit: `NASA JSC / ASU scan (${id})`,
+    credit: `Film scan: NASA JSC / ASU (${id})`,
+    scan: true,
     sourceUrl: `${ARCHIVE}/gallery/Apollo/${Number(missionId)}`,
     date,
   }
@@ -107,9 +114,9 @@ export function framesForMoment(frames, utcMs, phase, limit = 24) {
 // archive frames.
 export function photosForMomentAll(missionId, frames, utcMs, phase, limit = 24) {
   const curated = photosForMoment(missionId, utcMs, phase).map(nasaPhotoToPhoto)
-  const seen = new Set(curated.map((p) => p.key.toUpperCase()))
+  const seen = new Set(curated.map((p) => frameKey(p.key)))
   const extra = framesForMoment(frames, utcMs, phase, limit)
-    .filter((f) => !seen.has(f[0].toUpperCase()))
+    .filter((f) => !seen.has(frameKey(f[0])))
     .map((f) => frameToPhoto(f, missionId))
   return [...curated, ...extra].slice(0, limit)
 }

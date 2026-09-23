@@ -61,6 +61,12 @@
    "caption": "The rising Earth is about five degrees above the lunar horizon in this telephoto view taken from the Apollo 8 spacecraft near 110 degrees east longitude."
   },
   {
+   "id": "as08-14-2384",
+   "date": "1968-12-24",
+   "kind": "lunar-orbit",
+   "caption": "The rising Earth is about five degrees above the lunar horizon in this photograph--one of a pair taken within a short time of each other --from the Apollo 8 spacecraft ."
+  },
+  {
    "id": "S68-55815",
    "date": "1968-12-24",
    "kind": "interior",
@@ -109,10 +115,22 @@
    "caption": "This near-vertical photograph from the Apollo 8 spacecraft covers an area of approximately 50 x 50 statute miles within a 250-statute-miles-in-diameter crater on the lunar farside."
   },
   {
+   "id": "as08-12-2058",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "Apollo 8,Farside of Moon. Image taken on Revolution 4."
+  },
+  {
    "id": "as08-12-2148",
    "date": null,
    "kind": "lunar-orbit",
    "caption": "View of the lunar surface as photographed from the Apollo 8 spacecraft."
+  },
+  {
+   "id": "as08-12-2188",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "Apollo 8,Earth and Lunar Horizon. Image taken on Revolution 10 during Transearth Injection (TEI)."
   },
   {
    "id": "as08-12-2192",
@@ -151,10 +169,28 @@
    "caption": "This Apollo 8 view of the lunar surface looks southward at 162 degrees west longitude, showing rugged terrain that is characteristic of the lunar farside hemisphere."
   },
   {
+   "id": "as08-13-2319",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "Apollo 8,Moon,Target of Opportunity (T/O) 10, Various targets."
+  },
+  {
+   "id": "as08-13-2320",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "Apollo 8,Moon, Latitude 15 degrees South,Longitude 170 degrees West."
+  },
+  {
    "id": "as08-13-2327",
    "date": null,
    "kind": "lunar-orbit",
    "caption": "A brightly-rayed crater on the farside of the moon near the sub solar point, where the sun was directly overhead, as seen from the Apollo 8 spacecraft."
+  },
+  {
+   "id": "as08-13-2329",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "The Earth rising is about five degrees above the lunar horizon in this black and white telephoto view photographed from the Apollo 8 spacecraft near 110 degrees east longitude."
   },
   {
    "id": "as08-13-2344",
@@ -265,6 +301,12 @@
    "caption": "An Apollo 8 photograph of the surface of the moon."
   },
   {
+   "id": "AS08-18-2891",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "Apollo 8, Entire Moon. Possible Filter. Taken during the Transearth Coast (TEC)."
+  },
+  {
    "id": "as8-14-2392",
    "date": null,
    "kind": "lunar-orbit",
@@ -351,6 +393,30 @@
    "caption": "The Apollo 9 crew leaves the Kennedy Space Center's Manned Spacecraft Operations Building during the Apollo 9 prelaunch countdown."
   },
   {
+   "id": "as09-19-2925",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "The Lunar Module (LM) 3 \"Spider\",still attached to the Saturn V third (S-IVB) stage,is photographed from the Command/Service Module (CSM) \"Gumdrop\" on the first day of the Apollo 9 Earth-orbital mission."
+  },
+  {
+   "id": "as09-19-2941",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "View of the Lunar Module (LM) 3 and Service Module (SM) LM Adapter."
+  },
+  {
+   "id": "as09-19-2948",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "Oblique Earth Observation taken by the Apollo 9 crew."
+  },
+  {
+   "id": "as09-19-2982",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "Astronaut Russell L. Schweickart, lunar module pilot, operates a 70mm Hasselblad camera during his extravehicular activity on the fourth day of the Apollo 9 earth-orbital mission."
+  },
+  {
    "id": "as09-19-2983",
    "date": "1969-03-06",
    "kind": "earth",
@@ -367,6 +433,36 @@
    "date": "1969-03-06",
    "kind": "earth",
    "caption": "Astronaut Russell L. Schweickart, lunar module pilot, stands in \"golden slippers\" on the Lunar Module porch during his extravehicular activity on the fourth day of the Apollo 9 Earth-orbital mission."
+  },
+  {
+   "id": "as09-20-3127",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "Vertical Earth Observation taken by the Apollo 9 crew."
+  },
+  {
+   "id": "as09-20-3134",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "Oblique Earth Observation taken by the Apollo 9 crew."
+  },
+  {
+   "id": "as09-20-3150",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "Oblique Earth Observation taken by the Apollo 9 crew."
+  },
+  {
+   "id": "as09-20-3157",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "Vertical Earth Observation taken by the Apollo 9 crew."
+  },
+  {
+   "id": "as09-20-3177",
+   "date": "1969-03-06",
+   "kind": "earth",
+   "caption": "Oblique Earth Observation taken by the Apollo 9 crew."
   },
   {
    "id": "as9-19-2994",
@@ -447,6 +543,12 @@
    "caption": "Color infrared photograph of the Yazoo River Valley, Pearl River, Pearl River Reservoir, and Jackson, Mississippi, area, taken on March 9, 1969, by one of the four synchronized cameras of the Apollo 9 Earth Resources Survey SO65 Experiment."
   },
   {
+   "id": "as09-26a-3747a",
+   "date": "1969-03-09",
+   "kind": "earth",
+   "caption": "Earth Observation taken by the Apollo 9 crew."
+  },
+  {
    "id": "as09-26a-3748a",
    "date": "1969-03-09",
    "kind": "earth",
@@ -495,6 +597,18 @@
    "caption": "Overall view of Pad B, Launch Complex 39, Kennedy Space Center, showing the Apollo 10 (Spacecraft 106/Lunar Module-4/Saturn 505) space vehicle during a Countdown Demonstration Test."
   },
   {
+   "id": "as09-23-3595",
+   "date": "1969-03-12",
+   "kind": "earth",
+   "caption": "Astronaut Russell Schweickart, Apollo 9 Lunar Module pilot, is photographed inside Lunar Module \"Spider\" during the Apollo 9 earth-orbital mission."
+  },
+  {
+   "id": "as09-23-3596",
+   "date": "1969-03-12",
+   "kind": "earth",
+   "caption": "View of Astronaut David R.Scott ,Apollo 9 Command Module pilot, inside the Command Module \"Gumdrop\" during the Apollo 9 earth-orbital mission."
+  },
+  {
    "id": "as09-23-3617",
    "date": "1969-03-12",
    "kind": "earth",
@@ -535,6 +649,12 @@
    "date": "1969-03-12",
    "kind": "earth",
    "caption": "Color infrared photograph of the Globe, Arizona area, including Roosevelt Lake and San Carlos Reservoir, taken on March 12, 1969, by one of the four synchronized cameras of the Apollo 9 Earth Resources Survey SO65 Experiment."
+  },
+  {
+   "id": "as09-26a-3805a",
+   "date": "1969-03-12",
+   "kind": "earth",
+   "caption": "Earth Observation taken by the Apollo 9 crew."
   },
   {
    "id": "as09-26a-3807a",
@@ -663,6 +783,24 @@
    "caption": "Central Texas area as photographed from the Apollo 9 spacecraft during its Earth-orbital mission."
   },
   {
+   "id": "as09-22-3374",
+   "date": null,
+   "kind": "earth",
+   "caption": "Near vertical view of thunderhead over South America as photographed from the Apollo 9 spacecraft during its Earth-orbital mission."
+  },
+  {
+   "id": "as09-22-3436",
+   "date": null,
+   "kind": "earth",
+   "caption": "Los Angeles-Long Beach area of southern California, as photographed from the Apollo 9 spacecraft during its 92nd revolution of Earth."
+  },
+  {
+   "id": "as09-22-3441",
+   "date": null,
+   "kind": "earth",
+   "caption": "Near vertical view of the Phoenix, Arizona area as photographed from the Apollo 9 spacecraft during its Earth-orbital mission."
+  },
+  {
    "id": "as09-23-3561",
    "date": null,
    "kind": "earth",
@@ -691,6 +829,24 @@
    "date": null,
    "kind": "earth",
    "caption": "Cyclonic storm system, located 1,200 miles north of Hawaii, as photographed from the Apollo 9 spacecraft during its 10-day, Earth-orbital space mission."
+  },
+  {
+   "id": "as09-24-3641",
+   "date": null,
+   "kind": "earth",
+   "caption": "The Apollo 9 Command/Service Modules photographed through the window from the Lunar Module,\"Spider\",on the fifth day of the Apollo 9 earth-orbital mission."
+  },
+  {
+   "id": "as09-24-3652",
+   "date": null,
+   "kind": "earth",
+   "caption": "The Apollo 9 Command/Service Modules photographed from the Lunar Module,\"Spider\",on the fifth day of the Apollo 9 earth-orbital mission."
+  },
+  {
+   "id": "as09-24-3657",
+   "date": null,
+   "kind": "earth",
+   "caption": "High Oblique photograph (taken over New Mexico) of the Apollo 9 Command/Service Modules taken from the Lunar Module,\"Spider\",on the fifth day of the Apollo 9 earth-orbital mission."
   },
   {
    "id": "AS9-19-3019",
@@ -1141,6 +1297,12 @@
    "caption": "A near vertical view of Diamondback Rille is seen in this color reproduction taken from the fourth color television transmission from the Apollo 11 spacecraft, during its second revolution of the moon."
   },
   {
+   "id": "as11-36-5389",
+   "date": "1969-07-20",
+   "kind": "interior",
+   "caption": "An interior view of the Apollo 11 Lunar Module showing some of the displays and controls."
+  },
+  {
    "id": "as11-36-5390",
    "date": "1969-07-20",
    "kind": "interior",
@@ -1157,6 +1319,12 @@
    "date": "1969-07-20",
    "kind": "lunar-orbit",
    "caption": "The Apollo 11 Command and Service Modules (CSM) are photographed from the Lunar Module (LM) in lunar orbit during the Apollo 11 lunar landing mission."
+  },
+  {
+   "id": "as11-37-5448",
+   "date": "1969-07-20",
+   "kind": "lunar-orbit",
+   "caption": "The Apollo 11 Command and Service Modules (CSM) (tiny dot near quarter sized crater, center), with astronaut Michael Collins, command module pilot, aboard."
   },
   {
    "id": "as11-37-5458",
@@ -1273,6 +1441,12 @@
    "caption": "Apollo 11 LM on lunar surface."
   },
   {
+   "id": "as11-40-5917",
+   "date": "1969-07-20",
+   "kind": "surface",
+   "caption": "A close-up view of a footpad of the Apollo 11 Lunar Module as it rested on the surface of the Moon."
+  },
+  {
    "id": "as11-40-5927",
    "date": "1969-07-20",
    "kind": "surface",
@@ -1285,10 +1459,22 @@
    "caption": "Astronaut Edwin E. Aldrin Jr., lunar module pilot, prepares to deploy the Early Apollo Scientific Experiments Package (EASEP) on the surface of the moon during the Apollo 11 extravehicular activity."
   },
   {
+   "id": "as11-40-5942",
+   "date": "1969-07-20",
+   "kind": "surface",
+   "caption": "Astronaut Edwin E. Aldrin Jr., lunar module pilot, moves toward a position to deploy two components of the Early Apollo Scientific Experiments Package (EASEP) on the surface of the Moon during the Apollo 11 extravehicular activity."
+  },
+  {
    "id": "as11-40-5948",
    "date": "1969-07-20",
    "kind": "surface",
    "caption": "Astronaut Edwin E. Aldrin Jr., lunar module pilot, is photographed during the Apollo 11 extravehicular activity (EVA) on the moon."
+  },
+  {
+   "id": "as11-40-5951",
+   "date": "1969-07-20",
+   "kind": "surface",
+   "caption": "JOHNSON SPACE CENTER, HOUSTON, TEXAS - Apollo 11 Lunar Module Pilot Edwin E."
   },
   {
    "id": "as11-40-5964",
@@ -1301,6 +1487,18 @@
    "date": "1969-07-20",
    "kind": "other",
    "caption": "An Apollo 11 oblique view of the large crater Theophilus located at the northwest edge of the Sea of Nectar on the lunar nearside."
+  },
+  {
+   "id": "as11-42-6248",
+   "date": "1969-07-20",
+   "kind": "lunar-orbit",
+   "caption": "An Apollo 11 oblique view of the lunar farside in the area of International Astronomical Union crater No."
+  },
+  {
+   "id": "as11-42-6285",
+   "date": "1969-07-20",
+   "kind": "lunar-orbit",
+   "caption": "An Apollo 11 view of a bright rayed crater on the lunar farside."
   },
   {
    "id": "as11-44-6581",
@@ -1337,6 +1535,12 @@
    "date": "1969-07-20",
    "kind": "surface",
    "caption": "An Apollo 11 stereo view of a stone, about two and one-half inches long, embedded in the powdery lunar surface material."
+  },
+  {
+   "id": "KSC-AS11-40-5869",
+   "date": "1969-07-20",
+   "kind": "interior",
+   "caption": "JOHNSON SPACE CENTER, HOUSTON, TEXAS - Apollo 11 Onboard Film -- Astronaut Edwin E."
   },
   {
    "id": "S69-39562",
@@ -1403,6 +1607,18 @@
    "date": "1969-07-21",
    "kind": "lunar-orbit",
    "caption": "A close-up view of the docking target on the Apollo 11 Lunar Module (LM) photographed from the Command Module during the LM/CSM docking in lunar orbit."
+  },
+  {
+   "id": "as11-44-6551",
+   "date": "1969-07-21",
+   "kind": "lunar-orbit",
+   "caption": "This view from the Apollo 11 spacecraft shows the Earth rising above the moon's horizon."
+  },
+  {
+   "id": "as11-44-6553",
+   "date": "1969-07-21",
+   "kind": "earth",
+   "caption": "View of Moon limb with Earth on the horizon,Mare Smythii Region."
   },
   {
    "id": "as11-44-6626",
@@ -1511,6 +1727,24 @@
    "date": "1969-07-24",
    "kind": "recovery",
    "caption": "The Apollo 11 spacecraft Command Module (CM) and the Mobile Quarantine Facility (MQF) are photographed aboard the USS Hornet, prime recovery ship for the historic first lunar landing mission."
+  },
+  {
+   "id": "as11-43-6412",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "This is a northeasterly, low-oblique view of an unmanned crater and highland area on the lunar farside, as photographed from Apollo 11."
+  },
+  {
+   "id": "as11-43-6422",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "An Apollo 11 oblique view of the lunar farside."
+  },
+  {
+   "id": "as11-43-6439",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "An Apollo 11 oblique view of the lunar farside."
   },
   {
    "id": "as11-44-6548",
@@ -1641,6 +1875,12 @@
    "caption": "Astronaut Alan L. Bean, lunar module pilot, traverses with the two sub packages of the Apollo Lunar Surface Experiments Package (ALSEP) during the first Apollo 12 extravehicular activity (EVA)."
   },
   {
+   "id": "as12-46-6813",
+   "date": "1969-11-19",
+   "kind": "surface",
+   "caption": "Astronaut Alan L. Bean, lunar module pilot, deploys the Lunar Surface Magnetometer (LSM) during the first Apollo 12 extravehicular activity on the Moon."
+  },
+  {
    "id": "as12-46-6825",
    "date": "1969-11-19",
    "kind": "surface",
@@ -1653,6 +1893,18 @@
    "caption": "A close-up view of a lunar mound as photographed during the Apollo 12 extravehicular activity (EVA) on the lunar surface."
   },
   {
+   "id": "as12-47-6870",
+   "date": "1969-11-19",
+   "kind": "lunar-orbit",
+   "caption": "An Apollo 12 high-oblique view of the crater Tsiolkovsky (in center of horizon) on the lunar farside, as photographed from lunar orbit."
+  },
+  {
+   "id": "AS12-47-6876",
+   "date": "1969-11-19",
+   "kind": "lunar-orbit",
+   "caption": "An Apollo 12 high-oblique view of the lunar nearside looking northeast toward the crater Copernicus (in center near horizon), as photographed from lunar orbit."
+  },
+  {
    "id": "as12-47-6897",
    "date": "1969-11-19",
    "kind": "surface",
@@ -1663,6 +1915,12 @@
    "date": "1969-11-19",
    "kind": "surface",
    "caption": "A close-up view of the Solar Wind Composition device."
+  },
+  {
+   "id": "as12-47-6913",
+   "date": "1969-11-19",
+   "kind": "surface",
+   "caption": "Astronaut Charles Conrad Jr., commander, uses the lunar equipment conveyer (LEC) at the Lunar Module during the Apollo 12 extravehicular activity on the lunar surface."
   },
   {
    "id": "as12-47-6918",
@@ -1943,10 +2201,22 @@
    "caption": "Overall view of the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC) at Manned Spacecraft Center (MSC), during the fourth television transmission from the Apollo 13 mission in space."
   },
   {
+   "id": "as13-60-8635",
+   "date": "1970-04-14",
+   "kind": "lunar-orbit",
+   "caption": "An oblique view of the International Astronomical Union Crater No."
+  },
+  {
    "id": "as13-60-8659",
    "date": "1970-04-14",
    "kind": "lunar-orbit",
    "caption": "Excellent view of the lunar farside showing the crater Tsiolkovsky, as photographed by the crew of the Apollo 13 mission during their lunar pass."
+  },
+  {
+   "id": "as13-60-8675",
+   "date": "1970-04-14",
+   "kind": "lunar-orbit",
+   "caption": "This bright-rayed crater on the lunar farside was photographed from the Apollo 13 spacecraft during its pass around the moon."
   },
   {
    "id": "S70-34900",
@@ -2031,6 +2301,18 @@
    "date": "1970-04-17",
    "kind": "lunar-orbit",
    "caption": "This view of the severely damaged Apollo 13 Service Module (SM) was photographed from the Lunar Module/Command Module (LM/CM) following SM jettisoning."
+  },
+  {
+   "id": "as13-59-8484",
+   "date": "1970-04-17",
+   "kind": "earth",
+   "caption": "Astronaut James A. Lovell Jr., commander, is pictured at his position in the Lunar Module (LM)."
+  },
+  {
+   "id": "as13-59-8500",
+   "date": "1970-04-17",
+   "kind": "lunar-orbit",
+   "caption": "This view of the damaged Apollo 13 Service Module (SM) was photographed from the Lunar Module/Command Module following SM jettisoning."
   },
   {
    "id": "as13-59-8501",
@@ -2407,6 +2689,12 @@
    "caption": "This view shows the \"javelin\" and golf ball used by astronaut Alan B."
   },
   {
+   "id": "as14-66-9344",
+   "date": "1971-02-06",
+   "kind": "lunar-orbit",
+   "caption": "The Apollo Command and Service Modules (CSM) are photographed against a black sky background from the Lunar Module (LM) above the moon."
+  },
+  {
    "id": "AS14-68-9405",
    "date": "1971-02-06",
    "kind": "surface",
@@ -2543,6 +2831,12 @@
    "date": null,
    "kind": "surface",
    "caption": "A hammer and a small collection bag lie atop a lunar boulder to give some indication of size in this view of several boulders clustered together."
+  },
+  {
+   "id": "as14-72-09975",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "A near vertical view of the inner wall of King Crater located on the lunar farside, as photographed from the Apollo 14 spacecraft in lunar orbit."
   }
  ],
  "15": [
@@ -2551,6 +2845,12 @@
    "date": "1971-07-26",
    "kind": "earth",
    "caption": "This view of Earth was photographed by the Apollo 15 crewmen as they sped toward the fourth lunar landing."
+  },
+  {
+   "id": "as15-91-12366",
+   "date": "1971-07-26",
+   "kind": "surface",
+   "caption": "The crater Posidonius at the northeastern edge of the Sea of Serenity, was photographed with a 70mm handheld Hasselblad from the Command and Service Module (CSM) by astronaut Alfred M."
   },
   {
    "id": "S71-41356",
@@ -2593,6 +2893,12 @@
    "date": "1971-07-30",
    "kind": "lunar-orbit",
    "caption": "A view of the Apollo 15 Command and Service Modules (CSM) in lunar orbit as photographed from the Lunar Module (LM) just after rendezvous."
+  },
+  {
+   "id": "as15-88-12002",
+   "date": "1971-07-30",
+   "kind": "earth",
+   "caption": "An oblique view of a portion of the lunar nearside located near the northeast edge of the Ocean of Storms (Oceanus Procellarum), photographed by astronaut Alfred M."
   },
   {
    "id": "S71-44671",
@@ -2649,6 +2955,12 @@
    "caption": "Astronaut David R. Scott, commander, is seated in the Lunar Roving Vehicle (LRV) during the first Apollo 15 lunar surface extravehicular activity (EVA) at the Hadley-Apennine landing site."
   },
   {
+   "id": "as15-85-11514",
+   "date": "1971-07-31",
+   "kind": "surface",
+   "caption": "Astronaut David R. Scott, commander, standing on the slope of Hadley Delta, uses a 70mm camera during Apollo 15 extravehicular activity (EVA) on the lunar surface."
+  },
+  {
    "id": "as15-86-11602",
    "date": "1971-07-31",
    "kind": "surface",
@@ -2667,10 +2979,28 @@
    "caption": "A view of Hadley Delta, looking southeasterly, as photographed from the top hatch of the Apollo 15 Lunar Module (LM) by astronaut David R."
   },
   {
+   "id": "as15-87-11849",
+   "date": "1971-07-31",
+   "kind": "surface",
+   "caption": "An excellent view of Mount Hadley, fully lighted, showing abundant linear features, as photographed during the Apollo 15 lunar surface extravehicular activity (EVA)."
+  },
+  {
    "id": "as15-88-11872",
    "date": "1971-07-31",
    "kind": "surface",
    "caption": "This north-looking view at Station 8 near the Hadley-Apennine landing site was photographed by one of the missions two moon explorer's (see shadow, foreground) during the third Apollo 15 extravehicular activity (EVA)."
+  },
+  {
+   "id": "as15-88-11894",
+   "date": "1971-07-31",
+   "kind": "surface",
+   "caption": "A close-up view of a commemorative plaque left on the moon at the Hadley-Apennine landing site in memory of 14 NASA astronauts and USSR cosmonauts, now deceased."
+  },
+  {
+   "id": "as15-88-11901",
+   "date": "1971-07-31",
+   "kind": "surface",
+   "caption": "The Lunar Roving Vehicle (LRV) is photographed alone against the desolate lunar background during the third Apollo 15 lunar surface extravehicular activity (EVA) at the Hadley-Apennine landing site."
   },
   {
    "id": "as15-93-12628",
@@ -2845,6 +3175,36 @@
    "date": "1971-08-07",
    "kind": "recovery",
    "caption": "The Apollo 15 Command Module (CM), with astronauts David R."
+  },
+  {
+   "id": "as15-84-11250",
+   "date": null,
+   "kind": "surface",
+   "caption": "A telephoto lens view of the prominent feature called Silver Spur in the Hadley Delta region, photographed during the Apollo 15 lunar surface extravehicular activity (EVA) at the Hadley-Apennine landing site."
+  },
+  {
+   "id": "as15-90-12187",
+   "date": null,
+   "kind": "surface",
+   "caption": "This view, looking generally north, shows the tall Mount Hadley in the left background."
+  },
+  {
+   "id": "as15-92-12424",
+   "date": null,
+   "kind": "surface",
+   "caption": "Astronaut James B. Irwin, lunar module pilot, uses a scoop in making a trench in the lunar soil during Apollo 15 extravehicular activity (EVA) on the moon."
+  },
+  {
+   "id": "as15-97-13160",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "A view of a portion of the crater Tsiolkovsky located in the highlands on the farside of the moon, as photographed from the Apollo 15 Command and Service Modules (CSM) by astronaut Alfred M."
+  },
+  {
+   "id": "as15-97-13168",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "A view of the flow structure on the rim and edge of the crater Tsiolkovsky in the highlands of the lunar farside, as photographed from lunar orbit by astronaut Alfred M."
   }
  ],
  "16": [
@@ -2895,6 +3255,24 @@
    "date": "1972-04-19",
    "kind": "earth",
    "caption": "Apollo 16 astronauts captured this Earth rise scene with a handheld Hasselblad camera during the second revolution of the moon."
+  },
+  {
+   "id": "as16-120-19237",
+   "date": "1972-04-19",
+   "kind": "lunar-orbit",
+   "caption": "An oblique view of a portion of the lunar nearside as photographed from the Apollo 16 spacecraft in lunar orbit."
+  },
+  {
+   "id": "as16-120-19273",
+   "date": "1972-04-19",
+   "kind": "lunar-orbit",
+   "caption": "King Crater as photographed from the Apollo 16 spacecraft in lunar orbit."
+  },
+  {
+   "id": "as16-120-19332",
+   "date": "1972-04-19",
+   "kind": "surface",
+   "caption": "This picture of the lunar surface was photographed from lunar orbit during the Apollo 16 lunar landing mission."
   },
   {
    "id": "S72-37009",
@@ -3281,6 +3659,18 @@
    "caption": "This 70mm handheld camera's view of the moon, photographed during the Apollo 16 mission's lunar orbit, features Crater Bullialdus, located at approximately 20 degrees south latitude and 20.8 west longitude."
   },
   {
+   "id": "as16-121-19407",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "An oblique view of a rim of Guyot Crater on the lunar farside, as photographed from the Apollo 16 spacecraft in lunar orbit."
+  },
+  {
+   "id": "as16-121-19438",
+   "date": null,
+   "kind": "lunar-orbit",
+   "caption": "An oblique view of a portion of the lunar nearside as photographed from the Apollo 16 spacecraft in lunar orbit, looking across the Sea of Crises southwesterly into the Sea of Tranquility."
+  },
+  {
    "id": "as16-121-19449",
    "date": null,
    "kind": "lunar-orbit",
@@ -3353,6 +3743,12 @@
    "date": "1972-12-11",
    "kind": "launch",
    "caption": "Astronaut Harrison H. Schmitt, lunar module pilot, displays several days of growth on his beard aboard the Lunar Module (LM) prior to its liftoff from the moon's surface."
+  },
+  {
+   "id": "as17-147-22465",
+   "date": "1972-12-11",
+   "kind": "surface",
+   "caption": "This 70mm frame, showintg the Apollo 17 Command/Service Modules (CSM) backdropped against the Taurus-Littrow landing site, was exposed from the lunar module (LM) prior to the LM's touchdown on the lunar surface."
   },
   {
    "id": "as17-147-22523",
@@ -3485,6 +3881,12 @@
    "date": "1972-12-13",
    "kind": "surface",
    "caption": "Astronaut Eugene A. Cernan, Apollo 17 commander, approaches the parked Lunar Roving Vehicle (LRV) on the lunar surface during the flight's third period of extravehicular activity (EVA)."
+  },
+  {
+   "id": "as17-134-20481",
+   "date": "1972-12-13",
+   "kind": "launch",
+   "caption": "Astronaut Eugene A. Cernan, Apollo 17 commander, prepares to mount ladder to lunar module ascent stage."
   },
   {
    "id": "AS17-140-21493",

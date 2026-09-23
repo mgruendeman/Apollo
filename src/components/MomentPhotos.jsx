@@ -24,7 +24,7 @@ export default function MomentPhotos({ mission, clip, phase }) {
       <h3>Photos from this part of the flight</h3>
       <div className="moment-photos-row">
         {photos.map((p, i) => (
-          <button key={p.key} type="button" className="photo-thumb" onClick={() => setOpen(i)} title={p.caption}>
+          <button key={p.key} type="button" className={p.scan ? 'photo-thumb is-scan' : 'photo-thumb'} onClick={() => setOpen(i)} title={p.caption}>
             <img src={p.thumb} alt={p.caption || p.title} loading="lazy" />
           </button>
         ))}

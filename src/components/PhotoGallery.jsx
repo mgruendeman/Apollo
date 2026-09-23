@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import PhotoLightbox from './PhotoLightbox'
 import missionPhotos from '../data/missionPhotos.json'
-import { useFrames, frameToPhoto, nasaPhotoToPhoto, KIND_LABELS } from '../lib/archiveFrames'
+import { useFrames, frameToPhoto, nasaPhotoToPhoto, frameKey, KIND_LABELS } from '../lib/archiveFrames'
 
 const PAGE = 60
 const OTHER_KINDS = { launch: 'Launch', recovery: 'Recovery', 'mission-control': 'Mission Control', crew: 'Crew' }
@@ -16,9 +16,9 @@ export default function PhotoGallery({ mission }) {
 
   const all = useMemo(() => {
     const curated = (missionPhotos[mission.id] || []).map(nasaPhotoToPhoto)
-    const seen = new Set(curated.map((p) => p.key.toUpperCase()))
+    const seen = new Set(curated.map((p) => frameKey(p.key)))
     const scans = (frames || [])
-      .filter((f) => !seen.has(f[0].toUpperCase()))
+      .filter((f) => !seen.has(frameKey(f[0])))
       .map((f) => frameToPhoto(f, mission.id))
     return [...curated, ...scans]
   }, [frames, mission.id])
@@ -60,7 +60,7 @@ export default function PhotoGallery({ mission }) {
       </div>
       <div className="photo-gallery-grid">
         {photos.slice(0, shown).map((p, i) => (
-          <button key={p.key} type="button" className="photo-thumb" onClick={() => setOpen(i)} title={p.title}>
+          <button key={p.key} type="button" className={p.scan ? 'photo-thumb is-scan' : 'photo-thumb'} onClick={() => setOpen(i)} title={p.title}>
             <img src={p.thumb} alt={p.caption || p.title} loading="lazy" />
           </button>
         ))}

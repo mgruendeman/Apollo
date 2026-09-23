@@ -40,7 +40,7 @@ function PhotoStage({ photos }) {
   const photo = photos[index % photos.length]
   return (
     <figure className="immersive-photo">
-      <img key={photo.src} src={photo.src} alt={photo.caption} />
+      <img key={photo.src} src={photo.src} alt={photo.caption} className={photo.scan ? 'is-scan' : undefined} />
       <figcaption>
         <a href={photo.sourceUrl} target="_blank" rel="noreferrer">
           {photo.credit} ↗
@@ -98,6 +98,7 @@ export default function ImmersiveView({
       caption: p.caption,
       credit: p.credit,
       sourceUrl: p.sourceUrl,
+      scan: p.scan,
     }))
     if (!highlightPhoto) return matched
     return [{ ...highlightPhoto, src: `${import.meta.env.BASE_URL}${highlightPhoto.src}` }, ...matched]
