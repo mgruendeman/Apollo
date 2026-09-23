@@ -1477,15 +1477,18 @@ a {
 }
 
 .immersive-transcript {
+  position: relative;
   display: grid;
   gap: 4px;
   padding: 10px 16px;
   min-height: 9.5rem;
   max-height: 34vh;
-  overflow: hidden;
-  align-content: end;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  align-content: start;
   background: #05070d;
   border-top: 1px solid var(--border);
+  scrollbar-width: thin;
 }
 
 .immersive-line {

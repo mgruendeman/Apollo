@@ -7,6 +7,8 @@ import { effectiveOffsets, activeLineIndex } from '../lib/transcriptTiming'
 import { useFrames, photosForMomentAll } from '../lib/archiveFrames'
 
 const PHOTO_SECONDS = 12
+// How long a manual scroll of the transcript pauses auto-scrolling.
+const USER_SCROLL_HOLD_MS = 6000
 
 // Just the spoken words: drop the journal editors' bracketed notes, which
 // can run to paragraphs and would crowd the photo off the screen.
@@ -90,10 +92,33 @@ export default function ImmersiveView({
 
   const offsets = useMemo(() => effectiveOffsets(lines), [lines])
   const active = activeLineIndex(offsets, currentTime)
-  const shown = lines
-    .map((line, i) => ({ line, i, text: spokenText(line.text) }))
-    .slice(Math.max(0, active - 1), Math.max(0, active - 1) + 3)
-    .filter((l) => l.text)
+  const shown = useMemo(
+    () => lines.map((line, i) => ({ line, i, text: spokenText(line.text) })).filter((l) => l.text),
+    [lines],
+  )
+
+  // The whole clip's transcript scrolls; it follows the line being spoken
+  // unless the listener has just scrolled it themselves.
+  const listRef = useRef(null)
+  const activeRef = useRef(null)
+  const userScrolledAt = useRef(0)
+  const shownLines = useRef(null)
+  useEffect(() => {
+    const list = listRef.current
+    const line = activeRef.current
+    if (!list || !line) return
+    const newClip = shownLines.current !== lines
+    shownLines.current = lines
+    if (!newClip && Date.now() - userScrolledAt.current < USER_SCROLL_HOLD_MS) return
+    list.scrollTo({
+      top: line.offsetTop - list.clientHeight / 2 + line.clientHeight / 2,
+      behavior: newClip ? 'auto' : 'smooth',
+    })
+  }, [active, lines])
+
+  function markUserScroll() {
+    userScrolledAt.current = Date.now()
+  }
 
   useEffect(() => {
     const el = rootRef.current
@@ -126,12 +151,19 @@ export default function ImmersiveView({
 
       <PhotoStage key={poolKey} photos={photos} />
 
-      <div className="immersive-transcript">
+      <div
+        className="immersive-transcript"
+        ref={listRef}
+        onWheel={markUserScroll}
+        onTouchMove={markUserScroll}
+        onKeyDown={markUserScroll}
+      >
         {shown.length === 0 && <p className="immersive-empty">No transcript for this clip.</p>}
         {shown.map(({ line, i, text }) => (
           <button
             type="button"
             key={`${line.get}-${i}`}
+            ref={i === active ? activeRef : null}
             className={i === active ? 'immersive-line is-active' : i < active ? 'immersive-line is-past' : 'immersive-line'}
             onClick={() => onLineSeek(offsets[i])}
           >
