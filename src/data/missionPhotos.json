@@ -1661,7 +1661,7 @@
   {
    "id": "as12-47-6898",
    "date": "1969-11-19",
-   "kind": "lunar-orbit",
+   "kind": "surface",
    "caption": "A close-up view of the Solar Wind Composition device."
   },
   {
@@ -3357,7 +3357,7 @@
   {
    "id": "as17-147-22523",
    "date": "1972-12-11",
-   "kind": "other",
+   "kind": "surface",
    "caption": "Astronaut Eugene A. Cernan is seen test driving the \"stripped down\" Lunar Rover Vehicle (LRV) prior to loading the LRV up."
   },
   {
@@ -3801,7 +3801,7 @@
   {
    "id": "as17-162-24063",
    "date": null,
-   "kind": "other",
+   "kind": "interior",
    "caption": "A close-up view of the equipment used for the Heat Flow and Convection Experiment, an engineering and operational test and demonstration carried out aboard the Apollo 17 command module during the final lunar landing mission in NASA's Apollo program."
   },
   {

@@ -32,7 +32,7 @@ KINDS = [
     ('recovery', r'recovery|splashdown|splashed|hornet|iwo jima|yorktown|ticonderoga|okinawa|new orleans|guadalcanal|princeton|quarantine facility|aboard the u\.?s\.?s'),
     ('mission-control', r'mission control|operations control room|\bmocr\b|flight director|console'),
     ('launch', r'launched from|liftoff|lift-off|lifts off|is launched|launch of|pad a|pad b|launch complex'),
-    ('surface', r'lunar surface|extravehicular|\beva\b|moonwalk|lunar roving|landing site|boulder|traverse|station \d|alsep|footprint|bootprint|flag'),
+    ('surface', r'lunar surface|extravehicular|\beva\b|moonwalk|lunar roving|landing site|boulder|traverse|station \d|alsep|footprint|bootprint|flag|solar wind|experiment|seismometer|surveyor|core (tube|sample)|lunar sample|geolog|hand ?tool|tool carrier|deploy|laser ranging|retroreflector|rover|lrv'),
     ('lunar-orbit', r'lunar orbit|from the (command|lunar) module|far ?side|farside|orbiting the moon|crater .* (from orbit|photographed from)|lunar module in|earthrise|lunar horizon|moon.s horizon|approach(ing)? the moon|trans-?earth'),
     ('earth', r'\bearth\b|nautical miles|africa|ocean|continent|cloud'),
     ('interior', r'inside|interior|cabin|onboard|on board|television transmission|tv transmission'),
