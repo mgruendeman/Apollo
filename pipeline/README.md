@@ -99,6 +99,13 @@ without `--limit`. The "med" scans are about 3,550 x 4,000 px, 14-18 MB
 each (about 290 GB for all 18,000 frames); keep them as masters. The web
 JPEGs come to about 9 GB.
 
+Colour: each photo gets a white balance that takes out the cast the film
+has picked up with age (judged from what should be grey or white), then a
+small tone curve. Both were checked against NASA's own processed versions
+of 37 frames: casts went from a median of 10 (worst 39) to 2.4 (worst
+4.2), within the range NASA's own versions show. `--tint-strength 0` and
+`--no-tone-curve` turn them off. About 3 s per frame.
+
 ## Still to build
 
 - **Placing NASA's tapes on the mission clock.** NASA's files are whole

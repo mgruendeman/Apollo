@@ -14,7 +14,8 @@ square in the middle. For each frame this:
   3. trims any leftover black film edge along the sides;
   4. gently stretches the levels (the scans are flat), keeping colour;
   5. takes out most of the tint the film has picked up with age (see
-     remove_film_tint; --tint-strength 0 turns this off);
+     film_tint; --tint-strength 0 turns this off), and applies a small
+     tone curve close to NASA's own processing (--no-tone-curve to skip);
   6. writes a 2048 px JPEG for the lightbox and a 400 px thumbnail.
 
     python3 pipeline/process_photos.py --mission 11 --limit 20 --size small --out ~/apollo-media/photos
@@ -38,6 +39,8 @@ MARGIN = 0.03     # trimmed inside the frame edge
 WEB_PX, THUMB_PX = 2048, 400
 SRGB_TO_XYZ = np.array([[0.4124, 0.3576, 0.1805], [0.2126, 0.7152, 0.0722], [0.0193, 0.1192, 0.9505]])
 D65 = np.array([0.95047, 1.0, 1.08883])
+MID_GAMMA, SHOULDER = 0.85, 0.12   # tone_curve
+MAX_TINT, KEEP_TINT = 45, 3        # film_tint, adjust_colour (L*a*b* units)
 
 
 def scan_url(frame_id, fmt, size):
@@ -127,35 +130,47 @@ def enhance(im):
     return ImageOps.autocontrast(im, cutoff=0.5, preserve_tone=True)
 
 
-def to_lab(rgb):
-    """sRGB (0-255) to CIE L*a*b* (D65)."""
+def srgb_to_linear(rgb):
     c = rgb / 255.0
-    c = np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+    return np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
+
+
+def linear_to_srgb(c):
+    c = np.where(c <= 0.0031308, 12.92 * c, 1.055 * np.clip(c, 0, None) ** (1 / 2.4) - 0.055)
+    return (np.clip(c, 0, 1) * 255 + 0.5).astype(np.uint8)
+
+
+def linear_to_lab(c):
+    """Linear sRGB to CIE L*a*b* (D65)."""
     xyz = c @ SRGB_TO_XYZ.T / D65
     f = np.where(xyz > 0.008856, np.cbrt(xyz), 7.787 * xyz + 16 / 116)
     return np.stack([116 * f[..., 1] - 16, 500 * (f[..., 0] - f[..., 1]), 200 * (f[..., 1] - f[..., 2])], -1)
 
 
-def from_lab(lab):
+def lab_to_linear(lab):
     fy = (lab[..., 0] + 16) / 116
     f = np.stack([fy + lab[..., 1] / 500, fy, fy - lab[..., 2] / 200], -1)
     xyz = np.where(f > 0.2069, f ** 3, (f - 16 / 116) / 7.787) * D65
-    c = xyz @ np.linalg.inv(SRGB_TO_XYZ).T
-    c = np.where(c <= 0.0031308, 12.92 * c, 1.055 * np.clip(c, 0, None) ** (1 / 2.4) - 0.055)
-    return (np.clip(c, 0, 1) * 255 + 0.5).astype(np.uint8)
+    return xyz @ np.linalg.inv(SRGB_TO_XYZ).T
+
+
+def to_lab(rgb):
+    return linear_to_lab(srgb_to_linear(rgb))
 
 
 def film_tint(lab):
-    """The tint (a*, b*) of the things in the picture that should be grey
-    or white (sunlit soil, suits, clouds), or None to leave it alone.
+    """The colour (L*, a*, b*) of the things in the picture that should be grey
+    or white (sunlit soil, suits, cabin panels, clouds), or None.
 
-    Looks at the bright tones first (mid tones if there are none), finds
-    the biggest cluster of near-grey pixels, and takes its colour. Skipped
-    when there is no such cluster, when it's too colourful to be a tint,
-    or when it's blue: film ages towards yellow, red or green, and blue on
-    clouds seen from orbit is the real atmosphere."""
+    Looks at the bright tones first (then mid, then dark tones if a band
+    has too few pixels), finds the biggest cluster of similar colours
+    there, and takes its colour. None when there is no such cluster (the
+    picture is too varied to tell what should be grey) or when the colour
+    is too strong to be a tint. NASA's own processed versions have bright
+    greys within about 3 units of neutral, while the scans are off by up
+    to about 40."""
     L, a, b = (lab[..., i].ravel() for i in range(3))
-    for lo, hi in [(60, 97), (30, 65)]:
+    for lo, hi in [(60, 97), (30, 65), (15, 35)]:
         m = (L >= lo) & (L < hi)
         if m.sum() < 0.02 * L.size:
             continue
@@ -166,29 +181,50 @@ def film_tint(lab):
             if near.sum() < 0.3 * m.sum():
                 return None
             ca, cb = np.median(aa[near]), np.median(bb[near])
-        return (ca, cb) if np.hypot(ca, cb) <= 15 and cb > -2 else None
+        cl = np.median(L[m][near])
+        return (cl, ca, cb) if 0.5 < np.hypot(ca, cb) <= MAX_TINT else None
     return None
 
 
-def remove_film_tint(im, strength):
-    """Shift every colour by the film's tint, times `strength` (0.75 by
-    default: most of it, not all, so it never looks over-corrected). Only
-    the colour moves; brightness is kept, and pure black and white stay put."""
-    if strength <= 0:
-        return im
-    small = im.copy()
-    small.thumbnail((800, 800))
-    tint = film_tint(to_lab(np.asarray(small, dtype=np.float32)))
-    if not tint:
-        return im
-    lab = to_lab(np.asarray(im, dtype=np.float32))
-    fade = np.clip(lab[..., 0] / 10, 0, 1) * np.clip((100 - lab[..., 0]) / 5, 0, 1)
-    lab[..., 1] -= tint[0] * strength * fade
-    lab[..., 2] -= tint[1] * strength * fade
-    return Image.fromarray(from_lab(lab))
+def tone_curve(L):
+    """A small tone adjustment on L* (0-100), fitted to NASA's own processed
+    versions of 37 frames: mid tones lifted a little (a 0.85 gamma), and
+    the brightest tones eased down so sunlit soil and suits aren't glaring
+    (white ends up at about 88). Black stays black."""
+    x = (np.clip(L, 0, 100) / 100) ** MID_GAMMA * 100
+    return x - SHOULDER * 100 * (x / 100) ** 3
 
 
-def process(frame_id, fmt, size, work, out, tint_strength=0.75):
+def adjust_colour(im, tint_strength, tone=True):
+    """Remove the film's tint, then apply tone_curve.
+
+    The tint is taken out as a white balance: one gain per colour channel
+    in linear light, chosen so the picture's greys come out neutral. Like
+    the film's own cast, that correction is strongest in the bright tones
+    and fades towards black. `tint_strength` 0.75 removes 75% of a small
+    tint and all but KEEP_TINT units of a large one, so a hint of the
+    film's warmth stays and it never looks over-corrected."""
+    tint = None
+    if tint_strength > 0:
+        small = im.copy()
+        small.thumbnail((800, 800))
+        tint = film_tint(to_lab(np.asarray(small, dtype=np.float32)))
+    if not tint and not tone:
+        return im
+    lin = srgb_to_linear(np.asarray(im, dtype=np.float32))
+    if tint:
+        cl, ca, cb = tint
+        keep = min(1 - tint_strength, KEEP_TINT / np.hypot(ca, cb))
+        grey, target = lab_to_linear(np.array([[cl, ca, cb], [cl, ca * keep, cb * keep]]))
+        lin = lin * (target / np.maximum(grey, 1e-6))
+    if not tone:
+        return Image.fromarray(linear_to_srgb(lin))
+    lab = linear_to_lab(lin)
+    lab[..., 0] = tone_curve(lab[..., 0])
+    return Image.fromarray(linear_to_srgb(lab_to_linear(lab)))
+
+
+def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True):
     src = download(scan_url(frame_id, fmt, size), work / size / f'{frame_id}.png')
     if not src:
         return None, 'download failed'
@@ -198,7 +234,7 @@ def process(frame_id, fmt, size, work, out, tint_strength=0.75):
     out.mkdir(parents=True, exist_ok=True)
     web = pic.copy()
     web.thumbnail((WEB_PX, WEB_PX), Image.LANCZOS)
-    web = remove_film_tint(web, tint_strength)
+    web = adjust_colour(web, tint_strength, tone)
     web.save(out / f'{frame_id}.jpg', quality=85, optimize=True, progressive=True)
     thumb = web.copy()
     thumb.thumbnail((THUMB_PX, THUMB_PX), Image.LANCZOS)
@@ -216,6 +252,7 @@ def main():
     ap.add_argument('--out', default='~/apollo-media/photos')
     ap.add_argument('--tint-strength', type=float, default=0.75,
                     help='how much of the film\'s age tint to remove (0 = off, 1 = all)')
+    ap.add_argument('--no-tone-curve', action='store_true', help='skip the small tone adjustment')
     ap.add_argument('--preview', help='also write a contact sheet showing each crop box')
     args = ap.parse_args()
     work, out = Path(args.work).expanduser(), Path(args.out).expanduser()
@@ -231,7 +268,7 @@ def main():
 
     previews = []
     for n, (fid, fmt) in enumerate(rows, 1):
-        result, status = process(fid, fmt, args.size, work, out, args.tint_strength)
+        result, status = process(fid, fmt, args.size, work, out, args.tint_strength, not args.no_tone_curve)
         print(f'[{n}/{len(rows)}] {fid}: {status}', flush=True)
         if result and args.preview:
             im, box = result
