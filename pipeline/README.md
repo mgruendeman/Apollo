@@ -117,7 +117,8 @@ cuts that to hours. Already-finished files are skipped.
    - colour and crop marks are written to `needs-hand-fix.tsv` in the
      output folder for a fix by hand.
 
-   The pilot review page covers the 40 sample frames. On the real site
+   The pilot review page (`review_page/`, built with `build.py`) covers
+   the 40 sample frames. On the real site
    this becomes a reviewer mode backed by a Cloudflare D1 table, since
    18,000 frames is too many for the pilot's store.
 
