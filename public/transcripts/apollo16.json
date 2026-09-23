@@ -1332,42 +1332,35 @@
 },
 {
 "get":"000:06:51",
-"offsetSeconds":400.4,
+"offsetSeconds":399.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"You got Omni Delta, Gordy?"
 },
 {
 "get":"000:06:53",
-"offsetSeconds":400.4,
+"offsetSeconds":399.4,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Roger, Charlie. [Long pause.]"
 },
 {
-"get":"000:06:53",
-"offsetSeconds":402.4,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Young, Duke, Mattingly now told that they can reach orbit if given a good third stage. Mark. Seven minutes. Ninety-one nautical miles [168 kilometres] in altitude, 496 nautical miles [918 kilometres] downrange."
-},
-{
 "get":"000:07:42",
-"offsetSeconds":450.8,
+"offsetSeconds":446.2,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Inboard shutdown on time."
 },
 {
 "get":"000:07:44",
-"offsetSeconds":452.8,
+"offsetSeconds":448.1,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Roger; inboard. [Long pause.]"
 },
 {
 "get":"000:07:44",
-"offsetSeconds":452.8,
+"offsetSeconds":448.1,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Center engine shutdown on time. Seven minutes, 50 seconds. Ninety-two nautical miles [170 kilometres] in altitude. 620 nautical miles [1,148 kilometres] downrange. Still showing stable thrust on the other 4 engines. They've got about a minute to go in burn time remaining."
@@ -5041,13 +5034,6 @@
 "text":"[Garble]."
 },
 {
-"get":"002:26:04",
-"offsetSeconds":256.4,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Apollo Control, Houston, at two hours, 26 minutes Ground Elapsed Time. Seven minutes away now."
-},
-{
 "get":"002:26:36",
 "offsetSeconds":269.9,
 "speaker":"Fullerton",
@@ -5098,14 +5084,14 @@
 },
 {
 "get":"002:28:17",
-"offsetSeconds":360.6,
+"offsetSeconds":343.6,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"16, Houston. You're Go for TLI."
 },
 {
 "get":"002:28:21",
-"offsetSeconds":364.6,
+"offsetSeconds":347.6,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Roger; Go for TLI."
@@ -9854,252 +9840,245 @@
 "a16_0045315":[
 {
 "get":"004:53:15",
-"offsetSeconds":0,
+"offsetSeconds":1.6,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"16, Houston. Whenever you're ready, we're ready to load the PTC REFSMMAT."
 },
 {
 "get":"004:53:23",
-"offsetSeconds":8,
+"offsetSeconds":8.6,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Okay, you have P00 and Accept."
 },
 {
 "get":"004:53:28",
-"offsetSeconds":13,
+"offsetSeconds":15.5,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"004:54:19",
-"offsetSeconds":64,
+"offsetSeconds":64.7,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Ken, sorry about that. We didn't get coordinated here. We don't have an uplink site, so go back to Block until after 5 hours, and we'll try it again then."
 },
 {
 "get":"004:54:29",
-"offsetSeconds":74,
+"offsetSeconds":75.2,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"All righty. We're back in UpTel to Block. And we're going to be kind of hanging up here for a while anyhow, while we get our suits off. It - it turns out to be a pretty interesting operation with these new B-suits."
 },
 {
 "get":"004:54:46",
-"offsetSeconds":91,
+"offsetSeconds":91.9,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"004:55:37",
-"offsetSeconds":142,
+"offsetSeconds":141.8,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Oh, how about that. I haven't heard of that one before."
 },
 {
 "get":"004:55:43",
-"offsetSeconds":148,
+"offsetSeconds":148.6,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Then when we - when we scooted out here and you started your nonpropulsive vent, we could see - First, it just looked like - like it was a little mist around the outside when you looked at the Sun. And then the Sun hit it at such an angle that you started getting a - a spectral reflection, and it looked like a rainbow out over the LM. And then after - after that, you could look out my Number 1 window, and apparently the lighting was just right so that it - it had the appearance of - of light streaming off to a point source at infinity. There was a little blank spot in it at the - at what looke"
 },
 {
 "get":"004:56:46",
-"offsetSeconds":211,
+"offsetSeconds":211.0,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Rog. Enjoying the description. [Pause.]"
 },
 {
 "get":"004:56:53",
-"offsetSeconds":218,
+"offsetSeconds":217.9,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"I'll tell you, you can't wait too many years to make this worth it."
 },
 {
 "get":"004:56:59",
-"offsetSeconds":224,
+"offsetSeconds":223.7,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"004:57:03",
-"offsetSeconds":228,
+"offsetSeconds":227.5,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Gordy, on that boost, that S-IC is a real freight train. I'll tell you, boy. I can't get over that."
 },
 {
 "get":"004:57:11",
-"offsetSeconds":236,
+"offsetSeconds":236.0,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"004:57:14",
-"offsetSeconds":239,
+"offsetSeconds":239.4,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Could you folks see that thing on the TV up through staging?"
 },
 {
 "get":"004:57:20",
-"offsetSeconds":245,
+"offsetSeconds":244.3,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"I didn't watch it all the way until it went out of sight. I'll have to check here. [Pause.]"
 },
 {
-"get":"004:57:20",
-"offsetSeconds":245,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Apollo Control, Houston..."
-},
-{
 "get":"004:57:32",
-"offsetSeconds":257,
+"offsetSeconds":256.9,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Yeah, I guess we saw even [the LES] tower jett."
 },
 {
 "get":"004:57:38",
-"offsetSeconds":263,
+"offsetSeconds":262.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Good show. John's in the middle of his suit doff."
 },
 {
 "get":"004:57:43",
-"offsetSeconds":268,
+"offsetSeconds":271.8,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Okay. [Pause.]"
 },
 {
 "get":"004:57:43",
-"offsetSeconds":268,
+"offsetSeconds":271.8,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"We're at 4 hours, 58 minutes Ground Elapsed Time. Most of that long description coming from Ken Mattingly, how..."
 },
 {
 "get":"004:57:52",
-"offsetSeconds":277,
+"offsetSeconds":277.5,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"And thanks to good old Stu Roosa's suggestion, we wrote in the Flight Plan to be sure and take a look at the fires out there in Africa as we went over, which is something we probably would have forgotten or never even thought about. And they are just as beautiful as everybody's ever said they could be. They're just all over the place. All these little - little yellowish-red dots down there. And there was some - looked like some low overcast in parts of the area, or maybe it was - from our altitude, maybe it was a high overcast. But it just gave - It looked like looking at the lights of a city "
 },
 {
 "get":"004:58:32",
-"offsetSeconds":317,
+"offsetSeconds":321.5,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Roger. We'll be sure to remind Ron to look for that one. [Pause.]"
 },
 {
 "get":"004:58:43",
-"offsetSeconds":328,
+"offsetSeconds":333.6,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"I tell you, God didn't equip us with enough eyes to see everything that there is to see in the first hour."
 },
 {
 "get":"004:58:51",
-"offsetSeconds":336,
+"offsetSeconds":342.4,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Rog. [Long pause.]"
 },
 {
 "get":"004:58:51",
-"offsetSeconds":336,
+"offsetSeconds":342.4,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Apollo Control, Houston; 4 hours, 59 minutes. That last remark coming from Command Module Pilot Ken Mattingly. Our space digital display still using the Moon as a reference. We show Apollo 16 172,048 nautical miles [318,633 kilometres] away from the Moon."
 },
 {
 "get":"004:59:26",
-"offsetSeconds":371,
+"offsetSeconds":373.0,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Gordy, it looks like this whole operation may take us longer than - than we had guessed. Is there any thermal constraint on getting a 52 attitude and going to those other attitudes? Looks like we got some time to go here..."
 },
 {
 "get":"004:59:41",
-"offsetSeconds":386,
+"offsetSeconds":386.1,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"I'll check on that, Ken. We're about..."
 },
 {
 "get":"004:59:42",
-"offsetSeconds":387,
+"offsetSeconds":387.0,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"...but I just wondered if that's something we ought to keep in mind."
 },
 {
 "get":"004:59:47",
-"offsetSeconds":392,
+"offsetSeconds":390.5,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Okay. We're about to a handover here. I'll check on that and come back to you through Hawaii."
 },
 {
 "get":"004:59:51",
-"offsetSeconds":396,
+"offsetSeconds":395.1,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Okay, thank you. [Long pause.]"
 },
 {
 "get":"005:00:46",
-"offsetSeconds":451,
+"offsetSeconds":448.7,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"16, we're - through Hawaii now. And you're scheduled in this attitude through 7 hours or - at least, so no problem thermally, and you're not even due to do the P52 for another half hour, so you're plenty ahead."
 },
 {
 "get":"005:01:03",
-"offsetSeconds":468,
+"offsetSeconds":466.1,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Okay, that P52 - We're going to come to a decision point; here pretty soon, whether to - you want us to do that and then we'll pick up the suit doffing after that, or we - I'd just as soon go ahead and do the - get all the suits out of the way. And we can do the 52 on schedule, or we can do it after we get the suits off. Does it make any difference to you folks ?"
 },
 {
 "get":"005:01:24",
-"offsetSeconds":489,
+"offsetSeconds":487.0,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"Let me check. [Long pause.]"
 },
 {
 "get":"005:01:56",
-"offsetSeconds":521,
+"offsetSeconds":518.9,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"If that's what you'd like to do, why don't you go ahead with the - finish up the suits. No problem slipping the 52 a little bit. And we'd like P00 and Accept for that uplink."
 },
 {
 "get":"005:02:08",
-"offsetSeconds":533,
+"offsetSeconds":530.9,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Okay, there's P00 and Accept. [Pause.] Is Fredo still around there?"
 },
 {
 "get":"005:02:18",
-"offsetSeconds":543,
+"offsetSeconds":540.9,
 "speaker":"Fullerton",
 "channel":"air-to-ground",
 "text":"No, he went home about a half hour ago."
@@ -18262,7 +18241,7 @@
 "a16_0304106":[
 {
 "get":"030:41:12",
-"offsetSeconds":7.2,
+"offsetSeconds":7.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay, Houston. Do you want a burn report or did y'all see everything?"
@@ -20466,7 +20445,7 @@
 "a16_0384745":[
 {
 "get":"038:47:45",
-"offsetSeconds":1.2,
+"offsetSeconds":0.0,
 "speaker":"Hartsfield",
 "channel":"air-to-ground",
 "text":"Casper, Houston."
@@ -22005,7 +21984,7 @@
 },
 {
 "get":"048:25:09",
-"offsetSeconds":66.3,
+"offsetSeconds":62.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
@@ -28374,7 +28353,7 @@
 },
 {
 "get":"067:23:54",
-"offsetSeconds":531.4,
+"offsetSeconds":536.4,
 "speaker":"Hartsfield",
 "channel":"air-to-ground",
 "text":"Okay. [Pause.]"
@@ -39722,7 +39701,7 @@
 },
 {
 "get":"094:55:29",
-"offsetSeconds":1350.3,
+"offsetSeconds":1345.6,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Enter."
@@ -45457,21 +45436,21 @@
 },
 {
 "get":"097:05:58",
-"offsetSeconds":467.5,
+"offsetSeconds":466.9,
 "speaker":"Duke (LM onboard)",
 "channel":"air-to-ground",
 "text":"It was locked on at the ground, I bet you."
 },
 {
 "get":"097:06:01",
-"offsetSeconds":470.3,
+"offsetSeconds":469.8,
 "speaker":"Irwin",
 "channel":"air-to-ground",
 "text":"Roger; we copy. [Pause.]"
 },
 {
 "get":"097:06:02",
-"offsetSeconds":471.3,
+"offsetSeconds":470.9,
 "speaker":"Young (LM onboard)",
 "channel":"air-to-ground",
 "text":"Yeah. Pro, Charlie. Waits I'll have to change this - wait until this one changes."
@@ -50152,28 +50131,28 @@
 },
 {
 "get":"100:22:00",
-"offsetSeconds":144.4,
+"offsetSeconds":144.3,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Okay; we'll [garble] 5 feet per second directly at the LM. [Long pause.]"
 },
 {
 "get":"100:22:10",
-"offsetSeconds":154.4,
+"offsetSeconds":154.3,
 "speaker":"Young (LM onboard)",
 "channel":"air-to-ground",
 "text":"Didn't mean to do that."
 },
 {
 "get":"100:22:11",
-"offsetSeconds":155.3,
+"offsetSeconds":155.2,
 "speaker":"Irwin",
 "channel":"air-to-ground",
 "text":"Go."
 },
 {
 "get":"100:22:12",
-"offsetSeconds":156.3,
+"offsetSeconds":156.2,
 "speaker":"Duke (LM onboard)",
 "channel":"air-to-ground",
 "text":"What?"
@@ -58910,189 +58889,189 @@
 },
 {
 "get":"104:25:51",
-"offsetSeconds":269.6,
+"offsetSeconds":269.3,
 "speaker":"Duke (LM comm)",
 "channel":"air-to-ground",
 "text":"Okay, standing by to update the AGS. Had a little roll steering here."
 },
 {
 "get":"104:25:52",
-"offsetSeconds":270.6,
+"offsetSeconds":270.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay, standing by to update the AGS . Had a little roll steering here."
 },
 {
 "get":"104:25:59",
-"offsetSeconds":277.8,
+"offsetSeconds":277.5,
 "speaker":"Irwin",
 "channel":"air-to-ground",
 "text":"Monitor Descent 1."
 },
 {
 "get":"104:26:02",
-"offsetSeconds":280.8,
+"offsetSeconds":280.5,
 "speaker":"Young (LM comm)",
 "channel":"air-to-ground",
 "text":"Roger. Descent 1."
 },
 {
 "get":"104:26:03",
-"offsetSeconds":281.8,
+"offsetSeconds":281.5,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Roger. Descent 1. (Pause) [There are two propellant monitoring systems.] [Jones - \"When they say 'monitor descent 1', is that the conservative choice or is it the one they think is more accurate?\"] [Duke - \"It's the one that's the lowest. It would be the conservative choice.\"] Landing Movie by Gary Neff (4 min 55 sec; 8.6 Mb)"
 },
 {
 "get":"104:26:08",
-"offsetSeconds":287.0,
+"offsetSeconds":286.7,
 "speaker":"Duke (LM comm)",
 "channel":"air-to-ground",
 "text":"Hey, Jim, we got about a 3-degree roll command in. Okay, Enter, P60 minus 01720 Enter; P67 is coming up, and I'm starting the clock - I mean the camera. Okay, we're out at 12,000, John. Go at 9. Coming down at 182; a little steep. Okay, well, we're gonna be right on. It's just about right on, maybe 10 feet; 10,000 feet. Stand by. P64 at 8200. Pro."
 },
 {
 "get":"104:26:09",
-"offsetSeconds":288.0,
+"offsetSeconds":287.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay, Jim. We got about a 3-degree roll command in."
 },
 {
 "get":"104:26:12",
-"offsetSeconds":291.0,
+"offsetSeconds":290.7,
 "speaker":"Irwin",
 "channel":"air-to-ground",
 "text":"Roger. 104:26:16 Duke: Okay. Enter, 360, minus 0172, 0 Enter, 367 is coming up, and I'm starting the clock...(correcting himself) I mean the (16-mm movie) camera."
 },
 {
 "get":"104:26:29",
-"offsetSeconds":308.4,
+"offsetSeconds":308.2,
 "speaker":"Irwin",
 "channel":"air-to-ground",
 "text":"Go at 9. [As the descent continues, the spacecraft is slowly tilting toward the upright position. At pitchover, there will be a large change in the spacecraft orientation and John will get his first clear view of the landing site. However, as he mentioned in the Mission Report, \"At approximately 14,000 feet, the entire landing site - Flag, Spook, and Double Spot Craters - became visible to the Commander.\"]"
 },
 {
 "get":"104:26:30",
-"offsetSeconds":309.4,
+"offsetSeconds":309.2,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. We're out of 12,000, John. Go at 9. Coming down at 182 (feet per second), a little steep. (Pause) Okay, we're going to be right on. It's just about right on, maybe 10 feet (feet per second off). 10,000 feet. Stand by. Okay, P64, at 8200. Pro."
 },
 {
 "get":"104:26:54",
-"offsetSeconds":333.9,
+"offsetSeconds":333.8,
 "speaker":"Young (LM comm)",
 "channel":"air-to-ground",
 "text":"Pitchover."
 },
 {
 "get":"104:26:55",
-"offsetSeconds":335.0,
+"offsetSeconds":334.9,
 "speaker":"Duke (LM comm)",
 "channel":"air-to-ground",
 "text":"Pitchover. Hey, there it is. Gator, Lone Star, right on!"
 },
 {
 "get":"104:26:55",
-"offsetSeconds":335.0,
+"offsetSeconds":334.9,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Pitchover."
 },
 {
 "get":"104:26:56",
-"offsetSeconds":336.0,
+"offsetSeconds":335.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Pitchover. Hey, there it is. Gator, Lone Star. Right on! [According to the Mission Report, pitchover occurred at 7200 feet. Charlie is looking to the right (north) of the flight path. In the 16-mm film, Gator is the large crater at the bottom of the window and Lone Star is the small, sharp-rimmed crater on the eastern, outer flank of Gator. The next large crater beyond Gator is Palmetto. The large crater beyond Palmetto at the righthand edge of the window is Kiva.] [Young, from the Mission Report - \"At pitchover, you could see - just like pre-flight (simulations) Gator, Palmetto, and Spook, an"
 },
 {
 "get":"104:26:59",
-"offsetSeconds":339.0,
+"offsetSeconds":338.9,
 "speaker":"Young (LM comm)",
 "channel":"air-to-ground",
 "text":"Call - call me the things, Charlie."
 },
 {
 "get":"104:27:00",
-"offsetSeconds":340.1,
+"offsetSeconds":340.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Call me the things, Charlie. [The window in front of John is scribed with two sets of vertical and horizontal scales, one on the inside and one on the outside. If he stands so that the two sets of scales are lined up, once Charlie gives him a number from the computer, he can then find the point where the computer thinks they are going to land. This number - called the Landing Point Designator ( LPD ) angle - marks the position of the computer's target on the vertical scale. If John wants to move the target, he clicks the handcontroller left or right, forward or aft.] [Randy Attwood has provide"
 },
 {
 "get":"104:27:01",
-"offsetSeconds":341.1,
+"offsetSeconds":341.0,
 "speaker":"Duke (LM comm)",
 "channel":"air-to-ground",
 "text":"Okay; it's 40 deg - 38 degrees. Palmetto and Dot, North Ray."
 },
 {
 "get":"104:27:01",
-"offsetSeconds":341.1,
+"offsetSeconds":341.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. 40...38 degrees."
 },
 {
 "get":"104:27:02",
-"offsetSeconds":342.1,
+"offsetSeconds":342.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Okay. [Young, from the Apollo 16 Mission Report - \"After pitchover, a comparison of the Landing Point Designator with the computer and the movement of the vehicle showed that, if no further trajectory corrections were made, the Lunar Module would land approximately 600 meters north and 400 meters west of the center of the landing ellipse. Therefore, between altitudes of 3000 and 4000 feet, an estimated total of five redesignations to the south were made. The vehicle responded properly.\"] [Young, from the 1972 Technical Debrief - \"I think the LPD was perfect. I don't have any gripes there whats"
 },
 {
 "get":"104:27:06",
-"offsetSeconds":346.2,
+"offsetSeconds":346.1,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Okay. 104:27:08 Duke: Looks like we're going to be able to make it, John. There's not too many blocks up there. [Charlie was the only LMP who made detailed comments on the landing site at pitchover. Others glanced out, but made no comments. The LMP's main job was to watch the computer and provide the Commander with LPD readings and values of altitude, descent rate, and forward velocity. Frank O'Brien plausibly suggests that, when Ed Mitchell glanced out his window to check the LM's position relative to Cone Crater, he may have also been checking out traverses to the crater rim. In both cases, "
 },
 {
 "get":"104:27:07",
-"offsetSeconds":347.2,
+"offsetSeconds":347.1,
 "speaker":"Young (LM comm)",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"104:27:09",
-"offsetSeconds":349.3,
+"offsetSeconds":349.2,
 "speaker":"Duke (LM comm)",
 "channel":"air-to-ground",
 "text":"Looks like we're going to be able to make it, John. There's not too many blocks up there. Okay, 4000 feet - 4 - 4..."
 },
 {
 "get":"104:27:12",
-"offsetSeconds":352.3,
+"offsetSeconds":352.2,
 "speaker":"Irwin",
 "channel":"air-to-ground",
 "text":"Orion, you're Go for landing."
 },
 {
 "get":"104:27:16",
-"offsetSeconds":356.4,
+"offsetSeconds":356.3,
 "speaker":"Young (LM comm)",
 "channel":"air-to-ground",
 "text":"Okay. Go for landing."
 },
 {
 "get":"104:27:16",
-"offsetSeconds":356.4,
+"offsetSeconds":356.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay, 4000 feet,..."
 },
 {
 "get":"104:27:17",
-"offsetSeconds":357.4,
+"offsetSeconds":357.3,
 "speaker":"Duke (LM comm)",
 "channel":"air-to-ground",
 "text":"...42 LPD."
 },
 {
 "get":"104:27:17",
-"offsetSeconds":357.4,
+"offsetSeconds":357.3,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"(Acknowledging Irwin) Okay. Go for landing."
@@ -71040,7 +71019,7 @@
 },
 {
 "get":"120:18:47",
-"offsetSeconds":800.3,
+"offsetSeconds":797.5,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Okay. (Long Pause) [Charlie puts the sunshield on and then moves around to the front of the Rover so that he can look straight at the front of the TV camera to examine his handiwork.]"
@@ -80060,7 +80039,7 @@
 },
 {
 "get":"122:55:13",
-"offsetSeconds":668.5,
+"offsetSeconds":666.8,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -82884,56 +82863,56 @@
 },
 {
 "get":"123:34:06",
-"offsetSeconds":67.1,
+"offsetSeconds":67.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. (Pause) [John was probably putting the individual sample bag in the Sample Collection Bag mounted on the right side of Charlie's PLSS.] [Fendell zooms in to get as good a view of John and Charlie as is possible in the circumstances. Charlie is standing to John's right. They have their backs to the TV camera.] Video Clip ( 4 min 24 sec 1.1 Mb RealVideo or 39 Mb MPEG )"
 },
 {
 "get":"123:34:16",
-"offsetSeconds":70.1,
+"offsetSeconds":69.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay, John, if you'll step aside, I'll get a soil sample. (Pause) [Charlie will use the side of the rake to scoop up a bagful of soil. AS16-116- 18690 is a good close-up of the rake.]"
 },
 {
 "get":"123:34:23",
-"offsetSeconds":72.2,
+"offsetSeconds":71.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay, there's the tone, Tony."
 },
 {
 "get":"123:34:27",
-"offsetSeconds":72.2,
+"offsetSeconds":71.8,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"123:34:29",
-"offsetSeconds":74.0,
+"offsetSeconds":73.4,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Want me to get your Aux(ilary) water On? Want me to get it, Charlie?"
 },
 {
 "get":"123:34:33",
-"offsetSeconds":75.2,
+"offsetSeconds":74.5,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Aux. I got it. (To Houston) Aux water is On."
 },
 {
 "get":"123:34:36",
-"offsetSeconds":76.0,
+"offsetSeconds":75.3,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Okay. (Pause) [Charlie turns 90 degrees to his left.]"
 },
 {
 "get":"123:34:43",
-"offsetSeconds":78.1,
+"offsetSeconds":77.2,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hey, how much soil, Tony?"
@@ -82961,21 +82940,21 @@
 },
 {
 "get":"123:34:56",
-"offsetSeconds":88.3,
+"offsetSeconds":87.6,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Yeah. A little one."
 },
 {
 "get":"123:34:59",
-"offsetSeconds":91.6,
+"offsetSeconds":91.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. Ahh. (The rake has caught on a) rock. [Charlie raises the scoop again.]"
 },
 {
 "get":"123:35:06",
-"offsetSeconds":99.2,
+"offsetSeconds":99.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"(Garbled) Almost looks like (garbled)."
@@ -88050,7 +88029,7 @@
 },
 {
 "get":"124:40:08",
-"offsetSeconds":9.6,
+"offsetSeconds":6.8,
 "speaker":"Hartsfield",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -90331,7 +90310,7 @@
 },
 {
 "get":"125:15:09",
-"offsetSeconds":272.1,
+"offsetSeconds":267.2,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -96478,14 +96457,14 @@
 },
 {
 "get":"126:39:54",
-"offsetSeconds":578.5,
+"offsetSeconds":578.3,
 "speaker":"Hartsfield",
 "channel":"air-to-ground",
 "text":"Say again."
 },
 {
 "get":"126:39:55",
-"offsetSeconds":579.4,
+"offsetSeconds":579.2,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hold onto it."
@@ -96513,91 +96492,91 @@
 },
 {
 "get":"126:40:02",
-"offsetSeconds":585.7,
+"offsetSeconds":585.4,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"You got one side of it. I got the other side."
 },
 {
 "get":"126:40:03",
-"offsetSeconds":586.7,
+"offsetSeconds":586.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay, let it go, I got it."
 },
 {
 "get":"126:40:07",
-"offsetSeconds":590.5,
+"offsetSeconds":590.2,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"You're hung up on something. 126:40:08 Duke: It's your hoses, I think. (Pause) Either that or my hoses. (Pause) Yeah, my hoses. (Pause) Agh! (Pause) Okay. OPS is reading six thousand (psi)! Yeah, that's right; that's where it started. Hmm."
 },
 {
 "get":"126:40:45",
-"offsetSeconds":627.3,
+"offsetSeconds":627.1,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"(Garbled), Charlie. Don't cut yourself on that...Okay, now that...I couldn't put it in here."
 },
 {
 "get":"126:40:47",
-"offsetSeconds":629.3,
+"offsetSeconds":629.1,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Hank, do you read me at all?"
 },
 {
 "get":"126:40:48",
-"offsetSeconds":630.2,
+"offsetSeconds":630.0,
 "speaker":"Hartsfield",
 "channel":"air-to-ground",
 "text":"Roger, Ken; I'm reading you."
 },
 {
 "get":"126:40:49",
-"offsetSeconds":631.2,
+"offsetSeconds":631.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. (Pause) Okay. \"Report OPS pressure.\" Okay. Let's get your PLSS off and then I'll stow...Let me stow this stuff, okay?"
 },
 {
 "get":"126:40:54",
-"offsetSeconds":636.0,
+"offsetSeconds":635.8,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Oh, okay. I just wondered. I got a lot of noise, but I hear you loud and clear whenever you talk."
 },
 {
 "get":"126:40:58",
-"offsetSeconds":639.9,
+"offsetSeconds":639.8,
 "speaker":"Hartsfield",
 "channel":"air-to-ground",
 "text":"Roger. Same here."
 },
 {
 "get":"126:41:03",
-"offsetSeconds":644.7,
+"offsetSeconds":644.6,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Okay. That's a good idea. (Long Pause)"
 },
 {
 "get":"126:41:14",
-"offsetSeconds":655.4,
+"offsetSeconds":655.3,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Any word on how the LM consumables are looking, or is it too soon to tell?"
 },
 {
 "get":"126:41:21",
-"offsetSeconds":662.2,
+"offsetSeconds":662.1,
 "speaker":"Hartsfield",
 "channel":"air-to-ground",
 "text":"I haven't heard anything yet, Ken."
 },
 {
 "get":"126:41:29",
-"offsetSeconds":669.9,
+"offsetSeconds":669.8,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Have they said anything about which - if they only run one more EVA, which one they'll run?"
@@ -103602,21 +103581,21 @@
 },
 {
 "get":"142:44:35",
-"offsetSeconds":0.0,
+"offsetSeconds":2.7,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Okay, we understand your water flags are cleared."
 },
 {
 "get":"142:44:40",
-"offsetSeconds":0.4,
+"offsetSeconds":2.7,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"That's correct."
 },
 {
 "get":"142:44:41",
-"offsetSeconds":1.4,
+"offsetSeconds":2.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"John's is; mine's not quite, but I feel good cooling. (Pause)"
@@ -105801,14 +105780,14 @@
 },
 {
 "get":"143:22:16",
-"offsetSeconds":537.5,
+"offsetSeconds":537.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. Just a minute. (Pause) [Charlie leans in so he can see the film advance indicator and briefly switches on the 16-mm camera.]"
 },
 {
 "get":"143:22:22",
-"offsetSeconds":543.4,
+"offsetSeconds":542.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Yep!"
@@ -105836,28 +105815,28 @@
 },
 {
 "get":"143:22:33",
-"offsetSeconds":554.7,
+"offsetSeconds":553.4,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Okay. Going to reset the far UV again, one more time."
 },
 {
 "get":"143:22:37",
-"offsetSeconds":558.8,
+"offsetSeconds":557.6,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Okay. And your azimuth will be 276. (Pause)"
 },
 {
 "get":"143:22:48",
-"offsetSeconds":570.2,
+"offsetSeconds":569.2,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Okay; 276."
 },
 {
 "get":"143:22:50",
-"offsetSeconds":572.3,
+"offsetSeconds":571.4,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"And the elevation, 14. (Pause) [Charlie picks up sample 60025, the 1.8-kg rock John collected a few minutes earlier, and examines it. In the background, John goes to the UV camera.] [Readers should note that zero azimuth on the UV camera is west, rather than north. Consequently, the new azimuth is just slightly west of south.] 143:23:03 Young: Okay, Houston; going to Reset. It worked. (Long Pause) [Charlie taps the rock several times against his seat back to knock some of the dust off so he can get a better look at the minerals.]"
@@ -108685,21 +108664,21 @@
 },
 {
 "get":"144:08:45",
-"offsetSeconds":359.0,
+"offsetSeconds":358.8,
 "speaker":"Mattingly",
 "channel":"air-to-ground",
 "text":"Yeah, I know it does, and I haven't had a chance to look at it straight down, but it - from an oblique, it sure - sure looks the same as all the rest of the things around there."
 },
 {
 "get":"144:08:45",
-"offsetSeconds":359.0,
+"offsetSeconds":358.8,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Okay. And the SSD?"
 },
 {
 "get":"144:08:50",
-"offsetSeconds":363.9,
+"offsetSeconds":363.6,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. Sun shadow is 9..."
@@ -111095,7 +111074,7 @@
 },
 {
 "get":"144:47:49",
-"offsetSeconds":362.7,
+"offsetSeconds":362.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"43; four three."
@@ -111116,7 +111095,7 @@
 },
 {
 "get":"144:47:59",
-"offsetSeconds":373.0,
+"offsetSeconds":372.5,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Have at it, John. [John turns to face down-Sun.] 144:48:00 Young: It might be able to make some stereo...Might be able to make some stereo with it. (Long Pause) [John starts his Station 4 pan . By the time he starts his next transmission, he is facing the Rover. In taking most of the pictures, he bends his knees, arches his back, and gets up on his toes so he can aim the camera at the horizon. The best TV sequence of an astronaut taking a pan is probably the one showing Jack Schmitt taking a pan at Apollo 17's Station 3.] [This first portion of John's pan includes frames AS16-107- 17467 to 174"
@@ -117541,35 +117520,35 @@
 },
 {
 "get":"146:21:34",
-"offsetSeconds":231.2,
+"offsetSeconds":231.1,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Charlie, put that one in mine. Yours is full, almost."
 },
 {
 "get":"146:21:36",
-"offsetSeconds":233.2,
+"offsetSeconds":233.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. Yours is getting full, too. We got to change out bags. (Getting in position to stow the sample) Whoops! (Pause) (Incredulous) My bag is full?"
 },
 {
 "get":"146:21:47",
-"offsetSeconds":244.8,
+"offsetSeconds":244.2,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Almost."
 },
 {
 "get":"146:21:48",
-"offsetSeconds":245.8,
+"offsetSeconds":245.2,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. There you go."
 },
 {
 "get":"146:21:49",
-"offsetSeconds":246.9,
+"offsetSeconds":246.3,
 "speaker":"England",
 "channel":"air-to-ground",
 "text":"Yeah; you fellows have been really scooping them up there."
@@ -117751,7 +117730,7 @@
 },
 {
 "get":"146:23:45",
-"offsetSeconds":365.5,
+"offsetSeconds":365.3,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"And, ah, needle-like, black crystals in it, too."
@@ -117772,28 +117751,28 @@
 },
 {
 "get":"146:23:58",
-"offsetSeconds":377.6,
+"offsetSeconds":377.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Here's another piece (that) came off the same rock."
 },
 {
 "get":"146:24:02",
-"offsetSeconds":381.2,
+"offsetSeconds":381.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"It has this white clast in it. It's got to be a breccia, Charlie."
 },
 {
 "get":"146:24:07",
-"offsetSeconds":385.8,
+"offsetSeconds":385.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Think so? Yeah. They don't really look like... [Charlie puts the small sample in the bag and, while John seals it, Charlie grabs the scoop.]"
 },
 {
 "get":"146:24:13",
-"offsetSeconds":391.2,
+"offsetSeconds":391.1,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"That's going in bag 41...410."
@@ -123373,7 +123352,7 @@
 },
 {
 "get":"147:41:00",
-"offsetSeconds":213.1,
+"offsetSeconds":210.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Go ahead. [With Charlie bent over, John stands behind him, bends his knees, and works on the bottom fasteners.]"
