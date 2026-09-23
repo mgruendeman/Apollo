@@ -23115,7 +23115,7 @@
 "a13_0535500-pao":[
 {
 "get":"053:54:41",
-"offsetSeconds":0,
+"offsetSeconds":0.8,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control, Houston; 53 hours, 55 minutes. That was Back-up Commander for Apollo 13, John Young, returning that call from the spacecraft. Capsule communicator Vance Brand has left his console for a brief period of time to attend a meeting on the LM activation procedures and the monitoring of the supercritical helium tank readings. We're at 53 hours 55 minutes and now show Apollo 13 at 174,309 nautical miles and traveling at a rate of speed of 3,500 - correction 3,335 feet per second. This is Apollo Control, Houston."
@@ -23124,28 +23124,28 @@
 "a13_0540554":[
 {
 "get":"054:05:54",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Houston, the LM/CM Delta-P is constant. We're going to go ahead with hatch removal."
 },
 {
 "get":"054:06:04",
-"offsetSeconds":10,
+"offsetSeconds":10.2,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Houston. Roger. [Pause.]"
 },
 {
 "get":"054:06:16",
-"offsetSeconds":22,
+"offsetSeconds":22.4,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Is that you, Jack?"
 },
 {
 "get":"054:06:20",
-"offsetSeconds":26,
+"offsetSeconds":26.5,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"No, this is Jack's replacement."
@@ -23154,35 +23154,35 @@
 "a13_0540600-pao":[
 {
 "get":"054:06:04",
-"offsetSeconds":4,
+"offsetSeconds":0.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Houston. Roger. [Pause.]"
 },
 {
 "get":"054:06:04",
-"offsetSeconds":4,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Apollo Control, Houston. That was Fred Haise telling Houston that they're ready to proceed with hatch opening."
 },
 {
 "get":"054:06:16",
-"offsetSeconds":16,
+"offsetSeconds":7.7,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Is that you, Jack?"
 },
 {
 "get":"054:06:20",
-"offsetSeconds":20,
+"offsetSeconds":10.3,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"No, this is Jack's replacement."
 },
 {
 "get":"054:06:20",
-"offsetSeconds":20,
+"offsetSeconds":10.3,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Apollo 13 apparently mystified for the moment about John Young's voice. We show 13 at an altitude of 174,664 nautical miles [323,478 km] and with a velocity of 3,328 feet per second [1,014 m/s]. We're now at 54 hours, 7 minutes into the flight and this is Apollo Control, Houston."
@@ -23191,140 +23191,140 @@
 "a13_0542415":[
 {
 "get":"054:24:15",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Houston; 13."
 },
 {
 "get":"054:24:18",
-"offsetSeconds":3,
+"offsetSeconds":3.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Houston, go ahead."
 },
 {
 "get":"054:24:25",
-"offsetSeconds":10,
+"offsetSeconds":10.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Go ahead, 13. [Long pause.]"
 },
 {
 "get":"054:24:46",
-"offsetSeconds":31,
+"offsetSeconds":31.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 13."
 },
 {
 "get":"054:24:49",
-"offsetSeconds":34,
+"offsetSeconds":34.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"This is Houston. Go ahead, 13. [Long pause.]"
 },
 {
 "get":"054:25:18",
-"offsetSeconds":63,
+"offsetSeconds":63.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Houston; Apollo 13."
 },
 {
 "get":"054:25:22",
-"offsetSeconds":67,
+"offsetSeconds":67.9,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Roger. Go ahead, 13."
 },
 {
 "get":"054:25:28",
-"offsetSeconds":73,
+"offsetSeconds":73.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. The LMP has entered the LM."
 },
 {
 "get":"054:25:31",
-"offsetSeconds":76,
+"offsetSeconds":76.7,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"054:25:37",
-"offsetSeconds":82,
+"offsetSeconds":82.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Is that Big John?"
 },
 {
 "get":"054:25:39",
-"offsetSeconds":84,
+"offsetSeconds":84.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Sure is. How're you doing?"
 },
 {
 "get":"054:25:43",
-"offsetSeconds":88,
+"offsetSeconds":88.1,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Fine."
 },
 {
 "get":"054:25:44",
-"offsetSeconds":89,
+"offsetSeconds":89.2,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Yeah, you're doing great, man."
 },
 {
 "get":"054:25:49",
-"offsetSeconds":94,
+"offsetSeconds":93.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Thank you. I had a good CDR."
 },
 {
 "get":"054:25:54",
-"offsetSeconds":99,
+"offsetSeconds":99.3,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"You're doing it on your own now."
 },
 {
 "get":"054:26:01",
-"offsetSeconds":106,
+"offsetSeconds":105.5,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Yeah, it feels like I'm back at home, again, John, down in here."
 },
 {
 "get":"054:26:04",
-"offsetSeconds":109,
+"offsetSeconds":108.1,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"I hope you did a good job, John."
 },
 {
 "get":"054:26:06",
-"offsetSeconds":111,
+"offsetSeconds":110.2,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"054:26:40",
-"offsetSeconds":145,
+"offsetSeconds":145.4,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Houston, we want to take the FM and bring up TV here for our own use. Then we'll go to Transmit 1 - at 55 hours. [Pause.]"
 },
 {
 "get":"054:26:58",
-"offsetSeconds":163,
+"offsetSeconds":163.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, 13."
@@ -23333,35 +23333,35 @@
 "a13_0542600-pao":[
 {
 "get":"054:25:31",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Apollo..."
 },
 {
 "get":"054:26:01",
-"offsetSeconds":1,
+"offsetSeconds":0.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Yeah, it feels like I'm back at home, again, John, down in here."
 },
 {
 "get":"054:26:04",
-"offsetSeconds":4,
+"offsetSeconds":0.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"I hope you did a good job, John."
 },
 {
 "get":"054:26:06",
-"offsetSeconds":6,
+"offsetSeconds":0.0,
 "speaker":"Young",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"054:26:06",
-"offsetSeconds":6,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Apollo Control, Houston; 54 hours, 26 minutes into the flight. That was Jack Swigert reporting that Fred Haise is now inside the Lunar Module. And carrying on a brief discussion with his former spacecraft Commander - his backup Commander - for this mission, John Young. We now show Apollo 13 at an altitude of 175,307 nautical miles [324,669 km]."
@@ -23370,14 +23370,14 @@
 "a13_0542700-pao":[
 {
 "get":"054:26:58",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Apollo 13 now traveling at a speed of 3,314 feet per second [1,010 m/s]. We're at 54 hours, 27 minutes now into the flight, and this is Apollo Control, Houston."
 },
 {
 "get":"054:26:58",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control, Houston at 54 hours, 42 minutes now into the flight of Apollo 13. Apollo 13 now shows an altitude of 175,826 nautical miles [325,630 km] and its speed reads 3,304 feet per second [1,007 m/s]. Network has been advised by Goldstone that the network does now have the capability of receiving television at any time. We will stand by in the event we should receive an early television transmission. At this point we do not expect to receive such, but we will stand by at 54 hours, 43 minutes into the flight. This is Apollo Control, Houston."
@@ -23386,42 +23386,42 @@
 "a13_0544628":[
 {
 "get":"054:46:28",
-"offsetSeconds":0,
+"offsetSeconds":1.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Houston, we've transferred to LM power; the time was 54 hours, 46 minutes, 15 seconds."
 },
 {
 "get":"054:46:40",
-"offsetSeconds":12,
+"offsetSeconds":13.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Jack. Transfer to LM power. Thank you."
 },
 {
 "get":"054:46:47",
-"offsetSeconds":19,
+"offsetSeconds":19.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And the docking-tunnel index, Jack, was minus 2 degrees."
 },
 {
 "get":"054:46:54",
-"offsetSeconds":26,
+"offsetSeconds":26.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Say again, Fred, you're coming in with a lot of background noise."
 },
 {
 "get":"054:47:00",
-"offsetSeconds":32,
+"offsetSeconds":33.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. The docking-tunnel index mark was minus 2 degrees."
 },
 {
 "get":"054:47:05",
-"offsetSeconds":37,
+"offsetSeconds":38.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. Minus 2 degrees."
@@ -23430,119 +23430,119 @@
 "a13_0544917":[
 {
 "get":"054:49:17",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. Jack, how do you read? [Pause.]"
 },
 {
 "get":"054:49:29",
-"offsetSeconds":12,
+"offsetSeconds":13.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Fred, Houston is reading you loud and clear."
 },
 {
 "get":"054:49:34",
-"offsetSeconds":17,
+"offsetSeconds":18.4,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. I've got up through step 7 now, and I'm not getting much of a light in the helium indicator here. Why don't I review for you how we've proceeded, and you look at the procedure you gave me, and see if we've missed anything."
 },
 {
 "get":"054:49:53",
-"offsetSeconds":36,
+"offsetSeconds":36.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. Go ahead."
 },
 {
 "get":"054:49:57",
-"offsetSeconds":40,
+"offsetSeconds":40.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. We transferred to LM power and that looked okay. I'm staring at a Caution and Warning Power light, and all the red flags; and we got both X Lunar Bus Tie breakers, In. The Utility Lighting breaker is In; then AC Bus B Helium PQS Display; the AC Bus B Numeric Lighting, and AC Bus B Inverter 1 is - Bus Tie is Closed. Then I closed the Inverter 1 breaker, and I've selected, on panel 16, and the Signal Consensor [sic] breaker is in; I've selected Inverter 1 and put the Helium Monitor switch to Supercrit and I have no lights. [Pause.]"
 },
 {
 "get":"054:51:06",
-"offsetSeconds":109,
+"offsetSeconds":110.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Fred, let us take a look at it."
 },
 {
 "get":"054:51:07",
-"offsetSeconds":110,
+"offsetSeconds":111.2,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"I was wondering, do we need an A - do we need, possibly, in the - one of the Anun/Dock/Component breakers in?"
 },
 {
 "get":"054:51:18",
-"offsetSeconds":121,
+"offsetSeconds":121.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by one. [Long pause.]"
 },
 {
 "get":"054:51:33",
-"offsetSeconds":136,
+"offsetSeconds":136.6,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, Jack. Hold the phone. I forgot the rheostat was cranked all the way down on the Anun/Num and it's showing 720, which looks like a pretty good - pretty good number."
 },
 {
 "get":"054:51:47",
-"offsetSeconds":150,
+"offsetSeconds":150.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We copy 720. Thank you, Fred..."
 },
 {
 "get":"054:51:49",
-"offsetSeconds":152,
+"offsetSeconds":152.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Flashed to 7 - Okay, and it just flickered down to 710. It's kind of flickering between 710 and 720."
 },
 {
 "get":"054:52:00",
-"offsetSeconds":163,
+"offsetSeconds":164.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. 710 to 720. [Pause.]"
 },
 {
 "get":"054:52:16",
-"offsetSeconds":179,
+"offsetSeconds":180.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Fred. Those are good numbers, and we're not going to have to crank up the TM. That's the number we were looking for."
 },
 {
 "get":"054:52:26",
-"offsetSeconds":189,
+"offsetSeconds":189.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Very good. Okay. Do you want me to back out of this in reverse at least as far as getting this part of it powered down?"
 },
 {
 "get":"054:52:36",
-"offsetSeconds":199,
+"offsetSeconds":199.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by one. [Long pause.]"
 },
 {
 "get":"054:52:56",
-"offsetSeconds":219,
+"offsetSeconds":219.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Fred, this is Houston. Go ahead and back out of this little test and proceed."
 },
 {
 "get":"054:53:04",
-"offsetSeconds":227,
+"offsetSeconds":227.5,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Rog."
@@ -23551,42 +23551,42 @@
 "a13_0545300-pao":[
 {
 "get":"054:52:36",
-"offsetSeconds":0,
+"offsetSeconds":0.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"You heard that report from Fred Haise."
 },
 {
 "get":"054:53:04",
-"offsetSeconds":4,
+"offsetSeconds":13.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Rog."
 },
 {
 "get":"054:53:04",
-"offsetSeconds":4,
+"offsetSeconds":13.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Our supercritical helium pressure reading was 720 pounds per square inch. A very desirable number. We're at 54 hours, 53 minutes now into the flight. Apollo 13 at 176,171 nautical miles [326,269 km] away from Earth. We're standing by now for receipt of television."
 },
 {
 "get":"054:53:04",
-"offsetSeconds":4,
+"offsetSeconds":13.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Apollo Control, Houston; 54 hours, 55 minutes. We repeat that earlier report from LM pilot Fred Haise. He read his supercritical helium pressure at 720 pounds per square inch. Well under the 770 pounds per square inch mark earlier identified as a point for further scrutinization."
 },
 {
 "get":"054:53:04",
-"offsetSeconds":4,
+"offsetSeconds":13.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"We now show 13 traveling at 3,296 feet per second [1,005 m/s] and at an altitude of 176,240 nautical miles [326,396 km]."
 },
 {
 "get":"054:53:04",
-"offsetSeconds":4,
+"offsetSeconds":13.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Apollo Control, Houston at 54 hours, 57 minutes. Jack Lousma is now filling the position of capsule communicator in the Mission Control Center. That was Jack who received that last report from Lunar Module Pilot Fred Haise. Standing by; this is Apollo Control, Houston."
@@ -23595,98 +23595,98 @@
 "a13_0545901":[
 {
 "get":"054:59:01",
-"offsetSeconds":0,
+"offsetSeconds":0.9,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. We're back on CSM power. The time was 54 hours, 58 minutes, 50 seconds."
 },
 {
 "get":"054:59:10",
-"offsetSeconds":9,
+"offsetSeconds":10.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Jack. 54:58:50. Thank you. [Long pause.]"
 },
 {
 "get":"054:59:26",
-"offsetSeconds":25,
+"offsetSeconds":26.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Houston, we'll try to pick you up on the High Gain."
 },
 {
 "get":"054:59:32",
-"offsetSeconds":31,
+"offsetSeconds":32.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"055:00:08",
-"offsetSeconds":67,
+"offsetSeconds":67.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And, 13, we're ready on the TV when you are. [Pause.]"
 },
 {
 "get":"055:00:19",
-"offsetSeconds":78,
+"offsetSeconds":78.9,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"This is 13. Say again, Houston."
 },
 {
 "get":"055:00:23",
-"offsetSeconds":82,
+"offsetSeconds":82.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, we're ready on the TV when you are. Any time."
 },
 {
 "get":"055:00:28",
-"offsetSeconds":87,
+"offsetSeconds":87.6,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, sounds good. With you in a minute, we're just cranking up High Gain now. [Long pause.]"
 },
 {
 "get":"055:01:20",
-"offsetSeconds":139,
+"offsetSeconds":140.3,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, Houston. How do you read us in the High Gain?"
 },
 {
 "get":"055:01:23",
-"offsetSeconds":142,
+"offsetSeconds":143.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"We're hearing you 5 square, Jim, how me?"
 },
 {
 "get":"055:01:28",
-"offsetSeconds":147,
+"offsetSeconds":148.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay. You're coming through okay. [Pause.]"
 },
 {
 "get":"055:01:40",
-"offsetSeconds":159,
+"offsetSeconds":160.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"As you were on that, Jim. We don't have you on High Gain yet. We're still looking at you. [Long pause.]"
 },
 {
 "get":"055:02:27",
-"offsetSeconds":206,
+"offsetSeconds":208.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. In this attitude, we'd suggest pitch 5, yaw 237 on the High Gain. Over."
 },
 {
 "get":"055:02:39",
-"offsetSeconds":218,
+"offsetSeconds":220.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Pitch 5, yaw 237. Roger."
@@ -23695,112 +23695,112 @@
 "a13_0550512":[
 {
 "get":"055:05:12",
-"offsetSeconds":0,
+"offsetSeconds":0.4,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack. Can you - can you read the High Gain now? [Pause.]"
 },
 {
 "get":"055:05:24",
-"offsetSeconds":12,
+"offsetSeconds":12.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Affirmative, Jack. We've got you on a High Gain and it appears to us that we're in Wide beam - Wide beam width."
 },
 {
 "get":"055:05:32",
-"offsetSeconds":20,
+"offsetSeconds":20.1,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Yeah. We can't get it to come down to Narrow. We tried to switch to Auto Track or Reacq, and it - yaw drives around from 270 to 0. And pitch goes from about 6 degrees around to 90. I'm trying - we're sitting at manual now at the angles that you gave us, and I'll try and get you in Medium and Narrow beam width picking it up manually here."
 },
 {
 "get":"055:06:06",
-"offsetSeconds":54,
+"offsetSeconds":54.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Jack. Meanwhile, we'll look at the situation you describe there."
 },
 {
 "get":"055:06:13",
-"offsetSeconds":61,
+"offsetSeconds":61.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. And it does it on both sets of servo electronic power. [Long pause.]"
 },
 {
 "get":"055:07:15",
-"offsetSeconds":123,
+"offsetSeconds":123.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Jack, what it looks like is that, when we hit 239 degrees at this attitude, it hit some sort of scan limit or something and drops off. [Pause.]"
 },
 {
 "get":"055:07:33",
-"offsetSeconds":141,
+"offsetSeconds":141.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Jack; thank you."
 },
 {
 "get":"055:07:37",
-"offsetSeconds":145,
+"offsetSeconds":145.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, I'm trying you in Wide or Medium beam width now. [Pause.]"
 },
 {
 "get":"055:07:54",
-"offsetSeconds":162,
+"offsetSeconds":162.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Can you pick up the TV in this condition here at all? [Pause.]"
 },
 {
 "get":"055:08:07",
-"offsetSeconds":175,
+"offsetSeconds":175.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Negative, Jack. We'll have to have the Narrow beam width."
 },
 {
 "get":"055:08:14",
-"offsetSeconds":182,
+"offsetSeconds":182.6,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Can you give us, maybe, a slight maneuver? [Long pause.]"
 },
 {
 "get":"055:09:09",
-"offsetSeconds":237,
+"offsetSeconds":238.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Jack, we'd like you to check two High Gain circuit breakers down in panel 25. Check your High Gain group 2 and your High Gain on the flight bus. Over."
 },
 {
 "get":"055:09:19",
-"offsetSeconds":247,
+"offsetSeconds":249.4,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Okay, Jack, they're both In."
 },
 {
 "get":"055:09:27",
-"offsetSeconds":255,
+"offsetSeconds":255.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"055:10:43",
-"offsetSeconds":331,
+"offsetSeconds":331.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, we've got an attitude suggestion for you. We suggest that you go to roll 285 and try pitch 90 and yaw 0. Over."
 },
 {
 "get":"055:10:57",
-"offsetSeconds":345,
+"offsetSeconds":345.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -23809,602 +23809,602 @@
 "a13_0551400":[
 {
 "get":"055:14:00",
-"offsetSeconds":0,
+"offsetSeconds":0.6,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, Houston; Apollo 13. I think we've got High Gain locked up now. Do you confirm?"
 },
 {
 "get":"055:14:07",
-"offsetSeconds":7,
+"offsetSeconds":7.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"We confirm that, Jim, we've got you locked up on the High Gain and narrow beam."
 },
 {
 "get":"055:14:13",
-"offsetSeconds":13,
+"offsetSeconds":13.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, sounds good. We'll get the TV started right away."
 },
 {
 "get":"055:14:16",
-"offsetSeconds":16,
+"offsetSeconds":16.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"055:14:36",
-"offsetSeconds":36,
+"offsetSeconds":36.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We'd like to disable Quads C and D; use Alpha and Bravo. Over. [Pause.]"
 },
 {
 "get":"055:14:44",
-"offsetSeconds":44,
+"offsetSeconds":44.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay... [Long pause.]"
 },
 {
 "get":"055:14:45",
-"offsetSeconds":45,
+"offsetSeconds":45.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"...Disable quads C and D. Roger."
 },
 {
 "get":"055:14:56",
-"offsetSeconds":56,
+"offsetSeconds":56.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, 13. We've got Freddo on TV."
 },
 {
 "get":"055:15:04",
-"offsetSeconds":64,
+"offsetSeconds":64.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Roger, Houston. What we plan to do for you today is start out in the space shipper [sic] Odyssey, and take you on through from Odyssey in through the tunnel into Aquarius. And show you a little bit of the landing vehicle, and your TV operator is now resting on the center couch, looking at Fred Haise, whose head is now just about at the beginning of the tunnel, and his back is against the Lower Equipment Bay optical area. And Fred will now transport himself into the tunnel, and into the spaceship Aquarius."
 },
 {
 "get":"055:15:48",
-"offsetSeconds":108,
+"offsetSeconds":108.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"You know one thing I noted, Jack, when I first came across here, that starting upright in the Command Module and heading down in Aquarius, there's a little bit of an orientation change that, even though I'd been through it once in the water tank, it still pretty unusual. I find myself, now, standing with my head on the floor when I get down inside the LM. [Pause.]"
 },
 {
 "get":"055:16:25",
-"offsetSeconds":145,
+"offsetSeconds":145.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"That's a great picture, Jim. You got the light just right. [Pause.]"
 },
 {
 "get":"055:16:40",
-"offsetSeconds":160,
+"offsetSeconds":160.4,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And one of the nice things, Jack, particularly for a novice like myself, is the - the ease of moving around in here. It's, of course, as you know from working in the Command Module Simulator, it's really quite a boon to have zero gravity as an aid. Because you get - pretty confining, really, at one g, to move around very much in there, and it's quite easy in this environment. [Pause.] The LM, as you can see, it looked pretty clean, I found a couple of loose washers about it and the - a little plastic cap off the sequence camera had come loose and I found it lodged over by the ED panel. [Pause."
 },
 {
 "get":"055:19:24",
-"offsetSeconds":324,
+"offsetSeconds":324.6,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"The second backpack is mounted down on the LM floor, I hope, positioned right between the two of us. I have my hand on it at this time."
 },
 {
 "get":"055:19:41",
-"offsetSeconds":341,
+"offsetSeconds":342.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Fred. We see it. The picture's coming through real good, and your description is good. We see Jim's got the camera oriented the way we like to look at it. So, keep talking. [Pause.]"
 },
 {
 "get":"055:20:05",
-"offsetSeconds":365,
+"offsetSeconds":366.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. I guess everybody has pretty much envisioned the space program as being all a lot of exotic electronics, and, certainly, a lot of it is. But I thought I'd bring out a couple of items here in conjunction with the PLSS. After the first EVA, you get a very accurate measurement of the amount of water that's left in the PLSSs. We're going to make use of this bag I'm showing now to collect the remaining water out of the PLSS and see just how much we really did have left, and hopefully, on future missions, to be able to extend safely the allowable time on these units even a little further. And,"
 },
 {
 "get":"055:21:22",
-"offsetSeconds":442,
+"offsetSeconds":442.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"That'll be the day. [Pause.]"
 },
 {
 "get":"055:21:29",
-"offsetSeconds":449,
+"offsetSeconds":449.5,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"I think even you'd weigh zero here, Jack. [Pause.]"
 },
 {
 "get":"055:21:38",
-"offsetSeconds":458,
+"offsetSeconds":458.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Touch&eacute; [Long pause.]."
 },
 {
 "get":"055:22:14",
-"offsetSeconds":494,
+"offsetSeconds":494.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Houston, this is Jim. Since Fred's been in the Lunar Module, and since he's the Lunar Module Pilot, this is the first time that he's felt that he's been right-side up. [Pause.]"
 },
 {
 "get":"055:22:34",
-"offsetSeconds":514,
+"offsetSeconds":514.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Jim."
 },
 {
 "get":"055:22:37",
-"offsetSeconds":517,
+"offsetSeconds":517.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"I might tell you that we're looking at right now, that round bag that's just behind Fred holds our vacuum hose; and when we get back inside the LM, we'll hook the vacuum off our suits, and it's resting or it's attached to the hatch which will - we will open to go on to the lunar surface, and, of course, to come back in. The hatch which we have come to now is a round hatch, which is our docking hatch between the - between Odyssey and Aquarius."
 },
 {
 "get":"055:23:11",
-"offsetSeconds":551,
+"offsetSeconds":552.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, and we see Fred looking in the vacuum cleaner there now. [Pause.]"
 },
 {
 "get":"055:23:22",
-"offsetSeconds":562,
+"offsetSeconds":562.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, what I have out now, Jack, is a LEVA, which has also been shown before. It's a head garment for wearing out on the surface, and I - I'm bringing Jim's out here to show a couple of mods [modifications]. One problem before is that the cast of characters down on the surface haven't been able to be distinguished apart very well. So, not only Jim's suit has some red stripes on it, but as you can see his LEVA also has a - a red stripe. [Long pause.]"
 },
 {
 "get":"055:24:27",
-"offsetSeconds":627,
+"offsetSeconds":628.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And now you can see one other mod too here, Jack, which I hadn't really seen myself before. I guess on 12, Pete and Al had commented about the - commented about having trouble with sunlight in the eyes, so on our LEVAs they put on a new center section which you can pull down and use sort of like a baseball cap."
 },
 {
 "get":"055:24:56",
-"offsetSeconds":656,
+"offsetSeconds":657.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, Jack. Who fixed up our LEVAs? [Long pause.]"
 },
 {
 "get":"055:25:12",
-"offsetSeconds":672,
+"offsetSeconds":673.5,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"How's the detail on this one, Jack?"
 },
 {
 "get":"055:25:15",
-"offsetSeconds":675,
+"offsetSeconds":676.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Say again, Fred."
 },
 {
 "get":"055:25:19",
-"offsetSeconds":679,
+"offsetSeconds":680.4,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Can you see any detail in this picture now, or am I blocking out too much of the sunlight?"
 },
 {
 "get":"055:25:26",
-"offsetSeconds":686,
+"offsetSeconds":687.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"That's affirmative. We've got a good picture of the LEVA there, and it's coming through loud and clear."
 },
 {
 "get":"055:25:35",
-"offsetSeconds":695,
+"offsetSeconds":696.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"055:25:54",
-"offsetSeconds":714,
+"offsetSeconds":715.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, Jack, while Fred is putting away my helmet, you're looking over into Fred's station now. How's this picture, is it okay before - or do I have to adjust it?"
 },
 {
 "get":"055:26:06",
-"offsetSeconds":726,
+"offsetSeconds":727.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"We have a hunch that the setting might be in Peak but we recommend Average on the ALC if you haven't got it there already."
 },
 {
 "get":"055:26:16",
-"offsetSeconds":736,
+"offsetSeconds":737.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"We're in Average, Jack."
 },
 {
 "get":"055:26:18",
-"offsetSeconds":738,
+"offsetSeconds":739.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay. And we're getting a good picture of the LMP side with the DEDA over there. [Pause.]"
 },
 {
 "get":"055:26:29",
-"offsetSeconds":749,
+"offsetSeconds":750.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Hey, Jack, one question on the Command Module here. Do I - I have the DAP right now wide deadband. Do you want me to begin setting up narrow dead band and nulling the rates to start PTC again? [Pause.]"
 },
 {
 "get":"055:26:47",
-"offsetSeconds":767,
+"offsetSeconds":768.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by, Jack. [Long pause.]"
 },
 {
 "get":"055:27:31",
-"offsetSeconds":811,
+"offsetSeconds":812.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"What I'm fishing out now, Jack, is another new piece of hardware that we're taking along this time as a result of some comments made on the Apollo 12 flight. [Pause.]"
 },
 {
 "get":"055:27:52",
-"offsetSeconds":832,
+"offsetSeconds":833.9,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"What Fred is opening up - is a drink bag that we place inside of our neckring that will allow us to drink while we are on the lunar surface. They - Pete and Al - did not have that on Apollo 12 and they, consequently, got very thirsty. But we hope to alleviate that situation by having our own little bag of water which, with very little effort, we can have a sip or two while we are looking around and doing our geology work. [Pause.]"
 },
 {
 "get":"055:28:33",
-"offsetSeconds":873,
+"offsetSeconds":875.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"So if you hear any funny noises, it is just probably the drink bag. [Pause.]"
 },
 {
 "get":"055:28:50",
-"offsetSeconds":890,
+"offsetSeconds":891.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Fred, the bag's empty. [Long pause.]"
 },
 {
 "get":"055:29:16",
-"offsetSeconds":916,
+"offsetSeconds":917.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Fred's now looking through our optical device. It's an instrument in which to align our platform, and Fred is now looking into it just to see what kind of an outside picture he might be able to get. We might be able to use a TV camera to look through our optical instrument to the outside of the Command Module. A few minutes ago while we first came in, we did manage to look to the outside of the side hatch of the Command Module through our optical instrument. Stand by. We'll try to see what we can do here."
 },
 {
 "get":"055:29:49",
-"offsetSeconds":949,
+"offsetSeconds":951.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Jim. Break, Jack, we'd like you to stay in the dead band you are now in, and we'll make a change when the TV is over. Another thing we would like you to do is check your pitch and yaw on your High Gain meter so we can compare it with what we're seeing down here. [Pause.]"
 },
 {
 "get":"055:30:11",
-"offsetSeconds":971,
+"offsetSeconds":972.7,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, it's showing about - say 28 degrees and 267."
 },
 {
 "get":"055:30:18",
-"offsetSeconds":978,
+"offsetSeconds":979.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"20 and 267."
 },
 {
 "get":"055:30:21",
-"offsetSeconds":981,
+"offsetSeconds":982.7,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"28 - 28 and 267. [Long pause.]"
 },
 {
 "get":"055:30:45",
-"offsetSeconds":1005,
+"offsetSeconds":1006.5,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, Jack, Have you got that picture now?"
 },
 {
 "get":"055:30:49",
-"offsetSeconds":1009,
+"offsetSeconds":1011.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Fred, about one-quarter of our screen is lighted, and it's impossible to determine what you're looking at right now. Maybe you could give us a little verbal description."
 },
 {
 "get":"055:31:02",
-"offsetSeconds":1022,
+"offsetSeconds":1024.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. It's looking through the AOT in position 4, right rear. And we're looking back toward the - over the side hatch at the aft side of the service module. [Pause.]"
 },
 {
 "get":"055:31:28",
-"offsetSeconds":1048,
+"offsetSeconds":1050.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. It's a - is it too dark a picture, Jack? You think the f-stop open may help?"
 },
 {
 "get":"055:31:34",
-"offsetSeconds":1054,
+"offsetSeconds":1056.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"No, Fred, it's got to be centered up a little bit. That's primarily what you have to do."
 },
 {
 "get":"055:31:43",
-"offsetSeconds":1063,
+"offsetSeconds":1065.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Jack, we can't center it up any more, because the side hatch is only in one part of the AOT. The rest of that blackness you see is really space. [Long pause.]"
 },
 {
 "get":"055:32:11",
-"offsetSeconds":1091,
+"offsetSeconds":1092.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. We'll try another one, and it's a little better centered. In fact, the only other one we have that shows the whole picture. We're in the forward detent of the AOT now, position 2, and you should be seeing something familiar like a radar antenna. [Pause.]"
 },
 {
 "get":"055:32:41",
-"offsetSeconds":1121,
+"offsetSeconds":1123.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, we see you moving the camera up to the AOT lens, and we got a real good picture now. [Long pause.]"
 },
 {
 "get":"055:33:03",
-"offsetSeconds":1143,
+"offsetSeconds":1145.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"And... [Long pause.]"
 },
 {
 "get":"055:33:23",
-"offsetSeconds":1163,
+"offsetSeconds":1164.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, Jack, I'm looking out the right window now, and not too far off in the distance now, you can see the objective, and I'll zoom in on it here a little and see if it brings it in better. [Long pause.]"
 },
 {
 "get":"055:33:57",
-"offsetSeconds":1197,
+"offsetSeconds":1198.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And it's actually beginning to look a little bigger now. You can see quite distinctly some of the features with the naked eye. And so far, I guess I have to even agree with Jim that it's still looking pretty gray with white spots. [Long pause.]"
 },
 {
 "get":"055:34:39",
-"offsetSeconds":1239,
+"offsetSeconds":1241.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Fred. We're getting a good picture of your destination there. [Long pause.]"
 },
 {
 "get":"055:35:04",
-"offsetSeconds":1264,
+"offsetSeconds":1267.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Jack, you've been looking at the - at Fred's workshop now, and you can see the abort guidance computer. And over there on the - tucked away in his armrest, is our activation checklist, which we'll be using very shortly. Up on the top of the window, we have our camera already mounted ready for photographing the descent. And now Fred's engaged in his favorite pastime, I found out on this flight so far. [Pause.]"
 },
 {
 "get":"055:35:47",
-"offsetSeconds":1307,
+"offsetSeconds":1309.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"He's not in the food locker, is he?"
 },
 {
 "get":"055:35:52",
-"offsetSeconds":1312,
+"offsetSeconds":1315.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"That's his second favorite pastime. He's rigging his hammock for sleep on the lunar surface now to find out - to see what it's going to be like."
 },
 {
 "get":"055:36:03",
-"offsetSeconds":1323,
+"offsetSeconds":1325.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. Sleeping and then eating. [Long pause.]"
 },
 {
 "get":"055:36:29",
-"offsetSeconds":1349,
+"offsetSeconds":1351.5,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Yeah, it's kind of difficult here, Jack, getting into a hammock in zero g. I'm not sure if I keep floating away from it or it keeps moving away from me. [Pause.]"
 },
 {
 "get":"055:36:50",
-"offsetSeconds":1370,
+"offsetSeconds":1372.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"If you notice a few things floating around, we found just about one or two washers occasionally."
 },
 {
 "get":"055:36:57",
-"offsetSeconds":1377,
+"offsetSeconds":1378.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And for the benefit of those that may wonder where Jim sleeps. Be a little difficult to rig his hammock in here right now with the hatch open, but his runs laterally in this direction, fore-aft. So he has the upper berth and I get the lower berth. [Long pause.]"
 },
 {
 "get":"055:37:34",
-"offsetSeconds":1414,
+"offsetSeconds":1416.3,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"And now while Fred's taking his hammock down and restowing it, I might give you some idea of what sort of confusion of attitudes since there is no up or down, and I'm situated on top of the ascent engine just at the entrance to the tunnel. I'll reverse the camera 180 degrees and go from Fred, look through the tunnel again back at Odyssey, and we might pick up part of Jack. [Long pause.]"
 },
 {
 "get":"055:38:25",
-"offsetSeconds":1465,
+"offsetSeconds":1467.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"There he is. We see him. [Long pause.]"
 },
 {
 "get":"055:38:56",
-"offsetSeconds":1496,
+"offsetSeconds":1499.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, Houston. For the benefit of the television viewers, we've just about completed our little inspection of Aquarius, and now we're proceeding through the hatchy-gap into the tunnel and going back toward the Odyssey. [Pause.]"
 },
 {
 "get":"055:39:22",
-"offsetSeconds":1522,
+"offsetSeconds":1524.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jim. It's been a great show so far. [Long pause.]"
 },
 {
 "get":"055:40:20",
-"offsetSeconds":1580,
+"offsetSeconds":1582.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"And finally, Jack's let me back into the Odyssey as we slide on through the tunnel here. [Long pause.]"
 },
 {
 "get":"055:41:14",
-"offsetSeconds":1634,
+"offsetSeconds":1636.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Houston, 13. Are you still on TV?"
 },
 {
 "get":"055:41:17",
-"offsetSeconds":1637,
+"offsetSeconds":1639.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Yeah, we sure are. We've got a good picture of the skipper there."
 },
 {
 "get":"055:41:22",
-"offsetSeconds":1642,
+"offsetSeconds":1645.9,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay. What we can show you now, a little added benefit, we've got the drogue on Fred's couch in the Command Module right now, we stowed it temporarily while we're checking out the - out Aquarius and underneath his couch, we've got the probe stowed. Quite a big cumbersome device, and we'll get a shot of it for you. [Long pause.]"
 },
 {
 "get":"055:42:13",
-"offsetSeconds":1693,
+"offsetSeconds":1695.8,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"You're looking now at our probe, the place on the nose of Odyssey. It's a very heavy thing but, of course, in zero gravity it weighs nothing, and it's much easier to move around. As a matter of fact, both Fred and Jack commented, as many people in the past have, of how much bigger the spacecraft appears in actual flight when you have such ease of movement compared to our simulators which make training rather difficult. [Long pause.]"
 },
 {
 "get":"055:42:58",
-"offsetSeconds":1738,
+"offsetSeconds":1741.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay. We're seeing a good picture of the probe there, Jim, and looks like the characters shaved before the show this time."
 },
 {
 "get":"055:43:10",
-"offsetSeconds":1750,
+"offsetSeconds":1753.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Well, Fred said he had to keep up his TV image."
 },
 {
 "get":"055:43:17",
-"offsetSeconds":1757,
+"offsetSeconds":1760.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Yeah. That may be my first and last time though, Jack."
 },
 {
 "get":"055:43:21",
-"offsetSeconds":1761,
+"offsetSeconds":1764.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"It took Fred one hour to shave. [Long pause.]"
 },
 {
 "get":"055:43:37",
-"offsetSeconds":1777,
+"offsetSeconds":1780.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"We might give you a quick - a quick shot of our entertainment on board the spacecraft, which has been keeping us company for some time. [Long pause.]"
 },
 {
 "get":"055:44:15",
-"offsetSeconds":1815,
+"offsetSeconds":1818.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"This little tape recorder has been a big benefit - has been a big benefit to us in passing some of our time away on our transit to the Moon, and it's rather odd to see it floating like this in Odyssey while it's playing the theme from '2001'. And, of course, the tapes wouldn't be complete without 'Aquarius'. [Long pause.]"
 },
 {
 "get":"055:45:08",
-"offsetSeconds":1868,
+"offsetSeconds":1871.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jim. We're seeing the tape recorder now, and just - by the way, how long do you expect to keep the TV on this evening?"
 },
 {
 "get":"055:45:18",
-"offsetSeconds":1878,
+"offsetSeconds":1881.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Well, when we - Stand by one."
 },
 {
 "get":"055:45:25",
-"offsetSeconds":1885,
+"offsetSeconds":1886.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Yeah, I got them with the cabin repress valve again there, Jack."
 },
 {
 "get":"055:45:29",
-"offsetSeconds":1889,
+"offsetSeconds":1891.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Every time he does that our hearts - our hearts jump in our mouth. And, Jack, any time you want to terminate TV, we're all set to go. [Long pause.]"
 },
 {
 "get":"055:46:01",
-"offsetSeconds":1921,
+"offsetSeconds":1924.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jim. It's been a real good TV show. We think we ought to conclude it from here now. What do you think?"
 },
 {
 "get":"055:46:11",
-"offsetSeconds":1931,
+"offsetSeconds":1934.6,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Roger. Sounds good. And this is the crew of Apollo 13 wishing everybody there a nice evening, and we're just about ready to close out our inspection of Aquarius and get back for a pleasant evening in Odyssey. Good night."
 },
 {
 "get":"055:46:30",
-"offsetSeconds":1950,
+"offsetSeconds":1953.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Thank you, 13."
@@ -24413,21 +24413,21 @@
 "a13_0553900-pao":[
 {
 "get":"055:38:25",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That's Jim Lovell now pointing the camera at Jack Swigert in Odyssey. We're at 55 hours, 38 minutes into the flight of Apollo 13."
 },
 {
 "get":"055:39:22",
-"offsetSeconds":22,
+"offsetSeconds":0.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jim. It's been a great show so far. [Long pause.]"
 },
 {
 "get":"055:39:22",
-"offsetSeconds":22,
+"offsetSeconds":0.1,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control, Houston; 55 hours, 39 minutes now into the flight. We presently show Odyssey and Aquarius at an altitude of 175,552 nautical miles [325,122 km]. Now traveling at a speed of 3,171 feet per second [967 m/s]. Although we copied no voice confirmation as to exactly when spacecraft commander Jim Lovell first went inside Aquarius, the Flight Plan called for a - for an ingress time of 54 hours, 30 minutes and we assumed that this occurred around that time."
@@ -24436,119 +24436,119 @@
 "a13_0554840":[
 {
 "get":"055:48:40",
-"offsetSeconds":0,
+"offsetSeconds":2.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Apollo 13, Houston. The next thing we'd like you to do is to..."
 },
 {
 "get":"055:48:45",
-"offsetSeconds":5,
+"offsetSeconds":6.2,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"055:48:46",
-"offsetSeconds":6,
+"offsetSeconds":6.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"...we'd like you to roll right to 060 and null your rates for photography of the Comet Bennett. To do that, we'd like you to enable quads C and D. For the maneuver, use all your quads. And in precisely 1 minute, we'd like you to terminate the battery charge on battery B. One other request, we'd like to have you verify..."
 },
 {
 "get":"055:49:12",
-"offsetSeconds":32,
+"offsetSeconds":34.4,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Will do."
 },
 {
 "get":"055:49:14",
-"offsetSeconds":34,
+"offsetSeconds":36.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"One other request, we'd like you to verify your High Gain configuration. We'd like to know what track mode, what servo, and what beam width. [Pause.]"
 },
 {
 "get":"055:49:25",
-"offsetSeconds":45,
+"offsetSeconds":47.4,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack, during the TV, we were Auto Track, Narrow Beam Width, and the Primary Electronics. And we had a good lockup. Just after we started the maneuver, I was able to lock you up and get real good signal strength, and it just seemed that right there at about 239 degrees in yaw, that the signal strength would just drop off and yaw would go to zero and pitch would go to 90."
 },
 {
 "get":"055:50:05",
-"offsetSeconds":85,
+"offsetSeconds":87.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We copy, and the TV show was great."
 },
 {
 "get":"055:50:12",
-"offsetSeconds":92,
+"offsetSeconds":94.2,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, real fine. Okay, I'm going to maneuver to 060, 090, and 0. [Pause.]"
 },
 {
 "get":"055:50:31",
-"offsetSeconds":111,
+"offsetSeconds":111.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And, 13, we'd like to - to check C-4 thruster. [Long pause.]"
 },
 {
 "get":"055:51:33",
-"offsetSeconds":173,
+"offsetSeconds":176.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack. The battery charge has been terminated on the battery B."
 },
 {
 "get":"055:51:38",
-"offsetSeconds":178,
+"offsetSeconds":180.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We see it, Jack. And we got a reading of minus 2 degrees on the docking index. We'd like to know if that's 2.0 precise or if it's 2.1 or 1.9."
 },
 {
 "get":"055:51:54",
-"offsetSeconds":194,
+"offsetSeconds":196.9,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"No. It's, uh, minus 2.0 precisely."
 },
 {
 "get":"055:51:56",
-"offsetSeconds":196,
+"offsetSeconds":199.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Thank you."
 },
 {
 "get":"055:52:58",
-"offsetSeconds":258,
+"offsetSeconds":261.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, we've got one more item for you, when you get a chance. We'd like you to stir up your cryo tanks. In addition, I have shaft and trunnion... [Pause.]"
 },
 {
 "get":"055:53:06",
-"offsetSeconds":266,
+"offsetSeconds":268.6,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"055:53:07",
-"offsetSeconds":267,
+"offsetSeconds":269.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"...for looking at the Comet Bennett, if you need it."
 },
 {
 "get":"055:53:12",
-"offsetSeconds":272,
+"offsetSeconds":274.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Stand by."
@@ -25168,427 +25168,427 @@
 "a13_0560317":[
 {
 "get":"056:03:17",
-"offsetSeconds":0,
+"offsetSeconds":0.9,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Houston. Are you still reading 13?"
 },
 {
 "get":"056:03:20",
-"offsetSeconds":3,
+"offsetSeconds":3.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"That's affirmative. We're reading you. We're trying to come up with some good ideas here for you."
 },
 {
 "get":"056:03:37",
-"offsetSeconds":20,
+"offsetSeconds":20.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Say again, Fred."
 },
 {
 "get":"056:03:42",
-"offsetSeconds":25,
+"offsetSeconds":25.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"In the interim, to help out Main A voltage, I've got Main Bus Tie Bat AC, On. Or would you rather accept the 25 volts we're seeing on Main A?"
 },
 {
 "get":"056:03:52",
-"offsetSeconds":35,
+"offsetSeconds":35.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay. Bus Tie AC, On. [Long pause.]"
 },
 {
 "get":"056:04:09",
-"offsetSeconds":52,
+"offsetSeconds":53.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We need Omni Charlie, please. [Pause.]"
 },
 {
 "get":"056:04:19",
-"offsetSeconds":62,
+"offsetSeconds":62.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"You got it."
 },
 {
 "get":"056:05:32",
-"offsetSeconds":135,
+"offsetSeconds":135.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We'd like you to verify couple of readings for us. We would like the nitrogen pressure on fuel cell 1. We need the oxygen pressure on fuel cell 2."
 },
 {
 "get":"056:05:33",
-"offsetSeconds":136,
+"offsetSeconds":136.6,
 "speaker":"Fenner (GUIDO)",
 "channel":"air-to-ground",
 "text":"FLIGHT, GUIDANCE."
 },
 {
 "get":"056:05:34",
-"offsetSeconds":137,
+"offsetSeconds":137.6,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Go Guidance."
 },
 {
 "get":"056:05:35",
-"offsetSeconds":138,
+"offsetSeconds":138.7,
 "speaker":"Fenner (GUIDO)",
 "channel":"air-to-ground",
 "text":"Uh, When hi - when his hardware restart, he was doing a predefined maneuver and, uh, that should have killed it but we're still moving. We ought to stop it."
 },
 {
 "get":"056:05:45",
-"offsetSeconds":148,
+"offsetSeconds":149.2,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Are we using RCS now, Buck?"
 },
 {
 "get":"056:05:46",
-"offsetSeconds":149,
+"offsetSeconds":150.2,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. Nitrogen on 1 and oxygen on 2. Is that correct?"
 },
 {
 "get":"056:05:50",
-"offsetSeconds":153,
+"offsetSeconds":154.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Negative. Oxygen on 3."
 },
 {
 "get":"056:05:54",
-"offsetSeconds":157,
+"offsetSeconds":158.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"056:05:58",
-"offsetSeconds":161,
+"offsetSeconds":162.1,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"GNC from FLIGHT."
 },
 {
 "get":"056:06:02",
-"offsetSeconds":165,
+"offsetSeconds":166.1,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"GNC from FLIGHT."
 },
 {
 "get":"056:06:04",
-"offsetSeconds":167,
+"offsetSeconds":168.0,
 "speaker":"Willoughby (GNC)",
 "channel":"air-to-ground",
 "text":"GNC."
 },
 {
 "get":"056:06:05",
-"offsetSeconds":168,
+"offsetSeconds":169.0,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Did you see any problems in Quad D Helium valve? Does that look like that's cleared up?"
 },
 {
 "get":"056:06:08",
-"offsetSeconds":171,
+"offsetSeconds":171.9,
 "speaker":"Willoughby (GNC)",
 "channel":"air-to-ground",
 "text":"Rog, that cleared up, Flight, we're in good shape there."
 },
 {
 "get":"056:06:10",
-"offsetSeconds":173,
+"offsetSeconds":173.9,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay, now, are we using RCS now?"
 },
 {
 "get":"056:06:12",
-"offsetSeconds":175,
+"offsetSeconds":175.8,
 "speaker":"Willoughby (GNC)",
 "channel":"air-to-ground",
 "text":"That's affirmative, we're going to have to switch some thrusters over to Main A to hold attitude here."
 },
 {
 "get":"056:06:17",
-"offsetSeconds":180,
+"offsetSeconds":180.7,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay. Aaaah... how much RCS we've used?"
 },
 {
 "get":"056:06:22",
-"offsetSeconds":185,
+"offsetSeconds":185.6,
 "speaker":"Willoughby (GNC)",
 "channel":"air-to-ground",
 "text":"Oh, We've used um - our guess 25 pounds."
 },
 {
 "get":"056:06:24",
-"offsetSeconds":187,
+"offsetSeconds":187.6,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. Systems test 1-A says zip. [Long pause.]"
 },
 {
 "get":"056:06:27",
-"offsetSeconds":190,
+"offsetSeconds":190.5,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay. Give me a minimum fuel usage configuration that'll keep me attitude."
 },
 {
 "get":"056:06:32",
-"offsetSeconds":195,
+"offsetSeconds":195.4,
 "speaker":"Willoughby (GNC)",
 "channel":"air-to-ground",
 "text":"Rog."
 },
 {
 "get":"056:06:33",
-"offsetSeconds":196,
+"offsetSeconds":196.4,
 "speaker":"Heselmeyer (TELMU)",
 "channel":"air-to-ground",
 "text":"FLIGHT, TELMU."
 },
 {
 "get":"056:06:34",
-"offsetSeconds":197,
+"offsetSeconds":197.4,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Go, TELMU."
 },
 {
 "get":"056:06:35",
-"offsetSeconds":198,
+"offsetSeconds":198.4,
 "speaker":"Heselmeyer (TELMU)",
 "channel":"air-to-ground",
 "text":"The LM heater current's become essentially static."
 },
 {
 "get":"056:06:38",
-"offsetSeconds":201,
+"offsetSeconds":201.3,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Rog. Let's solve one problem at a time. Come back to me later on on it."
 },
 {
 "get":"056:06:44",
-"offsetSeconds":207,
+"offsetSeconds":207.2,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And 2-Baker, which is 3 oxygen, says 0.6."
 },
 {
 "get":"056:06:50",
-"offsetSeconds":213,
+"offsetSeconds":214.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"2 Baker says 0.6, and say again the other one."
 },
 {
 "get":"056:06:57",
-"offsetSeconds":220,
+"offsetSeconds":220.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Fuel cell 1 nitrogen reads zero."
 },
 {
 "get":"056:07:01",
-"offsetSeconds":224,
+"offsetSeconds":224.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. Zero."
 },
 {
 "get":"056:07:29",
-"offsetSeconds":252,
+"offsetSeconds":252.5,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay, Sy - give me your - next best thing to try."
 },
 {
 "get":"056:07:46",
-"offsetSeconds":269,
+"offsetSeconds":269.3,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"EECOM, from Flight."
 },
 {
 "get":"056:07:47",
-"offsetSeconds":270,
+"offsetSeconds":270.3,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"EECOM, Flight."
 },
 {
 "get":"056:07:48",
-"offsetSeconds":271,
+"offsetSeconds":271.3,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"056:07:49",
-"offsetSeconds":272,
+"offsetSeconds":272.3,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Uhmmm... why don't we try [sigh] leave fuel cell 2 alone and make sure that 1 and 3 are disconnected from the buses and make sure there's absolutely no load on them at all and - see what happens."
 },
 {
 "get":"056:08:47",
-"offsetSeconds":330,
+"offsetSeconds":329.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We'd like you to open circuit fuel cell 1; leave 2 and 3 as is."
 },
 {
 "get":"056:08:55",
-"offsetSeconds":338,
+"offsetSeconds":339.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. I'll get to work on that."
 },
 {
 "get":"056:08:57",
-"offsetSeconds":340,
+"offsetSeconds":341.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"And, Jack, our O 2 quantity number 2 tank is reading zero. Did you get that? [Pause.]"
 },
 {
 "get":"056:09:04",
-"offsetSeconds":347,
+"offsetSeconds":348.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"O 2 Quantity number 2 is zero."
 },
 {
 "get":"056:09:05",
-"offsetSeconds":348,
+"offsetSeconds":349.1,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Roger, Flight. That's the AC problem."
 },
 {
 "get":"056:09:07",
-"offsetSeconds":350,
+"offsetSeconds":350.6,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"That's AC, okay. Yeah, that's - that's a - good with AC and it looks to me, looking out the hatch, that we are venting something. We are - We are venting something out into the - into space."
 },
 {
 "get":"056:09:08",
-"offsetSeconds":351,
+"offsetSeconds":351.5,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"056:09:16",
-"offsetSeconds":359,
+"offsetSeconds":359.2,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Crew thinks they are venting something!"
 },
 {
 "get":"056:09:18",
-"offsetSeconds":361,
+"offsetSeconds":361.1,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"I heard it, FLIGHT."
 },
 {
 "get":"056:09:22",
-"offsetSeconds":365,
+"offsetSeconds":365.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We copy your venting."
 },
 {
 "get":"056:09:27",
-"offsetSeconds":370,
+"offsetSeconds":369.8,
 "speaker":"Lousma (CAPCOM)",
 "channel":"air-to-ground",
 "text":"Copy that, FLIGHT?"
 },
 {
 "get":"056:09:29",
-"offsetSeconds":372,
+"offsetSeconds":371.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"It's a gas of some sort. [Long pause.]"
 },
 {
 "get":"056:09:29",
-"offsetSeconds":372,
+"offsetSeconds":371.7,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Rog. (Pause) Okay, let's everybody think of the kind of things we might be venting. GNC; you got anything that looks abnormal in your system?"
 },
 {
 "get":"056:09:39",
-"offsetSeconds":382,
+"offsetSeconds":382.5,
 "speaker":"Willoughby (GNC)",
 "channel":"air-to-ground",
 "text":"Negative, FLIGHT."
 },
 {
 "get":"056:09:42",
-"offsetSeconds":385,
+"offsetSeconds":385.8,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"How about you, EECOM? You see anything that - with the instrumentation you've got that could be venting?"
 },
 {
 "get":"056:09:49",
-"offsetSeconds":392,
+"offsetSeconds":393.3,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. Fuel cell 1, you just wanted it off the line now, Jack, is that right?"
 },
 {
 "get":"056:09:52",
-"offsetSeconds":395,
+"offsetSeconds":396.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"We just wanted you to open the circuit on fuel cell 1."
 },
 {
 "get":"056:09:53",
-"offsetSeconds":396,
+"offsetSeconds":397.5,
 "speaker":"Haise (under Lousma)",
 "channel":"air-to-ground",
 "text":"Open circuit it, right?"
 },
 {
 "get":"056:09:53",
-"offsetSeconds":396,
+"offsetSeconds":397.5,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"That's affirm FLIGHT. Let me look at the systems as far as venting is concerned."
 },
 {
 "get":"056:09:58",
-"offsetSeconds":401,
+"offsetSeconds":401.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. She's off the line."
 },
 {
 "get":"056:10:03",
-"offsetSeconds":406,
+"offsetSeconds":406.9,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay. Let's start scanning."
@@ -25597,7 +25597,7 @@
 "a13_0561200-pao":[
 {
 "get":"056:10:03",
-"offsetSeconds":0,
+"offsetSeconds":1.3,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control, Houston. This rapid exchange of conversation you've heard, may the main B bus is off the line, fuel cells 1 and 3 also off the line, fuel cell 2 is presently on the line. We now show 13 in an altitude of 178,643 nautical miles [330,847 km]. We're at 56 hours, 12 minutes into the flight."
@@ -25606,196 +25606,196 @@
 "a13_0561247":[
 {
 "get":"056:12:47",
-"offsetSeconds":0,
+"offsetSeconds":0.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We see you getting close to gimbal lock there. We'd like you to bring up all quad Cs on Main A, quad C-1, C-2, C-3, C-4 on Main A, and also bring B-3 and B-4 up on Main A. [Pause.]"
 },
 {
 "get":"056:13:14",
-"offsetSeconds":27,
+"offsetSeconds":26.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. Do you read?"
 },
 {
 "get":"056:13:20",
-"offsetSeconds":33,
+"offsetSeconds":32.2,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Yeah. We got it."
 },
 {
 "get":"056:13:21",
-"offsetSeconds":34,
+"offsetSeconds":33.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Affirm."
 },
 {
 "get":"056:13:22",
-"offsetSeconds":35,
+"offsetSeconds":34.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay. Can you tell us anything about the venting..."
 },
 {
 "get":"056:13:24",
-"offsetSeconds":37,
+"offsetSeconds":34.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"056:13:25",
-"offsetSeconds":38,
+"offsetSeconds":36.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"...where it's coming from, what window you see it at."
 },
 {
 "get":"056:13:30",
-"offsetSeconds":43,
+"offsetSeconds":43.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"It's coming out of window 1, right now, Jack, and could you give me the thrusters again?"
 },
 {
 "get":"056:13:35",
-"offsetSeconds":48,
+"offsetSeconds":47.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, the thrusters..."
 },
 {
 "get":"056:13:37",
-"offsetSeconds":50,
+"offsetSeconds":49.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"What buses?"
 },
 {
 "get":"056:13:38",
-"offsetSeconds":51,
+"offsetSeconds":50.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"We'd like - on Main A, we'd like Charlie 1, 2, 3, and 4. Also Bravo 3 and 4 on Main A."
 },
 {
 "get":"056:13:52",
-"offsetSeconds":65,
+"offsetSeconds":65.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. Got it. [Long pause.]"
 },
 {
 "get":"056:14:42",
-"offsetSeconds":115,
+"offsetSeconds":114.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, we need Omni Bravo."
 },
 {
 "get":"056:14:46",
-"offsetSeconds":119,
+"offsetSeconds":116.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Omni Bravo."
 },
 {
 "get":"056:16:08",
-"offsetSeconds":201,
+"offsetSeconds":201.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, 13; this is Houston. We'd like you to go to your G&C checklist, the pink pages, 1-5. Do powerdown until we get a Delta of 10 amps. Over."
 },
 {
 "get":"056:16:21",
-"offsetSeconds":214,
+"offsetSeconds":215.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"All right."
 },
 {
 "get":"056:16:21",
-"offsetSeconds":214,
+"offsetSeconds":215.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"056:17:03",
-"offsetSeconds":256,
+"offsetSeconds":256.8,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, Jack, say again that - [Garbled] for the power-down; it's not in the pink pages, the 1-5."
 },
 {
 "get":"056:17:10",
-"offsetSeconds":263,
+"offsetSeconds":263.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay. We'd like you to go down that power-down procedure until you get a Delta of 10 amps. Over."
 },
 {
 "get":"056:17:21",
-"offsetSeconds":274,
+"offsetSeconds":274.6,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Roger. Say - uh, never mind. [Long pause.]"
 },
 {
 "get":"056:17:50",
-"offsetSeconds":303,
+"offsetSeconds":302.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. Did you copy our power-down request?"
 },
 {
 "get":"056:17:57",
-"offsetSeconds":310,
+"offsetSeconds":310.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Roger, Jack. We're - we're doing it right now."
 },
 {
 "get":"056:17:59",
-"offsetSeconds":312,
+"offsetSeconds":311.6,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Yeah, where - Where did you say that was located, Jack?"
 },
 {
 "get":"056:18:03",
-"offsetSeconds":316,
+"offsetSeconds":316.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"That's in your systems checklist, page 1-5. [Long pause.]"
 },
 {
 "get":"056:18:26",
-"offsetSeconds":339,
+"offsetSeconds":340.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And, 13, you might also check for those pages in your launch checklist. They're emergency pages; pink pages, 1-5, and we'd like you to power down until you get..."
 },
 {
 "get":"056:18:37",
-"offsetSeconds":350,
+"offsetSeconds":350.4,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. That was must be in the launch checklist, Jack."
 },
 {
 "get":"056:18:42",
-"offsetSeconds":355,
+"offsetSeconds":355.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. Power down until you get a amperage of 10 amps less than what you got now. Over."
 },
 {
 "get":"056:18:50",
-"offsetSeconds":363,
+"offsetSeconds":363.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -25804,168 +25804,168 @@
 "a13_0562206":[
 {
 "get":"056:22:06",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. Jack. Are you happy with the amps we have now?"
 },
 {
 "get":"056:22:10",
-"offsetSeconds":4,
+"offsetSeconds":4.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by one, Fred."
 },
 {
 "get":"056:22:15",
-"offsetSeconds":9,
+"offsetSeconds":9.4,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack, and on this page 1-5, we proceeded right down the list, all the way down; we're right now at BMAG number 2 is in Warm Up."
 },
 {
 "get":"056:22:26",
-"offsetSeconds":20,
+"offsetSeconds":20.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We copy BMAG 2 in Warm Up. We'll follow you through."
 },
 {
 "get":"056:22:31",
-"offsetSeconds":25,
+"offsetSeconds":26.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, and something is giving us a reach, Jack, both in pitch and roll, so I'm suspecting that maybe it's whatever it is that's venting back there. I've had to use Direct in order to stabilize this, and as soon as I do, we're starting to pick up rates again. Can you pick up any jets firing?"
 },
 {
 "get":"056:22:54",
-"offsetSeconds":48,
+"offsetSeconds":48.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by. What direction are your rates in, Jack?"
 },
 {
 "get":"056:23:06",
-"offsetSeconds":60,
+"offsetSeconds":60.6,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"It's negative pitch and negative roll."
 },
 {
 "get":"056:23:12",
-"offsetSeconds":66,
+"offsetSeconds":66.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"056:24:42",
-"offsetSeconds":156,
+"offsetSeconds":155.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We need to get some more instrumentation up. We'd like you to put Inverter 1 on both AC Buses. Over."
 },
 {
 "get":"056:24:53",
-"offsetSeconds":167,
+"offsetSeconds":167.5,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. [Pause.]"
 },
 {
 "get":"056:25:06",
-"offsetSeconds":180,
+"offsetSeconds":178.4,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, you got Inverter 1 on both AC Buses now. [Pause.]"
 },
 {
 "get":"056:25:19",
-"offsetSeconds":193,
+"offsetSeconds":195.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And Jack, one of the items that we turned off was the - all the fuel cell pumps. Okay, and you might let us know when fuel cell 2 needs its pump back; we ought to take care of that guy."
 },
 {
 "get":"056:25:37",
-"offsetSeconds":211,
+"offsetSeconds":212.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. [Pause.]"
 },
 {
 "get":"056:25:45",
-"offsetSeconds":219,
+"offsetSeconds":221.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Fred, we want Fuel Cell 2 Pumps to AC1, please."
 },
 {
 "get":"056:25:55",
-"offsetSeconds":229,
+"offsetSeconds":231.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Fuel Cell 2 to AC1. Roger."
 },
 {
 "get":"056:26:00",
-"offsetSeconds":234,
+"offsetSeconds":236.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, it's on AC1."
 },
 {
 "get":"056:27:48",
-"offsetSeconds":342,
+"offsetSeconds":343.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Omni Charlie, please, 13."
 },
 {
 "get":"056:27:52",
-"offsetSeconds":346,
+"offsetSeconds":347.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Omni Charlie. [Long pause.]"
 },
 {
 "get":"056:28:06",
-"offsetSeconds":360,
+"offsetSeconds":361.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, 13. We've got lots and lots of people working on this; we'll give you some dope as soon as we have it, and you'll be the first one to know."
 },
 {
 "get":"056:28:19",
-"offsetSeconds":373,
+"offsetSeconds":374.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Oh, thank you. [Pause.]"
 },
 {
 "get":"056:28:29",
-"offsetSeconds":383,
+"offsetSeconds":384.1,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack, and the weird configuration we're sitting in now is we have the hatch installed, we still have the probe and drogue inside the Command Module, and we're going to stay in this situation until you - kind of give us an okay to reinstall the probe and drogue."
 },
 {
 "get":"056:28:47",
-"offsetSeconds":401,
+"offsetSeconds":402.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We'll give you an answer."
 },
 {
 "get":"056:28:48",
-"offsetSeconds":402,
+"offsetSeconds":403.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Or, if necessary, to use the LM consumables."
 },
 {
 "get":"056:28:52",
-"offsetSeconds":406,
+"offsetSeconds":406.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger."
@@ -25974,378 +25974,378 @@
 "a13_0563211":[
 {
 "get":"056:32:11",
-"offsetSeconds":0,
+"offsetSeconds":0.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, we'd like to have you put thruster Alpha 3 on Main A, please."
 },
 {
 "get":"056:32:19",
-"offsetSeconds":8,
+"offsetSeconds":8.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Alpha 3 on Main A."
 },
 {
 "get":"056:32:24",
-"offsetSeconds":13,
+"offsetSeconds":12.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, Jack, are you monitoring the quad temps in quad A - package temps?"
 },
 {
 "get":"056:32:31",
-"offsetSeconds":20,
+"offsetSeconds":20.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Affirmative."
 },
 {
 "get":"056:33:37",
-"offsetSeconds":86,
+"offsetSeconds":87.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, this is Houston. We'd like to power down just a little bit more, so let's get BMAG 2, Off; and make sure your lights are down. Over."
 },
 {
 "get":"056:33:49",
-"offsetSeconds":98,
+"offsetSeconds":99.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay. The lights are down, and BMAG 2's going from Standby to Off."
 },
 {
 "get":"056:34:27",
-"offsetSeconds":136,
+"offsetSeconds":137.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston..."
 },
 {
 "get":"056:34:28",
-"offsetSeconds":137,
+"offsetSeconds":138.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack, now I've got a rate..."
 },
 {
 "get":"056:34:29",
-"offsetSeconds":138,
+"offsetSeconds":139.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"...we'd like you to open circuit fuel cell 3."
 },
 {
 "get":"056:34:36",
-"offsetSeconds":145,
+"offsetSeconds":146.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Open circuit fuel cell 3."
 },
 {
 "get":"056:34:37",
-"offsetSeconds":146,
+"offsetSeconds":147.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Go ahead, Jack. [Pause.]"
 },
 {
 "get":"056:34:46",
-"offsetSeconds":155,
+"offsetSeconds":155.2,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, fuel cell 3 is off the line now. [Long pause.]"
 },
 {
 "get":"056:35:16",
-"offsetSeconds":185,
+"offsetSeconds":185.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And 13, Houston. We'd like you to turn all your Bravo thrusters Off; and put all your Delta thrusters on Main A, please."
 },
 {
 "get":"056:35:26",
-"offsetSeconds":195,
+"offsetSeconds":196.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"All Delta thrusters on Main A and all Bravo thrusters Off. Roger. [Long pause.]"
 },
 {
 "get":"056:35:55",
-"offsetSeconds":224,
+"offsetSeconds":224.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. Turn Battery A, Off..."
 },
 {
 "get":"056:35:56",
-"offsetSeconds":225,
+"offsetSeconds":224.9,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, Jack, we've pretty well got the [garble]."
 },
 {
 "get":"056:35:57",
-"offsetSeconds":226,
+"offsetSeconds":225.9,
 "speaker":"Unknown speaker",
 "channel":"air-to-ground",
 "text":"[Garble] that down to nothing"
 },
 {
 "get":"056:36:01",
-"offsetSeconds":230,
+"offsetSeconds":229.7,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"That's right; we were pulling current all the time."
 },
 {
 "get":"056:36:02",
-"offsetSeconds":231,
+"offsetSeconds":231.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Battery A, Off. Roger."
 },
 {
 "get":"056:36:05",
-"offsetSeconds":234,
+"offsetSeconds":235.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Now you have no..."
 },
 {
 "get":"056:36:07",
-"offsetSeconds":236,
+"offsetSeconds":238.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"I'm transmitting. I don't have any current now."
 },
 {
 "get":"056:36:15",
-"offsetSeconds":244,
+"offsetSeconds":244.6,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Hey, it's off - it's off. They - they killed the bus completely now. [Long pause.]"
 },
 {
 "get":"056:36:15",
-"offsetSeconds":244,
+"offsetSeconds":244.6,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"FLIGHT, EECOM."
 },
 {
 "get":"056:36:16",
-"offsetSeconds":245,
+"offsetSeconds":245.6,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Go, EECOM."
 },
 {
 "get":"056:36:17",
-"offsetSeconds":246,
+"offsetSeconds":246.6,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Have them isolate the surge tank also, and save it. We'll use the cryo as much as we can."
 },
 {
 "get":"056:36:23",
-"offsetSeconds":252,
+"offsetSeconds":252.6,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Uhh. Say that again?"
 },
 {
 "get":"056:36:25",
-"offsetSeconds":254,
+"offsetSeconds":254.6,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Let's isolate the surge tank..."
 },
 {
 "get":"056:36:26",
-"offsetSeconds":255,
+"offsetSeconds":255.6,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Why that?"
 },
 {
 "get":"056:36:26",
-"offsetSeconds":255,
+"offsetSeconds":255.6,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"...in the Command Module."
 },
 {
 "get":"056:36:28",
-"offsetSeconds":257,
+"offsetSeconds":257.7,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"I don't understand that, Sy."
 },
 {
 "get":"056:36:29",
-"offsetSeconds":258,
+"offsetSeconds":258.7,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"I don't want to - I want to use the cryo as much as possible."
 },
 {
 "get":"056:36:32",
-"offsetSeconds":261,
+"offsetSeconds":261.7,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"But that would seem to be the opposite, if you want to keep the fuel cell going."
 },
 {
 "get":"056:36:36",
-"offsetSeconds":265,
+"offsetSeconds":265.7,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"The fuel cells are fed off the tanks in the Service Module, FLIGHT. The surge tank is in the Command Module. We want to save the surge tank in which we need for entry."
 },
 {
 "get":"056:36:47",
-"offsetSeconds":276,
+"offsetSeconds":276.8,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay, I'm with you. I'm with you."
 },
 {
 "get":"056:36:49",
-"offsetSeconds":278,
+"offsetSeconds":278.8,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"056:36:50",
-"offsetSeconds":279,
+"offsetSeconds":279.8,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"CapCom, let's also isolate the surge tank."
 },
 {
 "get":"056:36:57",
-"offsetSeconds":286,
+"offsetSeconds":286.9,
 "speaker":"Lousma (CAPCOM)",
 "channel":"air-to-ground",
 "text":"Okay, you want to isolate the surge tank."
 },
 {
 "get":"056:37:00",
-"offsetSeconds":289,
+"offsetSeconds":289.9,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Yeah."
 },
 {
 "get":"056:37:01",
-"offsetSeconds":290,
+"offsetSeconds":290.9,
 "speaker":"Lousma (CAPCOM)",
 "channel":"air-to-ground",
 "text":"O 2 surge tank, right?"
 },
 {
 "get":"056:37:02",
-"offsetSeconds":291,
+"offsetSeconds":291.9,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Yeah. What we are really doing is securing our entry systems right now."
 },
 {
 "get":"056:37:07",
-"offsetSeconds":296,
+"offsetSeconds":296.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We'd like you to isolate your O 2 surge tank. Over. [Pause.]"
 },
 {
 "get":"056:37:19",
-"offsetSeconds":308,
+"offsetSeconds":309.1,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Surge tank off now, Jack? Okay, Jack, are you copying - O 2 tank 1 cryo pressure?"
 },
 {
 "get":"056:37:30",
-"offsetSeconds":319,
+"offsetSeconds":320.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"That's affirmative. And we're trying to get power to that tank. Stand by; we're working on it."
 },
 {
 "get":"056:37:38",
-"offsetSeconds":327,
+"offsetSeconds":328.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"056:39:05",
-"offsetSeconds":414,
+"offsetSeconds":414.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. We had a - Service Module RCS B light, Jack, due to a package temperature."
 },
 {
 "get":"056:39:13",
-"offsetSeconds":422,
+"offsetSeconds":423.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Service Module RCS B. We copy. No problem."
 },
 {
 "get":"056:39:21",
-"offsetSeconds":430,
+"offsetSeconds":431.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Let's read you the lights we got on now; Cryo Press, Fuel Cell 1, Fuel Cell 3, Main Bus B Undervolt, Suit Compressor."
 },
 {
 "get":"056:39:33",
-"offsetSeconds":442,
+"offsetSeconds":443.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, we copy them and we'd like to build up the pressure in O 2 tank 1, so turn the heaters on manually; we'll watch the pressure for you."
 },
 {
 "get":"056:39:44",
-"offsetSeconds":453,
+"offsetSeconds":454.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, do you want to see..."
 },
 {
 "get":"056:39:45",
-"offsetSeconds":454,
+"offsetSeconds":455.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"056:39:46",
-"offsetSeconds":455,
+"offsetSeconds":455.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"...We're going to get a Main Bus A Undervolt, probably."
 },
 {
 "get":"056:39:49",
-"offsetSeconds":458,
+"offsetSeconds":459.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We realize that; we feel we can stand 5 more amps on it."
 },
 {
 "get":"056:39:56",
-"offsetSeconds":465,
+"offsetSeconds":466.6,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"056:40:00",
-"offsetSeconds":469,
+"offsetSeconds":470.9,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, heater on tank 1's On."
@@ -26354,14 +26354,14 @@
 "a13_0564152":[
 {
 "get":"056:41:52",
-"offsetSeconds":0,
+"offsetSeconds":0.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We'd like you to additionally bring on the fans in O 2 tank 1, and we can stand the additional amperage on that."
 },
 {
 "get":"056:42:03",
-"offsetSeconds":11,
+"offsetSeconds":11.9,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay - bring on the fans on O 2 tank 1."
@@ -26370,476 +26370,476 @@
 "a13_0564432":[
 {
 "get":"056:44:32",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We'd like you to check some circuit breakers on panel 226. Cryo O 2 Heater number 1, Main A, and check the three Cryo Fan Motors, Tank 1, three phases. [Pause.]"
 },
 {
 "get":"056:44:50",
-"offsetSeconds":18,
+"offsetSeconds":17.7,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"TELMU from FLIGHT."
 },
 {
 "get":"056:44:52",
-"offsetSeconds":20,
+"offsetSeconds":19.7,
 "speaker":"Heselmeyer (TELMU)",
 "channel":"air-to-ground",
 "text":"Go ahead FLIGHT."
 },
 {
 "get":"056:44:53",
-"offsetSeconds":21,
+"offsetSeconds":20.7,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"I want you to get some guys figuring out minimum power in the LM to sustain life."
 },
 {
 "get":"056:44:56",
-"offsetSeconds":24,
+"offsetSeconds":23.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, Jack. 226 is configured just like it should be. I got three Reac breakers and three Rad breakers open. All the rest are closed."
 },
 {
 "get":"056:44:57",
-"offsetSeconds":25,
+"offsetSeconds":24.6,
 "speaker":"Heselmeyer (TELMU)",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"056:44:58",
-"offsetSeconds":26,
+"offsetSeconds":25.6,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"056:45:11",
-"offsetSeconds":39,
+"offsetSeconds":38.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Fred. Thank you. [Long pause.]"
 },
 {
 "get":"056:45:55",
-"offsetSeconds":83,
+"offsetSeconds":83.6,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Jack, looking outside, the number of particles has diminished greatly, almost ceased now, which indicates maybe what was venting has almost stopped."
 },
 {
 "get":"056:46:09",
-"offsetSeconds":97,
+"offsetSeconds":96.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Jack. Thank you. We copy."
 },
 {
 "get":"056:46:14",
-"offsetSeconds":102,
+"offsetSeconds":101.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"I'm still getting some rates in negative pitch, though."
 },
 {
 "get":"056:46:17",
-"offsetSeconds":105,
+"offsetSeconds":104.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. [Pause.]"
 },
 {
 "get":"056:46:28",
-"offsetSeconds":116,
+"offsetSeconds":116.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And, 13, we'd like to verify that both BMAGs are Off, please."
 },
 {
 "get":"056:46:35",
-"offsetSeconds":123,
+"offsetSeconds":123.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Negative. We just have one BMAG. BMAG number 1 is still On."
 },
 {
 "get":"056:46:43",
-"offsetSeconds":131,
+"offsetSeconds":131.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jack. Let's take BMAG 1, Off."
 },
 {
 "get":"056:46:50",
-"offsetSeconds":138,
+"offsetSeconds":138.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. BMAG number 1, Off, now."
 },
 {
 "get":"056:48:06",
-"offsetSeconds":214,
+"offsetSeconds":214.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, this is Houston. We'd like you to give us a survey of your displays on MDCs 1 and 2. Give us gauge readings and talkbacks. Over."
 },
 {
 "get":"056:48:21",
-"offsetSeconds":229,
+"offsetSeconds":229.9,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"See that juice is still going down there, EECOM. You got any more suggestions?"
 },
 {
 "get":"056:48:22",
-"offsetSeconds":230,
+"offsetSeconds":230.9,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay. We'll start with display number 1. Are, uh..."
 },
 {
 "get":"056:48:28",
-"offsetSeconds":236,
+"offsetSeconds":236.3,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Flight, EECOM"
 },
 {
 "get":"056:48:29",
-"offsetSeconds":237,
+"offsetSeconds":237.2,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Any more suggestions in trying to pump up O 2 Tank 1 pressure?"
 },
 {
 "get":"056:48:30",
-"offsetSeconds":238,
+"offsetSeconds":238.1,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack. On MDC 1, there is nothing abnormal. All the rate indicators are zero. Ball number 2 is, uh, frozen, of course; we lost - lost, uh. Main B. I've got Ball number 1 appears to be working normally. Right now I'm sitting at roll 0, pitch 180, and, uh, yaw about 13 degrees. I'm going to try and hold, uh, 0, 180, and 0."
 },
 {
 "get":"056:48:32",
-"offsetSeconds":240,
+"offsetSeconds":240.1,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"No... (sounding exasperated) Uhh, FLIGHT, we're gonna hit 100 psi in an hour and 54 minutes. That's the end, right there."
 },
 {
 "get":"056:48:47",
-"offsetSeconds":255,
+"offsetSeconds":255.2,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay, 100 psi..."
 },
 {
 "get":"056:48:50",
-"offsetSeconds":258,
+"offsetSeconds":258.3,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Less than two hours now."
 },
 {
 "get":"056:49:08",
-"offsetSeconds":276,
+"offsetSeconds":276.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay, Houston. The center panel - I'm looking at the RCS indicator A. We have a package temperature of about 180. Our helium pressure is 3900. I'm looking at fuel pressure of about 180 and percentage of about, I'd say 85 percent. B is about the same, except that that package pressure is 190. On quad C, we're looking about the same, except that the package temperature is 100. On quad D, we're looking at package temperature of 160. All other indications about the same. CM pressure - RCS pressure is looking nominal. Helium pressure's up around 4000. And package temperature is about - a little les"
 },
 {
 "get":"056:50:02",
-"offsetSeconds":330,
+"offsetSeconds":330.8,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"And the - talkbacks on the SM RCS, I've got Helium 1 now are all gray. Helium 2 are all gray. Primary Propellant all gray. Secondary Propellant, I've got two barber pole, and A is barber pole, B gray, C barber pole, and D gray. Okay. On the ECS Radiators, barber pole is gray. On the - On the ECS, Primary indicator."
 },
 {
 "get":"056:50:57",
-"offsetSeconds":385,
+"offsetSeconds":386.3,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"FIDO, from FLIGHT."
 },
 {
 "get":"056:50:57",
-"offsetSeconds":385,
+"offsetSeconds":386.3,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay, Jack. Starting at the top. Okay. The Cryo Tanks; H 2 1 is reading 230 and the same for 2. Our O 2 Cryo Tank 1 is - looks like it's barely holding its own at 300. And Cryo Tank 2 is reading zip. Our quantities: H 2 1 is reading 73; 2, 74. On the O 2 side, we're reading O 2 1 at quantity 76; O 2 2 pegged to full scale high. RAD Temps Primary Inlet, we're reading about 55; RAD Out is reading about 30, and, uh, Secondary Outlet is reading..."
 },
 {
 "get":"056:50:58",
-"offsetSeconds":386,
+"offsetSeconds":387.3,
 "speaker":"Stoval (FIDO)",
 "channel":"air-to-ground",
 "text":"Go ahead FLIGHT."
 },
 {
 "get":"056:50:59",
-"offsetSeconds":387,
+"offsetSeconds":388.2,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Whatever planning you do, I wanna do assuming that we're going around the Moon and we're using the LM for performing the maneuver because in the present configuration unless we get a heck of a lot smarter I think we're wasting our time planning on using the SPS."
 },
 {
 "get":"056:51:13",
-"offsetSeconds":401,
+"offsetSeconds":402.1,
 "speaker":"Stoval (FIDO)",
 "channel":"air-to-ground",
 "text":"Okay, FLIGHT."
 },
 {
 "get":"056:51:14",
-"offsetSeconds":402,
+"offsetSeconds":403.1,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"So I think all of our return to Earth-type planning should be assuming the use of the LM DPS and/or RCS and I think third priority down the line should be CSM RCS."
 },
 {
 "get":"056:51:27",
-"offsetSeconds":415,
+"offsetSeconds":416.0,
 "speaker":"Stoval (FIDO)",
 "channel":"air-to-ground",
 "text":"Okay, and I'm assuming you - you'd want fastest possible return?"
 },
 {
 "get":"056:51:32",
-"offsetSeconds":420,
+"offsetSeconds":421.0,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Aaah, yeah, I think that's the case."
 },
 {
 "get":"056:51:34",
-"offsetSeconds":422,
+"offsetSeconds":423.0,
 "speaker":"Stoval (FIDO)",
 "channel":"air-to-ground",
 "text":"Okay, we'll - we'll work on it from that side line, FLIGHT. Should be no problem."
 },
 {
 "get":"056:51:45",
-"offsetSeconds":433,
+"offsetSeconds":433.9,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"FLIGHT, EECOM."
 },
 {
 "get":"056:51:48",
-"offsetSeconds":436,
+"offsetSeconds":436.9,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Go ahead, EECOM."
 },
 {
 "get":"056:51:49",
-"offsetSeconds":437,
+"offsetSeconds":437.9,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Okay, listen. There is a possibility that we blew a O 2 line in one of the fuel cells, and it's effectively manifolded there, of course. Now I'm - I wanna shut off one of the reactant valves to one of the fuel cells. And that would be fuel cell 3, since its O 2 pressure is gone. Now, fuel cell 1's oxygen pressure is trying to stay up there, at 45 psi. Maybe the problem is in fuel cell 3."
 },
 {
 "get":"056:52:24",
-"offsetSeconds":472,
+"offsetSeconds":472.6,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"That sounds like a good assumption right there."
 },
 {
 "get":"056:52:26",
-"offsetSeconds":474,
+"offsetSeconds":474.6,
 "speaker":"Liebergot (EECOM)",
 "channel":"air-to-ground",
 "text":"Yeah, fuel cell 3 is lost anyways, as far as..."
 },
 {
 "get":"056:53:06",
-"offsetSeconds":514,
+"offsetSeconds":514.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Excuse me, Fred; I'd like to butt in here a minute. We'd like to have Thruster C-1 off."
 },
 {
 "get":"056:53:17",
-"offsetSeconds":525,
+"offsetSeconds":525.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"C-1 is off."
 },
 {
 "get":"056:53:18",
-"offsetSeconds":526,
+"offsetSeconds":527.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And proceed..."
 },
 {
 "get":"056:53:19",
-"offsetSeconds":527,
+"offsetSeconds":527.2,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay..."
 },
 {
 "get":"056:53:20",
-"offsetSeconds":528,
+"offsetSeconds":528.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"...my last copy is Secondary RAD In. [Pause.]"
 },
 {
 "get":"056:53:28",
-"offsetSeconds":536,
+"offsetSeconds":536.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. Your Secondary RAD In, I gave to you 70 - about 72 degrees; the RAD Out's about 30; the Glycol Evap Temp is reading about 65; Steam Pressure full scale high, Glycol Discharge Pressure about 9 psi. The Accum - Secondary Accumulator is about 30 - 34 percent. Our temperatures: Suits showing about 52 degrees; Cabin, about 58 degrees; pressures, Suit reading 4.1, Cabin at 5. Partial Pressure CO 2 is up to little over 1, about 1.1. On the SPS side of the house, the temperature is 72 degrees, helium's reading 3500; N 2 A is reading 2300; N 2 B, about 2450. And our ullage pressures: Fuel is read"
 },
 {
 "get":"056:56:03",
-"offsetSeconds":691,
+"offsetSeconds":690.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by."
 },
 {
 "get":"056:56:04",
-"offsetSeconds":692,
+"offsetSeconds":691.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"...is 0 amps. Ah, Say again, Jack. [Long pause.]"
 },
 {
 "get":"056:56:23",
-"offsetSeconds":711,
+"offsetSeconds":710.0,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Houston, 13. [Long pause.]"
 },
 {
 "get":"056:56:55",
-"offsetSeconds":743,
+"offsetSeconds":741.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Hello, Houston; Apollo 13. How do you read? [Pause.]"
 },
 {
 "get":"056:57:07",
-"offsetSeconds":755,
+"offsetSeconds":753.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, 13. This is Houston. It appears to us that we're losing O 2 flow through fuel cell 3. So, we want you to close the Reac valve on fuel cell 3. It looks like fuel cell 1 and 2 are trying to hold up okay. You copy?"
 },
 {
 "get":"056:57:26",
-"offsetSeconds":774,
+"offsetSeconds":775.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Are you saying fuel cell 1 and 2 - 1 and 2 are trying to hold up but we're leaking O 2 out of fuel cell 3? And you want me to shut the Reac valve on fuel cell 3? Did I hear you right?"
 },
 {
 "get":"056:57:40",
-"offsetSeconds":788,
+"offsetSeconds":790.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"That's affirmative. Close the Reac valve on fuel cell 3."
 },
 {
 "get":"056:57:48",
-"offsetSeconds":796,
+"offsetSeconds":796.2,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. I'll go to the SSR page. Do you want me to go through that whole smash for fuel cell shutdown? Is that correct?"
 },
 {
 "get":"056:57:57",
-"offsetSeconds":805,
+"offsetSeconds":807.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by. [Long pause.]"
 },
 {
 "get":"056:58:24",
-"offsetSeconds":832,
+"offsetSeconds":834.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, 13. We want you to turn the inline heaters off on fuel cell 1. Then we want you to go through the fuel cell shutdown procedure on fuel cell 3. Read back."
 },
 {
 "get":"056:58:40",
-"offsetSeconds":848,
+"offsetSeconds":849.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Shut down the inline heaters on fuel cell 1. We're proceeding with the shutdown, special subroutine, for fuel cell 3."
 },
 {
 "get":"056:58:51",
-"offsetSeconds":859,
+"offsetSeconds":859.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"That's affirmative. [Long pause.]"
 },
 {
 "get":"056:59:12",
-"offsetSeconds":880,
+"offsetSeconds":881.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13. Omni Bravo, please. [Long pause.]"
 },
 {
 "get":"056:59:54",
-"offsetSeconds":922,
+"offsetSeconds":924.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. Over."
 },
 {
 "get":"056:59:58",
-"offsetSeconds":926,
+"offsetSeconds":928.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"056:59:59",
-"offsetSeconds":927,
+"offsetSeconds":929.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay. You got Omni Bravo and we'd like to have you verify that the tape recorder is off please."
 },
 {
 "get":"057:00:08",
-"offsetSeconds":936,
+"offsetSeconds":937.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"That's verified. Okay, Jack. I'm sitting here with an 0618 showing and I can't get rid of it here. Oh, stand by just a... [Long pause.]"
 },
 {
 "get":"057:00:48",
-"offsetSeconds":976,
+"offsetSeconds":977.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay. Fuel cell 3 Reac's are Off, Houston."
 },
 {
 "get":"057:00:52",
-"offsetSeconds":980,
+"offsetSeconds":981.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger, Jim. Thank you."
 },
 {
 "get":"057:01:54",
-"offsetSeconds":1042,
+"offsetSeconds":1044.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack. Step 2, special subroutine 1 for the fuel cell procedure, has been completed."
 },
 {
 "get":"057:02:01",
-"offsetSeconds":1049,
+"offsetSeconds":1051.4,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. Thank you."
@@ -26848,91 +26848,91 @@
 "a13_0570429":[
 {
 "get":"057:04:29",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Jack. I'd like to bring on jet A-4. I've got, uh, no - negative pitch control - negative pitch control, and right now neither Direct or Auto coils."
 },
 {
 "get":"057:04:47",
-"offsetSeconds":18,
+"offsetSeconds":17.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay. You say no pitch in either Direct or Auto? You want to bring on A-4?"
 },
 {
 "get":"057:04:53",
-"offsetSeconds":24,
+"offsetSeconds":24.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Yeah. I got a - I got a positive pitch rate and I can't stop it."
 },
 {
 "get":"057:04:58",
-"offsetSeconds":29,
+"offsetSeconds":28.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay. [Pause.]"
 },
 {
 "get":"057:05:08",
-"offsetSeconds":39,
+"offsetSeconds":38.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jack. Bring A-4 on; stop the pitch rate."
 },
 {
 "get":"057:05:14",
-"offsetSeconds":45,
+"offsetSeconds":45.2,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. That got it. [Long pause.]"
 },
 {
 "get":"057:05:35",
-"offsetSeconds":66,
+"offsetSeconds":66.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And, 13, we need Omni Charlie, please."
 },
 {
 "get":"057:05:41",
-"offsetSeconds":72,
+"offsetSeconds":67.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Omni Charlie."
 },
 {
 "get":"057:05:46",
-"offsetSeconds":77,
+"offsetSeconds":76.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And, Freddo, we'd like to have you, uh, verify fuel cell reactants talkback is barber poled"
 },
 {
 "get":"057:05:54",
-"offsetSeconds":85,
+"offsetSeconds":84.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"That's affirm. I watched it and it went barber pole as I threw the switch."
 },
 {
 "get":"057:06:01",
-"offsetSeconds":92,
+"offsetSeconds":91.1,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. [Pause.]"
 },
 {
 "get":"057:06:12",
-"offsetSeconds":103,
+"offsetSeconds":102.7,
 "speaker":"Kranz",
 "channel":"air-to-ground",
 "text":"Okay, all Flight Controllers, I'm handing over to Glynn. I assume the majority of all the team guys are pretty much briefed and up to speed as best we can. Now what I'd suggest is the White Team do two things. They go over the D-logs..."
 },
 {
 "get":"057:06:29",
-"offsetSeconds":120,
+"offsetSeconds":119.7,
 "speaker":"Kranz (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Okay, let me go back over this again. We're handing over to Glynn. I'd suggest the White Team goes back and starts going through the D-log of the data. In other words, let's see if we can go back to the initial conditions and work on that problem to see if we can find out what happened and we may find some better clues as to what to do and let the fresh guys come on and try to figure out where do we go from here."
@@ -26941,497 +26941,497 @@
 "a13_0570801":[
 {
 "get":"057:08:01",
-"offsetSeconds":0,
+"offsetSeconds":0.7,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Jack. Let me give you a thruster configuration right now. Able 1, Charlie 1, Able 2 are off. Charlie 2, Main A, all the thrusters that I call that are on are on Main A. Baker 1, Off. Dog 1, On; Baker 2, Off; Dog 2, On. Able 3, Charlie 3, Able 4, Charlie 4, On. Baker 3, Off; Dog 3, On; Baker 4, Off; Dog 4, on. [Long pause.]"
 },
 {
 "get":"057:09:27",
-"offsetSeconds":86,
+"offsetSeconds":87.8,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jack. That thruster configuration looks okay."
 },
 {
 "get":"057:09:35",
-"offsetSeconds":94,
+"offsetSeconds":96.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"All right. Okay. Do you want some readings from the Systems Test Meter regarding fuel cells?"
 },
 {
 "get":"057:09:45",
-"offsetSeconds":104,
+"offsetSeconds":105.7,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by one on that, Jack. Let me ask the EECOM."
 },
 {
 "get":"057:09:46",
-"offsetSeconds":105,
+"offsetSeconds":106.7,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"We've got some incompatibilities here. [Pause.]"
 },
 {
 "get":"057:10:03",
-"offsetSeconds":122,
+"offsetSeconds":123.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, 13. We'd like to have you give us those systems test readings on fuel cell 1 and 3, please."
 },
 {
 "get":"057:10:11",
-"offsetSeconds":130,
+"offsetSeconds":131.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay. 1 and 3 coming up."
 },
 {
 "get":"057:10:14",
-"offsetSeconds":133,
+"offsetSeconds":134.3,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. Jack, 1-A is reading, lower scale, 0; 1-B is reading. 3.45. Okay. You only want fuel cells 1 and 3. Okay. Ignore that 1-B reading. 1-C is reading 3.4. Now, 1-D is reading 2.4. 2-B is reading 0.25."
 },
 {
 "get":"057:11:09",
-"offsetSeconds":188,
+"offsetSeconds":189.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. Is that 2 Bravo, Fred?"
 },
 {
 "get":"057:11:15",
-"offsetSeconds":194,
+"offsetSeconds":195.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"That's 2 Bravo is reading - oh, about 0.25 to 0.3. [Long pause.]"
 },
 {
 "get":"057:11:23",
-"offsetSeconds":202,
+"offsetSeconds":203.9,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"EECOM, I don't like the way that O 2 pressure's going down. If you want do something about these other reactant valves, let's make up our mind."
 },
 {
 "get":"057:11:29",
-"offsetSeconds":208,
+"offsetSeconds":209.9,
 "speaker":"Burton (EECOM)",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"057:11:30",
-"offsetSeconds":209,
+"offsetSeconds":210.9,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Don't you think?"
 },
 {
 "get":"057:11:30",
-"offsetSeconds":209,
+"offsetSeconds":210.9,
 "speaker":"Burton",
 "channel":"air-to-ground",
 "text":"Okay. Let me get back with you, a minute, FLIGHT. Would - Stand by on these readouts."
 },
 {
 "get":"057:11:36",
-"offsetSeconds":215,
+"offsetSeconds":217.0,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Yeah, Okay. Anybody can copy the readouts. Be sure you - got discussing this reactants."
 },
 {
 "get":"057:11:39",
-"offsetSeconds":218,
+"offsetSeconds":220.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. 2-C is reading 4.1. [Long pause.]"
 },
 {
 "get":"057:11:53",
-"offsetSeconds":232,
+"offsetSeconds":234.2,
 "speaker":"Lousma (CapCom)",
 "channel":"air-to-ground",
 "text":"Hey Flight, CapCom, a long time ago I heard somebody mention something about closing a Repress package and then we never made a decision on that. Do they want to do that too?"
 },
 {
 "get":"057:12:03",
-"offsetSeconds":242,
+"offsetSeconds":244.3,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"EECOM?"
 },
 {
 "get":"057:12:04",
-"offsetSeconds":243,
+"offsetSeconds":245.3,
 "speaker":"Unidentified",
 "channel":"air-to-ground",
 "text":"He's busy."
 },
 {
 "get":"057:12:06",
-"offsetSeconds":245,
+"offsetSeconds":247.4,
 "speaker":"Burton (EECOM)",
 "channel":"air-to-ground",
 "text":"Go Flight."
 },
 {
 "get":"057:12:07",
-"offsetSeconds":246,
+"offsetSeconds":248.4,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Uh, you want to close out the repress pack. I think that came on for 'em before."
 },
 {
 "get":"057:12:10",
-"offsetSeconds":249,
+"offsetSeconds":251.4,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And 3-A is reading 4.0."
 },
 {
 "get":"057:12:11",
-"offsetSeconds":250,
+"offsetSeconds":252.4,
 "speaker":"Burton (EECOM)",
 "channel":"air-to-ground",
 "text":"Uh, we indicated earlier that we'd like to get it closed off, right."
 },
 {
 "get":"057:12:14",
-"offsetSeconds":253,
+"offsetSeconds":255.5,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Yes, Jack."
 },
 {
 "get":"057:12:15",
-"offsetSeconds":254,
+"offsetSeconds":256.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. 4.0. Say again what it is, please. [Pause.]"
 },
 {
 "get":"057:12:22",
-"offsetSeconds":261,
+"offsetSeconds":263.3,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"3 Able, 3-A. [Long pause.]"
 },
 {
 "get":"057:12:23",
-"offsetSeconds":262,
+"offsetSeconds":264.3,
 "speaker":"Burton (EECOM)",
 "channel":"air-to-ground",
 "text":"Flight, EECOM."
 },
 {
 "get":"057:12:24",
-"offsetSeconds":263,
+"offsetSeconds":265.3,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"057:12:25",
-"offsetSeconds":264,
+"offsetSeconds":266.3,
 "speaker":"Burton (EECOM)",
 "channel":"air-to-ground",
 "text":"Okay. On the reactants for fuel cell 1, uh, seems to me we have no choice but to go ahead and do it. The pressure continues to drop. Uh, we're not gonna have anything left soon anyway, so, uh, looks like the next best thing to try is to go ahead and turn the reactants off on fuel cell 1."
 },
 {
 "get":"057:12:48",
-"offsetSeconds":287,
+"offsetSeconds":288.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"3-B is reading 1.8. [Pause.]"
 },
 {
 "get":"057:12:58",
-"offsetSeconds":297,
+"offsetSeconds":298.5,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And 3-D is reading 1.95."
 },
 {
 "get":"057:13:35",
-"offsetSeconds":334,
+"offsetSeconds":335.9,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Is there any chance that I'm just looking at a bad pressure reading here? I'm going to shut off the second fuel cell now, is there any cur - any data you can correlate that say that, yeah, that pressure's going down?"
 },
 {
 "get":"057:13:44",
-"offsetSeconds":343,
+"offsetSeconds":345.0,
 "speaker":"Burton (EECOM)",
 "channel":"air-to-ground",
 "text":"On the O 2 tank?"
 },
 {
 "get":"057:13:46",
-"offsetSeconds":345,
+"offsetSeconds":347.0,
 "speaker":"Lunney (FLIGHT)",
 "channel":"air-to-ground",
 "text":"Yes. You understand my question?"
 },
 {
 "get":"057:13:52",
-"offsetSeconds":351,
+"offsetSeconds":353.0,
 "speaker":"Burton (EECOM)",
 "channel":"air-to-ground",
 "text":"Yeah, I understand your question. Uh, the temperatures are also dropping. Let me get a verification on that - stand by for just a minute."
 },
 {
 "get":"057:14:08",
-"offsetSeconds":367,
+"offsetSeconds":369.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"And, Houston, 13. O 2 tank pressure number 1 is less than 300 now."
 },
 {
 "get":"057:14:14",
-"offsetSeconds":373,
+"offsetSeconds":375.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We're seeing that. We confirm it. [Long pause.]"
 },
 {
 "get":"057:15:04",
-"offsetSeconds":423,
+"offsetSeconds":425.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We're going to have to have you go through the shutdown procedure on fuel cell 1. Our O 2 pressure is going down as you note and the temperature confirms it. Did you copy?"
 },
 {
 "get":"057:15:24",
-"offsetSeconds":443,
+"offsetSeconds":445.9,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Well, what bus configuration - What main bus do you want powered? [Pause.]"
 },
 {
 "get":"057:15:36",
-"offsetSeconds":455,
+"offsetSeconds":457.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jack. We want you to leave the bus configuration as it is. Fuel cell 2 on Main A, and we need Omni Bravo."
 },
 {
 "get":"057:15:52",
-"offsetSeconds":471,
+"offsetSeconds":473.7,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack. We're proceeding with the shutdown procedures for fuel cell 1. [Long pause.]"
 },
 {
 "get":"057:16:35",
-"offsetSeconds":514,
+"offsetSeconds":516.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"And, 13, Houston. We'd like you to isolate the Repress package, please."
 },
 {
 "get":"057:16:42",
-"offsetSeconds":521,
+"offsetSeconds":523.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"057:16:43",
-"offsetSeconds":522,
+"offsetSeconds":524.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Isolate the Repress package. Roger."
 },
 {
 "get":"057:16:45",
-"offsetSeconds":524,
+"offsetSeconds":526.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"I can confirm Repress package is off."
 },
 {
 "get":"057:16:48",
-"offsetSeconds":527,
+"offsetSeconds":529.9,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. So now you've got the Repress package and the surge tank isolated. Is that affirm?"
 },
 {
 "get":"057:16:55",
-"offsetSeconds":534,
+"offsetSeconds":536.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"That is Charlie."
 },
 {
 "get":"057:16:59",
-"offsetSeconds":538,
+"offsetSeconds":540.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Now, this is - We're ready to close the Reacs on fuel cell 1; is that right? [Long pause.]"
 },
 {
 "get":"057:17:35",
-"offsetSeconds":574,
+"offsetSeconds":576.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Jack, stand by on the fuel..."
 },
 {
 "get":"057:17:36",
-"offsetSeconds":575,
+"offsetSeconds":577.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"On that last - confirmation. Okay."
 },
 {
 "get":"057:17:41",
-"offsetSeconds":580,
+"offsetSeconds":582.3,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger. We're - We're giving you one last..."
 },
 {
 "get":"057:17:42",
-"offsetSeconds":581,
+"offsetSeconds":583.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"We want to just get one last confirmation."
 },
 {
 "get":"057:17:45",
-"offsetSeconds":584,
+"offsetSeconds":587.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, Jack. We're getting that last confirmation. Stand by, please."
 },
 {
 "get":"057:17:51",
-"offsetSeconds":590,
+"offsetSeconds":593.6,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. [Pause.]"
 },
 {
 "get":"057:18:01",
-"offsetSeconds":600,
+"offsetSeconds":602.6,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Okay, 13. We verify that we want you to close down - shut down fuel cell 1, close Reacs valve."
 },
 {
 "get":"057:18:10",
-"offsetSeconds":609,
+"offsetSeconds":611.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Roger..."
 },
 {
 "get":"057:18:11",
-"offsetSeconds":610,
+"offsetSeconds":612.7,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"057:18:12",
-"offsetSeconds":611,
+"offsetSeconds":613.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"...fuel cell 1; close the Reacs valve. [Pause.]"
 },
 {
 "get":"057:18:19",
-"offsetSeconds":618,
+"offsetSeconds":620.8,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Fuel cell..."
 },
 {
 "get":"057:18:20",
-"offsetSeconds":619,
+"offsetSeconds":621.8,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Reacs valve on fuel cell 1 is closed. [Long pause.]"
 },
 {
 "get":"057:18:45",
-"offsetSeconds":644,
+"offsetSeconds":647.0,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack. I can confirm step 2. The fuel cell shutdown procedure is complete for fuel cell 1."
 },
 {
 "get":"057:18:55",
-"offsetSeconds":654,
+"offsetSeconds":657.0,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"057:19:58",
-"offsetSeconds":717,
+"offsetSeconds":720.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, we recommend that you enable BD roll in the DAP. Over."
 },
 {
 "get":"057:20:05",
-"offsetSeconds":724,
+"offsetSeconds":727.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay. Will do..."
 },
 {
 "get":"057:20:06",
-"offsetSeconds":725,
+"offsetSeconds":728.3,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Enable BD roll in the DAP. [Long pause.]"
 },
 {
 "get":"057:20:23",
-"offsetSeconds":742,
+"offsetSeconds":745.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We're working on the big dish now, so turn the High Gain Power switch, Off, please."
 },
 {
 "get":"057:20:32",
-"offsetSeconds":751,
+"offsetSeconds":754.4,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"057:20:55",
-"offsetSeconds":774,
+"offsetSeconds":777.3,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Okay, Jack. When we got the loud bang, we got also a restart. Did you copy that? Is - does GUIDO want anything, a Verb 74 or anything done with the CMC?"
 },
 {
 "get":"057:21:06",
-"offsetSeconds":785,
+"offsetSeconds":788.2,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"Stand by. [Long pause.]"
 },
 {
 "get":"057:21:54",
-"offsetSeconds":833,
+"offsetSeconds":836.5,
 "speaker":"Lousma",
 "channel":"air-to-ground",
 "text":"13, Houston. We're ready with a Verb 74 now, please. [Pause.]"
 },
 {
 "get":"057:22:05",
-"offsetSeconds":844,
+"offsetSeconds":847.5,
 "speaker":"Swigert",
 "channel":"air-to-ground",
 "text":"Coming down at you."
