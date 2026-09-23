@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { astronauts } from '../data/astronauts'
+import facts from '../data/astronautFacts.json'
 import { missions } from '../data/missions'
 import { speakerAvatar } from '../data/speakers'
 
@@ -12,6 +13,12 @@ function Card({ id }) {
       <span className="astronaut-card-meta">
         {person.apollo.map((a) => `${a.role === 'CAPCOM' ? 'CAPCOM' : a.role.replace('Command Module Pilot', 'CMP').replace('Lunar Module Pilot', 'LMP')}, ${Number(a.mission)}`).join(' · ')}
       </span>
+      {facts[id] && (
+        <span className="astronaut-card-service">
+          {facts[id].service[0]?.replace(/^civilian scientist-astronaut.*/, 'Civilian scientist')}
+          {facts[id].missions.length > 0 && ` · ${facts[id].missions.length} flight${facts[id].missions.length === 1 ? '' : 's'}`}
+        </span>
+      )}
     </Link>
   )
 }

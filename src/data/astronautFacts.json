@@ -1,0 +1,409 @@
+{
+ "armstrong": {
+  "wikidata": "Q1615",
+  "born": "Wapakoneta, Ohio",
+  "service": [
+   "U.S. Navy",
+   "civilian NASA test pilot"
+  ],
+  "missions": [
+   "Gemini 8",
+   "Apollo 11"
+  ]
+ },
+ "aldrin": {
+  "wikidata": "Q2252",
+  "born": "Glen Ridge, New Jersey",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Gemini 12",
+   "Apollo 11"
+  ]
+ },
+ "collins": {
+  "wikidata": "Q104859",
+  "born": "Rome, Italy",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Gemini 10",
+   "Apollo 11"
+  ]
+ },
+ "borman": {
+  "wikidata": "Q18762",
+  "born": "Gary, Indiana",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Gemini 7",
+   "Apollo 8"
+  ]
+ },
+ "lovell": {
+  "wikidata": "Q111240",
+  "born": "Cleveland, Ohio",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Gemini 7",
+   "Gemini 12",
+   "Apollo 8",
+   "Apollo 13"
+  ]
+ },
+ "anders": {
+  "wikidata": "Q19242",
+  "born": "Hong Kong",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Apollo 8"
+  ]
+ },
+ "mcdivitt": {
+  "wikidata": "Q364476",
+  "born": "Chicago, Illinois",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Gemini 4",
+   "Apollo 9"
+  ]
+ },
+ "scott": {
+  "wikidata": "Q278656",
+  "born": "San Antonio, Texas",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Gemini 8",
+   "Apollo 9",
+   "Apollo 15"
+  ]
+ },
+ "schweickart": {
+  "wikidata": "Q363506",
+  "born": "Neptune Township, New Jersey",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Apollo 9"
+  ]
+ },
+ "stafford": {
+  "wikidata": "Q316417",
+  "born": "Weatherford, Oklahoma",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Gemini 6A",
+   "Gemini 9A",
+   "Apollo 10",
+   "Apollo–Soyuz"
+  ]
+ },
+ "young": {
+  "wikidata": "Q107667",
+  "born": "San Francisco, California",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Gemini 3",
+   "Gemini 10",
+   "Apollo 10",
+   "Apollo 16",
+   "STS-1",
+   "STS-9"
+  ]
+ },
+ "cernan": {
+  "wikidata": "Q158486",
+  "born": "Chicago, Illinois",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Gemini 9A",
+   "Apollo 10",
+   "Apollo 17"
+  ]
+ },
+ "conrad": {
+  "wikidata": "Q213076",
+  "born": "Philadelphia, Pennsylvania",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Gemini 5",
+   "Gemini 11",
+   "Apollo 12",
+   "Skylab 2"
+  ]
+ },
+ "gordon": {
+  "wikidata": "Q502963",
+  "born": "Seattle, Washington",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Gemini 11",
+   "Apollo 12"
+  ]
+ },
+ "bean": {
+  "wikidata": "Q310924",
+  "born": "Wheeler, Texas",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Apollo 12",
+   "Skylab 3"
+  ]
+ },
+ "swigert": {
+  "wikidata": "Q348358",
+  "born": "Denver, Colorado",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Apollo 13"
+  ]
+ },
+ "haise": {
+  "wikidata": "Q318965",
+  "born": "Biloxi, Mississippi",
+  "service": [
+   "U.S. Marine Corps",
+   "civilian NASA test pilot"
+  ],
+  "missions": [
+   "Apollo 13"
+  ]
+ },
+ "shepard": {
+  "wikidata": "Q174979",
+  "born": "Derry, New Hampshire",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Mercury-Redstone 3",
+   "Apollo 14"
+  ]
+ },
+ "roosa": {
+  "wikidata": "Q375065",
+  "born": "Durango, Colorado",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Apollo 14"
+  ]
+ },
+ "mitchell": {
+  "wikidata": "Q295873",
+  "born": "Hereford, Texas",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Apollo 14"
+  ]
+ },
+ "worden": {
+  "wikidata": "Q539385",
+  "born": "Jackson, Michigan",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Apollo 15"
+  ]
+ },
+ "irwin": {
+  "wikidata": "Q297801",
+  "born": "Pittsburgh, Pennsylvania",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Apollo 15"
+  ]
+ },
+ "mattingly": {
+  "wikidata": "Q318513",
+  "born": "Chicago, Illinois",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Apollo 16",
+   "STS-4",
+   "STS-51-C"
+  ]
+ },
+ "duke": {
+  "wikidata": "Q112284",
+  "born": "Charlotte, North Carolina",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "Apollo 16"
+  ]
+ },
+ "evans": {
+  "wikidata": "Q313543",
+  "born": "St. Francis, Kansas",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Apollo 17"
+  ]
+ },
+ "schmitt": {
+  "wikidata": "Q108886",
+  "born": "Santa Rita, New Mexico",
+  "service": [
+   "civilian scientist-astronaut (geologist)"
+  ],
+  "missions": [
+   "Apollo 17"
+  ]
+ },
+ "allen": {
+  "wikidata": "Q443994",
+  "born": "Crawfordsville, Indiana",
+  "service": [
+   "civilian scientist-astronaut (physicist)"
+  ],
+  "missions": [
+   "STS-5",
+   "STS-51-A"
+  ]
+ },
+ "fullerton": {
+  "wikidata": "Q519268",
+  "born": "Rochester, New York",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "STS-3",
+   "STS-51-F"
+  ]
+ },
+ "mccandless": {
+  "wikidata": "Q433608",
+  "born": "Boston, Massachusetts",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "STS-41-B",
+   "STS-31"
+  ]
+ },
+ "carr": {
+  "wikidata": "Q644837",
+  "born": "Denver, Colorado",
+  "service": [
+   "U.S. Marine Corps"
+  ],
+  "missions": [
+   "Skylab 4"
+  ]
+ },
+ "henize": {
+  "wikidata": "Q722390",
+  "born": "Cincinnati, Ohio",
+  "service": [
+   "civilian scientist-astronaut (astronomer)"
+  ],
+  "missions": [
+   "STS-51-F"
+  ]
+ },
+ "overmyer": {
+  "wikidata": "Q519149",
+  "born": "Lorain, Ohio",
+  "service": [
+   "U.S. Marine Corps"
+  ],
+  "missions": [
+   "STS-5",
+   "STS-51-B"
+  ]
+ },
+ "hartsfield": {
+  "wikidata": "Q460161",
+  "born": "Birmingham, Alabama",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "STS-4",
+   "STS-41-D",
+   "STS-61-A"
+  ]
+ },
+ "lousma": {
+  "wikidata": "Q363976",
+  "born": "Grand Rapids, Michigan",
+  "service": [
+   "U.S. Marine Corps"
+  ],
+  "missions": [
+   "Skylab 3",
+   "STS-3"
+  ]
+ },
+ "peterson": {
+  "wikidata": "Q557058",
+  "born": "Winona, Mississippi",
+  "service": [
+   "U.S. Air Force"
+  ],
+  "missions": [
+   "STS-6"
+  ]
+ },
+ "gibson": {
+  "wikidata": "Q390344",
+  "born": "Buffalo, New York",
+  "service": [
+   "civilian scientist-astronaut (solar physicist)"
+  ],
+  "missions": [
+   "Skylab 4"
+  ]
+ },
+ "kerwin": {
+  "wikidata": "Q446917",
+  "born": "Oak Park, Illinois",
+  "service": [
+   "U.S. Navy"
+  ],
+  "missions": [
+   "Skylab 2"
+  ]
+ }
+}

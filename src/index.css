@@ -2154,3 +2154,81 @@ a {
 .immersive-photo img.is-scan {
   clip-path: inset(7% 8%);
 }
+
+/* Astronaut facts: born, service, spaceflights */
+.astronaut-facts {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 6px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-panel);
+}
+
+.astronaut-facts > div {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.astronaut-facts dt {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.astronaut-facts dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.astronaut-program {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 6px;
+  margin-bottom: 4px;
+}
+
+.astronaut-program-name {
+  min-width: 6.5rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.astronaut-flight {
+  padding: 1px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+a.astronaut-flight {
+  border-color: rgba(255, 138, 61, 0.5);
+  color: var(--accent-dim);
+}
+
+a.astronaut-flight:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.astronaut-card-service {
+  display: block;
+  padding: 0 10px 10px;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+@media (max-width: 520px) {
+  .astronaut-facts > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
