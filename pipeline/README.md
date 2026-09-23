@@ -90,6 +90,34 @@ cuts that to hours. Already-finished files are skipped.
 
 ## 4. Photos
 
+**Strategy.**
+
+1. **NASA's release first.** When NASA's Image Library has its own
+   version of a frame, the site uses it, with NASA's caption, unedited.
+   These are public-domain NASA works. There are about 700 such frames,
+   and `scripts/fetch_nasa_frames.py` finds them.
+2. **Our cleanup for everything else.** The other ~18,000 frames exist
+   only as the raw JSC/ASU film scans, so this script turns those into
+   web photos. The raw scan of a frame NASA also released goes last in
+   the gallery.
+3. **Host both ourselves.** When the site moves to Cloudflare, copy
+   NASA's releases into R2 alongside our cleaned scans (a few hundred MB),
+   so the site doesn't depend on NASA's servers.
+4. **People check the automatic results.** Reviewers mark each cleaned
+   photo *Looks good*, or flag it *Brighter*, *Darker*, *More contrast*,
+   *Less contrast*, *Colour off* or *Bad crop*, with an optional note.
+   Save the marks as JSON (`{"AS12-46-6726": {"brightness": 1,
+   "contrast": 0, "colour": true, "crop": false, "note": "..."}}`) and
+   re-run with `--reviews marks.json`:
+   - brightness and contrast marks are applied automatically, about 5 L*
+     per step;
+   - colour and crop marks are written to `needs-hand-fix.tsv` in the
+     output folder for a fix by hand.
+
+   The pilot review page covers the 40 sample frames. On the real site
+   this becomes a reviewer mode backed by a Cloudflare D1 table, since
+   18,000 frames is too many for the pilot's store.
+
 ```sh
 python pipeline/process_photos.py --mission 11 --limit 30 --size med --work $MEDIA/scans --out $MEDIA/photos --preview $MEDIA/check-11.jpg
 ```

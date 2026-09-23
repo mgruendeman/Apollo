@@ -40,6 +40,7 @@ WEB_PX, THUMB_PX = 2048, 400
 SRGB_TO_XYZ = np.array([[0.4124, 0.3576, 0.1805], [0.2126, 0.7152, 0.0722], [0.0193, 0.1192, 0.9505]])
 D65 = np.array([0.95047, 1.0, 1.08883])
 MID_GAMMA, SHOULDER = 0.85, 0.12   # tone_curve
+BRIGHTNESS_STEP, CONTRAST_STEP = 0.85, 0.25   # a reviewer's nudge (tone_curve)
 MAX_TINT, KEEP_TINT = 45, 3        # film_tint, adjust_colour (L*a*b* units)
 
 
@@ -186,16 +187,23 @@ def film_tint(lab):
     return None
 
 
-def tone_curve(L):
+def tone_curve(L, brightness=0, contrast=0):
     """A small tone adjustment on L* (0-100), fitted to NASA's own processed
     versions of 37 frames: mid tones lifted a little (a 0.85 gamma), and
     the brightest tones eased down so sunlit soil and suits aren't glaring
-    (white ends up at about 88). Black stays black."""
-    x = (np.clip(L, 0, 100) / 100) ** MID_GAMMA * 100
+    (white ends up at about 88). Black stays black.
+
+    `brightness` and `contrast` are a reviewer's steps (-1, 0, +1; more
+    for a stronger nudge): one brightness step moves mid grey by about 5
+    L* units, one contrast step moves the quarter tones about 5 apart."""
+    x = (np.clip(L, 0, 100) / 100) ** (MID_GAMMA * BRIGHTNESS_STEP ** brightness) * 100
+    if contrast:
+        d = (x - 50) / 50
+        x = x + CONTRAST_STEP * contrast * (x - 50) * (1 - d * d)
     return x - SHOULDER * 100 * (x / 100) ** 3
 
 
-def adjust_colour(im, tint_strength, tone=True):
+def adjust_colour(im, tint_strength, tone=True, review=None):
     """Remove the film's tint, then apply tone_curve.
 
     The tint is taken out as a white balance: one gain per colour channel
@@ -220,11 +228,12 @@ def adjust_colour(im, tint_strength, tone=True):
     if not tone:
         return Image.fromarray(linear_to_srgb(lin))
     lab = linear_to_lab(lin)
-    lab[..., 0] = tone_curve(lab[..., 0])
+    review = review or {}
+    lab[..., 0] = tone_curve(lab[..., 0], review.get('brightness', 0), review.get('contrast', 0))
     return Image.fromarray(linear_to_srgb(lab_to_linear(lab)))
 
 
-def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True):
+def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True, review=None):
     src = download(scan_url(frame_id, fmt, size), work / size / f'{frame_id}.png')
     if not src:
         return None, 'download failed'
@@ -234,7 +243,7 @@ def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True):
     out.mkdir(parents=True, exist_ok=True)
     web = pic.copy()
     web.thumbnail((WEB_PX, WEB_PX), Image.LANCZOS)
-    web = adjust_colour(web, tint_strength, tone)
+    web = adjust_colour(web, tint_strength, tone, review)
     web.save(out / f'{frame_id}.jpg', quality=85, optimize=True, progressive=True)
     thumb = web.copy()
     thumb.thumbnail((THUMB_PX, THUMB_PX), Image.LANCZOS)
@@ -253,6 +262,8 @@ def main():
     ap.add_argument('--tint-strength', type=float, default=0.75,
                     help='how much of the film\'s age tint to remove (0 = off, 1 = all)')
     ap.add_argument('--no-tone-curve', action='store_true', help='skip the small tone adjustment')
+    ap.add_argument('--reviews', help='reviewers\' marks (see README): brighter/darker and contrast are applied, '
+                                      'colour and crop marks are listed for a hand fix')
     ap.add_argument('--preview', help='also write a contact sheet showing each crop box')
     args = ap.parse_args()
     work, out = Path(args.work).expanduser(), Path(args.out).expanduser()
@@ -267,8 +278,16 @@ def main():
         rows = rows[:args.limit]
 
     previews = []
+    reviews = json.loads(Path(args.reviews).expanduser().read_text()) if args.reviews else {}
+    if reviews and args.no_tone_curve:
+        print('note: --no-tone-curve also skips reviewers\' brighter/darker/contrast marks')
+    hand_fix = []
     for n, (fid, fmt) in enumerate(rows, 1):
-        result, status = process(fid, fmt, args.size, work, out, args.tint_strength, not args.no_tone_curve)
+        review = reviews.get(fid)
+        result, status = process(fid, fmt, args.size, work, out, args.tint_strength, not args.no_tone_curve, review)
+        if review and (review.get('colour') or review.get('crop')):
+            needs = [k for k in ('colour', 'crop') if review.get(k)]
+            hand_fix.append(f"{fid}\t{', '.join(needs)}\t{review.get('note', '')}")
         print(f'[{n}/{len(rows)}] {fid}: {status}', flush=True)
         if result and args.preview:
             im, box = result
@@ -277,6 +296,10 @@ def main():
                 ImageDraw.Draw(p).rectangle(box, outline=(255, 0, 0), width=max(3, im.size[0] // 150))
             p.thumbnail((300, 340))
             previews.append(p)
+    if hand_fix:
+        path = out / 'needs-hand-fix.tsv'
+        path.write_text('frame\tneeds\tnote\n' + '\n'.join(hand_fix) + '\n')
+        print(f'{len(hand_fix)} frames marked for a colour or crop fix by hand: {path}')
     if previews:
         cols = 6
         sheet = Image.new('RGB', (300 * cols, 340 * ((len(previews) + cols - 1) // cols)))
