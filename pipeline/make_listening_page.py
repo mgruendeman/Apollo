@@ -36,7 +36,9 @@ def background_db(path):
 
 def label(version):
     if version == 'original':
-        return 'Original', 'loudness evened out only'
+        return 'Original', 'NASA tape, loudness evened out only'
+    if version == 'journal':
+        return 'Journal clip', "apollojournals.org's version, loudness evened out only"
     m = re.match(r'clean(\d+)?$', version)
     db = m.group(1) if m else None
     if db is None:
@@ -57,14 +59,16 @@ def main():
     for f in sorted(folder.glob('*.m4a')):
         stem, version = f.name[:-4].rsplit('.', 1)
         samples.setdefault(stem, {})[version] = f
-    order = lambda v: (v != 'original', int(re.sub(r'\D', '', v) or 0))
+    # original first, then cleaned versions by strength, the journal's last
+    order = lambda v: (v == 'journal', v != 'original', int(re.sub(r'\D', '', v) or 0))
 
     data = []
     for stem, versions in samples.items():
         tape, _, start = stem.rpartition('_')
         mission = next((m for k, m in MISSION_TAPES.items() if tape.startswith(k)), '?')
         secs = int(start.rstrip('s')) if start.endswith('s') else 0
-        row = {'id': stem, 'mission': mission, 'tape': tape, 'at': f'{secs // 60}:{secs % 60:02d}', 'versions': []}
+        row = {'id': stem, 'mission': mission, 'tape': tape, 'at': f'{secs // 60}:{secs % 60:02d}', 'versions': [],
+               'note': '' if 'journal' in versions else 'No journal clip covers this moment.'}
         for v in sorted(versions, key=order):
             name, detail = label(v)
             src = (f'data:audio/mp4;base64,{base64.b64encode(versions[v].read_bytes()).decode()}'
@@ -110,6 +114,10 @@ h1 { font-size: 1.7rem; line-height: 1.2; margin: 0; text-wrap: balance; }
 .sample h2 { margin: 0; font-size: 1.05rem; }
 .tape { font: 600 .78rem/1 var(--mono); color: var(--muted); letter-spacing: .02em; }
 .versions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.versions.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 560px) { .versions.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.v.journal { border-style: dashed; }
+.note { margin: 0; font-size: .82rem; color: var(--muted); }
 .v { display: grid; gap: 2px; align-content: start; text-align: left; padding: 10px; min-width: 0; overflow-wrap: anywhere; border: 1px solid var(--rule); border-radius: 8px;
      background: var(--ground); color: var(--ink); font: inherit; cursor: pointer; }
 .v .name { font-weight: 700; display: flex; align-items: center; gap: 8px; }
@@ -137,7 +145,7 @@ h1 { font-size: 1.7rem; line-height: 1.2; margin: 0; text-wrap: balance; }
 <main>
   <div>
     <h1>Apollo Tape Ear Check</h1>
-    <p class="lede">Short samples from NASA's own mission tapes, each in its original form and cleaned up two ways. Pick the one that sounds best for listening to the missions.</p>
+    <p class="lede">Short samples from NASA's own mission tapes, each in its original form and cleaned up two ways, and where the Apollo Flight Journal has the same moment, its clip as a baseline. Pick the one that sounds best for listening to the missions.</p>
   </div>
   <p class="how"><b>How to compare:</b> press play, then tap between versions while it plays — it switches at the same moment in the recording, so you hear only the difference. Headphones help. "Background" is the level in the quiet moments between words: lower means less hiss. Cleaned with __ENGINE__.</p>
   <div id="samples"></div>
@@ -166,7 +174,8 @@ function render() {
     el.className = 'sample';
     el.setAttribute('aria-label', `Sample ${n + 1}`);
     el.innerHTML = `<header><h2>Apollo ${s.mission}</h2><span class="tape">tape ${s.tape} · from ${s.at}</span></header>
-      <div class="versions">${s.versions.map(v => `<button type="button" class="v" data-key="${v.key}"><span class="name">${v.name}</span><span class="detail">${v.detail}</span><span class="noise">background ${v.noise.toFixed(1)} dB</span></button>`).join('')}</div>
+      <div class="versions${s.versions.length === 4 ? ' four' : ''}">${s.versions.map(v => `<button type="button" class="v${v.key === 'journal' ? ' journal' : ''}" data-key="${v.key}"><span class="name">${v.name}</span><span class="detail">${v.detail}</span><span class="noise">background ${v.noise.toFixed(1)} dB</span></button>`).join('')}</div>
+      ${s.note ? `<p class="note">${s.note}</p>` : ''}
       <div class="transport"><button type="button" class="play" aria-label="Play">▶</button><input type="range" min="0" max="1" step="0.1" value="0" aria-label="Position"><span class="time">0:00 / 0:00</span></div>
       <div class="picks"><span>Best:</span>${s.versions.map(v => `<label class="pick"><input type="radio" name="pick-${s.id}" value="${v.key}" id="pick-${s.id}-${v.key}"><span>${v.name}</span></label>`).join('')}</div>
       <input class="notes" id="notes-${s.id}" placeholder="Notes (optional): e.g. voices sound watery, hiss still there" value="">`;
