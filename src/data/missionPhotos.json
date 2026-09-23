@@ -1051,10 +1051,52 @@
    "caption": "This view of Earth showing clouds over its surface was photographed from the Apollo 11 spacecraft during its translunar journey toward the moon."
   },
   {
+   "id": "s69-39525",
+   "date": "1969-07-16",
+   "kind": "launch",
+   "caption": "The huge, 363-feet tall Apollo 11 (Spacecraft 107/Lunar Module 5/Saturn 506) space vehicle is launched from Pad A, Launch Complex 39, Kennedy Space Center (KSC), at 9:32 a.m."
+  },
+  {
+   "id": "S69-39526",
+   "date": "1969-07-16",
+   "kind": "launch",
+   "caption": "The huge, 363-feet tall Apollo 11 (Spacecraft 107/Lunar Module 5/Saturn 506) space vehicle is launched from Pad A, Launch Complex 39 Kennedy Space Center (KSC), at 9:32 a.m."
+  },
+  {
+   "id": "S69-39527",
+   "date": "1969-07-16",
+   "kind": "launch",
+   "caption": "The huge, 363-feet tall Apollo 11 (Spacecraft 107/ Lunar Module 5/Saturn 506) space vehicle is launched from Pad A, Launch Complex 39, Kennedy Space Center (KSC), at 9:32 a.m."
+  },
+  {
+   "id": "S69-39529",
+   "date": "1969-07-16",
+   "kind": "launch",
+   "caption": "The huge, 363-feet tall Apollo 11 (Spacecraft 107/Lunar Module 5/Saturn 506) space vehicle is launched from Pad A, Launch Complex 39, Kennedy Space Center (KSC), at 9:32 a.m."
+  },
+  {
+   "id": "S69-39955",
+   "date": "1969-07-16",
+   "kind": "launch",
+   "caption": "The crew of the Apollo 11 lunar landing mission arrives atop Pad A, Launch Complex 39, Kennedy Space Center, during the Apollo 11 prelaunch countdown."
+  },
+  {
+   "id": "S69-39956",
+   "date": "1969-07-16",
+   "kind": "launch",
+   "caption": "The crewmen of the Apollo 11 lunar landing mission leave the Kennedy Space Center's (KSC) Manned Spacecraft Operations Building (MSOB) during the prelaunch countdown."
+  },
+  {
    "id": "S69-39957",
    "date": "1969-07-16",
    "kind": "launch",
    "caption": "A 70mm Airborne Lightweight Optical Tracking System (ALOTS) took this picture."
+  },
+  {
+   "id": "S69-39958",
+   "date": "1969-07-16",
+   "kind": "other",
+   "caption": "A 70mm Airborne Lightweight Optical Tracking System (ALOTS) camera, mounted in a pod on a cargo door of a U.S."
   },
   {
    "id": "S69-39959",
@@ -1069,10 +1111,22 @@
    "caption": "The huge, 363-feet tall Apollo 11 (Spacecraft 107/Lunar Module S/Saturn 506) space vehicle is launched from Pad A, Launch Complex 39, Kennedy Space Center (KSC), at 9:32 a.m."
   },
   {
+   "id": "S69-39962",
+   "date": "1969-07-16",
+   "kind": "launch",
+   "caption": "The huge, 363-feet tall Apollo 11 (Spacecraft 107/Lunar Module 5/Saturn 506) space vehicle is launched from Pad A, Launch Complex 39, Kennedy Space Center (KSC), at 9:32 a.m."
+  },
+  {
    "id": "as11-36-5355",
    "date": "1969-07-17",
    "kind": "earth",
    "caption": "Most of Africa and portions of Europe and Asia can be seen in this spectacular photograph taken from the Apollo 11 spacecraft during its trans-lunar coast toward the moon."
+  },
+  {
+   "id": "S69-39532",
+   "date": "1969-07-18",
+   "kind": "interior",
+   "caption": "The face of astronaut Edwin E. Aldrin Jr., lunar module pilot of Apollo 11 lunar landing mission, is seen in this color reproduction, taken from the third television transmission, from the Apollo 11 spacecraft during its trans-lunar journey toward the moon."
   },
   {
    "id": "as11-42-6179",
@@ -1285,16 +1339,64 @@
    "caption": "An Apollo 11 stereo view of a stone, about two and one-half inches long, embedded in the powdery lunar surface material."
   },
   {
+   "id": "S69-39562",
+   "date": "1969-07-20",
+   "kind": "surface",
+   "caption": "Astronauts Neil A. Armstrong (center), commander; and Edwin E."
+  },
+  {
+   "id": "S69-39563",
+   "date": "1969-07-20",
+   "kind": "surface",
+   "caption": "Astronauts Neil A. Armstrong (left), commander, and Edwin E."
+  },
+  {
    "id": "S69-39587",
    "date": "1969-07-20",
    "kind": "mission-control",
    "caption": "Dr. Garry Latham (left) with the Lamont Geological Observatory, studies seismometer tracings in the Mission Control Center's (MCC) ALSEP control room."
   },
   {
+   "id": "S69-39588",
+   "date": "1969-07-20",
+   "kind": "mission-control",
+   "caption": "Dr. Garry Latham, with the Lamont Geological Observatory, studies seismometer tracings in the Mission Control Center?s ASEP control room."
+  },
+  {
+   "id": "S69-39590",
+   "date": "1969-07-20",
+   "kind": "mission-control",
+   "caption": "Astronaut David R. Scott is seated at a console in the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC), Building 30, during the Apollo 11 lunar landing mission."
+  },
+  {
+   "id": "S69-39601",
+   "date": "1969-07-20",
+   "kind": "other",
+   "caption": "Spacecraft communicators are pictured as they keep in contact with the Apollo 11 astronauts during their lunar landing mission on July 20, 1969."
+  },
+  {
+   "id": "S69-39815",
+   "date": "1969-07-20",
+   "kind": "mission-control",
+   "caption": "Interior view of the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC) during the Apollo 11 lunar extravehicular activity (EVA)."
+  },
+  {
+   "id": "S69-39817",
+   "date": "1969-07-20",
+   "kind": "mission-control",
+   "caption": "Interior view of the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC), Building 30, during the Apollo 11 lunar extravehicular activity (EVA)."
+  },
+  {
    "id": "s69-42583",
    "date": "1969-07-20",
    "kind": "surface",
    "caption": "Astronaut Neil A. Armstrong, Apollo 11 commander, descends the ladder of the Apollo 11 Lunar Module (LM) prior to making the first step by man on another celestial body."
+  },
+  {
+   "id": "S69-44465",
+   "date": "1969-07-20",
+   "kind": "surface",
+   "caption": "These panoramic views of the lunar surface, photographed from the Apollo 11 Lunar Module (LM) as it rested on the lunar surface."
   },
   {
    "id": "as11-36-5365",
@@ -1333,6 +1435,18 @@
    "caption": "This outstanding view of the whole full moon was photographed from the Apollo 11 spacecraft during its trans-Earth journey homeward."
   },
   {
+   "id": "S69-39724",
+   "date": "1969-07-22",
+   "kind": "lunar-orbit",
+   "caption": "Astronaut Edwin E. Aldrin Jr., Apollo 11 lunar module pilot, performs for his Earth-bound television audience, in this color reproduction taken from a TV transmission, from the Apollo 11 spacecraft during its trans-Earth journey home from the moon."
+  },
+  {
+   "id": "S69-21365",
+   "date": "1969-07-24",
+   "kind": "recovery",
+   "caption": "United States President Richard M. Nixon was in the central Pacific recovery area to welcome the Apollo 11 astronauts aboard the USS Hornet, prime recovery ship for the historic Apollo 11 lunar landing mission."
+  },
+  {
    "id": "s69-21698",
    "date": "1969-07-24",
    "kind": "recovery",
@@ -1351,10 +1465,52 @@
    "caption": "The Apollo 11 Command Module (CM) is photographed as it is hoisted aboard the USS Hornet, prime recovery vessel for the historic Apollo 11 lunar landing mission."
   },
   {
+   "id": "s69-40022",
+   "date": "1969-07-24",
+   "kind": "mission-control",
+   "caption": "Overall view of the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC), Building 30, Manned Spacecraft Center (MSC), showing the flight controllers celebrating the successful conclusion of the Apollo 11 lunar landing mission."
+  },
+  {
+   "id": "S69-40023",
+   "date": "1969-07-24",
+   "kind": "mission-control",
+   "caption": "Overall view of the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC), Building 30, Manned Spacecraft Center (MSC), showing the flight controllers celebrating the successful conclusion of the Apollo 11 lunar landing mission."
+  },
+  {
+   "id": "s69-40024",
+   "date": "1969-07-24",
+   "kind": "mission-control",
+   "caption": "NASA and Manned Spacecraft Center (MSC) officials join in with the flight controllers, in the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC), in celebrating the successful conclusion of the Apollo 11 lunar landing mission."
+  },
+  {
+   "id": "S69-40025",
+   "date": "1969-07-24",
+   "kind": "mission-control",
+   "caption": "Overall view of the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC), Building 30, Manned Spacecraft Center (MSC), showing the flight controllers celebrating the successful conclusion of the Apollo 11 lunar landing mission."
+  },
+  {
    "id": "S69-40301",
    "date": "1969-07-24",
    "kind": "mission-control",
    "caption": "Overall view of the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC), Building 30, Manned Spacecraft Center (MSC), at the conclusion of the Apollo 11 lunar landing mission."
+  },
+  {
+   "id": "S69-40302",
+   "date": "1969-07-24",
+   "kind": "mission-control",
+   "caption": "A group of NASA and Manned Spacecraft Center (MSC) officials join in with the flight controllers in the Mission Operations Control Room (MOCR) in the Mission Control Center (MCC), Building 30, in celebrating the successful conclusion of the Apollo 11 lunar lan"
+  },
+  {
+   "id": "S69-40753",
+   "date": "1969-07-24",
+   "kind": "recovery",
+   "caption": "The Apollo 11 crewmen, wearing biological isolation garments, arrive aboard the USS Hornet during recovery operations in the central Pacific."
+  },
+  {
+   "id": "S69-40758",
+   "date": "1969-07-24",
+   "kind": "recovery",
+   "caption": "The Apollo 11 spacecraft Command Module (CM) and the Mobile Quarantine Facility (MQF) are photographed aboard the USS Hornet, prime recovery ship for the historic first lunar landing mission."
   },
   {
    "id": "as11-44-6548",
@@ -2861,6 +3017,12 @@
    "caption": "The Lunar Roving Vehicle (LRV) gets a speed workout by astronaut John W."
   },
   {
+   "id": "S72-40818",
+   "date": "1972-04-21",
+   "kind": "earth",
+   "caption": "A color enhancement of an ultra-violet photograph of the geocorona, a halo of low density hydrogen around Earth."
+  },
+  {
    "id": "S72-40820",
    "date": "1972-04-21",
    "kind": "earth",
@@ -3027,6 +3189,18 @@
    "date": "1972-04-23",
    "kind": "launch",
    "caption": "The Apollo 16 Lunar Module \"Orion\" ascent stage makes its liftoff from the lunar surface in this reproduction taken from a color television transmission made by the RCA color TV camera mounted on the Lunar Roving Vehicle (LRV)."
+  },
+  {
+   "id": "S72-35900",
+   "date": "1972-04-25",
+   "kind": "surface",
+   "caption": "Astronaut Thomas K. (Ken) Mattingly II, command module pilot of the Apollo 16 lunar landing mission, floats in space outside the spacecraft during his trans-Earth extravehicular activity (EVA), as seen in this reproduction taken from a color television transmi"
+  },
+  {
+   "id": "S72-35901",
+   "date": "1972-04-25",
+   "kind": "surface",
+   "caption": "Astronaut Thomas K. (Ken) Mattingly II, command module pilot of the Apollo 16 lunar landing mission, floats in space outside the spacecraft during his trans-Earth extravehicular activity (EVA), as seen in this reproduction taken from a color television transmi"
   },
   {
    "id": "S72-37001",
@@ -3371,6 +3545,12 @@
    "date": "1972-12-13",
    "kind": "surface",
    "caption": "The two moon-exploring Apollo 17 crewmen are seen standing near the deployed U.S."
+  },
+  {
+   "id": "S72-55420",
+   "date": "1972-12-13",
+   "kind": "surface",
+   "caption": "Astronauts Eugene A. Cernan (on left) and Harrison H."
   },
   {
    "id": "S73-22871",

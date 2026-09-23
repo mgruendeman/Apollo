@@ -4,7 +4,7 @@ import SpeakerAvatar from './SpeakerAvatar'
 import { PHASES } from '../data/phases'
 import { formatGet } from '../lib/liveStatus'
 import { effectiveOffsets, activeLineIndex } from '../lib/transcriptTiming'
-import { photosForMoment, nasaImageUrl } from '../lib/momentPhotos'
+import { useFrames, photosForMomentAll } from '../lib/archiveFrames'
 
 const PHOTO_SECONDS = 12
 
@@ -13,7 +13,7 @@ const PHOTO_SECONDS = 12
 function spokenText(text) {
   return text.replace(/\[[^\]]*\]?/g, '').replace(/\s+/g, ' ').trim()
 }
-const MAX_PHOTOS = 12
+const MAX_PHOTOS = 24
 
 function PhotoStage({ photos }) {
   const [index, setIndex] = useState(0)
@@ -72,18 +72,18 @@ export default function ImmersiveView({
   // slideshow keeps going across clip changes within the same stretch.
   const dayMs = 24 * 3600 * 1000
   const utcDay = Math.floor((Date.parse(mission.launchUtc) + clip.getSeconds * 1000) / dayMs)
-  const poolKey = `${phase}-${utcDay}-${highlightPhoto?.src || ''}`
+  const frames = useFrames(mission.id)
+  const poolKey = `${phase}-${utcDay}-${highlightPhoto?.src || ''}-${frames ? 'all' : 'nasa'}`
 
+  // NASA's captioned photos first, then the clearest film-roll scans.
   const photos = useMemo(() => {
     const utcMs = utcDay * dayMs + dayMs / 2
-    const matched = photosForMoment(mission.id, utcMs, phase)
-      .slice(0, MAX_PHOTOS)
-      .map((p) => ({
-        src: nasaImageUrl(p.id),
-        caption: p.caption,
-        credit: `NASA (${p.id.toUpperCase()})`,
-        sourceUrl: `https://images.nasa.gov/details/${p.id}`,
-      }))
+    const matched = photosForMomentAll(mission.id, frames || [], utcMs, phase, MAX_PHOTOS).map((p) => ({
+      src: p.full,
+      caption: p.caption,
+      credit: p.credit,
+      sourceUrl: p.sourceUrl,
+    }))
     if (!highlightPhoto) return matched
     return [{ ...highlightPhoto, src: `${import.meta.env.BASE_URL}${highlightPhoto.src}` }, ...matched]
     // eslint-disable-next-line react-hooks/exhaustive-deps

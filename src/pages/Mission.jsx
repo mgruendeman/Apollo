@@ -8,6 +8,8 @@ import MissionPhoto from '../components/MissionPhoto'
 import MissionOverview from '../components/MissionOverview'
 import ArchiveRecordings from '../components/ArchiveRecordings'
 import ImmersiveView from '../components/ImmersiveView'
+import MomentPhotos from '../components/MomentPhotos'
+import PhotoGallery from '../components/PhotoGallery'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
 import { findMission } from '../data/missions'
@@ -118,6 +120,7 @@ export default function Mission() {
         </header>
         <MissionOverview mission={mission} />
         {archive && <ArchiveRecordings mission={mission} archive={archive} />}
+        <PhotoGallery mission={mission} />
       </div>
     )
   }
@@ -212,6 +215,7 @@ export default function Mission() {
         </div>
         <AudioPlayer mission={mission} clips={clips} index={activeIndex} />
         <MissionPhoto photo={photosByClipId[moment.id]} />
+        <MomentPhotos mission={mission} clip={moment} phase={phase} />
         {activeLines.length > 0 ? (
           <TranscriptPanel
             key={`transcript-${moment.id}`}
@@ -278,6 +282,8 @@ export default function Mission() {
       />
 
       {archive && <ArchiveRecordings mission={mission} archive={archive} />}
+
+      <PhotoGallery mission={mission} />
 
       {immersive && (
         <ImmersiveView

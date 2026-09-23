@@ -1696,3 +1696,217 @@ a {
   color: var(--text-dim);
   padding: 0 10px 10px;
 }
+
+/* Photos: moment strip, mission gallery, lightbox */
+.moment-photos {
+  margin-top: 16px;
+}
+
+.moment-photos h3,
+.photo-gallery-intro {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.photo-gallery-intro {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.moment-photos-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+}
+
+.photo-thumb {
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.moment-photos-row .photo-thumb {
+  width: 88px;
+}
+
+.photo-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-thumb:hover,
+.photo-thumb:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.photo-gallery {
+  margin-top: 40px;
+}
+
+.photo-gallery h2 {
+  margin: 0 0 6px;
+}
+
+.photo-gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.photo-gallery-filters button {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-panel);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.photo-gallery-filters button span {
+  color: var(--text-dim);
+  margin-left: 4px;
+}
+
+.photo-gallery-filters button.is-active {
+  border-color: var(--accent);
+  background: var(--bg-panel-raised);
+}
+
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 6px;
+}
+
+.photo-gallery-more {
+  display: block;
+  margin: 16px auto 0;
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-panel);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.photo-gallery-more:hover {
+  border-color: var(--accent);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-figure {
+  position: relative;
+  margin: 0;
+  width: min(1000px, 100%);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.lightbox-image {
+  height: min(72vh, calc(100vh - 200px));
+  background: #000 center / contain no-repeat;
+}
+
+.lightbox-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lightbox-figure figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.lightbox-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.lightbox-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.8rem;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  border: none;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-close {
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+}
+
+.lightbox-nav {
+  top: 40%;
+  width: 40px;
+  height: 56px;
+}
+
+.lightbox-nav.is-prev {
+  left: 8px;
+}
+
+.lightbox-nav.is-next {
+  right: 8px;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: var(--accent);
+}

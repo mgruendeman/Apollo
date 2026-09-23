@@ -1,7 +1,7 @@
 import missionPhotos from '../data/missionPhotos.json'
 
 // Which kinds of NASA photo fit each phase of the flight.
-const KINDS_FOR_PHASE = {
+export const KINDS_FOR_PHASE = {
   launch: ['launch'],
   'earth-orbit': ['earth', 'launch', 'interior'],
   'transit-to-moon': ['earth', 'interior', 'other'],

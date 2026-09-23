@@ -74,8 +74,12 @@ def main():
         last_day = (launch + timedelta(seconds=duration)).date()
         n = int(mid)
         seen, photos = set(), []
-        for query in (f'AS{mid}', f'Apollo {n}'):
-            for page in range(1, 6):
+        queries = [f'AS{mid}', f'Apollo {n}', f'Apollo {n} lunar surface', f'Apollo {n} extravehicular activity',
+                   f'Apollo {n} lunar orbit', f'Apollo {n} Earth', f'Apollo {n} launch', f'Apollo {n} recovery',
+                   f'Apollo {n} Mission Control', f'Apollo {n} spacecraft', f'Apollo {n} astronaut', f'Apollo {n} crew',
+                   f'Apollo {n} television', f'Apollo {n} moon', f'Apollo {n} splashdown', f'Apollo {n} lunar module']
+        for query in queries:
+            for page in range(1, 40):
                 try:
                     coll = search(query, page)
                 except Exception:
