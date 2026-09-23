@@ -23384,175 +23384,175 @@
 "a08_0264634":[
 {
 "get":"026:46:34",
-"offsetSeconds":0,
+"offsetSeconds":0.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Over."
 },
 {
 "get":"026:46:39",
-"offsetSeconds":5,
+"offsetSeconds":6.3,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"026:46:41",
-"offsetSeconds":7,
+"offsetSeconds":7.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. I have a Flight Plan update for you sometime at your convenience."
 },
 {
 "get":"026:46:47",
-"offsetSeconds":13,
+"offsetSeconds":13.6,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Alright."
 },
 {
 "get":"026:47:50",
-"offsetSeconds":76,
+"offsetSeconds":76.5,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Ready to copy."
 },
 {
 "get":"026:47:53",
-"offsetSeconds":79,
+"offsetSeconds":79.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Were you calling? Over."
 },
 {
 "get":"026:47:56",
-"offsetSeconds":82,
+"offsetSeconds":82.4,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. Ready to copy."
 },
 {
 "get":"026:47:58",
-"offsetSeconds":84,
+"offsetSeconds":84.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Bill. This will be on page 2-22 of your Flight Plan. [Pause.] And for the Command Module Pilot - I've already mentioned it to him - but at the top of the page, at about 27:45, actually, we would like him to do a P52, an IMU alignment, and then the P23 should be done as scheduled. Those four stars, Procyon, Regulus, Alphard, and Spica: we realize Alphard may not be too good a star, Regulus is about 3\u00b0 above the horizon, and Spica is at a 48\u00b0 trunnion angle; so I guess what we are saying is if Jim has difficulty doing one set on each of those four stars, we suggest that he omit whichever o"
 },
 {
 "get":"026:49:09",
-"offsetSeconds":155,
+"offsetSeconds":154.1,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. Understand."
 },
 {
 "get":"026:49:10",
-"offsetSeconds":156,
+"offsetSeconds":155.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Alright. In the lower right hand corner of page 2-22, the Passive Thermal Control attitude should read \"pitch, 224\u00b0; yaw, 020\u00b0.\""
 },
 {
 "get":"026:49:29",
-"offsetSeconds":175,
+"offsetSeconds":174.7,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. Copy."
 },
 {
 "get":"026:49:31",
-"offsetSeconds":177,
+"offsetSeconds":176.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And on the next page, at about 29 hours, you can resume the normal Flight Plan. We would like to make one addition; at 29:30, add a waste water dump. Even though one is not really required at that time, we would like to get the dump out of the way so we can track you uninterruptedly without any dumping, you know, as we are coming up on midcourse correction number 3. Over. [Pause.]"
 },
 {
 "get":"026:50:03",
-"offsetSeconds":209,
+"offsetSeconds":209.3,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"026:50:06",
-"offsetSeconds":212,
+"offsetSeconds":211.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"That's about all, Bill. You got any questions on this?"
 },
 {
 "get":"026:50:11",
-"offsetSeconds":217,
+"offsetSeconds":213.3,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"No. It looks pretty good. We've been saving up some water of our own to dump here, so that will work out all right."
 },
 {
 "get":"026:50:18",
-"offsetSeconds":224,
+"offsetSeconds":220.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Very good. And don't ruin Jim's optics."
 },
 {
 "get":"026:50:24",
-"offsetSeconds":230,
+"offsetSeconds":222.1,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Right. [Long pause.]"
 },
 {
 "get":"026:50:48",
-"offsetSeconds":254,
+"offsetSeconds":251.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston."
 },
 {
 "get":"026:50:51",
-"offsetSeconds":257,
+"offsetSeconds":254.5,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Go."
 },
 {
 "get":"026:50:52",
-"offsetSeconds":258,
+"offsetSeconds":255.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. We'd like P00 and Accept, please. We'd like to send you up a P27. It's a LM state vector, going to the LM slot only, and we do not want you to transfer it over to the CSM. [Long pause.]"
 },
 {
 "get":"026:51:24",
-"offsetSeconds":290,
+"offsetSeconds":285.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8. Houston. Did you copy?"
 },
 {
 "get":"026:51:28",
-"offsetSeconds":294,
+"offsetSeconds":289.5,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. You got it. [Pause.]"
 },
 {
 "get":"026:51:34",
-"offsetSeconds":300,
+"offsetSeconds":295.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. We got it. We're sending you a LM state vector, and we would like you not to transfer that vector over to the CSM slot."
 },
 {
 "get":"026:51:40",
-"offsetSeconds":306,
+"offsetSeconds":305.1,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"026:51:42",
-"offsetSeconds":308,
+"offsetSeconds":307.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Thank you."
@@ -23561,14 +23561,14 @@
 "a08_0265100-pao":[
 {
 "get":"026:50:24",
-"offsetSeconds":0,
+"offsetSeconds":0.6,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"And this is Apollo Control, Houston at 26 hours, 51 minutes into the flight. We're a hundred - I'll have to estimate, based on the wall map, 112,000 [nautical] miles [207,400 km] out. And we've had this brief conversation in the last few minutes."
 },
 {
 "get":"026:51:24",
-"offsetSeconds":24,
+"offsetSeconds":24.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8. Houston. Did you copy?"
@@ -23577,42 +23577,42 @@
 "a08_0265536":[
 {
 "get":"026:55:36",
-"offsetSeconds":0,
+"offsetSeconds":1.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston."
 },
 {
 "get":"026:55:40",
-"offsetSeconds":4,
+"offsetSeconds":5.4,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Apollo 8. Roger. Are you still planning an MCC-2 at 28 hours? Over."
 },
 {
 "get":"026:55:48",
-"offsetSeconds":12,
+"offsetSeconds":13.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Stand by one, Bill. [Pause.] Bill, negative. No, that midcourse correction number 2 has been cancelled. It's magnitude was less than 1 foot per second, so we decided not to do it. Over."
 },
 {
 "get":"026:56:12",
-"offsetSeconds":36,
+"offsetSeconds":37.3,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Okay. Thank you."
 },
 {
 "get":"026:56:14",
-"offsetSeconds":38,
+"offsetSeconds":39.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And you've got the computer again, if you go to Block."
 },
 {
 "get":"026:56:22",
-"offsetSeconds":46,
+"offsetSeconds":47.4,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -23621,7 +23621,7 @@
 "a08_0265700-pao":[
 {
 "get":"026:56:22",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"And this is Apollo Control again, 109,900 - well let's make it 110,000 even - [nautical] miles [203,700 km] out. Our velocity; 5,028 feet per second [1,533 m/s]. Our spacecraft weight now is down to 63,000 pounds, 63,023 pounds [28,587 kilograms]. I think in the course of that conversation, you heard that we see no further need for any more midcourse corrections between now and their journey to the Moon. At 26 hours, 57 minutes; that's our status."
@@ -23630,42 +23630,42 @@
 "a08_0265829":[
 {
 "get":"026:58:29",
-"offsetSeconds":0,
+"offsetSeconds":1.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 8."
 },
 {
 "get":"026:58:32",
-"offsetSeconds":3,
+"offsetSeconds":4.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Go ahead."
 },
 {
 "get":"026:58:36",
-"offsetSeconds":7,
+"offsetSeconds":8.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Are you still computing the pericynthion time of 69:10?"
 },
 {
 "get":"026:58:45",
-"offsetSeconds":16,
+"offsetSeconds":17.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Stand by. We will get an update for you."
 },
 {
 "get":"026:58:48",
-"offsetSeconds":19,
+"offsetSeconds":20.2,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"026:59:40",
-"offsetSeconds":71,
+"offsetSeconds":72.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Your 69:10 pericynthion is still good plus or minus a minute, and we'll get it down to a fine map measurement [garble]."
@@ -23674,42 +23674,42 @@
 "a08_0272608":[
 {
 "get":"027:26:08",
-"offsetSeconds":0,
+"offsetSeconds":0.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston."
 },
 {
 "get":"027:26:15",
-"offsetSeconds":7,
+"offsetSeconds":7.9,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. This is Apollo 8."
 },
 {
 "get":"027:26:17",
-"offsetSeconds":9,
+"offsetSeconds":9.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Bill. We just got your read-out on your voice tape, and we will be back with you shortly on it. Over."
 },
 {
 "get":"027:26:27",
-"offsetSeconds":19,
+"offsetSeconds":19.1,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"027:26:28",
-"offsetSeconds":20,
+"offsetSeconds":20.1,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Houston, I'm going to be doing my alignment at this time. I'm in a good position for viewing the stars. [Pause.]"
 },
 {
 "get":"027:26:39",
-"offsetSeconds":31,
+"offsetSeconds":31.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger, Apollo 8."
@@ -23718,56 +23718,56 @@
 "a08_0281813":[
 {
 "get":"028:18:13",
-"offsetSeconds":0,
+"offsetSeconds":0.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston with a voice check. Over."
 },
 {
 "get":"028:18:19",
-"offsetSeconds":6,
+"offsetSeconds":6.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 8. Reading you loud and clear now. How us?"
 },
 {
 "get":"028:18:22",
-"offsetSeconds":9,
+"offsetSeconds":9.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Oh, good. Reading you loud and clear. One, two, three, four, five, five, four, three, two, one. Am I cutting in and out still? Over."
 },
 {
 "get":"028:18:31",
-"offsetSeconds":18,
+"offsetSeconds":18.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Nope. All the numbers are coming up nicely."
 },
 {
 "get":"028:18:34",
-"offsetSeconds":21,
+"offsetSeconds":21.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Thank you, Jim. [Long pause.]"
 },
 {
 "get":"028:19:27",
-"offsetSeconds":74,
+"offsetSeconds":74.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We're going to switch antennas at 28:20. Stand by for a blitz."
 },
 {
 "get":"028:19:36",
-"offsetSeconds":83,
+"offsetSeconds":83.1,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger, Houston. And we have stopped Passive Thermal Control and we're maneuvering to P23."
 },
 {
 "get":"028:19:42",
-"offsetSeconds":89,
+"offsetSeconds":89.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Understand; maneuvering to P23; I understand."
@@ -23776,42 +23776,42 @@
 "a08_0282331":[
 {
 "get":"028:23:31",
-"offsetSeconds":0,
+"offsetSeconds":1.8,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Houston. Apollo 8."
 },
 {
 "get":"028:23:34",
-"offsetSeconds":3,
+"offsetSeconds":4.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Go."
 },
 {
 "get":"028:23:38",
-"offsetSeconds":7,
+"offsetSeconds":8.8,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. You copying high bit rate now for this P23?"
 },
 {
 "get":"028:23:43",
-"offsetSeconds":12,
+"offsetSeconds":13.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Negative, Bill. We're getting low bit rate now."
 },
 {
 "get":"028:23:48",
-"offsetSeconds":17,
+"offsetSeconds":18.6,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"If you go high bit rate, we won't bother recording it."
 },
 {
 "get":"028:23:52",
-"offsetSeconds":21,
+"offsetSeconds":22.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. We just went to high bit rate."
@@ -23820,21 +23820,21 @@
 "a08_0282900-pao":[
 {
 "get":"028:23:52",
-"offsetSeconds":0,
+"offsetSeconds":1.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control, Houston; 28 hours, 29 minutes into the flight. I want to clear up a velocity reading. Apparently I gave a reading earlier which either was in error, or I read it wrong. Our present feet per second is 4,875 [1,486 m/s]. I say again 4, 8, 7, 5; and our altitude is 114,000 nautical miles [211,000 km]. Within the last hour in a private conversation we've learned that there is some - a little nausea aboard. Frank Borman reported an upset stomach, but Chuck Berry tells me it's getting better. That's all we know about it right now. Here's some taped conversation just recorded."
 },
 {
 "get":"028:23:52",
-"offsetSeconds":0,
+"offsetSeconds":1.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control again. I say again on the nausea, Frank Borman reported an upset stomach. He has taken some medication, and he is apparently feeling better, he so reported to Dr. Berry. And Bill Anders reported he wasn't feeling his best. We don't know whether it is some sort of virus or just what, but I'm sure Chuck Berry will have more for us at the change-of-shift briefing today. I say again the situation was reported to us within the last hour in a private voice tape down, that Frank Borman was reporting some stomach upset and not feeling particularly well. From strictly a layman's "
 },
 {
 "get":"028:23:52",
-"offsetSeconds":0,
+"offsetSeconds":1.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"And this is Apollo Control, Houston; at 28 hours, 55 minutes into the flight. Apparently our earlier report regarding velocity is still causing a great deal of consternation in the Press room, so we will go through it one more time. Through error either on our part or on the part of a chart, we apparently reported a discrepancy in the velocity. We want to correct that error. The present velocity we read on our Space Digitals Chart is 4,833.3 feet per second [1,473.2 m/s], and it is getting smaller as is proper. It will continue to get smaller until the spacecraft reaches the lunar sphere of in"
@@ -23843,49 +23843,49 @@
 "a08_0290339":[
 {
 "get":"029:03:39",
-"offsetSeconds":0,
+"offsetSeconds":2.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 8."
 },
 {
 "get":"029:03:44",
-"offsetSeconds":5,
+"offsetSeconds":7.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Over. [No answer.]"
 },
 {
 "get":"029:03:51",
-"offsetSeconds":12,
+"offsetSeconds":14.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over."
 },
 {
 "get":"029:03:55",
-"offsetSeconds":16,
+"offsetSeconds":18.5,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Roger. Cislunar Nav accomplished. We did two sets on star 16 [Procyon], two sets on 22 [Regulus], and one set on 21 [Alphard]."
 },
 {
 "get":"029:04:07",
-"offsetSeconds":28,
+"offsetSeconds":30.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Understand P23 completed, two sets on 16, two on 22, and one on 21."
 },
 {
 "get":"029:04:15",
-"offsetSeconds":36,
+"offsetSeconds":38.7,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Roger. It was getting a little late, so we didn't want to start on 26 [Spica]."
 },
 {
 "get":"029:04:19",
-"offsetSeconds":40,
+"offsetSeconds":42.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Understand, Jim."
@@ -23894,84 +23894,84 @@
 "a08_0290718":[
 {
 "get":"029:07:18",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 8."
 },
 {
 "get":"029:07:22",
-"offsetSeconds":4,
+"offsetSeconds":1.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Go ahead."
 },
 {
 "get":"029:07:26",
-"offsetSeconds":8,
+"offsetSeconds":5.5,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Is our previous PTC attitude okay for the next session?"
 },
 {
 "get":"029:07:32",
-"offsetSeconds":14,
+"offsetSeconds":12.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger, Bill. The one that we updated an hour or so ago, i.e., pitch, 224; yaw, 020, is a good one."
 },
 {
 "get":"029:07:43",
-"offsetSeconds":25,
+"offsetSeconds":24.7,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"224, 20. Roger."
 },
 {
 "get":"029:07:46",
-"offsetSeconds":28,
+"offsetSeconds":27.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. [Pause.]"
 },
 {
 "get":"029:07:52",
-"offsetSeconds":34,
+"offsetSeconds":35.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We'll be changing antennas in about 2 minutes. You can expect a glitch in your comm."
 },
 {
 "get":"029:08:02",
-"offsetSeconds":44,
+"offsetSeconds":44.4,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"029:08:03",
-"offsetSeconds":45,
+"offsetSeconds":44.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"029:08:04",
-"offsetSeconds":46,
+"offsetSeconds":47.0,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"How are all of the systems looking down there, Houston? [Long pause.]"
 },
 {
 "get":"029:08:19",
-"offsetSeconds":61,
+"offsetSeconds":62.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. You're looking good here in all respects."
 },
 {
 "get":"029:08:24",
-"offsetSeconds":66,
+"offsetSeconds":66.7,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -24003,28 +24003,28 @@
 "a08_0291800-pao":[
 {
 "get":"029:08:24",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control, Houston; 29 hours, 18 minutes into the flight. Our velocity; 4,797 feet per second [1,462 m/s]. Our distance; 116,658 nautical miles [216,050 km]. And in recent minutes, we have recorded this conversation, and we have every reason to believe it'll be a continuing conversation, because we've just heard additional calls. Let's have the tape."
 },
 {
 "get":"029:18:01",
-"offsetSeconds":1,
+"offsetSeconds":1.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over. [No answer.]"
 },
 {
 "get":"029:18:14",
-"offsetSeconds":14,
+"offsetSeconds":14.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over. [No answer.]"
 },
 {
 "get":"029:18:14",
-"offsetSeconds":14,
+"offsetSeconds":14.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control. We're looking presently at the biomed read-out on Bill Anders, and it looks like this: A mean heartrate of, around, between 68 and 69. And the highest the system has seen, in this sample period of roughly an hour, is about 88; the lowest it's seen is 51. His mean respiration rate is 10, and, let's see, that's all the data we have on that chart. No additional conversation since we gave you those readings. And at 29 hours, 21 minutes; this is Apollo Control, Houston."
@@ -24033,7 +24033,7 @@
 "a08_0293000-pao":[
 {
 "get":"029:23:40",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control, Houston. Within the last half-hour, several members of the crew here have had another conversation with the Apollo 8, in private, regarding their medical situation and apparently it is much improved. We - we will have this tape for you shortly, but in general, Borman reports feeling much, much better. We'd estimate it'll be 15 minutes before we have the tape. This is Apollo Control, Houston."
@@ -24042,42 +24042,42 @@
 "a08_0293210":[
 {
 "get":"029:32:10",
-"offsetSeconds":0,
+"offsetSeconds":2.2,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 8."
 },
 {
 "get":"029:32:12",
-"offsetSeconds":2,
+"offsetSeconds":4.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Apollo 8, Houston. Go ahead."
 },
 {
 "get":"029:32:17",
-"offsetSeconds":7,
+"offsetSeconds":9.2,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger. We're dumping some water we collected here, and we're ready to dump the waste water down to 25 percent. Do you concur?"
 },
 {
 "get":"029:32:23",
-"offsetSeconds":13,
+"offsetSeconds":14.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. We concur. We're standing by for your dump."
 },
 {
 "get":"029:32:29",
-"offsetSeconds":19,
+"offsetSeconds":20.0,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Alright. We've already started the other."
 },
 {
 "get":"029:32:31",
-"offsetSeconds":21,
+"offsetSeconds":22.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Thank you."
@@ -24086,42 +24086,42 @@
 "a08_0293640":[
 {
 "get":"029:36:40",
-"offsetSeconds":0,
+"offsetSeconds":99.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. [No answer.]"
 },
 {
 "get":"029:36:47",
-"offsetSeconds":7,
+"offsetSeconds":106.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over. [No answer.]"
 },
 {
 "get":"029:38:21",
-"offsetSeconds":101,
+"offsetSeconds":114.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over."
 },
 {
 "get":"029:38:26",
-"offsetSeconds":106,
+"offsetSeconds":114.6,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger. This is Apollo 8."
 },
 {
 "get":"029:38:28",
-"offsetSeconds":108,
+"offsetSeconds":114.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. We're getting geared up down here to do the first of the comm checks. We will be doing an Omni comm check, which is on your Flight Plan, listed mode 7.8, and we'll let you know when we are ready to proceed."
 },
 {
 "get":"029:38:50",
-"offsetSeconds":130,
+"offsetSeconds":136.7,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger."
@@ -24130,140 +24130,140 @@
 "a08_0294001":[
 {
 "get":"029:40:01",
-"offsetSeconds":0,
+"offsetSeconds":1.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Over."
 },
 {
 "get":"029:40:05",
-"offsetSeconds":4,
+"offsetSeconds":5.2,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger, Houston. We're dumping waste water now. How do the nozzle temps look?"
 },
 {
 "get":"029:40:11",
-"offsetSeconds":10,
+"offsetSeconds":11.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Stand by. Looks good, Bill; 64 degrees [18\u00b0 Celsius]. Over."
 },
 {
 "get":"029:40:24",
-"offsetSeconds":23,
+"offsetSeconds":24.3,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. We just got an O 2 flow high from purging to vent line on the cabin."
 },
 {
 "get":"029:40:32",
-"offsetSeconds":31,
+"offsetSeconds":32.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Understand. [Long pause.]"
 },
 {
 "get":"029:40:47",
-"offsetSeconds":46,
+"offsetSeconds":47.4,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"How is everything in Houston."
 },
 {
 "get":"029:40:51",
-"offsetSeconds":50,
+"offsetSeconds":50.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Oh, just fine, Frank. Everything down here is Go. How are you?"
 },
 {
 "get":"029:40:56",
-"offsetSeconds":55,
+"offsetSeconds":55.1,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Fine. What's the news?"
 },
 {
 "get":"029:41:01",
-"offsetSeconds":60,
+"offsetSeconds":60.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Well, did you get the intergalactic news summary we sent up to you a couple of hours ago? It might have been during your rest period. We gave you a couple of football scores. One of them in particular was - I don't know if you copied that - Army 21, Navy 14. Over."
 },
 {
 "get":"029:41:21",
-"offsetSeconds":80,
+"offsetSeconds":79.2,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"One, two, three, four, five, six, seven; testing out."
 },
 {
 "get":"029:41:24",
-"offsetSeconds":83,
+"offsetSeconds":86.6,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"I got that one. [Pause.]"
 },
 {
 "get":"029:41:30",
-"offsetSeconds":89,
+"offsetSeconds":88.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Rog. The Cowboys were destroyed by the Cleveland Browns yesterday. The Pueblo crew is expected to be released. And I now hear our air-to-ground has got a lot of background noise. Stand by; we are going to go through these comm test modes on page 2-23 of the Flight Plan. Over."
 },
 {
 "get":"029:41:57",
-"offsetSeconds":116,
+"offsetSeconds":116.0,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger. [Pause.]"
 },
 {
 "get":"029:42:03",
-"offsetSeconds":122,
+"offsetSeconds":122.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Would you go S-band Aux switch to Down-Voice Backup. Over."
 },
 {
 "get":"029:42:11",
-"offsetSeconds":130,
+"offsetSeconds":130.3,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Down-Voice Backup. Roger and out."
 },
 {
 "get":"029:42:13",
-"offsetSeconds":132,
+"offsetSeconds":132.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Thank you."
 },
 {
 "get":"029:42:17",
-"offsetSeconds":136,
+"offsetSeconds":136.4,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Houston, be advised that it looks like your Quindars are clipping your voice during your transmission."
 },
 {
 "get":"029:42:25",
-"offsetSeconds":144,
+"offsetSeconds":144.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger, Understand. Are we still experiencing this intermittent condition that was there a few minutes ago?"
 },
 {
 "get":"029:42:33",
-"offsetSeconds":152,
+"offsetSeconds":153.4,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Not always, but often in the beginning and in the end or your transmission."
 },
 {
 "get":"029:42:39",
-"offsetSeconds":158,
+"offsetSeconds":157.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Understand. I'll give it a little extra time."
@@ -24272,112 +24272,112 @@
 "a08_0294544":[
 {
 "get":"029:45:44",
-"offsetSeconds":0,
+"offsetSeconds":3.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Go. [Pause.]"
 },
 {
 "get":"029:45:52",
-"offsetSeconds":8,
+"offsetSeconds":11.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Over. [No answer.]"
 },
 {
 "get":"029:46:01",
-"offsetSeconds":17,
+"offsetSeconds":20.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Could you try to find us a better Omni antenna? Over."
 },
 {
 "get":"029:46:10",
-"offsetSeconds":26,
+"offsetSeconds":29.6,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"[Garble. Pause.]"
 },
 {
 "get":"029:46:22",
-"offsetSeconds":38,
+"offsetSeconds":41.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We're not able to read you on this Omni antenna. Over. [Long pause.]"
 },
 {
 "get":"029:46:54",
-"offsetSeconds":70,
+"offsetSeconds":73.6,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 8. [Garble.]"
 },
 {
 "get":"029:47:07",
-"offsetSeconds":83,
+"offsetSeconds":86.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over. [No answer.]"
 },
 {
 "get":"029:47:47",
-"offsetSeconds":123,
+"offsetSeconds":126.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We understand you're copying us. While we are trying to reestablish contact with you, would you put your optics switch to zero? We show you're drifting off in trunnion and request that you zero your optics. [Pause.]"
 },
 {
 "get":"029:48:26",
-"offsetSeconds":162,
+"offsetSeconds":165.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We copy your optics zeroed, and how are you reading us now? Over. [No answer.]"
 },
 {
 "get":"029:49:37",
-"offsetSeconds":233,
+"offsetSeconds":236.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We're down to 25 percent on your waste water dump and ready to terminate. Over."
 },
 {
 "get":"029:49:45",
-"offsetSeconds":241,
+"offsetSeconds":244.4,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"029:51:01",
-"offsetSeconds":317,
+"offsetSeconds":319.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over."
 },
 {
 "get":"029:51:06",
-"offsetSeconds":322,
+"offsetSeconds":324.6,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Go ahead, Houston. Apollo 8."
 },
 {
 "get":"029:51:08",
-"offsetSeconds":324,
+"offsetSeconds":326.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger, Our next comm test is a ranging only test. I have four switches I'd like you to throw, which will cause you to lose voice communications for approximately 3 minutes. Over."
 },
 {
 "get":"029:51:23",
-"offsetSeconds":339,
+"offsetSeconds":341.3,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger. Go ahead."
 },
 {
 "get":"029:51:26",
-"offsetSeconds":342,
+"offsetSeconds":344.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Alright. The first one is S-band Normal, Mode, Voice, Off; the second, S-band Normal, Mode, PCM, Off; the third, S-band Normal, Mode, Ranging, switch to Ranging; and fourth, the S-band Aux tape switch, Off. Over."
@@ -24386,28 +24386,28 @@
 "a08_0294700-pao":[
 {
 "get":"029:47:07",
-"offsetSeconds":7,
+"offsetSeconds":1.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over. [No answer.]"
 },
 {
 "get":"029:47:07",
-"offsetSeconds":7,
+"offsetSeconds":1.4,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control, Houston; 29 hours, 47 minutes. I'd like to amplify a bit more on this most recent taped conversation. Mike Collins opens it and this was a private conversation conducted from the communication room in this building, building 30. Collins asked the crew for additional detail on their condition and Frank Borman comes on the line and he describes his problems and he also says he's had several hours of rest this morning and is feeling much, much better. Jim Lovell, in the conversation, also reveals, for the first time, that he apparently wasn't feeling too well when they fir"
 },
 {
 "get":"029:47:47",
-"offsetSeconds":47,
+"offsetSeconds":41.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We understand you're copying us. While we are trying to reestablish contact with you, would you put your optics switch to zero? We show you're drifting off in trunnion and request that you zero your optics. [Pause.]"
 },
 {
 "get":"029:48:26",
-"offsetSeconds":86,
+"offsetSeconds":80.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We copy your optics zeroed, and how are you reading us now? Over. [No answer.]"
@@ -24416,14 +24416,14 @@
 "a08_0295548":[
 {
 "get":"029:55:48",
-"offsetSeconds":0,
+"offsetSeconds":1.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Request S-band Normal, Mode Ranging to Off, and S-band Normal, Mode, PCM, to PCM. I say again, S-band Normal, Mode, Ranging, Off; S-band Normal, Mode, PCM, to PCM."
 },
 {
 "get":"029:56:17",
-"offsetSeconds":29,
+"offsetSeconds":29.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8. Houston. We'll stand by in this configuration for a moment."
@@ -24553,105 +24553,105 @@
 "a08_0295830":[
 {
 "get":"029:58:30",
-"offsetSeconds":0,
+"offsetSeconds":2.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Three communication switch positions. First, S-band, Aux, Tape, to Down-Voice Backup; S-band Normal, Mode, PCM, Off; Telemetry Inputs PCM, High. I say again, S-band, Aux, Tape, to Down-Voice Backup; S-band Normal, Mode, PCM to Off; Telemetry Inputs PCM to High."
 },
 {
 "get":"029:59:05",
-"offsetSeconds":35,
+"offsetSeconds":36.6,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. Houston, this is Apollo 8. How do you read?"
 },
 {
 "get":"029:59:08",
-"offsetSeconds":38,
+"offsetSeconds":39.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Reading you weak but clear now, Bill."
 },
 {
 "get":"029:59:14",
-"offsetSeconds":44,
+"offsetSeconds":45.3,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Roger. We still have a bad look angle on this antenna. [Pause.]"
 },
 {
 "get":"029:59:28",
-"offsetSeconds":58,
+"offsetSeconds":58.9,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston."
 },
 {
 "get":"029:59:30",
-"offsetSeconds":60,
+"offsetSeconds":60.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Go ahead."
 },
 {
 "get":"029:59:34",
-"offsetSeconds":64,
+"offsetSeconds":64.8,
 "speaker":"Lovell",
 "channel":"air-to-ground",
 "text":"Please be informed that the [garble]. Over."
 },
 {
 "get":"029:59:41",
-"offsetSeconds":71,
+"offsetSeconds":71.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8. Houston. Unable to copy. After about a minute of this configuration, we're going to return to normal voice, and at that time, we should be able to hear you better."
 },
 {
 "get":"029:59:58",
-"offsetSeconds":88,
+"offsetSeconds":88.8,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger. What [garble] are we going through right now? [Long pause.]"
 },
 {
 "get":"030:00:17",
-"offsetSeconds":107,
+"offsetSeconds":107.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. We are in Mode 7-10, and the comm test mode's on page 223. Over. [Long pause.]"
 },
 {
 "get":"030:00:41",
-"offsetSeconds":131,
+"offsetSeconds":150.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Three switch positions. Telemetry Inputs PCM switch to Low; S-band Normal, Mode, Voice, to Voice; S-band Normal, Mode, PCM, to PCM. I say again, Telemetry Inputs PCM switch, Low; S-band Normal, Mode, Voice, to Voice; S-band Normal, Mode, PCM, to PCM. Over."
 },
 {
 "get":"030:01:33",
-"offsetSeconds":183,
+"offsetSeconds":194.3,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Roger. We're switching over to backup now."
 },
 {
 "get":"030:01:35",
-"offsetSeconds":185,
+"offsetSeconds":196.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Reading you very weak. [Pause.]"
 },
 {
 "get":"030:01:46",
-"offsetSeconds":196,
+"offsetSeconds":205.2,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"We're reading you loud and clear, Houston. [Long pause.]"
 },
 {
 "get":"030:02:41",
-"offsetSeconds":251,
+"offsetSeconds":251.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Requesting S-band Normal, Mode, Ranging, to Ranging. I say again, S-band Normal, Mode, Ranging to Range. Over."
@@ -24660,133 +24660,133 @@
 "a08_0300450":[
 {
 "get":"030:04:50",
-"offsetSeconds":0,
+"offsetSeconds":0.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Requesting S-band Normal, Mode, Ranging to Ranging. Over. [Pause.]"
 },
 {
 "get":"030:05:04",
-"offsetSeconds":14,
+"offsetSeconds":15.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Over. [Long pause.]"
 },
 {
 "get":"030:05:17",
-"offsetSeconds":27,
+"offsetSeconds":28.9,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Houston, Houston, Apollo 8. How do you read?"
 },
 {
 "get":"030:05:20",
-"offsetSeconds":30,
+"offsetSeconds":32.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Beautiful, Frank. I'm reading you loud and clear. How me? [Long pause.]"
 },
 {
 "get":"030:05:39",
-"offsetSeconds":49,
+"offsetSeconds":50.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. How do you read? Over. [No answer.]"
 },
 {
 "get":"030:06:06",
-"offsetSeconds":76,
+"offsetSeconds":77.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8. this is Houston. Over. [No answer.]"
 },
 {
 "get":"030:06:49",
-"offsetSeconds":119,
+"offsetSeconds":120.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, this is Houston. Over."
 },
 {
 "get":"030:06:53",
-"offsetSeconds":123,
+"offsetSeconds":124.7,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Go ahead, Houston. Apollo 8."
 },
 {
 "get":"030:06:56",
-"offsetSeconds":126,
+"offsetSeconds":127.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Reading you loud and clear. How me?"
 },
 {
 "get":"030:07:00",
-"offsetSeconds":130,
+"offsetSeconds":131.7,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"You're loud and clear, Michael."
 },
 {
 "get":"030:07:02",
-"offsetSeconds":132,
+"offsetSeconds":132.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. We're still looking for the S-band, Normal, Mode, Ranging to Ranging."
 },
 {
 "get":"030:07:12",
-"offsetSeconds":142,
+"offsetSeconds":142.7,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"I guess we didn't hear that one. Going to Ranging."
 },
 {
 "get":"030:07:14",
-"offsetSeconds":144,
+"offsetSeconds":145.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"030:07:16",
-"offsetSeconds":146,
+"offsetSeconds":148.1,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"It's in Ranging now."
 },
 {
 "get":"030:07:18",
-"offsetSeconds":148,
+"offsetSeconds":149.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Thank you. [Long pause.]"
 },
 {
 "get":"030:07:39",
-"offsetSeconds":169,
+"offsetSeconds":171.1,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"And Houston, Apollo 8. What size antenna are you going through now?"
 },
 {
 "get":"030:07:54",
-"offsetSeconds":184,
+"offsetSeconds":186.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We're working through Ascension, a 30-footer. Over."
 },
 {
 "get":"030:08:03",
-"offsetSeconds":193,
+"offsetSeconds":195.1,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Okay. 'Cause we - our signal strength is - or our AGC is pretty low up here."
 },
 {
 "get":"030:08:08",
-"offsetSeconds":198,
+"offsetSeconds":200.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Understand."
@@ -24795,63 +24795,63 @@
 "a08_0300932":[
 {
 "get":"030:09:32",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Requesting S-band Aux, Tape to Off. This should put us back in the normal configuration. Over. [Long pause.]"
 },
 {
 "get":"030:10:32",
-"offsetSeconds":60,
+"offsetSeconds":59.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. Over."
 },
 {
 "get":"030:10:38",
-"offsetSeconds":66,
+"offsetSeconds":65.9,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Go ahead, Houston. Apollo 8."
 },
 {
 "get":"030:10:39",
-"offsetSeconds":67,
+"offsetSeconds":66.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. S-band Aux, Tape to Off. That returns us to normal configuration, and we need a couple of items from you. First, the CMP and LMP status report, including PRD readings on all three crew members, and we'd like to know, did you chlorinate the water after your last meal? Over."
 },
 {
 "get":"030:11:10",
-"offsetSeconds":98,
+"offsetSeconds":97.4,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"No, we haven't chlorinated the water, yet. We'll get the other for you."
 },
 {
 "get":"030:11:13",
-"offsetSeconds":101,
+"offsetSeconds":100.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Thank you."
 },
 {
 "get":"030:11:14",
-"offsetSeconds":102,
+"offsetSeconds":101.7,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Houston, do you show our FM - Houston, Apollo 8. Do you show the FM on now?"
 },
 {
 "get":"030:11:22",
-"offsetSeconds":110,
+"offsetSeconds":110.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Stand by and we'll check it, Bill."
 },
 {
 "get":"030:11:26",
-"offsetSeconds":114,
+"offsetSeconds":114.8,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Because our S-band Aux, Tape has been Off. Possibly - we don't have control of it. [Long pause.]"
@@ -24860,35 +24860,35 @@
 "a08_0301229":[
 {
 "get":"030:12:29",
-"offsetSeconds":0,
+"offsetSeconds":3.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 8, Houston. We're showing all the communications switch functions operating normally, Bill."
 },
 {
 "get":"030:12:37",
-"offsetSeconds":8,
+"offsetSeconds":11.4,
 "speaker":"Anders",
 "channel":"air-to-ground",
 "text":"Okay, Mike. Thanks."
 },
 {
 "get":"030:12:43",
-"offsetSeconds":14,
+"offsetSeconds":17.4,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Mike, the PRD readings for the CDR are 4 - 0.04, for the CMP is 0.64, and for the LMP is 0.25."
 },
 {
 "get":"030:12:59",
-"offsetSeconds":30,
+"offsetSeconds":33.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. I copy 0.04, 0.64, 0.25. Thank you."
 },
 {
 "get":"030:13:06",
-"offsetSeconds":37,
+"offsetSeconds":40.4,
 "speaker":"Borman",
 "channel":"air-to-ground",
 "text":"Rog."
