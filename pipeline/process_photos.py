@@ -40,7 +40,9 @@ WEB_PX, THUMB_PX = 2048, 400
 SRGB_TO_XYZ = np.array([[0.4124, 0.3576, 0.1805], [0.2126, 0.7152, 0.0722], [0.0193, 0.1192, 0.9505]])
 D65 = np.array([0.95047, 1.0, 1.08883])
 MID_GAMMA, SHOULDER = 0.85, 0.12   # tone_curve
-BRIGHTNESS_STEP, CONTRAST_STEP = 0.8, 1.1   # a reviewer's step (tone_curve; the review page matches)
+# A reviewer's dials (tone_curve, adjust_colour); the review page matches.
+BRIGHTNESS_STEP, CONTRAST_STEP, TONE_STEP = 0.8 ** 0.5, 0.55, 10
+SATURATION_STEP, COLOUR_STEP = 0.1, 1.5
 MAX_TINT, KEEP_TINT = 45, 3        # film_tint, adjust_colour (L*a*b* units)
 
 
@@ -189,41 +191,56 @@ def film_tint(lab):
     return None
 
 
-def tone_curve(L, brightness=0, contrast=0):
-    """A small tone adjustment on L* (0-100), fitted to NASA's own processed
-    versions of 37 frames: mid tones lifted a little (a 0.85 gamma), and
-    the brightest tones eased down so sunlit soil and suits aren't glaring
-    (white ends up at about 88). Black stays black.
+def tone_curve(L, brightness=0, contrast=0, shadows=0, highlights=0):
+    """The tone adjustment on L* (0-100). By default: mid tones lifted a
+    little (a 0.85 gamma), and the brightest tones eased down so sunlit
+    soil and suits aren't glaring (white ends up at about 88), fitted to
+    NASA's own processed versions of 37 frames. Black stays black.
 
-    `brightness` and `contrast` are a reviewer's steps (-4 to +4). One
-    brightness step moves mid grey about 7 L* units; contrast is an S-curve
-    (tanh) that keeps black and white fixed, one step moving the quarter
-    tones about 5 units apart. The review page previews with the same
-    formula, so keep the two in step."""
+    The other arguments are a reviewer's dials, -8 to +8 steps each:
+      brightness  one step moves mid grey about 3.5 L*
+      contrast    an S-curve (tanh) keeping black and white fixed; one step
+                  moves the quarter tones about 2.5 apart
+      shadows     lifts (+) or deepens (-) the dark tones, about 1.5 per step
+      highlights  brightens (+) or tones down (-) the bright tones, the same
+    Every combination stays monotonic (no tone reversals). The review page
+    previews with the same formulas, so keep the two in step."""
     x = (np.clip(L, 0, 100) / 100) ** (MID_GAMMA * BRIGHTNESS_STEP ** brightness) * 100
     if contrast:
         k = CONTRAST_STEP * abs(contrast)
         d = (x - 50) / 50
         d = np.tanh(k * d) / np.tanh(k) if contrast > 0 else np.arctanh(np.clip(d, -1, 1) * np.tanh(k)) / k
         x = 50 + 50 * d
-    return x - SHOULDER * 100 * (x / 100) ** 3
+    x = x - SHOULDER * 100 * (x / 100) ** 3
+    if shadows or highlights:
+        t = x / 100
+        x = x + TONE_STEP * (shadows * t * (1 - t) ** 2 + highlights * (1 - t) * t * t)
+    return x
 
 
 def adjust_colour(im, tint_strength, tone=True, review=None):
-    """Remove the film's tint, then apply tone_curve.
+    """Remove the film's tint, apply tone_curve, then a reviewer's colour
+    dials.
 
     The tint is taken out as a white balance: one gain per colour channel
     in linear light, chosen so the picture's greys come out neutral. Like
     the film's own cast, that correction is strongest in the bright tones
     and fades towards black. `tint_strength` 0.75 removes 75% of a small
     tint and all but KEEP_TINT units of a large one, so a hint of the
-    film's warmth stays and it never looks over-corrected."""
+    film's warmth stays and it never looks over-corrected.
+
+    Colour dials (-8 to +8): saturation scales colourfulness by 10% a step
+    (-8 is nearly black and white); warmth moves colours towards yellow (+)
+    or blue (-), tint towards magenta (+) or green (-), 1.5 a*/b* units a
+    step, fading out at pure black and white."""
+    review = review or {}
     tint = None
     if tint_strength > 0:
         small = im.copy()
         small.thumbnail((800, 800))
         tint = film_tint(to_lab(np.asarray(small, dtype=np.float32)))
-    if not tint and not tone:
+    dials = any(review.get(k) for k in ('saturation', 'warmth', 'tint'))
+    if not tint and not tone and not dials:
         return im
     lin = srgb_to_linear(np.asarray(im, dtype=np.float32))
     if tint:
@@ -231,24 +248,45 @@ def adjust_colour(im, tint_strength, tone=True, review=None):
         keep = min(1 - tint_strength, KEEP_TINT / np.hypot(ca, cb))
         grey, target = lab_to_linear(np.array([[cl, ca, cb], [cl, ca * keep, cb * keep]]))
         lin = lin * (target / np.maximum(grey, 1e-6))
-    if not tone:
+    if not tone and not dials:
         return Image.fromarray(linear_to_srgb(lin))
     lab = linear_to_lab(lin)
-    review = review or {}
-    lab[..., 0] = tone_curve(lab[..., 0], review.get('brightness', 0), review.get('contrast', 0))
+    L0 = lab[..., 0].copy()
+    if dials:
+        fade = np.clip(L0 / 10, 0, 1) * np.clip((100 - L0) / 5, 0, 1)
+        sat = 1 + SATURATION_STEP * review.get('saturation', 0)
+        lab[..., 1] = lab[..., 1] * sat + COLOUR_STEP * review.get('tint', 0) * fade
+        lab[..., 2] = lab[..., 2] * sat + COLOUR_STEP * review.get('warmth', 0) * fade
+    if tone:
+        lab[..., 0] = tone_curve(L0, *(review.get(k, 0) for k in ('brightness', 'contrast', 'shadows', 'highlights')))
     return Image.fromarray(linear_to_srgb(lab_to_linear(lab)))
 
 
+def straighten(im, degrees):
+    """Turn by a small angle (clockwise) and crop to the largest centred
+    rectangle of the same shape that has no empty corners."""
+    if not degrees:
+        return im
+    w, h = im.size
+    th = np.radians(abs(degrees))
+    k = np.cos(th) + max(w / h, h / w) * np.sin(th)
+    im = im.rotate(-degrees, resample=Image.BICUBIC)
+    cw, ch = w / k, h / k
+    return im.crop((round((w - cw) / 2), round((h - ch) / 2), round((w + cw) / 2), round((h + ch) / 2)))
+
+
 def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True, review=None):
+    review = review or {}
     src = download(scan_url(frame_id, fmt, size), work / size / f'{frame_id}.png')
     if not src:
         return None, 'download failed'
     im = load_rgb(src)
     box = frame_box(im) if fmt == 'a' else None
     pic = enhance(trim_dark_edges(im.crop(box)) if box else im)
-    turn = (review or {}).get('rotate', 0) % 360   # a reviewer's rotation, degrees clockwise
+    turn = review.get('rotate', 0) % 360   # a reviewer's rotation, degrees clockwise
     if turn:
         pic = pic.rotate(-turn, expand=True)
+    pic = straighten(pic, review.get('straighten', 0))
     out.mkdir(parents=True, exist_ok=True)
     web = pic.copy()
     web.thumbnail((WEB_PX, WEB_PX), Image.LANCZOS)

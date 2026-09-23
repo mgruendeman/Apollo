@@ -1,12 +1,32 @@
 {
- "AS10-27-3890": {"brightness": -1},
- "AS15-82-11168": {"brightness": -1},
- "AS12-46-6726": {"brightness": 1},
- "AS10-35-5248": {"contrast": 1},
- "AS14-68-9449": {"contrast": 1},
- "AS15-88-11901": {"contrast": 1},
- "AS16-108-17622": {"contrast": 1},
+ "AS10-27-3890": {
+  "brightness": -2
+ },
+ "AS15-82-11168": {
+  "brightness": -2
+ },
+ "AS12-46-6726": {
+  "brightness": 2
+ },
+ "AS10-35-5248": {
+  "contrast": 2
+ },
+ "AS14-68-9449": {
+  "contrast": 2
+ },
+ "AS15-88-11901": {
+  "contrast": 2
+ },
+ "AS16-108-17622": {
+  "contrast": 2
+ },
  "AS16-116-18578": {},
- "AS11-36-5389": {"rotate": 270, "note": "Rotate"},
- "AS13-59-8501": {"rotate": 270, "note": "Rotate"}
+ "AS11-36-5389": {
+  "rotate": 270,
+  "note": "Rotate"
+ },
+ "AS13-59-8501": {
+  "rotate": 270,
+  "note": "Rotate"
+ }
 }

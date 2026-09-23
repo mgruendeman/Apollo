@@ -104,17 +104,16 @@ cuts that to hours. Already-finished files are skipped.
    NASA's releases into R2 alongside our cleaned scans (a few hundred MB),
    so the site doesn't depend on NASA's servers.
 4. **People check the automatic results.** Reviewers mark each cleaned
-   photo *Looks good*, or set what it needs: brightness and contrast
-   steps, a rotation, and *Colour off* or *Bad crop*, with an optional
-   note. Save the marks as JSON (`{"AS12-46-6726": {"brightness": 1,
-   "contrast": 0, "rotate": 0, "colour": true, "crop": false, "note":
-   "..."}}`, as in `photo_reviews.json`, the pilot's first round) and
-   re-run with `--reviews pipeline/photo_reviews.json`:
-   - brightness and contrast (-4 to +4 steps) are applied automatically:
-     a brightness step moves mid grey about 7 L*, a contrast step is an
-     S-curve moving the quarter tones about 5 apart. `rotate` (degrees
-     clockwise: 90, 180 or 270) turns the photo. The review page previews
-     these with the same formula (`tone_curve`), so keep the two in step;
+   photo *Looks good*, or adjust it with dials that preview as they drag:
+   brightness, contrast, shadows, highlights, warmth, tint and
+   saturation (-8 to +8 steps each), straighten (up to 10 degrees either
+   way), rotate (quarter turns), plus *Colour off* or *Bad crop* and a
+   note for anything the dials can't fix. Save the marks as JSON, as in
+   `photo_reviews.json` (the pilot's first round), and re-run with
+   `--reviews pipeline/photo_reviews.json`:
+   - the dials are applied automatically (`tone_curve`, `adjust_colour`,
+     `straighten`). The review page previews them with the same formulas,
+     so keep the two in step;
    - colour and crop marks are written to `needs-hand-fix.tsv` in the
      output folder for a fix by hand.
 
