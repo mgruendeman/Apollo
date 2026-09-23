@@ -5,7 +5,6 @@ export default function MissionCard({ mission }) {
 
   const card = (
     <div className={`mission-card ${available ? 'is-available' : 'is-soon'}`}>
-      <div className="mission-card-number">{mission.number}</div>
       <h3>{mission.name}</h3>
       <p className="mission-card-dates">{mission.dates}</p>
       <p className="mission-card-summary">{mission.summary}</p>

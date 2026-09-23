@@ -3,14 +3,16 @@ import AudioPlayer from './AudioPlayer'
 import SpeakerAvatar from './SpeakerAvatar'
 import GlossaryText from './GlossaryText'
 import GlossaryPanel from './GlossaryPanel'
+import ReportDialog from './ReportDialog'
 import { PHASES } from '../data/phases'
 import { formatGet } from '../lib/liveStatus'
 import { effectiveOffsets, activeLineIndex } from '../lib/transcriptTiming'
 import { useFrames, photosForMomentAll } from '../lib/archiveFrames'
+import { useTranscriptScroll } from '../lib/useTranscriptScroll'
+import { useLongPress } from '../lib/useLongPress'
+import { lineReport } from '../lib/lineReport'
 
 const PHOTO_SECONDS = 12
-// How long a manual scroll of the transcript pauses auto-scrolling.
-const USER_SCROLL_HOLD_MS = 6000
 
 // Just the spoken words: drop the journal editors' bracketed notes, which
 // can run to paragraphs and would crowd the photo off the screen.
@@ -67,6 +69,7 @@ export default function ImmersiveView({
   onLineSeek,
   onPrevious,
   onNext,
+  report,
 }) {
   const rootRef = useRef(null)
   // Its own glossary panel, rendered inside this view: in browser
@@ -76,6 +79,7 @@ export default function ImmersiveView({
   useEffect(() => {
     glossaryOpen.current = !!glossaryEntry
   }, [glossaryEntry])
+  const reportOpen = useRef(false)
   const closeGlossary = useCallback(() => setGlossaryEntry(null), [])
   const clip = clips[index]
 
@@ -109,26 +113,16 @@ export default function ImmersiveView({
 
   // The whole clip's transcript scrolls; it follows the line being spoken
   // unless the listener has just scrolled it themselves.
-  const listRef = useRef(null)
-  const activeRef = useRef(null)
-  const userScrolledAt = useRef(0)
-  const shownLines = useRef(null)
-  useEffect(() => {
-    const list = listRef.current
-    const line = activeRef.current
-    if (!list || !line) return
-    const newClip = shownLines.current !== lines
-    shownLines.current = lines
-    if (!newClip && Date.now() - userScrolledAt.current < USER_SCROLL_HOLD_MS) return
-    list.scrollTo({
-      top: line.offsetTop - list.clientHeight / 2 + line.clientHeight / 2,
-      behavior: newClip ? 'auto' : 'smooth',
-    })
-  }, [active, lines])
+  const { listRef, activeRef, away, jumpToCurrent, listProps } = useTranscriptScroll(active, lines)
 
-  function markUserScroll() {
-    userScrolledAt.current = Date.now()
-  }
+  // Press and hold a line to report a problem with it.
+  const [reporting, setReporting] = useState(null)
+  const closeReport = useCallback(() => setReporting(null), [])
+  const { bind, consumeClick } = useLongPress((i) => setReporting(i))
+  const reportDetails = reporting !== null && report ? lineReport(report, lines[reporting], offsets[reporting]) : null
+  useEffect(() => {
+    reportOpen.current = reporting !== null
+  }, [reporting])
 
   useEffect(() => {
     const el = rootRef.current
@@ -136,7 +130,7 @@ export default function ImmersiveView({
     const previous = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     function onKey(e) {
-      if (e.key === 'Escape' && !document.fullscreenElement && !glossaryOpen.current) onClose()
+      if (e.key === 'Escape' && !document.fullscreenElement && !glossaryOpen.current && !reportOpen.current) onClose()
     }
     document.addEventListener('keydown', onKey)
     return () => {
@@ -161,13 +155,8 @@ export default function ImmersiveView({
 
       <PhotoStage key={poolKey} photos={photos} />
 
-      <div
-        className="immersive-transcript"
-        ref={listRef}
-        onWheel={markUserScroll}
-        onTouchMove={markUserScroll}
-        onKeyDown={markUserScroll}
-      >
+      <div className="immersive-transcript-frame">
+      <div className="immersive-transcript" ref={listRef} {...listProps}>
         {shown.length === 0 && <p className="immersive-empty">No transcript for this clip.</p>}
         {shown.map(({ line, i, text }) => (
           // A div, not a button: glossary terms inside are buttons themselves.
@@ -177,7 +166,10 @@ export default function ImmersiveView({
             key={`${line.get}-${i}`}
             ref={i === active ? activeRef : null}
             className={i === active ? 'immersive-line is-active' : i < active ? 'immersive-line is-past' : 'immersive-line'}
-            onClick={() => onLineSeek(offsets[i])}
+            onClick={() => {
+              if (!consumeClick()) onLineSeek(offsets[i])
+            }}
+            {...bind(i)}
             onKeyDown={(e) => {
               if (e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) {
                 e.preventDefault()
@@ -195,6 +187,12 @@ export default function ImmersiveView({
           </div>
         ))}
       </div>
+        {away && active >= 0 && (
+          <button type="button" className="jump-current" onClick={jumpToCurrent}>
+            Current line ↧
+          </button>
+        )}
+      </div>
 
       <div className="immersive-controls">
         <button type="button" className="immersive-skip" onClick={onPrevious} disabled={!onPrevious} aria-label="Previous clip">
@@ -206,6 +204,7 @@ export default function ImmersiveView({
         </button>
       </div>
       <GlossaryPanel entry={glossaryEntry} onClose={closeGlossary} onTermClick={setGlossaryEntry} />
+      {reportDetails && <ReportDialog title={reportDetails.title} context={reportDetails.context} onClose={closeReport} />}
     </div>
   )
 }

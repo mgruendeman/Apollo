@@ -32,6 +32,10 @@ const ORBIT_INSERTION_SECONDS = 11 * 60 + 30
 // Every mission's translunar injection burn came within 3.5 hours of launch.
 const LATEST_TLI_SECONDS = 3.5 * 3600
 
+// Powered descent took about 12 minutes; the journals' descent pages start
+// up to an hour or so before touchdown with the final checks.
+const DESCENT_WINDOW_SECONDS = 90 * 60
+
 // Journal pages like "Awake on Splashdown day" start hours before entry.
 const SPLASHDOWN_WINDOW_SECONDS = 2 * 3600
 
@@ -41,7 +45,7 @@ const RULES = [
   ['ascent', /ascent from|lift-?off.*(surface|moon)|return to orbit|rendezvous|lm jettison|tunnel leak/i],
   ['surface', /\beva\b|surface|alsep|traverse|station \d|crater|rille|hadley|lunar roving|\blrv\b|regolith|core (tube|sample)|closeout/i],
   ['landing', /powered descent|descent and landing|\bpdi\b|(?<!post-)(?<!for )landing\b/i],
-  ['lunar-orbit', /lunar orbit|\bloi\b|descent orbit|\bdoi\b|circulariz|orbiting the moon|acclimatising/i],
+  ['lunar-orbit', /lunar orbit|\bloi\b|descent orbit|\bdoi\b|circulariz|orbiting the moon|acclimatising|solo (orbital )?op|orbital operations|csm only/i],
   ['earth-orbit', /earth orbit|launch|lift-?off/i],
   ['transit-to-moon', /translunar|trans-lunar|\btli\b|transposition|extraction|passive thermal|barbecue|cislunar/i],
 ]
@@ -73,11 +77,16 @@ function matchLabel(label) {
 // "Solo operations"), and a few clips from an earlier page are interleaved
 // later by GET. So an unrecognized title carries the previous phase
 // forward, and the flight never steps back to an earlier stage.
-export function computePhases(clips, durationSeconds) {
+export function computePhases(clips, durationSeconds, landingSeconds) {
   const phases = []
   let current = 'launch'
   for (const clip of clips) {
     let phase = clip.getSeconds < ORBIT_INSERTION_SECONDS ? 'launch' : matchLabel(clip.sourceLabel)
+    // Surface pages often start with the descent ("Landing at Hadley"): before
+    // touchdown it's the descent if close to it, otherwise still in orbit.
+    if (landingSeconds && phase === 'surface' && clip.getSeconds < landingSeconds) {
+      phase = landingSeconds - clip.getSeconds <= DESCENT_WINDOW_SECONDS ? 'landing' : null
+    }
     if (phase === 'splashdown' && durationSeconds - clip.getSeconds > SPLASHDOWN_WINDOW_SECONDS) {
       phase = 'transit-to-earth'
     }

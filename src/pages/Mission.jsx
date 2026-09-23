@@ -75,7 +75,7 @@ export default function Mission() {
 
   const liveStatus = mission ? getLiveStatus(mission, now) : null
   const phases = useMemo(
-    () => (clips ? computePhases(clips, mission.durationSeconds) : []),
+    () => (clips ? computePhases(clips, mission.durationSeconds, mission.landingSeconds) : []),
     [clips, mission],
   )
   // While this mission is the one loaded in the app-wide player, the page
@@ -140,6 +140,12 @@ export default function Mission() {
   const activeLines = transcripts?.[moment.id] || []
   const phase = phases[activeIndex]
   const currentTime = isLoaded ? player.currentTime : 0
+  const lineReportInfo = {
+    missionName: mission.name,
+    clipId: moment.id,
+    audioUrl: moment.audioUrl,
+    sourceUrl: moment.sourceUrl,
+  }
 
   function selectClip(i) {
     player.play(mission, clips, i)
@@ -223,6 +229,7 @@ export default function Mission() {
             currentTime={currentTime}
             onTermClick={setActiveGlossaryEntry}
             onLineSeek={seekToLine}
+            report={lineReportInfo}
           />
         ) : (
           <p className="moment-description">
@@ -297,6 +304,7 @@ export default function Mission() {
           highlightPhoto={photosByClipId[moment.id]}
           onClose={closeImmersive}
           onLineSeek={seekToLine}
+          report={lineReportInfo}
           onPrevious={activeIndex > 0 ? () => selectClip(activeIndex - 1) : null}
           onNext={activeIndex < clips.length - 1 ? () => selectClip(activeIndex + 1) : null}
         />

@@ -81,6 +81,7 @@ export const missions = [
     clipCount: 672,
     launchUtc: '1969-07-16T13:32:00Z',
     durationSeconds: 703115, // 195:18:35
+    landingSeconds: 369940, // touchdown at GET 102:45:40
     csmName: 'Columbia',
     lmName: 'Eagle',
     objective: 'Land two astronauts on the Moon and return them safely to Earth, the goal President Kennedy set in 1961.',
@@ -104,6 +105,7 @@ export const missions = [
     clipCount: 259,
     launchUtc: '1969-11-14T16:22:00Z',
     durationSeconds: 880584, // 244:36:24
+    landingSeconds: 397956, // touchdown at GET 110:32:36
     csmName: 'Yankee Clipper',
     lmName: 'Intrepid',
     objective: 'Prove a pinpoint landing by setting down next to the robotic Surveyor 3 lander, and set up the first full ALSEP science station.',
@@ -150,6 +152,7 @@ export const missions = [
     clipCount: 307,
     launchUtc: '1971-01-31T21:03:02Z',
     durationSeconds: 777718, // 216:01:58
+    landingSeconds: 389709, // touchdown at GET 108:15:09
     csmName: 'Kitty Hawk',
     lmName: 'Antares',
     objective: 'Sample the Fra Mauro formation, thought to be debris thrown out by the impact that formed Mare Imbrium, including the rim of Cone Crater.',
@@ -172,6 +175,7 @@ export const missions = [
     clipCount: 1149,
     launchUtc: '1971-07-26T13:34:00Z',
     durationSeconds: 1062713, // 295:11:53
+    landingSeconds: 376949, // touchdown at GET 104:42:29
     csmName: 'Endeavour',
     lmName: 'Falcon',
     objective: 'Fly the first extended "J" mission: three days on the surface, the first Lunar Roving Vehicle, and geology at Hadley Rille and the Apennine front.',
@@ -196,6 +200,7 @@ export const missions = [
     clipCount: 911,
     launchUtc: '1972-04-16T17:54:00Z',
     durationSeconds: 957065, // 265:51:05
+    landingSeconds: 376175, // touchdown at GET 104:29:35
     csmName: 'Casper',
     lmName: 'Orion',
     objective: 'Make the first landing in the lunar highlands, to sample rock that geologists expected to be volcanic (it turned out to be impact breccia).',
@@ -218,6 +223,9 @@ export const missions = [
     clipCount: 965,
     launchUtc: '1972-12-07T05:33:00Z',
     durationSeconds: 1086719, // 301:51:59
+    // The journals use the mission clock as NASA reset it mid-flight (+2:40:00
+    // for the late launch), so touchdown is 113:01:58 rather than 110:21:58.
+    landingSeconds: 406918, // touchdown at GET 113:01:58
     csmName: 'America',
     lmName: 'Challenger',
     objective: 'Close out Apollo with the longest landing: sample ancient highland rock from the valley walls and look for young volcanic material, with the first geologist on the Moon.',

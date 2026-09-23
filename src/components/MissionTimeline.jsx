@@ -58,13 +58,19 @@ function buildRows(types) {
   return rows
 }
 
-// The phase a chapter mostly covers, for its icon.
+// Brief events that name a chapter even when most of its clips are before
+// or after them: a chapter that includes the landing is the descent.
+const EVENT_PHASES = ['launch', 'landing', 'ascent', 'splashdown']
+
+// The phase a chapter is about, for its icon: a key event it contains, or
+// else the phase most of its clips are in.
 function chapterPhase(phases, start, end) {
   const counts = {}
   for (let i = start; i < end; i++) {
     if (phases?.[i]) counts[phases[i]] = (counts[phases[i]] || 0) + 1
   }
-  return Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0]
+  const event = EVENT_PHASES.find((p) => counts[p])
+  return event || Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0]
 }
 
 export default function MissionTimeline({ mission, clips, transcripts, phases, activeIndex, onSelect }) {
