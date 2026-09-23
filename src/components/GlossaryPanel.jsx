@@ -27,6 +27,7 @@ export default function GlossaryPanel({ entry, onClose, onTermClick }) {
         <button type="button" className="glossary-close" onClick={onClose} aria-label="Close">
           ×
         </button>
+        {entry.isNote && <p className="glossary-note-eyebrow">What this means</p>}
         <h3>{entry.terms[0]}</h3>
         {entry.terms.length > 1 && (
           <p className="glossary-aliases">
@@ -61,7 +62,7 @@ export default function GlossaryPanel({ entry, onClose, onTermClick }) {
           </div>
         )}
         <ReportIssueButton
-          title={`Glossary: "${entry.terms[0]}" looks wrong`}
+          title={entry.isNote ? `Explanation of "${entry.terms[0]}" looks wrong` : `Glossary: "${entry.terms[0]}" looks wrong`}
           body={`What's wrong with the "${entry.terms[0]}" glossary entry?\n\n(current text)\n${entry.long}`}
         >
           Report an inaccuracy in this entry

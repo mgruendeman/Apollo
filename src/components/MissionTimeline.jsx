@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react'
 import { classifyEventType, EVENT_TYPE_META } from '../data/eventType'
 import { stripSourcePrefix } from '../lib/sourceLabel'
 import { photosByClipId } from '../data/photos'
+import { PHASES } from '../data/phases'
+import PhaseIcon from './PhaseIcon'
 
 // Collapse a run of this many or more back-to-back routine clips into a
 // single expandable row, so a quiet multi-hour stretch doesn't bury the
@@ -56,7 +58,16 @@ function buildRows(types) {
   return rows
 }
 
-export default function MissionTimeline({ mission, clips, transcripts, activeIndex, onSelect }) {
+// The phase a chapter mostly covers, for its icon.
+function chapterPhase(phases, start, end) {
+  const counts = {}
+  for (let i = start; i < end; i++) {
+    if (phases?.[i]) counts[phases[i]] = (counts[phases[i]] || 0) + 1
+  }
+  return Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0]
+}
+
+export default function MissionTimeline({ mission, clips, transcripts, phases, activeIndex, onSelect }) {
   const [expandedRuns, setExpandedRuns] = useState(() => new Set())
 
   const chapters = useMemo(() => buildChapters(clips), [clips])
@@ -102,6 +113,13 @@ export default function MissionTimeline({ mission, clips, transcripts, activeInd
         <span className="legend-item">★ major milestone</span>
         <span className="legend-item">☾ rest / routine period</span>
       </p>
+      <p className="timeline-legend timeline-phases">
+        {Object.keys(PHASES).map((ph) => (
+          <span key={ph} className="legend-item">
+            <PhaseIcon phase={ph} /> {PHASES[ph].label}
+          </span>
+        ))}
+      </p>
       {chapters.map((ch, ci) => {
         const count = ch.endIndex - ch.startIndex
         const eventType = classifyEventType(ch.label)
@@ -118,11 +136,19 @@ export default function MissionTimeline({ mission, clips, transcripts, activeInd
         return (
           <details key={ch.startIndex} open={ci === activeChapterIndex} className={meta.className}>
             <summary>
-              <span className="chapter-get">
-                {chapterClips[0].get}–{chapterClips[chapterClips.length - 1].get}
+              <span className="chapter-phase">
+                <PhaseIcon phase={chapterPhase(phases, ch.startIndex, ch.endIndex)} />
               </span>
-              {meta.icon && <span className="chapter-icon">{meta.icon}</span>}
-              <span className="chapter-label">{stripSourcePrefix(ch.label)}</span>
+              <span className="chapter-get">
+                <span>{chapterClips[0].get}</span>
+                {count > 1 && chapterClips[count - 1].get !== chapterClips[0].get && (
+                  <span className="chapter-get-end">to {chapterClips[count - 1].get}</span>
+                )}
+              </span>
+              <span className="chapter-label">
+                {meta.icon && <span className="chapter-icon">{meta.icon} </span>}
+                {stripSourcePrefix(ch.label)}
+              </span>
               <span className="chapter-count">
                 {count} clip{count === 1 ? '' : 's'}
               </span>

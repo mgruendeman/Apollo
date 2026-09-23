@@ -277,6 +277,7 @@ export default function Mission() {
         mission={mission}
         clips={clips}
         transcripts={transcripts}
+        phases={phases}
         activeIndex={activeIndex}
         onSelect={selectClip}
       />

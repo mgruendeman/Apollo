@@ -1,6 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import AudioPlayer from './AudioPlayer'
 import SpeakerAvatar from './SpeakerAvatar'
+import GlossaryText from './GlossaryText'
+import GlossaryPanel from './GlossaryPanel'
 import { PHASES } from '../data/phases'
 import { formatGet } from '../lib/liveStatus'
 import { effectiveOffsets, activeLineIndex } from '../lib/transcriptTiming'
@@ -67,6 +69,14 @@ export default function ImmersiveView({
   onNext,
 }) {
   const rootRef = useRef(null)
+  // Its own glossary panel, rendered inside this view: in browser
+  // full-screen mode only this element's contents are visible.
+  const [glossaryEntry, setGlossaryEntry] = useState(null)
+  const glossaryOpen = useRef(false)
+  useEffect(() => {
+    glossaryOpen.current = !!glossaryEntry
+  }, [glossaryEntry])
+  const closeGlossary = useCallback(() => setGlossaryEntry(null), [])
   const clip = clips[index]
 
   // Photos depend only on the day, phase and any highlight photo, so the
@@ -126,7 +136,7 @@ export default function ImmersiveView({
     const previous = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     function onKey(e) {
-      if (e.key === 'Escape' && !document.fullscreenElement) onClose()
+      if (e.key === 'Escape' && !document.fullscreenElement && !glossaryOpen.current) onClose()
     }
     document.addEventListener('keydown', onKey)
     return () => {
@@ -160,19 +170,29 @@ export default function ImmersiveView({
       >
         {shown.length === 0 && <p className="immersive-empty">No transcript for this clip.</p>}
         {shown.map(({ line, i, text }) => (
-          <button
-            type="button"
+          // A div, not a button: glossary terms inside are buttons themselves.
+          <div
+            role="button"
+            tabIndex={0}
             key={`${line.get}-${i}`}
             ref={i === active ? activeRef : null}
             className={i === active ? 'immersive-line is-active' : i < active ? 'immersive-line is-past' : 'immersive-line'}
             onClick={() => onLineSeek(offsets[i])}
+            onKeyDown={(e) => {
+              if (e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) {
+                e.preventDefault()
+                onLineSeek(offsets[i])
+              }
+            }}
           >
             <SpeakerAvatar name={line.speaker} />
             <span>
               <span className="immersive-speaker">{line.speaker}</span>
-              <span className="immersive-text">{text}</span>
+              <span className="immersive-text">
+                <GlossaryText text={text} onTermClick={setGlossaryEntry} notes />
+              </span>
             </span>
-          </button>
+          </div>
         ))}
       </div>
 
@@ -185,6 +205,7 @@ export default function ImmersiveView({
           ⏭
         </button>
       </div>
+      <GlossaryPanel entry={glossaryEntry} onClose={closeGlossary} onTermClick={setGlossaryEntry} />
     </div>
   )
 }

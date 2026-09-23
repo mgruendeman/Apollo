@@ -82,7 +82,7 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
                 )}
                 <span className="transcript-get">{line.get}</span>
                 <span className="transcript-text">
-                  <GlossaryText text={line.text} onTermClick={onTermClick} />
+                  <GlossaryText text={line.text} onTermClick={onTermClick} notes />
                 </span>
               </span>
             </div>

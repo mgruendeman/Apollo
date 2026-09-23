@@ -472,7 +472,7 @@ a {
 .timeline summary {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   padding: 12px 16px;
   cursor: pointer;
   list-style: none;
@@ -482,18 +482,52 @@ a {
   display: none;
 }
 
+.chapter-phase {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--accent-dim);
+}
+
+.phase-icon {
+  width: 22px;
+  height: 22px;
+}
+
 .chapter-get {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
   color: var(--accent);
   flex-shrink: 0;
-  min-width: 8ch;
+}
+
+.chapter-get-end {
+  color: var(--text-dim);
+  font-size: 0.66rem;
 }
 
 .chapter-icon {
-  flex-shrink: 0;
   color: var(--accent);
   font-size: 0.85rem;
+}
+
+.timeline-phases {
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+
+.timeline-phases .legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.timeline-phases .phase-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-dim);
 }
 
 .is-rest .chapter-icon {
@@ -1912,4 +1946,52 @@ a {
 .lightbox-close:hover,
 .lightbox-nav:hover {
   background: var(--accent);
+}
+
+/* Info dots: a small ⓘ after numbers and jargon that opens an explanation */
+.info-note {
+  white-space: nowrap;
+}
+
+.info-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05em;
+  height: 1.05em;
+  margin-left: 0.2em;
+  padding: 0;
+  border: 1px solid var(--accent-dim);
+  border-radius: 50%;
+  background: none;
+  color: var(--accent-dim);
+  font: italic 600 0.62em/1 Georgia, 'Times New Roman', serif;
+  vertical-align: 0.35em;
+  cursor: pointer;
+}
+
+.info-dot:hover,
+.info-dot:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+  outline: none;
+}
+
+.glossary-note-eyebrow {
+  margin: 0 0 4px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.immersive .glossary-overlay {
+  z-index: 20;
+}
+
+.immersive-line:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
 }
