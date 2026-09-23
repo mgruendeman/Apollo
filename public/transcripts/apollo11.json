@@ -4326,161 +4326,161 @@
 "a11_0020800":[
 {
 "get":"002:08:06",
-"offsetSeconds":6,
+"offsetSeconds":0.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Should be about 100 [garble] - okay..."
 },
 {
 "get":"002:08:10",
-"offsetSeconds":10,
+"offsetSeconds":0.0,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Water - boiling - [garble] potable. Okay."
 },
 {
 "get":"002:08:18",
-"offsetSeconds":18,
+"offsetSeconds":0.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Fuel cells [garble] fuel cells making water. It goes to potable tank first and then the waste tank."
 },
 {
 "get":"002:08:24",
-"offsetSeconds":24,
+"offsetSeconds":0.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Oh - stop there?"
 },
 {
 "get":"002:08:25",
-"offsetSeconds":25,
+"offsetSeconds":0.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes."
 },
 {
 "get":"002:08:26",
-"offsetSeconds":26,
+"offsetSeconds":0.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Coming into the terminator."
 },
 {
 "get":"002:08:46",
-"offsetSeconds":46,
+"offsetSeconds":15.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Gee, I'm really disappointed over those optics; that telescope is horrible. Maybe it'll get better with practice, or adaptation, or what have you."
 },
 {
 "get":"002:09:17",
-"offsetSeconds":77,
+"offsetSeconds":46.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston through Tananarive. How do you read? [No answer. Long pause.]"
 },
 {
 "get":"002:09:38",
-"offsetSeconds":98,
+"offsetSeconds":67.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Gee, I almost went to sleep here."
 },
 {
 "get":"002:09:40",
-"offsetSeconds":100,
+"offsetSeconds":69.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Me, too. I'm taking a little rest."
 },
 {
 "get":"002:09:45",
-"offsetSeconds":105,
+"offsetSeconds":74.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston standing by through Tananarive. [No answer.]"
 },
 {
 "get":"002:09:48",
-"offsetSeconds":108,
+"offsetSeconds":77.0,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"It's going to be a long day."
 },
 {
 "get":"002:10:03",
-"offsetSeconds":123,
+"offsetSeconds":91.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"How'd the - is this the first part of the attitude comparison check or the second part?"
 },
 {
 "get":"002:10:03",
-"offsetSeconds":123,
+"offsetSeconds":91.6,
 "speaker":"Comm Tech",
 "channel":"air-to-ground",
 "text":"Tananarive, Houston Comm Tech Net 1."
 },
 {
 "get":"002:10:10",
-"offsetSeconds":130,
+"offsetSeconds":98.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I haven't done the second GDC align yet; it comes up on the next page. About now, I guess."
 },
 {
 "get":"002:10:12",
-"offsetSeconds":132,
+"offsetSeconds":100.4,
 "speaker":"Comm Tech",
 "channel":"air-to-ground",
 "text":"Tananarive, Houston Comm Tech Net 1."
 },
 {
 "get":"002:10:23",
-"offsetSeconds":143,
+"offsetSeconds":111.2,
 "speaker":"Comm Tech",
 "channel":"air-to-ground",
 "text":"Goddard voice, Houston Comm Tech Net 1."
 },
 {
 "get":"002:10:25",
-"offsetSeconds":145,
+"offsetSeconds":113.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Well, we should have Tananarive. How about going - pressing ahead with the sequence pyro arm?"
 },
 {
 "get":"002:10:27",
-"offsetSeconds":147,
+"offsetSeconds":115.1,
 "speaker":"MSFN",
 "channel":"air-to-ground",
 "text":"Goddard: Voice, reading you loud and clear."
 },
 {
 "get":"002:10:29",
-"offsetSeconds":149,
+"offsetSeconds":117.0,
 "speaker":"Comm Tech",
 "channel":"air-to-ground",
 "text":"Roger. We cannot raise Tananarive."
 },
 {
 "get":"002:10:31",
-"offsetSeconds":151,
+"offsetSeconds":119.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, let me align the GDC."
 },
 {
 "get":"002:10:31",
-"offsetSeconds":151,
+"offsetSeconds":119.0,
 "speaker":"Comm Tech",
 "channel":"air-to-ground",
 "text":"Houston Comm Tech, Tananarive."
 },
 {
 "get":"002:10:34",
-"offsetSeconds":154,
+"offsetSeconds":121.9,
 "speaker":"Comm Tech",
 "channel":"air-to-ground",
 "text":"Roger, Tananarive. Are you receiving CapCom's voice, and are you uplinking it?"
@@ -4885,56 +4885,56 @@
 "a11_0022500":[
 {
 "get":"002:25:02",
-"offsetSeconds":2,
+"offsetSeconds":0.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Tank pressures are looking good."
 },
 {
 "get":"002:25:02",
-"offsetSeconds":2,
+"offsetSeconds":0.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control at 2 hours, 25 minutes; and Carnarvon has acquired Apollo 11. At LOS here at Carnarvon, we will have several ARIAs, Apollo Range Instrumented Aircraft, in the area between LOS Carnarvon and acquisition at the tracking ship Redstone, so we may have the capability of continuous communications between now and the TLI burn. We'll stand by through Carnarvon."
 },
 {
 "get":"002:25:44",
-"offsetSeconds":44,
+"offsetSeconds":43.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston through Carnarvon. Radio check. Over."
 },
 {
 "get":"002:25:49",
-"offsetSeconds":49,
+"offsetSeconds":48.2,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger, Houston through Carnarvon. Apollo 11. Loud and clear."
 },
 {
 "get":"002:25:53",
-"offsetSeconds":53,
+"offsetSeconds":52.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. You're coming in very loud and very clear, here. Out."
 },
 {
 "get":"002:26:38",
-"offsetSeconds":98,
+"offsetSeconds":97.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. You are Go for TLI. Over."
 },
 {
 "get":"002:26:45",
-"offsetSeconds":105,
+"offsetSeconds":104.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Apollo 11. Thank you."
 },
 {
 "get":"002:26:48",
-"offsetSeconds":108,
+"offsetSeconds":106.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Out."
@@ -4943,70 +4943,63 @@
 "a11_0023011":[
 {
 "get":"002:30:11",
-"offsetSeconds":0,
+"offsetSeconds":2.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"002:30:16",
-"offsetSeconds":5,
+"offsetSeconds":7.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, 11."
 },
 {
 "get":"002:30:18",
-"offsetSeconds":7,
+"offsetSeconds":9.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We'll be coming within range of the ARIA aircraft coverage, here, in about one minute. They're going to try uplinking both on S-band and on VHF this time. So if you turn your - make sure your S-band volume is turned up, we'd appreciate it. And we believe that we'll have continuous coverage from now on through the TLI burn. Over."
 },
 {
 "get":"002:30:42",
-"offsetSeconds":31,
+"offsetSeconds":33.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Very good."
 },
 {
 "get":"002:32:20",
-"offsetSeconds":129,
+"offsetSeconds":130.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston through ARIA 4. Radio check. Over."
 },
 {
 "get":"002:32:28",
-"offsetSeconds":137,
+"offsetSeconds":138.6,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, we read you strength 4 and a little scratchy."
 },
 {
 "get":"002:32:34",
-"offsetSeconds":143,
+"offsetSeconds":144.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We're reading you strength 5, readability about 3. Should be quite adequate."
 },
 {
 "get":"002:32:34",
-"offsetSeconds":143,
+"offsetSeconds":144.6,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. We've got a little static in the background now."
 },
 {
-"get":"002:32:34",
-"offsetSeconds":143,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control. We're 10 minutes away from ignition on Translunar Injection. We want to add 10,435 feet per second to the spacecraft's velocity, looking for a total velocity at the end of this burn of about 35,575 feet per second."
-},
-{
 "get":"002:32:42",
-"offsetSeconds":151,
+"offsetSeconds":152.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston. We're reading you readability about 3, strength 5. Sounds pretty good. Over."
@@ -5015,1024 +5008,968 @@
 "a11_0023721":[
 {
 "get":"002:37:21",
-"offsetSeconds":0,
+"offsetSeconds":187.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston through ARIA 3. Radio check. Over."
 },
 {
 "get":"002:37:26",
-"offsetSeconds":5,
+"offsetSeconds":192.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger, Houston, Apollo 11. You are much clearer and adequately loud. Over."
 },
 {
 "get":"002:37:32",
-"offsetSeconds":11,
+"offsetSeconds":198.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger, 11, You are coming in five-by-five here. Beautiful signal."
 },
 {
 "get":"002:37:38",
-"offsetSeconds":17,
+"offsetSeconds":204.2,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"This is a lot better than this static we had previously."
 },
 {
 "get":"002:37:40",
-"offsetSeconds":19,
+"offsetSeconds":206.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"002:37:48",
-"offsetSeconds":27,
+"offsetSeconds":213.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"And we got the timebase fix indication on time."
 },
 {
 "get":"002:37:50",
-"offsetSeconds":29,
+"offsetSeconds":215.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"This is Houston. Roger. Out."
 },
 {
 "get":"002:40:20",
-"offsetSeconds":179,
+"offsetSeconds":365.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. We just got telemetry back on your booster, and it's looking good."
 },
 {
 "get":"002:40:30",
-"offsetSeconds":189,
+"offsetSeconds":375.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. Everything looks good here."
 },
 {
 "get":"002:40:34",
-"offsetSeconds":193,
+"offsetSeconds":379.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Houston, Roger. Out."
-},
-{
-"get":"002:40:34",
-"offsetSeconds":193,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control. We're 2 minutes from ignition now."
-},
-{
-"get":"002:40:34",
-"offsetSeconds":193,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"We're showing present altitude about 108 nautical miles. We expect to be at an altitude of 177 nautical miles at cut-off. Present velocity, 25,560 feet per second. And we're a minute from ignition."
 }
 ],
 "a11_0024020":[
 {
 "get":"002:40:20",
-"offsetSeconds":0,
+"offsetSeconds":3.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. We just got telemetry back on your booster, and it's looking good."
 },
 {
 "get":"002:40:30",
-"offsetSeconds":10,
+"offsetSeconds":85.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. Everything looks good here."
 },
 {
 "get":"002:40:34",
-"offsetSeconds":14,
+"offsetSeconds":118.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Houston, Roger. Out."
 },
 {
 "get":"002:40:34",
-"offsetSeconds":14,
+"offsetSeconds":118.3,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control. We're 2 minutes from ignition now."
 },
 {
-"get":"002:40:34",
-"offsetSeconds":14,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"We're showing present altitude about 108 nautical miles. We expect to be at an altitude of 177 nautical miles at cut-off. Present velocity, 25,560 feet per second. And we're a minute from ignition."
-},
-{
 "get":"002:43:18",
-"offsetSeconds":178,
+"offsetSeconds":180.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Slightly less than one minute to ignition, and everything is Go."
 },
 {
 "get":"002:43:25",
-"offsetSeconds":185,
+"offsetSeconds":187.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"002:43:42",
-"offsetSeconds":202,
+"offsetSeconds":204.3,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, 59:25. And this light will go off at 42."
 },
 {
 "get":"002:43:53",
-"offsetSeconds":213,
+"offsetSeconds":215.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Time is based on tracking data. Let me know when you start it up."
 },
 {
 "get":"002:43:54",
-"offsetSeconds":214,
+"offsetSeconds":216.2,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:43:59",
-"offsetSeconds":219,
+"offsetSeconds":221.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"When you feel it, that's when it is."
 },
 {
 "get":"002:44:01",
-"offsetSeconds":221,
+"offsetSeconds":223.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, this light is out - know any of it any more."
 },
 {
 "get":"002:44:09",
-"offsetSeconds":229,
+"offsetSeconds":231.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, we're operate - 59:59."
 },
 {
 "get":"002:44:16",
-"offsetSeconds":236,
+"offsetSeconds":237.9,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"There we go; thrust."
 },
 {
 "get":"002:44:18",
-"offsetSeconds":238,
+"offsetSeconds":239.8,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Ignition! Call it at 15."
 },
 {
 "get":"002:44:19",
-"offsetSeconds":239,
+"offsetSeconds":240.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Ignition. [Pause.]"
 },
 {
 "get":"002:44:22",
-"offsetSeconds":242,
+"offsetSeconds":243.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:44:26",
-"offsetSeconds":246,
+"offsetSeconds":247.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Whew!"
 },
 {
 "get":"002:44:27",
-"offsetSeconds":247,
+"offsetSeconds":248.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"We confirm ignition, and the thrust is Go. [Long pause.]"
 },
 {
-"get":"002:44:27",
-"offsetSeconds":247,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Guidance looking good. Velocity 26,000 feet per second."
-},
-{
 "get":"002:44:33",
-"offsetSeconds":253,
+"offsetSeconds":254.8,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Pressures look good."
 },
 {
 "get":"002:44:37",
-"offsetSeconds":257,
+"offsetSeconds":258.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Flashes out window number 5."
 },
 {
 "get":"002:44:40",
-"offsetSeconds":260,
+"offsetSeconds":261.9,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I'm not sure whether that's - it could be lightning, or it could be something to do with the engine."
 },
 {
 "get":"002:44:59",
-"offsetSeconds":279,
+"offsetSeconds":281.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Continual flashes [garble]."
 },
 {
 "get":"002:45:09",
-"offsetSeconds":289,
+"offsetSeconds":291.3,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"About 2 degrees off in the pitch [garble]."
 },
 {
 "get":"002:45:12",
-"offsetSeconds":292,
+"offsetSeconds":294.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Yeah, wouldn't worry too much about that."
 },
 {
 "get":"002:45:14",
-"offsetSeconds":294,
+"offsetSeconds":296.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston at 1 minute. Trajectory and guidance look good, and the stage is good. Over."
 },
 {
 "get":"002:45:23",
-"offsetSeconds":303,
+"offsetSeconds":314.4,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Apollo 11. Rog."
 },
 {
 "get":"002:45:23",
-"offsetSeconds":303,
+"offsetSeconds":314.4,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Coming up on 27,000 feet per second."
 },
 {
-"get":"002:45:23",
-"offsetSeconds":303,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Telemetry and radar tracking both solid. Velocity 27,800 feet per second."
-},
-{
 "get":"002:45:50",
-"offsetSeconds":330,
+"offsetSeconds":337.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Don't look out window 1. If you're - if it looks like what I see out window 5, you don't want to look at it [Laughter]."
 },
 {
 "get":"002:45:55",
-"offsetSeconds":335,
+"offsetSeconds":341.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I don't see anything."
 },
 {
 "get":"002:45:56",
-"offsetSeconds":336,
+"offsetSeconds":342.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Why?"
 },
 {
 "get":"002:45:57",
-"offsetSeconds":337,
+"offsetSeconds":343.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"These flashes out here..."
 },
 {
 "get":"002:45:58",
-"offsetSeconds":338,
+"offsetSeconds":344.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Oh, I see a little flashing out there, yes."
 },
 {
 "get":"002:46:03",
-"offsetSeconds":343,
+"offsetSeconds":348.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"You see that? Buzz is usually looking - just watch window 5 for a second. See it?"
 },
 {
 "get":"002:46:10",
-"offsetSeconds":350,
+"offsetSeconds":354.3,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yes, yes. Damn, everything's - just kind of sparks flying out there."
 },
 {
 "get":"002:46:14",
-"offsetSeconds":354,
+"offsetSeconds":357.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes, that's - Oopsedo."
 },
 {
 "get":"002:46:16",
-"offsetSeconds":356,
+"offsetSeconds":359.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Man, that really..."
 },
 {
 "get":"002:46:18",
-"offsetSeconds":358,
+"offsetSeconds":361.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"That's PU shift?"
 },
 {
 "get":"002:46:19",
-"offsetSeconds":359,
+"offsetSeconds":361.9,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I don't know, but it sure put a little blip in there at 2 minutes. I think it increased in thrust."
 },
 {
 "get":"002:46:24",
-"offsetSeconds":364,
+"offsetSeconds":366.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Think it's the PU shift?"
 },
 {
 "get":"002:46:26",
-"offsetSeconds":366,
+"offsetSeconds":367.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Thrust is good. Everything's still looking good."
 },
 {
 "get":"002:46:32",
-"offsetSeconds":372,
+"offsetSeconds":372.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"002:46:32",
-"offsetSeconds":372,
+"offsetSeconds":377.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"That's about like a pitch change rather than an acceleration increase. Did it feel that way to you?"
 },
 {
 "get":"002:46:38",
-"offsetSeconds":378,
+"offsetSeconds":386.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay. We got a lighted horizon at 2&frac12; minutes. Pretty horizon."
 },
 {
 "get":"002:46:38",
-"offsetSeconds":378,
+"offsetSeconds":386.3,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"We're 2&frac12; minutes into this burn. Still have another three minutes to go."
 },
 {
 "get":"002:46:48",
-"offsetSeconds":388,
+"offsetSeconds":399.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"A fairly smooth ride, you know. It's just a little tiny bit rattly, but nothing like Stafford's. H-dot looks great. Don't bet you could do any better."
 },
 {
 "get":"002:46:58",
-"offsetSeconds":398,
+"offsetSeconds":412.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I'm sure I couldn't. I'd do worse because I'd be a - a full degree off from where it is right now."
 },
 {
 "get":"002:46:58",
-"offsetSeconds":398,
+"offsetSeconds":412.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"And velocity exceeds 29,000 feet per second, building up toward 30,000 feet per second."
 },
 {
 "get":"002:47:14",
-"offsetSeconds":414,
+"offsetSeconds":424.9,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Don't sweat that. 3 minutes."
 },
 {
 "get":"002:47:16",
-"offsetSeconds":416,
+"offsetSeconds":426.4,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"3 minutes. What we got, about one g, Neil?"
 },
 {
-"get":"002:47:16",
-"offsetSeconds":416,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Present altitude 115 nautical miles."
-},
-{
 "get":"002:47:24",
-"offsetSeconds":424,
+"offsetSeconds":432.5,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Pressures are good..."
 },
 {
 "get":"002:47:25",
-"offsetSeconds":425,
+"offsetSeconds":433.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes, we've got 3 feet per second..."
 },
 {
 "get":"002:47:26",
-"offsetSeconds":426,
+"offsetSeconds":434.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Just under one g."
 },
 {
 "get":"002:47:27",
-"offsetSeconds":427,
+"offsetSeconds":434.8,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Mike, we're within 3 feet per second on the card H-dot."
 },
 {
 "get":"002:47:32",
-"offsetSeconds":432,
+"offsetSeconds":438.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Fantastic. And it's shaking everything a little bit."
 },
 {
 "get":"002:47:34",
-"offsetSeconds":434,
+"offsetSeconds":440.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Shaking at 3 minutes."
 },
 {
 "get":"002:47:35",
-"offsetSeconds":435,
+"offsetSeconds":440.9,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:47:36",
-"offsetSeconds":436,
+"offsetSeconds":441.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"I hope that camera doesn't fall on your face."
 },
 {
 "get":"002:47:38",
-"offsetSeconds":438,
+"offsetSeconds":443.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I checked it; it's locked in there pretty well. Won't hurt this visor..."
 },
 {
 "get":"002:47:43",
-"offsetSeconds":443,
+"offsetSeconds":447.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"03:30 coming up. Should be 5.5, and it is 5.5."
 },
 {
 "get":"002:47:53",
-"offsetSeconds":453,
+"offsetSeconds":454.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Nice ride."
 },
 {
 "get":"002:47:54",
-"offsetSeconds":454,
+"offsetSeconds":455.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Around 3&frac12; minutes, you're still looking good. Your predicted cut-off is right on the nominal."
 },
 {
 "get":"002:48:04",
-"offsetSeconds":464,
+"offsetSeconds":471.1,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Apollo 11's Go."
 },
 {
 "get":"002:48:04",
-"offsetSeconds":464,
+"offsetSeconds":471.1,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"31,200 feet per second now. Altitude 125 nautical miles."
 },
 {
-"get":"002:48:04",
-"offsetSeconds":464,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Velocity 32,000 feet per second. Altitude 130 miles."
-},
-{
 "get":"002:48:07",
-"offsetSeconds":467,
+"offsetSeconds":476.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I see a bright star out there, must be Venus. Forgot to memorize John Mayer's views out the window well enough to say that's Venus or not, but it's sure bright."
 },
 {
 "get":"002:48:17",
-"offsetSeconds":477,
+"offsetSeconds":495.2,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"What would you do about it?"
 },
 {
 "get":"002:48:18",
-"offsetSeconds":478,
+"offsetSeconds":497.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Nothing."
 },
 {
 "get":"002:48:19",
-"offsetSeconds":479,
+"offsetSeconds":498.9,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Four minutes..."
 },
 {
 "get":"002:48:20",
-"offsetSeconds":480,
+"offsetSeconds":500.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Tell you what, that's Venus."
 },
 {
 "get":"002:48:22",
-"offsetSeconds":482,
+"offsetSeconds":504.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"10 feet per second off on H-dot..."
 },
 {
 "get":"002:48:25",
-"offsetSeconds":485,
+"offsetSeconds":509.9,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"[Garble], that's about where it is."
 },
 {
 "get":"002:48:27",
-"offsetSeconds":487,
+"offsetSeconds":513.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Here comes the old Sun."
 },
 {
 "get":"002:48:29",
-"offsetSeconds":489,
+"offsetSeconds":517.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Gee, that's going to be bright."
 },
 {
 "get":"002:48:31",
-"offsetSeconds":491,
+"offsetSeconds":521.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Glad I got my card up."
 },
 {
 "get":"002:48:32",
-"offsetSeconds":492,
+"offsetSeconds":522.9,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I'm glad you had - you do too, Neil. That was a good idea, a hell of a good idea. I can't see - well, my tapes are [garble] I can't [garble] see very much."
 },
 {
 "get":"002:48:32",
-"offsetSeconds":492,
+"offsetSeconds":522.9,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"One minute left to burn. Velocity's 33,000 feet per second. Altitude 142&frac12; nautical miles."
 },
 {
 "get":"002:48:42",
-"offsetSeconds":502,
+"offsetSeconds":529.2,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Coming up on 04:30. How you look, Buzz?"
 },
 {
 "get":"002:48:49",
-"offsetSeconds":509,
+"offsetSeconds":533.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Looks good. Oh, about 14 feet per second right now. The altitude's very good. We ought to get a real good 5-minute cut at the [garble]."
 },
 {
 "get":"002:49:12",
-"offsetSeconds":532,
+"offsetSeconds":548.2,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"You guys agree with my mark; we'll be 5 minutes?"
 },
 {
 "get":"002:49:14",
-"offsetSeconds":534,
+"offsetSeconds":549.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:49:15",
-"offsetSeconds":535,
+"offsetSeconds":550.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Just a second."
 },
 {
 "get":"002:49:16",
-"offsetSeconds":536,
+"offsetSeconds":550.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Five minutes."
 },
 {
 "get":"002:49:17",
-"offsetSeconds":537,
+"offsetSeconds":551.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Mark."
 },
 {
 "get":"002:49:18",
-"offsetSeconds":538,
+"offsetSeconds":552.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. You are Go at 5 minutes."
 },
 {
 "get":"002:49:22",
-"offsetSeconds":542,
+"offsetSeconds":554.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. We're Go."
 },
 {
 "get":"002:49:22",
-"offsetSeconds":542,
+"offsetSeconds":554.5,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"34,000 feet per second now. Altitude 152."
 },
 {
 "get":"002:49:23",
-"offsetSeconds":543,
+"offsetSeconds":555.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, we're just a little bit low on time."
 },
 {
 "get":"002:49:25",
-"offsetSeconds":545,
+"offsetSeconds":557.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Right on it."
 },
 {
 "get":"002:49:27",
-"offsetSeconds":547,
+"offsetSeconds":560.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"[Garble] yaw."
 },
 {
 "get":"002:49:33",
-"offsetSeconds":553,
+"offsetSeconds":566.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"[Garble] do that?"
 },
 {
 "get":"002:49:34",
-"offsetSeconds":554,
+"offsetSeconds":567.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Yeah, we better do that."
 },
 {
 "get":"002:49:37",
-"offsetSeconds":557,
+"offsetSeconds":570.9,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"5 - 5 seconds..."
 },
 {
 "get":"002:49:40",
-"offsetSeconds":560,
+"offsetSeconds":574.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"What kind of g we pulling?"
 },
 {
 "get":"002:49:42",
-"offsetSeconds":562,
+"offsetSeconds":576.3,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"We got a g 1.2 or 3. 1.3, maybe."
 },
 {
 "get":"002:49:46",
-"offsetSeconds":566,
+"offsetSeconds":580.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Gee, feels a lot more than that already."
 },
 {
 "get":"002:49:46",
-"offsetSeconds":566,
+"offsetSeconds":580.6,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"35,000 feet per second."
 },
 {
 "get":"002:49:51",
-"offsetSeconds":571,
+"offsetSeconds":584.2,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, 6 - okay, about 5 seconds to nominal."
 },
 {
 "get":"002:50:03",
-"offsetSeconds":583,
+"offsetSeconds":592.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Here we go..."
 },
 {
 "get":"002:50:06",
-"offsetSeconds":586,
+"offsetSeconds":594.8,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"We have cut-off."
 },
 {
 "get":"002:50:06",
-"offsetSeconds":586,
+"offsetSeconds":594.8,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Cut-off. We're showing velocity 35,570 feet per second. Altitude 177 nautical miles."
 },
 {
 "get":"002:50:09",
-"offsetSeconds":589,
+"offsetSeconds":597.2,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"3.3 on the Delta..."
 },
 {
 "get":"002:50:12",
-"offsetSeconds":592,
+"offsetSeconds":599.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"The Delta-V C on the EMS: 3.3."
 },
 {
 "get":"002:50:14",
-"offsetSeconds":594,
+"offsetSeconds":601.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Beautiful. EMS Function, Off."
 },
 {
 "get":"002:50:17",
-"offsetSeconds":597,
+"offsetSeconds":603.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Off."
 },
 {
 "get":"002:50:19",
-"offsetSeconds":599,
+"offsetSeconds":605.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"SECS Pyro Arm, two, Safe."
 },
 {
 "get":"002:50:22",
-"offsetSeconds":602,
+"offsetSeconds":607.3,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I got out - I got out of kilter here. Let's go back and let Buzz pick up on it. You're just a little bit ahead of yourself on the checklist."
 },
 {
 "get":"002:50:29",
-"offsetSeconds":609,
+"offsetSeconds":612.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:50:30",
-"offsetSeconds":610,
+"offsetSeconds":613.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, Houston, you read 11?"
 },
 {
 "get":"002:50:35",
-"offsetSeconds":615,
+"offsetSeconds":617.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Buzz, forget I read anything in the checklist."
 },
 {
 "get":"002:50:35",
-"offsetSeconds":615,
+"offsetSeconds":617.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. We show cut-off and we copy the numbers in Noun 62. [No answer. Long pause.]"
 },
 {
 "get":"002:50:38",
-"offsetSeconds":618,
+"offsetSeconds":620.3,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yeah..."
 },
 {
 "get":"002:50:39",
-"offsetSeconds":619,
+"offsetSeconds":621.3,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Not getting any answer..."
 },
 {
 "get":"002:50:41",
-"offsetSeconds":621,
+"offsetSeconds":623.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay, let's go to IU Accept here. Now [garble]."
 },
 {
 "get":"002:50:53",
-"offsetSeconds":633,
+"offsetSeconds":634.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. Do you read? [No answer. Long pause.]"
 },
 {
 "get":"002:50:56",
-"offsetSeconds":636,
+"offsetSeconds":637.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Why don't you try to get up high?"
 },
 {
 "get":"002:50:59",
-"offsetSeconds":639,
+"offsetSeconds":640.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"SCS TVC Servo Power 1, Off."
 },
 {
 "get":"002:51:00",
-"offsetSeconds":640,
+"offsetSeconds":641.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay. You want to get Houston on the radio if you can?"
 },
 {
 "get":"002:51:02",
-"offsetSeconds":642,
+"offsetSeconds":643.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yeah."
 },
 {
 "get":"002:51:03",
-"offsetSeconds":643,
+"offsetSeconds":644.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"PCM Bit Rate, Low."
 },
 {
 "get":"002:51:04",
-"offsetSeconds":644,
+"offsetSeconds":645.4,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"PCM Bit Rate is Low..."
 },
 {
 "get":"002:51:17",
-"offsetSeconds":657,
+"offsetSeconds":658.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Do you read? Over."
 },
 {
 "get":"002:51:21",
-"offsetSeconds":661,
+"offsetSeconds":662.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger, Houston. Apollo 11. We're reading a V I of 35579 and the EMS was plus 3.3. Over."
 },
 {
 "get":"002:51:31",
-"offsetSeconds":671,
+"offsetSeconds":672.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Plus 3.3 on the EMS. And we copy the V I ."
 },
 {
 "get":"002:53:03",
-"offsetSeconds":763,
+"offsetSeconds":763.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Hey, Houston, Apollo 11. That Saturn gave us a magnificent ride."
 },
 {
 "get":"002:53:09",
-"offsetSeconds":769,
+"offsetSeconds":769.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger, 11. We'll pass that on. And, it certainly looks like you are well on your way now."
 },
 {
-"get":"002:53:09",
-"offsetSeconds":769,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"That was Neil Armstrong praising the launch vehicle."
-},
-{
 "get":"002:53:30",
-"offsetSeconds":790,
+"offsetSeconds":789.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"We got - We have no complaints with any of the three stages on that ride. It was beautiful."
 },
 {
 "get":"002:53:38",
-"offsetSeconds":798,
+"offsetSeconds":799.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We copy. No transients at staging of any significance? Over."
 },
 {
 "get":"002:53:44",
-"offsetSeconds":804,
+"offsetSeconds":803.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"That's right. It was all - all a good ride."
 },
 {
 "get":"002:53:47",
-"offsetSeconds":807,
+"offsetSeconds":806.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Houston. Roger. Out. [Long pause.]"
@@ -6041,833 +5978,749 @@
 "a11_0024318ob":[
 {
 "get":"002:43:18",
-"offsetSeconds":0,
+"offsetSeconds":7.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Slightly less than one minute to ignition, and everything is Go."
 },
 {
 "get":"002:43:25",
-"offsetSeconds":7,
+"offsetSeconds":14.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"002:43:42",
-"offsetSeconds":24,
+"offsetSeconds":31.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, 59:25. And this light will go off at 42."
 },
 {
 "get":"002:43:53",
-"offsetSeconds":35,
+"offsetSeconds":42.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Time is based on tracking data. Let me know when you start it up."
 },
 {
 "get":"002:43:54",
-"offsetSeconds":36,
+"offsetSeconds":43.5,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:43:59",
-"offsetSeconds":41,
+"offsetSeconds":48.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"When you feel it, that's when it is."
 },
 {
 "get":"002:44:01",
-"offsetSeconds":43,
+"offsetSeconds":50.5,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, this light is out - know any of it any more."
 },
 {
 "get":"002:44:09",
-"offsetSeconds":51,
+"offsetSeconds":58.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, we're operate - 59:59."
 },
 {
 "get":"002:44:16",
-"offsetSeconds":58,
+"offsetSeconds":65.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"There we go; thrust."
 },
 {
 "get":"002:44:18",
-"offsetSeconds":60,
+"offsetSeconds":67.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Ignition! Call it at 15."
 },
 {
 "get":"002:44:19",
-"offsetSeconds":61,
+"offsetSeconds":68.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Ignition. [Pause.]"
 },
 {
 "get":"002:44:22",
-"offsetSeconds":64,
+"offsetSeconds":71.4,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:44:26",
-"offsetSeconds":68,
+"offsetSeconds":75.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Whew!"
 },
 {
 "get":"002:44:27",
-"offsetSeconds":69,
+"offsetSeconds":76.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"We confirm ignition, and the thrust is Go. [Long pause.]"
 },
 {
-"get":"002:44:27",
-"offsetSeconds":69,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Guidance looking good. Velocity 26,000 feet per second."
-},
-{
 "get":"002:44:33",
-"offsetSeconds":75,
+"offsetSeconds":82.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Pressures look good."
 },
 {
 "get":"002:44:37",
-"offsetSeconds":79,
+"offsetSeconds":86.4,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Flashes out window number 5."
 },
 {
 "get":"002:44:40",
-"offsetSeconds":82,
+"offsetSeconds":89.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I'm not sure whether that's - it could be lightning, or it could be something to do with the engine."
 },
 {
 "get":"002:44:59",
-"offsetSeconds":101,
+"offsetSeconds":108.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Continual flashes [garble]."
 },
 {
 "get":"002:45:09",
-"offsetSeconds":111,
+"offsetSeconds":118.3,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"About 2 degrees off in the pitch [garble]."
 },
 {
 "get":"002:45:12",
-"offsetSeconds":114,
+"offsetSeconds":121.3,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Yeah, wouldn't worry too much about that."
 },
 {
 "get":"002:45:14",
-"offsetSeconds":116,
+"offsetSeconds":123.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston at 1 minute. Trajectory and guidance look good, and the stage is good. Over."
 },
 {
 "get":"002:45:23",
-"offsetSeconds":125,
+"offsetSeconds":132.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Apollo 11. Rog."
 },
 {
-"get":"002:45:23",
-"offsetSeconds":125,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Coming up on 27,000 feet per second."
-},
-{
-"get":"002:45:23",
-"offsetSeconds":125,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Telemetry and radar tracking both solid. Velocity 27,800 feet per second."
-},
-{
 "get":"002:45:50",
-"offsetSeconds":152,
+"offsetSeconds":159.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Don't look out window 1. If you're - if it looks like what I see out window 5, you don't want to look at it [Laughter]."
 },
 {
 "get":"002:45:55",
-"offsetSeconds":157,
+"offsetSeconds":164.8,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I don't see anything."
 },
 {
 "get":"002:45:56",
-"offsetSeconds":158,
+"offsetSeconds":165.8,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Why?"
 },
 {
 "get":"002:45:57",
-"offsetSeconds":159,
+"offsetSeconds":166.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"These flashes out here..."
 },
 {
 "get":"002:45:58",
-"offsetSeconds":160,
+"offsetSeconds":167.8,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Oh, I see a little flashing out there, yes."
 },
 {
 "get":"002:46:03",
-"offsetSeconds":165,
+"offsetSeconds":172.9,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"You see that? Buzz is usually looking - just watch window 5 for a second. See it?"
 },
 {
 "get":"002:46:10",
-"offsetSeconds":172,
+"offsetSeconds":180.0,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yes, yes. Damn, everything's - just kind of sparks flying out there."
 },
 {
 "get":"002:46:14",
-"offsetSeconds":176,
+"offsetSeconds":184.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes, that's - Oopsedo."
 },
 {
 "get":"002:46:16",
-"offsetSeconds":178,
+"offsetSeconds":186.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Man, that really..."
 },
 {
 "get":"002:46:18",
-"offsetSeconds":180,
+"offsetSeconds":188.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"That's PU shift?"
 },
 {
 "get":"002:46:19",
-"offsetSeconds":181,
+"offsetSeconds":189.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I don't know, but it sure put a little blip in there at 2 minutes. I think it increased in thrust."
 },
 {
 "get":"002:46:24",
-"offsetSeconds":186,
+"offsetSeconds":194.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Think it's the PU shift?"
 },
 {
 "get":"002:46:26",
-"offsetSeconds":188,
+"offsetSeconds":195.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Thrust is good. Everything's still looking good."
 },
 {
 "get":"002:46:32",
-"offsetSeconds":194,
+"offsetSeconds":201.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"002:46:32",
-"offsetSeconds":194,
+"offsetSeconds":201.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"That's about like a pitch change rather than an acceleration increase. Did it feel that way to you?"
 },
 {
 "get":"002:46:38",
-"offsetSeconds":200,
+"offsetSeconds":207.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay. We got a lighted horizon at 2&frac12; minutes. Pretty horizon."
 },
 {
-"get":"002:46:38",
-"offsetSeconds":200,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"We're 2&frac12; minutes into this burn. Still have another three minutes to go."
-},
-{
 "get":"002:46:48",
-"offsetSeconds":210,
+"offsetSeconds":217.4,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"A fairly smooth ride, you know. It's just a little tiny bit rattly, but nothing like Stafford's. H-dot looks great. Don't bet you could do any better."
 },
 {
 "get":"002:46:58",
-"offsetSeconds":220,
+"offsetSeconds":227.8,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I'm sure I couldn't. I'd do worse because I'd be a - a full degree off from where it is right now."
 },
 {
-"get":"002:46:58",
-"offsetSeconds":220,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"And velocity exceeds 29,000 feet per second, building up toward 30,000 feet per second."
-},
-{
 "get":"002:47:14",
-"offsetSeconds":236,
+"offsetSeconds":243.2,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Don't sweat that. 3 minutes."
 },
 {
 "get":"002:47:16",
-"offsetSeconds":238,
+"offsetSeconds":245.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"3 minutes. What we got, about one g, Neil?"
 },
 {
-"get":"002:47:16",
-"offsetSeconds":238,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Present altitude 115 nautical miles."
-},
-{
 "get":"002:47:24",
-"offsetSeconds":246,
+"offsetSeconds":253.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Pressures are good..."
 },
 {
 "get":"002:47:25",
-"offsetSeconds":247,
+"offsetSeconds":254.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes, we've got 3 feet per second..."
 },
 {
 "get":"002:47:26",
-"offsetSeconds":248,
+"offsetSeconds":255.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Just under one g."
 },
 {
 "get":"002:47:27",
-"offsetSeconds":249,
+"offsetSeconds":256.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Mike, we're within 3 feet per second on the card H-dot."
 },
 {
 "get":"002:47:32",
-"offsetSeconds":254,
+"offsetSeconds":261.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Fantastic. And it's shaking everything a little bit."
 },
 {
 "get":"002:47:34",
-"offsetSeconds":256,
+"offsetSeconds":263.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Shaking at 3 minutes."
 },
 {
 "get":"002:47:35",
-"offsetSeconds":257,
+"offsetSeconds":264.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:47:36",
-"offsetSeconds":258,
+"offsetSeconds":265.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"I hope that camera doesn't fall on your face."
 },
 {
 "get":"002:47:38",
-"offsetSeconds":260,
+"offsetSeconds":267.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I checked it; it's locked in there pretty well. Won't hurt this visor..."
 },
 {
 "get":"002:47:43",
-"offsetSeconds":265,
+"offsetSeconds":272.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"03:30 coming up. Should be 5.5, and it is 5.5."
 },
 {
 "get":"002:47:53",
-"offsetSeconds":275,
+"offsetSeconds":282.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Nice ride."
 },
 {
 "get":"002:47:54",
-"offsetSeconds":276,
+"offsetSeconds":282.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Around 3&frac12; minutes, you're still looking good. Your predicted cut-off is right on the nominal."
 },
 {
 "get":"002:48:04",
-"offsetSeconds":286,
+"offsetSeconds":292.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Apollo 11's Go."
 },
 {
-"get":"002:48:04",
-"offsetSeconds":286,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"31,200 feet per second now. Altitude 125 nautical miles."
-},
-{
-"get":"002:48:04",
-"offsetSeconds":286,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Velocity 32,000 feet per second. Altitude 130 miles."
-},
-{
 "get":"002:48:07",
-"offsetSeconds":289,
+"offsetSeconds":295.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I see a bright star out there, must be Venus. Forgot to memorize John Mayer's views out the window well enough to say that's Venus or not, but it's sure bright."
 },
 {
 "get":"002:48:17",
-"offsetSeconds":299,
+"offsetSeconds":306.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"What would you do about it?"
 },
 {
 "get":"002:48:18",
-"offsetSeconds":300,
+"offsetSeconds":308.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Nothing."
 },
 {
 "get":"002:48:19",
-"offsetSeconds":301,
+"offsetSeconds":308.2,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Four minutes..."
 },
 {
 "get":"002:48:20",
-"offsetSeconds":302,
+"offsetSeconds":309.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Tell you what, that's Venus."
 },
 {
 "get":"002:48:22",
-"offsetSeconds":304,
+"offsetSeconds":311.3,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"10 feet per second off on H-dot..."
 },
 {
 "get":"002:48:25",
-"offsetSeconds":307,
+"offsetSeconds":314.4,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"[Garble], that's about where it is."
 },
 {
 "get":"002:48:27",
-"offsetSeconds":309,
+"offsetSeconds":316.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Here comes the old Sun."
 },
 {
 "get":"002:48:29",
-"offsetSeconds":311,
+"offsetSeconds":318.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Gee, that's going to be bright."
 },
 {
 "get":"002:48:31",
-"offsetSeconds":313,
+"offsetSeconds":320.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Glad I got my card up."
 },
 {
 "get":"002:48:32",
-"offsetSeconds":314,
+"offsetSeconds":322.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I'm glad you had - you do too, Neil. That was a good idea, a hell of a good idea. I can't see - well, my tapes are [garble] I can't [garble] see very much."
 },
 {
-"get":"002:48:32",
-"offsetSeconds":314,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"One minute left to burn. Velocity's 33,000 feet per second. Altitude 142&frac12; nautical miles."
-},
-{
 "get":"002:48:42",
-"offsetSeconds":324,
+"offsetSeconds":331.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Coming up on 04:30. How you look, Buzz?"
 },
 {
 "get":"002:48:49",
-"offsetSeconds":331,
+"offsetSeconds":338.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Looks good. Oh, about 14 feet per second right now. The altitude's very good. We ought to get a real good 5-minute cut at the [garble]."
 },
 {
 "get":"002:49:12",
-"offsetSeconds":354,
+"offsetSeconds":362.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"You guys agree with my mark; we'll be 5 minutes?"
 },
 {
 "get":"002:49:14",
-"offsetSeconds":356,
+"offsetSeconds":364.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:49:15",
-"offsetSeconds":357,
+"offsetSeconds":365.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Just a second."
 },
 {
 "get":"002:49:16",
-"offsetSeconds":358,
+"offsetSeconds":365.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Five minutes."
 },
 {
 "get":"002:49:17",
-"offsetSeconds":359,
+"offsetSeconds":366.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Mark."
 },
 {
 "get":"002:49:18",
-"offsetSeconds":360,
+"offsetSeconds":367.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. You are Go at 5 minutes."
 },
 {
 "get":"002:49:22",
-"offsetSeconds":364,
+"offsetSeconds":371.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. We're Go."
 },
 {
-"get":"002:49:22",
-"offsetSeconds":364,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"34,000 feet per second now. Altitude 152."
-},
-{
 "get":"002:49:23",
-"offsetSeconds":365,
+"offsetSeconds":372.5,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, we're just a little bit low on time."
 },
 {
 "get":"002:49:25",
-"offsetSeconds":367,
+"offsetSeconds":374.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Right on it."
 },
 {
 "get":"002:49:27",
-"offsetSeconds":369,
+"offsetSeconds":377.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"[Garble] yaw."
 },
 {
 "get":"002:49:33",
-"offsetSeconds":375,
+"offsetSeconds":384.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"[Garble] do that?"
 },
 {
 "get":"002:49:34",
-"offsetSeconds":376,
+"offsetSeconds":385.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Yeah, we better do that."
 },
 {
 "get":"002:49:37",
-"offsetSeconds":379,
+"offsetSeconds":389.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"5 - 5 seconds..."
 },
 {
 "get":"002:49:40",
-"offsetSeconds":382,
+"offsetSeconds":392.9,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"What kind of g we pulling?"
 },
 {
 "get":"002:49:42",
-"offsetSeconds":384,
+"offsetSeconds":395.3,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"We got a g 1.2 or 3. 1.3, maybe."
 },
 {
 "get":"002:49:46",
-"offsetSeconds":388,
+"offsetSeconds":400.2,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Gee, feels a lot more than that already."
 },
 {
-"get":"002:49:46",
-"offsetSeconds":388,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"35,000 feet per second."
-},
-{
 "get":"002:49:51",
-"offsetSeconds":393,
+"offsetSeconds":406.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, 6 - okay, about 5 seconds to nominal."
 },
 {
 "get":"002:50:03",
-"offsetSeconds":405,
+"offsetSeconds":415.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Here we go..."
 },
 {
 "get":"002:50:06",
-"offsetSeconds":408,
+"offsetSeconds":417.2,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"We have cut-off."
 },
 {
-"get":"002:50:06",
-"offsetSeconds":408,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Cut-off. We're showing velocity 35,570 feet per second. Altitude 177 nautical miles."
-},
-{
 "get":"002:50:09",
-"offsetSeconds":411,
+"offsetSeconds":419.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"3.3 on the Delta..."
 },
 {
 "get":"002:50:12",
-"offsetSeconds":414,
+"offsetSeconds":422.3,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"The Delta-V C on the EMS: 3.3."
 },
 {
 "get":"002:50:14",
-"offsetSeconds":416,
+"offsetSeconds":424.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Beautiful. EMS Function, Off."
 },
 {
 "get":"002:50:17",
-"offsetSeconds":419,
+"offsetSeconds":426.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Off."
 },
 {
 "get":"002:50:19",
-"offsetSeconds":421,
+"offsetSeconds":429.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"SECS Pyro Arm, two, Safe."
 },
 {
 "get":"002:50:22",
-"offsetSeconds":424,
+"offsetSeconds":432.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I got out - I got out of kilter here. Let's go back and let Buzz pick up on it. You're just a little bit ahead of yourself on the checklist."
 },
 {
 "get":"002:50:29",
-"offsetSeconds":431,
+"offsetSeconds":438.9,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"002:50:30",
-"offsetSeconds":432,
+"offsetSeconds":439.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, Houston, you read 11?"
 },
 {
 "get":"002:50:35",
-"offsetSeconds":437,
+"offsetSeconds":444.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Buzz, forget I read anything in the checklist."
 },
 {
 "get":"002:50:35",
-"offsetSeconds":437,
+"offsetSeconds":444.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. We show cut-off and we copy the numbers in Noun 62. [No answer. Long pause.]"
 },
 {
 "get":"002:50:38",
-"offsetSeconds":440,
+"offsetSeconds":447.5,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yeah..."
 },
 {
 "get":"002:50:39",
-"offsetSeconds":441,
+"offsetSeconds":448.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Not getting any answer..."
 },
 {
 "get":"002:50:41",
-"offsetSeconds":443,
+"offsetSeconds":450.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay, let's go to IU Accept here. Now [garble]."
 },
 {
 "get":"002:50:53",
-"offsetSeconds":455,
+"offsetSeconds":461.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. Do you read? [No answer. Long pause.]"
 },
 {
 "get":"002:50:56",
-"offsetSeconds":458,
+"offsetSeconds":464.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Why don't you try to get up high?"
 },
 {
 "get":"002:50:59",
-"offsetSeconds":461,
+"offsetSeconds":467.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"SCS TVC Servo Power 1, Off."
 },
 {
 "get":"002:51:00",
-"offsetSeconds":462,
+"offsetSeconds":469.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay. You want to get Houston on the radio if you can?"
 },
 {
 "get":"002:51:02",
-"offsetSeconds":464,
+"offsetSeconds":471.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yeah."
 },
 {
 "get":"002:51:03",
-"offsetSeconds":465,
+"offsetSeconds":472.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"PCM Bit Rate, Low."
 },
 {
 "get":"002:51:04",
-"offsetSeconds":466,
+"offsetSeconds":473.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"PCM Bit Rate is Low..."
@@ -6876,66 +6729,52 @@
 "a11_0025409":[
 {
 "get":"002:54:09",
-"offsetSeconds":0,
+"offsetSeconds":2.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. For your information, we expect the maneuver to separation attitude to begin at 3 plus 05 plus 03, and to be completed at plus 09 plus 20. Separation at 3 plus 15 plus 00."
 },
 {
 "get":"002:54:33",
-"offsetSeconds":24,
+"offsetSeconds":25.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Time to begin maneuver is 3:05:03, complete 3:09:20. And separation 3 plus 15:00."
 },
 {
 "get":"002:54:46",
-"offsetSeconds":37,
+"offsetSeconds":42.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. That separation should be 3 plus 15:03. My error in reading up."
 },
 {
 "get":"002:54:55",
-"offsetSeconds":46,
+"offsetSeconds":53.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"002:54:55",
-"offsetSeconds":46,
+"offsetSeconds":53.8,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control. The velocity falling off now immediately after shutdown. We're showing 34,000 feet per second [10,400 m/s] now, but the altitude building; 512 nautical miles [948 km]."
 },
 {
 "get":"002:55:18",
-"offsetSeconds":69,
+"offsetSeconds":72.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. All the booster functions are proceeding normally. The sequencing is in good shape, and it doesn't look like they're having any problems at all. Over."
 },
 {
 "get":"002:55:28",
-"offsetSeconds":79,
+"offsetSeconds":82.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger."
-},
-{
-"get":"002:55:28",
-"offsetSeconds":79,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control and we're showing orbital weight now 138,892.9 pounds [63,000.7 kg]."
-},
-{
-"get":"002:55:28",
-"offsetSeconds":79,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 3 hours into the mission. Velocity now 31,214 feet per second [9,514 m/s]. Apollo 11's distance from Earth, 1,245 nautical miles [2,306 km]."
 }
 ],
 "a11_0030528":[
@@ -7048,115 +6887,80 @@
 "a11_0030901":[
 {
 "get":"003:09:01",
-"offsetSeconds":0,
+"offsetSeconds":1.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston. Over. [No answer.]"
 },
 {
 "get":"003:09:16",
-"offsetSeconds":15,
+"offsetSeconds":18.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston. Over. [Long pause.]"
 },
 {
 "get":"003:09:31",
-"offsetSeconds":30,
+"offsetSeconds":33.2,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Hello, Houston. Hello, Houston. This is Apollo 11. I'm reading you loud and clear. Go ahead. Over."
 },
 {
 "get":"003:09:37",
-"offsetSeconds":36,
+"offsetSeconds":39.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger, 11. This is Houston. We had to shift stations. We weren't reading you through Goldstone. We show Pyro Bus A armed and Pyro Bus B not armed at the present time. Over."
 },
 {
 "get":"003:09:50",
-"offsetSeconds":49,
+"offsetSeconds":63.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"That's affirmative, Houston. That's affirmative."
 },
 {
 "get":"003:09:54",
-"offsetSeconds":53,
+"offsetSeconds":70.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"003:09:54",
-"offsetSeconds":53,
+"offsetSeconds":70.5,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"The S-IVB has completed its maneuver to separation attitude."
 },
 {
-"get":"003:09:54",
-"offsetSeconds":53,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"4 minutes away from separation, 4 minutes."
-},
-{
-"get":"003:09:54",
-"offsetSeconds":53,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"At 3 hours, 11 minutes into the mission; velocity, 26,314 feet per second [8,021 m/s]. Distance from Earth, 3,140 nautical miles [5,815 km]."
-},
-{
 "get":"003:11:00",
-"offsetSeconds":119,
+"offsetSeconds":225.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"The S-IVB is reported in a stable attitude for the separation."
 },
 {
-"get":"003:11:00",
-"offsetSeconds":119,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Rates are less than 1/10th of a foot per second in all axes."
-},
-{
-"get":"003:11:00",
-"offsetSeconds":119,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"One minute to separation."
-},
-{
 "get":"003:14:08",
-"offsetSeconds":307,
+"offsetSeconds":309.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. You're Go for separation. Our systems recommendation is arm both Pyro Buses. Over."
 },
 {
 "get":"003:14:19",
-"offsetSeconds":318,
+"offsetSeconds":320.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Pyro B coming armed. My intent is to use bottle Primary 1, as per the checklist; therefore, I just turned A on."
 },
 {
 "get":"003:14:26",
-"offsetSeconds":325,
+"offsetSeconds":327.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We concur with the logic."
-},
-{
-"get":"003:14:26",
-"offsetSeconds":325,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"We're awaiting confirmation of separation."
 }
 ],
 "a11_0031627":[
@@ -8384,497 +8188,490 @@
 "a11_0032207":[
 {
 "get":"003:22:07",
-"offsetSeconds":0,
+"offsetSeconds":15.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Radio check. Over.[No answer.]"
 },
 {
-"get":"003:22:07",
-"offsetSeconds":0,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"The Goldstone station reports a very weak signal. We believe that Mike Collins is now maneuvering the spacecraft in the transposition and docking maneuver, and the antenna patterns aren't too good at the moment, so we have a weak signal strength."
-},
-{
 "get":"003:22:15",
-"offsetSeconds":8,
+"offsetSeconds":23.2,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Be sure that your RCS is working anyway."
 },
 {
 "get":"003:22:23",
-"offsetSeconds":16,
+"offsetSeconds":31.2,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"How far out are you, Mike?"
 },
 {
 "get":"003:22:25",
-"offsetSeconds":18,
+"offsetSeconds":33.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I'm still quite a ways. That's definitely an SLA panel - there's no doubt about that. Sure looks like [garble] panel. That stuff's hitting from the S-IVB from us. Geeze, look it - that one thing just hit the - gyro package on the S-band antenna."
 },
 {
 "get":"003:22:46",
-"offsetSeconds":39,
+"offsetSeconds":54.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yes, things occasionally come scooting out."
 },
 {
 "get":"003:22:52",
-"offsetSeconds":45,
+"offsetSeconds":60.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"[Garble]."
 },
 {
 "get":"003:22:53",
-"offsetSeconds":46,
+"offsetSeconds":61.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"And, occasionally, you know, a little piece of something hits the - what do you call that - covering? The whole LM quivers every so often. All - all the surface of it, Neil, you know, just kind of shakes like that."
 },
 {
 "get":"003:23:12",
-"offsetSeconds":65,
+"offsetSeconds":80.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Yeah?"
 },
 {
 "get":"003:23:13",
-"offsetSeconds":66,
+"offsetSeconds":81.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Just in one spot; it's not being hit. I hope it doesn't come in [garble]..."
 },
 {
 "get":"003:23:17",
-"offsetSeconds":70,
+"offsetSeconds":85.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Stand by; we're getting pretty close."
 },
 {
 "get":"003:23:20",
-"offsetSeconds":73,
+"offsetSeconds":88.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Just from the APS firing, you think?"
 },
 {
 "get":"003:23:25",
-"offsetSeconds":78,
+"offsetSeconds":93.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Stand by; we're closing."
 },
 {
 "get":"003:23:56",
-"offsetSeconds":109,
+"offsetSeconds":124.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston broadcasting in the blind. Request Omni Bravo if you read us. Request Omni Bravo. Out. [No answer.]"
 },
 {
 "get":"003:24:13",
-"offsetSeconds":126,
+"offsetSeconds":140.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. How do you read? [No answer.]"
 },
 {
 "get":"003:24:40",
-"offsetSeconds":153,
+"offsetSeconds":165.8,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay..."
 },
 {
 "get":"003:24:41",
-"offsetSeconds":154,
+"offsetSeconds":166.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"We don't have too much..."
 },
 {
 "get":"003:24:43",
-"offsetSeconds":156,
+"offsetSeconds":168.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"...BMAG Mode, three - You should stabilize and align CM - BMAG Mode, three, to Att 1/Rate 2?"
 },
 {
 "get":"003:24:49",
-"offsetSeconds":162,
+"offsetSeconds":174.4,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"003:24:50",
-"offsetSeconds":163,
+"offsetSeconds":175.3,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"And we're - translated plus X. That Capture Probe, Extend/Release, you've done that; CMC Mode, Free?"
 },
 {
 "get":"003:24:54",
-"offsetSeconds":167,
+"offsetSeconds":179.2,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Yes, sir."
 },
 {
 "get":"003:24:55",
-"offsetSeconds":168,
+"offsetSeconds":180.1,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes."
 },
 {
 "get":"003:24:57",
-"offsetSeconds":170,
+"offsetSeconds":182.0,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Allow probe to damp spacecraft oscillations?"
 },
 {
 "get":"003:24:58",
-"offsetSeconds":171,
+"offsetSeconds":183.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"We did that."
 },
 {
 "get":"003:24:59",
-"offsetSeconds":172,
+"offsetSeconds":183.9,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yes, you've done that. Docking Probe, Retract, Primary 1?"
 },
 {
 "get":"003:25:01",
-"offsetSeconds":174,
+"offsetSeconds":185.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"We did that."
 },
 {
 "get":"003:25:03",
-"offsetSeconds":176,
+"offsetSeconds":187.8,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Alright, after dock..."
 },
 {
 "get":"003:25:20",
-"offsetSeconds":193,
+"offsetSeconds":204.0,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Docking Probe, Extend/Release, to Off?"
 },
 {
 "get":"003:25:21",
-"offsetSeconds":194,
+"offsetSeconds":205.0,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Docking Probe, Extend/Release, to Off, I did that. Docking Probe, Retract,... to Off."
 },
 {
 "get":"003:25:27",
-"offsetSeconds":200,
+"offsetSeconds":210.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, Docking Probe, Retract, two of them, Off?"
 },
 {
 "get":"003:25:30",
-"offsetSeconds":203,
+"offsetSeconds":213.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"No, no, wait a minute. It says Docking Probe, Extend/Release, to Off, huh?"
 },
 {
 "get":"003:25:34",
-"offsetSeconds":207,
+"offsetSeconds":217.4,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yes."
 },
 {
 "get":"003:25:35",
-"offsetSeconds":208,
+"offsetSeconds":218.4,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"003:25:36",
-"offsetSeconds":209,
+"offsetSeconds":219.3,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Alright, let's go. Docking Probe, Retract, two of them, Off?"
 },
 {
 "get":"003:25:38",
-"offsetSeconds":211,
+"offsetSeconds":221.2,
 "speaker":"Armstrong/Collins",
 "channel":"onboard",
 "text":"Yes, they're Off."
 },
 {
 "get":"003:25:40",
-"offsetSeconds":213,
+"offsetSeconds":223.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Alright. Circuit breakers: Docking Probe, two, Open."
 },
 {
 "get":"003:25:45",
-"offsetSeconds":218,
+"offsetSeconds":227.9,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Docking Probe, two, Open."
 },
 {
 "get":"003:25:47",
-"offsetSeconds":220,
+"offsetSeconds":229.8,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, PCM Bit Rate is Low. Post-docking: it says Rate, High; Att Deadband, Max."
 },
 {
 "get":"003:25:47",
-"offsetSeconds":220,
+"offsetSeconds":229.8,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"Goldstone still showing weak signal strength."
 },
 {
 "get":"003:25:49",
-"offsetSeconds":222,
+"offsetSeconds":235.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. How do you read? Over. [No answer.]"
 },
 {
 "get":"003:25:56",
-"offsetSeconds":229,
+"offsetSeconds":242.5,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Rate, High; Att Deadband, Max."
 },
 {
 "get":"003:25:58",
-"offsetSeconds":231,
+"offsetSeconds":244.5,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"COAS Power, Off."
 },
 {
 "get":"003:25:59",
-"offsetSeconds":232,
+"offsetSeconds":245.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"COAS Power, Off."
 },
 {
 "get":"003:26:01",
-"offsetSeconds":234,
+"offsetSeconds":247.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"[Garble] get this to stop [garble]."
 },
 {
 "get":"003:26:05",
-"offsetSeconds":238,
+"offsetSeconds":251.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes, that wasn't the smoothest docking I've ever done."
 },
 {
 "get":"003:26:08",
-"offsetSeconds":241,
+"offsetSeconds":254.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Well, it felt good from here."
 },
 {
 "get":"003:26:10",
-"offsetSeconds":243,
+"offsetSeconds":256.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I mean the - I mean the whole - I mean the gas consumption would be a lot more than I would have guessed, you know? I thought I could about equal the simulator in [garble] and I didn't - I bet you I used - I hate to quote a number, but I've been down around 30-some pounds in the simulator, and I'll bet this was 50, 60 pounds, something like that. Hate to quote a number."
 },
 {
 "get":"003:26:31",
-"offsetSeconds":264,
+"offsetSeconds":277.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"How do the - Speaking of that, how do the Service Module RCS quantities look?"
 },
 {
 "get":"003:26:35",
-"offsetSeconds":268,
+"offsetSeconds":281.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Well, Buzz is fooling around with that - Let me just..."
 },
 {
 "get":"003:26:38",
-"offsetSeconds":271,
+"offsetSeconds":284.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"They - they're all 90 except B, which is above 90."
 },
 {
 "get":"003:26:42",
-"offsetSeconds":275,
+"offsetSeconds":288.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Should be. Can't ever tell on 3..."
 },
 {
 "get":"003:26:46",
-"offsetSeconds":279,
+"offsetSeconds":292.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"No, C and D are [garble] B, anyway."
 },
 {
 "get":"003:26:47",
-"offsetSeconds":280,
+"offsetSeconds":293.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston. Do you read? Over. [No answer.]"
 },
 {
 "get":"003:26:52",
-"offsetSeconds":285,
+"offsetSeconds":298.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay..."
 },
 {
 "get":"003:26:55",
-"offsetSeconds":288,
+"offsetSeconds":301.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Well, I got to go in there and dick..."
 },
 {
 "get":"003:26:57",
-"offsetSeconds":290,
+"offsetSeconds":303.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"I'm not sure that we're getting..."
 },
 {
 "get":"003:27:00",
-"offsetSeconds":293,
+"offsetSeconds":306.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Well, Buzz is getting comm right now."
 },
 {
 "get":"003:27:02",
-"offsetSeconds":295,
+"offsetSeconds":308.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes, let Buzz do his High-Gain thing, and I'll get ready to go dick with the tunnel."
 },
 {
 "get":"003:27:18",
-"offsetSeconds":311,
+"offsetSeconds":324.2,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Sure is squiggly, isn't it? It really wanders all over, doesn't it?"
 },
 {
 "get":"003:27:33",
-"offsetSeconds":326,
+"offsetSeconds":339.0,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Neil, where do you put this guy - usually?"
 },
 {
 "get":"003:27:35",
-"offsetSeconds":328,
+"offsetSeconds":340.9,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"I - clip it to that - clip up there beside the COAS - you see..."
 },
 {
 "get":"003:27:38",
-"offsetSeconds":331,
+"offsetSeconds":343.9,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"003:27:39",
-"offsetSeconds":332,
+"offsetSeconds":344.9,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"...see those clips up there, one of those. It's got a snap right here that's pretty good."
 },
 {
 "get":"003:27:48",
-"offsetSeconds":341,
+"offsetSeconds":353.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I think I can get it now - [garble]."
 },
 {
 "get":"003:27:54",
-"offsetSeconds":347,
+"offsetSeconds":359.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Radio check. Over. [No answer.]"
 },
 {
 "get":"003:28:10",
-"offsetSeconds":363,
+"offsetSeconds":376.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay, Buzz, how am I doing on the checklist?"
 },
 {
 "get":"003:28:11",
-"offsetSeconds":364,
+"offsetSeconds":377.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston. Radio check. Over. [No answer.]"
 },
 {
 "get":"003:28:18",
-"offsetSeconds":371,
+"offsetSeconds":384.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Well, I'm trying to..."
 },
 {
 "get":"003:28:19",
-"offsetSeconds":372,
+"offsetSeconds":385.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"You're at the High Gain..."
 },
 {
 "get":"003:28:20",
-"offsetSeconds":373,
+"offsetSeconds":386.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"...you're at post-docking. I'm trying to get the High Gain going - and I'm having a little trouble - [garble] trouble."
 },
 {
 "get":"003:28:29",
-"offsetSeconds":382,
+"offsetSeconds":395.6,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"That's Manual..."
@@ -8883,212 +8680,198 @@
 "a11_0032920":[
 {
 "get":"003:29:20",
-"offsetSeconds":0,
+"offsetSeconds":3.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Radio check. Over."
 },
 {
 "get":"003:29:24",
-"offsetSeconds":4,
+"offsetSeconds":8.7,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"[Very faint] Roger. Loud and clear."
 },
 {
 "get":"003:29:26",
-"offsetSeconds":6,
+"offsetSeconds":11.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We're copying you about five-by-two, very weak. Can you give us a status report, please?"
 },
 {
 "get":"003:29:35",
-"offsetSeconds":15,
+"offsetSeconds":19.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. We are docked. We do have acquisition with the High Gain at this time, I think."
 },
 {
 "get":"003:29:44",
-"offsetSeconds":24,
+"offsetSeconds":28.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Understand you are using the High Gain. Over."
 },
 {
 "get":"003:29:48",
-"offsetSeconds":28,
+"offsetSeconds":31.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"That's affirmative."
 },
 {
 "get":"003:29:51",
-"offsetSeconds":31,
+"offsetSeconds":34.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. I read - I read you very loud and clear, Buzz. Mike's pretty weak."
 },
 {
 "get":"003:30:00",
-"offsetSeconds":40,
+"offsetSeconds":43.4,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. We've got the High Gain locked on, now, I believe; Auto tracking now."
 },
 {
 "get":"003:30:05",
-"offsetSeconds":45,
+"offsetSeconds":48.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Okay. You're coming in loud and clear, but Mike is just barely readable."
 },
 {
 "get":"003:30:12",
-"offsetSeconds":52,
+"offsetSeconds":55.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"That was Neil. How are you reading Mike?"
 },
 {
 "get":"003:30:15",
-"offsetSeconds":55,
+"offsetSeconds":58.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Loud and clear now, Mike, and we understand that you are docked."
 },
 {
 "get":"003:30:19",
-"offsetSeconds":59,
+"offsetSeconds":62.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"That's affirmative. [Pause]"
 },
 {
 "get":"003:30:24",
-"offsetSeconds":64,
+"offsetSeconds":67.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, CDR. How do you read [garble]?"
 },
 {
 "get":"003:30:28",
-"offsetSeconds":68,
+"offsetSeconds":71.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, CDR, loud and clear, Neil."
 },
 {
 "get":"003:30:30",
-"offsetSeconds":70,
+"offsetSeconds":152.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"003:30:30",
-"offsetSeconds":70,
+"offsetSeconds":152.5,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control. Apollo 11's velocity now 21,096 feet per second [6,430 m/s]. Distance from Earth, 6,649 nautical miles [12,314 km]."
 },
 {
 "get":"003:32:40",
-"offsetSeconds":200,
+"offsetSeconds":202.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. Over."
 },
 {
 "get":"003:32:44",
-"offsetSeconds":204,
+"offsetSeconds":206.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Go ahead."
 },
 {
 "get":"003:32:46",
-"offsetSeconds":206,
+"offsetSeconds":208.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. When you commented on quad Bravo problem at separation, you were a little weak. Could you go through what you did after you noticed the talkback's barber pole again, please?"
 },
 {
 "get":"003:33:20",
-"offsetSeconds":240,
+"offsetSeconds":243.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"We copied the - the primary and secondary propellant talkbacks on SM RCS quad Bravo 1 to barber pole on separation."
 },
 {
 "get":"003:33:30",
-"offsetSeconds":250,
+"offsetSeconds":253.4,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Roger. That is affirmative, and we moved that switch to the Open position and they went back to gray. Over."
 },
 {
 "get":"003:33:39",
-"offsetSeconds":259,
+"offsetSeconds":261.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger."
-},
-{
-"get":"003:33:39",
-"offsetSeconds":259,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control. We're 34 minutes away from extraction of the Lunar Module from its adapter in the third stage of the Saturn."
-},
-{
-"get":"003:33:39",
-"offsetSeconds":259,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"The crew has started pressurizing the LM."
 }
 ],
 "a11_0033751":[
 {
 "get":"003:37:51",
-"offsetSeconds":0,
+"offsetSeconds":143.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"003:37:56",
-"offsetSeconds":5,
+"offsetSeconds":148.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger, Houston. Apollo 11. Go ahead."
 },
 {
 "get":"003:37:58",
-"offsetSeconds":7,
+"offsetSeconds":150.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Could you give us some comments on how the transposition and docking went? Over."
 },
 {
 "get":"003:38:07",
-"offsetSeconds":16,
+"offsetSeconds":159.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"I thought it went pretty well, Houston, although I expect I used more gas than I've been using in the simulator. The turnaround maneuver - I went Pitch, Accel Command and started to pitch up, and then when I put the Manual Attitude, Pitch back to Rate Command, for some reason it - it stopped its pitch rate, and I had to go back to Accel Command and hit what I thought was an extra Proceed on the DSKY. Then, during the course of that, we drifted slightly further away from the S-IVB than I expected. I expected to be out about 66 feet. My guess would be I was around 100 or so; and therefore, I exp"
 },
 {
 "get":"003:38:53",
-"offsetSeconds":62,
+"offsetSeconds":212.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"This is Houston. Roger. We copy."
 },
 {
 "get":"003:38:53",
-"offsetSeconds":62,
+"offsetSeconds":212.4,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That was Mike Collins giving the description on the transposition and docking."
@@ -9097,217 +8880,210 @@
 "a11_0034345":[
 {
 "get":"003:43:45",
-"offsetSeconds":0,
+"offsetSeconds":2.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Over."
 },
 {
 "get":"003:43:47",
-"offsetSeconds":2,
+"offsetSeconds":4.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Go ahead, 11."
 },
 {
 "get":"003:43:50",
-"offsetSeconds":5,
+"offsetSeconds":7.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Rog. We're working on the pressurization of the LM now, and working off the decal with CSM-LM pressure equalization. And we're down to step 13, where we're waiting for the cabin pressure to be 5, or it should be roughly 5 [psi, 34 kPa], before we turn the Repress package O 2 valve to Fill. Instead of 5, we're running about 4.4. Over."
 },
 {
 "get":"003:44:16",
-"offsetSeconds":31,
+"offsetSeconds":34.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Stand by a second. [Long pause.]"
 },
 {
 "get":"003:44:55",
-"offsetSeconds":70,
+"offsetSeconds":72.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And Houston, Apollo 11. We did put the Repress package O 2 valve to Fill momentarily there at step 13, and we have filled the bottles back up partially. What's the pressure reading there now, Neil?"
 },
 {
 "get":"003:45:17",
-"offsetSeconds":92,
+"offsetSeconds":94.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"We have about 450 psi [3.1 MPa] now in the - in the three 1-pound bottles."
 },
 {
 "get":"003:45:23",
-"offsetSeconds":98,
+"offsetSeconds":100.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Stand by a second, please."
 },
 {
 "get":"003:45:25",
-"offsetSeconds":100,
+"offsetSeconds":102.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Standing by. And the Repress package valve is now in the Off position. What's the cabin pressure now, Buzz? Cabin pressure's now 4.5. [Long pause.]"
 },
 {
-"get":"003:45:25",
-"offsetSeconds":100,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"At 3 hours, 46 minutes, velocity is 18,917 feet per second [5,766 m/s]. Distance from Earth, 9,002 nautical miles [16,672 km]."
-},
-{
 "get":"003:47:49",
-"offsetSeconds":244,
+"offsetSeconds":246.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. We think these readings are within normal tolerances. We just wanted to get your concurrence before we press down any further with these decals."
 },
 {
 "get":"003:48:01",
-"offsetSeconds":256,
+"offsetSeconds":258.0,
 "speaker":"MCC Speaker",
 "channel":"air-to-ground",
 "text":"Okay, CapCom. [Long pause.]"
 },
 {
 "get":"003:48:28",
-"offsetSeconds":283,
+"offsetSeconds":284.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. How do you read?"
 },
 {
 "get":"003:48:32",
-"offsetSeconds":287,
+"offsetSeconds":288.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Go ahead."
 },
 {
 "get":"003:48:35",
-"offsetSeconds":290,
+"offsetSeconds":292.4,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Rog. LM looks to be in pretty fine shape. About all we can see from here."
 },
 {
 "get":"003:48:43",
-"offsetSeconds":298,
+"offsetSeconds":299.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Okay. In reference to your question on this step 13 on the decal, I understand that you have used up the contents of the Repress O 2 package and at that time, instead of being up to 5 psi, you were reading 4.4. Is that correct?"
 },
 {
 "get":"003:49:07",
-"offsetSeconds":322,
+"offsetSeconds":323.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. 4.4. Yes sir."
 },
 {
 "get":"003:49:11",
-"offsetSeconds":326,
+"offsetSeconds":327.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Okay. And you want to know if you can go ahead and use additional oxygen to bring the Command Module up to 5.0 and continue the equalization? Over."
 },
 {
 "get":"003:49:20",
-"offsetSeconds":335,
+"offsetSeconds":336.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yes. We think it's within normal tolerances, Bruce. We just wanted to get your concurrence before we press on with this procedure."
 },
 {
 "get":"003:49:33",
-"offsetSeconds":348,
+"offsetSeconds":349.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger, Apollo 11. Go ahead."
 },
 {
 "get":"003:49:37",
-"offsetSeconds":352,
+"offsetSeconds":353.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. We're pressing on with the procedure."
 },
 {
 "get":"003:49:40",
-"offsetSeconds":355,
+"offsetSeconds":356.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"And 11, Houston. We have a request for you. On the Service Module secondary propellant fuel pressurization valve: as a precautionary measure, we'd like you to momentarily cycle the four switches to the Close position and then release. As you know, we have no TM or talkback on these valve positions, and it's conceivable that one of them might also have been moved into a different position by the shock of separation. Over."
 },
 {
 "get":"003:50:11",
-"offsetSeconds":386,
+"offsetSeconds":387.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Good idea. That's being done."
 },
 {
 "get":"003:50:14",
-"offsetSeconds":389,
+"offsetSeconds":390.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Houston. Roger. Out."
 },
 {
 "get":"003:50:29",
-"offsetSeconds":404,
+"offsetSeconds":405.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. We're doing a non-propulsive vent on the booster at the present time. You may see some sort of a cloud coming out of it. And when you're ready, I have your evasive maneuver PAD."
 },
 {
 "get":"003:50:44",
-"offsetSeconds":419,
+"offsetSeconds":420.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Rog, And it's coming out."
 },
 {
 "get":"003:50:48",
-"offsetSeconds":423,
+"offsetSeconds":424.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Out."
 },
 {
 "get":"003:50:50",
-"offsetSeconds":425,
+"offsetSeconds":426.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"It's a haze. It's going by toward our minus-X direction, and several small particles are moving along with it. The actual velocity is fairly high - at least it appears to be high. And we've got an O 2 high [alarm] - flow high right now."
 },
 {
 "get":"003:51:13",
-"offsetSeconds":448,
+"offsetSeconds":450.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Houston. Roger. Out."
 },
 {
 "get":"003:53:05",
-"offsetSeconds":560,
+"offsetSeconds":564.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"And Houston, you might be interested that out my left-hand window right now, I can observe the entire continent of North America, Alaska, over the Pole, down to the Yucatan Peninsula, Cuba, northern part of South America, and then I run out of window."
 },
 {
 "get":"003:53:27",
-"offsetSeconds":582,
+"offsetSeconds":586.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger, we copy."
 },
 {
 "get":"003:53:27",
-"offsetSeconds":582,
+"offsetSeconds":586.6,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That was Neil Armstrong with that report."
@@ -9316,163 +9092,156 @@
 "a11_0035712":[
 {
 "get":"003:57:12",
-"offsetSeconds":0,
+"offsetSeconds":17.1,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Hay, Houston, Apollo 11. All 12 latches are locked."
 },
 {
 "get":"003:57:16",
-"offsetSeconds":4,
+"offsetSeconds":21.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. 11, this is Houston. Understand 12 latches locked."
 },
 {
 "get":"003:57:16",
-"offsetSeconds":4,
+"offsetSeconds":21.1,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That was Buzz Aldrin reporting that all 12 of the latches in the docking mechanism had locked."
 },
 {
 "get":"003:59:03",
-"offsetSeconds":111,
+"offsetSeconds":114.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, Houston. Whenever you're possessed of a free moment there, we've got this Evasive Maneuver PAD."
 },
 {
 "get":"003:59:12",
-"offsetSeconds":120,
+"offsetSeconds":123.0,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"003:59:20",
-"offsetSeconds":128,
+"offsetSeconds":130.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Go ahead, Houston. Apollo 11 is ready to copy."
 },
 {
 "get":"003:59:24",
-"offsetSeconds":132,
+"offsetSeconds":134.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Evasive Maneuver: SPS G&N; 63481, plus 0.95, minus 0.20; GETI 004:40:01.00; plus 0005.1, plus all balls, plus 0019.0; roll is your option; pitch, 213, 357; Noun 44 is NA; Delta-V T is 0019.7, 0:03, 0015.2. The rest of the PAD is NA. No ullage. LM weight, 33290. Readback. Over."
 },
 {
 "get":"004:01:23",
-"offsetSeconds":251,
+"offsetSeconds":253.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Standing by for your readback. Over. [No answer.]"
 },
 {
 "get":"004:02:06",
-"offsetSeconds":294,
+"offsetSeconds":296.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, Houston. Do you read? Over. [No answer.]"
 },
 {
 "get":"004:02:25",
-"offsetSeconds":313,
+"offsetSeconds":315.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Do you read? Over."
 },
 {
 "get":"004:02:31",
-"offsetSeconds":319,
+"offsetSeconds":321.2,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"All of a sudden there, we had a little click, and the signal strength began to start dropping off. Your transmissions were cut off very abruptly. How do you read now?"
 },
 {
 "get":"004:02:42",
-"offsetSeconds":330,
+"offsetSeconds":331.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Loud and clear. We had a handover to Madrid about the time I was - I guess halfway through the PAD. If you could give me the last value you read, I'll pick up there. Over."
 },
 {
 "get":"004:02:52",
-"offsetSeconds":340,
+"offsetSeconds":341.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Okay. Start with Delta-V Z . Over."
 },
 {
 "get":"004:02:56",
-"offsetSeconds":344,
+"offsetSeconds":345.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Delta-V Z is plus 0019.0; roll, your option; pitch, 213, 357; and Noun 44 is NA. Delta-V T 0019.7, 0:03, 0015.2. The rest of the PAD is NA, and no ullage. LM weight 33290. Read back. Over."
 },
 {
 "get":"004:03:41",
-"offsetSeconds":389,
+"offsetSeconds":390.7,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger, Houston. Evasive Maneuver, SPS G&N; 63481, plus 0.95, minus 0.20; 004:40:01.00; plus 0005.1, plus all zeros, plus 0019.0; roll, crew option, 213, 357; NA; 0019.7, 0:03, 0015.2; no ullage; LM weight, 33290. Over."
 },
 {
 "get":"004:04:27",
-"offsetSeconds":435,
+"offsetSeconds":436.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. Readback correct. Out."
-},
-{
-"get":"004:04:27",
-"offsetSeconds":435,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 4 hours, 4 minutes. Apollo 11's velocity now is 17,014 feet per second [5,186 m/s]. Its distance from Earth, 11,753 nautical miles [21,767 km]. We're about 5 minutes away from ejection of the Lunar Module and about 35 minutes away from this evasive maneuver. The ignition time on the evasive maneuver: an elapsed time of 4 hours, 40 minutes, 1 second. It will be a Service Propulsion System burn of 3 seconds duration. Delta-V 19.7 feet per second [6 m/s]."
 }
 ],
 "a11_0041333":[
 {
 "get":"004:13:33",
-"offsetSeconds":0,
+"offsetSeconds":2.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11."
 },
 {
 "get":"004:13:36",
-"offsetSeconds":3,
+"offsetSeconds":5.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Go ahead, 11."
 },
 {
 "get":"004:13:37",
-"offsetSeconds":4,
+"offsetSeconds":6.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"We'd like to arm our logic switches."
 },
 {
 "get":"004:13:42",
-"offsetSeconds":9,
+"offsetSeconds":12.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Go ahead with the logic."
 },
 {
 "get":"004:13:45",
-"offsetSeconds":12,
+"offsetSeconds":15.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Mark logic 1 and 2 armed. [Long pause.]"
 },
 {
 "get":"004:13:59",
-"offsetSeconds":26,
+"offsetSeconds":28.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We show the logic arm, and you're Go for Pyro arm."
@@ -9481,56 +9250,56 @@
 "a11_0041638":[
 {
 "get":"004:16:38",
-"offsetSeconds":0,
+"offsetSeconds":3.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, we're ready for LM ejection."
 },
 {
 "get":"004:16:45",
-"offsetSeconds":7,
+"offsetSeconds":9.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. You're Go for LM ejection."
 },
 {
 "get":"004:16:48",
-"offsetSeconds":10,
+"offsetSeconds":12.7,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Thank you. [Long pause.]"
 },
 {
 "get":"004:17:13",
-"offsetSeconds":35,
+"offsetSeconds":36.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, we are Sep[arat]ed. We have a Cryo Press light."
 },
 {
 "get":"004:17:18",
-"offsetSeconds":40,
+"offsetSeconds":41.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Copy. Cryo Press light."
 },
 {
 "get":"004:17:46",
-"offsetSeconds":68,
+"offsetSeconds":71.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger, 11. We recommend you turn the O 2 fans on manually and ensure that the O 2 heaters are in the Automatic position."
 },
 {
 "get":"004:17:57",
-"offsetSeconds":79,
+"offsetSeconds":81.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. O 2 heaters are On, and we're going to cycle the O 2 fans now."
 },
 {
 "get":"004:18:02",
-"offsetSeconds":84,
+"offsetSeconds":87.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. O 2 heaters to Auto, or you can watch them in the On position, and O 2 fans manual On."
@@ -9539,277 +9308,249 @@
 "a11_0042816":[
 {
 "get":"004:28:16",
-"offsetSeconds":0,
+"offsetSeconds":3.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"004:28:21",
-"offsetSeconds":5,
+"offsetSeconds":8.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11."
 },
 {
 "get":"004:28:23",
-"offsetSeconds":7,
+"offsetSeconds":10.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. In reference to your question on RCS usage; it looks like you are about 18, maybe 20 pounds below nominal at the present time. No problem at all. Over."
 },
 {
 "get":"004:28:35",
-"offsetSeconds":19,
+"offsetSeconds":22.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Right. [Long pause.]"
 },
 {
 "get":"004:28:45",
-"offsetSeconds":29,
+"offsetSeconds":32.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"I wanted to be 18 or 20 pounds above nominal, babe."
 },
 {
 "get":"004:28:49",
-"offsetSeconds":33,
+"offsetSeconds":36.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Sorry about that."
-},
-{
-"get":"004:28:49",
-"offsetSeconds":33,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 4 hours, 34 minutes. Apollo 11's velocity is 14,972 feet per second [4,563 m/s]. Its distance from Earth is 15,895 nautical miles [29,438 km]. Spacecraft weight: 96,760.9 pounds [43,890 kg]. We're about 5 minutes away from the evasive maneuver that will ensure there will be no problems of re-contact between the spacecraft and the S-IVB stage of the launch vehicle."
 }
 ],
 "a11_0043740":[
 {
 "get":"004:37:40",
-"offsetSeconds":0,
+"offsetSeconds":4.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, Houston. Your systems are looking good. We're standing by for the burn."
 },
 {
-"get":"004:37:40",
-"offsetSeconds":0,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"The duration of this burn will be 3 seconds. Delta-V, 19.7 feet per second [6 m/s]."
-},
-{
-"get":"004:37:40",
-"offsetSeconds":0,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"Ignition, shutdown."
-},
-{
 "get":"004:40:42",
-"offsetSeconds":182,
+"offsetSeconds":190.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Could you confirm that pitch gimbal motor number 1 turned off? We just shut all four off, and we got a questionable indication on the ECS on pitch 1."
 },
 {
 "get":"004:41:01",
-"offsetSeconds":201,
+"offsetSeconds":204.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Stand by a second. [Long pause.]"
 },
 {
 "get":"004:41:22",
-"offsetSeconds":222,
+"offsetSeconds":226.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"[Faint] Houston, did you copy our residuals?"
 },
 {
 "get":"004:41:24",
-"offsetSeconds":224,
+"offsetSeconds":228.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Stand by, please."
 },
 {
 "get":"004:41:33",
-"offsetSeconds":233,
+"offsetSeconds":236.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Go ahead, Houston. You copy our residuals?"
 },
 {
 "get":"004:41:37",
-"offsetSeconds":237,
+"offsetSeconds":240.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We got 0.0 and 0.2, it looks like."
 },
 {
 "get":"004:41:42",
-"offsetSeconds":242,
+"offsetSeconds":245.4,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"We had 0.1 while ago. It's - just went to 0.2."
 },
 {
 "get":"004:41:46",
-"offsetSeconds":246,
+"offsetSeconds":249.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"(Laughing) Okay."
 },
 {
 "get":"004:41:47",
-"offsetSeconds":247,
+"offsetSeconds":250.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"That EMS Delta-V counter is minus 4.0."
 },
 {
 "get":"004:41:51",
-"offsetSeconds":251,
+"offsetSeconds":254.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Minus 4.0. Roger."
 },
 {
 "get":"004:41:54",
-"offsetSeconds":254,
+"offsetSeconds":257.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And how about pitch gimbal 1? Can you confirm that Off?"
 },
 {
 "get":"004:41:57",
-"offsetSeconds":257,
+"offsetSeconds":260.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Can you stand by just a second on that? At the present time we cannot confirm it Off. We saw a current drop indicating that several gimbal motors had gone off. We'll be back with you in just a second on it. Over."
 },
 {
 "get":"004:42:10",
-"offsetSeconds":270,
+"offsetSeconds":273.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. If necessary, we can recycle it."
 },
 {
 "get":"004:43:47",
-"offsetSeconds":367,
+"offsetSeconds":370.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. If you go ahead and cycle pitch gimbal motor number 1 On and then Off and give us a Mark, and we'll tell you what we see. Over."
 },
 {
 "get":"004:43:54",
-"offsetSeconds":374,
+"offsetSeconds":381.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, fine. It's coming back on. Ready."
 },
 {
 "get":"004:44:01",
-"offsetSeconds":381,
+"offsetSeconds":383.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Mark."
 },
 {
 "get":"004:44:04",
-"offsetSeconds":384,
+"offsetSeconds":386.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And it's going back off. Ready."
 },
 {
 "get":"004:44:06",
-"offsetSeconds":386,
+"offsetSeconds":388.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Mark."
 },
 {
 "get":"004:44:07",
-"offsetSeconds":387,
+"offsetSeconds":390.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And that time we got an onboard indication, Houston. Thank you a lot."
 },
 {
 "get":"004:44:12",
-"offsetSeconds":392,
+"offsetSeconds":395.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We confirm that it is Off."
 },
 {
 "get":"004:44:16",
-"offsetSeconds":396,
+"offsetSeconds":398.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yeah. We do likewise."
-},
-{
-"get":"004:44:16",
-"offsetSeconds":396,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 4 hours, 44 minutes. A news conference at Kennedy Space Center is about to begin. We will take down the live circuits and tape air to ground during this news conference, play it back after the conference. This is Mission Control, Houston."
 }
 ],
 "a11_0044400":[
 {
 "get":"004:44:01",
-"offsetSeconds":1,
+"offsetSeconds":0.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Mark."
 },
 {
 "get":"004:44:04",
-"offsetSeconds":4,
+"offsetSeconds":0.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And it's going back off. Ready."
 },
 {
 "get":"004:44:06",
-"offsetSeconds":6,
+"offsetSeconds":0.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Mark."
 },
 {
 "get":"004:44:07",
-"offsetSeconds":7,
+"offsetSeconds":0.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And that time we got an onboard indication, Houston. Thank you a lot."
 },
 {
 "get":"004:44:12",
-"offsetSeconds":12,
+"offsetSeconds":0.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We confirm that it is Off."
 },
 {
 "get":"004:44:16",
-"offsetSeconds":16,
+"offsetSeconds":1.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yeah. We do likewise."
 },
 {
 "get":"004:44:16",
-"offsetSeconds":16,
+"offsetSeconds":1.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control at 4 hours, 44 minutes. A news conference at Kennedy Space Center is about to begin. We will take down the live circuits and tape air to ground during this news conference, play it back after the conference. This is Mission Control, Houston."
@@ -9818,56 +9559,56 @@
 "a11_0044533":[
 {
 "get":"004:45:33",
-"offsetSeconds":0,
+"offsetSeconds":0.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. We're starting our maneuver to observe the S-IVB slingshot."
 },
 {
 "get":"004:45:39",
-"offsetSeconds":6,
+"offsetSeconds":6.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger, 11. We've got an updated attitude for you on the slingshot observation."
 },
 {
 "get":"004:45:45",
-"offsetSeconds":12,
+"offsetSeconds":12.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Say the angles please."
 },
 {
 "get":"004:45:48",
-"offsetSeconds":15,
+"offsetSeconds":15.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Roll 002.5, pitch 289.3, yaw 357.5, and there's also an update, minor correction, to your attitude for the P52. Over."
 },
 {
 "get":"004:46:15",
-"offsetSeconds":42,
+"offsetSeconds":40.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. I have roll 2.5, pitch 289.3, and yaw 357.5. Over."
 },
 {
 "get":"004:46:23",
-"offsetSeconds":50,
+"offsetSeconds":49.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. And for your P52 and optics calibration, it'll be roll 346.5, pitch 345.0, yaw 007.8. Over."
 },
 {
 "get":"004:46:44",
-"offsetSeconds":71,
+"offsetSeconds":69.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. 346.5, 345.0, and 7.8. Thank you."
 },
 {
 "get":"004:46:49",
-"offsetSeconds":76,
+"offsetSeconds":74.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Houston. Roger. Out."
@@ -9876,63 +9617,63 @@
 "a11_0044933":[
 {
 "get":"004:49:33",
-"offsetSeconds":0,
+"offsetSeconds":1.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"004:49:36",
-"offsetSeconds":3,
+"offsetSeconds":4.0,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Go ahead, Houston. Apollo 11."
 },
 {
 "get":"004:49:38",
-"offsetSeconds":5,
+"offsetSeconds":6.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We're going to go ahead and enable the S-IVB for the slingshot maneuver. The LOX dump will start about 12 minutes from now. Over."
 },
 {
 "get":"004:49:49",
-"offsetSeconds":16,
+"offsetSeconds":16.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Okay, LOX dump about - I guess that'll make it about [GET 5 hours and] 01, huh?"
 },
 {
 "get":"004:49:57",
-"offsetSeconds":24,
+"offsetSeconds":23.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Right. I'll try to give you a little closer update as we approach it."
 },
 {
 "get":"004:50:01",
-"offsetSeconds":28,
+"offsetSeconds":23.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Alrighty. [Long pause.]"
 },
 {
 "get":"004:50:53",
-"offsetSeconds":80,
+"offsetSeconds":31.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"And, 11, for you information, the magnitude of Midcourse Correction number 1, if we burn, looks like about 17 feet per second [5.2 m/s]. We're presently considering not burning it. This would make midcourse correction 2 tomorrow about 21.3 [fps, 6.5 m/s]. Over."
 },
 {
 "get":"004:51:18",
-"offsetSeconds":105,
+"offsetSeconds":54.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"That sounds good to us."
 },
 {
 "get":"004:51:19",
-"offsetSeconds":106,
+"offsetSeconds":55.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. You're looking good down here. [Long pause.]"
@@ -9941,21 +9682,21 @@
 "a11_0045735":[
 {
 "get":"004:57:35",
-"offsetSeconds":0,
+"offsetSeconds":3.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. We're - We've completed our maneuver to observe the slingshot attitude, but we don't see anything - no Earth and no S-IVB."
 },
 {
 "get":"004:57:48",
-"offsetSeconds":13,
+"offsetSeconds":15.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Stand by. In GET, I have a LOX dump start time for you. It's supposed to start at 5 plus 03 plus 07, and stop at 5 plus 04 plus 55. Ullage burn starts at 5 plus 37 plus 47, stops at 5 plus 42 plus 27. Over."
 },
 {
 "get":"004:58:26",
-"offsetSeconds":51,
+"offsetSeconds":53.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger, thank you."
@@ -9964,119 +9705,119 @@
 "a11_0051258":[
 {
 "get":"005:12:58",
-"offsetSeconds":0,
+"offsetSeconds":0.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"005:13:03",
-"offsetSeconds":5,
+"offsetSeconds":4.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"005:13:05",
-"offsetSeconds":7,
+"offsetSeconds":6.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. If you'll give us Accept and stay in P00, we'll set your trunnion bias to zero. And, I have a plan for balancing your oxygen cryos. Over."
 },
 {
 "get":"005:13:19",
-"offsetSeconds":21,
+"offsetSeconds":20.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"You got it."
 },
 {
 "get":"005:13:21",
-"offsetSeconds":23,
+"offsetSeconds":22.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. [Pause.]"
 },
 {
 "get":"005:13:26",
-"offsetSeconds":28,
+"offsetSeconds":26.7,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. We've got the, uh, what appears to be the S-IVB in sight, at, oh, I'd estimate a couple of miles away. It's at our number 5 window and the dump appears to be coming out of two radially opposite directions from the S-IVB."
 },
 {
 "get":"005:13:51",
-"offsetSeconds":53,
+"offsetSeconds":49.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. They're continuing with the non-propulsive vent from the liquid oxygen tank. It would be radially opposite, there. And Booster tells me it's the continuous vent system. They're also dumping a small amount of fuel at this time. We've got about 23&frac12; minutes or so until the APS burn. Over."
 },
 {
 "get":"005:14:25",
-"offsetSeconds":87,
+"offsetSeconds":69.0,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"005:14:46",
-"offsetSeconds":108,
+"offsetSeconds":81.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, Houston. We have a recommended configuration for your Cryo switches to even up the load between oxygen tanks 1 and 2. Over."
 },
 {
 "get":"005:14:55",
-"offsetSeconds":117,
+"offsetSeconds":88.3,
 "speaker":"SC",
 "channel":"air-to-ground",
 "text":"[Faint]"
 },
 {
 "get":"005:14:59",
-"offsetSeconds":121,
+"offsetSeconds":91.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Okay. You're coming in very weakly there. We're recommending O 2 tank 1 heater Off, O 2 tank 2 heater to Auto, O 2 tanks 1 and 2 fans both Off, H1 - H 2 tank 1 heaters to Auto, and H 2 tank 2 heaters to Off. Over."
 },
 {
 "get":"005:15:33",
-"offsetSeconds":155,
+"offsetSeconds":123.4,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Rog. We have that except the last one was H 2 fans to Off. Is that affirm? [Long pause.]"
 },
 {
 "get":"005:15:46",
-"offsetSeconds":168,
+"offsetSeconds":131.0,
 "speaker":"MCC speaker",
 "channel":"air-to-ground",
 "text":"H 2 ..."
 },
 {
 "get":"005:15:49",
-"offsetSeconds":171,
+"offsetSeconds":132.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"We have - the configuration we have now is, Hydrogen heaters: we got 1 Auto, 2 Off. Oxygen heaters; 1 Off, 2 Auto. And we have all the fans Off."
 },
 {
 "get":"005:16:02",
-"offsetSeconds":184,
+"offsetSeconds":142.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"This is Houston. Roger. We concur. Out. [Pause.]"
 },
 {
 "get":"005:16:13",
-"offsetSeconds":195,
+"offsetSeconds":151.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Eleven, this is Houston. We've completed the trunnion zero bias setting. You can retrieve the computer and go to Block."
 },
 {
 "get":"005:16:23",
-"offsetSeconds":205,
+"offsetSeconds":159.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger that. Thank you."
@@ -10085,28 +9826,28 @@
 "a11_0052200":[
 {
 "get":"005:23:41",
-"offsetSeconds":101,
+"offsetSeconds":46.9,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, 11."
 },
 {
 "get":"005:23:44",
-"offsetSeconds":104,
+"offsetSeconds":49.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Go ahead, 11."
 },
 {
 "get":"005:23:48",
-"offsetSeconds":108,
+"offsetSeconds":52.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Down in the Control Center you might want to join us in wishing Dr. George Mueller a happy birthday."
 },
 {
 "get":"005:23:55",
-"offsetSeconds":115,
+"offsetSeconds":61.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We're standing by for your birthday greeting. [Pause.]"
@@ -10115,42 +9856,42 @@
 "a11_0052818":[
 {
 "get":"005:28:18",
-"offsetSeconds":0,
+"offsetSeconds":3.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Eleven, this is Houston. Over."
 },
 {
 "get":"005:28:22",
-"offsetSeconds":4,
+"offsetSeconds":7.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Go ahead, Houston."
 },
 {
 "get":"005:28:24",
-"offsetSeconds":6,
+"offsetSeconds":9.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. At your convenience, we'd like to get a waste-water dump to 5 per cent remaining. After completion of this one, the next waste-water dump will be at about GET equal to 25 hours. Over."
 },
 {
 "get":"005:28:42",
-"offsetSeconds":24,
+"offsetSeconds":27.3,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Coming on right now."
 },
 {
 "get":"005:28:44",
-"offsetSeconds":26,
+"offsetSeconds":212.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"005:28:44",
-"offsetSeconds":26,
+"offsetSeconds":212.9,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control at 5 hours, 31 minutes into the mission. Apollo 11's velocity now 12,637 feet per second [3,852 m/s]. Distance from Earth, 22,971 [nautical] miles [42,542 km]. The spacecraft weight, 96,573 pounds [43,805 kg]."
@@ -10159,247 +9900,240 @@
 "a11_0053527":[
 {
 "get":"005:35:27",
-"offsetSeconds":0,
+"offsetSeconds":1.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. You copy our torquing angles?"
 },
 {
 "get":"005:35:31",
-"offsetSeconds":4,
+"offsetSeconds":5.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Leave them on there for another second, please."
 },
 {
 "get":"005:35:34",
-"offsetSeconds":7,
+"offsetSeconds":8.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Will do. [Long pause.]"
 },
 {
 "get":"005:36:22",
-"offsetSeconds":55,
+"offsetSeconds":57.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. We copy the angles, but stand by before you go ahead and use them. Over."
 },
 {
 "get":"005:36:29",
-"offsetSeconds":62,
+"offsetSeconds":63.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Standing by."
 },
 {
 "get":"005:36:33",
-"offsetSeconds":66,
+"offsetSeconds":67.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, Houston. We request that you re-do P52, and if the angles come out the same magnitude, go ahead and incorporate them. Over."
 },
 {
 "get":"005:36:42",
-"offsetSeconds":75,
+"offsetSeconds":77.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. We'll do it."
 },
 {
 "get":"005:36:44",
-"offsetSeconds":77,
+"offsetSeconds":77.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"They look a little large right now."
 },
 {
 "get":"005:36:47",
-"offsetSeconds":80,
+"offsetSeconds":81.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yeah. Roll - roll looks a little large, especially, there."
 },
 {
 "get":"005:36:50",
-"offsetSeconds":83,
+"offsetSeconds":84.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"005:37:31",
-"offsetSeconds":124,
+"offsetSeconds":124.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"We're showing a waste-water quantity of about 13 percent on TM now, 11. Over."
 },
 {
 "get":"005:37:43",
-"offsetSeconds":136,
+"offsetSeconds":136.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. It's off, now."
 },
 {
 "get":"005:37:45",
-"offsetSeconds":138,
+"offsetSeconds":138.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We copy."
 },
 {
 "get":"005:39:32",
-"offsetSeconds":245,
+"offsetSeconds":246.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Torquing angles essentially the same, and we're going to go ahead and torque them now."
 },
 {
 "get":"005:39:41",
-"offsetSeconds":254,
+"offsetSeconds":254.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We concur."
 },
 {
 "get":"005:39:43",
-"offsetSeconds":256,
+"offsetSeconds":256.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"005:41:35",
-"offsetSeconds":368,
+"offsetSeconds":367.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Could you give us a - an Auto optics check to a third star or a different star from the one you've been using?"
 },
 {
 "get":"005:41:45",
-"offsetSeconds":378,
+"offsetSeconds":379.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Sure, be glad to. I can go back and do the whole thing and pick different stars."
 },
 {
 "get":"005:41:52",
-"offsetSeconds":385,
+"offsetSeconds":385.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"I don't think there any - any need to do that. We'd just like to confirm it with a different star, since that roll angle was a little larger than we expected."
 },
 {
 "get":"005:42:03",
-"offsetSeconds":396,
+"offsetSeconds":396.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"005:43:25",
-"offsetSeconds":478,
+"offsetSeconds":478.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. I have a TLI-plus-11-hour PAD when you're ready to copy."
 },
 {
 "get":"005:43:33",
-"offsetSeconds":486,
+"offsetSeconds":487.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Wait one. [Long pause.]"
 },
 {
 "get":"005:44:17",
-"offsetSeconds":530,
+"offsetSeconds":530.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Old star number 30 looks like it's right dab smack in the middle of the sextant."
 },
 {
 "get":"005:44:24",
-"offsetSeconds":537,
+"offsetSeconds":537.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Houston. Roger. Out."
 },
 {
 "get":"005:45:27",
-"offsetSeconds":600,
+"offsetSeconds":599.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Apollo 11, ready to copy."
 },
 {
 "get":"005:45:33",
-"offsetSeconds":606,
+"offsetSeconds":604.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger, 11. This is a TLI plus 11 hour P37 format: 013:44, 4793, minus 165, 049:23. Read back. Over."
 },
 {
 "get":"005:45:57",
-"offsetSeconds":630,
+"offsetSeconds":628.5,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. 1344 4793, minus 165, 049:23. Over."
 },
 {
 "get":"005:46:07",
-"offsetSeconds":640,
+"offsetSeconds":639.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"This is Houston. Readback correct. Out."
-},
-{
-"get":"005:46:07",
-"offsetSeconds":640,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 5 hours, 55 minutes. Apollo 11's velocity, 11,970 feet per second [3,648 m/s]. Distance from Earth, 25,671 nautical miles [47,543 km]."
 }
 ],
 "a11_0055500":[
 {
 "get":"005:58:35",
-"offsetSeconds":215,
+"offsetSeconds":160.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11."
 },
 {
 "get":"005:58:38",
-"offsetSeconds":218,
+"offsetSeconds":163.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Go ahead, 11."
 },
 {
 "get":"005:58:40",
-"offsetSeconds":220,
+"offsetSeconds":165.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Do you have any update for the roll, pitch and yaw angles on the top of page 37 in the Flight Plan, or are they still good?"
 },
 {
 "get":"005:58:48",
-"offsetSeconds":228,
+"offsetSeconds":174.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"That's for the optics calibration?"
 },
 {
 "get":"005:58:51",
-"offsetSeconds":231,
+"offsetSeconds":177.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yes, sir."
 },
 {
 "get":"005:58:53",
-"offsetSeconds":233,
+"offsetSeconds":179.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Yes, indeed. I'll give them to you in just a second here. [Long pause.]"
@@ -10408,128 +10142,114 @@
 "a11_0060917":[
 {
 "get":"006:09:17",
-"offsetSeconds":0,
+"offsetSeconds":3.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. Be advised your friendly White Team has come on for its first shift. If we can be of service, don't hesitate to call."
 },
 {
 "get":"006:09:31",
-"offsetSeconds":14,
+"offsetSeconds":14.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Thank you very much. And we're about to take our marks, Charlie, on this P23 optics Cal. I've got it in the sextant now, and I'm about to split the image and Mark."
 },
 {
 "get":"006:09:42",
-"offsetSeconds":25,
+"offsetSeconds":28.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger, Mike. We're watching."
-},
-{
-"get":"006:09:42",
-"offsetSeconds":25,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"The CapCom is now Charlie Duke, and Gene Kranz and his White Team of flight controllers is preparing to take over the responsibility here in the Control Center from Cliff Charlesworth's team."
-},
-{
-"get":"006:09:42",
-"offsetSeconds":25,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 6 hours, 16 minutes into the mission. Velocity now 11,479 feet per second [3,499 m/s]. Apollo 11's distance from Earth, 27,938 nautical miles [51,741 km]. We're estimating the change of shift news conference for 3:30 pm Central Daylight Time."
 }
 ],
 "a11_0061600":[
 {
 "get":"006:19:23",
-"offsetSeconds":203,
+"offsetSeconds":153.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We have scrubbed the Midcourse 1. Over."
 },
 {
 "get":"006:19:30",
-"offsetSeconds":210,
+"offsetSeconds":161.0,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Understand you've scrubbed Midcourse 1."
 },
 {
 "get":"006:19:33",
-"offsetSeconds":213,
+"offsetSeconds":161.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Rog."
 },
 {
 "get":"006:21:39",
-"offsetSeconds":339,
+"offsetSeconds":289.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We see your middle gimbal angle getting pretty big. Over."
 },
 {
 "get":"006:21:45",
-"offsetSeconds":345,
+"offsetSeconds":295.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Well, it was, Charlie, but in going from one Auto Maneuver to another, we took over control and have gone around gimbal lock; and we're about to give control back to the DAP."
 },
 {
 "get":"006:21:56",
-"offsetSeconds":356,
+"offsetSeconds":306.6,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger, Mike. We see it increasing now."
 },
 {
 "get":"006:25:35",
-"offsetSeconds":575,
+"offsetSeconds":525.0,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Hey, Charlie. [No answer.]"
 },
 {
 "get":"006:25:45",
-"offsetSeconds":585,
+"offsetSeconds":533.7,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11."
 },
 {
 "get":"006:25:46",
-"offsetSeconds":586,
+"offsetSeconds":534.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Go ahead, 11. Over."
 },
 {
 "get":"006:25:47",
-"offsetSeconds":587,
+"offsetSeconds":536.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Hey, maybe you better call Lew and tell him we might be a little bit late for dinner."
 },
 {
 "get":"006:25:51",
-"offsetSeconds":591,
+"offsetSeconds":540.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Okay. Sure will. We'd like for you to turn on - the fan on in O 2 tank number 2, Buzz. And, 11, did you - On your optics calibrations, did you proceed or recall the program? Over."
 },
 {
 "get":"006:26:08",
-"offsetSeconds":608,
+"offsetSeconds":557.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"We recalled the program."
 },
 {
 "get":"006:26:12",
-"offsetSeconds":612,
+"offsetSeconds":561.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger."
@@ -10538,189 +10258,189 @@
 "a11_0063100":[
 {
 "get":"006:34:30",
-"offsetSeconds":210,
+"offsetSeconds":236.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. [Pause.]"
 },
 {
 "get":"006:34:36",
-"offsetSeconds":216,
+"offsetSeconds":242.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Go ahead, 11. Over."
 },
 {
 "get":"006:34:39",
-"offsetSeconds":219,
+"offsetSeconds":245.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. You looking at our Delta-R/Delta-V? It looks like Delta-R is pretty large, there. We wanted to talk to you about it before we incorporate it."
 },
 {
 "get":"006:34:44",
-"offsetSeconds":224,
+"offsetSeconds":252.5,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Stand by, Mike. We don't have anything on our downlink here, I don't think, on the DSKY. Stand by."
 },
 {
 "get":"006:34:50",
-"offsetSeconds":230,
+"offsetSeconds":257.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Our Noun 49 is reading: register 1, plus 08793; register 2, all balls."
 },
 {
 "get":"006:35:01",
-"offsetSeconds":241,
+"offsetSeconds":267.2,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Copy."
 },
 {
 "get":"006:36:15",
-"offsetSeconds":315,
+"offsetSeconds":341.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"11, Houston. Guidance is looking at the Noun 40 - 49 stuff. We'll be back with you momentarily. Over."
 },
 {
 "get":"006:36:23",
-"offsetSeconds":323,
+"offsetSeconds":348.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Charlie. Thank you. We'll just hold right here in the program."
 },
 {
 "get":"006:36:26",
-"offsetSeconds":326,
+"offsetSeconds":351.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. We got your downlink now. Over."
 },
 {
 "get":"006:36:27",
-"offsetSeconds":327,
+"offsetSeconds":351.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. [Long Pause.]"
 },
 {
 "get":"006:36:57",
-"offsetSeconds":357,
+"offsetSeconds":381.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We'd like you to reject the Noun 49 stuff on the DSKY right now, Mike, and try it again. Over."
 },
 {
 "get":"006:37:01",
-"offsetSeconds":361,
+"offsetSeconds":385.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Will do."
 },
 {
 "get":"006:38:46",
-"offsetSeconds":466,
+"offsetSeconds":492.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Houston. Apollo 11. Here's another [Noun] 49 for you. Are you getting it on the downlink?"
 },
 {
 "get":"006:38:51",
-"offsetSeconds":471,
+"offsetSeconds":497.2,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. We see it. Stand by."
 },
 {
 "get":"006:40:22",
-"offsetSeconds":562,
+"offsetSeconds":588.2,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We recommend you accept the Noun 49 display on the DSKY now. Over."
 },
 {
 "get":"006:40:34",
-"offsetSeconds":574,
+"offsetSeconds":598.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. It looks like an awful big one. We noticed that you'd moved star number 2 to the tail end of the listing, and we should be marking first on star 40. Did that have anything to do with it?"
 },
 {
 "get":"006:40:47",
-"offsetSeconds":587,
+"offsetSeconds":611.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Negative. We don't believe so, Apollo 11. We think that this is possibly due to some TLI dispersions, and it's probably satisfactory, so go ahead and accept this. It fits our criteria anyway that if you repeat the mark and you get an equivalent size error, to go ahead and accept it. And this is an equivalent size error. Over."
 },
 {
 "get":"006:41:09",
-"offsetSeconds":609,
+"offsetSeconds":633.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. We'll do it."
 },
 {
 "get":"006:41:14",
-"offsetSeconds":614,
+"offsetSeconds":639.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"And 11, Houston. Your state vector in the LM slots are - is good. Over."
 },
 {
 "get":"006:41:22",
-"offsetSeconds":622,
+"offsetSeconds":646.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Thank you."
 },
 {
 "get":"006:42:55",
-"offsetSeconds":715,
+"offsetSeconds":740.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. If you like this one, we'll accept it as well."
 },
 {
 "get":"006:43:00",
-"offsetSeconds":720,
+"offsetSeconds":745.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Stand by. [Long pause.]"
 },
 {
 "get":"006:43:46",
-"offsetSeconds":766,
+"offsetSeconds":790.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We recommend you accept the Noun 49. Over."
 },
 {
 "get":"006:43:51",
-"offsetSeconds":771,
+"offsetSeconds":795.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Charlie. Thank you. We'll do that now."
 },
 {
 "get":"006:43:53",
-"offsetSeconds":773,
+"offsetSeconds":796.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Thank you. [Long pause.]"
 },
 {
 "get":"006:44:39",
-"offsetSeconds":819,
+"offsetSeconds":843.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And we're going to proceed on this one, too, Charlie."
 },
 {
 "get":"006:44:41",
-"offsetSeconds":821,
+"offsetSeconds":845.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. Copy."
@@ -10729,114 +10449,107 @@
 "a11_0064835":[
 {
 "get":"006:48:35",
-"offsetSeconds":0,
+"offsetSeconds":1.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Another Noun 49 for you."
 },
 {
 "get":"006:48:40",
-"offsetSeconds":5,
+"offsetSeconds":6.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Rog. We copy. Stand by. [Long pause.]"
 },
 {
 "get":"006:49:00",
-"offsetSeconds":25,
+"offsetSeconds":26.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We'd like you to recycle and do this one over again. Over."
 },
 {
 "get":"006:49:07",
-"offsetSeconds":32,
+"offsetSeconds":32.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
-},
-{
-"get":"006:49:07",
-"offsetSeconds":32,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 6 hours, 52 minutes. Apollo 11 now 31,565 nautical miles [58,458 km] from Earth and the velocity is 10,789 feet per second [3,288 m/s]. The crew, at this time, is involved in midcourse navigation using their onboard optical system. We have completed the changeover and briefing of shifts here in Mission Control, and the crew activities, until the sleep period begins, will consist of housekeeping functions aboard the spacecraft, changing out carbon dioxide filters. They will not be doing the midcourse correction scheduled for 11 hours, 45 minutes into the flight, as the"
 }
 ],
 "a11_0065341":[
 {
 "get":"006:53:41",
-"offsetSeconds":0,
+"offsetSeconds":1.6,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11."
 },
 {
 "get":"006:53:43",
-"offsetSeconds":2,
+"offsetSeconds":3.6,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Go ahead, Apollo 11. Over."
 },
 {
 "get":"006:53:45",
-"offsetSeconds":4,
+"offsetSeconds":5.0,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Rog. Why don't you sing out when you think we've done enough battery charging on B."
 },
 {
 "get":"006:53:50",
-"offsetSeconds":9,
+"offsetSeconds":5.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Rog. Stand by, Buzz. Over."
 },
 {
 "get":"006:55:50",
-"offsetSeconds":129,
+"offsetSeconds":26.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We'll be charging battery B up until the sleep period. We'll discontinue charging at that time. Also, at about 12:25 in the Flight Plan, we have battery A charge. That has been deleted. Over."
 },
 {
 "get":"006:56:05",
-"offsetSeconds":144,
+"offsetSeconds":42.2,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Rog. Understand. We'll charge until the sleep period on B and delete the battery A charge."
 },
 {
 "get":"006:56:10",
-"offsetSeconds":149,
+"offsetSeconds":45.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Affirm. [Pause.]"
 },
 {
 "get":"006:56:17",
-"offsetSeconds":156,
+"offsetSeconds":49.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And, Houston, Apollo 11. These Auto optics maneuvers or P23s, Auto maneuvers, don't seem to be going to the substellar point. Can you come up with the roll, pitch, and yaw angle for the substellar point on this star? It's our second star."
 },
 {
 "get":"006:56:31",
-"offsetSeconds":170,
+"offsetSeconds":55.6,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. Stand by. [Long pause.]"
 },
 {
 "get":"006:57:21",
-"offsetSeconds":220,
+"offsetSeconds":75.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. Your angles in the Flight Plan we feel are still good; 198.6, 130.7, 340.0. Just slightly off than those in the Flight Plan. Over."
 },
 {
 "get":"006:57:36",
-"offsetSeconds":235,
+"offsetSeconds":90.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. We'll try that. [Long pause.]"
@@ -10845,28 +10558,28 @@
 "a11_0072056":[
 {
 "get":"007:20:56",
-"offsetSeconds":0,
+"offsetSeconds":1.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Star 40 has just disappeared now in the sextant. Could the trunnion angle 47 - something be a little high?"
 },
 {
 "get":"007:21:05",
-"offsetSeconds":9,
+"offsetSeconds":9.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Stand by. [Long pause.]"
 },
 {
 "get":"007:21:21",
-"offsetSeconds":25,
+"offsetSeconds":12.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We'd like you to press on to star 44. Over."
 },
 {
 "get":"007:21:26",
-"offsetSeconds":30,
+"offsetSeconds":18.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yeah, Roger. How many marks have you recorded on star 40?"
@@ -10912,168 +10625,168 @@
 "a11_0073300":[
 {
 "get":"007:33:00",
-"offsetSeconds":0,
+"offsetSeconds":4.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11."
 },
 {
 "get":"007:33:01",
-"offsetSeconds":1,
+"offsetSeconds":5.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Go ahead. Over."
 },
 {
 "get":"007:33:03",
-"offsetSeconds":3,
+"offsetSeconds":7.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Roger. Forty-four is just not bright enough for this. There is a reddish glow filling the black area of the sextant, and the star is lost somewhere in there, and I cannot see it."
 },
 {
 "get":"007:33:17",
-"offsetSeconds":17,
+"offsetSeconds":20.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. Stand by. We'll come up with another star. Over."
 },
 {
 "get":"007:33:21",
-"offsetSeconds":21,
+"offsetSeconds":23.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yeah. I'd appreciate that. [Long pause.]"
 },
 {
 "get":"007:33:48",
-"offsetSeconds":48,
+"offsetSeconds":51.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We'd like you to go on to star 45. Over."
 },
 {
 "get":"007:33:53",
-"offsetSeconds":53,
+"offsetSeconds":56.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"007:33:54",
-"offsetSeconds":54,
+"offsetSeconds":57.5,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"And, Mike, we think these large Delta-Rs, Noun 49, you're getting is really meaningful since it's been way before TLI since we had a state vector update; and we think it's normal. Over."
 },
 {
 "get":"007:34:09",
-"offsetSeconds":69,
+"offsetSeconds":71.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Could be, Charlie. Some of the early markings: I might not have had precisely the substellar point. I think as time goes by they've been coming more accurate but old Enif here is just flat invisible."
 },
 {
 "get":"007:34:21",
-"offsetSeconds":81,
+"offsetSeconds":83.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Rog. [Long pause.]"
 },
 {
 "get":"007:34:49",
-"offsetSeconds":109,
+"offsetSeconds":112.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And, Houston, Apollo 11. Understand that the same three gimbal angles you gave me should be valid for star 45 as well. Is that affirmative?"
 },
 {
 "get":"007:34:58",
-"offsetSeconds":118,
+"offsetSeconds":120.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"I believe that's right. Stand by one. Over."
 },
 {
 "get":"007:35:00",
-"offsetSeconds":120,
+"offsetSeconds":124.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"007:35:03",
-"offsetSeconds":123,
+"offsetSeconds":124.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"That is negative. Stand by one."
 },
 {
 "get":"007:35:04",
-"offsetSeconds":124,
+"offsetSeconds":128.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Because there's quite a difference between the gimbal angles you have and the gimbal angles the program wants, but with inaccurate state vector, I'm inclined not to believe the program."
 },
 {
 "get":"007:35:16",
-"offsetSeconds":136,
+"offsetSeconds":138.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Stand by. [Long pause.]"
 },
 {
 "get":"007:35:31",
-"offsetSeconds":151,
+"offsetSeconds":154.6,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. LMP is back on the line."
 },
 {
 "get":"007:35:36",
-"offsetSeconds":156,
+"offsetSeconds":159.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. Copy."
 },
 {
 "get":"007:35:40",
-"offsetSeconds":160,
+"offsetSeconds":163.2,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Read you five-by."
 },
 {
 "get":"007:35:42",
-"offsetSeconds":162,
+"offsetSeconds":165.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. The same, Buzz. And, 11, the angles for you are 197.8 for roll, 128.5 pitch, 340.0 yaw."
 },
 {
 "get":"007:35:58",
-"offsetSeconds":178,
+"offsetSeconds":180.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Just as a matter of comparison, P23 for this star would like to go to 235.66, 154.31, and 31365. Over."
 },
 {
 "get":"007:36:15",
-"offsetSeconds":195,
+"offsetSeconds":197.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. We copy, 11. We understand that the program can give you almost an infinite combination of angles in P23, and it's not too unreasonable. If you'll stand by, we'll look at these that we see on the DSKY. Over."
 },
 {
 "get":"007:36:31",
-"offsetSeconds":211,
+"offsetSeconds":213.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Then in the meantime I'll just go ahead and maneuver to yours. 197.8, 128.5, and 340.0."
 },
 {
 "get":"007:36:38",
-"offsetSeconds":218,
+"offsetSeconds":219.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Rog."
@@ -11082,133 +10795,133 @@
 "a11_0074324":[
 {
 "get":"007:43:24",
-"offsetSeconds":0,
+"offsetSeconds":2.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11."
 },
 {
 "get":"007:43:26",
-"offsetSeconds":2,
+"offsetSeconds":4.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Go ahead. Over."
 },
 {
 "get":"007:43:28",
-"offsetSeconds":4,
+"offsetSeconds":6.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Charlie. If the attitude you gave me on star number 45 - The reticle is off, I'd say, a good 30 degrees in roll, and the star is not in sight. Over."
 },
 {
 "get":"007:43:44",
-"offsetSeconds":20,
+"offsetSeconds":21.7,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. Stand by."
 },
 {
 "get":"007:43:47",
-"offsetSeconds":23,
+"offsetSeconds":24.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"I think something's wrong with those attitudes."
 },
 {
 "get":"007:45:14",
-"offsetSeconds":110,
+"offsetSeconds":111.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. I wondered if you have Auto Optics selected. Over."
 },
 {
 "get":"007:45:21",
-"offsetSeconds":117,
+"offsetSeconds":119.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"That's affirmative."
 },
 {
 "get":"007:45:26",
-"offsetSeconds":122,
+"offsetSeconds":122.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. Looks like to us we need a Proceed, Mike, to get the sextant pointed at the star. Over."
 },
 {
 "get":"007:45:35",
-"offsetSeconds":131,
+"offsetSeconds":131.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Stand by. [Long pause.]"
 },
 {
 "get":"007:46:30",
-"offsetSeconds":186,
+"offsetSeconds":186.6,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"11, Houston. Those shaft and trunnion angles were exactly what we were computing on the ground. Over. [Pause.]"
 },
 {
 "get":"007:46:45",
-"offsetSeconds":201,
+"offsetSeconds":201.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. I'm going to trim up the attitude here and give it another try."
 },
 {
 "get":"007:47:55",
-"offsetSeconds":271,
+"offsetSeconds":270.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. I have this star loud and clear now, Charlie, so I might as well do a bunch of marks on this one to get a good horizon count."
 },
 {
 "get":"007:48:03",
-"offsetSeconds":279,
+"offsetSeconds":279.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. Stand by. [Pause.]"
 },
 {
 "get":"007:48:10",
-"offsetSeconds":286,
+"offsetSeconds":286.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"It still looks like I'm far from the substellar point, however. I'm off quite a bit in roll."
 },
 {
 "get":"007:48:18",
-"offsetSeconds":294,
+"offsetSeconds":294.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. We'd like you to mark right where it is now, Mike, and we'd like two sets of marks on this. Over."
 },
 {
 "get":"007:48:28",
-"offsetSeconds":304,
+"offsetSeconds":303.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Fine. But the reticle is not parallel to the horizon. I have to move off quite a bit in order to get it parallel to the horizon. [Pause.]"
 },
 {
 "get":"007:48:40",
-"offsetSeconds":316,
+"offsetSeconds":316.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. Our procedures guys are saying that the reticle does not have to be parallel. Over."
 },
 {
 "get":"007:48:51",
-"offsetSeconds":327,
+"offsetSeconds":327.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Well, then we're not at the substellar point, if we're not."
 },
 {
 "get":"007:48:54",
-"offsetSeconds":330,
+"offsetSeconds":330.4,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Rog."
@@ -11217,154 +10930,154 @@
 "a11_0075139":[
 {
 "get":"007:51:39",
-"offsetSeconds":0,
+"offsetSeconds":2.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, you copy that Noun 49?"
 },
 {
 "get":"007:51:41",
-"offsetSeconds":2,
+"offsetSeconds":4.5,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. We see it, 11. Stand by. [Long pause.]"
 },
 {
 "get":"007:52:09",
-"offsetSeconds":30,
+"offsetSeconds":32.3,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. We'd like you to accept this one and every mark thereafter. Over."
 },
 {
 "get":"007:52:16",
-"offsetSeconds":37,
+"offsetSeconds":39.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"007:52:55",
-"offsetSeconds":76,
+"offsetSeconds":78.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"You need me to wait in the Noun 49 display for any length of time?"
 },
 {
 "get":"007:53:01",
-"offsetSeconds":82,
+"offsetSeconds":84.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Negative."
 },
 {
 "get":"007:53:02",
-"offsetSeconds":83,
+"offsetSeconds":85.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"007:54:29",
-"offsetSeconds":170,
+"offsetSeconds":172.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Charlie. I'd be glad to give you as many of these as you like."
 },
 {
 "get":"007:54:34",
-"offsetSeconds":175,
+"offsetSeconds":175.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. We'd like six marks on star 45, Mike, and then we'll probably go back to star 2 again. Stand by. We'll have further word on that."
 },
 {
 "get":"007:54:43",
-"offsetSeconds":184,
+"offsetSeconds":185.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"007:55:20",
-"offsetSeconds":221,
+"offsetSeconds":222.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"They seem to be getting smaller, Charlie? Are you sure you wouldn't like some more?"
 },
 {
 "get":"007:55:23",
-"offsetSeconds":224,
+"offsetSeconds":224.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Stand by, Mike."
 },
 {
 "get":"007:55:28",
-"offsetSeconds":229,
+"offsetSeconds":229.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"It's no trouble."
 },
 {
 "get":"007:55:31",
-"offsetSeconds":232,
+"offsetSeconds":232.6,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Rog. Stand by. Out. [Long pause.]"
 },
 {
 "get":"007:56:07",
-"offsetSeconds":268,
+"offsetSeconds":269.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. We'd like you to do two more on star 45. Over."
 },
 {
 "get":"007:56:14",
-"offsetSeconds":275,
+"offsetSeconds":274.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"007:58:02",
-"offsetSeconds":383,
+"offsetSeconds":384.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Charlie. There's your two more marks. Where do you want to go from here?"
 },
 {
 "get":"007:58:06",
-"offsetSeconds":387,
+"offsetSeconds":387.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Stand by. [Long pause.]"
 },
 {
 "get":"007:58:21",
-"offsetSeconds":402,
+"offsetSeconds":401.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11, Houston. We'd like you to go back to star number 2 with an attitude as follows: roll, 195.2; pitch, 123.9; yaw, 340.0. Mike, that'll give you a trunnion angle of about 31.4. Over."
 },
 {
 "get":"007:58:45",
-"offsetSeconds":426,
+"offsetSeconds":427.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Understand star number 2 and roll, 195.2; pitch, 123.9; and yaw, 340.0. Over."
 },
 {
 "get":"007:58:57",
-"offsetSeconds":438,
+"offsetSeconds":439.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"That's affirmative."
 },
 {
 "get":"007:59:01",
-"offsetSeconds":442,
+"offsetSeconds":443.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -11373,149 +11086,142 @@
 "a11_0080207":[
 {
 "get":"008:02:07",
-"offsetSeconds":0,
+"offsetSeconds":1.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Charlie. I'm there, and I've got a trunnion angle of 30.5 degrees. Again, misaligned considerably in roll and I do believe that's important to getting good marks."
 },
 {
 "get":"008:02:20",
-"offsetSeconds":13,
+"offsetSeconds":14.1,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Stand by. [Long pause.]"
 },
 {
 "get":"008:02:40",
-"offsetSeconds":33,
+"offsetSeconds":34.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"See, if I'm - my reticle's not parallel, then I'm not marking normal to the horizon and I'm not marking at the substellar point. I'm marking off somewhere else."
 },
 {
 "get":"008:02:50",
-"offsetSeconds":43,
+"offsetSeconds":43.6,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Stand by one. Over."
 },
 {
 "get":"008:02:52",
-"offsetSeconds":45,
+"offsetSeconds":46.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"008:03:24",
-"offsetSeconds":77,
+"offsetSeconds":77.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. The ground-computed values for your shaft and trunnion are just what you're getting on the DSKY there, Mike. The horizon looks cocked off to you - You look like you're off in roll because the angles that we gave you to maneuver to, to prevent the LM reflection from fouling up your optics, we feel like a - you should go ahead and mark on the star just as is. Over."
 },
 {
 "get":"008:03:53",
-"offsetSeconds":106,
+"offsetSeconds":106.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"008:04:08",
-"offsetSeconds":121,
+"offsetSeconds":121.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"I'll bet you a cup of coffee on it."
 },
 {
 "get":"008:04:14",
-"offsetSeconds":127,
+"offsetSeconds":127.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Ah, copy. [Long pause.]"
 },
 {
 "get":"008:05:08",
-"offsetSeconds":181,
+"offsetSeconds":181.9,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Verb - or a Noun 49 for you, Charlie."
 },
 {
 "get":"008:05:13",
-"offsetSeconds":186,
+"offsetSeconds":186.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Ah, Roger. Stand by. [Long pause.]"
 },
 {
 "get":"008:05:45",
-"offsetSeconds":218,
+"offsetSeconds":218.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. We'd like to accept this one and give us two more and that will be enough. Over."
 },
 {
 "get":"008:05:52",
-"offsetSeconds":225,
+"offsetSeconds":225.7,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
-},
-{
-"get":"008:05:52",
-"offsetSeconds":225,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 8 hours, 8 minutes. Apollo 11 now 38,812 nautical miles [71,880 km] from Earth, and travelling at a speed of 9,682 feet per second [2,951 m/s]. And we're just putting a call to the crew. We'll standby for..."
 }
 ],
 "a11_0080800":[
 {
 "get":"008:08:25",
-"offsetSeconds":25,
+"offsetSeconds":3.6,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. We see your termination on P23. Thank you very much. Mike, we'll have a - We're trying to work up a story here for you; we'll be with you momentarily on an explanation of what's happening. Over."
 },
 {
 "get":"008:08:38",
-"offsetSeconds":38,
+"offsetSeconds":16.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay, Charlie. It just appears to me that you have to have the reticle tangent to the horizon at the point at which you mark or else you're not at the substellar point; you're off laterally, and therefore you're measuring a larger trunnion angle than you should."
 },
 {
 "get":"008:08:56",
-"offsetSeconds":56,
+"offsetSeconds":40.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Seems so to me. Our procedures people are working on this, and we'll be back with you momentarily. Over."
 },
 {
 "get":"008:09:03",
-"offsetSeconds":63,
+"offsetSeconds":47.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Thanks, sir."
 },
 {
 "get":"008:11:00",
-"offsetSeconds":180,
+"offsetSeconds":175.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We'd like you to go P00 and Accept. We'll have a PTC REFSMMAT for you momentarily. Over."
 },
 {
 "get":"008:11:13",
-"offsetSeconds":193,
+"offsetSeconds":190.0,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. Going P00 and Accept."
 },
 {
 "get":"008:11:13",
-"offsetSeconds":193,
+"offsetSeconds":190.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"The PTC REFSMMAT, which CapCom Charlie Duke just referred to, is the Passive Thermal Control attitude that the crew will place the spacecraft in. In this attitude the spacecraft will be rotated at a rate of about 3 revolutions per hour to maintain the proper temperature balance."
@@ -11524,42 +11230,42 @@
 "a11_0082444":[
 {
 "get":"008:24:44",
-"offsetSeconds":0,
+"offsetSeconds":0.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello Apollo 11, Houston. We'd like you to do a P52, option 1 preferred, and establish PTC as listed in the Flight Plan at 12 hours. We'd like you to commence that right now, Mike. And we have some stars recommended for you. For stars 26, 30, and 24, when you get to attitude 000. Over. [Long pause.]"
 },
 {
 "get":"008:25:19",
-"offsetSeconds":35,
+"offsetSeconds":36.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay, Charlie. He's off the wick right now. Understand you're ready for us to do a P52, option 1?"
 },
 {
 "get":"008:25:31",
-"offsetSeconds":47,
+"offsetSeconds":48.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"11, it's a P52, option 1 preferred. Over."
 },
 {
 "get":"008:25:36",
-"offsetSeconds":52,
+"offsetSeconds":52.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. And, let's see, that is Spica, Menkent, and what else?"
 },
 {
 "get":"008:25:43",
-"offsetSeconds":59,
+"offsetSeconds":59.5,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. Stars - Codes are stars 26, 30, and 24. Over."
 },
 {
 "get":"008:25:49",
-"offsetSeconds":65,
+"offsetSeconds":65.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"24. Okay."
@@ -11568,14 +11274,14 @@
 "a11_0083542":[
 {
 "get":"008:35:42",
-"offsetSeconds":0,
+"offsetSeconds":1.8,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Hello, Apollo 11. Houston. We notice your Program Alarm, Mike, was due to using these stars in the P23 attitude. If you'll go to 000, the stars we gave you will work. Over."
 },
 {
 "get":"008:36:02",
-"offsetSeconds":20,
+"offsetSeconds":21.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay. Understand."
@@ -11584,21 +11290,21 @@
 "a11_0084129":[
 {
 "get":"008:41:29",
-"offsetSeconds":0,
+"offsetSeconds":10.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. [Pause.]"
 },
 {
 "get":"008:41:33",
-"offsetSeconds":4,
+"offsetSeconds":14.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Wait till we finish the maneuver and we'll give you the DSKY."
 },
 {
 "get":"008:41:37",
-"offsetSeconds":8,
+"offsetSeconds":18.9,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Roger. We're standing by."
@@ -11607,21 +11313,21 @@
 "a11_0085307":[
 {
 "get":"008:53:07",
-"offsetSeconds":0,
+"offsetSeconds":2.0,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. The DSKY is yours."
 },
 {
 "get":"008:53:12",
-"offsetSeconds":5,
+"offsetSeconds":7.0,
 "speaker":"Duke",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. Go ahead. Over."
 },
 {
 "get":"008:53:15",
-"offsetSeconds":8,
+"offsetSeconds":10.8,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. The DSKY is yours."
