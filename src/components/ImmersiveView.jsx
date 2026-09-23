@@ -36,7 +36,6 @@ function PhotoStage({ photos }) {
     <figure className="immersive-photo">
       <img key={photo.src} src={photo.src} alt={photo.caption} />
       <figcaption>
-        <span>{photo.caption}</span>
         <a href={photo.sourceUrl} target="_blank" rel="noreferrer">
           {photo.credit} ↗
         </a>
