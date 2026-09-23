@@ -110,9 +110,11 @@ cuts that to hours. Already-finished files are skipped.
    "contrast": 0, "rotate": 0, "colour": true, "crop": false, "note":
    "..."}}`, as in `photo_reviews.json`, the pilot's first round) and
    re-run with `--reviews pipeline/photo_reviews.json`:
-   - brightness and contrast marks are applied automatically, about 5 L*
-     per step, and `rotate` (degrees clockwise: 90, 180 or 270) turns the
-     photo;
+   - brightness and contrast (-4 to +4 steps) are applied automatically:
+     a brightness step moves mid grey about 7 L*, a contrast step is an
+     S-curve moving the quarter tones about 5 apart. `rotate` (degrees
+     clockwise: 90, 180 or 270) turns the photo. The review page previews
+     these with the same formula (`tone_curve`), so keep the two in step;
    - colour and crop marks are written to `needs-hand-fix.tsv` in the
      output folder for a fix by hand.
 

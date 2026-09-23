@@ -40,7 +40,7 @@ WEB_PX, THUMB_PX = 2048, 400
 SRGB_TO_XYZ = np.array([[0.4124, 0.3576, 0.1805], [0.2126, 0.7152, 0.0722], [0.0193, 0.1192, 0.9505]])
 D65 = np.array([0.95047, 1.0, 1.08883])
 MID_GAMMA, SHOULDER = 0.85, 0.12   # tone_curve
-BRIGHTNESS_STEP, CONTRAST_STEP = 0.85, 0.25   # a reviewer's nudge (tone_curve)
+BRIGHTNESS_STEP, CONTRAST_STEP = 0.8, 1.1   # a reviewer's step (tone_curve; the review page matches)
 MAX_TINT, KEEP_TINT = 45, 3        # film_tint, adjust_colour (L*a*b* units)
 
 
@@ -195,13 +195,17 @@ def tone_curve(L, brightness=0, contrast=0):
     the brightest tones eased down so sunlit soil and suits aren't glaring
     (white ends up at about 88). Black stays black.
 
-    `brightness` and `contrast` are a reviewer's steps (-1, 0, +1; more
-    for a stronger nudge): one brightness step moves mid grey by about 5
-    L* units, one contrast step moves the quarter tones about 5 apart."""
+    `brightness` and `contrast` are a reviewer's steps (-4 to +4). One
+    brightness step moves mid grey about 7 L* units; contrast is an S-curve
+    (tanh) that keeps black and white fixed, one step moving the quarter
+    tones about 5 units apart. The review page previews with the same
+    formula, so keep the two in step."""
     x = (np.clip(L, 0, 100) / 100) ** (MID_GAMMA * BRIGHTNESS_STEP ** brightness) * 100
     if contrast:
+        k = CONTRAST_STEP * abs(contrast)
         d = (x - 50) / 50
-        x = x + CONTRAST_STEP * contrast * (x - 50) * (1 - d * d)
+        d = np.tanh(k * d) / np.tanh(k) if contrast > 0 else np.arctanh(np.clip(d, -1, 1) * np.tanh(k)) / k
+        x = 50 + 50 * d
     return x - SHOULDER * 100 * (x / 100) ** 3
 
 
