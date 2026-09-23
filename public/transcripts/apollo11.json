@@ -24469,79 +24469,72 @@
 "a11_0715215":[
 {
 "get":"071:52:15",
-"offsetSeconds":0,
+"offsetSeconds":3.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston. Apollo 11. The Earthshine coming through the window is so bright you can read a book by it."
 },
 {
 "get":"071:52:24",
-"offsetSeconds":9,
+"offsetSeconds":12.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Oh, very good."
-},
-{
-"get":"071:52:24",
-"offsetSeconds":9,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"That was Mike Collins reporting."
 }
 ],
 "a11_0715600":[
 {
 "get":"071:56:00",
-"offsetSeconds":0,
+"offsetSeconds":4.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"And, Houston, I'd suggest that along the ecliptic line we can see corona light out to two lunar diameters from this location. The bright light only extends out about an eighth to a quarter of the lunar radius."
 },
 {
 "get":"071:56:35",
-"offsetSeconds":35,
+"offsetSeconds":40.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Understand that you can see the corona approximately 200 solar diameters out along the ecliptic, and the bright light extends out approximately one-eighth to one-quarter lunar radius. Over."
 },
 {
 "get":"071:56:52",
-"offsetSeconds":52,
+"offsetSeconds":56.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"That's two lunar - two lunar diameters along the ecliptic in the bright part - [perhaps acknowledging a suggestion from either Aldrin or Collins] right - [To McCandless] a quarter to an eighth of a lunar radius out, and that's perpendicular to the ecliptic line on the South Pole."
 },
 {
 "get":"071:57:07",
-"offsetSeconds":67,
+"offsetSeconds":122.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"071:57:07",
-"offsetSeconds":67,
+"offsetSeconds":122.1,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That last transmission was from Neil Armstrong."
 },
 {
 "get":"071:59:20",
-"offsetSeconds":200,
+"offsetSeconds":205.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, it's been a real change for us. Now we're able to see stars again and recognize constellations for the first time on the trip. It's - the sky is full of stars. Just like the night side of Earth. But all the way here, we've only been able to see stars occasionally and perhaps through the monocular, but not recognize any star patterns."
 },
 {
 "get":"071:59:52",
-"offsetSeconds":232,
+"offsetSeconds":235.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"I guess it's turned into night up there really, hasn't it?"
 },
 {
 "get":"071:59:58",
-"offsetSeconds":238,
+"offsetSeconds":241.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Really has."
@@ -24566,147 +24559,147 @@
 "a11_0721348":[
 {
 "get":"072:13:48",
-"offsetSeconds":0,
+"offsetSeconds":3.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Do you read? Over. [No answer.]"
 },
 {
 "get":"072:14:38",
-"offsetSeconds":50,
+"offsetSeconds":53.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. How do you read? Over."
 },
 {
 "get":"072:14:43",
-"offsetSeconds":55,
+"offsetSeconds":58.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay. We went to the High Gain. Looks like you had a little trouble getting signal strength there."
 },
 {
 "get":"072:14:49",
-"offsetSeconds":61,
+"offsetSeconds":63.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We missed an Omni switch there. Over."
 },
 {
 "get":"072:14:55",
-"offsetSeconds":67,
+"offsetSeconds":69.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"All right. On the secondary loop check when we went to Flow on the secondary radiators, the quantity dropped from 40 percent down to 36 in the first 10 seconds and then stabilized at 36 for the remainder of the 30 seconds. [Long pause.]"
 },
 {
 "get":"072:15:30",
-"offsetSeconds":102,
+"offsetSeconds":104.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. We believe that's normal system operation. The radiators are expected to be very cold right now and apparently the decrease you saw was due to contraction in the fluid. Over."
 },
 {
 "get":"072:15:49",
-"offsetSeconds":121,
+"offsetSeconds":123.7,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay. We'll go ahead with the procedure just as if there were no decrease in accumulator quantity. Right?"
 },
 {
 "get":"072:15:55",
-"offsetSeconds":127,
+"offsetSeconds":129.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Press on."
 },
 {
 "get":"072:17:25",
-"offsetSeconds":217,
+"offsetSeconds":219.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"And, Houston, the secondary radiator flow check is complete and satisfactory."
 },
 {
 "get":"072:17:31",
-"offsetSeconds":223,
+"offsetSeconds":224.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Houston. Roger. Out. [Pause.]"
 },
 {
 "get":"072:17:40",
-"offsetSeconds":232,
+"offsetSeconds":233.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"And that's a good deal because we don't have to have any meetings about whether we're going to do it or don't do it any more."
 },
 {
 "get":"072:17:47",
-"offsetSeconds":239,
+"offsetSeconds":240.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"[Laughter.] That's for sure. [Pause.]"
 },
 {
 "get":"072:17:47",
-"offsetSeconds":239,
+"offsetSeconds":244.3,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That was a Mike Collins' comment."
 },
 {
 "get":"072:18:00",
-"offsetSeconds":252,
+"offsetSeconds":253.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"The Flight Director says 'ouch!' [Pause.]"
 },
 {
 "get":"072:18:12",
-"offsetSeconds":264,
+"offsetSeconds":265.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"No. No 'ouch' intended. I enjoyed every one of those meetings. [Long pause.]"
 },
 {
 "get":"072:19:10",
-"offsetSeconds":322,
+"offsetSeconds":323.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. I have your pericynthion-plus-2 PAD, P30 format, when you're ready to copy. [Pause.]"
 },
 {
 "get":"072:19:24",
-"offsetSeconds":336,
+"offsetSeconds":337.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. Stand by. [Long pause.]"
 },
 {
 "get":"072:20:17",
-"offsetSeconds":389,
+"offsetSeconds":390.6,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Ready to copy pericynthion-plus-2."
 },
 {
 "get":"072:20:24",
-"offsetSeconds":396,
+"offsetSeconds":397.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Pericynthion-plus-2 hours PAD. SPS/G&N: 62710, plus 0.98, minus 0.19; GET ignition 077:46:22.48, Delta-V X Noun 81, plus 3214.8, minus 0045.5, minus 1037.7; roll NA, pitch 307, and the remainder of the PAD is NA. GDC align stars; Vega and Deneb. Roll 243, 183, 012; no ullage. Remarks: Assumes landing site REFSMMAT and docked. Over. [Pause.]"
 },
 {
 "get":"072:21:48",
-"offsetSeconds":480,
+"offsetSeconds":481.5,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. SPS/G&N: 62710, plus 0.98, minus 0.19; 077:46:22.48; plus 3214.8, minus 0045.5, minus 1037.7; NA, 307; Vega and Deneb; 243, 183, 012; no ullage. Landing site REFSMMAT, docked. And ya'aven't - change on the LM weight. Over."
 },
 {
 "get":"072:22:30",
-"offsetSeconds":522,
+"offsetSeconds":523.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"No change in the LM's weight - in the LM weight, and the readback is correct. Out."
@@ -24715,98 +24708,98 @@
 "a11_0722506":[
 {
 "get":"072:25:06",
-"offsetSeconds":0,
+"offsetSeconds":2.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"072:25:13",
-"offsetSeconds":7,
+"offsetSeconds":9.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. Go ahead."
 },
 {
 "get":"072:25:14",
-"offsetSeconds":8,
+"offsetSeconds":10.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We're having difficulty getting commands into the spacecraft. We'd like you to cycle your Up Telemetry switch to Command Reset and Off and then back to Normal. Over."
 },
 {
 "get":"072:25:32",
-"offsetSeconds":26,
+"offsetSeconds":28.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay. We'll do it. [Long pause.]"
 },
 {
 "get":"072:25:50",
-"offsetSeconds":44,
+"offsetSeconds":46.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"We have you on High Gain right now. You want us to switch over to Omni? [Pause.]"
 },
 {
 "get":"072:26:02",
-"offsetSeconds":56,
+"offsetSeconds":59.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Negative. We'd like to stay on the High Gain if we can. Over."
 },
 {
 "get":"072:26:11",
-"offsetSeconds":65,
+"offsetSeconds":66.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"072:27:16",
-"offsetSeconds":130,
+"offsetSeconds":131.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over. [Pause.]"
 },
 {
 "get":"072:27:24",
-"offsetSeconds":138,
+"offsetSeconds":139.7,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"072:27:25",
-"offsetSeconds":139,
+"offsetSeconds":141.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We'd like you to switch to Omni Delta as we show you approximately at the scan limit of the High Gain Antenna. We will then command Omni Delta down here after you advise us you've switched, and then you can select Bravo on board and we'll be back in the Omni antenna commanding business. Over."
 },
 {
 "get":"072:27:46",
-"offsetSeconds":160,
+"offsetSeconds":162.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay. We're going to Delta now. [Long pause.]"
 },
 {
 "get":"072:28:16",
-"offsetSeconds":190,
+"offsetSeconds":191.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, Houston. You can go ahead and select Omni Bravo on board now."
 },
 {
 "get":"072:28:24",
-"offsetSeconds":198,
+"offsetSeconds":199.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"You have it."
 },
 {
 "get":"072:28:27",
-"offsetSeconds":201,
+"offsetSeconds":202.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Out. [Long pause.]"
@@ -24815,422 +24808,415 @@
 "a11_0722924":[
 {
 "get":"072:29:24",
-"offsetSeconds":0,
+"offsetSeconds":2.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. If you have a minute or so free, we can read you up the morning news here."
 },
 {
 "get":"072:29:35",
-"offsetSeconds":11,
+"offsetSeconds":13.7,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Go right ahead, let's hear it."
 },
 {
 "get":"072:29:37",
-"offsetSeconds":13,
+"offsetSeconds":15.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Hot from the wires of the MSC Public Affairs Office, especially prepared for the crew of Apollo 11. [Pause.]"
 },
 {
 "get":"072:29:46",
-"offsetSeconds":22,
+"offsetSeconds":24.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. First off, looks like it's going to be impossible to get away from the fact that you guys are dominating all the news back here on Earth. Even Pravda in Russia is headlining the mission and calls Neil, the Czar of the Ship. I think maybe they got the wrong mission."
 },
 {
 "get":"072:30:06",
-"offsetSeconds":42,
+"offsetSeconds":45.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"West Germany has declared Monday to be Apollo Day. School children in Bavaria have been given the day off. Post Office clerks have been encouraged to bring radios to work and Frankfurt is installing TV sets in public places."
 },
 {
 "get":"072:30:24",
-"offsetSeconds":60,
+"offsetSeconds":63.4,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"BBC in London is considering a special radio alarm system to call people to their TV sets in case there is a change in the EVA time on the Moon."
 },
 {
 "get":"072:30:35",
-"offsetSeconds":71,
+"offsetSeconds":73.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"And in Italy, Pope Paul VI has arranged for a special color TV circuit at his summer residence in order to watch you, even though Italian television is still black and white."
 },
 {
 "get":"072:30:48",
-"offsetSeconds":84,
+"offsetSeconds":86.8,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Back here in Houston, your three wives and children got together for lunch yesterday at Buzz's house. And according to Pat, it turned out to be a gab-fest. The children swam and did some high jumping over Buzz's bamboo pole."
 },
 {
 "get":"072:31:11",
-"offsetSeconds":107,
+"offsetSeconds":108.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"In Moscow, space engineer Anatol Koritsky was quoted by TASS as saying that Luna 15 could accomplish everything that had been done by earlier Luna spacecraft. This was taken by the press to mean Luna 15 could investigate the gravitational field, photograph the Moon, and go down to the surface to scoop up a bit for analysis."
 },
 {
 "get":"072:31:35",
-"offsetSeconds":131,
+"offsetSeconds":133.4,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Even the kids at camp got in the news when Mike Junior was quoted as replying 'yeah' when somebody asked him if his daddy was going to be in history. Then after a short pause he asked: 'What is history?' In Washington, President Nixon is planning to use his executive power to streamline the Interstate Commerce Commission. According to the industry sources, it was reported Nixon would trim the commission from 11 to 7 members by not making new appointments."
 },
 {
 "get":"072:32:12",
-"offsetSeconds":168,
+"offsetSeconds":170.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"And the big news around Houston today concerns the Astros. In the sports world, the Houston Astros rallied in the ninth inning at Cincinnati to dump the Reds 7 to 4. Going into the ninth however, things looked pretty bleak: the Astros were trailing 4 to 3. Then with one out, Jesus Alou stroked a single to right field. John Edwards hit another single to right, and Sandy Valdespino hit a double to bring in the tying run. Julio Gotay was walked and Joe Morgan dropped a bunt for the game-winning play. A wild throw to the plate allowed another run to score, then a sacrifice fly by Dennis Menke brou"
 },
 {
 "get":"072:32:56",
-"offsetSeconds":212,
+"offsetSeconds":214.1,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And other games in the National League..."
 },
 {
 "get":"072:32:57",
-"offsetSeconds":213,
+"offsetSeconds":215.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yes. Those Astros have really been catching those flies since they put a roof on the stadium."
 },
 {
 "get":"072:33:05",
-"offsetSeconds":221,
+"offsetSeconds":222.9,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Good work. [Long pause.]"
 },
 {
 "get":"072:33:19",
-"offsetSeconds":235,
+"offsetSeconds":236.7,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"In other games in the National League, New York beat Montreal 5 to 2; Pittsburgh beat St. Louis 4 to 1; and Atlanta over San Diego in the first game of a double header, 6 to 2."
 },
 {
 "get":"072:33:32",
-"offsetSeconds":248,
+"offsetSeconds":250.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"In the American League, Detroit beat Cleveland 4 to nothing; New York trounced Washington 5 to nothing; Baltimore out hit - Boston out hit Baltimore to score 6 runs to the Orioles' 2; and Chicago beat Kansas City 6 to 1."
 },
 {
 "get":"072:33:50",
-"offsetSeconds":266,
+"offsetSeconds":267.6,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"Okay. In golf world, Tommy Jacobs, an infrequent competitor in recent years, took the lead in the Philadelphia Golf Classic yesterday. His second round score was 139."
 },
 {
 "get":"072:34:02",
-"offsetSeconds":278,
+"offsetSeconds":279.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"You might be interested in knowing, since you are already on the way, that a Houston astrologer, Ruby Graham, says that all the signs are right for your trip to the Moon. She says that Neil is clever, Mike has good judgment, and Buzz can work out intricate problems. She also says Neil tends to see the world through rose-colored glasses, but he is always ready to help the afflicted or distressed. Neil, you are also supposed to have, quote, intuition that enables you to interpret life with feeling, unquote. Buzz is to be very sociable and cannot bear to be alone in addition to having excellent c"
 },
 {
 "get":"072:34:56",
-"offsetSeconds":332,
+"offsetSeconds":333.6,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"And last but not..."
 },
 {
 "get":"072:34:58",
-"offsetSeconds":334,
+"offsetSeconds":335.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Who said all that?"
 },
 {
 "get":"072:35:00",
-"offsetSeconds":336,
+"offsetSeconds":337.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"[Laughter] Ruby Graham, an astrologer here in Houston. Now we check with Flight Operations for all the signs for the mission, and then we, of course, had to make sure that everything was really all set. [Long pause.]"
 },
 {
 "get":"072:35:49",
-"offsetSeconds":385,
+"offsetSeconds":386.4,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, 11. You're cutting out [garble]."
 },
 {
 "get":"072:35:56",
-"offsetSeconds":392,
+"offsetSeconds":393.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston. We're switching Omnis. Can you stand by for about 2 minutes?"
 },
 {
 "get":"072:37:30",
-"offsetSeconds":486,
+"offsetSeconds":487.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, 11. Radio check."
 },
 {
 "get":"072:37:35",
-"offsetSeconds":491,
+"offsetSeconds":492.0,
 "speaker":"Haise",
 "channel":"air-to-ground",
 "text":"11, Houston. Go ahead."
 },
 {
 "get":"072:37:41",
-"offsetSeconds":497,
+"offsetSeconds":498.0,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. You cut out after Tommy Jacobs and I guess we got into antenna switching problems."
 },
 {
 "get":"072:37:49",
-"offsetSeconds":505,
+"offsetSeconds":506.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Okay. Following Tommy Jacobs, we have the hot smoking word from a local Houston astrologer by the name of Ruby Graham. She says that all the signs are right for your trip to the Moon. Neil is clever, Mike has good judgement, and Buzz can work out intricate problems. She also says Neil tends to see the world through rose-colored glasses but is always ready to help the afflicted or distressed. Neil, you are also supposed to have, quote, intuition that enables you to interpret life with feeling, unquote. Buzz is supposed to be very sociable and cannot bear to be alone in addition to having excell"
 },
 {
 "get":"072:38:51",
-"offsetSeconds":567,
+"offsetSeconds":568.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Thank you much there, Bruce and Fred Show, we appreciate that."
 },
 {
 "get":"072:38:58",
-"offsetSeconds":574,
+"offsetSeconds":580.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"072:38:58",
-"offsetSeconds":574,
+"offsetSeconds":580.3,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That was Fred Haise alternating with Bruce McCandless on that newscast."
 },
 {
 "get":"072:39:13",
-"offsetSeconds":589,
+"offsetSeconds":593.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Did you hear our comment about the Astros?"
 },
 {
 "get":"072:39:17",
-"offsetSeconds":593,
+"offsetSeconds":596.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"The one about the roof?"
 },
 {
 "get":"072:39:23",
-"offsetSeconds":599,
+"offsetSeconds":604.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yep. [Long pause.]"
 },
 {
 "get":"072:39:44",
-"offsetSeconds":620,
+"offsetSeconds":620.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Hey, Mike, the game was at Cincinnati there, and we think that they're still using Crosby Field up there. I don't believe it has a roof on it. [Pause.]"
 },
 {
 "get":"072:40:00",
-"offsetSeconds":636,
+"offsetSeconds":636.2,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"You got him on that one."
 },
 {
 "get":"072:40:02",
-"offsetSeconds":638,
+"offsetSeconds":638.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Right..."
 },
 {
 "get":"072:40:03",
-"offsetSeconds":639,
+"offsetSeconds":639.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"I think they're just getting to be a good team in the clinch."
 },
 {
 "get":"072:40:05",
-"offsetSeconds":641,
+"offsetSeconds":641.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"They certainly seem to be."
 },
 {
 "get":"072:40:11",
-"offsetSeconds":647,
+"offsetSeconds":647.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Well, if they can do that well without a roof, think of what they're going to do with a roof."
 },
 {
 "get":"072:40:16",
-"offsetSeconds":652,
+"offsetSeconds":654.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Out."
 },
 {
 "get":"072:40:21",
-"offsetSeconds":657,
+"offsetSeconds":657.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"They're trying. [Long pause.]"
 },
 {
 "get":"072:40:41",
-"offsetSeconds":677,
+"offsetSeconds":677.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"An old Oiler fan is trying to comment on an alien game. [Long pause.]"
 },
 {
 "get":"072:41:23",
-"offsetSeconds":719,
+"offsetSeconds":719.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"You tell Michael Junior, history or no history, he'd better behave himself."
 },
 {
 "get":"072:41:29",
-"offsetSeconds":725,
+"offsetSeconds":725.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We'll pass that along, Mike."
-},
-{
-"get":"072:41:29",
-"offsetSeconds":725,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 72 hours, 45 minutes. Apollo 11 is now 8,188 nautical miles from the Moon, approaching at a velocity of 4,324 feet per second."
 }
 ],
 "a11_0724858":[
 {
 "get":"072:48:58",
-"offsetSeconds":0,
+"offsetSeconds":2.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Houston. If it's convenient with you, we have an LOI-1 PAD that we can pass up to you now. Over."
 },
 {
 "get":"072:49:10",
-"offsetSeconds":12,
+"offsetSeconds":14.3,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Stand by. [Pause.]"
 },
 {
 "get":"072:49:17",
-"offsetSeconds":19,
+"offsetSeconds":21.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. The next time we pass through roll 0, we're going to stop PTC and that'll give us 90 degrees pitch. Now, I understand you want us to move from 90 degrees pitch to 0 degrees pitch for the platform align, option 1. Is that affirmative? [Long pause.]"
 },
 {
 "get":"072:49:42",
-"offsetSeconds":44,
+"offsetSeconds":46.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Standby, please."
 },
 {
 "get":"072:49:47",
-"offsetSeconds":49,
+"offsetSeconds":51.0,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"And we're ready to copy on the LOI-1. [Long pause.]"
 },
 {
 "get":"072:50:37",
-"offsetSeconds":99,
+"offsetSeconds":100.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. When you stop at 0 roll, you'll be in approximately 90 pitch, 0 yaw, and 0 roll. We'd like you to run the first P52, that is, the P52 option 3, from that attitude. Then we'll uplink you a new REFSMMAT, either before or while you're maneuvering to 000, then you can torque the platform around and run the second REFSMMAT. Over. Run the second P52. Over."
 },
 {
 "get":"072:51:13",
-"offsetSeconds":135,
+"offsetSeconds":137.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"072:51:15",
-"offsetSeconds":137,
+"offsetSeconds":140.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"And I copied you're ready for the LOI-1 PAD. Over."
 },
 {
 "get":"072:51:22",
-"offsetSeconds":144,
+"offsetSeconds":145.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"072:51:24",
-"offsetSeconds":146,
+"offsetSeconds":148.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"LOI-1, SPS/G&N: 62710, plus 0.98, minus 0.19, GET ignition 075:49:49.65; minus 2889.7, minus 0394.4, minus 0068.6; roll 358, pitch 226, 347; 0169.2, plus 00610; 2917.3, 6:02, 2910.8; sextant star 31, 1066, 358. Remainder of the PAD is NA. GDC align, Vega and Deneb, 243, 183, 012. No ullage. The horizon will be visible just below the upper edge of the hatch window 2 minutes prior to the LOI burn. It will not be visible in the rendezvous window on the left-hand side. LOS at 75 hours, 41 minutes, 23 seconds. AOS at 76:15:29. AOS without the LOI burn, 76:05:30. The values which you would see on No"
 },
 {
 "get":"072:53:54",
-"offsetSeconds":296,
+"offsetSeconds":297.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. LOI-1, SPS/G&N: 62710, plus 0.98, minus 0.19; 075:49:49.65; minus 2889.7, minus 0394.4, minus 0068.6; 358, 226, 347; 0169.2, plus 0061.0; 2917.3, 6:02, 2910.8; 31, 106.6, 35.8. GDC align, Vega and Deneb, 243, 183, 012. No ullage. Horizon in the hatch window 2 minutes before T IG . AOS with an LOI, 76:15:29; AOS without an LOI, 76:05:30. H A before the burn, 431.3; H P , minus 128.2. Say again LOS time."
 },
 {
 "get":"072:55:47",
-"offsetSeconds":409,
+"offsetSeconds":409.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. LOS time 75:41:23. Over."
 },
 {
 "get":"072:55:58",
-"offsetSeconds":420,
+"offsetSeconds":432.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Understand 75:41:23."
 },
 {
 "get":"072:56:03",
-"offsetSeconds":425,
+"offsetSeconds":443.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. Readback correct. Out."
 },
 {
 "get":"072:56:03",
-"offsetSeconds":425,
+"offsetSeconds":443.1,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That was Neil Armstrong with the readback of the Lunar Orbit Insertion burn number 1 PAD. The ignition time for that burn; 75 hours, 49 minutes, 49 seconds. That's 2 hours, 57 minutes, 49 seconds from this time. Duration of that burn; 6 minutes, 2 seconds retrograde, and the change in velocity; 2,917.3 feet per second [889.2 m/s]. The expected orbit following that maneuver is 169.2 by 61 nautical miles [313.4 by 113.0 km]. To repeat the LOS/AOS times; we will lose signal with Apollo 11 at 75 hours, 41 minutes, 23 seconds as it goes behind the Moon. Given a successful Lunar Orbit Insertion numb"
@@ -25239,79 +25225,72 @@
 "a11_0730438":[
 {
 "get":"073:04:38",
-"offsetSeconds":0,
+"offsetSeconds":4.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"073:04:43",
-"offsetSeconds":5,
+"offsetSeconds":8.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Go ahead."
 },
 {
 "get":"073:04:44",
-"offsetSeconds":6,
+"offsetSeconds":10.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Apparently we missed getting your onboard readouts on battery Charlie and Pyro batteries Alpha and Bravo last night. I wonder if you could give us some fresh numbers. Over."
 },
 {
 "get":"073:04:59",
-"offsetSeconds":21,
+"offsetSeconds":25.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"You want the readings now?"
 },
 {
 "get":"073:05:01",
-"offsetSeconds":23,
+"offsetSeconds":27.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Yes, please. If it's convenient for you. [Long pause.]"
 },
 {
 "get":"073:05:16",
-"offsetSeconds":38,
+"offsetSeconds":41.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Okay. All three of the them are still 37.1 [Volts]."
 },
 {
 "get":"073:05:20",
-"offsetSeconds":42,
+"offsetSeconds":45.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. 37.1 cubed. Out."
-},
-{
-"get":"073:05:20",
-"offsetSeconds":42,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 73 hours, 6 minutes. Apollo 11's distance from the Moon is now 7,331 nautical miles [13,577 km]. Velocity; 4,399 feet per second [1,341 m/s]. The ignition time passed up to the crew on this PAD is 4 minutes, 39 seconds earlier than the LOI-1 time published in the Flight Plan prior to lift-off. This means that all lunar events will move forward from the published Flight Plan times by this amount of time - 4 minutes, 39 seconds. This time will be made up during the trans-Earth coast, and splash should occur at the Flight Plan time. This is Mission Control, Houston."
 }
 ],
 "a11_0730914":[
 {
 "get":"073:09:14",
-"offsetSeconds":0,
+"offsetSeconds":3.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. The P52 option 3 is complete. We're maneuvering to 000."
 },
 {
 "get":"073:09:20",
-"offsetSeconds":6,
+"offsetSeconds":9.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We observe your maneuvering, and we'll have some uplinks for you in a couple of minutes here."
 },
 {
 "get":"073:09:27",
-"offsetSeconds":13,
+"offsetSeconds":16.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
@@ -25320,21 +25299,21 @@
 "a11_0731313":[
 {
 "get":"073:13:13",
-"offsetSeconds":0,
+"offsetSeconds":3.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. We observe you're in P00. If you'll give us Accept, we'll start our uplinks."
 },
 {
 "get":"073:13:24",
-"offsetSeconds":11,
+"offsetSeconds":13.4,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"You got it, Houston."
 },
 {
 "get":"073:13:25",
-"offsetSeconds":12,
+"offsetSeconds":14.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Out."
@@ -25343,189 +25322,182 @@
 "a11_0731651":[
 {
 "get":"073:16:51",
-"offsetSeconds":0,
+"offsetSeconds":6.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"073:16:58",
-"offsetSeconds":7,
+"offsetSeconds":13.4,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Go ahead, Houston."
 },
 {
 "get":"073:16:59",
-"offsetSeconds":8,
+"offsetSeconds":14.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We're on low bit rate at the present time so it's going to take us a little bit longer than normal to get this stuff up to you. Over."
 },
 {
 "get":"073:17:12",
-"offsetSeconds":21,
+"offsetSeconds":26.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"I guess we're in no rush."
 },
 {
 "get":"073:17:15",
-"offsetSeconds":24,
+"offsetSeconds":28.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Okay. We're here, if you're there. [Pause.]"
 },
 {
 "get":"073:17:24",
-"offsetSeconds":33,
+"offsetSeconds":37.4,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"The view of the Moon that we've been having recently is really spectacular. It fills about three-quarters of the hatch window, and of course, we can see the entire circumference, even though part of it is in complete shadow and part of it's in Earthshine. It's a view worth the price of the trip."
 },
 {
 "get":"073:17:45",
-"offsetSeconds":54,
+"offsetSeconds":58.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Well, there are a lot of us down here that would be willing to come along. [Pause.]"
 },
 {
-"get":"073:17:45",
-"offsetSeconds":54,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"That was Neil Armstrong."
-},
-{
 "get":"073:17:58",
-"offsetSeconds":67,
+"offsetSeconds":72.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"I hope you get your turn, and soon. [Long pause.]"
 },
 {
 "get":"073:18:11",
-"offsetSeconds":80,
+"offsetSeconds":87.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"One of these days, we'll be able to bring the whole MOCR along, I hope. Save a lot of antenna switching."
 },
 {
 "get":"073:18:21",
-"offsetSeconds":90,
+"offsetSeconds":99.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Say again, 11."
 },
 {
 "get":"073:18:26",
-"offsetSeconds":95,
+"offsetSeconds":104.9,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"One of these days, we could bring the whole MOCR along, and then that'll save a lot of antenna switching."
 },
 {
 "get":"073:18:34",
-"offsetSeconds":103,
+"offsetSeconds":114.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"That's jolly."
 },
 {
 "get":"073:18:34",
-"offsetSeconds":103,
+"offsetSeconds":114.2,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"The MOCR is the Mission Operations Control Room. That's the control center here."
 },
 {
 "get":"073:20:21",
-"offsetSeconds":210,
+"offsetSeconds":215.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"073:20:28",
-"offsetSeconds":217,
+"offsetSeconds":221.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Go ahead, Houston."
 },
 {
 "get":"073:20:30",
-"offsetSeconds":219,
+"offsetSeconds":223.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. We're showing you..."
 },
 {
 "get":"073:20:32",
-"offsetSeconds":221,
+"offsetSeconds":225.3,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"The Czar is brushing his teeth, so I'm filling in for him."
 },
 {
 "get":"073:20:36",
-"offsetSeconds":225,
+"offsetSeconds":229.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Say again, please."
 },
 {
 "get":"073:20:42",
-"offsetSeconds":231,
+"offsetSeconds":234.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"I said the Czar is brushing his teeth, so I'm filling in for him. What can we do for you?"
 },
 {
 "get":"073:20:47",
-"offsetSeconds":236,
+"offsetSeconds":240.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Well, if you don't get in the way of the Czar while he's brushing his teeth, we'd like you to bring up the primary accumulator quantity a little bit. We're showing the quantity now at 20.6 percent on TM. Seems to have gone down a bit since you've gone into the shadow. We'd like it serviced to bring the quantity up to between 30 and 40 percent, preferably 35 percent. Over."
 },
 {
 "get":"073:21:19",
-"offsetSeconds":268,
+"offsetSeconds":272.1,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"073:21:23",
-"offsetSeconds":272,
+"offsetSeconds":276.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"The computer is yours, 11. The loads are in and verified. You can go back to Block."
 },
 {
 "get":"073:21:31",
-"offsetSeconds":280,
+"offsetSeconds":284.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"We're in Block."
 },
 {
 "get":"073:23:52",
-"offsetSeconds":421,
+"offsetSeconds":424.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. On the basis of your last P52 alignment, the platform looks like it's indeed performing very well. No problems there, no updates required, and no PIPA bias update is required either. Over."
 },
 {
 "get":"073:24:12",
-"offsetSeconds":441,
+"offsetSeconds":495.6,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Sounds good."
 },
 {
 "get":"073:24:12",
-"offsetSeconds":441,
+"offsetSeconds":495.6,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control at 73 hours, 25 minutes. Apollo 11 is 6,522 nautical miles [12,079 km] away from the Moon; approaching at a velocity of 4,483 feet per second [1,366 m/s]."
@@ -25534,70 +25506,70 @@
 "a11_0734051":[
 {
 "get":"073:40:51",
-"offsetSeconds":0,
+"offsetSeconds":3.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Radio check."
 },
 {
 "get":"073:40:54",
-"offsetSeconds":3,
+"offsetSeconds":6.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. Loud and clear. Over."
 },
 {
 "get":"073:41:00",
-"offsetSeconds":9,
+"offsetSeconds":12.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. Just checking. Do you want the High Gain?"
 },
 {
 "get":"073:41:06",
-"offsetSeconds":15,
+"offsetSeconds":18.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. If you can give it to us."
 },
 {
 "get":"073:41:11",
-"offsetSeconds":20,
+"offsetSeconds":23.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"073:42:19",
-"offsetSeconds":88,
+"offsetSeconds":91.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. How do you read on the High Gain?"
 },
 {
 "get":"073:42:23",
-"offsetSeconds":92,
+"offsetSeconds":95.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Loud and clear on the High Gain."
 },
 {
 "get":"073:42:29",
-"offsetSeconds":98,
+"offsetSeconds":101.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Same here. We've completed the P52 option 1."
 },
 {
 "get":"073:42:36",
-"offsetSeconds":105,
+"offsetSeconds":108.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We've been looking over your shoulder by TM. [Pause.]"
 },
 {
 "get":"073:42:48",
-"offsetSeconds":117,
+"offsetSeconds":120.0,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Glad to have you."
@@ -25606,184 +25578,170 @@
 "a11_0735837":[
 {
 "get":"073:58:37",
-"offsetSeconds":0,
+"offsetSeconds":2.1,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11. Standing by to copy TEI-1 and TEI-4. Over."
 },
 {
 "get":"073:58:43",
-"offsetSeconds":6,
+"offsetSeconds":8.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. I've got the 1 and 4 PADs here, right now. I'll be ready to read them up to you in just a second. [Long pause.]"
 },
 {
 "get":"073:59:31",
-"offsetSeconds":54,
+"offsetSeconds":56.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. I'm ready with the TEI-1 and 4 PADs. Over. [Pause.]"
 },
 {
 "get":"073:59:44",
-"offsetSeconds":67,
+"offsetSeconds":68.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Ready to copy."
 },
 {
 "get":"073:59:46",
-"offsetSeconds":69,
+"offsetSeconds":70.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. TEI-1, SPS/G&N; 38658, minus 0.54, plus 0.65, T IG , 078:02:03.45; plus 2918.0, plus 0377.9, minus 0132.5; roll NA, pitch 041. The balance of the PAD is NA. Ullage; two jets, 19 seconds. TEI-4 PAD, SPS/G&N:, 38658, minus 0.54, plus 0.65, T IG , 084:29:50.59; plus 3137.3, plus 0376.0, minus 0096.8; roll NA, pitch 034. The rest of the PAD is NA. Ullage; two jets, 19 seconds. Both of these PADs are for an undocked maneuver. TEI-plus-4 PAD assumes no LOI-2. Over. Make that TEI-4 PAD assumes no LOI-2. [Long pause.]"
 },
 {
 "get":"074:01:53",
-"offsetSeconds":196,
+"offsetSeconds":197.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. TEI-1, SPS/G&N; 38658, minus 0.54, plus 0.65; 078:02:03.45; plus 2918.0, plus 0377.9, minus 0132.5; roll NA, pitch 041; two jets, 19 seconds; undocked. TEI-4: 38658, minus 0.54, plus 0.65, 084:29:50.59, plus 3137.3, plus 0376.0, minus 0096.8; roll NA, pitch 034; two jets, 19 seconds; undocked; assumes no LOI-2."
 },
 {
 "get":"074:02:59",
-"offsetSeconds":262,
+"offsetSeconds":262.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston..."
 },
 {
 "get":"074:03:00",
-"offsetSeconds":263,
+"offsetSeconds":285.5,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"...Apollo 11. Over."
 },
 {
 "get":"074:03:01",
-"offsetSeconds":264,
+"offsetSeconds":308.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"...11, this is Houston. Readback correct. Out."
 },
 {
 "get":"074:03:01",
-"offsetSeconds":264,
+"offsetSeconds":308.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That was Buzz Aldrin with the readback of that information which was for contingency Trans-Earth Injection burns if required shortly after Lunar Orbit Insertion."
 },
 {
 "get":"074:04:24",
-"offsetSeconds":347,
+"offsetSeconds":346.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. Over. [Pause.]"
 },
 {
 "get":"074:04:30",
-"offsetSeconds":353,
+"offsetSeconds":353.7,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Go ahead, Houston."
 },
 {
 "get":"074:04:32",
-"offsetSeconds":355,
+"offsetSeconds":356.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. At GET of 74:30, we'd like you to cycle the fans in all four Cryo tanks and position the heaters in all four Cryo tanks to the Auto position. We're doing this in advance of LOI in order to ensure that you don't have any destratification as a result of the burn, which might result in giving you a master Caution and Warning during the burn. Over."
 },
 {
 "get":"074:05:08",
-"offsetSeconds":391,
+"offsetSeconds":391.5,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Okay. Was that 74:30 you want us to cycle the heaters and turn - cycle the fans and turn all the heaters on?"
 },
 {
 "get":"074:05:16",
-"offsetSeconds":399,
+"offsetSeconds":399.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"All the heaters to Auto; cycle the fans at 74:30, about 25 minutes from now. Over."
 },
 {
 "get":"074:05:23",
-"offsetSeconds":406,
+"offsetSeconds":407.1,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Okay."
-},
-{
-"get":"074:05:23",
-"offsetSeconds":406,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 74 hours, 8 minutes. Apollo 11 is 4,625 nautical miles [8,566 km] away from the Moon. Velocity; 4,765 feet per second [1,452 m/s]. We're 1 hour, 32 minutes away from Loss Of Signal as Apollo 11 goes behind the Moon, and we're about 1 hour, 41 minutes away from the LOI number 1 burn."
-},
-{
-"get":"074:05:23",
-"offsetSeconds":406,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 74 hours, 32 minutes. Apollo 11 is traveling at a velocity of 3 thousand... stand by. We've got a static display here."
 }
 ],
 "a11_0743200":[
 {
 "get":"074:34:44",
-"offsetSeconds":164,
+"offsetSeconds":137.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. Radio check. Over."
 },
 {
 "get":"074:34:49",
-"offsetSeconds":169,
+"offsetSeconds":142.7,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, 11."
 },
 {
 "get":"074:34:51",
-"offsetSeconds":171,
+"offsetSeconds":144.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Loud and clear now. [Long pause.]"
 },
 {
 "get":"074:35:10",
-"offsetSeconds":190,
+"offsetSeconds":163.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, Apollo 11."
 },
 {
 "get":"074:35:12",
-"offsetSeconds":192,
+"offsetSeconds":165.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Go ahead, 11."
 },
 {
 "get":"074:35:20",
-"offsetSeconds":200,
+"offsetSeconds":173.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Apparently this is not a very good Omni attitude for you. We're ready to start our TVC check. [Long pause.]"
 },
 {
 "get":"074:35:52",
-"offsetSeconds":232,
+"offsetSeconds":206.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. We're ready, except that we'd like to get the High Gain Antenna prior to this test. Over."
 },
 {
 "get":"074:36:06",
-"offsetSeconds":246,
+"offsetSeconds":219.7,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Can you give us a couple of pointing angles?"
@@ -25792,84 +25750,84 @@
 "a11_0745101":[
 {
 "get":"074:51:01",
-"offsetSeconds":0,
+"offsetSeconds":3.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston. Radio check. Over. [No answer.]"
 },
 {
 "get":"074:51:13",
-"offsetSeconds":12,
+"offsetSeconds":15.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, Apollo 11, this is Houston. Radio check. Over. [No answer.]"
 },
 {
 "get":"074:51:36",
-"offsetSeconds":35,
+"offsetSeconds":38.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Do you read? Over."
 },
 {
 "get":"074:51:43",
-"offsetSeconds":42,
+"offsetSeconds":45.2,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. Loud and clear."
 },
 {
 "get":"074:51:45",
-"offsetSeconds":44,
+"offsetSeconds":47.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We're reading you weak but clear."
 },
 {
 "get":"074:51:52",
-"offsetSeconds":51,
+"offsetSeconds":54.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. We put our - our roll for MSFN track in on the wrong sign. Going to continue rolling around until we get High Gain here. And, we'll delete the - the pitch that was scheduled after the TVC check."
 },
 {
 "get":"074:52:15",
-"offsetSeconds":74,
+"offsetSeconds":76.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Say again please, 11."
 },
 {
 "get":"074:52:20",
-"offsetSeconds":79,
+"offsetSeconds":81.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. We put the wrong sign in..."
 },
 {
 "get":"074:52:24",
-"offsetSeconds":83,
+"offsetSeconds":82.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"074:52:25",
-"offsetSeconds":84,
+"offsetSeconds":86.3,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"...for the roll correction to get MSFN High Gain, and we're continuing rolling around to get the proper attitude for High Gain at this time. We will delete the pitch maneuver that was scheduled subsequent to - subsequent to the TV check since we already have those pictures."
 },
 {
 "get":"074:52:46",
-"offsetSeconds":105,
+"offsetSeconds":108.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. We copy. And [pause] and we recommend that you go ahead and complete your TVC test on board. If you have problems, we'll talk to you when you get around further into the High Gain Antenna attitude. Over."
 },
 {
 "get":"074:53:12",
-"offsetSeconds":131,
+"offsetSeconds":133.7,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger."
@@ -25878,86 +25836,79 @@
 "a11_0745859":[
 {
 "get":"074:58:59",
-"offsetSeconds":0,
+"offsetSeconds":4.1,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, how do you read on High Gain?"
 },
 {
 "get":"074:59:02",
-"offsetSeconds":3,
+"offsetSeconds":7.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Oh, loud and clear on High Gain, 11."
 },
 {
 "get":"074:59:07",
-"offsetSeconds":8,
+"offsetSeconds":49.8,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. We're proceeding."
 },
 {
 "get":"074:59:09",
-"offsetSeconds":10,
+"offsetSeconds":67.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"074:59:09",
-"offsetSeconds":10,
+"offsetSeconds":67.0,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"This is Apollo Control at 75 hours into the mission. Apollo 11 is 2,241 nautical miles away from the Moon. Velocity; 5,512 feet per second. We're 41 minutes away from Loss Of Signal as Apollo 11 goes behind the Moon. We're 49 minutes away from the Lunar Orbit Insertion maneuver number 1."
 },
 {
 "get":"075:03:22",
-"offsetSeconds":263,
+"offsetSeconds":266.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. We observed your gimbal test down here, and it looked good to us. Over."
 },
 {
 "get":"075:03:32",
-"offsetSeconds":273,
+"offsetSeconds":276.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger. It looked good here."
-},
-{
-"get":"075:03:32",
-"offsetSeconds":273,
-"speaker":"Mission Control",
-"channel":"pao",
-"text":"This is Apollo Control at 75 hours, 15 minutes into the mission. Apollo 11's distance from the Moon now is 1,516 nautical miles [2,808 km]; 1,516 nautical miles. Velocity; 5,981 feet per second [1,823 m/s]."
 }
 ],
 "a11_0751500":[
 {
 "get":"075:18:49",
-"offsetSeconds":229,
+"offsetSeconds":225.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Radio check. Over."
 },
 {
 "get":"075:18:55",
-"offsetSeconds":235,
+"offsetSeconds":231.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Loud and clear."
 },
 {
 "get":"075:18:56",
-"offsetSeconds":236,
+"offsetSeconds":232.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. And your systems are looking good from down here."
 },
 {
 "get":"075:19:02",
-"offsetSeconds":242,
+"offsetSeconds":238.2,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Yeah. Looks good up here too, Bruce."
@@ -25966,63 +25917,63 @@
 "a11_0752600":[
 {
 "get":"075:30:38",
-"offsetSeconds":278,
+"offsetSeconds":256.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. Over."
 },
 {
 "get":"075:30:44",
-"offsetSeconds":284,
+"offsetSeconds":262.9,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Go ahead Houston, Apollo 11."
 },
 {
 "get":"075:30:46",
-"offsetSeconds":286,
+"offsetSeconds":265.0,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"11, this is Houston. You are Go for LOI. Over."
 },
 {
 "get":"075:30:53",
-"offsetSeconds":293,
+"offsetSeconds":272.1,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. Go for LOI."
 },
 {
 "get":"075:30:55",
-"offsetSeconds":295,
+"offsetSeconds":274.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"And we're showing about 10 minutes and 30 seconds to LOS. I would like to remind you to enable the B/D roll on the Auto RCS switches. Over."
 },
 {
 "get":"075:31:09",
-"offsetSeconds":309,
+"offsetSeconds":287.5,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. And confirm you want PCM Low [bit-rate] going over the hill. Over."
 },
 {
 "get":"075:31:18",
-"offsetSeconds":318,
+"offsetSeconds":304.7,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"That's affirmative, 11."
 },
 {
 "get":"075:31:24",
-"offsetSeconds":324,
+"offsetSeconds":316.3,
 "speaker":"Aldrin",
 "channel":"air-to-ground",
 "text":"Roger. [Long pause.]"
 },
 {
 "get":"075:31:24",
-"offsetSeconds":324,
+"offsetSeconds":316.3,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"That was Buzz Aldrin confirming the Go."
@@ -26031,427 +25982,427 @@
 "a11_0753555":[
 {
 "get":"075:35:55",
-"offsetSeconds":0,
+"offsetSeconds":6.0,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Houston, do you want to give me a time check, please?"
 },
 {
 "get":"075:35:58",
-"offsetSeconds":3,
+"offsetSeconds":10.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. I'll give you a Mark at 13 minutes and 30 seconds to ignition."
 },
 {
 "get":"075:36:11",
-"offsetSeconds":16,
+"offsetSeconds":23.6,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay. And then a GET, please."
 },
 {
 "get":"075:36:16",
-"offsetSeconds":21,
+"offsetSeconds":28.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Stand by a minute. [Long pause.]"
 },
 {
 "get":"075:36:41",
-"offsetSeconds":46,
+"offsetSeconds":52.4,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"I'll give you a time hack on the GET at 75 hours, 37 minutes and I'll try to bias it about a second and a half to allow for the time of flight."
 },
 {
 "get":"075:36:55",
-"offsetSeconds":60,
+"offsetSeconds":66.7,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Okay."
 },
 {
 "get":"075:36:57",
-"offsetSeconds":62,
+"offsetSeconds":68.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Stand by."
 },
 {
 "get":"075:37:01",
-"offsetSeconds":66,
+"offsetSeconds":72.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Mark."
 },
 {
 "get":"075:37:02",
-"offsetSeconds":67,
+"offsetSeconds":73.2,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"75 hours, 37 minutes GET."
 },
 {
 "get":"075:37:07",
-"offsetSeconds":72,
+"offsetSeconds":78.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Thank you."
 },
 {
 "get":"075:37:12",
-"offsetSeconds":77,
+"offsetSeconds":83.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"And I'll give you a time hack on time to ignition at 12 minutes to ignition. Over."
 },
 {
 "get":"075:37:22",
-"offsetSeconds":87,
+"offsetSeconds":93.5,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"Okay. [Long pause.]"
 },
 {
 "get":"075:37:44",
-"offsetSeconds":109,
+"offsetSeconds":115.5,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Stand by for a Mark at T IG minus 12."
 },
 {
 "get":"075:37:51",
-"offsetSeconds":116,
+"offsetSeconds":122.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Mark."
 },
 {
 "get":"075:37:52",
-"offsetSeconds":117,
+"offsetSeconds":123.1,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"T IG minus 12."
 },
 {
 "get":"075:37:56",
-"offsetSeconds":121,
+"offsetSeconds":126.8,
 "speaker":"Collins",
 "channel":"air-to-ground",
 "text":"You were right on, Bruce. Thank you."
 },
 {
 "get":"075:37:58",
-"offsetSeconds":123,
+"offsetSeconds":159.8,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Out."
 },
 {
 "get":"075:37:58",
-"offsetSeconds":123,
+"offsetSeconds":159.8,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"We're 3 minutes away from Loss Of Signal. Apollo 11 is 425 nautical miles [787 km] from the Moon. Velocity 7,368 feet per second [2,246 m/s]. Weight; 96,012 pounds [43,550 kg]."
 },
 {
 "get":"075:39:29",
-"offsetSeconds":214,
+"offsetSeconds":232.9,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Two minutes to LOS."
 },
 {
 "get":"075:40:17",
-"offsetSeconds":262,
+"offsetSeconds":271.5,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Optics [garble] are up?"
 },
 {
 "get":"075:40:19",
-"offsetSeconds":264,
+"offsetSeconds":273.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Yes."
 },
 {
 "get":"075:40:25",
-"offsetSeconds":270,
+"offsetSeconds":277.9,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, 41:23. One minute to LOS. Mark that."
 },
 {
 "get":"075:40:33",
-"offsetSeconds":278,
+"offsetSeconds":284.3,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Apollo 11, this is Houston. All your systems are looking good going around the corner. We'll see you on the other side. Over."
 },
 {
 "get":"075:40:42",
-"offsetSeconds":287,
+"offsetSeconds":293.4,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Roger."
 },
 {
 "get":"075:40:48",
-"offsetSeconds":293,
+"offsetSeconds":299.5,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"How much time have we got, Mike?"
 },
 {
 "get":"075:40:49",
-"offsetSeconds":294,
+"offsetSeconds":300.5,
 "speaker":"Armstrong",
 "channel":"air-to-ground",
 "text":"Everything looks okay up here."
 },
 {
 "get":"075:40:51",
-"offsetSeconds":296,
+"offsetSeconds":302.6,
 "speaker":"McCandless",
 "channel":"air-to-ground",
 "text":"Roger. Out."
 },
 {
 "get":"075:40:51",
-"offsetSeconds":296,
+"offsetSeconds":302.6,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"9 minutes."
 },
 {
 "get":"075:41:13",
-"offsetSeconds":318,
+"offsetSeconds":325.6,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Well, let's let them look at the main bus ties coming on, alright?"
 },
 {
 "get":"075:41:17",
-"offsetSeconds":322,
+"offsetSeconds":329.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Sure."
 },
 {
 "get":"075:41:19",
-"offsetSeconds":324,
+"offsetSeconds":331.8,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"What time is it?"
 },
 {
 "get":"075:41:20",
-"offsetSeconds":325,
+"offsetSeconds":332.9,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"8&frac12; minutes."
 },
 {
 "get":"075:41:23",
-"offsetSeconds":328,
+"offsetSeconds":336.0,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"How soon are we going to..."
 },
 {
 "get":"075:41:24",
-"offsetSeconds":329,
+"offsetSeconds":337.1,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"[Garble] take 2."
 },
 {
 "get":"075:41:25",
-"offsetSeconds":330,
+"offsetSeconds":338.1,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"1 second early. Okay. Main Bus Ties..."
 },
 {
 "get":"075:41:28",
-"offsetSeconds":333,
+"offsetSeconds":341.2,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay."
 },
 {
 "get":"075:41:29",
-"offsetSeconds":334,
+"offsetSeconds":342.3,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"I'm going to turn my S-Band Volume down, so you can [garble]."
 },
 {
 "get":"075:41:33",
-"offsetSeconds":338,
+"offsetSeconds":346.5,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Down Voice Backup."
 },
 {
 "get":"075:41:39",
-"offsetSeconds":344,
+"offsetSeconds":352.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Main Bus Tie A coming On. Have you got TVC Gimbal Drive - Pitch and Yaw to Auto, huh?"
 },
 {
 "get":"075:41:39",
-"offsetSeconds":344,
+"offsetSeconds":352.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"And we've had Loss Of Signal as Apollo 11 goes behind the Moon. We were showing a distance to the Moon of 309 nautical miles [572 km] at LOS. Velocity; 7,664 feet per second [2,336 m/s]. Weight was 96,012 pounds [43,550 kg]. We're 7 minutes, 45 seconds away from the LOI number 1 burn, which will take place behind the Moon, out of communications. Here in the control center, two members of the backup crew, Bill Anders and Jim Lovell, have joined Bruce McCandless at the CapCom console. Fred Haise, the third member of the backup crew, has just come in, too, and Deke Slayton, Director of Flight Cre"
 },
 {
 "get":"075:41:46",
-"offsetSeconds":351,
+"offsetSeconds":359.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"TVC Gimbal Drive, Pitch and Yaw to Auto."
 },
 {
 "get":"075:41:55",
-"offsetSeconds":360,
+"offsetSeconds":368.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, TVC..."
 },
 {
 "get":"075:41:57",
-"offsetSeconds":362,
+"offsetSeconds":370.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"He's not going to have the Sun in your eyes - I mean, on this thing, why don't we [garble]?"
 },
 {
 "get":"075:42:00",
-"offsetSeconds":365,
+"offsetSeconds":373.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Is that right?"
 },
 {
 "get":"075:42:01",
-"offsetSeconds":366,
+"offsetSeconds":374.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Now, you may have the Sun in your eyes coming around the corner. Now, you've got your patch ready in case you want it?"
 },
 {
 "get":"075:42:05",
-"offsetSeconds":370,
+"offsetSeconds":378.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Got it right here."
 },
 {
 "get":"075:42:08",
-"offsetSeconds":373,
+"offsetSeconds":381.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Okay, TVC Servo Power 1, to AC 1,"
 },
 {
 "get":"075:42:11",
-"offsetSeconds":376,
+"offsetSeconds":384.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"TVC Servo Power 1, to AC 1."
 },
 {
 "get":"075:42:15",
-"offsetSeconds":380,
+"offsetSeconds":388.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"2 to AC 2."
 },
 {
 "get":"075:42:16",
-"offsetSeconds":381,
+"offsetSeconds":389.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Look the other way."
 },
 {
 "get":"075:42:18",
-"offsetSeconds":383,
+"offsetSeconds":391.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"2 to AC 2."
 },
 {
 "get":"075:42:20",
-"offsetSeconds":385,
+"offsetSeconds":393.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Translational Control Power, On."
 },
 {
 "get":"075:42:24",
-"offsetSeconds":389,
+"offsetSeconds":397.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Translational Control Power is On."
 },
 {
 "get":"075:42:27",
-"offsetSeconds":392,
+"offsetSeconds":400.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Rotation Control Power, Normal, number 2, to AC."
 },
 {
 "get":"075:42:33",
-"offsetSeconds":398,
+"offsetSeconds":406.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay, stand by. Rotational Control Power is Normal, number 2, to AC."
 },
 {
 "get":"075:42:47",
-"offsetSeconds":412,
+"offsetSeconds":420.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Rotation Hand Controller, number 2, Armed."
 },
 {
 "get":"075:43:01",
-"offsetSeconds":426,
+"offsetSeconds":434.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Rotational Hand Controller, number 2, is Armed."
 },
 {
 "get":"075:43:07",
-"offsetSeconds":432,
+"offsetSeconds":440.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"It's going to have to get up pretty high to [garble]. Alright, time check."
 },
 {
 "get":"075:43:14",
-"offsetSeconds":439,
+"offsetSeconds":447.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, we've got 6&frac12;."
 },
 {
 "get":"075:43:21",
-"offsetSeconds":446,
+"offsetSeconds":454.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Mark it..."
 },
 {
 "get":"075:43:22",
-"offsetSeconds":447,
+"offsetSeconds":455.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"6&frac12;."
@@ -26539,70 +26490,70 @@
 "a11_0755100":[
 {
 "get":"075:51:09",
-"offsetSeconds":9,
+"offsetSeconds":9.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"Okay, that should be gray..."
 },
 {
 "get":"075:51:13",
-"offsetSeconds":13,
+"offsetSeconds":13.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"g feels sort of pleasant, doesn't it? We're measuring just a shadow over zero g on the g-meter."
 },
 {
 "get":"075:51:19",
-"offsetSeconds":19,
+"offsetSeconds":19.7,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Tank pressures are good."
 },
 {
 "get":"075:51:20",
-"offsetSeconds":20,
+"offsetSeconds":20.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Okay. The chamber pressure is holding steady as a rock. It's holding - it's building up a little bit, actually; it's up around 96 now. Gimbals are sure a little bit busier than I would have guessed."
 },
 {
 "get":"075:51:36",
-"offsetSeconds":36,
+"offsetSeconds":36.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"That's a little more chamber pressure than they were predicting."
 },
 {
 "get":"075:51:42",
-"offsetSeconds":42,
+"offsetSeconds":42.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes, they're all plus 95."
 },
 {
 "get":"075:51:42",
-"offsetSeconds":42,
+"offsetSeconds":42.7,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"We'll stand by."
 },
 {
 "get":"075:51:44",
-"offsetSeconds":44,
+"offsetSeconds":44.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"We may..."
 },
 {
 "get":"075:51:45",
-"offsetSeconds":45,
+"offsetSeconds":45.7,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Shut down a little early."
 },
 {
 "get":"075:51:46",
-"offsetSeconds":46,
+"offsetSeconds":46.7,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"...shut down a little early."
@@ -26620,42 +26571,42 @@
 "a11_0760615":[
 {
 "get":"076:06:15",
-"offsetSeconds":0,
+"offsetSeconds":1.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Well, don't miss that first one."
 },
 {
 "get":"076:06:15",
-"offsetSeconds":0,
+"offsetSeconds":1.8,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"It's very quiet here in the control room. Most of the controllers seated at their consoles, a few standing up, but very quiet."
 },
 {
 "get":"076:06:16",
-"offsetSeconds":1,
+"offsetSeconds":2.8,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"See how am I doing. Yes, you're right."
 },
 {
 "get":"076:06:21",
-"offsetSeconds":6,
+"offsetSeconds":7.8,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"We'll need - we need to catch it about 10."
 },
 {
 "get":"076:06:27",
-"offsetSeconds":12,
+"offsetSeconds":13.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Shoot, you're going to have plenty of passes."
 },
 {
 "get":"076:06:30",
-"offsetSeconds":15,
+"offsetSeconds":16.8,
 "speaker":"Aldrin",
 "channel":"onboard",
 "text":"Yes, right."
@@ -26664,21 +26615,21 @@
 "a11_0760930":[
 {
 "get":"076:09:58",
-"offsetSeconds":28,
+"offsetSeconds":34.8,
 "speaker":"Armstrong",
 "channel":"onboard",
 "text":"See that real big..."
 },
 {
 "get":"076:10:01",
-"offsetSeconds":31,
+"offsetSeconds":37.8,
 "speaker":"Collins",
 "channel":"onboard",
 "text":"Yes, there's a moose down here you just wouldn't believe. There's the biggest one yet. God, it's huge! It is immense! It's so big I can't even get it in the window. You want to look at that? That's the biggest one you ever seen in your life. Neil? God, look at this central mountain peak."
 },
 {
 "get":"076:10:01",
-"offsetSeconds":31,
+"offsetSeconds":37.8,
 "speaker":"Mission Control",
 "channel":"pao",
 "text":"And that time is the initial acquisition time, but it could take a little longer to lock onto the signal for voice communications."
