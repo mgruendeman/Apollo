@@ -126,67 +126,176 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
 FIXES = ROOT / 'pipeline' / 'transcript_fixes.json'
 
 
+DICT = Path('/usr/share/dict/words')
+CONFUSED = {'6': 'gb', '0': 'o', '1': 'li', '5': 's', '8': 'b', 'c': 'oe', 'e': 'c', 'o': 'c', '_': 'abcdefghijklmnopqrstuvwxyz',
+            'i': 'l', 'l': 'i', 't': 'c', 'E': 'G', '(': 'G', '!': 'l', '*': 'r', '$': 's', '%': 'r', ']': 'l', '}': 'h'}
+JOINERS = {'a', 'and', 'the', 'of', 'to', 'in', 'is', 'it', 'we', 'you', 'on', 'at', 'for', 'be', 'are'}
+PAIRS = {'li': 'h', 'Li': 'H', 'rn': 'm', 'ii': 'u', 'Ii': 'H', 'cl': 'd', 'vv': 'w'}
+HEADING = re.compile(r"\s*(?:[A-Z}\]_& ]{2,}\s*)?\(\s*R\s*[EeVv ]*[\dlIi]+\s*\)\s*$"   # station: VANGUARD (REV 1)
+                     r"|\s+[FP]age\s+[\dO\]l1]+\s*$")                                    # page footer: Page 3
+
+
+def vocabulary(tape_words):
+    """English words (the system word list) and every word the recogniser
+    heard at least twice on this mission's tapes (names, jargon); and which
+    of them are names, written with a capital."""
+    listed = DICT.read_text(errors='ignore').split() if DICT.exists() else []
+    lower = {w for w in listed if w.islower()}
+    names = {w.lower() for w in listed if w[:1].isupper()} - lower
+    from collections import Counter
+    heard = Counter(re.sub(r"[^a-z0-9']", '', w[2].lower()) for tw, _ in tape_words.values() for w in tw)
+    vocab = lower | names | {w for w, n in heard.items() if n >= 2 and w}
+    common = lower | {w for w, n in heard.items() if n >= 5 and w}
+    spoken = {w for w, n in heard.items() if n >= 3 and w}   # words actually said on these tapes
+    return vocab, names, common, spoken
+
+
 def _core(word):
     """A word without its surrounding punctuation: (lead, core, trail)."""
-    m = re.match(r"^([\"(\[]*)(.*?)([.,?!;:\"')\]]*)$", word)
+    m = re.match(r"^([\"(]*)(.*?)([.,?!;:\"')]*)$", word)
     return m.group(1), m.group(2), m.group(3)
 
 
-def _suspect(core):
-    """OCR damage: a character no word has ("_", "]", "%"), or a digit or
-    stray punctuation inside a lowercase word ("Ro6er", "Fin:race"). Codes
-    and callsigns ("SPS/G&N", "P76's", "TEI-4") are left alone."""
+def _suspect(core, vocab):
+    """OCR damage: a character no word has ("_", "]", "%"), a digit or stray
+    punctuation inside a lowercase word ("Ro6er", "cor.firmed"), or a word
+    not in the dictionary ("Eone", "ccmplete"). Codes and callsigns
+    ("SPS/G&N", "P76's", "TEI-4", "DELTA-V") are left alone."""
     if not core:
         return False
+    letters = re.sub(r"[^A-Za-z]", '', core)
+    if not letters or re.fullmatch(r"[A-Z]+s", letters) or letters.isupper() and len(letters) <= 4:
+        return False   # codes: SEP, AOS, DSKY (damaged or not, no guessing)
     if re.search(r"[^A-Za-z0-9'.,?!;:/&\-]", core):
         return True
-    letters = re.sub(r"[^A-Za-z]", '', core)
-    if not letters or letters.isupper() or re.fullmatch(r"[A-Z]+s", letters):
+    if letters.isupper() or re.fullmatch(r"(?:Mc|Mac|O')?[A-Z][a-z]+[A-Z][a-z]+", core):   # McGhee
         return False
-    return bool(re.search(r"[a-z][\d.,;:/][a-z]|[a-z]\d|\d[a-z]{2}", core))
+    if re.fullmatch(r"(?:[A-Za-z]\.)+[A-Za-z]?", core):   # p.m, U.S
+        return False
+    if re.search(r"[a-z][\d.,;:/][a-z]|[a-z]\d|\d[a-z]{2}", core):
+        return True
+    w = core.lower()
+    return core.isalpha() and len(core) >= 4 and w not in vocab and not (w.endswith('s') and w[:-1] in vocab)
+
+
+def _clean(core):
+    """A plain word that's only unfamiliar, not visibly damaged."""
+    return core.isalpha()
+
+
+def _similar(a, b):
+    return difflib.SequenceMatcher(None, re.sub(r"[^a-z]", '', a.lower()), b).ratio()
+
+
+def _unconfuse(core, vocab):
+    """The one dictionary word an OCR misreading could stand for, if exactly
+    one fits ("Sta6ing" -> "Staging", "Cha_lie" -> "Charlie"), else None."""
+    found = set()
+    if core.isalpha() and len(core) >= 6:   # a little word run into the next ("andsatisfactory")
+        for i in range(1, 5):
+            a, b = core[:i].lower(), core[i:].lower()
+            if a in JOINERS and b in vocab and len(b) >= 4:
+                found.add(f'{a} {b}')
+    if core.endswith('_') and len(core) >= 5 and core[:-1].lower() in vocab:   # "Roger_": punctuation, or a lost letter; can't tell
+        return None
+    spots = [i for i, ch in enumerate(core) if ch in CONFUSED]
+    if len(spots) > 8:
+        return None
+    for i in spots:
+        if core[i] == '_' and len(core) < 5:   # a missing letter in a short word could be anything
+            continue
+        for alt in CONFUSED[core[i]]:
+            cand = core[:i] + alt + core[i + 1:]
+            if cand.lower() in vocab and cand.isalpha():
+                found.add(cand.lower())
+    for pair, alt in PAIRS.items():
+        i = core.find(pair)
+        if i >= 0:
+            cand = core[:i] + alt + core[i + 2:]
+            if cand.lower() in vocab and cand.isalpha():
+                found.add(cand.lower())
+    return found.pop() if len(found) == 1 else None
+
+
+def _tidy(text, vocab):
+    """The plain slips, no tape needed."""
+    text = HEADING.sub('', text)
+    text = re.sub(r"(?<=[A-Za-z'])11\b|\b11(?=[a-z])", 'll', text)
+    text = re.sub(r"(?<=[A-Za-z'])1(?=[a-z])", 'l', text)
+    text = re.sub(r"\b(\w+) _(re|ve|s|d)\b", r"\1'\2", text)               # "we _re" for "we're"
+    text = re.sub(r"(?<=[.?!] )(?:Ore\W{0,3}\w?\W{0,3}|Ov[a-z_]r|0ver|\(_ver|Ovor)\.?$", 'Over.', text)   # "Ore r." for "Over."
+    text = re.sub(r"(?<![\w(])[(G]0\b", 'GO', text)                       # "(0" / "G0" for GO
+    text = re.sub(r"\b[\dlO]*\d[\dlO.]*\b", lambda m: m.group().replace('l', '1').replace('O', '0'), text)   # lO1.4
+    text = re.sub(r"\b([A-Z][a-z]+[A-Z]+[a-z]*)\b",                       # HoUSton
+                  lambda m: m.group().capitalize() if m.group().lower() in vocab else m.group(), text)
+    if text.count('(') < text.count(')'):
+        text = re.sub(r"\s+\)(?=\s|$)", '', text)
+    return text.strip()
 
 
 def repair_ocr(lines, segments, tape_words):
-    """Mend OCR damage in NASA's lines with what the tapes say.
+    """Mend OCR damage in NASA's lines, from what the tapes say.
 
     For each line on a tape, its words are matched in order against the
-    recognised words at that moment; a damaged word ("Ro6er", "we'11") takes
+    recognised words at that moment; a damaged word ("Ro6er", "Eone") takes
     the recognised word it lines up with when they're close in spelling.
-    Words the tape doesn't make out stay as NASA printed them. Then the plain
-    OCR slips: "11" inside a word is "ll", and a lone ")" goes."""
+    Before that, a misreading that can only be one word is corrected
+    ("Sta6ing"); anything else stays as NASA printed it."""
+    vocab, names, common, spoken = vocabulary(tape_words)
+
+    def cased(word, original, i, words):
+        """Capital for a sentence's first word, a name, or an unknown word
+        (a callsign) printed with one."""
+        letters = re.sub(r"[^A-Za-z]", '', original)
+        if len(letters) >= 2 and letters.isupper():
+            return word.upper()
+        first = i == 0 or words[i - 1].endswith(('.', '?', '!'))
+        if first or word in names or (original[:1].isupper() and original[:1] not in CONFUSED):
+            return word.capitalize()
+        return word
     gets = [sg['get'] for sg in segments]
     changed = 0
     for line in lines:
-        text = re.sub(r"(?<=[A-Za-z'])11\b|\b11(?=[a-z])", 'll', line['t'])
-        text = re.sub(r"(?<=[A-Za-z'])1(?=[a-z])", 'l', text)
-        if text.count('(') < text.count(')'):
-            text = re.sub(r"\s+\)(?=\s|$)", '', text)
-        words = text.split()
-        bad = [i for i, w in enumerate(words) if _suspect(_core(w)[1])]
+        words = _tidy(line['t'], vocab).split()
+        bad = {i for i, w in enumerate(words) if _suspect(_core(w)[1], vocab)}
+        # a misreading that can only be one word, first ("Sta6ing" -> "staging")
+        for i in sorted(bad):
+            lead, core, trail = _core(words[i])
+            fix = _unconfuse(core, spoken | names)
+            if fix:
+                words[i] = lead + cased(fix, core, i, words) + trail
+                bad.discard(i)
+                changed += 1
         k = bisect.bisect_right(gets, line['g']) - 1
         if bad and k >= 0:
             sg = segments[k]
             t = sg['from'] + (line['g'] - sg['get']) / sg['rate']
-            if sg['from'] - 5 <= t <= sg['to'] and sg['tape'] in tape_words:
+            if sg['from'] - 5 <= t <= sg['to'] + 5 and sg['tape'] in tape_words:
                 tw, starts = tape_words[sg['tape']]
-                heard = [re.sub(r"[^a-z0-9']", '', w[2].lower()) for w in tw[bisect.bisect_left(starts, t - 10):bisect.bisect_right(starts, t + 10 + 0.6 * len(words))]]
+                heard = [re.sub(r"[^a-z0-9']", '', w[2].lower())
+                         for w in tw[bisect.bisect_left(starts, t - 20):bisect.bisect_right(starts, t + 20 + 0.6 * len(words))]]
                 mine = [_core(w)[1].lower() for w in words]
-                sm = difflib.SequenceMatcher(None, mine, heard, autojunk=False)
-                for op, i1, i2, j1, j2 in sm.get_opcodes():
-                    if op != 'replace' or i2 - i1 != j2 - j1:
+                for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, mine, heard, autojunk=False).get_opcodes():
+                    if op != 'replace':
                         continue
-                    for i, j in zip(range(i1, i2), range(j1, j2)):
-                        lead, core, trail = _core(words[i])
-                        if i not in bad or not heard[j]:
+                    for i in range(i1, i2):
+                        if i not in bad:
                             continue
-                        plain = re.sub(r"[^a-z]", '', core.lower())
-                        if difflib.SequenceMatcher(None, plain, heard[j]).ratio() >= 0.5:
-                            starts_sentence = i == 0 or words[i - 1].endswith(('.', '?', '!'))
-                            new = heard[j].capitalize() if core[:1].isupper() or starts_sentence else heard[j]
-                            words[i] = lead + new + trail
+                        lead, core, trail = _core(words[i])
+                        if i2 - i1 == j2 - j1:   # word for word: the tape's word in the same place
+                            options, need = [heard[j1 + i - i1]], (0.75 if _clean(core) else 0.5)
+                        else:
+                            options, need = heard[j1:j2], (0.75 if _clean(core) else 0.7)
+                        options = [h for h in options if h in vocab and (h in common or h in names)]
+                        best = max(options, key=lambda h: _similar(core, h), default=None)
+                        if best and _similar(core, best) >= need:
+                            words[i] = lead + cased(best, core, i, words) + (trail[1:] if "'" in best and trail[:1] == "'" else trail)
+                            bad.discard(i)
                             changed += 1
-            text = ' '.join(words)
-        line['t'] = text
+        for i in sorted(bad):   # "Roger_" that nothing settled: the "_" was punctuation
+            if words[i].endswith('_') and len(words[i]) >= 5 and words[i][:-1].lower() in vocab:
+                words[i] = words[i][:-1]
+        line['t'] = ' '.join(words)
     return changed
 
 

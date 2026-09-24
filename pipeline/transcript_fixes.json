@@ -1,1 +1,54 @@
-{"11": []}
+{
+ "11": [
+  {
+   "g": 114,
+   "from": "Stand by for mode I",
+   "to": "Stand by for Mode I"
+  },
+  {
+   "g": 118,
+   "from": "Mode i Charlie",
+   "to": "Mode I Charlie"
+  },
+  {
+   "g": 195,
+   "from": "Skirt SEP.",
+   "to": "Skirt SEP (separation)."
+  },
+  {
+   "g": 339,
+   "from": "You _ll are",
+   "to": "You all are"
+  },
+  {
+   "g": 380,
+   "from": "tut-off",
+   "to": "cut-off"
+  },
+  {
+   "g": 624,
+   "from": "GO at t!.",
+   "to": "GO at 11."
+  },
+  {
+   "g": 711,
+   "from": "103 6",
+   "to": "103.6"
+  },
+  {
+   "g": 1058,
+   "from": "Canary CO_ 5ECH.",
+   "to": "Canary COMM TECH."
+  },
+  {
+   "g": 1103,
+   "from": "Air insertion",
+   "to": "Your insertion"
+  },
+  {
+   "g": 1110,
+   "from": "your I delta azimuth",
+   "to": "your delta azimuth"
+  }
+ ]
+}

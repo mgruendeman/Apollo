@@ -8,7 +8,7 @@ import { REPORT_ENDPOINT, REPO_URL } from '../config'
 export default function ReportDialog({ title, context, onClose }) {
   const [message, setMessage] = useState('')
   const [contact, setContact] = useState('')
-  const [state, setState] = useState('editing') // editing | sending | sent | failed
+  const [state, setState] = useState('editing') // editing | sending | sent | failed | limit
   const boxRef = useRef(null)
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function ReportDialog({ title, context, onClose }) {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ subject: title, message: message.trim(), context, contact, page: window.location.href }),
       })
-      setState(res.ok ? 'sent' : 'failed')
+      setState(res.ok ? 'sent' : res.status === 429 ? 'limit' : 'failed')
     } catch {
       setState('failed')
     }
@@ -89,6 +89,9 @@ export default function ReportDialog({ title, context, onClose }) {
               </label>
             )}
             {state === 'failed' && <p className="report-error">Couldn&apos;t send that. Please try again in a moment.</p>}
+            {state === 'limit' && (
+              <p className="report-error">That&apos;s the most reports we take from one connection in a day. Thank you! Please send the rest tomorrow.</p>
+            )}
             <button type="submit" className="report-submit" disabled={state === 'sending' || !message.trim()}>
               {state === 'sending' ? 'Sending…' : REPORT_ENDPOINT ? 'Send report' : 'Continue on GitHub'}
             </button>

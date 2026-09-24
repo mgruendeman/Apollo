@@ -22,7 +22,7 @@ const SCHEMA = [
      get TEXT, speaker TEXT, text TEXT)`,
   `CREATE INDEX IF NOT EXISTS reaction_lines_clip ON reaction_lines (mission, clip)`,
 ]
-const LIMITS = { like: 1000, report: 20, react: 5000 } // per scrambled IP address, per day
+const LIMITS = { like: 1000, report: 60, react: 5000 } // per scrambled IP address, per day
 // 🤣 funny, 😲 wow, ‼️ big moment, ❤️ moving, 😬 tense (src/lib/reactions.js has the same list)
 const EMOJIS = ['🤣', '😲', '‼️', '❤️', '😬']
 const SESSION_DAYS = 30
@@ -187,7 +187,9 @@ async function addReport(env, request) {
   const b = await request.json().catch(() => ({}))
   const message = clip(b.message, 4000).trim()
   if (!message) return bad(400, 'message needed')
-  if (!(await underLimit(env, request, 'report'))) return bad(429, 'Too many reports from this connection today.')
+  // (anyone signed in to the reviewer is exempt: that's us, correcting transcripts)
+  if (!(await isReviewer(env, request)) && !(await underLimit(env, request, 'report')))
+    return bad(429, 'Too many reports from this connection today.')
   await env.DB.prepare(`INSERT INTO reports (at, subject, message, context, contact, page) VALUES (?1, ?2, ?3, ?4, ?5, ?6)`)
     .bind(new Date().toISOString(), clip(b.subject, 300), message, clip(b.context, 4000), clip(b.contact, 200), clip(b.page, 500)).run()
   return json({ ok: true })
