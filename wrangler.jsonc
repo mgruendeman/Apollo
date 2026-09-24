@@ -1,0 +1,10 @@
+// Cloudflare deploy config: the site is static files (the Vite build in dist/),
+// served by Cloudflare's asset hosting. Build with BASE_PATH=/ (see vite.config.js).
+{
+  "name": "apollo",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
