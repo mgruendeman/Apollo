@@ -2500,3 +2500,120 @@ a.astronaut-flight:hover {
   font-size: 0.72rem;
   color: var(--text-dim);
 }
+
+/* whole mission from the tapes, or the journal's clips */
+.listen-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.listen-switch button {
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.listen-switch button span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+.listen-switch button[aria-selected='true'] {
+  border-color: var(--accent);
+  background: var(--bg-panel-raised);
+}
+.tape-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 8px;
+}
+.tape-scrub {
+  position: relative;
+  flex: 1;
+  height: 28px;
+  min-width: 0;
+}
+.tape-scrub svg {
+  position: absolute;
+  inset: 8px 0;
+  width: 100%;
+  height: 12px;
+  background: var(--bg);
+  border-radius: 3px;
+}
+.tape-piece {
+  fill: #3a4668;
+}
+.tape-piece.is-journal {
+  fill: #2a3350;
+}
+.tape-played {
+  fill: var(--accent);
+}
+.tape-scrub input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.tape-scrub input::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 28px;
+}
+.tape-scrub input::-moz-range-track {
+  background: transparent;
+}
+.tape-scrub input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 4px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.tape-scrub input::-moz-range-thumb {
+  width: 4px;
+  height: 28px;
+  border: none;
+  background: var(--accent);
+  border-radius: 2px;
+}
+.tape-skip {
+  display: flex;
+  gap: 4px;
+}
+.tape-skip button {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+@media (max-width: 560px) {
+  .tape-player {
+    flex-wrap: wrap;
+  }
+  .tape-scrub {
+    order: 3;
+    flex-basis: 100%;
+  }
+}
+.tape-gap-note {
+  margin: -12px 0 8px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}

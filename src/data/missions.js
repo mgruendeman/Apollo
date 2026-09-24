@@ -78,6 +78,7 @@ export const missions = [
       'The first crewed Moon landing. Armstrong and Aldrin spend two and a quarter hours on the surface at Tranquility Base while Collins orbits alone above them.',
     status: 'available',
     clipsFile: 'apollo11',
+    timeline: 'apollo11', // whole-mission tapes: public/timeline/apollo11.json
     clipCount: 672,
     launchUtc: '1969-07-16T13:32:00Z',
     durationSeconds: 703115, // 195:18:35

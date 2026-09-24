@@ -22,7 +22,7 @@ export default function ListenerFavourites({ missionId, onPick }) {
           for (const e of (r.emojis || '').split(' ')) if (e) counts[e] = (counts[e] || 0) + 1
           return (
             <li key={r.line}>
-              <button type="button" onClick={() => onPick(r.clip)}>
+              <button type="button" onClick={() => onPick(r.clip, r.get)}>
                 <span className="fav-emojis">
                   {REACTIONS.filter(([e]) => counts[e]).map(([e, label]) => (
                     <span key={e} title={label}>

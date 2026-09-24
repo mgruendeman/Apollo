@@ -122,6 +122,37 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
     return out
 
 
+def use_journal_text(mission, lines):
+    """NASA's transcript is a scan read by OCR ("Cha_lie", "Ro6er"); the
+    journal's transcript is the same conversation, corrected by hand. Where
+    a line matches a journal line (same moment, mostly the same words), take
+    the journal's wording and speaker. Returns how many lines changed."""
+    journal = json.loads((ROOT / 'public' / 'transcripts' / f'apollo{mission}.json').read_text())
+    jl = sorted((get_seconds(l['get']) if not l['get'].startswith('-') else -get_seconds(l['get'][1:]), l['speaker'], l['text'])
+                for ls in journal.values() for l in ls if l.get('channel', 'air-to-ground') == 'air-to-ground')
+    times = [x[0] for x in jl]
+    used, changed = set(), 0
+    for line in lines:
+        toks = tokens(line['t'])
+        if not toks:
+            continue
+        best, best_r = None, 0.6
+        for j in range(bisect.bisect_left(times, line['g'] - 20), bisect.bisect_right(times, line['g'] + 20)):
+            if j in used:
+                continue
+            # by word, and by letter (OCR breaks words: "Cha_lie" for "Charlie")
+            r = max(difflib.SequenceMatcher(None, toks, tokens(jl[j][2]), autojunk=False).ratio(),
+                    difflib.SequenceMatcher(None, ' '.join(toks), ' '.join(tokens(jl[j][2])), autojunk=False).ratio() - 0.1)
+            if r > best_r:
+                best, best_r = j, r
+        if best is not None:
+            used.add(best)
+            if line['t'] != jl[best][2] or line['s'] != jl[best][1]:
+                line['t'], line['s'] = jl[best][2], jl[best][1]
+                changed += 1
+    return changed
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mission')
@@ -162,13 +193,23 @@ def main():
             segments.append({'tape': tape, **p})
 
     segments.sort(key=lambda s: s['get'])
+    # Tapes were changed over with some overlap: play each tape to its end and
+    # pick up the next where it left off (trim the later piece's start).
+    for a, b in zip(segments, segments[1:]):
+        a_end = a['get'] + (a['to'] - a['from']) * a['rate']
+        if b['get'] < a_end:
+            cut = min(a_end - b['get'], (b['to'] - b['from']) * b['rate'])
+            b['from'] = round(b['from'] + cut / b['rate'], 2)
+            b['get'] = round(b['get'] + cut, 2)
+    segments = [s for s in segments if s['to'] - s['from'] > 1]
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text']} for r in rows]
+    fixed = use_journal_text(m, lines)
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({'mission': m, 'segments': segments, 'lines': lines}, separators=(',', ':')))
     covered = sum((s['to'] - s['from']) * s['rate'] for s in segments) / 3600
     print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes; {len(segments)} segments covering {covered:.1f} h; "
-          f"{len(lines)} lines; written to {out}")
+          f"{len(lines)} lines ({fixed} in the journal's corrected wording); written to {out}")
 
 
 if __name__ == '__main__':
