@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import LikeButton from './LikeButton'
 
 // Large view of one photo from a list, with arrow-key paging.
 export default function PhotoLightbox({ photos, index, onIndex, onClose }) {
@@ -28,6 +29,7 @@ export default function PhotoLightbox({ photos, index, onIndex, onClose }) {
             {photo.date && ` · ${photo.date}`} · {index + 1} of {photos.length}
           </span>
           <span className="lightbox-links">
+            <LikeButton photo={photo} />
             <a href={photo.full} target="_blank" rel="noreferrer">
               Open image ↗
             </a>

@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import PhotoLightbox from './PhotoLightbox'
+import { likesAvailable, likeId, topLiked, useLikes } from '../lib/likes'
 import missionPhotos from '../data/missionPhotos.json'
 import { useFrames, frameToPhoto, nasaPhotoToPhoto, frameKey, KIND_LABELS } from '../lib/archiveFrames'
 
@@ -46,7 +47,25 @@ export default function PhotoGallery({ mission }) {
   // seed changes on each Shuffle, drawing a new batch.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const random = useMemo(() => randomPick(filtered, RANDOM_COUNT), [filtered, seed])
-  const photos = mode === 'random' ? random : filtered
+
+  // "Most liked": the mission's top photos by likes, fetched when chosen.
+  const [top, setTop] = useState(null)
+  useEffect(() => {
+    if (mode !== 'liked') return undefined
+    let live = true
+    topLiked(mission.id).then((rows) => live && setTop(rows))
+    return () => {
+      live = false
+    }
+  }, [mode, mission.id])
+  const liked = useMemo(() => {
+    if (!top) return []
+    const byId = new Map(filtered.map((p) => [likeId(p), p]))
+    return top.map((r) => byId.get(r.photo)).filter(Boolean)
+  }, [top, filtered])
+
+  const photos = mode === 'random' ? random : mode === 'liked' ? liked : filtered
+  const likes = useLikes(photos.slice(0, shown).map(likeId))
   if (all.length === 0) return null
 
   function pick(k) {
@@ -82,6 +101,11 @@ export default function PhotoGallery({ mission }) {
         <button type="button" className={mode === 'all' ? 'is-active' : ''} onClick={() => setMode('all')}>
           All, in order
         </button>
+        {likesAvailable && (
+          <button type="button" className={mode === 'liked' ? 'is-active' : ''} onClick={() => setMode('liked')}>
+            ♥ Most liked
+          </button>
+        )}
         {mode === 'random' && (
           <button type="button" className="photo-gallery-shuffle" onClick={() => setSeed((n) => n + 1)}>
             ⟳ Shuffle
@@ -89,12 +113,19 @@ export default function PhotoGallery({ mission }) {
         )}
       </div>
       <div className="photo-gallery-grid">
-        {photos.slice(0, shown).map((p, i) => (
-          <button key={p.key} type="button" className={p.scan ? 'photo-thumb is-scan' : 'photo-thumb'} onClick={() => setOpen(i)} title={p.title}>
-            <img src={p.thumb} alt={p.caption || p.title} loading="lazy" />
-          </button>
-        ))}
+        {photos.slice(0, shown).map((p, i) => {
+          const n = likes(likeId(p))?.count
+          return (
+            <button key={p.key} type="button" className={p.scan ? 'photo-thumb is-scan' : 'photo-thumb'} onClick={() => setOpen(i)} title={p.title}>
+              <img src={p.thumb} alt={p.caption || p.title} loading="lazy" />
+              {n > 0 && <span className="photo-thumb-likes">♥ {n}</span>}
+            </button>
+          )
+        })}
       </div>
+      {mode === 'liked' && top && liked.length === 0 && (
+        <p className="photo-gallery-empty">No likes yet. Open a photo and tap ♡ on the ones you like best; they'll rise to the top here.</p>
+      )}
       {mode === 'all' && shown < photos.length && (
         <button type="button" className="photo-gallery-more" onClick={() => setShown((s) => s + PAGE * 2)}>
           Show more ({(photos.length - shown).toLocaleString()} left)

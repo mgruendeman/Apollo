@@ -45,6 +45,7 @@ def main():
         rej = [f for f in rejected if f[2:4] == mdir.name]
         (index / f'{mdir.name}.cleaned.json').write_text(json.dumps({'cleaned': cleaned, 'rejected': rej}, separators=(',', ':')))
     print(f'uploaded; {len(rejected)} rejected frames kept off R2; site lists written to {index}')
+    subprocess.run(['python3', str(HERE / 'review_page' / 'build_site.py')], check=True)
 
 
 if __name__ == '__main__':

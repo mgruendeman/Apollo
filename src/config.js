@@ -1,8 +1,12 @@
-// Where "report a problem" forms are sent. Set VITE_REPORT_ENDPOINT at build
-// time to a form service that accepts a JSON POST (for example a Formspree
-// form URL, https://formspree.io/f/<id>). Left empty, reports open as a
-// pre-filled GitHub issue instead.
-export const REPORT_ENDPOINT = import.meta.env.VITE_REPORT_ENDPOINT || ''
+// Where "report a problem" forms are sent: our server's /api/reports (saved
+// for the reviewers' Reports page), or VITE_REPORT_ENDPOINT if set. With
+// neither (GitHub Pages), reports open as a pre-filled GitHub issue.
+// The site's own server (worker/index.js) runs where the site is served from
+// the root (Cloudflare), not on GitHub Pages; features that need it switch
+// off where it isn't.
+export const API_BASE = import.meta.env.VITE_API_BASE ?? (import.meta.env.BASE_URL === '/' ? '/api' : '')
+
+export const REPORT_ENDPOINT = import.meta.env.VITE_REPORT_ENDPOINT || (API_BASE ? `${API_BASE}/reports` : '')
 
 export const REPO_URL = 'https://github.com/mgruendeman/Apollo'
 
