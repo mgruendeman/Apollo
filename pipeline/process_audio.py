@@ -123,12 +123,12 @@ def main():
     ap.add_argument('inputs', nargs='+', help='audio files or folders')
     ap.add_argument('--out', required=True)
     ap.add_argument('--engine', choices=['deepfilternet', 'ffmpeg'], default='deepfilternet')
-    ap.add_argument('--atten-db', type=float, nargs='+', default=[12],
+    ap.add_argument('--atten-db', type=float, nargs='+', default=[24],
                     help='most noise reduction allowed, in dB; give several to compare (e.g. 12 24)')
     ap.add_argument('--clip', type=float, nargs=2, metavar=('START', 'SECONDS'), help='only this part (for samples)')
     ap.add_argument('--name', default='clean', help='cleaned versions are named <name><dB> (e.g. df12)')
-    ap.add_argument('--dry', type=float, default=0, help='mix this share of the original back under the AI output '
-                    '(e.g. 0.2) so the background does not pump in and out between words')
+    ap.add_argument('--dry', type=float, default=0.15, help='mix this share of the original back under the AI output '
+                    'so the background does not pump in and out between words (0 = none)')
     ap.add_argument('--no-dewhine', action='store_true', help='keep steady whines/hums (they are notched out by default)')
     args = ap.parse_args()
 

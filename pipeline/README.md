@@ -70,6 +70,11 @@ Cleaned versions also have steady whines and hums (electrical tones on the
 tape, found as narrow peaks that hold for most of the recording) cut with
 narrow notches; `--no-dewhine` keeps them.
 
+**Chosen settings (three ear-check rounds, 16 tapes across Apollo 8-17):**
+DeepFilterNet with up to 24 dB of noise removed, 15% of the original mixed
+back underneath (`--dry 0.15`: without it the AI can make voices pump in and
+out on noisy tapes), and steady whines notched out. These are the defaults.
+
 `--atten-db` caps how much noise may be removed (in dB): lower sounds more
 natural, higher is cleaner but can make voices watery. Try other values
 (e.g. `--atten-db 6 12 18`) until one sounds right, then use it below.
@@ -87,7 +92,7 @@ the same command after any interruption and it carries on.
 ## 3. Process everything
 
 ```sh
-python pipeline/process_audio.py $MEDIA/audio-orig --out $MEDIA/audio --atten-db 12
+python pipeline/process_audio.py $MEDIA/audio-orig --out $MEDIA/audio
 ```
 
 Output keeps each file's exact length (so transcript timing still lines
