@@ -25,8 +25,10 @@ Needs: pip install pillow numpy
 """
 import argparse
 import json
+import sys
 import time
 import urllib.request
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
 import numpy as np
@@ -275,11 +277,14 @@ def straighten(im, degrees):
     return im.crop((round((w - cw) / 2), round((h - ch) / 2), round((w + cw) / 2), round((h + ch) / 2)))
 
 
-def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True, review=None):
+def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True, review=None,
+            preview=False, discard=False):
+    """Download (if needed) and process one frame. Returns (status, a small
+    crop-check image when `preview`)."""
     review = review or {}
     src = download(scan_url(frame_id, fmt, size), work / size / f'{frame_id}.png')
     if not src:
-        return None, 'download failed'
+        return 'download failed', None
     im = load_rgb(src)
     box = frame_box(im) if fmt == 'a' else None
     pic = enhance(trim_dark_edges(im.crop(box)) if box else im)
@@ -295,57 +300,97 @@ def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True, revie
     thumb = web.copy()
     thumb.thumbnail((THUMB_PX, THUMB_PX), Image.LANCZOS)
     thumb.save(out / f'{frame_id}.thumb.jpg', quality=80, optimize=True)
-    return (im, box), 'ok'
+    sheet = None
+    if preview:
+        sheet = im.copy()
+        if box:
+            ImageDraw.Draw(sheet).rectangle(box, outline=(255, 0, 0), width=max(3, im.size[0] // 150))
+        sheet.thumbnail((300, 340))
+    if discard:
+        src.unlink(missing_ok=True)
+    return 'ok', sheet
+
+
+def nasa_released():
+    """Frame keys NASA's Image Library has its own version of (the site
+    shows NASA's, so these don't need our cleanup)."""
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    from fetch_archive_frames import frame_key
+    photos = json.loads((ROOT / 'src' / 'data' / 'missionPhotos.json').read_text())
+    return frame_key, {frame_key(p['id']) for ps in photos.values() for p in ps if frame_key(p['id'])}
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--mission', help='mission number, e.g. 11 (frames from public/photo-index)')
+    ap.add_argument('--missions', '--mission', nargs='+', default=[], help='mission numbers, e.g. 8 11 (frames from public/photo-index)')
     ap.add_argument('--frames', nargs='*', help='specific frame ids, e.g. AS11-40-5875')
-    ap.add_argument('--limit', type=int, default=0, help='only the first N frames (0 = all)')
+    ap.add_argument('--limit', type=int, default=0, help='only the first N frames per mission (0 = all)')
     ap.add_argument('--size', choices=['small', 'med'], default='med')
     ap.add_argument('--work', default='~/apollo-media/scans', help='where downloaded scans are kept')
-    ap.add_argument('--out', default='~/apollo-media/photos')
+    ap.add_argument('--out', default='~/apollo-media/photos', help='output folder (one subfolder per mission)')
+    ap.add_argument('--workers', type=int, default=2, help='photos processed at once (each uses a CPU core and ~1 GB of memory)')
+    ap.add_argument('--discard-scans', action='store_true', help='delete each scan once processed (needs ~11 GB, not ~300 GB; '
+                                                                   're-running a photo downloads its scan again)')
+    ap.add_argument('--include-nasa', action='store_true', help='also process frames NASA released its own version of')
+    ap.add_argument('--force', action='store_true', help='redo photos that are already done')
     ap.add_argument('--tint-strength', type=float, default=0.75,
                     help='how much of the film\'s age tint to remove (0 = off, 1 = all)')
-    ap.add_argument('--no-tone-curve', action='store_true', help='skip the small tone adjustment')
-    ap.add_argument('--reviews', help='reviewers\' marks (see README): brighter/darker and contrast are applied, '
-                                      'colour and crop marks are listed for a hand fix')
+    ap.add_argument('--no-tone-curve', action='store_true', help='skip the tone curve (and reviewers\' tone dials)')
+    ap.add_argument('--reviews', help='reviewers\' marks (see README): dials are applied, colour and crop marks '
+                                      'are listed for a hand fix; reviewed photos are always redone')
+    ap.add_argument('--only-reviewed', action='store_true', help='with --reviews: process just the reviewed frames')
     ap.add_argument('--preview', help='also write a contact sheet showing each crop box')
     args = ap.parse_args()
     work, out = Path(args.work).expanduser(), Path(args.out).expanduser()
+    reviews = json.loads(Path(args.reviews).expanduser().read_text()) if args.reviews else {}
 
     rows = []
-    if args.mission:
-        index = json.loads((ROOT / 'public' / 'photo-index' / f'{int(args.mission):02d}.json').read_text())
-        rows = [(r[0], r[1]) for r in index['frames']]
-    if args.frames:
-        rows += [(f, 'a') for f in args.frames]
-    if args.limit:
-        rows = rows[:args.limit]
+    for m in args.missions:
+        index = json.loads((ROOT / 'public' / 'photo-index' / f'{int(m):02d}.json').read_text())
+        rows += [(r[0], r[1]) for r in index['frames']][:args.limit or None]
+    rows += [(f, 'a') for f in args.frames or []]
+    if args.only_reviewed:
+        rows = [r for r in rows if r[0] in reviews] if rows else [(f, 'a') for f in reviews]
+    if not args.include_nasa:
+        key, released = nasa_released()
+        before = len(rows)
+        rows = [r for r in rows if key(r[0]) not in released or r[0] in reviews]
+        if before - len(rows):
+            print(f'skipping {before - len(rows)} frames NASA released its own version of (--include-nasa to process them)')
+    mission_dir = lambda fid: out / fid[2:4]
+    todo = [r for r in rows if args.force or r[0] in reviews or not (mission_dir(r[0]) / f'{r[0]}.jpg').exists()]
+    if len(todo) < len(rows):
+        print(f'{len(rows) - len(todo)} photos already done (--force to redo them)')
+    if not todo:
+        return
 
-    previews = []
-    reviews = json.loads(Path(args.reviews).expanduser().read_text()) if args.reviews else {}
-    if reviews and args.no_tone_curve:
-        print('note: --no-tone-curve also skips reviewers\' brighter/darker/contrast marks')
-    hand_fix = []
-    for n, (fid, fmt) in enumerate(rows, 1):
-        review = reviews.get(fid)
-        result, status = process(fid, fmt, args.size, work, out, args.tint_strength, not args.no_tone_curve, review)
-        if review and (review.get('colour') or review.get('crop')):
-            needs = [k for k in ('colour', 'crop') if review.get(k)]
-            hand_fix.append(f"{fid}\t{', '.join(needs)}\t{review.get('note', '')}")
-        print(f'[{n}/{len(rows)}] {fid}: {status}', flush=True)
-        if result and args.preview:
-            im, box = result
-            p = im.copy()
-            if box:
-                ImageDraw.Draw(p).rectangle(box, outline=(255, 0, 0), width=max(3, im.size[0] // 150))
-            p.thumbnail((300, 340))
-            previews.append(p)
+    hand_fix, previews, failed = [], [], []
+    start = time.time()
+    tone = not args.no_tone_curve
+    with ProcessPoolExecutor(max_workers=max(1, args.workers)) as pool:
+        jobs = {pool.submit(process, fid, fmt, args.size, work, mission_dir(fid), args.tint_strength, tone,
+                            reviews.get(fid), bool(args.preview), args.discard_scans): fid for fid, fmt in todo}
+        for n, job in enumerate(as_completed(jobs), 1):
+            fid = jobs[job]
+            try:
+                status, sheet = job.result()
+            except Exception as e:   # a damaged scan shouldn't stop a long run
+                status, sheet = f'failed: {e}', None
+            if status != 'ok':
+                failed.append(fid)
+            if sheet:
+                previews.append(sheet)
+            review = reviews.get(fid) or {}
+            if review.get('colour') or review.get('crop'):
+                needs = [k for k in ('colour', 'crop') if review.get(k)]
+                hand_fix.append(f"{fid}\t{', '.join(needs)}\t{review.get('note', '')}")
+            left = (time.time() - start) / n * (len(todo) - n)
+            print(f'[{n}/{len(todo)}] {fid}: {status}   (about {left / 3600:.1f} h left)', flush=True)
+    if failed:
+        print(f'{len(failed)} failed (run the same command again to retry): {" ".join(failed[:20])}')
     if hand_fix:
         path = out / 'needs-hand-fix.tsv'
-        path.write_text('frame\tneeds\tnote\n' + '\n'.join(hand_fix) + '\n')
+        path.write_text('frame\tneeds\tnote\n' + '\n'.join(sorted(hand_fix)) + '\n')
         print(f'{len(hand_fix)} frames marked for a colour or crop fix by hand: {path}')
     if previews:
         cols = 6

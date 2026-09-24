@@ -122,14 +122,39 @@ cuts that to hours. Already-finished files are skipped.
    this becomes a reviewer mode backed by a Cloudflare D1 table, since
    18,000 frames is too many for the pilot's store.
 
+**Running it at home.** Photos only need `pip install pillow numpy` (not
+the audio packages). Try one mission's first 30 frames and check the crop
+sheet:
+
 ```sh
-python pipeline/process_photos.py --mission 11 --limit 30 --size med --work $MEDIA/scans --out $MEDIA/photos --preview $MEDIA/check-11.jpg
+python pipeline/process_photos.py --missions 11 --limit 30 --work $MEDIA/scans --out $MEDIA/photos --preview $MEDIA/check-11.jpg
 ```
 
-Check the preview sheet (red box = crop) before running whole missions
-without `--limit`. The "med" scans are about 3,550 x 4,000 px, 14-18 MB
-each (about 290 GB for all 18,000 frames); keep them as masters. The web
-JPEGs come to about 9 GB.
+Then everything, applying the review marks:
+
+```sh
+python pipeline/process_photos.py --missions 8 9 10 11 12 13 14 15 16 17 --work $MEDIA/scans --out $MEDIA/photos \
+    --reviews pipeline/photo_reviews.json --workers 4
+```
+
+| | Frames | Download | Kept on disk |
+|---|---|---|---|
+| All scans ("med", ~16.8 MB each) | 17,679 (plus 418 NASA released) | about 300 GB | 300 GB of scans + 11 GB of photos |
+| With `--discard-scans` | same | about 300 GB | about 11 GB |
+
+- Frames NASA released its own version of are skipped (the site uses
+  NASA's); `--include-nasa` processes them too.
+- Stop it any time: the same command carries on, skipping finished photos
+  (`--force` redoes them). Reviewed photos are always redone.
+- `--workers` photos at a time, each using one CPU core and about 1 GB of
+  memory. Roughly 3 s of CPU per photo: about 15 h on one core, 4 h on four.
+  The download (300 GB) is usually the slower part.
+- Keeping the scans (no `--discard-scans`) means later re-runs after
+  reviews don't download again; with it, each re-run photo downloads its
+  scan again (~17 MB).
+- After a review round: `--reviews pipeline/photo_reviews.json --only-reviewed`.
+- Output: `$MEDIA/photos/<mission>/<frame>.jpg` (2048 px, ~570 KB) and
+  `<frame>.thumb.jpg` (400 px, ~26 KB).
 
 Colour: each photo gets a white balance that takes out the cast the film
 has picked up with age (judged from what should be grey or white), then a

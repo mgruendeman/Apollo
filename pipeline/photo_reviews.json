@@ -1,32 +1,143 @@
 {
+ "AS08-12-2196": {
+  "verdict": "good"
+ },
+ "AS08-14-2383": {
+  "brightness": -2,
+  "verdict": "good"
+ },
+ "AS08-14-2432": {
+  "verdict": "good"
+ },
+ "AS08-16-2581": {
+  "verdict": "good"
+ },
+ "AS09-19-2982": {
+  "verdict": "good"
+ },
+ "AS09-19-2983": {
+  "verdict": "good"
+ },
+ "AS09-24-3657": {
+  "verdict": "good"
+ },
  "AS10-27-3890": {
-  "brightness": -2
+  "verdict": "good"
  },
- "AS15-82-11168": {
-  "brightness": -2
+ "AS10-27-3956": {
+  "verdict": "good"
  },
- "AS12-46-6726": {
-  "brightness": 2
+ "AS10-31-4537": {
+  "verdict": "good"
  },
  "AS10-35-5248": {
-  "contrast": 2
+  "brightness": -8,
+  "contrast": -4,
+  "highlights": 8,
+  "shadows": -4,
+  "verdict": "good"
  },
- "AS14-68-9449": {
-  "contrast": 2
+ "AS11-36-5337": {
+  "verdict": "good"
  },
- "AS15-88-11901": {
-  "contrast": 2
- },
- "AS16-108-17622": {
-  "contrast": 2
- },
- "AS16-116-18578": {},
  "AS11-36-5389": {
+  "brightness": -2,
+  "contrast": 2,
+  "note": "Rotate",
   "rotate": 270,
-  "note": "Rotate"
+  "verdict": "good"
+ },
+ "AS11-40-5875": {
+  "contrast": -2,
+  "verdict": "good"
+ },
+ "AS11-40-5964": {
+  "verdict": "good"
+ },
+ "AS12-46-6726": {
+  "brightness": -4,
+  "contrast": -6,
+  "shadows": 1,
+  "verdict": "good"
+ },
+ "AS12-46-6749": {
+  "verdict": "good"
+ },
+ "AS12-47-6876": {
+  "verdict": "good"
  },
  "AS13-59-8501": {
+  "note": "Rotate",
   "rotate": 270,
-  "note": "Rotate"
+  "verdict": "good"
+ },
+ "AS13-60-8659": {
+  "verdict": "good"
+ },
+ "AS13-62-8929": {
+  "verdict": "good"
+ },
+ "AS14-66-09244": {
+  "verdict": "good"
+ },
+ "AS14-66-09325": {
+  "verdict": "good"
+ },
+ "AS14-67-09367": {
+  "verdict": "good"
+ },
+ "AS14-68-9449": {
+  "brightness": -8,
+  "contrast": -2,
+  "verdict": "good"
+ },
+ "AS15-82-11168": {
+  "brightness": -4,
+  "contrast": -2,
+  "verdict": "good"
+ },
+ "AS15-85-11363": {
+  "verdict": "good"
+ },
+ "AS15-88-11901": {
+  "brightness": -4,
+  "contrast": 2,
+  "verdict": "good"
+ },
+ "AS15-88-11974": {
+  "verdict": "good"
+ },
+ "AS15-90-12287": {
+  "verdict": "good"
+ },
+ "AS16-108-17622": {
+  "brightness": -6,
+  "verdict": "good"
+ },
+ "AS16-114-18412": {
+  "verdict": "good"
+ },
+ "AS16-116-18578": {
+  "brightness": -4,
+  "note": "Crop fixed in the pipeline: the frame sits higher on this roll",
+  "verdict": "good"
+ },
+ "AS16-120-19332": {
+  "verdict": "good"
+ },
+ "AS16-122-19527": {
+  "verdict": "good"
+ },
+ "AS17-145-22285": {
+  "verdict": "good"
+ },
+ "AS17-147-22465": {
+  "verdict": "good"
+ },
+ "AS17-147-22523": {
+  "verdict": "good"
+ },
+ "AS17-148-22624": {
+  "verdict": "good"
  }
 }
