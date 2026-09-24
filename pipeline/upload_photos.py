@@ -37,7 +37,14 @@ def main():
         gone = Path(tmp) / 'rejected.txt'
         gone.write_text(''.join(p + '\n' for p in paths))
         subprocess.run([rclone, 'delete', args.dest, '--files-from', str(gone)], check=True)
-    print(f'uploaded; {len(rejected)} rejected frames kept off R2')
+    # Tell the site which frames now have a cleaned photo on R2, and which to hide.
+    index = HERE.parent / 'public' / 'photo-index'
+    photos = Path(args.media).expanduser() / 'photos'
+    for mdir in sorted(p for p in photos.iterdir() if p.is_dir()):
+        cleaned = sorted(f.stem for f in mdir.glob('*.jpg') if not f.stem.endswith('.thumb') and f.stem not in set(rejected))
+        rej = [f for f in rejected if f[2:4] == mdir.name]
+        (index / f'{mdir.name}.cleaned.json').write_text(json.dumps({'cleaned': cleaned, 'rejected': rej}, separators=(',', ':')))
+    print(f'uploaded; {len(rejected)} rejected frames kept off R2; site lists written to {index}')
 
 
 if __name__ == '__main__':

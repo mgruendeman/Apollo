@@ -5,3 +5,7 @@
 export const REPORT_ENDPOINT = import.meta.env.VITE_REPORT_ENDPOINT || ''
 
 export const REPO_URL = 'https://github.com/mgruendeman/Apollo'
+
+// Where our processed media (cleaned photos, audio) is served from: the
+// Cloudflare R2 bucket's public address. Empty = show the original scans.
+export const MEDIA_URL = (import.meta.env.VITE_MEDIA_URL || '').replace(/\/$/, '')

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { KINDS_FOR_PHASE, photosForMoment, nasaImageUrl } from './momentPhotos'
+import { MEDIA_URL } from '../config'
 
 // Every Hasselblad and Nikon frame from the NASA JSC / Arizona State
 // University "March to the Moon" scans, indexed per mission by
@@ -19,11 +20,24 @@ export const KIND_LABELS = {
   other: 'Other',
 }
 
+// <mission>.cleaned.json (from pipeline/upload_photos.py) lists the frames
+// that have a cleaned-up photo on our media host, and the frames reviewers
+// rejected (blank, fogged, blurred), which aren't shown at all.
+const getJson = (path, empty) =>
+  fetch(`${import.meta.env.BASE_URL}${path}`).then((r) => (r.ok ? r.json() : empty)).catch(() => empty)
+
 export function loadFrames(missionId) {
   if (!cache.has(missionId)) {
-    const p = fetch(`${import.meta.env.BASE_URL}photo-index/${missionId}.json`)
-      .then((r) => (r.ok ? r.json() : { frames: [] }))
-      .then((d) => d.frames)
+    const p = Promise.all([
+      getJson(`photo-index/${missionId}.json`, { frames: [] }),
+      getJson(`photo-index/${missionId}.cleaned.json`, { cleaned: [], rejected: [] }),
+    ])
+      .then(([index, media]) => {
+        const rejected = new Set(media.rejected)
+        const cleaned = new Set(MEDIA_URL ? media.cleaned : [])
+        // A seventh field marks a frame whose cleaned photo is on the media host.
+        return index.frames.filter((f) => !rejected.has(f[0])).map((f) => (cleaned.has(f[0]) ? [...f.slice(0, 6), 1] : f))
+      })
       .catch(() => {
         cache.delete(missionId)
         return []
@@ -60,16 +74,18 @@ function frameUrl(id, format, size) {
 
 // One shape for both photo sources, so the strip, gallery, lightbox and
 // full-screen view don't care where a picture came from.
-export function frameToPhoto([id, format, kind, date, desc, quality], missionId) {
+export function frameToPhoto([id, format, kind, date, desc, quality, cleaned], missionId) {
+  const ours = cleaned && `${MEDIA_URL}/photos/${id.slice(2, 4)}/${id}`
   return {
     key: id,
-    thumb: frameUrl(id, format, 'thumb'),
-    full: frameUrl(id, format, 'small'),
+    thumb: ours ? `${ours}.thumb.jpg` : frameUrl(id, format, 'thumb'),
+    full: ours ? `${ours}.jpg` : frameUrl(id, format, 'small'),
     kind,
     caption: desc || KIND_LABELS[kind] || '',
     title: id,
-    credit: `Film scan: NASA JSC / ASU (${id})`,
-    scan: true,
+    credit: ours ? `NASA JSC / ASU film scan, cleaned up (${id})` : `Film scan: NASA JSC / ASU (${id})`,
+    // Cleaned photos are already cropped to the picture; raw scans still show the film edge.
+    scan: !ours,
     quality,
     sourceUrl: `${ARCHIVE}/gallery/Apollo/${Number(missionId)}`,
     date,
