@@ -370,6 +370,10 @@ def main():
         rows = [r for r in rows if key(r[0]) not in released or r[0] in reviews]
         if before - len(rows):
             print(f'skipping {before - len(rows)} frames NASA released its own version of (--include-nasa to process them)')
+    rejected = {fid for fid, r in reviews.items() if r.get('verdict') == 'reject'}
+    if rejected & {r[0] for r in rows}:
+        print(f'skipping {len(rejected & {r[0] for r in rows})} frames reviewers rejected')
+        rows = [r for r in rows if r[0] not in rejected]
     mission_dir = lambda fid: out / fid[2:4]
     todo = [r for r in rows if args.force or r[0] in reviews or not (mission_dir(r[0]) / f'{r[0]}.jpg').exists()]
     if len(todo) < len(rows):

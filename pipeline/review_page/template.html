@@ -58,6 +58,12 @@ button:disabled, input:disabled { opacity: .45; cursor: not-allowed; }
 .cap { margin: 0; font-size: .84rem; color: var(--muted); }
 .good-btn { font: 600 1rem var(--sans); padding: 10px 12px; border-radius: 8px; border: 1px solid var(--good); background: transparent; color: var(--good); cursor: pointer; }
 .good-btn[aria-pressed="true"] { background: var(--good); color: var(--surface); }
+.verdicts { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.reject-btn { font: 600 .92rem var(--sans); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--rule); background: var(--chip); color: var(--muted); cursor: pointer; }
+.reject-btn[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+.status[data-state="reject"] { background: var(--ink); color: var(--surface); }
+.strip button[data-state="reject"] img { opacity: .3; }
+.strip button[data-state="reject"]::after { background: var(--muted); }
 .compare { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: .8rem; color: var(--muted); }
 .compare button { display: flex; align-items: center; gap: 6px; padding: 3px 8px 3px 3px; border: 1px solid var(--rule); border-radius: 6px; background: var(--chip); color: var(--ink); font: 500 .8rem var(--sans); cursor: pointer; white-space: nowrap; }
 .compare button[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
@@ -99,6 +105,7 @@ button:disabled, input:disabled { opacity: .45; cursor: not-allowed; }
       <option value="todo">To review</option>
       <option value="flag">Needs work</option>
       <option value="good">Looks good</option>
+      <option value="reject">Rejected</option>
     </select></label>
     <button type="button" class="tbtn" id="undo" disabled>Undo</button>
     <div class="nav">
@@ -125,7 +132,10 @@ button:disabled, input:disabled { opacity: .45; cursor: not-allowed; }
     <aside class="side" id="side">
       <header><h2 id="title"></h2><span class="status" id="status"></span></header>
       <p class="cap" id="cap"></p>
-      <button type="button" class="good-btn" id="good" aria-pressed="false">Looks good</button>
+      <div class="verdicts">
+        <button type="button" class="good-btn" id="good" aria-pressed="false">Looks good</button>
+        <button type="button" class="reject-btn" id="reject" aria-pressed="false" title="A bad or unusable frame: leave it off the site">Reject</button>
+      </div>
       <div class="compare" id="compare"></div>
       <div class="panel" id="panel"></div>
       <div class="row"><span>Rotate</span><button type="button" data-rot="-90" aria-label="Rotate left">↺</button><button type="button" data-rot="90" aria-label="Rotate right">↻</button><span class="rot" id="rot">none</span><button type="button" class="reset" id="reset">Reset all</button></div>

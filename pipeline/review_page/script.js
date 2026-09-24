@@ -33,6 +33,7 @@ function stateOf(id) {
   const r = reviews[id], f = byId[id];
   if (!r) return ['todo', 'To review'];
   if (r.verdict === 'good') return ['good', 'Looks good'];
+  if (r.verdict === 'reject') return ['reject', 'Rejected'];
   if (pendingKeys(values(id), f).length || r.colour || r.crop || r.verdict === 'note') return ['flag', 'Needs work'];
   return ['todo', 'Check again'];
 }
@@ -61,7 +62,7 @@ $('panel').innerHTML = DIALS.map(d => {
 $('flags').innerHTML = TOGGLES.map(([k, label]) => `<button type="button" data-k="${k}" aria-pressed="false">${label}</button>`).join('');
 const dialRows = [...document.querySelectorAll('.dial')];
 const toggles = [...document.querySelectorAll('#flags button')];
-const writable = () => [$('good'), $('note'), $('reset'), ...toggles, ...dialRows.map(r => r.querySelector('input')), ...document.querySelectorAll('[data-rot]')];
+const writable = () => [$('good'), $('reject'), $('note'), $('reset'), ...toggles, ...dialRows.map(r => r.querySelector('input')), ...document.querySelectorAll('[data-rot]')];
 
 $('strip').innerHTML = FRAMES.map(f => `<button type="button" data-id="${f.id}" aria-label="${f.id}" aria-current="false"><img src="${f.thumb}" alt="" loading="lazy"></button>`).join('');
 const thumbs = Object.fromEntries([...document.querySelectorAll('#strip button')].map(b => [b.dataset.id, b]));
@@ -101,6 +102,7 @@ function paint() {
   const id = cur, f = byId[id], r = reviews[id], v = values(id), [st, label] = stateOf(id);
   $('status').textContent = label; $('status').dataset.state = st;
   $('good').setAttribute('aria-pressed', String(st === 'good'));
+  $('reject').setAttribute('aria-pressed', String(st === 'reject'));
   dialRows.forEach(row => {
     const d = DIALS.find(x => x.k === row.dataset.k), input = row.querySelector('input');
     if (!(drafts[id] && document.activeElement === input)) input.value = v[d.k];
@@ -125,9 +127,9 @@ async function paintHint() {
 }
 function paintThumb(id) { thumbs[id].dataset.state = stateOf(id)[0]; }
 function paintCounts() {
-  const n = {todo: 0, good: 0, flag: 0};
+  const n = {todo: 0, good: 0, flag: 0, reject: 0};
   FRAMES.forEach(f => n[stateOf(f.id)[0]]++);
-  $('counts').innerHTML = `<span><b>${n.good}</b>/${FRAMES.length} good</span><span class="extra"><b>${n.flag}</b> need work</span><span class="extra"><b>${n.todo}</b> to review</span>`;
+  $('counts').innerHTML = `<span><b>${n.good}</b>/${FRAMES.length} good</span><span class="extra"><b>${n.flag}</b> need work</span><span class="extra"><b>${n.todo}</b> to review</span><span class="extra"><b>${n.reject}</b> rejected</span>`;
 }
 const profileCache = {};
 async function nameOf(by) {
@@ -176,7 +178,7 @@ const stamp = r => Object.assign(r, {by: myId, at: new Date().toISOString()});
 function commit(id, r) {
   const f = byId[id], pend = pendingKeys(r, f).length > 0;
   if (!pend && !r.colour && !r.crop && !r.note && !f.rendered) return save(id, null);
-  if (r.verdict === 'good' && !r.colour && !r.crop) return save(id, stamp(r));   // adjusting an approved photo keeps it approved
+  if ((r.verdict === 'good' && !r.colour && !r.crop) || r.verdict === 'reject') return save(id, stamp(r));   // adjusting an approved photo keeps it approved
   r.verdict = (pend || r.colour || r.crop) ? 'flag' : (r.note && !f.rendered ? 'note' : 'check');
   save(id, stamp(r));
 }
@@ -185,6 +187,15 @@ function commitDraft(id) {
   const r = current(id), was = {...blank(), ...(reviews[id] || {})};
   if (KEYS.every(k => r[k] === was[k])) { delete drafts[id]; return; }
   commit(id, r);
+}
+// Reject: a bad or unusable frame (fogged, blank, badly blurred). It's left
+// off the site and skipped by the pipeline; un-reject by tapping again.
+function toggleReject() {
+  const id = cur, r = current(id);
+  if (r.verdict === 'reject') { delete r.verdict; return commit(id, r); }
+  r.verdict = 'reject';
+  save(id, stamp(r));
+  setTimeout(() => { if (cur === id) move(1); }, 250);
 }
 function toggleGood() {
   const id = cur, r = current(id);
@@ -422,6 +433,7 @@ $('note').addEventListener('change', () => {
   r.note = note; commit(cur, r);
 });
 $('good').addEventListener('click', toggleGood);
+$('reject').addEventListener('click', toggleReject);
 $('undo').addEventListener('click', undo);
 $('prev').addEventListener('click', () => move(-1));
 $('next').addEventListener('click', () => move(1));

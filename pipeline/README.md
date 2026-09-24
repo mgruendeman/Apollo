@@ -116,6 +116,8 @@ cuts that to hours. Already-finished files are skipped.
      so keep the two in step;
    - colour and crop marks are written to `needs-hand-fix.tsv` in the
      output folder for a fix by hand.
+   - *Reject* marks a bad or unusable frame (fogged, blank, badly blurred):
+     it's skipped here and left off the site.
 
    The pilot review page (`review_page/`, built with `build.py`) covers
    the 40 sample frames. On the real site
