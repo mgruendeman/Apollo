@@ -1,10 +1,20 @@
-// Cloudflare deploy config: the site is static files (the Vite build in dist/),
-// served by Cloudflare's asset hosting. Build with BASE_PATH=/ (see vite.config.js).
+// Cloudflare deploy config. The site is the Vite build in dist/ (built with
+// BASE_PATH=/, see vite.config.js); worker/index.js answers /api/* (likes,
+// problem reports, photo review marks) and everything else is static files.
+// Secrets REVIEW_PASSWORD and HASH_SALT are set in the Cloudflare dashboard.
 {
   "name": "apollo",
-  "compatibility_date": "2026-09-01",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-05-01",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "single-page-application"
-  }
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "apollo", "database_id": "703693ee-8eb7-4d16-afa2-9957dca612d0" }
+  ],
+  "r2_buckets": [
+    { "binding": "MEDIA", "bucket_name": "apollo-media" }
+  ]
 }
