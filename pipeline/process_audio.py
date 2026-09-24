@@ -127,6 +127,8 @@ def main():
                     help='most noise reduction allowed, in dB; give several to compare (e.g. 12 24)')
     ap.add_argument('--clip', type=float, nargs=2, metavar=('START', 'SECONDS'), help='only this part (for samples)')
     ap.add_argument('--name', default='clean', help='cleaned versions are named <name><dB> (e.g. df12)')
+    ap.add_argument('--dry', type=float, default=0, help='mix this share of the original back under the AI output '
+                    '(e.g. 0.2) so the background does not pump in and out between words')
     ap.add_argument('--no-dewhine', action='store_true', help='keep steady whines/hums (they are notched out by default)')
     args = ap.parse_args()
 
@@ -164,7 +166,8 @@ def main():
                     continue
                 cleaned = Path(tmp) / f'clean{db}.wav'
                 if engine:
-                    sf.write(cleaned, denoise_chunks(audio, lambda a: engine(a, db)), SR)
+                    wet = denoise_chunks(audio, lambda a: engine(a, db))
+                    sf.write(cleaned, (1 - args.dry) * wet + args.dry * audio if args.dry else wet, SR)
                 else:
                     denoise_ffmpeg(raw, cleaned, db)
                 encode(cleaned, targets[db])

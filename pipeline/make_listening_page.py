@@ -42,6 +42,10 @@ def label(version):
         return 'Original', 'NASA tape, loudness evened out only'
     if version == 'journal':
         return 'Journal clip', "apollojournals.org's version, loudness evened out only"
+    if version.startswith('dry'):
+        return f'AI smoothed {version[3:]}%', f'DeepFilterNet stronger, {version[3:]}% of the original mixed back in'
+    if re.match(r'x\d+$', version):   # a speed test: x125 = played 1.25x as fast
+        return f'{version[1]}.{version[2:]}\u00d7 speed', 'original, sped up'
     m = re.match(r'([a-z]+?)(\d+)?$', version)
     engine, db = (m.group(1), m.group(2)) if m else ('clean', None)
     short, what = ENGINES.get(engine, ('', 'noise reduction'))
@@ -57,6 +61,7 @@ def main():
     ap.add_argument('--embed', action='store_true', help='put the audio inside the page')
     ap.add_argument('--out', help='where to write the page (default: <folder>/listen.html)')
     ap.add_argument('--engine', default='ffmpeg', help='which denoiser made the samples, shown on the page')
+    ap.add_argument('--intro', help='replace the page\'s opening paragraph (plain text)')
     args = ap.parse_args()
     folder = Path(args.folder).expanduser()
 
@@ -65,7 +70,7 @@ def main():
         stem, version = f.name[:-4].rsplit('.', 1)
         samples.setdefault(stem, {})[version] = f
     # original first, then cleaned versions by strength, the journal's last
-    order = lambda v: (v == 'journal', v != 'original', v.startswith('df'), int(re.sub(r'\D', '', v) or 0))
+    order = lambda v: (v == 'journal', v != 'original', v.startswith('df') or v.startswith('dry'), v.startswith('dry'), int(re.sub(r'\D', '', v) or 0))
 
     data = []
     for stem, versions in samples.items():
@@ -74,7 +79,8 @@ def main():
         secs = int(start.rstrip('s')) if start.endswith('s') else 0
         at = f'{secs // 3600}:{secs % 3600 // 60:02d}:{secs % 60:02d}' if secs >= 3600 else f'{secs // 60}:{secs % 60:02d}'
         row = {'id': stem, 'mission': mission, 'tape': tape, 'at': at, 'versions': [],
-               'note': '' if 'journal' in versions else 'No journal clip covers this moment.'}
+               'note': '' if 'journal' in versions or any(v.startswith('x') for v in versions) or 'dry15' in versions
+                       else 'No journal clip covers this moment.'}
         for v in sorted(versions, key=order):
             name, detail = label(v)
             src = (f'data:audio/mp4;base64,{base64.b64encode(versions[v].read_bytes()).decode()}'
@@ -84,6 +90,8 @@ def main():
         data.append(row)
 
     page = TEMPLATE.replace('__DATA__', json.dumps(data)).replace('__ENGINE__', html.escape(args.engine))
+    if args.intro:
+        page = re.sub(r'(<p class="lede">).*?(</p>)', lambda m: m.group(1) + html.escape(args.intro) + m.group(2), page, count=1)
     out = Path(args.out).expanduser() if args.out else folder / 'listen.html'
     out.write_text(page)
     print(f'wrote {out} ({out.stat().st_size / 1e6:.1f} MB, {len(data)} samples)')
