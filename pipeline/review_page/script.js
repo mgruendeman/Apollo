@@ -15,6 +15,7 @@ const KEYS = [...DIALS.map(d => d.k), 'rotate'];
 const TOGGLES = [['colour', 'Colour off'], ['crop', 'Bad crop']];
 const MID_GAMMA = 0.85, SHOULDER = 0.12;
 const BSTEP = Math.sqrt(0.8), CSTEP = 0.55, TSTEP = 10, SATSTEP = 0.1, COLSTEP = 1.5;
+const DEFAULT_BRIGHTNESS = -2, DEFAULT_CONTRAST = -1;   // the reviewed default look (process_photos.py)
 
 const $ = id => document.getElementById(id);
 const reviews = {};          // frame id -> saved review
@@ -281,11 +282,12 @@ window.addEventListener('resize', applyZoom);
 
 // ---------- live preview ----------
 function tone(L, v) {
-  let x = Math.pow(Math.min(Math.max(L, 0), 100) / 100, MID_GAMMA * Math.pow(BSTEP, v.brightness)) * 100;
-  if (v.contrast) {
-    const k = CSTEP * Math.abs(v.contrast);
+  const b = v.brightness + DEFAULT_BRIGHTNESS, c = v.contrast + DEFAULT_CONTRAST;
+  let x = Math.pow(Math.min(Math.max(L, 0), 100) / 100, MID_GAMMA * Math.pow(BSTEP, b)) * 100;
+  if (c) {
+    const k = CSTEP * Math.abs(c);
     let d = (x - 50) / 50;
-    d = v.contrast > 0 ? Math.tanh(k * d) / Math.tanh(k) : Math.atanh(Math.max(-1, Math.min(1, d)) * Math.tanh(k)) / k;
+    d = c > 0 ? Math.tanh(k * d) / Math.tanh(k) : Math.atanh(Math.max(-1, Math.min(1, d)) * Math.tanh(k)) / k;
     x = 50 + 50 * d;
   }
   x = x - SHOULDER * 100 * Math.pow(x / 100, 3);

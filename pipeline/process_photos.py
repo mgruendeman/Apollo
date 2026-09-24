@@ -45,6 +45,9 @@ D65 = np.array([0.95047, 1.0, 1.08883])
 MID_GAMMA, SHOULDER = 0.85, 0.12   # tone_curve
 # A reviewer's dials (tone_curve, adjust_colour); the review page matches.
 BRIGHTNESS_STEP, CONTRAST_STEP, TONE_STEP = 0.8 ** 0.5, 0.55, 10
+# The default look, in reviewer steps: set from the first 90 reviewed photos,
+# where reviewers darkened ~2 steps and lowered contrast ~1 on average.
+DEFAULT_BRIGHTNESS, DEFAULT_CONTRAST = -2, -1
 SATURATION_STEP, COLOUR_STEP = 0.1, 1.5
 MAX_TINT, KEEP_TINT = 45, 3        # film_tint, adjust_colour (L*a*b* units)
 
@@ -204,7 +207,9 @@ def tone_curve(L, brightness=0, contrast=0, shadows=0, highlights=0):
     soil and suits aren't glaring (white ends up at about 88), fitted to
     NASA's own processed versions of 37 frames. Black stays black.
 
-    The other arguments are a reviewer's dials, -8 to +8 steps each:
+    DEFAULT_BRIGHTNESS and DEFAULT_CONTRAST shift that to the reviewed
+    default look. The other arguments are a reviewer's dials on top of it,
+    -8 to +8 steps each:
       brightness  one step moves mid grey about 3.5 L*
       contrast    an S-curve (tanh) keeping black and white fixed; one step
                   moves the quarter tones about 2.5 apart
@@ -212,6 +217,7 @@ def tone_curve(L, brightness=0, contrast=0, shadows=0, highlights=0):
       highlights  brightens (+) or tones down (-) the bright tones, the same
     Every combination stays monotonic (no tone reversals). The review page
     previews with the same formulas, so keep the two in step."""
+    brightness, contrast = brightness + DEFAULT_BRIGHTNESS, contrast + DEFAULT_CONTRAST
     x = (np.clip(L, 0, 100) / 100) ** (MID_GAMMA * BRIGHTNESS_STEP ** brightness) * 100
     if contrast:
         k = CONTRAST_STEP * abs(contrast)
