@@ -127,6 +127,32 @@ def spoken_pieces(words):
             for t, g in good]
 
 
+def text_pieces(words, grams):
+    """Rough places on the mission clock for a tape nothing else placed,
+    from what's said on it: every three-word phrase the recogniser heard
+    that NASA's transcript has only a few times votes for the tape's offset
+    (mission time minus tape time); a stretch of tape whose votes agree
+    marks a place. grams: phrase -> [GET of NASA lines holding it].
+    Returns 40-minute search stretches, as spoken_pieces does."""
+    toks = [(w[0], w[3]) for w in words if w[3]]
+    found = []
+    step = 60
+    for i in range(0, max(0, len(toks) - 3), step):
+        votes = {}
+        for j in range(i, min(i + 2 * step, len(toks) - 2)):
+            hits = grams.get(' '.join(t for _, t in toks[j:j + 3]))
+            if hits and len(hits) <= 5:
+                for g in hits:
+                    key = round((g - toks[j][0]) / 30)
+                    votes[key] = votes.get(key, 0) + 1 / len(hits)
+        if votes:
+            key, score = max(votes.items(), key=lambda kv: kv[1])
+            if score >= 4:
+                found.append((toks[i][0], toks[i][0] + key * 30))
+    return [{'tape_from': max(0.0, t - 1200), 'tape_to': t + 1200, 'get_from': g - (t - max(0.0, t - 1200)), 'rate': 1.0}
+            for t, g in found]
+
+
 def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
     """Split a tape's (tape time, GET) anchors into pieces of continuous
     mission time (as place_tapes.segments, with tighter agreement), cut
@@ -671,13 +697,20 @@ def main():
     name = speaker_names(m, rows)
 
     segments, stats, tape_words, heard_at = [], {'anchored': 0, 'tried': 0}, {}, {}
+    grams = {}   # three-word phrases of NASA's lines (timed ones) -> their GETs
+    for r in rows:
+        if r['getApprox']:
+            continue
+        toks = tokens(r['text'])
+        for k in range(len(toks) - 2):
+            grams.setdefault(' '.join(toks[k:k + 3]), []).append(r['getSeconds'])
     for tape, entry in sorted(placement.items()):
         asr = media / 'asr' / m / f'{tape}.json'
         if not asr.exists():
             continue
         words = [(w[0], w[1], w[2], (tokens(w[2]) or [''])[0]) for w in json.loads(asr.read_text())]
         starts = [w[0] for w in words]
-        pieces = entry.get('pieces') or spoken_pieces(words)
+        pieces = entry.get('pieces') or spoken_pieces(words) + text_pieces(words, grams)
         if not pieces:
             continue
         tape_words[tape] = (words, starts)
@@ -698,6 +731,9 @@ def main():
                 if t is not None and share >= 0.6:
                     anchors.append((t, r['getSeconds']))
                     stats['anchored'] += 1
+        if not entry.get('pieces'):   # (the stretches searched overlap: count each line once)
+            stats['anchored'] -= len(anchors) - len(set(anchors))
+            anchors = sorted(set(anchors))
         heard_at[tape] = sorted(t for t, _ in anchors)
         for p in pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words]):
             segments.append({'tape': tape, **p})
