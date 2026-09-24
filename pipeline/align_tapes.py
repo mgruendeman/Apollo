@@ -165,6 +165,13 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
         else:
             groups.append([(t, off)])
     groups = [grp for grp in groups if len(grp) >= 3]
+    # a small group out of line with neighbours that agree with each other
+    # is a mismatch (a phrase said twice), not a stretch of the mission
+    off = lambda grp: float(np.median([x[1] for x in grp]))
+    keep = [grp for i, grp in enumerate(groups)
+            if not (0 < i < len(groups) - 1 and len(grp) <= 5 and abs(off(groups[i - 1]) - off(groups[i + 1])) <= 30
+                    and abs(off(grp) - off(groups[i - 1])) > 60)]
+    groups = keep
     out = []
     for i, grp in enumerate(groups):
         ts = np.array([x[0] for x in grp])
