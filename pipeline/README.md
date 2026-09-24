@@ -62,6 +62,14 @@ python pipeline/make_listening_page.py $MEDIA/samples --engine DeepFilterNet
 # open $MEDIA/samples/listen.html in a browser
 ```
 
+`pick_ear_clips.py` cuts more samples: the 45 busiest seconds from a slice of
+any tape (`08/037-AAA`), or a fixed start (`11/11-03301@200`). Use
+`--name ff` / `--name df` to keep versions from both engines side by side.
+
+Cleaned versions also have steady whines and hums (electrical tones on the
+tape, found as narrow peaks that hold for most of the recording) cut with
+narrow notches; `--no-dewhine` keeps them.
+
 `--atten-db` caps how much noise may be removed (in dB): lower sounds more
 natural, higher is cleaner but can make voices watery. Try other values
 (e.g. `--atten-db 6 12 18`) until one sounds right, then use it below.

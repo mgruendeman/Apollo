@@ -64,6 +64,36 @@ class DeepFilter:
         return enhance(self.model, self.state, x, atten_lim_db=atten_db).numpy()[0]
 
 
+def find_whines(audio, sr=SR, max_tones=6):
+    """Steady narrow tones (electrical whine or hum on the tape): frequencies
+    whose typical level stands at least 10 dB above the neighbouring
+    spectrum and that stand out for at least half the recording. Speech
+    never holds one pitch that long; a whine does."""
+    n = 8192
+    step = n // 2
+    if len(audio) < n * 4:
+        return []
+    frames = np.lib.stride_tricks.sliding_window_view(audio, n)[::step][:600] * np.hanning(n)
+    spec = 20 * np.log10(np.abs(np.fft.rfft(frames, axis=1)) + 1e-9)
+    freqs = np.fft.rfftfreq(n, 1 / sr)
+    med = np.median(spec, axis=0)
+    width = int(200 / (sr / n))   # compare each bin with the 400 Hz around it
+    around = np.array([np.median(med[max(0, i - width):i + width]) for i in range(len(med))])
+    steady = (spec > around + 12).mean(axis=0)
+    peaks = [i for i in range(1, len(med) - 1)
+             if 150 < freqs[i] < 12000 and med[i] - around[i] > 10 and steady[i] > 0.5
+             and med[i] >= med[i - 1] and med[i] >= med[i + 1]]
+    peaks.sort(key=lambda i: med[i] - around[i], reverse=True)
+    return sorted(round(float(freqs[i])) for i in peaks[:max_tones])
+
+
+def notch(src_wav, dst_wav, tones):
+    """Cut each whine with a narrow notch (about 40 Hz wide, 30 dB deep),
+    leaving the voices around it alone."""
+    chain = ','.join(f'equalizer=f={f}:t=h:w=40:g=-30' for f in tones)
+    run(['ffmpeg', '-y', '-i', str(src_wav), '-af', chain, str(dst_wav)])
+
+
 def denoise_ffmpeg(src_wav, dst_wav, atten_db):
     run(['ffmpeg', '-y', '-i', str(src_wav), '-af', f'afftdn=nr={atten_db}:nf=-30:tn=1', str(dst_wav)])
 
@@ -96,6 +126,8 @@ def main():
     ap.add_argument('--atten-db', type=float, nargs='+', default=[12],
                     help='most noise reduction allowed, in dB; give several to compare (e.g. 12 24)')
     ap.add_argument('--clip', type=float, nargs=2, metavar=('START', 'SECONDS'), help='only this part (for samples)')
+    ap.add_argument('--name', default='clean', help='cleaned versions are named <name><dB> (e.g. df12)')
+    ap.add_argument('--no-dewhine', action='store_true', help='keep steady whines/hums (they are notched out by default)')
     args = ap.parse_args()
 
     files = []
@@ -109,7 +141,7 @@ def main():
         stem = src.stem + (f'_{int(args.clip[0])}s' if args.clip else '')
         targets = {'original': out / f'{stem}.original.m4a'}
         for db in args.atten_db:
-            suffix = 'clean' if len(args.atten_db) == 1 else f'clean{int(db)}'
+            suffix = args.name if len(args.atten_db) == 1 else f'{args.name}{int(db)}'
             targets[db] = out / f'{stem}.{suffix}.m4a'
         if all(t.exists() for t in targets.values()):
             continue
@@ -120,6 +152,13 @@ def main():
             if not targets['original'].exists():
                 encode(raw, targets['original'])
             audio, _ = sf.read(raw, dtype='float32')
+            tones = [] if args.no_dewhine else find_whines(audio)
+            if tones:
+                print(f'  notching steady tones at {", ".join(map(str, tones))} Hz', flush=True)
+                notched = Path(tmp) / 'notched.wav'
+                notch(raw, notched, tones)
+                audio, _ = sf.read(notched, dtype='float32')
+                raw = notched
             for db in args.atten_db:
                 if targets[db].exists():
                     continue

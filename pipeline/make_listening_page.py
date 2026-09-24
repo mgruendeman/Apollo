@@ -21,7 +21,10 @@ from pathlib import Path
 
 import numpy as np
 
-MISSION_TAPES = {'000-AAA': '8', '001-AAA': '8', '11-0': '11', '219-AAP': '13', '405-AAA': '13'}
+MISSION_TAPES = {'000-AAA': '8', '001-AAA': '8', '037-AAA': '8', '075-AAA': '9', '10-0': '10', '11-0': '11',
+                 '375-AAA': '12', '219-AAP': '13', '405-AAA': '13', '415-AAA': '13', '461-AAA': '14',
+                 '557-AAA': '15', '674-AAA': '16', '790-AAA': '17'}
+ENGINES = {'ff': ('Basic', "ffmpeg's noise filter"), 'df': ('AI', 'DeepFilterNet'), 'clean': ('', 'noise reduction')}
 
 
 def background_db(path):
@@ -39,11 +42,13 @@ def label(version):
         return 'Original', 'NASA tape, loudness evened out only'
     if version == 'journal':
         return 'Journal clip', "apollojournals.org's version, loudness evened out only"
-    m = re.match(r'clean(\d+)?$', version)
-    db = m.group(1) if m else None
+    m = re.match(r'([a-z]+?)(\d+)?$', version)
+    engine, db = (m.group(1), m.group(2)) if m else ('clean', None)
+    short, what = ENGINES.get(engine, ('', 'noise reduction'))
     if db is None:
-        return 'Cleaned', 'noise reduction'
-    return ('Gentle' if int(db) <= 12 else 'Stronger'), f'noise reduction up to {db} dB'
+        return (short or 'Cleaned'), what
+    strength = 'gentle' if int(db) <= 12 else 'stronger'
+    return (f'{short} {strength}' if short else strength.capitalize()), f'{what}, up to {db} dB'
 
 
 def main():
@@ -60,14 +65,15 @@ def main():
         stem, version = f.name[:-4].rsplit('.', 1)
         samples.setdefault(stem, {})[version] = f
     # original first, then cleaned versions by strength, the journal's last
-    order = lambda v: (v == 'journal', v != 'original', int(re.sub(r'\D', '', v) or 0))
+    order = lambda v: (v == 'journal', v != 'original', v.startswith('df'), int(re.sub(r'\D', '', v) or 0))
 
     data = []
     for stem, versions in samples.items():
         tape, _, start = stem.rpartition('_')
         mission = next((m for k, m in MISSION_TAPES.items() if tape.startswith(k)), '?')
         secs = int(start.rstrip('s')) if start.endswith('s') else 0
-        row = {'id': stem, 'mission': mission, 'tape': tape, 'at': f'{secs // 60}:{secs % 60:02d}', 'versions': [],
+        at = f'{secs // 3600}:{secs % 3600 // 60:02d}:{secs % 60:02d}' if secs >= 3600 else f'{secs // 60}:{secs % 60:02d}'
+        row = {'id': stem, 'mission': mission, 'tape': tape, 'at': at, 'versions': [],
                'note': '' if 'journal' in versions else 'No journal clip covers this moment.'}
         for v in sorted(versions, key=order):
             name, detail = label(v)
@@ -113,7 +119,7 @@ h1 { font-size: 1.7rem; line-height: 1.2; margin: 0; text-wrap: balance; }
 .sample header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
 .sample h2 { margin: 0; font-size: 1.05rem; }
 .tape { font: 600 .78rem/1 var(--mono); color: var(--muted); letter-spacing: .02em; }
-.versions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.versions { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); gap: 8px; }
 .versions.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 560px) { .versions.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .v.journal { border-style: dashed; }
@@ -145,7 +151,7 @@ h1 { font-size: 1.7rem; line-height: 1.2; margin: 0; text-wrap: balance; }
 <main>
   <div>
     <h1>Apollo Tape Ear Check</h1>
-    <p class="lede">Short samples from NASA's own mission tapes, each in its original form and cleaned up two ways, and where the Apollo Flight Journal has the same moment, its clip as a baseline. Pick the one that sounds best for listening to the missions.</p>
+    <p class="lede">Short samples from NASA's own mission tapes: the original, cleaned up with a basic noise filter and with an AI one (DeepFilterNet), each gentle and stronger, and where the Apollo Flight Journal has the same moment, its clip as a baseline. Cleaned versions also have steady whines and hums notched out. Pick the one that sounds best for listening to the missions.</p>
   </div>
   <p class="how"><b>How to compare:</b> press play, then tap between versions while it plays — it switches at the same moment in the recording, so you hear only the difference. Headphones help. "Background" is the level in the quiet moments between words: lower means less hiss. Cleaned with __ENGINE__.</p>
   <div id="samples"></div>

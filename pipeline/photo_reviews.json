@@ -2,6 +2,15 @@
  "AS08-12-2196": {
   "verdict": "good"
  },
+ "AS08-13-2242": {
+  "brightness": -1,
+  "verdict": "good"
+ },
+ "AS08-13-2280": {
+  "brightness": 5,
+  "rotate": 270,
+  "verdict": "reject"
+ },
  "AS08-14-2383": {
   "brightness": -2,
   "verdict": "good"
@@ -9,8 +18,25 @@
  "AS08-14-2432": {
   "verdict": "good"
  },
+ "AS08-14-2472": {
+  "brightness": -1,
+  "saturation": 1,
+  "shadows": -4,
+  "straighten": -2,
+  "verdict": "reject"
+ },
  "AS08-16-2581": {
   "verdict": "good"
+ },
+ "AS08-17-2688": {
+  "highlights": 6,
+  "verdict": "good"
+ },
+ "AS08-18-2831": {
+  "brightness": 3,
+  "contrast": -2,
+  "highlights": 5,
+  "verdict": "reject"
  },
  "AS09-19-2982": {
   "verdict": "good"
@@ -18,7 +44,41 @@
  "AS09-19-2983": {
   "verdict": "good"
  },
+ "AS09-20-3104C": {
+  "verdict": "reject"
+ },
+ "AS09-21-3233": {
+  "brightness": 2,
+  "contrast": -2,
+  "rotate": 90,
+  "shadows": 2,
+  "verdict": "good"
+ },
+ "AS09-21-3272": {
+  "brightness": -2,
+  "contrast": -1,
+  "rotate": 270,
+  "straighten": 4.5,
+  "tint": -3,
+  "verdict": "reject",
+  "warmth": -1
+ },
+ "AS09-21-3276": {
+  "highlights": -2,
+  "saturation": -1,
+  "shadows": -3,
+  "tint": -1,
+  "verdict": "good",
+  "warmth": -2
+ },
+ "AS09-22-3327": {
+  "rotate": 270,
+  "verdict": "reject"
+ },
  "AS09-24-3657": {
+  "verdict": "good"
+ },
+ "AS10-27-3882": {
   "verdict": "good"
  },
  "AS10-27-3890": {
@@ -27,7 +87,28 @@
  "AS10-27-3956": {
   "verdict": "good"
  },
+ "AS10-30-4441": {
+  "brightness": -2,
+  "contrast": -2,
+  "verdict": "good"
+ },
  "AS10-31-4537": {
+  "verdict": "good"
+ },
+ "AS10-32-4766": {
+  "brightness": -4,
+  "contrast": -1,
+  "rotate": 270,
+  "verdict": "good"
+ },
+ "AS10-32-4821": {
+  "brightness": -4,
+  "contrast": 2,
+  "shadows": -3,
+  "verdict": "good"
+ },
+ "AS10-34-5171": {
+  "brightness": -2,
   "verdict": "good"
  },
  "AS10-35-5248": {
@@ -40,11 +121,24 @@
  "AS11-36-5337": {
   "verdict": "good"
  },
+ "AS11-36-5353": {
+  "verdict": "good"
+ },
  "AS11-36-5389": {
   "brightness": -2,
   "contrast": 2,
   "note": "Rotate",
   "rotate": 270,
+  "verdict": "good"
+ },
+ "AS11-37-5543": {
+  "verdict": "reject"
+ },
+ "AS11-38-5657": {
+  "brightness": -6,
+  "contrast": -3,
+  "highlights": -4,
+  "shadows": -6,
   "verdict": "good"
  },
  "AS11-40-5875": {
@@ -53,6 +147,14 @@
  },
  "AS11-40-5964": {
   "verdict": "good"
+ },
+ "AS11-43-6406": {
+  "brightness": -4,
+  "contrast": -2,
+  "verdict": "good"
+ },
+ "AS11-43-6461": {
+  "verdict": "reject"
  },
  "AS12-46-6726": {
   "brightness": -4,
@@ -66,15 +168,64 @@
  "AS12-47-6876": {
   "verdict": "good"
  },
+ "AS12-48-7087": {
+  "brightness": -2,
+  "contrast": -1,
+  "verdict": "good"
+ },
+ "AS12-53-7807": {
+  "verdict": "reject"
+ },
+ "AS12-54-8018": {
+  "brightness": -5,
+  "contrast": -2,
+  "verdict": "good"
+ },
+ "AS12-56A-8388": {
+  "brightness": -4,
+  "contrast": 1,
+  "verdict": "good"
+ },
+ "AS12-57-8451B": {
+  "verdict": "reject"
+ },
  "AS13-59-8501": {
   "note": "Rotate",
   "rotate": 270,
   "verdict": "good"
  },
+ "AS13-59-8571": {
+  "brightness": -2,
+  "contrast": -2,
+  "verdict": "good"
+ },
  "AS13-60-8659": {
   "verdict": "good"
  },
+ "AS13-60-8660": {
+  "brightness": -1,
+  "verdict": "good"
+ },
+ "AS13-61-8805": {
+  "verdict": "good"
+ },
+ "AS13-61-8826": {
+  "verdict": "reject"
+ },
+ "AS13-61-8873": {
+  "brightness": -1,
+  "contrast": -4,
+  "verdict": "reject"
+ },
  "AS13-62-8929": {
+  "verdict": "good"
+ },
+ "AS14-64-9117": {
+  "brightness": -1,
+  "verdict": "good"
+ },
+ "AS14-64-9198": {
+  "brightness": -4,
   "verdict": "good"
  },
  "AS14-66-09244": {
@@ -91,12 +242,45 @@
   "contrast": -2,
   "verdict": "good"
  },
+ "AS14-69-9533": {
+  "brightness": -2,
+  "contrast": -2,
+  "verdict": "good"
+ },
+ "AS14-70-9748": {
+  "brightness": -5,
+  "verdict": "reject"
+ },
+ "AS14-70-9796": {
+  "brightness": -2,
+  "verdict": "good"
+ },
  "AS15-82-11168": {
   "brightness": -4,
   "contrast": -2,
   "verdict": "good"
  },
+ "AS15-84-11267": {
+  "brightness": -3,
+  "contrast": -1,
+  "rotate": 90,
+  "saturation": 4,
+  "verdict": "good"
+ },
  "AS15-85-11363": {
+  "verdict": "good"
+ },
+ "AS15-85-11502": {
+  "brightness": -5,
+  "contrast": -3,
+  "highlights": -2,
+  "shadows": -6,
+  "verdict": "good"
+ },
+ "AS15-88-11896": {
+  "brightness": -4,
+  "contrast": -3,
+  "shadows": -2,
   "verdict": "good"
  },
  "AS15-88-11901": {
@@ -107,12 +291,37 @@
  "AS15-88-11974": {
   "verdict": "good"
  },
+ "AS15-89-12170": {
+  "brightness": -3,
+  "contrast": -2,
+  "highlights": -1,
+  "rotate": 90,
+  "shadows": -1,
+  "verdict": "good"
+ },
  "AS15-90-12287": {
   "verdict": "good"
+ },
+ "AS15-98-13392": {
+  "verdict": "reject"
  },
  "AS16-108-17622": {
   "brightness": -6,
   "verdict": "good"
+ },
+ "AS16-111-18129": {
+  "verdict": "reject"
+ },
+ "AS16-111-18159": {
+  "brightness": -6,
+  "contrast": -2,
+  "highlights": -8,
+  "shadows": -8,
+  "verdict": "good"
+ },
+ "AS16-112-18201": {
+  "rotate": 90,
+  "verdict": "reject"
  },
  "AS16-114-18412": {
   "verdict": "good"
@@ -122,13 +331,45 @@
   "note": "Crop fixed in the pipeline: the frame sits higher on this roll",
   "verdict": "good"
  },
+ "AS16-119-19091": {
+  "brightness": -1,
+  "verdict": "good"
+ },
  "AS16-120-19332": {
+  "verdict": "good"
+ },
+ "AS16-121-19399": {
+  "brightness": -2,
+  "rotate": 180,
   "verdict": "good"
  },
  "AS16-122-19527": {
   "verdict": "good"
  },
+ "AS17-134-20513": {
+  "verdict": "good"
+ },
+ "AS17-135-20598": {
+  "brightness": -3,
+  "contrast": -2,
+  "highlights": -2,
+  "verdict": "good"
+ },
+ "AS17-138-21037": {
+  "brightness": -4,
+  "contrast": -2,
+  "highlights": -6,
+  "shadows": -4,
+  "verdict": "good"
+ },
  "AS17-145-22285": {
+  "verdict": "good"
+ },
+ "AS17-146-22311": {
+  "brightness": -1,
+  "contrast": -2,
+  "highlights": -1,
+  "shadows": -3,
   "verdict": "good"
  },
  "AS17-147-22465": {
@@ -138,6 +379,14 @@
   "verdict": "good"
  },
  "AS17-148-22624": {
+  "verdict": "good"
+ },
+ "AS17-148-22654": {
+  "rotate": 180,
+  "verdict": "good"
+ },
+ "AS17-153-23548": {
+  "rotate": 90,
   "verdict": "good"
  }
 }
