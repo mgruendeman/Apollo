@@ -1,0 +1,6 @@
+{
+  "037-AAA": {"mission": 8, "reverse": true,
+              "note": "Recorded backwards: reversed, speech recognition reads it cleanly; as published it is gibberish."},
+  "11-03349": {"mission": 11, "speed": 1.33,
+               "note": "Slowed, deep voices; the speed also wanders, so 1.33x is the best single match by ear, not exact."}
+}

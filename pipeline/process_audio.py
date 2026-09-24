@@ -25,6 +25,7 @@ Needs: ffmpeg; pip install deepfilternet soundfile numpy
   (DeepFilterNet 0.5 needs torch==2.0.1 and torchaudio==2.0.2; see pipeline/README.md)
 """
 import argparse
+import json
 import subprocess
 import tempfile
 from pathlib import Path
@@ -41,9 +42,20 @@ def run(cmd):
     subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
+FIXES = json.loads((Path(__file__).parent / 'tape_fixes.json').read_text())
+
+
 def decode(src, wav, clip):
+    """Decode to mono 48 kHz with the rumble cut, applying any known fix for
+    this tape from tape_fixes.json (played backwards, wrong speed)."""
+    fix = FIXES.get(Path(src).stem.split('_')[0], {})
+    filters = ['highpass=f=100']
+    if fix.get('reverse'):
+        filters.insert(0, 'areverse')   # holds the whole tape in memory (~2 GB for 3 hours)
+    if fix.get('speed'):
+        filters.insert(0, f"asetrate={SR}*{fix['speed']},aresample={SR}")
     cut = ['-ss', str(clip[0]), '-t', str(clip[1])] if clip else []
-    run(['ffmpeg', '-y', *cut, '-i', str(src), '-ac', '1', '-ar', str(SR), '-af', 'highpass=f=100', str(wav)])
+    run(['ffmpeg', '-y', *cut, '-i', str(src), '-ac', '1', '-ar', str(SR), '-af', ','.join(filters), str(wav)])
 
 
 def encode(wav, out):
