@@ -13,6 +13,7 @@
   :root:not([data-theme="light"]) { --ground: #101513; --surface: #182019; --ink: #e3eae5; --muted: #98a69f; --rule: #2c3830; --accent: #e3a444; --accent-ink: #14100a; --good: #6cc48f; --good-soft: #1c3226; --flag: #f0975f; --flag-soft: #3a2518; --chip: #1f2922; color-scheme: dark; }
 }
 :root[data-theme="dark"] { --ground: #101513; --surface: #182019; --ink: #e3eae5; --muted: #98a69f; --rule: #2c3830; --accent: #e3a444; --accent-ink: #14100a; --good: #6cc48f; --good-soft: #1c3226; --flag: #f0975f; --flag-soft: #3a2518; --chip: #1f2922; color-scheme: dark; }
+[hidden] { display: none !important; }   /* the artifact host added this; the site copy needs it too */
 html, body { height: 100%; }
 body { margin: 0; background: var(--ground); color: var(--ink); font: 15px/1.45 var(--sans); overflow: hidden; }
 button { font-family: var(--sans); }
