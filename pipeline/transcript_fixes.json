@@ -102,8 +102,8 @@
   },
   {
    "g": 6385,
-   "from": "Wo_ld you verify thst",
-   "to": "Would you verify that"
+   "from": "verify thst",
+   "to": "verify that"
   },
   {
    "g": 7751,
@@ -114,6 +114,151 @@
    "g": 2371,
    "from": "this is iicuston",
    "to": "this is Houston"
+  },
+  {
+   "g": 1388,
+   "from": "Sim) lex Alfa",
+   "to": "Simplex Alfa"
+  },
+  {
+   "g": 9441,
+   "from": "R%dio cheek",
+   "to": "Radio check"
+  },
+  {
+   "g": 10162,
+   "from": "c_-off",
+   "to": "cut-off"
+  },
+  {
+   "g": 10281,
+   "from": "the _tS was",
+   "to": "the EMS was"
+  },
+  {
+   "g": 10813,
+   "from": "about 11's distance",
+   "to": "Apollo 11's distance"
+  },
+  {
+   "g": 11377,
+   "from": "PYPO bus A armed Band pyro",
+   "to": "PYRO bus A armed and pyro"
+  },
+  {
+   "g": 12575,
+   "speaker": "Collins",
+   "text": "We are docked."
+  },
+  {
+   "g": 12575,
+   "from": "acq,_isition",
+   "to": "acquisition"
+  },
+  {
+   "g": 12766,
+   "from": "qua t Bravo",
+   "to": "quad Bravo"
+  },
+  {
+   "g": 12766,
+   "from": "a little _e weak",
+   "to": "a little weak"
+  },
+  {
+   "g": 13525,
+   "from": "REPPgSS",
+   "to": "REPRESS"
+  },
+  {
+   "g": 13525,
+   "from": "Wtiat's",
+   "to": "What's"
+  },
+  {
+   "g": 13723,
+   "from": "question oF this",
+   "to": "question on this"
+  },
+  {
+   "g": 13723,
+   "from": "REPRESS O_ package",
+   "to": "REPRESS O2 package"
+  },
+  {
+   "g": 13723,
+   "from": "up t 5 psi",
+   "to": "up to 5 psi"
+  },
+  {
+   "g": 13760,
+   "from": "tolr_rances",
+   "to": "tolerances"
+  },
+  {
+   "g": 13760,
+   "from": "w[I,h this [)rf)(.'(;durf .",
+   "to": "with this procedure."
+  },
+  {
+   "g": 13850,
+   "from": "you,[might be int'erasted _ha% Sub _\" left-hand window",
+   "to": "you might be interested that out the left-hand window"
+  },
+  {
+   "g": 13850,
+   "from": "otserve",
+   "to": "observe"
+  },
+  {
+   "g": 13850,
+   "from": "Peninsula, _\"\"' Cuba",
+   "to": "Peninsula, Cuba"
+  },
+  {
+   "g": 14232,
+   "from": "latches arc locked",
+   "to": "latches are locked"
+  },
+  {
+   "g": 14562,
+   "from": "0 rer.",
+   "to": "Over."
+  },
+  {
+   "g": 15239,
+   "from": "Pklq0 arm",
+   "to": "PYRO ARM"
+  },
+  {
+   "g": 15408,
+   "from": "l_nank you",
+   "to": "Thank you"
+  },
+  {
+   "g": 15438,
+   "from": "CRYO !RESS",
+   "to": "CRYO PRESS"
+  },
+  {
+   "g": 15433,
+   "from": "we are S!l\u00b0",
+   "to": "we are SEP"
+  },
+  {
+   "g": 16101,
+   "from": "'your question an RCS usage'",
+   "to": "your question on RCS usage,"
+  },
+  {
+   "g": 16914,
+   "from": "pitch gimbal 17 Can yo: confirm _ ,__ that OFF?",
+   "to": "pitch gimbal 1? Can you confirm that OFF?"
+  },
+  {
+   "g": 17378,
+   "from": "T?e LOX d_l",
+   "to": "The LOX dump"
   }
  ]
 }

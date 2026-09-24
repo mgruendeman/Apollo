@@ -191,7 +191,8 @@ FIXES = ROOT / 'pipeline' / 'transcript_fixes.json'
 
 DICT = Path('/usr/share/dict/words')
 CONFUSED = {'6': 'gb', '0': 'o', '1': 'li', '5': 's', '8': 'b', 'c': 'oe', 'e': 'c', 'o': 'c', '_': 'abcdefghijklmnopqrstuvwxyz', ';': 't',
-            'i': 'l', 'l': 'i', 't': 'c', 'E': 'G', '(': 'G', '!': 'l', '*': 'r', '$': 's', '%': 'r', ']': 'l', '}': 'h'}
+            'i': 'l', 'l': 'i', 't': 'c', 'E': 'G', '(': 'G', '!': 'l', '*': 'r', '$': 's', '%': 'r', ']': 'l', '}': 'h',
+            '?': 'h', "'": 'lnh', '¢': 'vc', 'k': 'b', 'r': 'n'}
 JOINERS = {'a', 'and', 'the', 'of', 'to', 'in', 'is', 'it', 'we', 'you', 'on', 'at', 'for', 'be', 'are'}
 PAIRS = {'li': 'h', 'Li': 'H', 'rn': 'm', 'ii': 'u', 'Ii': 'H', 'cl': 'd', 'vv': 'w'}
 JUNK_TAIL = re.compile(r"^(.*?[.?!])(\s+\S*[^A-Za-z0-9\s.,?!'\-]\S*(?:\s+\S+)*|\s+[A-Z_]{3,}\S*(?:\s+\S+)*)\s*$")
@@ -204,7 +205,7 @@ def _words_in(text, vocab):
 
 
 HEADING = re.compile(r"\s*(?:[A-Z}\]_& ]{2,}\s*)?\(\s*R\s*[EeVv ]*[\dlIi]+\s*\)\s*$"   # station: VANGUARD (REV 1)
-                     r"|\s+[FP]age\s+[\dO\]l1]+\s*$"                                   # page footer: Page 3
+                     r"|\s+[?FP]age\s+[\dO\]l1]+\s*$"                                   # page footer: Page 3
                      r"|\s+[A-Z_]{3,}[A-Z_ ]*\s*\(\s*'?R[^)]{0,6}\)?\s*\.?\s*$")                # CANARY ('REV 2)                                    # page footer: Page 3
 
 
@@ -241,11 +242,13 @@ def _suspect(core, vocab):
         return False   # codes: SEP, AOS, DSKY (damaged or not, no guessing)
     if re.search(r"[^A-Za-z0-9'.,?!;:/&\-]", core) or re.match(r"[;:,.][a-z]", core):   # ";he"
         return True
-    if letters.isupper() or re.fullmatch(r"(?:Mc|Mac|O')?[A-Z][a-z]+[A-Z][a-z]+", core):   # McGhee
+    if letters.isupper() or re.fullmatch(r"(?:Mc|Mac|O')[A-Z][a-z]+", core):   # McGhee
         return False
     if re.fullmatch(r"(?:[A-Za-z]\.)+[A-Za-z]?", core):   # p.m, U.S
         return False
-    if re.search(r"[a-z][\d.,;:/][a-z]|[a-z]\d|\d[a-z]{2}", core):
+    if re.search(r"[a-z][\d.,;:/?!%][a-z]|[a-z]\d|\d[a-z]{2}", core):
+        return True
+    if re.search(r"[a-z]'(?!(?:s|t|d|m|ll|re|ve)$)[a-z]", core) and core.lower() not in vocab:   # "e'aable" (not o'clock)
         return True
     w = core.lower()
     return core.isalpha() and len(core) >= 4 and w not in vocab and not (w.endswith('s') and w[:-1] in vocab)
@@ -260,7 +263,7 @@ def _similar(a, b):
     return difflib.SequenceMatcher(None, re.sub(r"[^a-z]", '', a.lower()), b).ratio()
 
 
-def _unconfuse(core, vocab):
+def _unconfuse(core, vocab, freq=None):
     """The one dictionary word an OCR misreading could stand for, if exactly
     one fits ("Sta6ing" -> "Staging", "Cha_lie" -> "Charlie"), else None."""
     found = set()
@@ -287,7 +290,14 @@ def _unconfuse(core, vocab):
             cand = core[:i] + alt + core[i + 2:]
             if cand.lower() in vocab and cand.isalpha():
                 found.add(cand.lower())
-    return found.pop() if len(found) == 1 else None
+    if len(found) == 1:
+        return found.pop()
+    found -= {w for w in found if "'" in w and "'" not in core}
+    if freq and found:   # several fit ("re_d": read, reed, rend): the one this mission says far more often
+        ranked = sorted(found, key=lambda w: -freq.get(w, 0))
+        if freq.get(ranked[0], 0) >= 3 and freq.get(ranked[0], 0) >= 3 * freq.get(ranked[1], 0):
+            return ranked[0]
+    return None
 
 
 # Stations, callsigns and ships OCR mangles most ("iicuston", "Tar_n_ri_e").
@@ -314,6 +324,23 @@ def _place(word):
     return best if not word[:1].isalpha() and ratio >= 0.8 else None   # "}:ouston": the capital lost to junk
 
 
+CAPS = {'n': set()}   # this mission's all-capitals words (switch names, codes) seen often: CRYO, PRESS, PYRO
+
+
+def _caps(word):
+    """A damaged all-capitals word ("PYP0", "!RESS", "REPPgSS") as the one it's close to."""
+    lead, core, trail = _core(word)
+    letters = re.sub(r"[^A-Za-z0-9]", '', core)
+    if len(letters) < 4 or core in CAPS['n'] or sum(ch.isupper() for ch in letters) < len(letters) - 2:
+        return word
+    if "'" in core or '-' in core or not re.search(r"[0!|_%$¢{}\[\]()]|[A-Z][a-z][A-Z]", core):
+        return word   # a clean code ("DELTA-V", "PAD's", a rare one): leave it
+    best = max(CAPS['n'], key=lambda c: difflib.SequenceMatcher(None, letters.upper(), c).ratio(), default=None)
+    if best and abs(len(best) - len(letters)) <= 1 and difflib.SequenceMatcher(None, letters.upper(), best).ratio() >= 0.75:
+        return lead + best + trail
+    return word
+
+
 def _places(text, vocab):
     """Mend damaged station names and callsigns, one word or two run apart
     ("Ho mton"), and "this is Horton" where it can only be Houston."""
@@ -334,7 +361,7 @@ def _places(text, vocab):
         if fix is None and core not in known and len(out) >= 2 and out[-2].lower() == 'this' and out[-1].lower() == 'is' \
                 and core[:1].isupper() and difflib.SequenceMatcher(None, core.lower(), 'houston').ratio() >= 0.6:
             fix = 'Houston'
-        out.append(lead + fix + trail if fix else words[i])
+        out.append(lead + fix + trail if fix else _caps(words[i]))
         i += 1
     return ' '.join(out)
 
@@ -363,7 +390,28 @@ def _tidy(text, vocab):
     text = re.sub(r"\b(\w+) _(re|ve|s|d)\b", r"\1'\2", text)               # "we _re" for "we're"
     text = re.sub(r"(?<=[.?!] )(?:Ore\W{0,3}\w?\W{0,3}|Ov[a-z_]r|[O0][v%]er|\(_ver|Ovor|\(\)ve[ir]')\.?$", 'Over.', text)   # "Ore r." for "Over."
     text = re.sub(r"(?<![\w(])[(G]0\b", 'GO', text)                       # "(0" / "G0" for GO
-    text = re.sub(r"\b[\dlO]*\d[\dlO.]*\b", lambda m: m.group().replace('l', '1').replace('O', '0'), text)   # lO1.4
+    text = re.sub(r"\b(?!O\d\b)[\dlO]*\d[\dlO.]*\b", lambda m: m.group().replace('l', '1').replace('O', '0'), text)   # lO1.4 (not O2)
+    text = re.sub(r"(?<![\d\s]\s)(?<!\d)\b02\b(?=\s+[A-Za-z])", 'O2', text)   # oxygen: "02 fans", "02 valve" (not "02 25 30")
+    text = re.sub(r"(?<=\d\.)\(", '0', text)                               # "4.(" for 4.0
+    text = re.sub(r"(?<=\d\.)!", '1', text)                                 # "0.!" for 0.1
+    text = re.sub(r"\bG\(\)", 'GO', text)                                  # "G()"
+    text = re.sub(r"\s/(?=\s)", '', text)                                   # a lone "/"
+    text = re.sub(r"\b([A-Za-z]{3,})- ([a-z]{2,})\b",                         # "sequenc- ing": split at a line end
+                  lambda m: m.group(1) + m.group(2) if (m.group(1) + m.group(2)).lower() in vocab else m.group(), text)
+    text = re.sub(r"\b(primary|secondary|number|bus|gimbal|motor|quad|tank|bottle|loop|step|channel|position|option|"
+                  r"battery|stage|NOUN|VERB|PAD|Program)\s+[liI|](?=[\s.,?;]|$)", r"\1 1", text)   # "primary l", "number i"
+    text = re.sub(r"\b(one|two|three|four|five)-(?:by|ky|hy|bv|b_|_y|6y)-([\w_]{2,6})\b",   # "five-ky-two", "five-by-_ive"
+                  lambda m: m.group(1) + '-by-' + max(['one', 'two', 'three', 'four', 'five'],
+                                                      key=lambda w: difflib.SequenceMatcher(None, w, m.group(2).lower()).ratio()), text)
+    text = re.sub(r"\b([a-z]+'[a-z])([A-Z])\b", lambda m: m.group(1) + m.group(2).lower(), text)   # "you'lL"
+    n = str(int(MISSION['n']))
+    text = re.sub(r"^" + ''.join(DIGIT_LOOKS.get(ch, ch) for ch in n) + r"(?=,)", n, text)   # a line opening "il," for 11
+    # stray apostrophes: "In'reference" (two words), "'your question" (no closing quote)
+    text = re.sub(r"\b([A-Za-z]{2,})'([a-z]{3,})\b", lambda m: m.group(1) + ' ' + m.group(2)
+                  if m.group(1).lower() in vocab and m.group(2) in vocab and m.group(2) not in ('ll', 're', 've') else m.group(), text)
+    if text.count("'") % 2 == 1 and not re.search(r"\s'\w.*\w'(\s|$|[.,?])", text):
+        text = re.sub(r"(?<=\s)'(?=[a-z]{3,})", '', text)                    # an opening quote never closed
+    text = re.sub(r"\b[A-Z][A-Z0-9]{2,}\b", lambda m: m.group().replace('0', 'O') if re.fullmatch(r"[A-Z]+0[A-Z]*", m.group()) else m.group(), text)   # CRY0
     text = re.sub(r"\b([A-Z]+[a-z]+[A-Z]*[a-z]*)\b",                       # HoUSton, OVer
                   lambda m: m.group().capitalize() if m.group().lower() in vocab else m.group(), text)
     if text.count('(') < text.count(')'):
@@ -380,6 +428,12 @@ def repair_ocr(lines, segments, tape_words):
     Before that, a misreading that can only be one word is corrected
     ("Sta6ing"); anything else stays as NASA printed it."""
     vocab, names, common, spoken = vocabulary(tape_words)
+    from collections import Counter as _C
+    caps = _C(w for l in lines for w in re.findall(r"(?<![\w_])[A-Z]{3,}(?![\w_])", l['t']))
+    CAPS['n'] = {w for w, k in caps.items() if k >= 4}
+    from collections import Counter
+    freq = Counter(re.sub(r"[^a-z0-9']", '', w[2].lower()) for tw, _ in tape_words.values() for w in tw)
+    freq.update(w.lower() for l in lines for w in re.findall(r"(?<![\w_])[A-Za-z']+(?![\w_])", l['t']))
 
     def cased(word, original, i, words):
         """Capital for a sentence's first word, a name, or an unknown word
@@ -399,7 +453,7 @@ def repair_ocr(lines, segments, tape_words):
         # a misreading that can only be one word, first ("Sta6ing" -> "staging")
         for i in sorted(bad):
             lead, core, trail = _core(words[i])
-            fix = _unconfuse(core, spoken | names)
+            fix = _unconfuse(core, spoken | names if core[:1].isupper() else spoken, freq)   # (names only for a capital)
             if fix:
                 words[i] = lead + cased(fix, core, i, words) + trail
                 bad.discard(i)
@@ -537,13 +591,15 @@ def find_announcer(segments, lines, tape_words, heard_at):
             while (c + 1 < hi and w[c + 1][0] - w[c][1] < 4 and toks[c + 1] not in LABELS and w[c + 1][0] - t0 < 600
                    and not any(w[b][1] < h <= w[c + 1][0] + 0.5 for h in heard[bisect.bisect_left(heard, w[b][1]):][:1])):
                 c += 1
-            covers = nxt and c > b and nxt[0] < w[c][1]
+            # (over the crew only when it's more than a word or a second's timing slack)
+            covers = bool(nxt) and c - b >= 3 and w[c][1] - max(nxt[0], w[b][1]) >= 3
+            tail = c if (c > b and not covers) else b   # a word or two past the next line: still his sentence
             stretches.append({'tape': sg['tape'], 't0': t0, 't1': t1, 'rate': sg['rate'],
                               'get': sg['get'] + (t0 - sg['from']) * sg['rate'],
-                              'words': [x for x, tk in zip(w[a:b + 1], toks[a:b + 1]) if tk not in LABELS],
+                              'words': [x for x, tk in zip(w[a:tail + 1], toks[a:tail + 1]) if tk not in LABELS],
                               'over': (t1, min(w[c][1] + 0.3, sg['to'])) if covers else None,
                               'over_words': [x for x, tk in zip(w[b + 1:c + 1], toks[b + 1:c + 1]) if tk not in LABELS] if covers else []})
-            i = (c if covers else b) + 1
+            i = max(c if covers else b, tail) + 1
 
     # announcements recorded out of their time: out to the time he gives
     moved = []
@@ -576,13 +632,16 @@ def find_announcer(segments, lines, tape_words, heard_at):
 
     spans, over, said = [], [], []
 
-    def sentences(words, g, extra):
-        sentence = []
-        for x in words:
+    def sentences(words, over_words, g):
+        """His words a sentence a line; a sentence that starts over the crew is marked 'o'."""
+        sentence, over_from = [], (over_words[0][0] if over_words else None)
+        allw = words + over_words
+        for x in allw:
             if not sentence:
                 start = x[0]
             sentence.append(x[2])
-            if x[2].endswith(('.', '?', '!')) or x is words[-1]:
+            if x[2].endswith(('.', '?', '!')) or x is allw[-1]:
+                extra = {'o': 1} if over_from is not None and start >= over_from else {}
                 said.append({'g': round(g(start)), 's': 'Public Affairs', 't': ' '.join(sentence), 'c': 'pao', **extra})
                 sentence = []
 
@@ -591,25 +650,41 @@ def find_announcer(segments, lines, tape_words, heard_at):
             continue
         g = lambda t, st=st: round(st['get'] + (t - st['t0']) * st['rate'], 2)
         spans.append([g(st['t0']), g(st['t1'])])
-        sentences(st['words'], g, {})
+        sentences(st['words'], st['over_words'], g)
         if st['over']:
             o0, o1 = g(st['over'][0]), g(st['over'][1])
             over.append([o0, o1])
-            sentences(st['over_words'], g, {'o': 1})
             for l in lines:
-                if o0 - 1 <= l['g'] <= o1 and not l.get('c'):
+                if o0 - 1 <= l['g'] <= o1 and not l.get('c') and not l.get('a'):
                     l['o'] = 1
     return spans, over, said
 
 
-def mark_unheard(lines, segments, tape_words):
+def mark_unheard(lines, segments, tape_words, envelopes):
     """NASA's lines that fall where the tape is silent: NASA transcribed the
     full air-to-ground loop, and these tapes are the broadcast copy, which
-    sometimes missed a call. Marked 'n' (not on this recording)."""
+    sometimes missed a call. Marked 'n' (not on this recording).
+
+    Silent means both: the recogniser heard no words there, and the tape's
+    loudness is flat (the recogniser misses faint speech a listener can
+    still make out). envelopes: folder of place_tapes' loudness envelopes
+    (10 a second, normalised)."""
+    import numpy as np
+    loud = {}
+
+    def flat(tape, a, b):
+        if tape not in loud:
+            f = envelopes / f'{tape}.npy'
+            loud[tape] = np.load(f) if f.exists() else None
+        e = loud[tape]
+        if e is None:
+            return False
+        w = e[max(0, int(a * 10)):int(b * 10)]
+        return len(w) > 0 and float(w.max() - w.min()) < 0.4
     gets = [sg['get'] for sg in segments]
     n = 0
     for l in lines:
-        if l.get('c'):
+        if l.get('c') or l.get('a'):   # (a line whose time NASA's scan lost can't be placed that finely)
             continue
         k = bisect.bisect_right(gets, l['g']) - 1
         if k < 0:
@@ -620,7 +695,7 @@ def mark_unheard(lines, segments, tape_words):
             continue
         starts = tape_words[sg['tape']][1]
         span = 6 + 0.3 * len(l['t'].split())
-        if bisect.bisect_right(starts, t + span) == bisect.bisect_left(starts, t - 6):
+        if bisect.bisect_right(starts, t + span) == bisect.bisect_left(starts, t - 6) and flat(sg['tape'], t - 2, t + span):
             l['n'] = 1
             n += 1
     return n
@@ -628,17 +703,21 @@ def mark_unheard(lines, segments, tape_words):
 
 def apply_fixes(mission, lines):
     """Hand corrections from listeners' reports, pipeline/transcript_fixes.json:
-    {"11": [{"g": GET seconds, "from": "text as printed", "to": "corrected"}]}."""
+    {"11": [{"g": GET seconds, "from": "text as printed", "to": "corrected"}]};
+    "speaker" in place of from/to puts a line to the right person."""
     fixes = json.loads(FIXES.read_text()).get(mission, []) if FIXES.exists() else []
     done = 0
     for f in fixes:
-        hit = [l for l in lines if abs(l['g'] - f['g']) <= 2 and f['from'] in l['t']]
+        hit = [l for l in lines if abs(l['g'] - f['g']) <= 2 and f.get('from', f.get('text', '')) in l['t']]
         for l in hit:
-            l['t'] = l['t'].replace(f['from'], f['to'])
+            if 'speaker' in f:
+                l['s'] = f['speaker']
+            else:
+                l['t'] = l['t'].replace(f['from'], f['to'])
         if hit:
             done += 1
         else:
-            print(f"  fix not applied (text not found at GET {f['g']}): {f['from']!r}")
+            print(f"  fix not applied (text not found at GET {f['g']}): {f.get('from', f.get('text'))!r}")
     return done
 
 
@@ -747,16 +826,18 @@ def main():
 
     segments.sort(key=lambda s: s['get'])
     segments = trim_overlaps(segments)
-    lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text']} for r in rows]
+    lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text'], **({'a': 1} if r['getApprox'] else {})} for r in rows]
     repaired = repair_ocr(lines, segments, tape_words)
     fixed = use_journal_text(m, lines) if args.journal_text else 0
-    hand = apply_fixes(m, lines)
+    # NASA's page headings read as if spoken ("11 AIR-TO-GROUND VOICE TRANSCRIPTION")
+    lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,2}.{0,3}GROUND|VOICE\s+T\S{0,3}ANSCR", l['t'])]
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     announcer, over, said = find_announcer(segments, lines, tape_words, heard_at)
     segments = trim_overlaps(segments)
     lines = sorted(lines + said, key=lambda l: l['g'])
-    unheard = mark_unheard(lines, segments, tape_words)
+    hand = apply_fixes(m, lines)
+    unheard = mark_unheard(lines, segments, tape_words, media / 'envelopes' / 'tapes' / m)
     timeline = {'mission': m, 'segments': segments, 'lines': lines, 'announcer': announcer, 'over': over}
     if args.cleaned:   # (the site fills in {media}: its media storage address)
         timeline['audio'] = {'base': f'{{media}}/audio/{int(m)}', 'ext': '.clean.m4a'}

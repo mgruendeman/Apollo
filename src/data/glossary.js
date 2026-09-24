@@ -239,6 +239,18 @@ export const glossary = [
     long: 'Spacecraft carried several antennas: simple "omni" antennas that radiate in most directions but have limited range, and a steerable high-gain antenna that had to be aimed at Earth for strong signal — necessary for the best voice quality and especially for TV transmissions across translunar distance.',
   },
   {
+    id: 'omni-antennas',
+    terms: ['OMNI Alfa', 'OMNI Alpha', 'OMNI Bravo', 'OMNI Charlie', 'OMNI Delta', 'Omni Alfa', 'Omni Bravo', 'Omni Charlie', 'Omni Delta', 'OMNI', 'OMNIs', 'Omni'],
+    short: 'The Command Module\'s four small always-on antennas, named A to D ("Alfa", "Bravo", "Charlie", "Delta").',
+    long: 'Besides the steerable high-gain dish, the Command Module had four small S-band "omni" (omnidirectional) antennas set around its hull, each covering a different side of the spacecraft. They were named A, B, C and D, said in the phonetic alphabet as Alfa, Bravo, Charlie and Delta. As the spacecraft turned, a different one faced Earth, so Mission Control would ask the crew to switch to the one with the best view of home ("Request OMNI Bravo") when the signal faded, and the crew would switch between them during the slow barbecue roll.',
+  },
+  {
+    id: 'pyro',
+    terms: ['PYRO ARM', 'Pyro arm', 'pyro arm', 'PYRO bus', 'pyro bus', 'PYRO BUS', 'PYRO', 'pyro'],
+    short: 'The explosive devices that separated stages and deployed parachutes, and the two circuits ("buses") that fired them.',
+    long: 'Apollo used small explosive charges ("pyrotechnics", pyros) for the events that had to happen once and for sure: jettisoning the launch escape tower, opening the panels that held the Lunar Module, separating the Command Module from the Service Module before re-entry, and deploying the parachutes. They were fired through two identical, independent circuits, pyro bus A and pyro bus B, each with its own battery, so one failure couldn\'t stop an event. Before each event the crew armed the circuits ("pyro arm"), with the ground confirming on telemetry that bus A and bus B were armed.',
+  },
+  {
     id: 'barbecue-roll',
     quote: { text: 'Okay. We\'re back in the barbecue attitude, starting PTC.', attribution: 'Frank Borman, Apollo 8, GET 052:56:06' },
     abbr: [{ short: 'PTC', full: 'Passive Thermal Control' }],
