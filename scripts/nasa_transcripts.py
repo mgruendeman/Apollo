@@ -15,6 +15,12 @@ Either way each page becomes a list of positioned words, and the columns
 (time, speaker, text) are found from where the speaker codes sit.
 
     python3 scripts/nasa_transcripts.py extract as11-tec.pdf data/nasa-transcripts/as11-tec.json
+    python3 scripts/nasa_transcripts.py html URL data/nasa-transcripts/as11-tec.json
+
+`html` reads NASA's clean digital typing of a transcript, where there is one
+(Apollo 11's Technical Air-to-Ground, on NASA's history site:
+https://www.nasa.gov/wp-content/uploads/static/history//alsj/a11/a11transcript_tec.html),
+in place of reading the scanned PDF.
     python3 scripts/nasa_transcripts.py check 11 data/nasa-transcripts/as11-tec.json report.md
 
 `check` pairs every NASA line with the journal line at the same mission
@@ -22,7 +28,7 @@ time (within a few seconds) and scores how closely the words agree, then
 writes a report with random samples of each kind of disagreement for a
 person to spot-check.
 
-Needs: pip install pymupdf; apt install tesseract-ocr (early PDFs only)
+Needs, for the PDFs: pip install pymupdf; apt install tesseract-ocr (early PDFs only)
 """
 import csv
 import difflib
@@ -34,7 +40,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import pymupdf
 
 ROOT = Path(__file__).parent.parent
 SPEAKERS = ['CC', 'CDR', 'CMP', 'LMP', 'SC', 'MS', 'PAO', 'IWO', 'CT', 'HORNET', 'SWIM', 'MSFN']
@@ -70,6 +75,7 @@ def page_words(page, use_ocr):
     """[(x, y, text, confidence)] in PDF points."""
     if not use_ocr:
         return [(w[0], (w[1] + w[3]) / 2, w[4], 100.0) for w in page.get_text('words')]
+    import pymupdf
     png = page.get_pixmap(dpi=OCR_DPI, colorspace=pymupdf.csGRAY).tobytes('png')
     out = subprocess.run(['tesseract', '-', '-', '--psm', '6', 'tsv'], input=png,
                          capture_output=True, check=True).stdout.decode()
@@ -139,6 +145,7 @@ def longest_forward_run(values):
 
 
 def extract(pdf_path):
+    import pymupdf   # (only the PDFs need it)
     doc = pymupdf.open(pdf_path)
     use_ocr = 'Acrobat Capture' in (doc.metadata.get('creator') or '')
     rows = []
@@ -187,6 +194,45 @@ def extract(pdf_path):
         out.append({'getSeconds': r['getSeconds'], 'getApprox': r['getApprox'], 'speaker': r['speaker'],
                     'text': text, 'unsure': [w[2] for w in r['words'] if w[3] < 80], 'page': r['page']})
     return out
+
+
+def extract_html(source):
+    """Rows from NASA's digital typing of a transcript: each line is
+    "DD HH MM SS <font>SPEAKER</font> (CRAFT)<br> text <br><br>"; tape and page
+    headings and "BEGIN LUNAR REV" markers in between are skipped."""
+    import html as htmllib
+    import urllib.request
+    if re.match(r'https?://', source):
+        req = urllib.request.Request(source, headers={'User-Agent': 'apollo-pipeline'})
+        raw = urllib.request.urlopen(req, timeout=60).read().decode('utf-8', 'ignore')
+    else:
+        raw = Path(source).read_text(errors='ignore')
+    rows = []
+    entry = re.compile(r'(\d\d) (\d\d) (\d\d) (\d\d)\s*<font[^>]*>\s*([A-Z][A-Z0-9 ]*?)\s*</font>\s*(?:\(([A-Z ]+)\))?\s*<br>(.*?)(?:<br>\s*<br>|(?=\d\d \d\d \d\d \d\d\s*<font))',
+                       re.S | re.I)
+    for m in entry.finditer(raw):
+        d, h, mi, sec, speaker, craft, body = m.groups()   # craft: (COLUMBIA), (EAGLE), (TRANQ)
+        text = htmllib.unescape(re.sub(r'<[^>]+>', ' ', body))
+        text = re.sub(r'\s+', ' ', text).strip()
+        if not text:
+            continue
+        rows.append({'getSeconds': int(d) * 86400 + int(h) * 3600 + int(mi) * 60 + int(sec), 'getApprox': False,
+                     'speaker': re.sub(r'\s+\d+$', '', speaker.strip()).replace('NIX0N', 'NIXON'), 'text': text,
+                     'unsure': [], 'page': None, 'typed': True})
+    # A mistyped time (a wrong digit: 124 hours for 76) disagrees with the
+    # lines both sides of it, which agree with each other: take the line
+    # before's time and flag it approximate.
+    # (or a short run of them, up to 4 lines)
+    for i in range(1, len(rows) - 1):
+        a = rows[i - 1]['getSeconds']
+        for j in range(i, min(i + 4, len(rows) - 1)):
+            if abs(rows[j]['getSeconds'] - a) <= 600:
+                break
+            if abs(rows[j + 1]['getSeconds'] - a) <= 600:
+                for k in range(i, j + 1):
+                    rows[k]['getSeconds'], rows[k]['getApprox'] = a, True
+                break
+    return rows
 
 
 def fmt_get(s):
@@ -290,5 +336,10 @@ if __name__ == '__main__':
         Path(sys.argv[3]).parent.mkdir(parents=True, exist_ok=True)
         Path(sys.argv[3]).write_text(json.dumps(rows, indent=0))
         print(len(rows), 'rows,', sum(r['getApprox'] for r in rows), 'with approximate time')
+    elif sys.argv[1] == 'html':
+        rows = extract_html(sys.argv[2])
+        Path(sys.argv[3]).parent.mkdir(parents=True, exist_ok=True)
+        Path(sys.argv[3]).write_text(json.dumps(rows, indent=0))
+        print(f'{len(rows)} lines')
     elif sys.argv[1] == 'check':
         check(sys.argv[2], sys.argv[3], sys.argv[4])

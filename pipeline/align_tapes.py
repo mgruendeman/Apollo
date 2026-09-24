@@ -35,7 +35,8 @@ ROOT = Path(__file__).parent.parent
 TOKEN = re.compile(r"[a-z0-9]+")
 CREW = {'11': {'CDR': 'Armstrong', 'CMP': 'Collins', 'LMP': 'Aldrin'}}
 OTHER = {'CT': 'Comm Tech', 'SC': 'Spacecraft', 'MS': 'Mission Control', 'HORNET': 'USS Hornet',
-         'SWIM': 'Swimmer', 'MSFN': 'Tracking station', 'PAO': 'Mission Control', 'IWO': 'Recovery'}
+         'SWIM': 'Swimmer', 'MSFN': 'Tracking station', 'PAO': 'Mission Control', 'IWO': 'Recovery',
+         'PRESIDENT NIXON': 'President Nixon'}
 SEARCH_S = 90          # how far from the piece's prediction to look for a line
 MIN_WORDS = 3
 
@@ -577,6 +578,22 @@ def mark_unheard(lines, segments, tape_words):
     return n
 
 
+def typed_slips(lines):
+    """The few slips in NASA's digital typing: zero for O ("0kay", "0ver"),
+    O or l inside numbers ("1O-minute", "l0"), "A CC EPT". Returns the count."""
+    n = 0
+    for l in lines:
+        t = re.sub(r"\b0(?=(?:kay|ver|ut|ff|n)\b)", 'O', l['t'])
+        t = re.sub(r"\b0(?=(?:KAY|VER|UT|FF|N)\b)", 'O', t)
+        t = re.sub(r"\b(?!O\d\b)(?=[\dOl]*\d)(?=[\dOl]*[Ol])[\dOl]{2,}\b",   # (not O2, oxygen)
+                   lambda m: m.group().replace('O', '0').replace('l', '1'), t)
+        t = t.replace('A CC EPT', 'ACCEPT')
+        if t != l['t']:
+            l['t'] = t
+            n += 1
+    return n
+
+
 def apply_fixes(mission, lines):
     """Hand corrections from listeners' reports, pipeline/transcript_fixes.json:
     {"11": [{"g": GET seconds, "from": "text as printed", "to": "corrected"}]}."""
@@ -688,7 +705,9 @@ def main():
     segments.sort(key=lambda s: s['get'])
     segments = trim_overlaps(segments)
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text']} for r in rows]
-    repaired = repair_ocr(lines, segments, tape_words)
+    # NASA's own digital typing needs no OCR repair; the scanned PDF does
+    typed = all(r.get('typed') for r in rows)
+    repaired = typed_slips(lines) if typed else repair_ocr(lines, segments, tape_words)
     fixed = use_journal_text(m, lines) if args.journal_text else 0
     hand = apply_fixes(m, lines)
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'

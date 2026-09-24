@@ -2,12 +2,12 @@
  "11": [
   {
    "g": 114,
-   "from": "Stand by for mode I",
-   "to": "Stand by for Mode I"
+   "from": "Stand by for mode 1 Charlie",
+   "to": "Stand by for Mode I Charlie"
   },
   {
    "g": 118,
-   "from": "Mode i Charlie",
+   "from": "Mode 1 Charlie",
    "to": "Mode I Charlie"
   },
   {
@@ -16,104 +16,9 @@
    "to": "Skirt SEP (separation)."
   },
   {
-   "g": 339,
-   "from": "You _ll are",
-   "to": "You all are"
-  },
-  {
-   "g": 380,
-   "from": "tut-off",
-   "to": "cut-off"
-  },
-  {
-   "g": 624,
-   "from": "GO at t!.",
-   "to": "GO at 11."
-  },
-  {
-   "g": 711,
-   "from": "103 6",
-   "to": "103.6"
-  },
-  {
-   "g": 1058,
-   "from": "Canary CO_ 5ECH.",
-   "to": "Canary COMM TECH."
-  },
-  {
-   "g": 1103,
-   "from": "Air insertion",
-   "to": "Your insertion"
-  },
-  {
-   "g": 1110,
-   "from": "your I delta azimuth",
-   "to": "your delta azimuth"
-  },
-  {
-   "g": 2344,
-   "from": "VHF t Simplex",
-   "to": "VHF A Simplex"
-  },
-  {
-   "g": 2371,
-   "from": "LOS Tane_ua%*ive;'AO$ Carnarvon",
-   "to": "LOS Tananarive; AOS Carnarvon"
-  },
-  {
-   "g": 3257,
-   "from": "lucled",
-   "to": "lucked"
-  },
-  {
-   "g": 5360,
-   "from": "standing by for",
-   "to": "standing by for instructions."
-  },
-  {
-   "g": 5360,
-   "from": "tions. _\u00b0_\u00a7t6n. Roger.",
-   "to": "Houston. Roger."
-  },
-  {
-   "g": 5475,
-   "from": "noz",
-   "to": "not"
-  },
-  {
    "g": 6216,
-   "from": "RYROARM",
-   "to": "PYRO ARM"
-  },
-  {
-   "g": 6323,
-   "from": "]O-minute",
-   "to": "10-minute"
-  },
-  {
-   "g": 6323,
-   "from": "w,_re",
-   "to": "were"
-  },
-  {
-   "g": 6385,
-   "from": "Yol can",
-   "to": "You can"
-  },
-  {
-   "g": 6385,
-   "from": "Wo_ld you verify thst",
-   "to": "Would you verify that"
-  },
-  {
-   "g": 7751,
-   "from": "throuMh Tar_n_ri_e .'",
-   "to": "through Tananarive."
-  },
-  {
-   "g": 2371,
-   "from": "this is iicuston",
-   "to": "this is Houston"
+   "from": "this Houston. You are GO for RYRO ARM",
+   "to": "this is Houston. You are GO for PYRO ARM"
   }
  ]
 }
