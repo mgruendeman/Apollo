@@ -21,7 +21,7 @@ import { computePhases } from '../data/phases'
 import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
 import { SOURCE_PREFIX_RE } from '../lib/sourceLabel'
-import { useMissionTape, withJournalFill } from '../lib/missionTape'
+import { useMissionTape, withJournalFill, withoutAnnouncer } from '../lib/missionTape'
 
 // The journals' "-pao" clips are the public broadcast: the crew's voices
 // with NASA's announcer talking in between (and sometimes over them). Those
@@ -118,7 +118,10 @@ export default function Mission() {
     }
     setFillState(next)
   }
-  const timeline = useMemo(() => (fill ? withJournalFill(rawTimeline, clips) : rawTimeline), [rawTimeline, clips, fill])
+  const timeline = useMemo(() => {
+    const filled = fill ? withJournalFill(rawTimeline, clips) : rawTimeline
+    return commentary ? filled : withoutAnnouncer(filled)
+  }, [rawTimeline, clips, fill, commentary])
   const tape = useMissionTape(timeline, mission?.number)
   const tapeMode = !!timeline && listen === 'tapes'
   function setListen(next) {
@@ -325,7 +328,7 @@ export default function Mission() {
           {clips.length} audio clips · GET {clips[0].get} to{' '}
           {clips[clips.length - 1].get}
         </p>
-        {skippable.size > 0 && (
+        {skippable.size > 0 && !tapeMode && (
           <label className="commentary-toggle">
             <input type="checkbox" checked={commentary} onChange={toggleCommentary} />
             Mission Control announcer
@@ -403,6 +406,8 @@ export default function Mission() {
             phase={phases[tapeClipIndex]}
             fill={fill}
             onFill={setFill}
+            announcer={commentary}
+            onAnnouncer={toggleCommentary}
             chapter={clips[tapeClipIndex].sourceLabel.replace(SOURCE_PREFIX_RE, '')}
             onTermClick={setActiveGlossaryEntry}
           />

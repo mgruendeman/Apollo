@@ -261,6 +261,7 @@ export function useMissionTape(timeline, mission) {
     pause,
     segments,
     piece: segments[seg.current],
+    url: segments[seg.current] && (segments[seg.current].url || tapeUrl(mission, segments[seg.current].tape, timeline?.audio)),
   }
 }
 
@@ -291,4 +292,24 @@ export function formatGetSigned(g) {
   const sign = g < 0 ? '-' : ''
   const t = Math.floor(Math.abs(g))
   return `${sign}${String(Math.floor(t / 3600)).padStart(3, '0')}:${String(Math.floor((t % 3600) / 60)).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}`
+}
+
+// The tapes without the public-affairs announcer: his stretches
+// (timeline.announcer, [[GET from, GET to]]) cut out of every piece. Where
+// he talks over the crew nothing can be cut, so those stay.
+export function withoutAnnouncer(timeline) {
+  const spans = timeline?.announcer
+  if (!spans?.length) return timeline
+  const out = []
+  for (const s of timeline.segments) {
+    let parts = [[s.get, endGet(s)]]
+    for (const [a, b] of spans) {
+      if (b <= parts[0][0] || a >= parts[parts.length - 1][1]) continue
+      parts = parts.flatMap(([x, y]) => (b <= x || a >= y ? [[x, y]] : [[x, a], [b, y]].filter(([p, q]) => q - p > 0.5)))
+      if (!parts.length) break
+    }
+    for (const [x, y] of parts)
+      out.push({ ...s, from: s.from + (x - s.get) / s.rate, to: s.from + (y - s.get) / s.rate, get: x })
+  }
+  return { ...timeline, segments: out }
 }

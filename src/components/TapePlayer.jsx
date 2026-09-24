@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import TranscriptPanel from './TranscriptPanel'
 import MissionPhaseDiagram from './MissionPhaseDiagram'
-import { formatGetSigned, tapeUrl } from '../lib/missionTape'
+import { formatGetSigned } from '../lib/missionTape'
 
 const hourOf = (g) => Math.floor(g / 3600)
 const tapeClip = (h) => `tapes-h${h}`
@@ -9,7 +9,7 @@ const tapeClip = (h) => `tapes-h${h}`
 // The whole mission from NASA's tapes: one scrubber for all ~8 days, the
 // recorded pieces shaded, and NASA's transcript following along an hour at
 // a time. `tape` is useMissionTape()'s state and controls.
-export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, fill, onFill, onTermClick }) {
+export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, fill, onFill, announcer, onAnnouncer, onTermClick }) {
   const [drag, setDrag] = useState(null)
   const shown = drag ?? tape.get
   const span = end - start
@@ -19,12 +19,13 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
   const byHour = useMemo(() => {
     const out = new Map()
     for (const l of lines || []) {
+      if (l.c === 'pao' && !announcer) continue
       const h = hourOf(l.g)
       if (!out.has(h)) out.set(h, [])
-      out.get(h).push({ get: formatGetSigned(l.g), offsetSeconds: l.g, speaker: l.s, text: l.t, clip: tapeClip(h) })
+      out.get(h).push({ get: formatGetSigned(l.g), offsetSeconds: l.g, speaker: l.s, text: l.t, channel: l.c, clip: tapeClip(h) })
     }
     return out
-  }, [lines])
+  }, [lines, announcer])
   const hour = hourOf(tape.get)
   const hours = [hour - 1, hour, hour + 1].filter((h) => byHour.has(h))
   const shownLines = useMemo(() => hours.flatMap((h) => byHour.get(h)), [byHour, hours.join()]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -127,6 +128,16 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
       </label>
 
       <label className="commentary-toggle">
+        <input type="checkbox" checked={announcer} onChange={onAnnouncer} />
+        Mission Control announcer
+        <span>
+          {announcer
+            ? 'On: the public-affairs announcer ("This is Apollo Control…") plays, as it was broadcast.'
+            : 'Off: his announcements are cut out. Where he talks over the crew he stays, as the two were recorded together.'}
+        </span>
+      </label>
+
+      <label className="commentary-toggle">
         <input type="checkbox" checked={fill} onChange={(e) => onFill(e.target.checked)} />
         Fill gaps with journal clips
         <span>
@@ -145,7 +156,7 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
           report={{
             missionName: mission.name,
             clipId: piece ? `the whole-mission recording (${piece.journal ? 'journal clip ' : 'NASA tape '}${piece.tape})` : 'the whole-mission recording',
-            audioUrl: piece && (piece.url || tapeUrl(mission.number, piece.tape)),
+            audioUrl: tape.url,
             sourceUrl: source?.href,
           }}
           mission={mission.id}

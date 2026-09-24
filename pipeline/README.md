@@ -206,6 +206,12 @@ The site can play a mission end to end from NASA's own tapes (Apollo 11 so far):
    transcript stands on its own.)
    Writes `public/timeline/apollo11.json`, which the site reads.
 
+   NASA's air-to-ground tapes are the broadcast mix, so the public-affairs announcer ("This is Apollo Control…") is on them.
+   `align_tapes.py` finds his announcements, adds his words to the transcript, and lists his stretches so the site can skip them.
+   Through quiet hours the recorders ran only for his announcements, so one stretch of tape can hold several hours of them.
+   Each is moved to the mission time he gives. Tapes no journal clip placed (166-AAA) are placed from those spoken times too.
+   `--cleaned` points the site at our cleaned copies (`audio/NN/<tape>.clean.m4a` in R2, uploaded with rclone).
+
 On the site, journal clips can fill the gaps between tape pieces (a switch, on for now); with the announcer switch on, that includes the broadcast clips.
 "Real time" (off by default) counts through silent stretches at their true length instead of skipping them.
 Audio comes from archive.org until the cleaned tapes are uploaded; then set `"audio": {"base": "{media}/audio/11", "ext": ".clean.m4a"}` in the timeline.

@@ -97,6 +97,31 @@ def quietest_gap(word_starts, word_ends, a, b):
     return max(gaps)[1] if gaps else (a + b) / 2
 
 
+SPOKEN = re.compile(r"(\d+) hours?,? (\d+) minutes")
+
+
+def spoken_pieces(words):
+    """Rough places on the mission clock for a tape no journal clip placed,
+    from the announcer saying the time ("This is Apollo Control at 59 hours,
+    9 minutes"): a 40-minute stretch around each time he gives, to search
+    for NASA's lines in (which then place the tape exactly). Times he
+    mentions that aren't "now" (a burn due at 100 hours 20) are outvoted:
+    only times agreeing with another within 3 minutes of offset count."""
+    text, at = '', []
+    for w in words:
+        at.append(len(text))
+        text += w[2] + ' '
+    found = []
+    for mt in SPOKEN.finditer(text):
+        i = bisect.bisect_right(at, mt.start()) - 1
+        near = text[max(0, mt.start() - 80):mt.end() + 80].lower()
+        if 'apollo control' in near:
+            found.append((words[i][0], int(mt.group(1)) * 3600 + int(mt.group(2)) * 60))
+    good = [(t, g) for t, g in found if sum(abs((g2 - t2) - (g - t)) <= 180 for t2, g2 in found) >= 2]
+    return [{'tape_from': max(0.0, t - 1200), 'tape_to': t + 1200, 'get_from': g - (t - max(0.0, t - 1200)), 'rate': 1.0}
+            for t, g in good]
+
+
 def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
     """Split a tape's (tape time, GET) anchors into pieces of continuous
     mission time (as place_tapes.segments, with tighter agreement), cut
@@ -299,6 +324,141 @@ def repair_ocr(lines, segments, tape_words):
     return changed
 
 
+LABELS = {'capcom', 'sc', 'cdr', 'lmp', 'cmp', 'cc'}   # the recogniser sometimes writes a speaker label at a change of voice
+
+
+NUMBER_WORDS = {w: i for i, w in enumerate(
+    'zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen '
+    'seventeen eighteen nineteen'.split())}
+NUMBER_WORDS.update({w: 10 * i for i, w in enumerate('_ _ twenty thirty forty fifty sixty seventy eighty ninety'.split()) if i >= 2})
+SAID_TIME = re.compile(r"apollo control,? (?:houston,? )?(?:at )?([\w -]+?) hours?,? (?:and )?([\w -]+?) minutes"
+                       r"|(?:at |)([\w -]+?) hours?,? (?:and )?([\w -]+?) minutes[\w ,]*?,? this is apollo control", re.I)
+
+
+def _number(text):
+    """"59", "fifty-nine", "one hundred and two" -> int, else None."""
+    text = text.strip().lower()
+    if text.isdigit():
+        return int(text)
+    n, seen = 0, False
+    for w in re.split(r"[\s-]+", text):
+        if w in NUMBER_WORDS:
+            n += NUMBER_WORDS[w]
+            seen = True
+        elif w == 'hundred':
+            n = max(n, 1) * 100
+        elif w != 'and':
+            return None
+    return n if seen else None
+
+
+def said_time(text):
+    """The mission time the announcer gives ("This is Apollo Control at 59
+    hours, 9 minutes"), in seconds, and whether he says it at the start."""
+    for m in SAID_TIME.finditer(text):
+        h, mnt = (m.group(1), m.group(2)) if m.group(1) else (m.group(3), m.group(4))
+        h, mnt = _number(h.split()[-1] if h.split()[-1].isdigit() else h), _number(mnt)
+        if h is not None and mnt is not None and h < 200 and mnt < 60:
+            return h * 3600 + mnt * 60, m.start() < len(text) / 2
+    return None, None
+
+
+def find_announcer(segments, lines, tape_words):
+    """The public-affairs announcer on the tapes: NASA's air-to-ground tapes
+    are the broadcast mix, with "This is Apollo Control ..." between (and
+    sometimes over) the crew and the ground. Each announcement runs from the
+    start of the speech holding "this is Apollo Control" until a pause of 4 s,
+    a change of voice, or NASA's next transcript line.
+
+    Through quiet hours the recorders were run only for the announcements,
+    so one stretch of tape can hold announcements from hours apart. Where the
+    time he gives disagrees with the tape piece he's in, the announcement is
+    moved out to its own piece at the time he gives (dropped if another tape
+    already covers that moment); `segments` is changed to match.
+
+    Returns (spans, said): spans [[GET from, GET to]] the listener can skip,
+    and his words as transcript lines {g, s, t, c: 'pao'}, a sentence each."""
+    end = lambda sg: sg['get'] + (sg['to'] - sg['from']) * sg['rate']
+    gets = [sg['get'] for sg in segments]
+    by_tape = {}
+    for l in lines:
+        k = bisect.bisect_right(gets, l['g']) - 1
+        if k >= 0 and l['g'] <= end(segments[k]):
+            sg = segments[k]
+            by_tape.setdefault(sg['tape'], []).append(sg['from'] + (l['g'] - sg['get']) / sg['rate'])
+    stretches = []   # {tape, t0, t1, words, get (at t0), rate}
+    for sg in segments:
+        if sg['tape'] not in tape_words:
+            continue
+        w = tape_words[sg['tape']][0]
+        toks = [re.sub(r"[^a-z]", '', x[2].lower()) for x in w]
+        starts_here = sorted(by_tape.get(sg['tape'], []))
+        lo, hi = bisect.bisect_left([x[0] for x in w], sg['from']), bisect.bisect_right([x[0] for x in w], sg['to'])
+        i = max(lo, 1)
+        while i < hi - 1:
+            if not (toks[i] == 'apollo' and toks[i + 1] == 'control' and toks[i - 1] in ('is', 'this')):
+                i += 1
+                continue
+            a = i
+            while a > lo and w[a][0] - w[a - 1][1] < 1.5 and w[i][0] - w[a - 1][0] < 8 and toks[a - 1] not in LABELS:
+                a -= 1
+            t0 = max(w[a][0] - 0.3, sg['from'])
+            nxt = starts_here[bisect.bisect_right(starts_here, t0 + 2):][:1]
+            b = i
+            while (b + 1 < hi and w[b + 1][0] - w[b][1] < 4 and toks[b + 1] not in LABELS
+                   and (not nxt or w[b + 1][0] < nxt[0] - 0.5) and w[b + 1][0] - t0 < 600):
+                b += 1
+            t1 = min(w[b][1] + 0.3, sg['to'])
+            stretches.append({'tape': sg['tape'], 't0': t0, 't1': t1, 'rate': sg['rate'],
+                              'get': sg['get'] + (t0 - sg['from']) * sg['rate'],
+                              'words': [x for x, tk in zip(w[a:b + 1], toks[a:b + 1]) if tk not in LABELS]})
+            i = b + 1
+
+    # announcements recorded out of their time: out to the time he gives
+    moved = []
+    for st in stretches:
+        spoken, at_start = said_time(' '.join(x[2] for x in st['words']))
+        if spoken is None:
+            continue
+        length = st['t1'] - st['t0']
+        want = spoken + 20 if at_start else spoken + 40 - length
+        if -90 <= st['get'] - want <= 150:
+            continue
+        moved.append((st, want))
+    for st, want in moved:
+        for k, sg in enumerate(segments):   # cut it out of the piece it was in
+            if sg['tape'] == st['tape'] and sg['from'] <= st['t0'] < sg['to']:
+                rest = []
+                if st['t0'] - sg['from'] > 1:
+                    rest.append({**sg, 'to': st['t0']})
+                if sg['to'] - st['t1'] > 1:
+                    rest.append({**sg, 'from': st['t1'], 'get': sg['get'] + (st['t1'] - sg['from']) * sg['rate']})
+                segments[k:k + 1] = rest
+                break
+        covered = any(sg['get'] < want + (st['t1'] - st['t0']) and end(sg) > want for sg in segments)
+        st['get'], st['rate'] = (None, 1.0) if covered else (want, 1.0)
+        if not covered:
+            segments.append({'tape': st['tape'], 'from': round(st['t0'], 2), 'to': round(st['t1'], 2), 'get': round(want, 2),
+                             'rate': 1.0, 'anchors': 0, 'spoken': True})
+    segments.sort(key=lambda sg: sg['get'])
+
+    spans, said = [], []
+    for st in stretches:
+        if st['get'] is None:
+            continue
+        g = lambda t: round(st['get'] + (t - st['t0']) * st['rate'], 2)
+        spans.append([g(st['t0']), g(st['t1'])])
+        sentence = []
+        for x in st['words']:
+            if not sentence:
+                start = x[0]
+            sentence.append(x[2])
+            if x[2].endswith(('.', '?', '!')) or x is st['words'][-1]:
+                said.append({'g': round(g(start)), 's': 'Public Affairs', 't': ' '.join(sentence), 'c': 'pao'})
+                sentence = []
+    return spans, said
+
+
 def apply_fixes(mission, lines):
     """Hand corrections from listeners' reports, pipeline/transcript_fixes.json:
     {"11": [{"g": GET seconds, "from": "text as printed", "to": "corrected"}]}."""
@@ -346,12 +506,27 @@ def use_journal_text(mission, lines):
     return changed
 
 
+def trim_overlaps(segments):
+    """Tapes were changed over with some overlap: play each tape to its end
+    and pick up the next where it left off (trim the later piece's start)."""
+    segments.sort(key=lambda s: s['get'])
+    for a, b in zip(segments, segments[1:]):
+        a_end = a['get'] + (a['to'] - a['from']) * a['rate']
+        if b['get'] < a_end:
+            cut = min(a_end - b['get'], (b['to'] - b['from']) * b['rate'])
+            b['from'] = round(b['from'] + cut / b['rate'], 2)
+            b['get'] = round(b['get'] + cut, 2)
+    return [s for s in segments if s['to'] - s['from'] > 1]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mission')
     ap.add_argument('--media', required=True)
     ap.add_argument('--journal-text', action='store_true',
                     help="take the Flight Journal's wording where a line matches (off: NASA's text, repaired from the tapes)")
+    ap.add_argument('--cleaned', action='store_true',
+                    help='play our cleaned copies (uploaded to <media>/audio/NN/<tape>.clean.m4a) instead of NASA\'s originals')
     args = ap.parse_args()
     m = f'{int(args.mission):02d}'
     media = Path(args.media).expanduser()
@@ -363,13 +538,16 @@ def main():
     segments, stats, tape_words = [], {'anchored': 0, 'tried': 0}, {}
     for tape, entry in sorted(placement.items()):
         asr = media / 'asr' / m / f'{tape}.json'
-        if not entry.get('pieces') or not asr.exists():
+        if not asr.exists():
             continue
         words = [(w[0], w[1], w[2], (tokens(w[2]) or [''])[0]) for w in json.loads(asr.read_text())]
         starts = [w[0] for w in words]
+        pieces = entry.get('pieces') or spoken_pieces(words)
+        if not pieces:
+            continue
         tape_words[tape] = (words, starts)
         anchors = []
-        for piece in entry['pieces']:
+        for piece in pieces:
             g0, g1 = piece['get_from'], piece['get_from'] + (piece['tape_to'] - piece['tape_from']) * piece['rate']
             for r in rows:
                 if not g0 - 60 <= r['getSeconds'] <= g1 + 60 or r['getApprox']:
@@ -389,26 +567,24 @@ def main():
             segments.append({'tape': tape, **p})
 
     segments.sort(key=lambda s: s['get'])
-    # Tapes were changed over with some overlap: play each tape to its end and
-    # pick up the next where it left off (trim the later piece's start).
-    for a, b in zip(segments, segments[1:]):
-        a_end = a['get'] + (a['to'] - a['from']) * a['rate']
-        if b['get'] < a_end:
-            cut = min(a_end - b['get'], (b['to'] - b['from']) * b['rate'])
-            b['from'] = round(b['from'] + cut / b['rate'], 2)
-            b['get'] = round(b['get'] + cut, 2)
-    segments = [s for s in segments if s['to'] - s['from'] > 1]
+    segments = trim_overlaps(segments)
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text']} for r in rows]
     repaired = repair_ocr(lines, segments, tape_words)
     fixed = use_journal_text(m, lines) if args.journal_text else 0
     hand = apply_fixes(m, lines)
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps({'mission': m, 'segments': segments, 'lines': lines}, separators=(',', ':')))
+    announcer, said = find_announcer(segments, lines, tape_words)
+    segments = trim_overlaps(segments)
+    lines = sorted(lines + said, key=lambda l: l['g'])
+    timeline = {'mission': m, 'segments': segments, 'lines': lines, 'announcer': announcer}
+    if args.cleaned:   # (the site fills in {media}: its media storage address)
+        timeline['audio'] = {'base': f'{{media}}/audio/{int(m)}', 'ext': '.clean.m4a'}
+    out.write_text(json.dumps(timeline, separators=(',', ':')))
     covered = sum((s['to'] - s['from']) * s['rate'] for s in segments) / 3600
     print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes; {len(segments)} segments covering {covered:.1f} h; "
           f"{len(lines)} lines ({repaired} words repaired from the tapes, {fixed} lines in the journal's wording, "
-          f"{hand} hand fixes); written to {out}")
+          f"{hand} hand fixes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min; written to {out}")
 
 
 if __name__ == '__main__':
