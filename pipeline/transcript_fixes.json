@@ -107,8 +107,8 @@
   },
   {
    "g": 7751,
-   "from": "throuMh Tar_n_ri_e .'",
-   "to": "through Tananarive."
+   "from": "thl_ is Houston standing by through Tar_n_ri_e .'",
+   "to": "this is Houston standing by through Tananarive."
   },
   {
    "g": 2371,
@@ -259,6 +259,31 @@
    "g": 17378,
    "from": "T?e LOX d_l",
    "to": "The LOX dump"
+  },
+  {
+   "g": 17479,
+   "from": "LM ejectioa;",
+   "to": "LM ejection;"
+  },
+  {
+   "g": 17479,
+   "from": "Just the ieeeap in Greenland. Ail North Atlantic",
+   "to": "just the icecap in Greenland. All North Atlantic"
+  },
+  {
+   "g": 17479,
+   "from": "seemed to be elea?.",
+   "to": "seemed to be clear."
+  },
+  {
+   "g": 17479,
+   "from": "There was a iow - looked like a front stretching From",
+   "to": "There was a low - looked like a front stretching from"
+  },
+  {
+   "g": 17479,
+   "from": "Great L_fm_s and into Newfo_andland.",
+   "to": "Great Lakes and into Newfoundland."
   }
  ]
 }

@@ -465,7 +465,7 @@ def repair_ocr(lines, segments, tape_words):
             if sg['from'] - 5 <= t <= sg['to'] + 5 and sg['tape'] in tape_words:
                 tw, starts = tape_words[sg['tape']]
                 heard = [re.sub(r"[^a-z0-9']", '', w[2].lower())
-                         for w in tw[bisect.bisect_left(starts, t - 20):bisect.bisect_right(starts, t + 20 + 0.6 * len(words))]]
+                         for w in tw[bisect.bisect_left(starts, t - 45):bisect.bisect_right(starts, t + 20 + 0.6 * len(words))]]
                 mine = [_core(w)[1].lower() for w in words]
                 for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, mine, heard, autojunk=False).get_opcodes():
                     if op != 'replace':
