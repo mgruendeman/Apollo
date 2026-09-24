@@ -27,6 +27,7 @@ import argparse
 import json
 import sys
 import time
+import urllib.error
 import urllib.request
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
@@ -66,6 +67,10 @@ def download(url, dest):
             tmp.write_bytes(data)
             tmp.rename(dest)
             return dest
+        except urllib.error.HTTPError as e:
+            if e.code == 404:   # not in the archive: retrying won't help
+                return None
+            time.sleep(5 * (attempt + 1))
         except Exception:
             time.sleep(5 * (attempt + 1))
     return None
@@ -283,6 +288,8 @@ def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True, revie
     crop-check image when `preview`)."""
     review = review or {}
     src = download(scan_url(frame_id, fmt, size), work / size / f'{frame_id}.png')
+    if not src and size == 'med':   # some 35 mm frames (e.g. the stereo close-ups) only have a small scan
+        src = download(scan_url(frame_id, fmt, 'small'), work / 'small' / f'{frame_id}.png')
     if not src:
         return 'download failed', None
     im = load_rgb(src)
@@ -348,7 +355,13 @@ def main():
     for m in args.missions:
         index = json.loads((ROOT / 'public' / 'photo-index' / f'{int(m):02d}.json').read_text())
         rows += [(r[0], r[1]) for r in index['frames']][:args.limit or None]
-    rows += [(f, 'a') for f in args.frames or []]
+    if args.frames:   # look each one up in its mission's index for its scan type
+        fmt = {}
+        for m in {f[2:4] for f in args.frames}:
+            path = ROOT / 'public' / 'photo-index' / f'{m}.json'
+            if path.exists():
+                fmt.update({r[0]: r[1] for r in json.loads(path.read_text())['frames']})
+        rows += [(f, fmt.get(f, 'a')) for f in args.frames]
     if args.only_reviewed:
         rows = [r for r in rows if r[0] in reviews] if rows else [(f, 'a') for f in reviews]
     if not args.include_nasa:

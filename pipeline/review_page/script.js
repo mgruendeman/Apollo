@@ -467,7 +467,8 @@ show(byId[store.get('apollo-review-at')] ? store.get('apollo-review-at') : FRAME
     changed.forEach(id => paintThumb(id));
     if (changed.size) paintCounts();
     if (changed.has(cur) || first) { paint(); schedulePreview(true); }
-    if (first && !store.get('apollo-review-at')) {   // first visit: start at the first photo still to review
+    const at = store.get('apollo-review-at');
+    if (first && (!byId[at] || stateOf(at)[0] === 'good')) {   // start at the first photo still to review
       const next = FRAMES.find(f => stateOf(f.id)[0] !== 'good');
       if (next) show(next.id);
     }
