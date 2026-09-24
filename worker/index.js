@@ -22,7 +22,7 @@ const SCHEMA = [
      get TEXT, speaker TEXT, text TEXT)`,
   `CREATE INDEX IF NOT EXISTS reaction_lines_clip ON reaction_lines (mission, clip)`,
 ]
-const LIMITS = { like: 300, report: 20, react: 500 } // per scrambled IP address, per day
+const LIMITS = { like: 1000, report: 20, react: 5000 } // per scrambled IP address, per day
 // 🤣 funny, 😲 wow, ‼️ big moment, ❤️ moving, 😬 tense (src/lib/reactions.js has the same list)
 const EMOJIS = ['🤣', '😲', '‼️', '❤️', '😬']
 const SESSION_DAYS = 30

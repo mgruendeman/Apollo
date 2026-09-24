@@ -22,12 +22,18 @@ export function useTranscriptScroll(active, resetKey) {
     setAway(top + line.clientHeight < 0 || top > list.clientHeight)
   }, [])
 
-  const scrollToActive = useCallback((smooth) => {
+  // Follow the conversation without jumping on every line: the playing line
+  // moves down the box and only when it passes 60% of the way down (or is
+  // out of view) does the box scroll, putting it back a third of the way
+  // down so what's coming next stays visible.
+  const scrollToActive = useCallback((smooth, force) => {
     const list = listRef.current
     const line = activeRef.current
     if (!list || !line) return
+    const top = line.offsetTop - list.scrollTop
+    if (!force && top >= 0 && top + line.clientHeight <= list.clientHeight * 0.6) return
     list.scrollTo({
-      top: line.offsetTop - list.clientHeight / 2 + line.clientHeight / 2,
+      top: line.offsetTop - list.clientHeight / 3,
       behavior: smooth ? 'smooth' : 'auto',
     })
   }, [])
@@ -36,7 +42,7 @@ export function useTranscriptScroll(active, resetKey) {
     const fresh = lastReset.current !== resetKey
     lastReset.current = resetKey
     if (fresh || Date.now() - userScrolledAt.current >= USER_SCROLL_HOLD_MS) {
-      scrollToActive(!fresh)
+      scrollToActive(!fresh, fresh)
     }
     const t = setTimeout(checkAway, 400)
     return () => clearTimeout(t)
@@ -48,7 +54,7 @@ export function useTranscriptScroll(active, resetKey) {
 
   const jumpToCurrent = useCallback(() => {
     userScrolledAt.current = 0
-    scrollToActive(true)
+    scrollToActive(true, true)
     setAway(false)
   }, [scrollToActive])
 
