@@ -200,9 +200,12 @@ The site can play a mission end to end from NASA's own tapes (Apollo 11 so far):
    Writes `pipeline/tapes/apollo11-placement.json`.
 2. `transcribe_tapes.py`: runs speech recognition over each whole tape, keeping the time of every word.
 3. `align_tapes.py 11 --media $M`: times NASA's transcript lines against those words and cuts each tape into
-   pieces of continuous mission time. It also takes the journal's hand-corrected wording where a line matches, because NASA's text is OCR.
+   pieces of continuous mission time. NASA's text is OCR, so damaged words ("Ro6er", "We'11", a stray ")") are repaired
+   from our own speech recognition at that moment of the tape. Hand fixes from listeners' reports go in
+   `pipeline/transcript_fixes.json`. (`--journal-text` would take the Flight Journal's wording instead; it's off, so the
+   transcript stands on its own.)
    Writes `public/timeline/apollo11.json`, which the site reads.
 
-On the site, journal clips fill the gaps between tape pieces; with the announcer switch on, that includes the broadcast clips.
+On the site, journal clips can fill the gaps between tape pieces (a switch, on for now); with the announcer switch on, that includes the broadcast clips.
 "Real time" (off by default) counts through silent stretches at their true length instead of skipping them.
 Audio comes from archive.org until the cleaned tapes are uploaded; then set `"audio": {"base": "{media}/audio/11", "ext": ".clean.m4a"}` in the timeline.
