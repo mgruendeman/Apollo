@@ -21,28 +21,35 @@ export function lineId(clip, line) {
   return `${clip}|${line.get}|${line.speaker.replace(/[^A-Za-z0-9]/g, '')}|${h.toString(36)}`.slice(0, 120)
 }
 
-// { [lineId]: { [emoji]: { n, mine } } } for one clip, with a toggle.
+// { [lineId]: { [emoji]: { n, mine } } } for one clip, with a toggle. `clip`
+// can list several clips, comma-separated (the whole-mission transcript
+// spans hours; each line then names its own clip as line.clip).
 export function useClipReactions(mission, clip) {
   const [state, setState] = useState({})
   useEffect(() => {
     if (!reactionsAvailable || !clip) return undefined
     let live = true
-    fetch(`${API_BASE}/reactions?mission=${mission}&clip=${encodeURIComponent(clip)}&visitor=${visitorId()}`)
-      .then((r) => (r.ok ? r.json() : { reactions: [] }))
-      .then(({ reactions }) => {
-        if (!live) return
-        const next = {}
+    Promise.all(
+      clip.split(',').map((c) =>
+        fetch(`${API_BASE}/reactions?mission=${mission}&clip=${encodeURIComponent(c)}&visitor=${visitorId()}`)
+          .then((r) => (r.ok ? r.json() : { reactions: [] }))
+          .catch(() => ({ reactions: [] })),
+      ),
+    ).then((results) => {
+      if (!live) return
+      const next = {}
+      for (const { reactions } of results)
         for (const r of reactions) (next[r.line] ||= {})[r.emoji] = { n: r.n, mine: !!r.mine }
-        setState(next)
-      })
-      .catch(() => {})
+      setState(next)
+    })
     return () => {
       live = false
     }
   }, [mission, clip])
 
+  const clipOf = (line) => line.clip || clip
   async function toggle(line, emoji) {
-    const id = lineId(clip, line)
+    const id = lineId(clipOf(line), line)
     const was = state[id]?.[emoji] || { n: 0, mine: false }
     const on = !was.mine
     const set = (v) => setState((s) => ({ ...s, [id]: { ...(s[id] || {}), [emoji]: v } }))
@@ -51,7 +58,7 @@ export function useClipReactions(mission, clip) {
       const r = await fetch(`${API_BASE}/reactions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ line: id, clip, mission, emoji, on, visitor: visitorId(), get: line.get, speaker: line.speaker, text: line.text }),
+        body: JSON.stringify({ line: id, clip: clipOf(line), mission, emoji, on, visitor: visitorId(), get: line.get, speaker: line.speaker, text: line.text }),
       })
       if (!r.ok) throw new Error(r.status)
       const { count } = await r.json()
@@ -60,7 +67,7 @@ export function useClipReactions(mission, clip) {
       set(was)
     }
   }
-  return { get: (line) => state[lineId(clip, line)] || {}, toggle }
+  return { get: (line) => state[lineId(clipOf(line), line)] || {}, toggle }
 }
 
 export async function topReactions(mission) {

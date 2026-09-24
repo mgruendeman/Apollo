@@ -50,6 +50,7 @@ function readCommentary() {
 }
 
 const LISTEN_KEY = 'apollo-listen'
+const FILL_KEY = 'apollo-journal-fill'
 function readListen() {
   try {
     return localStorage.getItem(LISTEN_KEY) || 'tapes'
@@ -102,7 +103,22 @@ export default function Mission() {
   // Whole-mission playback from NASA's tapes, where a mission has them.
   const [rawTimeline, setRawTimeline] = useState(null)
   const [listen, setListenState] = useState(readListen)
-  const timeline = useMemo(() => withJournalFill(rawTimeline, clips), [rawTimeline, clips])
+  const [fill, setFillState] = useState(() => {
+    try {
+      return localStorage.getItem(FILL_KEY) !== 'off'
+    } catch {
+      return true
+    }
+  })
+  function setFill(next) {
+    try {
+      localStorage.setItem(FILL_KEY, next ? 'on' : 'off')
+    } catch {
+      /* just for this visit */
+    }
+    setFillState(next)
+  }
+  const timeline = useMemo(() => (fill ? withJournalFill(rawTimeline, clips) : rawTimeline), [rawTimeline, clips, fill])
   const tape = useMissionTape(timeline, mission?.number)
   const tapeMode = !!timeline && listen === 'tapes'
   function setListen(next) {
@@ -385,6 +401,8 @@ export default function Mission() {
             start={Math.min(0, timeline.segments[0].get)}
             end={mission.durationSeconds}
             phase={phases[tapeClipIndex]}
+            fill={fill}
+            onFill={setFill}
             chapter={clips[tapeClipIndex].sourceLabel.replace(SOURCE_PREFIX_RE, '')}
             onTermClick={setActiveGlossaryEntry}
           />

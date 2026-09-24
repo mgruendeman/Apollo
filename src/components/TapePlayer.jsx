@@ -9,23 +9,25 @@ const tapeClip = (h) => `tapes-h${h}`
 // The whole mission from NASA's tapes: one scrubber for all ~8 days, the
 // recorded pieces shaded, and NASA's transcript following along an hour at
 // a time. `tape` is useMissionTape()'s state and controls.
-export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, onTermClick }) {
+export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, fill, onFill, onTermClick }) {
   const [drag, setDrag] = useState(null)
   const shown = drag ?? tape.get
   const span = end - start
 
-  // NASA's lines by hour of the mission; the transcript shows the hour playing.
+  // NASA's lines by hour of the mission; the transcript shows the hour
+  // playing and those either side, so it reads on without a break.
   const byHour = useMemo(() => {
     const out = new Map()
     for (const l of lines || []) {
       const h = hourOf(l.g)
       if (!out.has(h)) out.set(h, [])
-      out.get(h).push({ get: formatGetSigned(l.g), offsetSeconds: l.g, speaker: l.s, text: l.t })
+      out.get(h).push({ get: formatGetSigned(l.g), offsetSeconds: l.g, speaker: l.s, text: l.t, clip: tapeClip(h) })
     }
     return out
   }, [lines])
   const hour = hourOf(tape.get)
-  const hourLines = byHour.get(hour) || []
+  const hours = [hour - 1, hour, hour + 1].filter((h) => byHour.has(h))
+  const shownLines = useMemo(() => hours.flatMap((h) => byHour.get(h)), [byHour, hours.join()]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const piece = tape.piece
   const source = tape.inGap ? null : piece?.journal
@@ -124,24 +126,33 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
         </span>
       </label>
 
-      {hourLines.length > 0 ? (
+      <label className="commentary-toggle">
+        <input type="checkbox" checked={fill} onChange={(e) => onFill(e.target.checked)} />
+        Fill gaps with journal clips
+        <span>
+          {fill
+            ? "On: where NASA's tapes have no recording, the Apollo Flight Journal's clip of that moment plays."
+            : "Off: only NASA's tapes play."}
+        </span>
+      </label>
+
+      {shownLines.length > 0 ? (
         <TranscriptPanel
-          key={`tape-hour-${hour}`}
-          lines={hourLines}
+          lines={shownLines}
           currentTime={tape.get}
           onTermClick={onTermClick}
           onLineSeek={(g) => tape.seek(g, true)}
           report={{
             missionName: mission.name,
-            clipId: `${tapeClip(hour)} (whole-mission tapes)`,
+            clipId: piece ? `the whole-mission recording (${piece.journal ? 'journal clip ' : 'NASA tape '}${piece.tape})` : 'the whole-mission recording',
             audioUrl: piece && (piece.url || tapeUrl(mission.number, piece.tape)),
             sourceUrl: source?.href,
           }}
           mission={mission.id}
-          clip={tapeClip(hour)}
+          clip={hours.map(tapeClip).join(',')}
         />
       ) : (
-        <p className="moment-description">No transcript for this hour of the mission.</p>
+        <p className="moment-description">No transcript for these hours of the mission.</p>
       )}
     </>
   )

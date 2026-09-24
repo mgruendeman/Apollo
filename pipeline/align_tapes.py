@@ -122,6 +122,90 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
     return out
 
 
+# NASA's text came through OCR: "We'11" for "We'll", "Ro6er", "Cha_lie", stray ")".
+FIXES = ROOT / 'pipeline' / 'transcript_fixes.json'
+
+
+def _core(word):
+    """A word without its surrounding punctuation: (lead, core, trail)."""
+    m = re.match(r"^([\"(\[]*)(.*?)([.,?!;:\"')\]]*)$", word)
+    return m.group(1), m.group(2), m.group(3)
+
+
+def _suspect(core):
+    """OCR damage: a character no word has ("_", "]", "%"), or a digit or
+    stray punctuation inside a lowercase word ("Ro6er", "Fin:race"). Codes
+    and callsigns ("SPS/G&N", "P76's", "TEI-4") are left alone."""
+    if not core:
+        return False
+    if re.search(r"[^A-Za-z0-9'.,?!;:/&\-]", core):
+        return True
+    letters = re.sub(r"[^A-Za-z]", '', core)
+    if not letters or letters.isupper() or re.fullmatch(r"[A-Z]+s", letters):
+        return False
+    return bool(re.search(r"[a-z][\d.,;:/][a-z]|[a-z]\d|\d[a-z]{2}", core))
+
+
+def repair_ocr(lines, segments, tape_words):
+    """Mend OCR damage in NASA's lines with what the tapes say.
+
+    For each line on a tape, its words are matched in order against the
+    recognised words at that moment; a damaged word ("Ro6er", "we'11") takes
+    the recognised word it lines up with when they're close in spelling.
+    Words the tape doesn't make out stay as NASA printed them. Then the plain
+    OCR slips: "11" inside a word is "ll", and a lone ")" goes."""
+    gets = [sg['get'] for sg in segments]
+    changed = 0
+    for line in lines:
+        text = re.sub(r"(?<=[A-Za-z'])11\b|\b11(?=[a-z])", 'll', line['t'])
+        text = re.sub(r"(?<=[A-Za-z'])1(?=[a-z])", 'l', text)
+        if text.count('(') < text.count(')'):
+            text = re.sub(r"\s+\)(?=\s|$)", '', text)
+        words = text.split()
+        bad = [i for i, w in enumerate(words) if _suspect(_core(w)[1])]
+        k = bisect.bisect_right(gets, line['g']) - 1
+        if bad and k >= 0:
+            sg = segments[k]
+            t = sg['from'] + (line['g'] - sg['get']) / sg['rate']
+            if sg['from'] - 5 <= t <= sg['to'] and sg['tape'] in tape_words:
+                tw, starts = tape_words[sg['tape']]
+                heard = [re.sub(r"[^a-z0-9']", '', w[2].lower()) for w in tw[bisect.bisect_left(starts, t - 10):bisect.bisect_right(starts, t + 10 + 0.6 * len(words))]]
+                mine = [_core(w)[1].lower() for w in words]
+                sm = difflib.SequenceMatcher(None, mine, heard, autojunk=False)
+                for op, i1, i2, j1, j2 in sm.get_opcodes():
+                    if op != 'replace' or i2 - i1 != j2 - j1:
+                        continue
+                    for i, j in zip(range(i1, i2), range(j1, j2)):
+                        lead, core, trail = _core(words[i])
+                        if i not in bad or not heard[j]:
+                            continue
+                        plain = re.sub(r"[^a-z]", '', core.lower())
+                        if difflib.SequenceMatcher(None, plain, heard[j]).ratio() >= 0.5:
+                            starts_sentence = i == 0 or words[i - 1].endswith(('.', '?', '!'))
+                            new = heard[j].capitalize() if core[:1].isupper() or starts_sentence else heard[j]
+                            words[i] = lead + new + trail
+                            changed += 1
+            text = ' '.join(words)
+        line['t'] = text
+    return changed
+
+
+def apply_fixes(mission, lines):
+    """Hand corrections from listeners' reports, pipeline/transcript_fixes.json:
+    {"11": [{"g": GET seconds, "from": "text as printed", "to": "corrected"}]}."""
+    fixes = json.loads(FIXES.read_text()).get(mission, []) if FIXES.exists() else []
+    done = 0
+    for f in fixes:
+        hit = [l for l in lines if abs(l['g'] - f['g']) <= 2 and f['from'] in l['t']]
+        for l in hit:
+            l['t'] = l['t'].replace(f['from'], f['to'])
+        if hit:
+            done += 1
+        else:
+            print(f"  fix not applied (text not found at GET {f['g']}): {f['from']!r}")
+    return done
+
+
 def use_journal_text(mission, lines):
     """NASA's transcript is a scan read by OCR ("Cha_lie", "Ro6er"); the
     journal's transcript is the same conversation, corrected by hand. Where
@@ -157,6 +241,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mission')
     ap.add_argument('--media', required=True)
+    ap.add_argument('--journal-text', action='store_true',
+                    help="take the Flight Journal's wording where a line matches (off: NASA's text, repaired from the tapes)")
     args = ap.parse_args()
     m = f'{int(args.mission):02d}'
     media = Path(args.media).expanduser()
@@ -165,13 +251,14 @@ def main():
             if r['getSeconds'] > 0 or r['speaker'] not in ('MS', '?')]
     name = speaker_names(m, rows)
 
-    segments, stats = [], {'anchored': 0, 'tried': 0}
+    segments, stats, tape_words = [], {'anchored': 0, 'tried': 0}, {}
     for tape, entry in sorted(placement.items()):
         asr = media / 'asr' / m / f'{tape}.json'
         if not entry.get('pieces') or not asr.exists():
             continue
         words = [(w[0], w[1], w[2], (tokens(w[2]) or [''])[0]) for w in json.loads(asr.read_text())]
         starts = [w[0] for w in words]
+        tape_words[tape] = (words, starts)
         anchors = []
         for piece in entry['pieces']:
             g0, g1 = piece['get_from'], piece['get_from'] + (piece['tape_to'] - piece['tape_from']) * piece['rate']
@@ -203,13 +290,16 @@ def main():
             b['get'] = round(b['get'] + cut, 2)
     segments = [s for s in segments if s['to'] - s['from'] > 1]
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text']} for r in rows]
-    fixed = use_journal_text(m, lines)
+    repaired = repair_ocr(lines, segments, tape_words)
+    fixed = use_journal_text(m, lines) if args.journal_text else 0
+    hand = apply_fixes(m, lines)
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps({'mission': m, 'segments': segments, 'lines': lines}, separators=(',', ':')))
     covered = sum((s['to'] - s['from']) * s['rate'] for s in segments) / 3600
     print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes; {len(segments)} segments covering {covered:.1f} h; "
-          f"{len(lines)} lines ({fixed} in the journal's corrected wording); written to {out}")
+          f"{len(lines)} lines ({repaired} words repaired from the tapes, {fixed} lines in the journal's wording, "
+          f"{hand} hand fixes); written to {out}")
 
 
 if __name__ == '__main__':

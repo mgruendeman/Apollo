@@ -7,7 +7,7 @@ export function lineReport({ missionName, clipId, audioUrl, sourceUrl }, line, o
     title: `${missionName} GET ${line.get}: transcript line`,
     context: [
       `${line.speaker}: "${line.text}"`,
-      `GET ${line.get}, ${clock} into clip ${clipId}`,
+      line.clip ? `GET ${line.get}, in ${clipId}` : `GET ${line.get}, ${clock} into clip ${clipId}`,
       audioUrl && `Audio: ${audioUrl}`,
       sourceUrl && `Source: ${sourceUrl}`,
     ]

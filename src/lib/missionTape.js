@@ -140,6 +140,20 @@ export function useMissionTape(timeline, mission) {
     [segments, playing, startPiece, cueOn],
   )
 
+  // The pieces can change under the player (the journal-clip fill switched
+  // on or off): pick up at the same mission time in the new set.
+  const now = useRef({ get, playing })
+  now.current = { get, playing }
+  const firstSegments = useRef(true)
+  useEffect(() => {
+    if (firstSegments.current || !segments.length) {
+      firstSegments.current = !segments.length
+      return
+    }
+    seek(now.current.get, now.current.playing)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [segments])
+
   // At the end of piece k: on to the next, straight away or (in real time)
   // after counting through the gap.
   const advance = useCallback(
