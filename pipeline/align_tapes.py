@@ -33,7 +33,12 @@ import numpy as np
 
 ROOT = Path(__file__).parent.parent
 TOKEN = re.compile(r"[a-z0-9]+")
-CREW = {'11': {'CDR': 'Armstrong', 'CMP': 'Collins', 'LMP': 'Aldrin'}}
+CREW = {'11': {'CDR': 'Armstrong', 'CMP': 'Collins', 'LMP': 'Aldrin'},
+        '12': {'CDR': 'Conrad', 'CMP': 'Gordon', 'LMP': 'Bean'},
+        '14': {'CDR': 'Shepard', 'CMP': 'Roosa', 'LMP': 'Mitchell'},
+        '15': {'CDR': 'Scott', 'CMP': 'Worden', 'LMP': 'Irwin'},
+        '16': {'CDR': 'Young', 'CMP': 'Mattingly', 'LMP': 'Duke'},
+        '17': {'CDR': 'Cernan', 'CMP': 'Evans', 'LMP': 'Schmitt'}}
 OTHER = {'CT': 'Comm Tech', 'SC': 'Spacecraft', 'MS': 'Mission Control', 'HORNET': 'USS Hornet',
          'SWIM': 'Swimmer', 'MSFN': 'Tracking station', 'PAO': 'Mission Control', 'IWO': 'Recovery'}
 SEARCH_S = 90          # how far from the piece's prediction to look for a line
@@ -254,8 +259,13 @@ def _unconfuse(core, vocab):
 
 # Stations, callsigns and ships OCR mangles most ("iicuston", "Tar_n_ri_e").
 PLACES = ['Apollo', 'Houston', 'Tananarive', 'Carnarvon', 'Canary', 'Goldstone', 'Guaymas', 'Honeysuckle', 'Hawaii',
-          'Vanguard', 'Madrid', 'Texas', 'Bermuda', 'Redstone', 'Mercury', 'Ascension', 'Columbia', 'Eagle',
-          'Tranquility', 'Canberra', 'Hornet', 'Guam', 'Antigua', 'Goddard']
+          'Vanguard', 'Madrid', 'Texas', 'Bermuda', 'Redstone', 'Mercury', 'Ascension', 'Canberra', 'Guam', 'Antigua',
+          'Goddard']
+CALLSIGNS = {'11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipper', 'Yankee', 'Intrepid', 'Hornet'],
+             '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
+             '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
+MISSION = {'n': '11'}   # the mission being processed (set in main)
+DIGIT_LOOKS = {'1': '[1!il|I]', '2': '[2Zz]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
 
 
 def _place(word):
@@ -263,7 +273,8 @@ def _place(word):
     letters = re.sub(r"[^a-z]", '', word.lower())
     if len(letters) < 4:
         return None
-    best = max(PLACES, key=lambda p: difflib.SequenceMatcher(None, letters, p.lower()).ratio())
+    places = PLACES + CALLSIGNS.get(MISSION['n'], [])
+    best = max(places, key=lambda p: difflib.SequenceMatcher(None, letters, p.lower()).ratio())
     ratio = difflib.SequenceMatcher(None, letters, best.lower()).ratio()
     if word[:1].isupper() or word[:1] in 'lti':   # names start with a capital (or its misreading: "tlouston")
         return best if ratio >= 0.72 else None
@@ -285,8 +296,9 @@ def _places(text, vocab):
                 out.append(lead + joined + t2)
                 i += 2
                 continue
-        fix = _place(core) if damaged and core not in PLACES else None
-        if fix is None and core not in PLACES and len(out) >= 2 and out[-2].lower() == 'this' and out[-1].lower() == 'is' \
+        known = PLACES + CALLSIGNS.get(MISSION['n'], [])
+        fix = _place(core) if damaged and core not in known else None
+        if fix is None and core not in known and len(out) >= 2 and out[-2].lower() == 'this' and out[-1].lower() == 'is' \
                 and core[:1].isupper() and difflib.SequenceMatcher(None, core.lower(), 'houston').ratio() >= 0.6:
             fix = 'Houston'
         out.append(lead + fix + trail if fix else words[i])
@@ -303,10 +315,14 @@ def _tidy(text, vocab):
     text = re.sub(r"^(?!\.\.\.)[.,;:'\s]+(?=[A-Z])", '', text)             # ".., We're"
     text = re.sub(r",\s*$", '.', text)                                     # a line ending "Over,"
     text = re.sub(r"(?<=\s)_(?=\d)|(?<=\d)_(?=\s|$)", '', text)            # "_103.0"
-    text = re.sub(r"\bApollo\s+[!1il|]{2}\b", 'Apollo 11', text)           # "Apollo !1", "Apollo il"
-    text = re.sub(r"\bAp[\w_!|]{2,5}\s+(?:11|[o0l1!|iI]{2,3})\b(?=,|\s)", 'Apollo 11', text)   # "Apo_I_ 11", "ApQiI oll"
+    n = str(int(MISSION['n']))                                                  # the mission's number, as OCR misreads it
+    looks = ''.join(DIGIT_LOOKS.get(ch, ch) for ch in n)
+    text = re.sub(r"\bApollo\s+" + looks + r"\b", 'Apollo ' + n, text)          # "Apollo !1", "Apollo lZ"
+    text = re.sub(r"\bAp[\w_!|]{2,5}\s+(?:" + looks + ('|[o0l1!|iI]{2,3}' if n == '11' else '') + r")\b(?=,|\s)",
+                  'Apollo ' + n, text)                                          # "Apo_I_ 11", "ApQiI oll"
     text = re.sub(r"\bC[O0][_{}\[\]M]{1,3}\s+TECH\b", 'COMM TECH', text)
-    text = re.sub(r"(?<![\w-])[!|][1l](?=[,.\s]|$)", '11', text)            # "!1,"
+    if n == '11':
+        text = re.sub(r"(?<![\w-])[!|][1l](?=[,.\s]|$)", '11', text)          # "!1,"
     text = re.sub(r"\bS[_-]?[bh]and\b", 'S-band', text)
     text = re.sub(r"\bP[O0][O0]\b", 'P00', text)                           # program 00 ("P-zero-zero")
     text = re.sub(r"(?<=[A-Za-z'])11\b|\b11(?=[a-z])", 'll', text)
@@ -647,6 +663,7 @@ def main():
                     help='play our cleaned copies (uploaded to <media>/audio/NN/<tape>.clean.m4a) instead of NASA\'s originals')
     args = ap.parse_args()
     m = f'{int(args.mission):02d}'
+    MISSION['n'] = m
     media = Path(args.media).expanduser()
     placement = json.loads((ROOT / 'pipeline' / 'tapes' / f'apollo{m}-placement.json').read_text())
     rows = [r for r in json.loads((ROOT / 'data' / 'nasa-transcripts' / f'as{m}-tec.json').read_text())

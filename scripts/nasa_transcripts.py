@@ -59,6 +59,8 @@ def edit_distance(a, b):
 
 def closest_speaker(raw):
     """The speaker code a smudged token was meant to be, or '?' if unreadable."""
+    # Apollo 12 on add the craft: "CDR-LM", "SC-CM" ("-I24" as misread)
+    raw = re.split(r'-(?:[LIC1][M2N]|I24|L24|CM)\b|-', raw.upper())[0] if '-' in raw else raw
     raw = re.sub(r'[^A-Z0-9]', '', raw.upper()).replace('24', 'M').replace('I', 'L')
     if not raw:
         return '?'
@@ -90,6 +92,45 @@ def group_lines(words):
         else:
             lines.append([w[1], [w]])
     return [sorted(ws) for _, ws in lines]
+
+
+def parse_hour(tokens):
+    """The day and hour of a time printed without its minutes and seconds
+    ("05 09 -- --", NASA's way through the moonwalks), in seconds, or None."""
+    text = ' '.join(tokens)
+    m = re.match(r'^\s*(\S\S)\s*(\S\S)\s*(?:[-.]{2,}\s*){1,2}$', text)
+    if not m:
+        return None
+    d, h = (re.sub(r'\D', '', x.translate(DIGIT_FIX)) for x in m.groups())
+    if len(d) != 2 or len(h) != 2 or int(h) > 23:
+        return None
+    return (int(d) * 24 + int(h)) * 3600
+
+
+def get_pattern(tokens):
+    """A time with smudged digits ("00 02 25 _1") as 8 characters, '?' for
+    each unreadable digit, or None when it isn't a time at all."""
+    chars = ''.join(t.translate(DIGIT_FIX) for t in tokens)
+    chars = re.sub(r'[^0-9_]', '', chars).replace('_', '?')
+    return chars if len(chars) == 8 and 0 < chars.count('?') <= 3 else None
+
+
+def fill_pattern(pattern, lo, hi):
+    """The earliest time matching the pattern between lo and hi, or None."""
+    import itertools
+    holes = [i for i, ch in enumerate(pattern) if ch == '?']
+    best = None
+    for digits in itertools.product('0123456789', repeat=len(holes)):
+        chars = list(pattern)
+        for i, dg in zip(holes, digits):
+            chars[i] = dg
+        d, h, m, sec = (int(''.join(chars[i:i + 2])) for i in (0, 2, 4, 6))
+        if h > 23 or m > 59 or sec > 59:
+            continue
+        t = ((d * 24 + h) * 60 + m) * 60 + sec
+        if lo <= t <= hi and (best is None or t < best):
+            best = t
+    return best
 
 
 def parse_get(tokens):
@@ -163,20 +204,30 @@ def extract(pdf_path):
                     rows[-1]['speaker'] = 'CMP'
                 rows[-1]['words'] += text
             elif spk:
-                get = parse_get([w[2] for w in ws if w[0] < col - 14])
-                rows.append({'getSeconds': get, 'speaker': closest_speaker(spk[0][2]),
+                stamp = [w[2] for w in ws if w[0] < col - 14]
+                rows.append({'getSeconds': parse_get(stamp), 'hour': parse_hour(stamp), 'pattern': get_pattern(stamp),
+                             'speaker': closest_speaker(spk[0][2]),
                              'words': text, 'page': pno + 1})
             elif rows and text and ws[0][0] >= text_x - 12:
                 rows[-1]['words'] += text
     # The typed times only go forward, so the rows whose times form the longest
     # non-decreasing run are trusted; the rest (misread or unreadable) take
     # the time of the trusted row before them.
+    # A row with only its day and hour starts no earlier than that hour.
+    # A time with a smudged digit or two takes the one value that fits
+    # between its trusted neighbours.
     trusted = longest_forward_run([r['getSeconds'] for r in rows])
+    nxt, following = None, [None] * len(rows)
+    for i in range(len(rows) - 1, -1, -1):
+        following[i] = nxt
+        if i in trusted:
+            nxt = rows[i]['getSeconds']
     last = 0
     for i, r in enumerate(rows):
         r['getApprox'] = i not in trusted
         if r['getApprox']:
-            r['getSeconds'] = last
+            filled = fill_pattern(r['pattern'], last, following[i] if following[i] is not None else 10 ** 7) if r['pattern'] else None
+            r['getSeconds'], r['getApprox'] = (filled, False) if filled is not None else (max(last, r['hour'] or 0), True)
         last = r['getSeconds']
     vocab = {w[2].lower().strip('.,?!;:') for r in rows for w in r['words']}
     out = []
@@ -184,7 +235,7 @@ def extract(pdf_path):
         text = clean_text(' '.join(w[2] for w in r['words']), vocab)
         if not text:
             continue
-        out.append({'getSeconds': r['getSeconds'], 'getApprox': r['getApprox'], 'speaker': r['speaker'],
+        out.append({'getSeconds': r['getSeconds'], 'getApprox': r['getApprox'], 'hourOnly': r['hour'] is not None, 'speaker': r['speaker'],
                     'text': text, 'unsure': [w[2] for w in r['words'] if w[3] < 80], 'page': r['page']})
     return out
 
