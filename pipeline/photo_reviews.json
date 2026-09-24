@@ -4,9 +4,15 @@
   "contrast": 1,
   "verdict": "good"
  },
+ "AS08-13-2239": {
+  "verdict": "reject"
+ },
  "AS08-13-2242": {
   "brightness": 1,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS08-13-2262": {
   "verdict": "good"
  },
  "AS08-13-2280": {
@@ -24,12 +30,18 @@
   "contrast": 1,
   "verdict": "good"
  },
+ "AS08-14-2471": {
+  "verdict": "reject"
+ },
  "AS08-14-2472": {
   "brightness": 1,
   "contrast": 1,
   "saturation": 1,
   "shadows": -4,
   "straighten": -2,
+  "verdict": "reject"
+ },
+ "AS08-14-2494": {
   "verdict": "reject"
  },
  "AS08-16-2581": {
@@ -41,6 +53,9 @@
   "brightness": 2,
   "contrast": 1,
   "highlights": 6,
+  "verdict": "good"
+ },
+ "AS08-17-2710": {
   "verdict": "good"
  },
  "AS08-18-2831": {
@@ -59,10 +74,16 @@
   "contrast": 1,
   "verdict": "good"
  },
+ "AS09-20-3096": {
+  "verdict": "good"
+ },
  "AS09-20-3104C": {
   "brightness": 2,
   "contrast": 1,
   "verdict": "reject"
+ },
+ "AS09-21-3194": {
+  "verdict": "good"
  },
  "AS09-21-3233": {
   "brightness": 4,
@@ -94,6 +115,17 @@
   "rotate": 270,
   "verdict": "reject"
  },
+ "AS09-22-3408": {
+  "brightness": -1,
+  "verdict": "good"
+ },
+ "AS09-22-3447": {
+  "rotate": 270,
+  "verdict": "good"
+ },
+ "AS09-22-3453": {
+  "verdict": "good"
+ },
  "AS09-24-3657": {
   "brightness": 2,
   "contrast": 1,
@@ -114,6 +146,10 @@
   "contrast": 1,
   "verdict": "good"
  },
+ "AS10-28-4044": {
+  "rotate": 270,
+  "verdict": "good"
+ },
  "AS10-30-4441": {
   "contrast": -1,
   "verdict": "good"
@@ -121,6 +157,10 @@
  "AS10-31-4537": {
   "brightness": 2,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS10-31-4648": {
+  "rotate": 90,
   "verdict": "good"
  },
  "AS10-32-4766": {
@@ -134,6 +174,13 @@
   "shadows": -3,
   "verdict": "good"
  },
+ "AS10-33-4956": {
+  "verdict": "good"
+ },
+ "AS10-33-4972": {
+  "rotate": 90,
+  "verdict": "good"
+ },
  "AS10-34-5171": {
   "contrast": 1,
   "verdict": "good"
@@ -144,6 +191,9 @@
   "highlights": 8,
   "shadows": -4,
   "verdict": "good"
+ },
+ "AS10-35-5290": {
+  "verdict": "reject"
  },
  "AS11-36-5337": {
   "brightness": 2,
@@ -173,6 +223,9 @@
   "shadows": -6,
   "verdict": "good"
  },
+ "AS11-38-5732": {
+  "verdict": "good"
+ },
  "AS11-40-5875": {
   "brightness": 2,
   "contrast": -1,
@@ -181,6 +234,13 @@
  "AS11-40-5964": {
   "brightness": 2,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS11-42-6263": {
+  "brightness": -5,
+  "verdict": "good"
+ },
+ "AS11-43-6405": {
   "verdict": "good"
  },
  "AS11-43-6406": {
@@ -192,6 +252,12 @@
   "brightness": 2,
   "contrast": 1,
   "verdict": "reject"
+ },
+ "AS11-44-6680": {
+  "verdict": "good"
+ },
+ "AS11-45-6700A": {
+  "verdict": "good"
  },
  "AS12-46-6726": {
   "brightness": -2,
@@ -212,10 +278,17 @@
  "AS12-48-7087": {
   "verdict": "good"
  },
+ "AS12-49-7192": {
+  "brightness": -2,
+  "verdict": "good"
+ },
  "AS12-53-7807": {
   "brightness": 2,
   "contrast": 1,
   "verdict": "reject"
+ },
+ "AS12-54-7978": {
+  "verdict": "good"
  },
  "AS12-54-8018": {
   "brightness": -3,
@@ -226,6 +299,15 @@
   "brightness": -2,
   "contrast": 2,
   "verdict": "good"
+ },
+ "AS12-56A-8396": {
+  "verdict": "reject"
+ },
+ "AS12-56B-8334": {
+  "verdict": "reject"
+ },
+ "AS12-56B-8337": {
+  "verdict": "reject"
  },
  "AS12-57-8451B": {
   "brightness": 2,
@@ -243,6 +325,9 @@
   "contrast": -1,
   "verdict": "good"
  },
+ "AS13-60-8654": {
+  "verdict": "good"
+ },
  "AS13-60-8659": {
   "brightness": 2,
   "contrast": 1,
@@ -251,6 +336,9 @@
  "AS13-60-8660": {
   "brightness": 1,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS13-60-8720": {
   "verdict": "good"
  },
  "AS13-61-8805": {
@@ -268,9 +356,18 @@
   "contrast": -3,
   "verdict": "reject"
  },
+ "AS13-62-8885": {
+  "verdict": "good"
+ },
+ "AS13-62-8905": {
+  "verdict": "reject"
+ },
  "AS13-62-8929": {
   "brightness": 2,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS13-62-8988": {
   "verdict": "good"
  },
  "AS14-64-9117": {
@@ -281,6 +378,9 @@
  "AS14-64-9198": {
   "brightness": -2,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS14-66-09227": {
   "verdict": "good"
  },
  "AS14-66-09244": {
@@ -303,6 +403,9 @@
   "contrast": -1,
   "verdict": "good"
  },
+ "AS14-68-9454": {
+  "verdict": "good"
+ },
  "AS14-69-9533": {
   "contrast": -1,
   "verdict": "good"
@@ -316,10 +419,25 @@
   "contrast": 1,
   "verdict": "good"
  },
+ "AS14-70-9800": {
+  "verdict": "good"
+ },
+ "AS14-74-10219": {
+  "verdict": "good"
+ },
+ "AS14-75-10298": {
+  "verdict": "reject"
+ },
+ "AS15-81-11043": {
+  "verdict": "reject"
+ },
  "AS15-82-11168": {
   "brightness": -2,
   "contrast": -1,
   "verdict": "good"
+ },
+ "AS15-83-11229": {
+  "verdict": "reject"
  },
  "AS15-84-11267": {
   "brightness": -1,
@@ -363,9 +481,18 @@
   "shadows": -1,
   "verdict": "good"
  },
+ "AS15-90-12198": {
+  "verdict": "reject"
+ },
  "AS15-90-12287": {
   "brightness": 2,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS15-92-12557": {
+  "verdict": "reject"
+ },
+ "AS15-94-12830": {
   "verdict": "good"
  },
  "AS15-98-13392": {
@@ -373,15 +500,25 @@
   "contrast": 1,
   "verdict": "reject"
  },
+ "AS16-104-17032": {
+  "verdict": "good"
+ },
  "AS16-108-17622": {
   "brightness": -4,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS16-110-17870": {
   "verdict": "good"
  },
  "AS16-111-18129": {
   "brightness": 2,
   "contrast": 1,
   "verdict": "reject"
+ },
+ "AS16-111-18142": {
+  "brightness": -3,
+  "verdict": "good"
  },
  "AS16-111-18159": {
   "brightness": -4,
@@ -407,6 +544,11 @@
   "note": "Crop fixed in the pipeline: the frame sits higher on this roll",
   "verdict": "good"
  },
+ "AS16-117-18818": {
+  "brightness": -1,
+  "contrast": 1,
+  "verdict": "good"
+ },
  "AS16-119-19091": {
   "brightness": 1,
   "contrast": 1,
@@ -415,6 +557,10 @@
  "AS16-120-19332": {
   "brightness": 2,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS16-121-19385": {
+  "rotate": 180,
   "verdict": "good"
  },
  "AS16-121-19399": {
@@ -432,6 +578,10 @@
   "contrast": 1,
   "verdict": "good"
  },
+ "AS17-135-20546": {
+  "brightness": -3,
+  "verdict": "good"
+ },
  "AS17-135-20598": {
   "brightness": -1,
   "contrast": -1,
@@ -443,6 +593,12 @@
   "contrast": -1,
   "highlights": -6,
   "shadows": -4,
+  "verdict": "good"
+ },
+ "AS17-142-21742": {
+  "verdict": "good"
+ },
+ "AS17-145-22164": {
   "verdict": "good"
  },
  "AS17-145-22285": {
@@ -457,9 +613,15 @@
   "shadows": -3,
   "verdict": "good"
  },
+ "AS17-146-22415": {
+  "verdict": "good"
+ },
  "AS17-147-22465": {
   "brightness": 2,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS17-147-22480": {
   "verdict": "good"
  },
  "AS17-147-22523": {
