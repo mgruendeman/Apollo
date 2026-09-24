@@ -62,12 +62,15 @@ function buildRows(types) {
 // or after them: a chapter that includes the landing is the descent.
 const EVENT_PHASES = ['launch', 'landing', 'ascent', 'splashdown']
 
-// The phase a chapter is about, for its icon: a key event it contains, or
-// else the phase most of its clips are in.
-function chapterPhase(phases, start, end) {
+// The phase a chapter is about, for its icon: a key event among its own
+// clips, or else the phase most of them are in. Only the chapter's own page
+// counts: a chapter also holds the other journal's clips from the same hours
+// (Surface Journal pages take in the Flight Journal's CSM-only clips), which
+// would otherwise swing a surface chapter's icon to lunar orbit.
+function chapterPhase(phases, clips, start, end, label) {
   const counts = {}
   for (let i = start; i < end; i++) {
-    if (phases?.[i]) counts[phases[i]] = (counts[phases[i]] || 0) + 1
+    if (phases?.[i] && clips[i].sourceLabel === label) counts[phases[i]] = (counts[phases[i]] || 0) + 1
   }
   const event = EVENT_PHASES.find((p) => counts[p])
   return event || Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0]
@@ -143,7 +146,7 @@ export default function MissionTimeline({ mission, clips, transcripts, phases, a
           <details key={ch.startIndex} open={ci === activeChapterIndex} className={meta.className}>
             <summary>
               <span className="chapter-phase">
-                <PhaseIcon phase={chapterPhase(phases, ch.startIndex, ch.endIndex)} />
+                <PhaseIcon phase={chapterPhase(phases, clips, ch.startIndex, ch.endIndex, ch.label)} />
               </span>
               <span className="chapter-get">
                 <span>{chapterClips[0].get}</span>

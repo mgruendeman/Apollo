@@ -6,7 +6,7 @@ import { API_BASE } from '../config'
 // many likes one connection can give per day).
 const KEY = 'apollo-visitor'
 let visitor = null
-function visitorId() {
+export function visitorId() {
   if (visitor) return visitor
   try {
     visitor = localStorage.getItem(KEY)

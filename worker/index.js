@@ -16,8 +16,15 @@ const SCHEMA = [
      context TEXT, contact TEXT, page TEXT, status TEXT NOT NULL DEFAULT 'new')`,
   `CREATE TABLE IF NOT EXISTS reviews (id TEXT PRIMARY KEY, body TEXT NOT NULL, updated TEXT NOT NULL)`,
   `CREATE TABLE IF NOT EXISTS limits (key TEXT PRIMARY KEY, n INTEGER NOT NULL)`,
+  `CREATE TABLE IF NOT EXISTS reactions (line TEXT NOT NULL, emoji TEXT NOT NULL, visitor TEXT NOT NULL, at TEXT NOT NULL,
+     PRIMARY KEY (line, emoji, visitor))`,
+  `CREATE TABLE IF NOT EXISTS reaction_lines (line TEXT PRIMARY KEY, mission TEXT NOT NULL, clip TEXT NOT NULL,
+     get TEXT, speaker TEXT, text TEXT)`,
+  `CREATE INDEX IF NOT EXISTS reaction_lines_clip ON reaction_lines (mission, clip)`,
 ]
-const LIMITS = { like: 300, report: 20 } // per scrambled IP address, per day
+const LIMITS = { like: 300, report: 20, react: 500 } // per scrambled IP address, per day
+// 🤣 funny, 😲 wow, ‼️ big moment, ❤️ moving, 😬 tense (src/lib/reactions.js has the same list)
+const EMOJIS = ['🤣', '😲', '‼️', '❤️', '😬']
 const SESSION_DAYS = 30
 
 let schemaReady = null
@@ -129,6 +136,50 @@ async function setLike(env, request) {
   return json({ photo, count: row.n, liked: !!like })
 }
 
+// ---------- reactions to transcript lines ----------
+const LINE = /^[A-Za-z0-9_.:|~-]{6,120}$/
+const MISSION = /^\d{2}$/
+
+async function clipReactions(env, url) {
+  const mission = url.searchParams.get('mission') || ''
+  const clipId = url.searchParams.get('clip') || ''
+  const visitor = url.searchParams.get('visitor') || ''
+  if (!MISSION.test(mission) || !PHOTO.test(clipId)) return bad(400, 'mission and clip needed')
+  const rows = await env.DB.prepare(`SELECT r.line, r.emoji, COUNT(*) AS n, SUM(r.visitor = ?3) AS mine
+      FROM reactions r JOIN reaction_lines l ON l.line = r.line
+      WHERE l.mission = ?1 AND l.clip = ?2 GROUP BY r.line, r.emoji`).bind(mission, clipId, visitor).all()
+  return json({ reactions: rows.results })
+}
+
+async function topReactions(env, url) {
+  const mission = url.searchParams.get('mission') || ''
+  if (!MISSION.test(mission)) return bad(400, 'mission needed')
+  const rows = await env.DB.prepare(`SELECT l.line, l.clip, l.get, l.speaker, l.text, COUNT(*) AS total,
+      GROUP_CONCAT(r.emoji, ' ') AS emojis
+      FROM reactions r JOIN reaction_lines l ON l.line = r.line
+      WHERE l.mission = ?1 GROUP BY l.line ORDER BY total DESC, l.get LIMIT 30`).bind(mission).all()
+  return json({ top: rows.results })
+}
+
+async function setReaction(env, request) {
+  const b = await request.json().catch(() => ({}))
+  if (!LINE.test(b.line || '') || !VISITOR.test(b.visitor || '') || !EMOJIS.includes(b.emoji) ||
+      !MISSION.test(b.mission || '') || !PHOTO.test(b.clip || '')) return bad(400, 'line, clip, mission, emoji and visitor needed')
+  if (b.on) {
+    if (!(await underLimit(env, request, 'react'))) return bad(429, 'Too many reactions from this connection today.')
+    await env.DB.batch([
+      env.DB.prepare(`INSERT OR IGNORE INTO reactions (line, emoji, visitor, at) VALUES (?1, ?2, ?3, ?4)`)
+        .bind(b.line, b.emoji, b.visitor, new Date().toISOString()),
+      env.DB.prepare(`INSERT INTO reaction_lines (line, mission, clip, get, speaker, text) VALUES (?1, ?2, ?3, ?4, ?5, ?6)
+        ON CONFLICT(line) DO NOTHING`).bind(b.line, b.mission, b.clip, clip(b.get, 12), clip(b.speaker, 60), clip(b.text, 400)),
+    ])
+  } else {
+    await env.DB.prepare(`DELETE FROM reactions WHERE line = ?1 AND emoji = ?2 AND visitor = ?3`).bind(b.line, b.emoji, b.visitor).run()
+  }
+  const row = await env.DB.prepare(`SELECT COUNT(*) AS n FROM reactions WHERE line = ?1 AND emoji = ?2`).bind(b.line, b.emoji).first()
+  return json({ line: b.line, emoji: b.emoji, count: row.n, on: !!b.on })
+}
+
 // ---------- problem reports ----------
 const clip = (v, n) => (typeof v === 'string' ? v.slice(0, n) : '')
 
@@ -199,6 +250,9 @@ export default {
       if (pathname === '/api/likes/top' && method === 'GET') return topLikes(env, url)
       if (pathname === '/api/likes' && method === 'POST') return setLike(env, request)
       if (pathname === '/api/reports' && method === 'POST') return addReport(env, request)
+      if (pathname === '/api/reactions' && method === 'GET') return clipReactions(env, url)
+      if (pathname === '/api/reactions/top' && method === 'GET') return topReactions(env, url)
+      if (pathname === '/api/reactions' && method === 'POST') return setReaction(env, request)
       if (pathname === '/api/review/login' && method === 'POST') return login(env, request)
 
       if (pathname.startsWith('/api/review/')) {

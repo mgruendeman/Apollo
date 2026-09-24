@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import LikeButton from './LikeButton'
 import AudioPlayer from './AudioPlayer'
 import SpeakerAvatar from './SpeakerAvatar'
 import GlossaryText from './GlossaryText'
@@ -42,6 +43,7 @@ function PhotoStage({ photos }) {
     <figure className="immersive-photo">
       <img key={photo.src} src={photo.src} alt={photo.caption} className={photo.scan ? 'is-scan' : undefined} />
       <figcaption>
+        {photo.key && <LikeButton photo={photo} />}
         <a href={photo.sourceUrl} target="_blank" rel="noreferrer">
           {photo.credit} ↗
         </a>
@@ -99,6 +101,7 @@ export default function ImmersiveView({
       credit: p.credit,
       sourceUrl: p.sourceUrl,
       scan: p.scan,
+      key: p.key,
     }))
     if (!highlightPhoto) return matched
     return [{ ...highlightPhoto, src: `${import.meta.env.BASE_URL}${highlightPhoto.src}` }, ...matched]
