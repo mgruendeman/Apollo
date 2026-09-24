@@ -28,7 +28,8 @@ ROOT = Path(__file__).parent.parent
 SR, HOP = 4000, 400          # loudness envelope at 10 frames a second
 FPS = SR / HOP
 MIN_CLIP_S = 20              # shorter clips match too loosely to trust
-GOOD = 0.6                   # correlation needed to count as found
+GOOD = 0.6                   # correlation recorded as a possible match
+STRONG = 0.85                # correlation needed to place a tape by it
 
 
 def envelope(path, cache):
@@ -67,31 +68,36 @@ def kind(clip_id):
     return 'broadcast' if 'pao' in c else 'onboard' if c.endswith('ob') or 'ob.' in c or '_ob' in c else 'air-to-ground'
 
 
-def fit(points):
-    """GET = start + rate * t from (t, GET, r) points: the largest set that
-    agrees within 10 s of a line, least-squares."""
-    pts = np.array(points, dtype=float)
-    best = None
-    for i in range(len(pts)):
-        for j in range(i, len(pts)):
-            if j == i:
-                rate = 1.0
-            elif abs(pts[j, 0] - pts[i, 0]) > 60:
-                rate = (pts[j, 1] - pts[i, 1]) / (pts[j, 0] - pts[i, 0])
-                if not 0.4 < rate < 2.5:
-                    continue
-            else:
-                continue
-            start = pts[i, 1] - rate * pts[i, 0]
-            ok = np.abs(pts[:, 1] - (start + rate * pts[:, 0])) <= 10
-            if best is None or ok.sum() > best.sum():
-                best = ok
-    sel = pts[best]
-    if len(sel) >= 2 and np.ptp(sel[:, 0]) > 60:
-        rate, start = np.polyfit(sel[:, 0], sel[:, 1], 1)
-    else:
-        rate, start = 1.0, float(np.median(sel[:, 1] - sel[:, 0]))
-    return float(start), float(rate), int(len(sel))
+def segments(found, seconds):
+    """Split a tape into pieces of continuous mission time.
+
+    Recorders were often stopped through quiet stretches, so one tape holds
+    several pieces of the mission. Anchors (journal clips found in the
+    tape, in tape order) whose GET - tape-time offsets agree within 20 s
+    belong to one piece; a jump in offset starts a new piece. Each piece
+    runs from midway between its first anchor and the previous piece's last
+    (the exact cut is refined later, when the transcript is timed to the
+    tape) to midway to the next piece."""
+    pieces = []
+    for f in sorted(found, key=lambda f: f['at']):
+        off = f['get'] - f['at']
+        if pieces and abs(off - pieces[-1]['anchors'][-1][1]) <= 20:
+            pieces[-1]['anchors'].append((f['at'], off, f['r'], f['clip']))
+        else:
+            pieces.append({'anchors': [(f['at'], off, f['r'], f['clip'])]})
+    # a lone anchor is trusted only if it matched very strongly
+    pieces = [p for p in pieces if len(p['anchors']) >= 2 or p['anchors'][0][2] >= 0.95]
+    out = []
+    for i, p in enumerate(pieces):
+        ats = np.array([x[0] for x in p['anchors']])
+        offs = np.array([x[1] for x in p['anchors']])
+        rate = 1.0 + (np.polyfit(ats, offs, 1)[0] if len(ats) >= 2 and np.ptp(ats) > 300 else 0.0)   # drift of the tape speed
+        lo = 0.0 if i == 0 else (pieces[i - 1]['anchors'][-1][0] + ats[0]) / 2
+        hi = seconds if i == len(pieces) - 1 else (ats[-1] + pieces[i + 1]['anchors'][0][0]) / 2
+        start_get = float(np.median(offs - (rate - 1.0) * ats)) + lo * rate   # GET at tape time lo
+        out.append({'tape_from': round(lo, 1), 'tape_to': round(hi, 1), 'get_from': round(start_get, 1),
+                    'rate': round(float(rate), 5), 'anchors': len(ats), 'clips': [x[3] for x in p['anchors']]})
+    return out
 
 
 def main():
@@ -130,21 +136,23 @@ def main():
                 points.append((i / FPS, c['getSeconds'], r))
                 kinds[kind(c['id'])] = kinds.get(kind(c['id']), 0) + 1
                 found.append({'clip': c['id'], 'at': round(i / FPS, 1), 'get': c['getSeconds'], 'r': round(r, 2)})
-        entry = {'seconds': round(len(te) / FPS), 'matches': len(points), 'kinds': kinds, 'found': found}
-        if points:
-            start, rate, agree = fit(points)
-            entry.update({'start_get': round(start, 1), 'rate': round(rate, 4), 'agreeing': agree})
-        placement[tape.stem] = entry
-        out = ROOT / 'pipeline' / 'tapes' / f'apollo{m}-placement.json'
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(placement, indent=1))
-        if 'start_get' in entry:
-            s = int(entry['start_get'])
-            print(f"[{n}/{len(tapes)}] {tape.stem}: GET {s // 3600:03d}:{s % 3600 // 60:02d}:{s % 60:02d}, rate {entry['rate']}, "
-                  f"{entry['agreeing']}/{len(points)} matches agree, {kinds}", flush=True)
-        else:
-            print(f'[{n}/{len(tapes)}] {tape.stem}: no journal clip found in it', flush=True)
+        placement[tape.stem] = {'seconds': round(len(te) / FPS), 'found': found, 'kinds': kinds}
+        print(f'[{n}/{len(tapes)}] {tape.stem}: {len(found)} journal clips found', flush=True)
 
+    # A clip found strongly in 3+ tapes is generic sound (tone, static), not a place.
+    from collections import Counter
+    everywhere = Counter(f['clip'] for e in placement.values() for f in e['found'] if f['r'] >= 0.8)
+    covered = 0.0
+    for stem, e in placement.items():
+        strong = [f for f in e['found'] if f['r'] >= STRONG and everywhere[f['clip']] < 3]
+        e['pieces'] = segments(strong, e['seconds'])
+        covered += sum(p['tape_to'] - p['tape_from'] for p in e['pieces'])
+        where = ', '.join(f"{int(p['get_from']) // 3600:03d}:{int(p['get_from']) % 3600 // 60:02d}" for p in e['pieces'][:6])
+        print(f"{stem}: {len(e['pieces'])} pieces {where}{' ...' if len(e['pieces']) > 6 else ''}")
+    out = ROOT / 'pipeline' / 'tapes' / f'apollo{m}-placement.json'
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(placement, indent=1))
+    print(f'placed {covered / 3600:.1f} h of tape; written to {out}')
 
 if __name__ == '__main__':
     main()
