@@ -49,6 +49,71 @@
    "g": 1110,
    "from": "your I delta azimuth",
    "to": "your delta azimuth"
+  },
+  {
+   "g": 2344,
+   "from": "VHF t Simplex",
+   "to": "VHF A Simplex"
+  },
+  {
+   "g": 2371,
+   "from": "LOS Tane_ua%*ive;'AO$ Carnarvon",
+   "to": "LOS Tananarive; AOS Carnarvon"
+  },
+  {
+   "g": 3257,
+   "from": "lucled",
+   "to": "lucked"
+  },
+  {
+   "g": 5360,
+   "from": "standing by for",
+   "to": "standing by for instructions."
+  },
+  {
+   "g": 5360,
+   "from": "tions. _\u00b0_\u00a7t6n. Roger.",
+   "to": "Houston. Roger."
+  },
+  {
+   "g": 5475,
+   "from": "noz",
+   "to": "not"
+  },
+  {
+   "g": 6216,
+   "from": "RYROARM",
+   "to": "PYRO ARM"
+  },
+  {
+   "g": 6323,
+   "from": "]O-minute",
+   "to": "10-minute"
+  },
+  {
+   "g": 6323,
+   "from": "w,_re",
+   "to": "were"
+  },
+  {
+   "g": 6385,
+   "from": "Yol can",
+   "to": "You can"
+  },
+  {
+   "g": 6385,
+   "from": "Wo_ld you verify thst",
+   "to": "Would you verify that"
+  },
+  {
+   "g": 7751,
+   "from": "throuMh Tar_n_ri_e .'",
+   "to": "through Tananarive."
+  },
+  {
+   "g": 2371,
+   "from": "this is iicuston",
+   "to": "this is Houston"
   }
  ]
 }

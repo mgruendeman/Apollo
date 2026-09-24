@@ -19,10 +19,10 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
   const byHour = useMemo(() => {
     const out = new Map()
     for (const l of lines || []) {
-      if (l.c === 'pao' && !announcer) continue
+      if (l.c === 'pao' && !announcer && !l.o) continue   // (where he talks over the crew he can't be cut)
       const h = hourOf(l.g)
       if (!out.has(h)) out.set(h, [])
-      out.get(h).push({ get: formatGetSigned(l.g), offsetSeconds: l.g, speaker: l.s, text: l.t, channel: l.c, clip: tapeClip(h) })
+      out.get(h).push({ get: formatGetSigned(l.g), offsetSeconds: l.g, speaker: l.s, text: l.t, channel: l.c, over: l.o, unheard: l.n, clip: tapeClip(h) })
     }
     return out
   }, [lines, announcer])

@@ -2617,3 +2617,28 @@ a.astronaut-flight:hover {
   font-size: 0.85rem;
   color: var(--text-dim);
 }
+
+/* the announcer over the crew; calls missing from the broadcast copy */
+button.transcript-channel-tag {
+  background: none;
+  font: inherit;
+  font-size: 0.66rem;
+  cursor: pointer;
+}
+.transcript-channel-tag.is-note {
+  border-style: dashed;
+}
+.transcript-note {
+  display: block;
+  margin: 4px 0;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+.transcript-line.is-over .transcript-text,
+.transcript-line.is-over .transcript-speaker,
+.transcript-line.is-unheard .transcript-text {
+  opacity: 0.55;
+}
+.transcript-line.is-unheard .transcript-text {
+  font-style: italic;
+}

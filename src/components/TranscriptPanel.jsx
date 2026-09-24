@@ -13,6 +13,11 @@ const CHANNEL_TAGS = {
   pao: 'Mission Control',
 }
 
+const OVER_NOTE =
+  "NASA's recordings are the broadcast mix: the announcer and the crew on one track. Where he talks over them, his voice can't be taken out, so he stays even with the announcer switched off."
+const UNHEARD_NOTE =
+  "NASA's transcript was typed from the full air-to-ground loop. This recording is the broadcast copy, which missed this call; it's shown so the conversation reads on."
+
 // Keyed by moment.id from the parent, so switching clips mounts a fresh
 // instance instead of needing an effect to reset scroll position.
 //
@@ -56,7 +61,9 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
               <div
                 key={`${line.get}-${i}`}
                 ref={i === activeIndex ? activeRef : null}
-                className={i === activeIndex ? 'transcript-line is-active' : 'transcript-line'}
+                className={['transcript-line', i === activeIndex && 'is-active', line.over && line.channel === 'pao' && 'is-over', line.unheard && 'is-unheard']
+                  .filter(Boolean)
+                  .join(' ')}
                 onClick={() => {
                   if (!consumeClick()) onLineSeek?.(offsets[i])
                 }}
@@ -73,6 +80,10 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
                   {CHANNEL_TAGS[line.channel] && (
                     <span className="transcript-channel-tag">{CHANNEL_TAGS[line.channel]}</span>
                   )}
+                  {line.over && (
+                    <NoteTag label={line.channel === 'pao' ? 'talking over the crew' : 'announcer talking over'} note={OVER_NOTE} />
+                  )}
+                  {line.unheard && <NoteTag label="not on this recording" note={UNHEARD_NOTE} />}
                   <span className="transcript-get">{line.get}</span>
                   <span className="transcript-text">
                     <GlossaryText text={line.text} onTermClick={onTermClick} notes />
@@ -101,6 +112,29 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
       </div>
       {reportDetails && <ReportDialog title={reportDetails.title} context={reportDetails.context} onClose={closeReport} />}
     </div>
+  )
+}
+
+// A small tag on a line that explains itself when tapped (a tooltip
+// wouldn't show on a phone).
+function NoteTag({ label, note }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <button
+        type="button"
+        className="transcript-channel-tag is-note"
+        aria-expanded={open}
+        onPointerDown={(e) => e.stopPropagation()}
+        onClick={(e) => {
+          e.stopPropagation()
+          setOpen(!open)
+        }}
+      >
+        {label} ⓘ
+      </button>
+      {open && <span className="transcript-note">{note}</span>}
+    </>
   )
 }
 
