@@ -15,11 +15,17 @@ article { background:var(--surface); border:1px solid var(--rule); border-radius
 .text { margin:0; }
 a { color:var(--accent); }
 .empty { color:var(--muted); }
+.actions { display:flex; gap:8px; align-items:center; margin-top:4px; }
+.actions button, .fix button { font:inherit; padding:4px 12px; border:1px solid var(--rule); border-radius:999px; background:var(--surface); color:var(--ink); cursor:pointer; }
+button.play { border-color:var(--accent); color:var(--accent); }
+.fix { display:grid; gap:6px; margin-top:6px; }
+.fix textarea { font:inherit; padding:8px; border:1px solid var(--rule); border-radius:6px; background:var(--ground); color:var(--ink); resize:vertical; }
 </style>
 <main>
   <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a></p>
   <h1>Transcript lines to check</h1>
-  <p class="intro">Lines ranked by how doubtful they look: damaged words, a speaker or time the scan lost, or words the tape hears differently. Tap one to open the site at that moment; press and hold the line there to report the fix. Lines already fixed drop off the list at the next run.</p>
+  <p class="intro">Lines ranked by how doubtful they look: damaged words, a speaker or time the scan lost, or words the tape hears differently. Press ▶ to hear the line here (a few seconds either side, as often as you like), then Report to say what it should be. Lines already fixed drop off the list at the next run.</p>
+  <audio id="player" preload="none"></audio>
   <div class="bar" role="group" aria-label="Mission"><button data-m="11" aria-pressed="true">Apollo 11</button><button data-m="12" aria-pressed="false">Apollo 12</button><button data-m="14" aria-pressed="false">Apollo 14</button></div>
   <div id="list"></div>
 </main>
@@ -33,13 +39,54 @@ async function load() {
   const r = await fetch('transcript/apollo' + mission + '.json')
   if (!r.ok) { list.innerHTML = '<p class="empty">No list for this mission yet.</p>'; return }
   const rows = await r.json()
-  list.innerHTML = rows.length ? `<p class="meta">${rows.length} lines</p>` + rows.map((x) => `<article>
+  list.innerHTML = rows.length ? `<p class="meta">${rows.length} lines</p>` + rows.map((x, i) => `<article>
       <span class="q">${x.q}</span>
       <div class="meta"><a href="/#/mission/${mission}?at=${Math.floor(x.g)}" target="_blank" rel="noreferrer">GET ${fmt(x.g)}</a> · ${esc(x.s)}</div>
       <p class="text">${esc(x.t)}</p>
       <div class="why">${esc(x.why)}</div>
+      <div class="actions">${x.audio ? `<button class="play" data-src="${esc(x.audio)}" data-at="${x.at}">▶ Play</button>` : '<span class="meta">no tape here</span>'}<button class="report" data-i="${i}">Report a fix</button></div>
+      <form class="fix" hidden data-i="${i}"><textarea rows="3" placeholder="What should it say? e.g. 'Houston, not Horton'; 'this is Bean'; 'the last word is time'"></textarea><div class="actions"><button type="submit">Send</button><button type="button" class="cancel">Cancel</button></div><span class="meta status"></span></form>
     </article>`).join('') : '<p class="empty">Nothing left to check.</p>'
+  window.__rows = rows
 }
+const player = document.getElementById('player')
+let stopAt = 0
+player.addEventListener('timeupdate', () => { if (player.currentTime >= stopAt) player.pause() })
+player.addEventListener('pause', () => document.querySelectorAll('button.play').forEach((b) => (b.textContent = '▶ Play')))
+list.addEventListener('click', (e) => {
+  const play = e.target.closest('button.play')
+  if (play) {
+    const same = player.dataset.src === play.dataset.src && Math.abs(player.dataset.at - play.dataset.at) < 1
+    if (!player.paused && same) { player.pause(); return }
+    player.pause()
+    if (player.dataset.src !== play.dataset.src) { player.src = play.dataset.src; player.dataset.src = play.dataset.src }
+    player.dataset.at = play.dataset.at
+    const at = Number(play.dataset.at)
+    stopAt = at + 9
+    const start = () => { player.currentTime = Math.max(0, at - 3); player.play().catch(() => {}) }
+    if (player.readyState >= 1) start(); else { player.addEventListener('loadedmetadata', start, { once: true }); player.load() }
+    document.querySelectorAll('button.play').forEach((b) => (b.textContent = '▶ Play'))
+    play.textContent = '❚❚ Stop'
+    return
+  }
+  const rep = e.target.closest('button.report')
+  if (rep) { const f = list.querySelector(`form.fix[data-i="${rep.dataset.i}"]`); f.hidden = !f.hidden; if (!f.hidden) f.querySelector('textarea').focus(); return }
+  const cancel = e.target.closest('button.cancel')
+  if (cancel) cancel.closest('form').hidden = true
+})
+list.addEventListener('submit', async (e) => {
+  e.preventDefault()
+  const f = e.target; const x = window.__rows[Number(f.dataset.i)]; const msg = f.querySelector('textarea').value.trim()
+  if (!msg) return
+  const status = f.querySelector('.status'); status.textContent = 'Sending…'
+  const r = await fetch('/api/reports', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+    subject: `Apollo ${mission} GET ${fmt(x.g)}: transcript line`,
+    message: msg,
+    context: `${x.s}: "${x.t}"\nGET ${fmt(x.g)}, in the whole-mission recording\nAudio: ${x.audio || ''}${x.at != null ? ' at ' + x.at + ' s' : ''}\nFrom the review list: ${x.why}`,
+    page: location.href }) })
+  status.textContent = r.ok ? 'Sent.' : 'Could not send.'
+  if (r.ok) { f.querySelector('textarea').value = ''; setTimeout(() => { f.hidden = true; status.textContent = '' }, 1200) }
+})
 document.querySelector('.bar').addEventListener('click', (e) => {
   const b = e.target.closest('button'); if (!b) return
   mission = b.dataset.m

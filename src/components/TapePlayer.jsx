@@ -37,13 +37,18 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
   const piece = tape.piece
   const source = tape.inGap ? null : piece?.journal
     ? { label: 'A clip in place of the tapes (they have a gap here)', href: piece.url }
-    : piece && { label: `NASA tape ${piece.tape}`, href: `https://archive.org/details/Apollo${mission.number}Audio` }
+    : piece && {
+        label: `NASA tape ${piece.tape}${tape.url?.startsWith('https://archive.org') ? '' : ', our cleaned copy'}`,
+        href: tape.url?.startsWith('https://archive.org') ? `https://archive.org/details/Apollo${mission.number}Audio` : tape.url,
+      }
 
   const report = {
     missionName: mission.name,
     clipId: piece ? `the whole-mission recording (${piece.journal ? 'gap clip ' : 'NASA tape '}${piece.tape})` : 'the whole-mission recording',
     audioUrl: tape.url,
     sourceUrl: source?.href,
+    // where a line plays in that file, so the report dialog can replay it
+    audioAt: (g) => (piece && !piece.journal ? piece.from + (g - piece.get) / piece.rate : null),
   }
 
   useEffect(() => {

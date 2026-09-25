@@ -217,7 +217,7 @@ export default function ImmersiveView({
         )}
       </div>
       <GlossaryPanel entry={glossaryEntry} onClose={closeGlossary} onTermClick={setGlossaryEntry} />
-      {reportDetails && <ReportDialog title={reportDetails.title} context={reportDetails.context} onClose={closeReport} />}
+      {reportDetails && <ReportDialog title={reportDetails.title} context={reportDetails.context} audio={reportDetails.audio} onClose={closeReport} />}
     </div>
   )
 }

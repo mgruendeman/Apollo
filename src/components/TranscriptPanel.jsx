@@ -111,7 +111,7 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
           </button>
         )}
       </div>
-      {reportDetails && <ReportDialog title={reportDetails.title} context={reportDetails.context} onClose={closeReport} />}
+      {reportDetails && <ReportDialog title={reportDetails.title} context={reportDetails.context} audio={reportDetails.audio} onClose={closeReport} />}
     </div>
   )
 }

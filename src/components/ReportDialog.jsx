@@ -5,7 +5,29 @@ import { REPORT_ENDPOINT, REPO_URL } from '../config'
 // at (`context`) goes along automatically, and they just say what's wrong.
 // Sent to REPORT_ENDPOINT when one is configured, otherwise opened as a
 // pre-filled GitHub issue.
-export default function ReportDialog({ title, context, onClose }) {
+// With `audio` ({url, at}), a button plays the 12 seconds around the line,
+// as often as needed, while the report is written.
+export default function ReportDialog({ title, context, audio, onClose }) {
+  const playerRef = useRef(null)
+  const [playing, setPlaying] = useState(false)
+  function replay() {
+    const a = playerRef.current
+    if (!a) return
+    if (!a.paused) {
+      a.pause()
+      return
+    }
+    // about 12 s: 3 before the line, 9 after; stopped by time reached or,
+    // failing that (a coarse timeupdate), by the clock
+    const stopAt = audio.at + 9
+    a.currentTime = Math.max(0, audio.at - 3)
+    a.ontimeupdate = () => {
+      if (a.currentTime >= stopAt) a.pause()
+    }
+    clearTimeout(a._stop)
+    a._stop = setTimeout(() => a.pause(), 12500)
+    a.play().catch(() => {})
+  }
   const [message, setMessage] = useState('')
   const [contact, setContact] = useState('')
   const [state, setState] = useState('editing') // editing | sending | sent | failed | limit
@@ -71,6 +93,15 @@ export default function ReportDialog({ title, context, onClose }) {
           <>
             <p className="report-about">{title}</p>
             {context && <blockquote className="report-context">{context}</blockquote>}
+            {audio && (
+              <p className="report-replay">
+                <audio ref={playerRef} src={audio.url} preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} />
+                <button type="button" className="report-replay-button" onClick={replay}>
+                  {playing ? '❚❚ Stop' : '▶ Play this line'}
+                </button>
+                <span>a few seconds either side; play it as often as you like</span>
+              </p>
+            )}
             <label className="report-field">
               What&apos;s wrong?
               <textarea

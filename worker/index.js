@@ -228,15 +228,37 @@ async function putReview(env, request, id) {
   return json({ id, updated })
 }
 
-// Cleaned photos for the reviewer page, from our own address so the page's
-// live preview can read their pixels.
-async function media(env, key) {
-  const obj = await env.MEDIA.get(key)
+// Cleaned photos and tapes for the reviewer pages, from our own address so
+// the photo editor can read pixels and the transcript page can play a
+// moment of a tape. Range requests are honoured (a browser seeking into a
+// 70 MB tape asks for a slice), answered 206 with the slice R2 returns.
+async function media(env, key, request) {
+  const range = request?.headers.get('Range')
+  const m = range && /^bytes=(\d*)-(\d*)$/.exec(range)
+  let opts
+  if (m && (m[1] || m[2])) {
+    const head = await env.MEDIA.head(key)
+    if (!head) return new Response('Not found', { status: 404 })
+    const size = head.size
+    const start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]))
+    const end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1
+    if (start >= size || start > end) return new Response('Range not satisfiable', { status: 416, headers: { 'Content-Range': `bytes */${size}` } })
+    opts = { range: { offset: start, length: end - start + 1 } }
+  }
+  const obj = await env.MEDIA.get(key, opts)
   if (!obj) return new Response('Not found', { status: 404 })
   const headers = new Headers()
   obj.writeHttpMetadata(headers)
   headers.set('Cache-Control', 'private, max-age=3600')
   headers.set('ETag', obj.httpEtag)
+  headers.set('Accept-Ranges', 'bytes')
+  if (opts) {
+    const { offset, length } = opts.range
+    headers.set('Content-Range', `bytes ${offset}-${offset + length - 1}/${obj.size}`)
+    headers.set('Content-Length', String(length))
+    return new Response(obj.body, { status: 206, headers })
+  }
+  headers.set('Content-Length', String(obj.size))
   return new Response(obj.body, { headers })
 }
 
@@ -269,7 +291,7 @@ export default {
         }
         if (rest === 'reports' && method === 'GET') return listReports(env, url)
         if (rest.startsWith('reports/') && method === 'PUT') return setReport(env, request, rest.slice(8))
-        if (rest.startsWith('media/') && method === 'GET') return media(env, rest.slice(6))
+        if (rest.startsWith('media/') && method === 'GET') return media(env, rest.slice(6), request)
       }
       return bad(404, 'No such API.')
     } catch (e) {

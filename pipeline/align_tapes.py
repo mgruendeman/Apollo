@@ -135,8 +135,22 @@ def main():
     ranked = score_lines(lines, segments, tape_words, vocab, common)
     review = ROOT / 'public' / 'review' / 'transcript'
     review.mkdir(parents=True, exist_ok=True)
+    ext = '.clean.m4a' if args.cleaned else '.mp3'
+    audio = (lambda tape: f'/api/review/media/audio/{int(m)}/{tape}{ext}') if args.cleaned else \
+            (lambda tape: f'https://archive.org/download/Apollo{int(m)}Audio/{tape}.mp3')
+    gets_ = [sg['get'] for sg in segments]
+
+    def where(l):   # the file and the second in it where this line plays
+        k = bisect.bisect_right(gets_, l['g']) - 1
+        if k < 0:
+            return {}
+        sg = segments[k]
+        if not sg['get'] <= l['g'] <= sg['get'] + (sg['to'] - sg['from']) * sg['rate'] or sg.get('journal'):
+            return {}
+        return {'audio': audio(sg['tape']), 'at': round(sg['from'] + (l['g'] - sg['get']) / sg['rate'], 1)}
     (review / f'apollo{m}.json').write_text(json.dumps(
-        [{'g': lines[i]['g'], 's': lines[i]['s'], 't': lines[i]['t'], 'q': q, 'why': why} for q, i, why in ranked], separators=(',', ':')))
+        [{'g': lines[i]['g'], 's': lines[i]['s'], 't': lines[i]['t'], 'q': q, 'why': why, **where(lines[i])} for q, i, why in ranked],
+        separators=(',', ':')))
     timeline = {'mission': m, 'segments': segments, 'lines': lines, 'announcer': announcer, 'over': over}
     if args.cleaned:   # (the site fills in {media}: its media storage address)
         timeline['audio'] = {'base': f'{{media}}/audio/{int(m)}', 'ext': '.clean.m4a'}

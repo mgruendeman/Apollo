@@ -2847,3 +2847,24 @@ button.transcript-channel-tag {
     animation: none;
   }
 }
+
+/* replaying the reported line inside the report form */
+.report-replay {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.report-replay-button {
+  flex-shrink: 0;
+  font: inherit;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+}
