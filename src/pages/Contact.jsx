@@ -4,6 +4,7 @@ import { REPORT_ENDPOINT, REPO_URL } from '../config'
 
 const KINDS = [
   ['suggestion', 'A suggestion or idea'],
+  ['story', 'A story behind a moment, for the timeline'],
   ['question', 'A question'],
   ['problem', 'Something not working'],
   ['other', 'Something else'],
@@ -48,8 +49,10 @@ export default function Contact() {
         <p className="eyebrow">Contact</p>
         <h1>Suggestions and questions</h1>
         <p className="lede">
-          Ideas for the site, questions about a mission, or something that isn&apos;t working: send it here. To fix a
-          line of a transcript, it&apos;s quickest to press and hold that line (<Link to="/guide">how</Link>).
+          Ideas for the site, questions about a mission, something that isn&apos;t working, or a story behind a moment
+          that I could add to the timeline: send it here. For a story, a source helps a lot (a book and page number, an
+          interview, or a link). To fix a line of a transcript, it&apos;s quickest to press and hold that line{' '}
+          (<Link to="/guide">how</Link>). To use the transcripts or photos commercially, ask here too.
         </p>
       </header>
 
@@ -79,7 +82,13 @@ export default function Contact() {
           </fieldset>
           <label className="report-field">
             Your message
-            <textarea rows={6} value={message} onChange={(e) => setMessage(e.target.value)} required />
+            <textarea
+              rows={6}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder={kind === 'story' ? 'The moment (mission and time, or the words said), the story, and where it comes from' : ''}
+              required
+            />
           </label>
           {REPORT_ENDPOINT && (
             <label className="report-field">

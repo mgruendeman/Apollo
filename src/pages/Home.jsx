@@ -67,6 +67,11 @@ export default function Home() {
 
       <footer className="site-footer">
         <p>
+          Edited transcripts and photos © Apollo Audio Archive: free for non-commercial use with credit;{' '}
+          <Link to="/guide">see how you can use them</Link>. NASA&apos;s original recordings, transcripts and photographs
+          are in the public domain.
+        </p>
+        <p>
           Audio and transcripts sourced from the Apollo Flight Journal and
           Apollo Lunar Surface Journal, public-domain NASA recordings
           archived at{' '}

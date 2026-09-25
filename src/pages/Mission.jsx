@@ -9,7 +9,7 @@ import MissionPhoto from '../components/MissionPhoto'
 import MissionOverview from '../components/MissionOverview'
 import ArchiveRecordings from '../components/ArchiveRecordings'
 import ImmersiveView from '../components/ImmersiveView'
-import ListenerFavourites from '../components/ListenerFavourites'
+import ListenerFavorites from '../components/ListenerFavorites'
 import MomentPhotos from '../components/MomentPhotos'
 import PhotoGallery from '../components/PhotoGallery'
 import GlossaryPanel from '../components/GlossaryPanel'
@@ -137,13 +137,13 @@ export default function Mission() {
 
   useEffect(() => {
     if (!mission?.timeline) return undefined
-    let cancelled = false
+    let canceled = false
     fetch(`${import.meta.env.BASE_URL}timeline/${mission.timeline}.json`)
       .then((r) => r.json())
-      .then((data) => !cancelled && setRawTimeline(data))
+      .then((data) => !canceled && setRawTimeline(data))
       .catch(() => {})
     return () => {
-      cancelled = true
+      canceled = true
     }
   }, [mission])
 
@@ -173,12 +173,12 @@ export default function Mission() {
 
   useEffect(() => {
     if (!mission?.clipsFile) return
-    let cancelled = false
+    let canceled = false
     import(`../data/clips/${mission.clipsFile}.json`).then((mod) => {
-      if (!cancelled) setClips(mod.default)
+      if (!canceled) setClips(mod.default)
     })
     return () => {
-      cancelled = true
+      canceled = true
     }
   }, [mission])
 
@@ -187,15 +187,15 @@ export default function Mission() {
   // player doesn't need until a line is due to be shown.
   useEffect(() => {
     if (!mission?.clipsFile) return
-    let cancelled = false
+    let canceled = false
     fetch(`${import.meta.env.BASE_URL}transcripts/${mission.clipsFile}.json`)
       .then((r) => r.json())
       .then((data) => {
-        if (!cancelled) setTranscripts(data)
+        if (!canceled) setTranscripts(data)
       })
       .catch(() => {})
     return () => {
-      cancelled = true
+      canceled = true
     }
   }, [mission])
 
@@ -366,7 +366,7 @@ export default function Mission() {
         </section>
       )}
 
-      <ListenerFavourites
+      <ListenerFavorites
         missionId={mission.id}
         onPick={(id, get) => {
           if (id.startsWith('tapes-') && get) {
@@ -391,7 +391,7 @@ export default function Mission() {
               <span>NASA's tapes, end to end</span>
             </button>
             <button type="button" role="tab" aria-selected={!tapeMode} onClick={() => setListen('clips')}>
-              Journal clips
+              Highlight clips
               <span>{clips.length} moments, with photos</span>
             </button>
           </div>

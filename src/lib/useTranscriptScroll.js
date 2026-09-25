@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 // How long a manual scroll of a transcript pauses auto-scrolling.
 const USER_SCROLL_HOLD_MS = 6000
 
-// Keeps the line being spoken centred in a scrolling transcript, pauses that
+// Keeps the line being spoken centered in a scrolling transcript, pauses that
 // for a few seconds after the listener scrolls it themselves, and reports
 // when the current line is out of view so a "Current line" button can bring
 // it back.

@@ -66,7 +66,7 @@ export const INFO_RULES = [
     re: /\bstars? (?:number )?(\d{1,2})(?:,? and (?:star )?(\d{1,2}))?\b/gi,
     title: (m) => m[0],
     text: (m) =>
-      `Stars were called by number from the guidance computer's catalogue of 37 navigation stars, numbered 01 to 45 in octal (base 8). To align the guidance platform (program P52) a crew member sighted ${m[2] ? `two stars, here ${m[1]} and ${m[2]},` : 'two stars'} through the spacecraft's optics, and the computer compared the angle it measured between them with the angle it expected; the result is the star angle difference (Noun 05). It then worked out how far the platform had drifted and corrected it by the "torquing angles".`,
+      `Stars were called by number from the guidance computer's catalog of 37 navigation stars, numbered 01 to 45 in octal (base 8). To align the guidance platform (program P52) a crew member sighted ${m[2] ? `two stars, here ${m[1]} and ${m[2]},` : 'two stars'} through the spacecraft's optics, and the computer compared the angle it measured between them with the angle it expected; the result is the star angle difference (Noun 05). It then worked out how far the platform had drifted and corrected it by the "torquing angles".`,
   },
   {
     re: /\b(?:star angle difference|Noun 05|N ?05)\b/gi,
@@ -90,13 +90,13 @@ export const INFO_RULES = [
     re: /\b(Navi|Dnoces|Regor)\b/g,
     title: (m) => m[1],
     text: () =>
-      'One of three navigation stars named by the Apollo 1 crew as a joke on themselves: Navi is "Ivan" backwards (Gus Grissom\'s middle name), Dnoces is "second" backwards (for Ed White II) and Regor is "Roger" backwards (Roger Chaffee). The names stayed in the star catalogue in their memory after the Apollo 1 fire.',
+      'One of three navigation stars named by the Apollo 1 crew as a joke on themselves: Navi is "Ivan" backwards (Gus Grissom\'s middle name), Dnoces is "second" backwards (for Ed White II) and Regor is "Roger" backwards (Roger Chaffee). The names stayed in the star catalog in their memory after the Apollo 1 fire.',
   },
   {
     re: /\b(Sirius|Canopus|Vega|Antares|Rigel|Arcturus|Deneb|Altair|Fomalhaut|Acrux|Achernar|Nunki|Menkent)\b/g,
     title: (m) => m[1],
     text: (m) =>
-      `${m[1]} is a bright star, one of the 37 navigation stars in the Apollo guidance computer's catalogue. The crew sighted pairs of these through the spacecraft's optics to line up the guidance platform.`,
+      `${m[1]} is a bright star, one of the 37 navigation stars in the Apollo guidance computer's catalog. The crew sighted pairs of these through the spacecraft's optics to line up the guidance platform.`,
   },
   {
     re: /\b(?:V|Verb )(\d{2})(?:,? ?(?:N|Noun )(\d{2}))?\b/g,

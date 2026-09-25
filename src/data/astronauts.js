@@ -1,7 +1,7 @@
 // Short bios for every Apollo crew member with digitized audio here, plus
 // the CAPCOMs heard most often. Facts were checked against each person's
 // Wikipedia article (linked below); every book was checked against the Open
-// Library catalogue. Keys match src/data/speakers.js.
+// Library catalog. Keys match src/data/speakers.js.
 
 const OL = 'https://openlibrary.org/works/'
 
@@ -133,7 +133,7 @@ export const astronauts = {
   gordon: {
     name: 'Dick Gordon',
     years: '1929–2017',
-    bio: 'A Navy test pilot, Gordon made two spacewalks on Gemini 11 with Pete Conrad. He was Command Module Pilot of Apollo 12, flying Yankee Clipper in lunar orbit, and was in line to command a later landing before the last missions were cancelled.',
+    bio: 'A Navy test pilot, Gordon made two spacewalks on Gemini 11 with Pete Conrad. He was Command Module Pilot of Apollo 12, flying Yankee Clipper in lunar orbit, and was in line to command a later landing before the last missions were canceled.',
     apollo: [{ mission: '12', role: 'Command Module Pilot' }],
     books: [],
     wikipedia: 'https://en.wikipedia.org/wiki/Richard_F._Gordon_Jr.',
@@ -266,7 +266,7 @@ export const astronauts = {
   fullerton: {
     name: 'Gordon Fullerton',
     years: '1936–2013',
-    bio: 'An Air Force pilot who came to NASA when the Manned Orbiting Laboratory program was cancelled, Fullerton was a CAPCOM on the later Apollo landings. He flew the Space Shuttle Enterprise approach and landing tests, piloted STS-3 and commanded STS-51-F.',
+    bio: 'An Air Force pilot who came to NASA when the Manned Orbiting Laboratory program was canceled, Fullerton was a CAPCOM on the later Apollo landings. He flew the Space Shuttle Enterprise approach and landing tests, piloted STS-3 and commanded STS-51-F.',
     apollo: [
       { mission: '14', role: 'CAPCOM' },
       { mission: '15', role: 'CAPCOM' },
@@ -310,7 +310,7 @@ export const astronauts = {
   overmyer: {
     name: 'Robert Overmyer',
     years: '1936–1996',
-    bio: 'A Marine aviator who came to NASA from the cancelled Manned Orbiting Laboratory program, Overmyer was a CAPCOM on Apollo 17. He piloted STS-5 and commanded STS-51-B, and died in 1996 testing a new light aircraft.',
+    bio: 'A Marine aviator who came to NASA from the canceled Manned Orbiting Laboratory program, Overmyer was a CAPCOM on Apollo 17. He piloted STS-5 and commanded STS-51-B, and died in 1996 testing a new light aircraft.',
     apollo: [{ mission: '17', role: 'CAPCOM' }],
     books: [],
     wikipedia: 'https://en.wikipedia.org/wiki/Robert_F._Overmyer',

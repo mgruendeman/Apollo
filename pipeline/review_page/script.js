@@ -6,13 +6,13 @@ const DIALS = [
   {k: 'contrast', label: 'Contrast', group: 'Tone'},
   {k: 'shadows', label: 'Shadows', group: 'Tone'},
   {k: 'highlights', label: 'Highlights', group: 'Tone'},
-  {k: 'warmth', label: 'Warmth', group: 'Colour'},
-  {k: 'tint', label: 'Tint', group: 'Colour'},
-  {k: 'saturation', label: 'Saturation', group: 'Colour'},
+  {k: 'warmth', label: 'Warmth', group: 'Color'},
+  {k: 'tint', label: 'Tint', group: 'Color'},
+  {k: 'saturation', label: 'Saturation', group: 'Color'},
   {k: 'straighten', label: 'Straighten', group: 'Angle', min: -10, max: 10, step: 0.5, unit: '°'},
 ];
 const KEYS = [...DIALS.map(d => d.k), 'rotate'];
-const TOGGLES = [['colour', 'Colour off'], ['crop', 'Bad crop']];
+const TOGGLES = [['colour', 'Color off'], ['crop', 'Bad crop']];
 const MID_GAMMA = 0.85, SHOULDER = 0.12;
 const BSTEP = Math.sqrt(0.8), CSTEP = 0.55, TSTEP = 10, SATSTEP = 0.1, COLSTEP = 1.5;
 const DEFAULT_BRIGHTNESS = -2, DEFAULT_CONTRAST = -1;   // the reviewed default look (process_photos.py)
@@ -310,7 +310,7 @@ const fLab = t => t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116;
 const fInv = t => t > 0.2069 ? t * t * t : (t - 16 / 116) / 7.787;
 
 // The photo as shown was made with the frame's `rendered` settings. Undo
-// those once (back to pre-dial lightness and colour) and cache the result,
+// those once (back to pre-dial lightness and color) and cache the result,
 // small for dragging and full size for when you let go.
 const baseCache = {};
 async function base(id, full) {

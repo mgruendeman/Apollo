@@ -32,7 +32,7 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
 
   const piece = tape.piece
   const source = tape.inGap ? null : piece?.journal
-    ? { label: 'Apollo Flight Journal clip (the tapes have a gap here)', href: piece.url }
+    ? { label: 'A clip in place of the tapes (they have a gap here)', href: piece.url }
     : piece && { label: `NASA tape ${piece.tape}`, href: `https://archive.org/details/Apollo${mission.number}Audio` }
 
   useEffect(() => {
@@ -139,10 +139,10 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
 
       <label className="commentary-toggle">
         <input type="checkbox" checked={fill} onChange={(e) => onFill(e.target.checked)} />
-        Fill gaps with journal clips
+        Fill gaps with clips
         <span>
           {fill
-            ? "On: where NASA's tapes have no recording, the Apollo Flight Journal's clip of that moment plays."
+            ? "On: where NASA's tapes have no recording, a short clip of that moment plays in its place."
             : "Off: only NASA's tapes play."}
         </span>
       </label>
@@ -155,7 +155,7 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
           onLineSeek={(g) => tape.seek(g, true)}
           report={{
             missionName: mission.name,
-            clipId: piece ? `the whole-mission recording (${piece.journal ? 'journal clip ' : 'NASA tape '}${piece.tape})` : 'the whole-mission recording',
+            clipId: piece ? `the whole-mission recording (${piece.journal ? 'gap clip ' : 'NASA tape '}${piece.tape})` : 'the whole-mission recording',
             audioUrl: tape.url,
             sourceUrl: source?.href,
           }}

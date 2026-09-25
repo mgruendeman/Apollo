@@ -5,7 +5,7 @@ import { findMission } from '../data/missions'
 import { speakerAvatar } from '../data/speakers'
 import ReportIssueButton from '../components/ReportIssueButton'
 
-// Which programme a flight belongs to, for grouping.
+// Which program a flight belongs to, for grouping.
 const PROGRAMS = [
   ['Mercury', /^Mercury/],
   ['Gemini', /^Gemini/],

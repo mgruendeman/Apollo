@@ -78,7 +78,7 @@ export default function ReportDialog({ title, context, onClose }) {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="e.g. the text says 116 but you can hear 176; this line is Aldrin, not Armstrong; the highlight is ahead of the audio"
+                placeholder="e.g. the text says 116 but you can hear 176; this line is Aldrin, not Armstrong; or the story behind this moment (with a source)"
                 required
               />
             </label>

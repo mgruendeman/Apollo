@@ -3,7 +3,7 @@ import { API_BASE } from '../config'
 import { visitorId } from './likes'
 
 // Emoji reactions to transcript lines, one of each per browser per line
-// (same visitor id as likes). They feed each mission's "Listener favourites".
+// (same visitor id as likes). They feed each mission's "Listener favorites".
 export const REACTIONS = [
   ['🤣', 'Funny'],
   ['😲', 'Wow'],

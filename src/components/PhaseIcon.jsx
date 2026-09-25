@@ -1,6 +1,6 @@
 import { PHASES } from '../data/phases'
 
-// Small line icons for each mission phase, drawn in the current text colour.
+// Small line icons for each mission phase, drawn in the current text color.
 const PATHS = {
   // rocket with flame
   launch: (

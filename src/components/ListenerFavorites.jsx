@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { REACTIONS, reactionsAvailable, topReactions } from '../lib/reactions'
 
 // The mission's most-reacted transcript lines; tap one to hear it.
-export default function ListenerFavourites({ missionId, onPick }) {
+export default function ListenerFavorites({ missionId, onPick }) {
   const [top, setTop] = useState([])
   useEffect(() => {
     if (!reactionsAvailable) return undefined
@@ -14,8 +14,8 @@ export default function ListenerFavourites({ missionId, onPick }) {
   }, [missionId])
   if (!top.length) return null
   return (
-    <section className="listener-favourites">
-      <h2>Listener favourites</h2>
+    <section className="listener-favorites">
+      <h2>Listener favorites</h2>
       <ol>
         {top.slice(0, 10).map((r) => {
           const counts = {}

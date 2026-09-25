@@ -410,7 +410,7 @@ export const glossary = [
     abbr: [{ short: 'MECO', full: 'Main Engine Cut-Off' }],
     terms: ['MECO', 'Main Engine Cut-Off', 'Main Engine Cutoff'],
     short: 'The moment a rocket\'s main engines shut down at the end of powered flight.',
-    long: 'The general term for a rocket\'s main engines shutting down, best known from the Space Shuttle, whose MECO came about eight and a half minutes after launch. The Saturn V\'s call-outs named each stage instead: the first stage\'s centre ("inboard") engine shut down first, then its four outboard engines; then the second stage cut off; and the third stage\'s cutoff at orbit was called SECO.',
+    long: 'The general term for a rocket\'s main engines shutting down, best known from the Space Shuttle, whose MECO came about eight and a half minutes after launch. The Saturn V\'s call-outs named each stage instead: the first stage\'s center ("inboard") engine shut down first, then its four outboard engines; then the second stage cut off; and the third stage\'s cutoff at orbit was called SECO.',
   },
   {
     id: 'staging',
