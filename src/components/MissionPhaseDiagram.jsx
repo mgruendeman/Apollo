@@ -7,6 +7,7 @@ import lmImg from '../assets/sprites/lm.webp'
 import lmAscentImg from '../assets/sprites/lm-ascent.webp'
 import lmDescentImg from '../assets/sprites/lm-descent.webp'
 import chutesImg from '../assets/sprites/chutes.webp'
+import saturnImg from '../assets/sprites/saturn.webp'
 
 // Where the crew are right now, as a cartoon: Earth and Moon inside the two
 // loops of a figure-8, the loops being the orbits (parking orbit around
@@ -20,7 +21,6 @@ import chutesImg from '../assets/sprites/chutes.webp'
 
 const EARTH = { x: 54, y: 60, r: 20 }
 const MOON = { x: 186, y: 60, r: 15 }
-const K = 1.6 // cartoon scale of the Saturn V
 
 // Out of Earth orbit up and across the middle, around the Moon, back across
 // the middle and home: one continuous figure-8.
@@ -39,23 +39,53 @@ const SPRITES = {
   lmAscent: [lmAscentImg, 256, 193],
   lmDescent: [lmDescentImg, 256, 97],
   chutes: [chutesImg, 256, 246],
+  saturn: [saturnImg, 148, 256],
 }
 // the craft's widths in the diagram (cartoon sizes, not to scale); the LM's
 // ascent stage is 0.6 of its width
-const WIDE = { stack: 40, csm: 28, lm: 22, chutes: 30 }
+const WIDE = { stack: 40, csm: 28, lm: 22, chutes: 26, saturn: 18 }
 
 // A sprite `w` units wide centered at (x, y). The craft are drawn facing
 // left (the CSM's nose, or the LM leading the docked stack); `dir` is the
 // heading in degrees (0 = right, 90 = down). Heading rightward the sprite is
-// mirrored rather than turned upside down.
-function Sprite({ name, x, y, w, dir }) {
+// mirrored rather than turned upside down. `turn` just rotates it.
+function Sprite({ name, x, y, w, dir, turn }) {
   const [src, pw, ph] = SPRITES[name]
   const h = (w * ph) / pw
-  let turn = ''
-  if (dir != null) turn = Math.cos((dir * Math.PI) / 180) > 0 ? ` rotate(${dir}) scale(-1 1)` : ` rotate(${dir - 180})`
+  let spin = ''
+  if (dir != null) spin = Math.cos((dir * Math.PI) / 180) > 0 ? ` rotate(${dir}) scale(-1 1)` : ` rotate(${dir - 180})`
+  else if (turn != null) spin = ` rotate(${turn})`
   return (
-    <image href={src} x={-w / 2} y={-h / 2} width={w} height={h} transform={`translate(${x} ${y})${turn}`} className="pd-sprite" />
+    <image href={src} x={-w / 2} y={-h / 2} width={w} height={h} transform={`translate(${x} ${y})${spin}`} className="pd-sprite" />
   )
+}
+
+function tall(name, w) {
+  const [, pw, ph] = SPRITES[name]
+  return (w * ph) / pw
+}
+
+// A point off Earth's surface: `angle` degrees round from its center (0 =
+// right, -90 = top), `out` units above the ground.
+function offEarth(angle, out) {
+  const a = (angle * Math.PI) / 180
+  return { x: EARTH.x + (EARTH.r + out) * Math.cos(a), y: EARTH.y + (EARTH.r + out) * Math.sin(a) }
+}
+
+// The Saturn V as drawn climbs 27 degrees right of vertical, the tips of its
+// flames at (15, 253) of its 148 x 256 pixels: those go just off the ground
+// at Earth's upper right, so it rises out of the atmosphere.
+function launchPose() {
+  const tail = offEarth(-40, 1)
+  const k = WIDE.saturn / 148
+  return { x: tail.x + (74 - 15) * k, y: tail.y + (128 - 253) * k }
+}
+
+// Coming home under the parachutes, over the Pacific (the globe's left
+// side), heat shield toward the water.
+function splashdownPose() {
+  const angle = -132
+  return { ...offEarth(angle, 1 + tall('chutes', WIDE.chutes) / 2), turn: angle + 90 }
 }
 
 // Standing on the Moon's top: the y that puts a sprite's feet on the surface.
@@ -66,16 +96,6 @@ function onMoon(name, w) {
   return MOON.y - MOON.r - (w * ph) / pw / 2 + 4
 }
 
-function SaturnV({ x, y }) {
-  return (
-    <g transform={`translate(${x} ${y}) scale(${K * 0.8})`} className="pd-craft">
-      <path d="M -2 0 L -2 -13 L 0 -17 L 2 -13 L 2 0 Z" className="pd-rocket" />
-      <path d="M -2 0 L -3.5 2 L 3.5 2 L 2 0 Z" className="pd-rocket-fins" />
-      <path d="M -1.5 2.5 Q 0 8 1.5 2.5 Z" className="pd-flame" />
-    </g>
-  )
-}
-
 // What's drawn for each phase: the craft and where (positions and headings
 // taken from the figure-8's curves). While the crew are split, each craft is
 // labeled with its name and how many are aboard.
@@ -83,7 +103,7 @@ function scene(phase) {
   const csmInOrbit = { x: 221, y: 53, dir: 75 } // on the lunar loop's right side, heading down
   switch (phase) {
     case 'launch':
-      return { rocket: { x: EARTH.x, y: EARTH.y - EARTH.r + 1 } }
+      return { rocket: launchPose() }
     case 'earth-orbit':
       // in parking orbit the LM is still stowed below the CSM, on the rocket's last stage
       return { csm: { x: 75, y: 32, dir: -169 } }
@@ -105,7 +125,7 @@ function scene(phase) {
     case 'transit-to-earth':
       return { csm: { x: 149, y: 83, dir: -157 } }
     case 'splashdown':
-      return { chutes: { x: EARTH.x + 36, y: EARTH.y + 2 } }
+      return { chutes: splashdownPose() }
     default:
       return { stack: { x: 143, y: 40, dir: -29 } }
   }
@@ -140,7 +160,7 @@ export default function MissionPhaseDiagram({ phase, mission }) {
         <Sprite name="moon" x={MOON.x} y={MOON.y} w={MOON.r * 2} />
 
         <g className="pd-scene" key={phase}>
-          {s.rocket && <SaturnV {...s.rocket} />}
+          {s.rocket && <Sprite name="saturn" w={WIDE.saturn} {...s.rocket} />}
           {stack.stack && <Sprite name="stack" w={WIDE.stack} {...stack.stack} />}
           {stack.csm && <Sprite name="csm" w={WIDE.csm} {...stack.csm} />}
           {s.csm && <Sprite name="csm" w={WIDE.csm} {...s.csm} />}

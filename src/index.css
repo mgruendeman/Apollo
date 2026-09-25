@@ -2743,23 +2743,12 @@ button.transcript-channel-tag {
 
 /* the cartoon "where are they" diagram */
 .phase-diagram {
-  width: 260px;
+  width: 320px;
 }
 .pd-path {
   stroke: rgba(200, 215, 255, 0.35);
   stroke-width: 1;
   stroke-dasharray: 2.5 2;
-}
-.pd-rocket {
-  fill: #f3f4f6;
-  stroke: #4b5563;
-  stroke-width: 0.4;
-}
-.pd-rocket-fins {
-  fill: #4b5563;
-}
-.pd-flame {
-  fill: var(--accent);
 }
 .pd-scene {
   animation: pd-arrive 0.6s ease-out;
@@ -2786,7 +2775,7 @@ button.transcript-channel-tag {
 }
 @media (max-width: 640px) {
   .phase-diagram {
-    width: 240px;
+    width: min(320px, 100%);
   }
 }
 @media (prefers-reduced-motion: reduce) {
