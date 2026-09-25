@@ -15,6 +15,7 @@ Either way each page becomes a list of positioned words, and the columns
 (time, speaker, text) are found from where the speaker codes sit.
 
     python3 scripts/nasa_transcripts.py extract as11-tec.pdf data/nasa-transcripts/as11-tec.json
+    python3 scripts/nasa_transcripts.py merge as11-tec.pdf data/nasa-transcripts/as11-tec.json   # + Tesseract
     python3 scripts/nasa_transcripts.py check 11 data/nasa-transcripts/as11-tec.json report.md
 
 `check` pairs every NASA line with the journal line at the same mission
@@ -179,11 +180,11 @@ def longest_forward_run(values):
     return keep
 
 
-def extract(pdf_path):
+def extract(pdf_path, force_ocr=False, pages=None):
     doc = pymupdf.open(pdf_path)
-    use_ocr = 'Acrobat Capture' in (doc.metadata.get('creator') or '')
+    use_ocr = force_ocr or 'Acrobat Capture' in (doc.metadata.get('creator') or '')
     rows = []
-    for pno in range(doc.page_count):
+    for pno in (pages if pages is not None else range(doc.page_count)):
         lines = group_lines(page_words(doc[pno], use_ocr))
         # The speaker column is where exact speaker codes line up.
         spk_x = sorted(w[0] for ws in lines for w in ws if w[2].strip('.:') in SPEAKERS and w[0] > 100)
@@ -237,6 +238,72 @@ def extract(pdf_path):
             continue
         out.append({'getSeconds': r['getSeconds'], 'getApprox': r['getApprox'], 'hourOnly': r['hour'] is not None, 'speaker': r['speaker'],
                     'text': text, 'unsure': [w[2] for w in r['words'] if w[3] < 80], 'page': r['page']})
+    return out
+
+
+DAMAGE = re.compile(r"[^A-Za-z0-9'.,?!;:()/&\-]|[a-z][0-9]|[0-9][a-z]{2}|[a-z][,:;][a-z]|[A-Za-z][éèàù]")
+
+
+def _word_score(word, vocab):
+    """How trustworthy a word reads: 2 a dictionary or oft-seen word, 1 clean
+    but unfamiliar, 0 visibly damaged."""
+    core = word.strip('.,?!;:"()')
+    if not core or DAMAGE.search(core):
+        return 0
+    return 2 if core.lower() in vocab or core.isupper() or re.fullmatch(r"[\d.,:/-]+", core) else 1
+
+
+def merge_readings(old, new, vocab):
+    """Two readings of one line (the PDF's embedded text, and Tesseract's)
+    merged word by word: where they disagree, the reading that scores
+    better as a word wins; on a tie the embedded text stays."""
+    a, b = old.split(), new.split()
+    out = []
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, [w.lower() for w in a], [w.lower() for w in b], autojunk=False).get_opcodes():
+        if op == 'equal':
+            out += a[i1:i2]
+        elif op == 'replace' and i2 - i1 == j2 - j1:
+            out += [y if _word_score(y, vocab) > _word_score(x, vocab) else x for x, y in zip(a[i1:i2], b[j1:j2])]
+        elif op == 'replace':
+            sa = min((_word_score(w, vocab) for w in a[i1:i2]), default=2)
+            sb = min((_word_score(w, vocab) for w in b[j1:j2]), default=2)
+            out += b[j1:j2] if sb > sa else a[i1:i2]
+        elif op == 'delete':
+            out += [w for w in a[i1:i2] if _word_score(w, vocab) > 0]   # a scrap only the old reading has
+        # 'insert' (only Tesseract saw it): leave out unless clean and a real word
+        else:
+            out += [w for w in b[j1:j2] if _word_score(w, vocab) == 2 and len(w.strip('.,?!;:')) > 1]
+    return ' '.join(out)
+
+
+def extract_merged(pdf_path, pages=None):
+    """Both readings of the scan (embedded text layer and a fresh Tesseract
+    pass), lined up row by row and merged word by word. Times and speakers
+    come from whichever reading has them readable."""
+    old = extract(pdf_path, pages=pages)
+    new = extract(pdf_path, force_ocr=True, pages=pages)
+    words = [w.lower().strip('.,?!;:"()') for r in old + new for w in r['text'].split()]
+    from collections import Counter
+    seen = Counter(words)
+    vocab = {w for w, n in seen.items() if n >= 3 and not DAMAGE.search(w)}
+    dict_path = Path('/usr/share/dict/words')
+    if dict_path.exists():
+        vocab |= {w.lower() for w in dict_path.read_text(errors='ignore').split()}
+    key = lambda t: re.sub(r'[^a-z]', '', t.lower())[:60]
+    pairs = difflib.SequenceMatcher(None, [key(r['text']) for r in old], [key(r['text']) for r in new], autojunk=False)
+    out = []
+    for op, i1, i2, j1, j2 in pairs.get_opcodes():
+        if op in ('equal', 'replace') and i2 - i1 == j2 - j1:
+            for r, q in zip(old[i1:i2], new[j1:j2]):
+                m = dict(r)
+                m['text'] = merge_readings(r['text'], q['text'], vocab)
+                if r['getApprox'] and not q['getApprox']:
+                    m['getSeconds'], m['getApprox'] = q['getSeconds'], False
+                if r['speaker'] == '?' and q['speaker'] != '?':
+                    m['speaker'] = q['speaker']
+                out.append(m)
+        else:
+            out += old[i1:i2]   # rows the readings split differently: keep the embedded reading
     return out
 
 
@@ -341,5 +408,10 @@ if __name__ == '__main__':
         Path(sys.argv[3]).parent.mkdir(parents=True, exist_ok=True)
         Path(sys.argv[3]).write_text(json.dumps(rows, indent=0))
         print(len(rows), 'rows,', sum(r['getApprox'] for r in rows), 'with approximate time')
+    elif sys.argv[1] == 'merge':   # embedded text + Tesseract, merged word by word
+        rows = extract_merged(sys.argv[2])
+        Path(sys.argv[3]).parent.mkdir(parents=True, exist_ok=True)
+        Path(sys.argv[3]).write_text(json.dumps(rows, indent=0))
+        print(f'{len(rows)} rows, {sum(r["getApprox"] for r in rows)} with approximate time')
     elif sys.argv[1] == 'check':
         check(sys.argv[2], sys.argv[3], sys.argv[4])
