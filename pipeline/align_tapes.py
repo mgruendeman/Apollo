@@ -453,6 +453,7 @@ def _tidy(text, vocab):
     text = re.sub(r"\b(Roger) r\s*\.", r"\1.", text)                          # "Roger r ."
     text = _scrap_tail(text)                                                  # "... descent. ',F? , }_ /'"
     text = re.sub(r"\s+\S{0,3}(?:[a_g<]e|ag[eo]|_ge)\s+\d{3,4}\s*$", '', text)  # page numbers: "}'_ge 307", "iago 312"
+    text = re.sub(r"\s+[PF][a-z_?]{2}e\s+\d{2,4}\s*$", '', text)                 # "Pase 309", "Fage 12"
     text = re.sub(r"\b([A-Za-z]{3,})- ([a-z]{2,})\b",                         # "sequenc- ing": split at a line end
                   lambda m: m.group(1) + m.group(2) if (m.group(1) + m.group(2)).lower() in vocab else m.group(), text)
     text = re.sub(r"\b(primary|secondary|number|bus|gimbal|motor|quad|tank|bottle|loop|step|channel|position|option|"
@@ -846,7 +847,8 @@ def mark_unheard(lines, segments, tape_words, envelopes):
     Silent means both: the recogniser heard no words there, and the tape's
     loudness is flat (the recogniser misses faint speech a listener can
     still make out). envelopes: folder of place_tapes' loudness envelopes
-    (10 a second, normalised)."""
+    (10 a second, normalised). Silence on these tapes varies by about 0.1;
+    faint speech can vary by as little as 0.3."""
     import numpy as np
     loud = {}
 
@@ -858,7 +860,7 @@ def mark_unheard(lines, segments, tape_words, envelopes):
         if e is None:
             return False
         w = e[max(0, int(a * 10)):int(b * 10)]
-        return len(w) > 0 and float(w.max() - w.min()) < 0.4
+        return len(w) > 0 and float(w.max() - w.min()) < 0.2
     gets = [sg['get'] for sg in segments]
     n = 0
     for l in lines:

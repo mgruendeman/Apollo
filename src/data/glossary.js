@@ -263,6 +263,30 @@ export const glossary = [
     long: 'Around the clock through a mission, Mission Control was staffed by teams working in shifts, each named for a color and led by a flight director. On Apollo 11 there were four: the White Team under Gene Kranz, which flew the landing; the Black Team under Glynn Lunney; the Green Team under Cliff Charlesworth, which flew the launch and the moonwalk; and the Maroon Team under Milt Windler. Each team had its own CAPCOM, so the voice the crew heard changed with the shift, and crews greeted a team coming on duty by its color.',
   },
   {
+    id: 'refsmmat',
+    abbr: [{ short: 'REFSMMAT', full: 'Reference to Stable Member Matrix' }],
+    terms: ['REFSMMAT', "REFSMMAT's"],
+    short: 'The numbers telling the guidance computer which way its gyro-stabilized platform is aligned.',
+    long: 'The guidance system measured motion against a small platform held steady by gyroscopes, the "stable member". The REFSMMAT (Reference to Stable Member Matrix) told the computer how that platform was oriented relative to the stars. Mission Control uplinked new REFSMMATs for different parts of the flight, such as one aligned to the landing site for the descent, and the crew realigned the platform to match (program P52).',
+  },
+  {
+    id: 'rendezvous-burns',
+    abbr: [
+      { short: 'CSI', full: 'Coelliptic Sequence Initiation' },
+      { short: 'CDH', full: 'Constant Delta Height' },
+      { short: 'TPI', full: 'Terminal Phase Initiation' },
+    ],
+    terms: ['Coelliptic Sequence Initiation', 'Constant Delta Height', 'Terminal Phase Initiation', 'CSI', 'CDH', 'TPI'],
+    short: 'The burns that brought the LM back up to the Command Module after leaving the Moon.',
+    long: 'On the early landings, the LM caught up with the CSM in a sequence of engine burns after lifting off from the Moon. CSI (Coelliptic Sequence Initiation) set the LM on an orbit a fixed distance below the CSM\'s; CDH (Constant Delta Height) made the two orbits parallel; and TPI (Terminal Phase Initiation) started the final climb to meet it, followed by braking and docking. Later missions (from Apollo 14) used a faster direct rendezvous that skipped most of these steps.',
+  },
+  {
+    id: 'slingshot',
+    terms: ['slingshot maneuver', 'Slingshot maneuver', 'slingshot', 'Slingshot'],
+    short: 'Sending the spent third stage past the Moon and away, so it could never collide with the spacecraft.',
+    long: 'After the Command Module pulled the LM out of the S-IVB third stage, the empty stage was still following the spacecraft toward the Moon. Mission Control had it dump its leftover liquid oxygen (the "LOX dump") and fire small thrusters, changing its path so it passed behind the Moon and was flung into orbit around the Sun, well clear of the spacecraft. From Apollo 13 onward the stages were steered into the Moon instead, so seismometers left by earlier crews could record the impacts.',
+  },
+  {
     id: 'tig',
     abbr: [{ short: 'TIG', full: 'Time of Ignition' }],
     terms: ['DELTA-TIG', 'Delta-TIG', 'TIG'],

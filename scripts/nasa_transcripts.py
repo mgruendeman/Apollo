@@ -253,11 +253,17 @@ def _word_score(word, vocab):
     return 2 if core.lower() in vocab or core.isupper() or re.fullmatch(r"[\d.,:/-]+", core) else 1
 
 
-def merge_readings(old, new, vocab):
+def merge_readings(old, new, vocab, nearby=''):
     """Two readings of one line (the PDF's embedded text, and Tesseract's)
     merged word by word: where they disagree, the reading that scores
-    better as a word wins; on a tie the embedded text stays."""
+    better as a word wins; on a tie the embedded text stays.
+
+    Words only Tesseract saw are added only as a run of 3+ real words that
+    isn't in the lines around (`nearby`: Tesseract sometimes splits the
+    page into lines differently, and a neighbour's words bleed in) and
+    doesn't repeat what this line already says."""
     a, b = old.split(), new.split()
+    near = ' ' + ' '.join(re.sub(r'[^a-z0-9 ]', '', w.lower()) for w in nearby.split()) + ' '
     out = []
     for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, [w.lower() for w in a], [w.lower() for w in b], autojunk=False).get_opcodes():
         if op == 'equal':
@@ -267,21 +273,34 @@ def merge_readings(old, new, vocab):
         elif op == 'replace':
             sa = min((_word_score(w, vocab) for w in a[i1:i2]), default=2)
             sb = min((_word_score(w, vocab) for w in b[j1:j2]), default=2)
-            out += b[j1:j2] if sb > sa else a[i1:i2]
+            out += b[j1:j2] if sb > sa and abs((j2 - j1) - (i2 - i1)) <= 2 else a[i1:i2]
         elif op == 'delete':
             out += [w for w in a[i1:i2] if _word_score(w, vocab) > 0]   # a scrap only the old reading has
-        # 'insert' (only Tesseract saw it): leave out unless clean and a real word
-        else:
-            out += [w for w in b[j1:j2] if _word_score(w, vocab) == 2 and len(w.strip('.,?!;:')) > 1]
+        else:   # 'insert': only Tesseract saw these
+            run = b[j1:j2]
+            plain = ' '.join(re.sub(r'[^a-z0-9]', '', w.lower()) for w in run)
+            own = {re.sub(r'[^a-z0-9]', '', w.lower()) for w in a}
+            if (len(run) >= 3 and all(_word_score(w, vocab) == 2 for w in run) and f' {plain} ' not in near
+                    and sum(re.sub(r'[^a-z0-9]', '', w.lower()) in own for w in run) * 2 < len(run)):
+                out += run
     return ' '.join(out)
 
 
-def extract_merged(pdf_path, pages=None):
+def extract_merged(pdf_path, pages=None, cache=None):
     """Both readings of the scan (embedded text layer and a fresh Tesseract
     pass), lined up row by row and merged word by word. Times and speakers
-    come from whichever reading has them readable."""
-    old = extract(pdf_path, pages=pages)
-    new = extract(pdf_path, force_ocr=True, pages=pages)
+    come from whichever reading has them readable. With `cache` (a path
+    prefix), each reading is saved and reused, so re-merging is quick."""
+    def reading(name, **kw):
+        path = Path(f'{cache}.{name}.json') if cache else None
+        if path and path.exists():
+            return json.loads(path.read_text())
+        rows = extract(pdf_path, pages=pages, **kw)
+        if path:
+            path.write_text(json.dumps(rows))
+        return rows
+    old = reading('embedded')
+    new = reading('tesseract', force_ocr=True)
     words = [w.lower().strip('.,?!;:"()') for r in old + new for w in r['text'].split()]
     from collections import Counter
     seen = Counter(words)
@@ -294,9 +313,11 @@ def extract_merged(pdf_path, pages=None):
     out = []
     for op, i1, i2, j1, j2 in pairs.get_opcodes():
         if op in ('equal', 'replace') and i2 - i1 == j2 - j1:
-            for r, q in zip(old[i1:i2], new[j1:j2]):
+            for k, (r, q) in enumerate(zip(old[i1:i2], new[j1:j2])):
+                i = i1 + k
+                nearby = ' '.join(x['text'] for x in old[max(0, i - 2):i] + old[i + 1:i + 3])
                 m = dict(r)
-                m['text'] = merge_readings(r['text'], q['text'], vocab)
+                m['text'] = merge_readings(r['text'], q['text'], vocab, nearby)
                 if r['getApprox'] and not q['getApprox']:
                     m['getSeconds'], m['getApprox'] = q['getSeconds'], False
                 if r['speaker'] == '?' and q['speaker'] != '?':
@@ -409,7 +430,7 @@ if __name__ == '__main__':
         Path(sys.argv[3]).write_text(json.dumps(rows, indent=0))
         print(len(rows), 'rows,', sum(r['getApprox'] for r in rows), 'with approximate time')
     elif sys.argv[1] == 'merge':   # embedded text + Tesseract, merged word by word
-        rows = extract_merged(sys.argv[2])
+        rows = extract_merged(sys.argv[2], cache=sys.argv[3].removesuffix('.json'))
         Path(sys.argv[3]).parent.mkdir(parents=True, exist_ok=True)
         Path(sys.argv[3]).write_text(json.dumps(rows, indent=0))
         print(f'{len(rows)} rows, {sum(r["getApprox"] for r in rows)} with approximate time')
