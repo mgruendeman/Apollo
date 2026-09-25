@@ -1,7 +1,7 @@
 import { glossaryMatchRegex, findGlossaryEntry } from '../data/glossary'
 import { findInfoNotes } from '../data/infoNotes'
 
-// Splits text on glossary terms and wraps each match in a clickable span,
+// Splits text on glossary terms and wraps the first match of each in a clickable span,
 // so any transcript line (or description) can offer a rabbit hole into the
 // glossary without every caller re-implementing the regex split.
 // `excludeId` leaves an entry's own terms as plain text inside its own card.
@@ -10,6 +10,9 @@ import { findInfoNotes } from '../data/infoNotes'
 // the same panel.
 export default function GlossaryText({ text, onTermClick, excludeId, notes = false }) {
   let key = 0
+  // Each entry is underlined once per text: its first mention. (A long line
+  // naming the terminator three times shouldn't be three links.)
+  const linked = new Set()
 
   function glossaryParts(chunk) {
     // A fresh RegExp per call (not the shared module instance) so this
@@ -23,7 +26,8 @@ export default function GlossaryText({ text, onTermClick, excludeId, notes = fal
         parts.push(chunk.slice(lastIndex, match.index))
       }
       const entry = findGlossaryEntry(match[0])
-      if (entry && entry.id !== excludeId && onTermClick) {
+      if (entry && entry.id !== excludeId && onTermClick && !linked.has(entry.id)) {
+        linked.add(entry.id)
         parts.push(
           <button
             key={key++}

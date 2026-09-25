@@ -1,14 +1,9 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { classifyEventType, EVENT_TYPE_META } from '../data/eventType'
 import { stripSourcePrefix } from '../lib/sourceLabel'
 import { photosByClipId } from '../data/photos'
 import { PHASES } from '../data/phases'
 import PhaseIcon from './PhaseIcon'
-
-// Collapse a run of this many or more back-to-back routine clips into a
-// single expandable row, so a quiet multi-hour stretch doesn't bury the
-// milestones around it in dozens of near-identical rows.
-const COLLAPSE_THRESHOLD = 5
 
 // The archive's own page labels ("Day 1, part 1" / "part 2" / ...) aren't
 // strictly time-ordered — pages overlap and a handful of clips from an
@@ -39,25 +34,6 @@ function buildChapters(clips) {
   return chapters
 }
 
-function buildRows(types) {
-  const rows = []
-  let i = 0
-  while (i < types.length) {
-    if (types[i] === 'routine') {
-      let j = i
-      while (j < types.length && types[j] === 'routine') j++
-      if (j - i >= COLLAPSE_THRESHOLD) {
-        rows.push({ kind: 'run', start: i, end: j })
-        i = j
-        continue
-      }
-    }
-    rows.push({ kind: 'clip', index: i })
-    i++
-  }
-  return rows
-}
-
 // Brief events that name a chapter even when most of its clips are before
 // or after them: a chapter that includes the landing is the descent.
 const EVENT_PHASES = ['launch', 'landing', 'ascent', 'splashdown']
@@ -77,8 +53,6 @@ function chapterPhase(phases, clips, start, end, label) {
 }
 
 export default function MissionTimeline({ mission, clips, transcripts, phases, activeIndex, onSelect }) {
-  const [expandedRuns, setExpandedRuns] = useState(() => new Set())
-
   const chapters = useMemo(() => buildChapters(clips), [clips])
   const highlightIds = new Set((mission.highlights || []).map((h) => h.id))
   const activeChapterIndex = chapters.findIndex(
@@ -106,15 +80,6 @@ export default function MissionTimeline({ mission, clips, transcripts, phases, a
     return { title: hit.title, quote: lines?.[0]?.text }
   }
 
-  function toggleRun(key) {
-    setExpandedRuns((prev) => {
-      const next = new Set(prev)
-      if (next.has(key)) next.delete(key)
-      else next.add(key)
-      return next
-    })
-  }
-
   return (
     <section className="timeline">
       <h3>Full mission timeline</h3>
@@ -140,7 +105,6 @@ export default function MissionTimeline({ mission, clips, transcripts, phases, a
             ? 'major'
             : classifyEventType(`${c.sourceLabel} ${previewFor(c) || ''}`),
         )
-        const rows = buildRows(types)
 
         return (
           <details key={ch.startIndex} open={ci === activeChapterIndex} className={meta.className}>
@@ -169,53 +133,15 @@ export default function MissionTimeline({ mission, clips, transcripts, phases, a
               </blockquote>
             )}
             <ol>
-              {rows.map((row) => {
-                if (row.kind === 'run') {
-                  const key = `${ch.startIndex}-${row.start}`
-                  const expanded = expandedRuns.has(key)
-                  const first = chapterClips[row.start]
-                  const last = chapterClips[row.end - 1]
-                  if (!expanded) {
-                    return (
-                      <li key={key}>
-                        <button
-                          type="button"
-                          className="timeline-run-toggle"
-                          onClick={() => toggleRun(key)}
-                        >
-                          <span className="moment-get">
-                            {first.get}–{last.get}
-                          </span>
-                          <span className="moment-title">
-                            {row.end - row.start} routine exchanges — click to expand
-                          </span>
-                        </button>
-                      </li>
-                    )
-                  }
-                  return chapterClips.slice(row.start, row.end).map((c, k) => {
-                    const i = ch.startIndex + row.start + k
-                    return (
-                      <TimelineClipRow
-                        key={c.id}
-                        clip={c}
-                        type={types[row.start + k]}
-                        preview={previewFor(c)}
-                        chapterLabel={ch.label}
-                        isActive={i === activeIndex}
-                        onSelect={() => onSelect(i)}
-                      />
-                    )
-                  })
-                }
-
-                const c = chapterClips[row.index]
-                const i = ch.startIndex + row.index
+              {chapterClips.map((c, k) => {
+                // Routine exchanges stay in the list, as compact rows, so
+                // nothing is hidden and the milestones still stand out.
+                const i = ch.startIndex + k
                 return (
                   <TimelineClipRow
                     key={c.id}
                     clip={c}
-                    type={types[row.index]}
+                    type={types[k]}
                     preview={previewFor(c)}
                     chapterLabel={ch.label}
                     isActive={i === activeIndex}
@@ -238,13 +164,13 @@ function TimelineClipRow({ clip, type, preview, chapterLabel, isActive, onSelect
     <li>
       <button
         type="button"
-        className={isActive ? 'moment-item is-active' : 'moment-item'}
+        className={['moment-item', isActive && 'is-active', type === 'routine' && 'is-routine'].filter(Boolean).join(' ')}
         onClick={onSelect}
       >
         <span className="moment-get">{clip.get}</span>
         {meta.icon && <span className="moment-icon">{meta.icon}</span>}
         <span className="moment-title">
-          {(preview || stripSourcePrefix(chapterLabel)).slice(0, 100)}
+          {(preview || stripSourcePrefix(chapterLabel)).slice(0, type === 'routine' ? 70 : 100)}
         </span>
         {photo && (
           <img

@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import GlossaryText from './GlossaryText'
 import SpeakerAvatar from './SpeakerAvatar'
 import ReportDialog from './ReportDialog'
@@ -52,7 +53,7 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
     <div className="transcript-panel">
       <p className="glossary-hint">
         Dotted-underline words and ⓘ explain more · click a line to jump there · press and hold a line to report a
-        problem
+        problem · <Link to="/guide">how this works</Link>
       </p>
       <div className="transcript-frame">
         <div className="transcript-list" ref={listRef} {...listProps}>

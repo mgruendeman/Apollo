@@ -263,7 +263,7 @@ def _similar(a, b):
     return difflib.SequenceMatcher(None, re.sub(r"[^a-z]", '', a.lower()), b).ratio()
 
 
-def _unconfuse(core, vocab, freq=None):
+def _unconfuse(core, vocab, freq=None, context=None):
     """The one dictionary word an OCR misreading could stand for, if exactly
     one fits ("Sta6ing" -> "Staging", "Cha_lie" -> "Charlie"), else None."""
     found = set()
@@ -293,7 +293,14 @@ def _unconfuse(core, vocab, freq=None):
     if len(found) == 1:
         return found.pop()
     found -= {w for w in found if "'" in w and "'" not in core}
-    if freq and found:   # several fit ("re_d": read, reed, rend): the one this mission says far more often
+    if freq and found:   # several fit ("re_d": read, reed, rend): the one that goes with the words
+        # either side of it in this mission's speech, else the one it says far more often
+        if context:
+            prev, nxt, pairs = context
+            fit = {w: pairs.get((prev, w), 0) + pairs.get((w, nxt), 0) for w in found}
+            ranked = sorted(found, key=lambda w: -fit[w])
+            if fit[ranked[0]] >= 2 and fit[ranked[0]] >= 3 * fit[ranked[1]]:
+                return ranked[0]
         ranked = sorted(found, key=lambda w: -freq.get(w, 0))
         if freq.get(ranked[0], 0) >= 3 and freq.get(ranked[0], 0) >= 3 * freq.get(ranked[1], 0):
             return ranked[0]
@@ -308,7 +315,7 @@ CALLSIGNS = {'11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipp
              '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
              '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
 MISSION = {'n': '11'}   # the mission being processed (set in main)
-DIGIT_LOOKS = {'1': '[1!il|I]', '2': '[2Zz]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
+DIGIT_LOOKS = {'1': '[1!il|It]', '2': '[2Zz]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
 
 
 def _place(word):
@@ -366,6 +373,23 @@ def _places(text, vocab):
     return ' '.join(out)
 
 
+def _scrap_tail(text):
+    """Drop a line's closing run of scraps (no two letters or digits
+    together, not NASA's "..."), when it holds an OCR-junk character."""
+    toks = text.split()
+    k = len(toks)
+    while k > 1 and not re.search(r"[A-Za-z0-9]{2}", toks[k - 1]) and toks[k - 1] not in ('...', '-', '- -', '--'):
+        k -= 1
+    tail = ' '.join(toks[k:])
+    if k < len(toks) and k > 0 and re.search(r"['\"}{_/;:|<>~^]", tail):
+        return ' '.join(toks[:k])
+    return text
+
+
+def n_of_mission():
+    return str(int(MISSION['n']))
+
+
 def _tidy(text, vocab):
     """The plain slips, no tape needed."""
     text, n = HEADING.subn('', text)
@@ -397,6 +421,12 @@ def _tidy(text, vocab):
     text = re.sub(r"\bG\(\)", 'GO', text)                                  # "G()"
     text = re.sub(r"\s/(?=\s)", '', text)                                   # a lone "/"
     text = re.sub(r"\bOve r\b", 'Over', text)                               # "Ove r."
+    text = re.sub(r"\b([NOH]) 2\b", r"\g<1>2", text)                        # "N 2 tank" for N2
+    text = re.sub(r"\bPYRO bus\b", 'pyro bus', text)                         # (NASA wrote it both ways)
+    text = re.sub(r"(?<=, )[Ili1!|]{2}(?=\.?$)", n_of_mission(), text)        # "..., Ii." for 11
+    text = re.sub(r"^(Roger)\.?\s+[il1|]\s+[il1|]\.?$", r"\1.", text)          # "Roger. i i"
+    text = re.sub(r"\b(Roger) r\s*\.", r"\1.", text)                          # "Roger r ."
+    text = _scrap_tail(text)                                                  # "... descent. ',F? , }_ /'"
     text = re.sub(r"\s+\S{0,3}(?:[a_g<]e|ag[eo]|_ge)\s+\d{3,4}\s*$", '', text)  # page numbers: "}'_ge 307", "iago 312"
     text = re.sub(r"\b([A-Za-z]{3,})- ([a-z]{2,})\b",                         # "sequenc- ing": split at a line end
                   lambda m: m.group(1) + m.group(2) if (m.group(1) + m.group(2)).lower() in vocab else m.group(), text)
@@ -436,6 +466,13 @@ def repair_ocr(lines, segments, tape_words):
     from collections import Counter
     freq = Counter(re.sub(r"[^a-z0-9']", '', w[2].lower()) for tw, _ in tape_words.values() for w in tw)
     freq.update(w.lower() for l in lines for w in re.findall(r"(?<![\w_])[A-Za-z']+(?![\w_])", l['t']))
+    pairs = Counter()   # which words follow which, in the recognised speech and NASA's clean words
+    for tw, _ in tape_words.values():
+        ws = [re.sub(r"[^a-z0-9']", '', w[2].lower()) for w in tw]
+        pairs.update(zip(ws, ws[1:]))
+    for l in lines:
+        ws = [w.lower() for w in re.findall(r"(?<![\w_])[A-Za-z']+(?![\w_])", l['t'])]
+        pairs.update(zip(ws, ws[1:]))
 
     def cased(word, original, i, words):
         """Capital for a sentence's first word, a name, or an unknown word
@@ -455,7 +492,8 @@ def repair_ocr(lines, segments, tape_words):
         # a misreading that can only be one word, first ("Sta6ing" -> "staging")
         for i in sorted(bad):
             lead, core, trail = _core(words[i])
-            fix = _unconfuse(core, spoken | names if core[:1].isupper() else spoken, freq)   # (names only for a capital)
+            ctx = (_core(words[i - 1])[1].lower() if i else '', _core(words[i + 1])[1].lower() if i + 1 < len(words) else '', pairs)
+            fix = _unconfuse(core, spoken | names if core[:1].isupper() else spoken, freq, ctx)   # (names only for a capital)
             if fix:
                 words[i] = lead + cased(fix, core, i, words) + trail
                 bad.discard(i)
@@ -886,7 +924,8 @@ def main():
     repaired = repair_ocr(lines, segments, tape_words)
     fixed = use_journal_text(m, lines) if args.journal_text else 0
     # NASA's page headings read as if spoken ("11 AIR-TO-GROUND VOICE TRANSCRIPTION")
-    lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,2}.{0,3}GROUND|VOICE\s+T\S{0,3}ANSCR", l['t'])
+    lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,4}.{0,3}G[RH]OUND|VOICE\s*T\S{0,3}[AJ]\S{0,3}S\S{0,2}R", l['t'])
+             and not re.match(r"^\s*[1l]{2}\s+A\S{0,4}-", l['t'])   # "11 A_I_-TO-G][_OlJl_D VOICE ..."
              and re.search(r"[A-Za-z0-9]|\.\.\.|\*\*\*", l['t'])]   # (and lines that are only a stray mark: ")", "¢")
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'
     out.parent.mkdir(parents=True, exist_ok=True)

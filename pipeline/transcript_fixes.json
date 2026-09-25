@@ -107,7 +107,7 @@
   },
   {
    "g": 7751,
-   "from": "thl_ is Houston standing by through Tar_n_ri_e .'",
+   "from": "thl_ is Houston standing by through Tar_n_ri_e",
    "to": "this is Houston standing by through Tananarive."
   },
   {
@@ -143,7 +143,7 @@
   {
    "g": 11377,
    "from": "PYPO bus A armed Band pyro",
-   "to": "PYRO bus A armed and pyro"
+   "to": "pyro bus A armed and pyro"
   },
   {
    "g": 12575,
@@ -412,7 +412,7 @@
   },
   {
    "g": 369576,
-   "from": "Roger, We copy thr(_tL, ,i_,_",
+   "from": "Roger, We copy thr(_tL,",
    "to": "Roger. We copy throttle down."
   },
   {
@@ -454,6 +454,76 @@
    "g": 369352,
    "speaker": "Duke",
    "text": "Stand by. Looking good."
+  },
+  {
+   "g": 275755,
+   "from": "or 1BO miles",
+   "to": "or 130 miles"
+  },
+  {
+   "g": 277381,
+   "from": "crossing o _ 45 west",
+   "to": "crossing the 45 west"
+  },
+  {
+   "g": 278331,
+   "from": "Expect in the next",
+   "to": "Expect in the next rev you'll probably be getting ready for LOI-2."
+  },
+  {
+   "g": 278573,
+   "from": "the P;_D and",
+   "to": "the PAD and"
+  },
+  {
+   "g": 278573,
+   "from": "economize _e a little",
+   "to": "economize a little"
+  },
+  {
+   "g": 278573,
+   "from": "thoug,_.",
+   "to": "though."
+  },
+  {
+   "g": 279354,
+   "from": "prime m<_ridian",
+   "to": "prime meridian"
+  },
+  {
+   "g": 282809,
+   "from": "location Yo_'re holding",
+   "to": "location you're holding"
+  },
+  {
+   "g": 282863,
+   "from": "th_ screen",
+   "to": "the screen"
+  },
+  {
+   "g": 282863,
+   "from": "12.:minutes before power decent_;'",
+   "to": "12 minutes before powered descent."
+  },
+  {
+   "g": 283052,
+   "from": "crater oi my choice",
+   "to": "crater of my choice"
+  },
+  {
+   "g": 283057,
+   "from": "watching for Neper",
+   "to": "watching for Camp"
+  },
+  {
+   "g": 283222,
+   "from": "Fo_ming Sea",
+   "to": "Foaming Sea"
+  },
+  {
+   "g": 282701,
+   "from": "Roger r .",
+   "to": "Roger."
   }
  ]
 }

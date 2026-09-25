@@ -5,6 +5,8 @@ import Glossary from './pages/Glossary'
 import GlossaryDetail from './pages/GlossaryDetail'
 import Astronauts from './pages/Astronauts'
 import Astronaut from './pages/Astronaut'
+import Guide from './pages/Guide'
+import Contact from './pages/Contact'
 import NowPlayingBar from './components/NowPlayingBar'
 import ScrollMemory from './components/ScrollMemory'
 import { PlayerProvider } from './audio/PlayerContext'
@@ -20,6 +22,8 @@ function App() {
         <Route path="/glossary/:id" element={<GlossaryDetail />} />
         <Route path="/astronauts" element={<Astronauts />} />
         <Route path="/astronaut/:id" element={<Astronaut />} />
+        <Route path="/guide" element={<Guide />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <NowPlayingBar />
     </PlayerProvider>

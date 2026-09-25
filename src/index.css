@@ -2642,3 +2642,83 @@ button.transcript-channel-tag {
 .transcript-line.is-unheard .transcript-text {
   font-style: italic;
 }
+
+/* routine exchanges in the timeline: listed, but quieter than the milestones */
+.moment-item.is-routine {
+  padding: 6px 18px;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.moment-item.is-routine .moment-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.moment-item.is-routine.is-active {
+  color: var(--text);
+}
+
+/* the guide and contact pages */
+.guide section,
+.contact-form {
+  margin-top: 32px;
+  max-width: 720px;
+}
+.guide h2 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+.guide h3 {
+  font-size: 1rem;
+  margin: 18px 0 8px;
+}
+.guide p,
+.guide li,
+.guide dd {
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+.guide-list dt {
+  font-weight: 600;
+  margin-top: 12px;
+}
+.guide-list dd {
+  margin: 4px 0 0;
+}
+.guide-points {
+  padding-left: 20px;
+}
+.guide-points li {
+  margin: 6px 0;
+}
+.guide .info-dot,
+.guide .reaction-add {
+  display: inline-flex;
+  pointer-events: none;
+}
+.guide-contact {
+  margin-top: 32px;
+}
+.contact-kinds {
+  border: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: grid;
+  gap: 8px;
+}
+.contact-kinds legend {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.contact-kinds label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--text-dim);
+}
+.contact-kinds input {
+  accent-color: var(--accent);
+}
+.contact-done {
+  margin-top: 32px;
+}

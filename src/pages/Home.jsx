@@ -31,6 +31,12 @@ export default function Home() {
           <Link to="/astronauts" className="glossary-nav-link">
             Meet the astronauts ↗
           </Link>
+          <Link to="/guide" className="glossary-nav-link">
+            How to use this site ↗
+          </Link>
+          <Link to="/contact" className="glossary-nav-link">
+            Contact &amp; suggestions ↗
+          </Link>
         </nav>
       </header>
 

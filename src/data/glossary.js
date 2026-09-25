@@ -257,6 +257,19 @@ export const glossary = [
     long: 'An orbit is an ellipse, so the spacecraft is closest to the body it circles at one point and farthest at the opposite one. Around Earth these are the perigee (low point) and apogee (high point); around the Moon, perilune and apolune, which NASA also called pericynthion and apocynthion. Altitudes are given in nautical miles above the surface: before the landing, Eagle\'s descent orbit had a perilune of about 50,000 feet, from which the powered descent began.',
   },
   {
+    id: 'tig',
+    abbr: [{ short: 'TIG', full: 'Time of Ignition' }],
+    terms: ['DELTA-TIG', 'Delta-TIG', 'TIG'],
+    short: 'Time of ignition: when an engine burn is to start. DELTA-TIG is how far the actual start was from the planned one.',
+    long: 'Every burn was planned to start at a precise mission time, its TIG (time of ignition), read up to the crew in the PAD before the burn. After the burn the crew reported how it went, starting with DELTA-TIG, the difference between the planned and actual ignition time; "DELTA-TIG zero" meant the engine lit exactly on schedule.',
+  },
+  {
+    id: 'mount-marilyn',
+    terms: ['Mount Marilyn', 'Mons Marilyn'],
+    short: 'A mountain on the Moon named by Jim Lovell on Apollo 8 for his wife, Marilyn, and a landmark on the way to the Apollo 11 landing site.',
+    long: 'Orbiting the Moon on Apollo 8 in December 1968, Jim Lovell informally named a triangular mountain near the Sea of Tranquility after his wife, Marilyn. It lay under the path to the planned landing site, so Apollo 10 and Apollo 11 used it as a landmark: passing over it marked the point for the burn that began the descent. The name stayed informal for decades until the International Astronomical Union made it official as Mons Marilyn in 2017.',
+  },
+  {
     id: 'delta-h',
     terms: ['DELTA-H', 'Delta-H', 'delta-H', 'DELTA H', 'Delta H'],
     short: 'During the landing: the gap between the altitude the landing radar measured and the altitude the guidance computer had worked out.',
