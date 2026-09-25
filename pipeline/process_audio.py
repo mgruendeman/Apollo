@@ -59,14 +59,22 @@ def decode(src, wav, clip):
 
 
 def encode(wav, out):
-    # Loudness normalisation (EBU R128), then 48 kbps mono AAC.
+    # Loudness normalisation (EBU R128), then 48 kbps mono AAC. Written under
+    # a temporary name and renamed when done, so a stopped run never leaves
+    # a half-written file that a restart would take as finished.
+    part = out.with_name(out.stem + '.part' + out.suffix)
     run(['ffmpeg', '-y', '-i', str(wav), '-af', 'loudnorm=I=-18:TP=-1.5:LRA=11',
-         '-ar', str(SR), '-ac', '1', '-c:a', 'aac', '-b:a', '48k', '-movflags', '+faststart', str(out)])
+         '-ar', str(SR), '-ac', '1', '-c:a', 'aac', '-b:a', '48k', '-movflags', '+faststart', str(part)])
+    part.rename(out)
 
 
 class DeepFilter:
     def __init__(self):
+        import os
+        import torch
         from df.enhance import init_df
+        if os.environ.get('APOLLO_THREADS'):   # when several runs share the machine
+            torch.set_num_threads(int(os.environ['APOLLO_THREADS']))
         self.model, self.state, _ = init_df(log_level='ERROR')
 
     def __call__(self, audio, atten_db):
