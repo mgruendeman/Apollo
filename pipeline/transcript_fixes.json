@@ -202,13 +202,8 @@
   },
   {
    "g": 13850,
-   "from": "you,[might be int'erasted _ha% Sub _\" left-hand window",
-   "to": "you might be interested that out the left-hand window"
-  },
-  {
-   "g": 13850,
-   "from": "otserve",
-   "to": "observe"
+   "from": "And Houston, might be interested _ha% Sub _\" left-hand window",
+   "to": "And Houston, you might be interested that out the left-hand window"
   },
   {
    "g": 13850,
@@ -284,6 +279,181 @@
    "g": 17479,
    "from": "Great L_fm_s and into Newfo_andland.",
    "to": "Great Lakes and into Newfoundland."
+  },
+  {
+   "g": 368305,
+   "from": "high ga_,n, Over.",
+   "to": "high gain. Over."
+  },
+  {
+   "g": 368345,
+   "speaker": "Armstrong",
+   "text": "How do you read"
+  },
+  {
+   "g": 368345,
+   "from": "_ Eagle, Houston - Houston, ;:sW_ \u00b7 How do you read",
+   "to": "Eagle, Houston - Houston, Eagle. How do you read?"
+  },
+  {
+   "g": 368557,
+   "from": "}[ave him",
+   "to": "Have him"
+  },
+  {
+   "g": 368735,
+   "from": "initJ atizatien",
+   "to": "initialization"
+  },
+  {
+   "g": 368788,
+   "from": "indi_ at_ 5C 00-foot perilune",
+   "to": "indicate 50,000-foot perilune"
+  },
+  {
+   "g": 368788,
+   "speaker": "Armstrong",
+   "text": "visual altitude check"
+  },
+  {
+   "g": 368788,
+   "from": "_t:,adying out at about 53 000",
+   "to": "is steadying out at about 53,000"
+  },
+  {
+   "g": 368829,
+   "speaker": "Aldrin",
+   "text": "That wasn't an alarm; that was a code."
+  },
+  {
+   "g": 368914,
+   "from": "You're GO for ?DI and the high gain again.",
+   "to": "You're GO for PDI. Recommend you yaw right 10 degrees and try the high gain again."
+  },
+  {
+   "g": 368937,
+   "from": "i_,ELD_c,r_'ol eirL'_ breakers.",
+   "to": "... circuit breakers."
+  },
+  {
+   "g": 368947,
+   "speaker": "Aldrin",
+   "text": "COMMAND OVERRIDE - off?"
+  },
+  {
+   "g": 368947,
+   "from": "closed? O' circuit breaker?",
+   "to": "closed? ... circuit breaker?"
+  },
+  {
+   "g": 368947,
+   "from": "GIMBAL-ENA_LE?",
+   "to": "GIMBAL ENABLE?"
+  },
+  {
+   "g": 368974,
+   "from": "four jets - j- Balance couple",
+   "to": "four jets - Balance couple"
+  },
+  {
+   "g": 369189,
+   "from": "Wu \"vt: 1,_._ _nem. TeL1 them",
+   "to": "We've lost them. Tell them"
+  },
+  {
+   "g": 369189,
+   "from": "aft OMNI. Over",
+   "to": "aft OMNI. Over."
+  },
+  {
+   "g": 369301,
+   "from": "a _ ttle high",
+   "to": "a little high"
+  },
+  {
+   "g": 369345,
+   "from": "a l/tt fluctuation the AC",
+   "to": "a little fluctuation in the AC"
+  },
+  {
+   "g": 369352,
+   "speaker": "Aldrin",
+   "text": "Could be our meter"
+  },
+  {
+   "g": 369352,
+   "from": "maybe, b;!h7",
+   "to": "maybe, huh?"
+  },
+  {
+   "g": 369442,
+   "from": "You are GO to continue",
+   "to": "You are GO to continue power descent. You are GO to continue power descent."
+  },
+  {
+   "g": 369484,
+   "from": "lock-o,,. Altitude light,.",
+   "to": "lock-on. Altitude light out."
+  },
+  {
+   "g": 369500,
+   "from": "right out our ! ,_nt window",
+   "to": "right out our front window"
+  },
+  {
+   "g": 369528,
+   "from": "PROGRAM AlJ_vl.",
+   "to": "PROGRAM ALARM."
+  },
+  {
+   "g": 369575,
+   "from": "Throttle down on tii_,!",
+   "to": "Throttle down on time!"
+  },
+  {
+   "g": 369576,
+   "from": "Roger, We copy thr(_tL, ,i_,_",
+   "to": "Roger. We copy throttle down."
+  },
+  {
+   "g": 369608,
+   "from": "great to u. , Eagle.",
+   "to": "great to us, Eagle."
+  },
+  {
+   "g": 369687,
+   "from": "Coming up 8 you're ],-,kiug great.",
+   "to": "Coming up 8 30, you're looking great."
+  },
+  {
+   "g": 369712,
+   "from": "Coming up '_ minutes.",
+   "to": "Coming up 9 minutes."
+  },
+  {
+   "g": 369712,
+   "from": "_F, Manual attitude control is ga_d.",
+   "to": "Manual attitude control is good."
+  },
+  {
+   "g": 368345,
+   "from": "How do you read?",
+   "to": "How do you read now?"
+  },
+  {
+   "g": 368345,
+   "text": "now?",
+   "delete": true
+  },
+  {
+   "g": 369352,
+   "from": "Stand by, Looki_.,ggo_ ' t _ You're, r,ti]l looking good at 3, coming up : minutes.",
+   "to": "Stand by. Looking good. You're still looking good. Coming up 3 minutes."
+  },
+  {
+   "g": 369352,
+   "speaker": "Duke",
+   "text": "Stand by. Looking good."
   }
  ]
 }

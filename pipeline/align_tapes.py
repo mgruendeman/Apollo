@@ -396,6 +396,8 @@ def _tidy(text, vocab):
     text = re.sub(r"(?<=\d\.)!", '1', text)                                 # "0.!" for 0.1
     text = re.sub(r"\bG\(\)", 'GO', text)                                  # "G()"
     text = re.sub(r"\s/(?=\s)", '', text)                                   # a lone "/"
+    text = re.sub(r"\bOve r\b", 'Over', text)                               # "Ove r."
+    text = re.sub(r"\s+\S{0,3}(?:[a_g<]e|ag[eo]|_ge)\s+\d{3,4}\s*$", '', text)  # page numbers: "}'_ge 307", "iago 312"
     text = re.sub(r"\b([A-Za-z]{3,})- ([a-z]{2,})\b",                         # "sequenc- ing": split at a line end
                   lambda m: m.group(1) + m.group(2) if (m.group(1) + m.group(2)).lower() in vocab else m.group(), text)
     text = re.sub(r"\b(primary|secondary|number|bus|gimbal|motor|quad|tank|bottle|loop|step|channel|position|option|"
@@ -660,6 +662,51 @@ def find_announcer(segments, lines, tape_words, heard_at):
     return spans, over, said
 
 
+def time_untimed(lines, segments, tape_words):
+    """Times for NASA's lines whose time the scan lost (or, on the
+    moonwalks, printed as the day and hour only), from the tapes: between
+    the timed lines either side, each is looked for in order among the words
+    heard on the tape over that stretch. Returns how many were timed."""
+    end = lambda sg: sg['get'] + (sg['to'] - sg['from']) * sg['rate']
+    done = 0
+    timed = [i for i, l in enumerate(lines) if not l.get('a')]
+    for p, n in zip([-1] + timed, timed + [len(lines)]):
+        run = range(p + 1, n)
+        if not run:
+            continue
+        g0 = lines[p]['g'] if p >= 0 else -3600
+        g1 = lines[n]['g'] if n < len(lines) else g0 + 3600
+        g1 = max(g1, g0 + 60)
+        # the tape words over [g0, g1], in mission order, with their mission times
+        heard = []
+        for sg in segments:
+            if end(sg) < g0 or sg['get'] > g1 or sg['tape'] not in tape_words or sg.get('journal'):
+                continue
+            words, starts = tape_words[sg['tape']]
+            ta = sg['from'] + (max(g0, sg['get']) - sg['get']) / sg['rate']
+            tb = sg['from'] + (min(g1, end(sg)) - sg['get']) / sg['rate']
+            for w in words[bisect.bisect_left(starts, ta):bisect.bisect_right(starts, tb)]:
+                heard.append((sg['get'] + (w[0] - sg['from']) * sg['rate'],) + tuple(w[1:]))
+        heard.sort()
+        heard_at = [h[0] for h in heard]
+        cursor = 0
+        for i in run:
+            toks = tokens(lines[i]['t'])
+            if len(toks) < MIN_WORDS or cursor >= len(heard):
+                continue
+            g, share = find(toks, heard, cursor, min(len(heard), cursor + 400 + 3 * len(toks)))
+            if g is not None and share >= 0.6:
+                lines[i]['g'] = round(g)
+                lines[i].pop('a', None)
+                cursor = bisect.bisect_right(heard_at, g)
+                done += 1
+    # still-untimed lines keep their place between their neighbours
+    for i in range(1, len(lines)):
+        if lines[i].get('a') and lines[i]['g'] < lines[i - 1]['g']:
+            lines[i]['g'] = lines[i - 1]['g']
+    return done
+
+
 def mark_unheard(lines, segments, tape_words, envelopes):
     """NASA's lines that fall where the tape is silent: NASA transcribed the
     full air-to-ground loop, and these tapes are the broadcast copy, which
@@ -704,13 +751,21 @@ def mark_unheard(lines, segments, tape_words, envelopes):
 def apply_fixes(mission, lines):
     """Hand corrections from listeners' reports, pipeline/transcript_fixes.json:
     {"11": [{"g": GET seconds, "from": "text as printed", "to": "corrected"}]};
-    "speaker" in place of from/to puts a line to the right person."""
+    "speaker" in place of from/to puts a line to the right person; "delete": true
+    (with "text") removes a line that's a scrap of another."""
     fixes = json.loads(FIXES.read_text()).get(mission, []) if FIXES.exists() else []
     done = 0
     for f in fixes:
-        hit = [l for l in lines if abs(l['g'] - f['g']) <= 2 and f.get('from', f.get('text', '')) in l['t']]
+        key = f.get('from', f.get('text', ''))
+        match = (lambda t: t.strip() == key) if f.get('delete') else (lambda t: key in t)
+        hit = [l for l in lines if abs(l['g'] - f['g']) <= 2 and match(l['t'])]
+        if not hit:   # the line was re-timed (from the tapes): the nearest holding the text, within the hour
+            near = sorted((abs(l['g'] - f['g']), k) for k, l in enumerate(lines) if abs(l['g'] - f['g']) <= 3600 and match(l['t']))
+            hit = [lines[near[0][1]]] if near else []
         for l in hit:
-            if 'speaker' in f:
+            if f.get('delete'):
+                l['t'] = ''
+            elif 'speaker' in f:
                 l['s'] = f['speaker']
             else:
                 l['t'] = l['t'].replace(f['from'], f['to'])
@@ -827,16 +882,19 @@ def main():
     segments.sort(key=lambda s: s['get'])
     segments = trim_overlaps(segments)
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text'], **({'a': 1} if r['getApprox'] else {})} for r in rows]
+    untimed = time_untimed(lines, segments, tape_words)
     repaired = repair_ocr(lines, segments, tape_words)
     fixed = use_journal_text(m, lines) if args.journal_text else 0
     # NASA's page headings read as if spoken ("11 AIR-TO-GROUND VOICE TRANSCRIPTION")
-    lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,2}.{0,3}GROUND|VOICE\s+T\S{0,3}ANSCR", l['t'])]
+    lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,2}.{0,3}GROUND|VOICE\s+T\S{0,3}ANSCR", l['t'])
+             and re.search(r"[A-Za-z0-9]|\.\.\.|\*\*\*", l['t'])]   # (and lines that are only a stray mark: ")", "¢")
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     announcer, over, said = find_announcer(segments, lines, tape_words, heard_at)
     segments = trim_overlaps(segments)
     lines = sorted(lines + said, key=lambda l: l['g'])
     hand = apply_fixes(m, lines)
+    lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
     unheard = mark_unheard(lines, segments, tape_words, media / 'envelopes' / 'tapes' / m)
     timeline = {'mission': m, 'segments': segments, 'lines': lines, 'announcer': announcer, 'over': over}
     if args.cleaned:   # (the site fills in {media}: its media storage address)
@@ -845,7 +903,7 @@ def main():
     covered = sum((s['to'] - s['from']) * s['rate'] for s in segments) / 3600
     print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes; {len(segments)} segments covering {covered:.1f} h; "
           f"{len(lines)} lines ({repaired} words repaired from the tapes, {fixed} lines in the journal's wording, "
-          f"{hand} hand fixes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; written to {out}")
+          f"{hand} hand fixes, {untimed} untimed lines timed from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; written to {out}")
 
 
 if __name__ == '__main__':

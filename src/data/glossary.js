@@ -251,6 +251,18 @@ export const glossary = [
     long: 'Apollo used small explosive charges ("pyrotechnics", pyros) for the events that had to happen once and for sure: jettisoning the launch escape tower, opening the panels that held the Lunar Module, separating the Command Module from the Service Module before re-entry, and deploying the parachutes. They were fired through two identical, independent circuits, pyro bus A and pyro bus B, each with its own battery, so one failure couldn\'t stop an event. Before each event the crew armed the circuits ("pyro arm"), with the ground confirming on telemetry that bus A and bus B were armed.',
   },
   {
+    id: 'orbit-high-low-points',
+    terms: ['perilune', 'Perilune', 'apolune', 'Apolune', 'pericynthion', 'Pericynthion', 'apocynthion', 'Apocynthion', 'apogee', 'Apogee', 'perigee', 'Perigee'],
+    short: 'The low and high points of an orbit: perigee and apogee around Earth, perilune and apolune (or pericynthion and apocynthion) around the Moon.',
+    long: 'An orbit is an ellipse, so the spacecraft is closest to the body it circles at one point and farthest at the opposite one. Around Earth these are the perigee (low point) and apogee (high point); around the Moon, perilune and apolune, which NASA also called pericynthion and apocynthion. Altitudes are given in nautical miles above the surface: before the landing, Eagle\'s descent orbit had a perilune of about 50,000 feet, from which the powered descent began.',
+  },
+  {
+    id: 'delta-h',
+    terms: ['DELTA-H', 'Delta-H', 'delta-H', 'DELTA H', 'Delta H'],
+    short: 'During the landing: the gap between the altitude the landing radar measured and the altitude the guidance computer had worked out.',
+    long: 'The Lunar Module\'s computer knew its altitude only from its navigation until the landing radar locked on to the surface. The difference between the two, DELTA-H, told the crew and Mission Control how far off the computer\'s estimate was; once it was converging, they let the radar\'s measurements update the computer, which then flew the rest of the descent on the radar altitude.',
+  },
+  {
     id: 'barbecue-roll',
     quote: { text: 'Okay. We\'re back in the barbecue attitude, starting PTC.', attribution: 'Frank Borman, Apollo 8, GET 052:56:06' },
     abbr: [{ short: 'PTC', full: 'Passive Thermal Control' }],
