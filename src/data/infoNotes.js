@@ -61,27 +61,32 @@ export const INFO_RULES = [
     only: (m) => m[1] in PROGRAMS,
     title: (m) => `P${m[1]}`,
     text: (m) => `A program in the Apollo Guidance Computer. ${PROGRAMS[m[1]]}`,
+    family: (m) => (m[1] === '51' || m[1] === '52' ? 'alignment' : null),
   },
   {
     re: /\bstars? (?:number )?(\d{1,2})(?:,? and (?:star )?(\d{1,2}))?\b/gi,
+    family: () => 'alignment',
     title: (m) => m[0],
     text: (m) =>
       `Stars were called by number from the guidance computer's catalog of 37 navigation stars, numbered 01 to 45 in octal (base 8). To align the guidance platform (program P52) a crew member sighted ${m[2] ? `two stars, here ${m[1]} and ${m[2]},` : 'two stars'} through the spacecraft's optics, and the computer compared the angle it measured between them with the angle it expected; the result is the star angle difference (Noun 05). It then worked out how far the platform had drifted and corrected it by the "torquing angles".`,
   },
   {
     re: /\b(?:star angle difference|Noun 05|N ?05)\b/gi,
+    family: () => 'alignment',
     title: () => 'Star angle difference (Noun 05)',
     text: () =>
       'The check on a star sighting: the angle the crew measured between two stars minus the angle the computer expected, in degrees. "Four balls one" (0.01°) or "all balls" (zero) means a near-perfect sighting.',
   },
   {
     re: /\b(?:gyro )?torquing angles?|\bNoun 93\b/gi,
+    family: () => 'alignment',
     title: () => 'Torquing angles (Noun 93)',
     text: () =>
       'After a star sighting, how far the guidance platform had drifted, one angle in degrees for each axis. The computer "torqued" the platform\'s gyros by these amounts to line it back up; small numbers mean little drift since the last alignment.',
   },
   {
     re: /\b(?:(?:one|two|three|four|five|six|\d) )?balls(?: (?:one|two|three|four|five|six|seven|eight|nine|\d))?\b|\ball balls\b/gi,
+    family: () => 'alignment',
     title: (m) => m[0],
     text: () =>
       'Radio slang for zeros, from the way a 0 looks: "four balls one" is 00001, and "all balls" is all zeros.',
@@ -158,8 +163,21 @@ export function findInfoNotes(text) {
       const start = m.index
       const end = start + m[0].length
       if (found.some((f) => start < f.end && end > f.start)) continue
-      found.push({ start, end, note: { title: rule.title(m), text: rule.text(m) } })
+      found.push({ start, end, family: rule.family?.(m) || null, note: { title: rule.title(m), text: rule.text(m) } })
     }
   }
-  return found.sort((a, b) => a.start - b.start)
+  found.sort((a, b) => a.start - b.start)
+  // A line that goes through a whole platform alignment (program, stars,
+  // star angle difference, torquing angles) gets one note that explains the
+  // lot, on its first mention, rather than a dot on every term.
+  const aligned = found.filter((f) => f.family === 'alignment')
+  if (aligned.filter((f) => !/balls/i.test(f.note.title)).length < 2) return found   // ("four balls one" alone is just zeros)
+  aligned[0].note = ALIGNMENT_NOTE
+  return found.filter((f) => f.family !== 'alignment' || f === aligned[0])
+}
+
+const ALIGNMENT_NOTE = {
+  title: 'Aligning the guidance platform',
+  text:
+    'The guidance platform slowly drifts, so every few hours the crew realigned it from the stars. In program P52 (or P51 when starting from scratch, as after Apollo 12\'s lightning strike) a crew member sighted two navigation stars, called by their numbers in the computer\'s catalog, through the optics. The computer compared the angle it measured between them with the angle it expected: the difference, the "star angle difference", shows how good the sighting was, and "four balls one" (0.01 degree) is near perfect. From the sightings it worked out how far the platform had drifted about each axis, the "torquing angles", and turned the platform\'s gyros by those amounts to line it back up. The crew read both numbers to Mission Control, which kept track of how fast each gyro was drifting.',
 }

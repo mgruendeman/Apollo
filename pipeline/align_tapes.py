@@ -92,6 +92,23 @@ def find(line_toks, words, lo, hi):
     return words[lo + first.b][0], matched / len(line_toks)
 
 
+def find_start(line_toks, words, lo, hi):
+    """Where a line starts among words[lo:hi], for timing it: the first run
+    of two or more of its words heard in order (a lone early match, "a" from
+    the sentence before, doesn't count), moved back by the line's words
+    before that run (about 0.3 s each). Returns (time, share matched)."""
+    window = [w[3] for w in words[lo:hi]]
+    if not window:
+        return None, 0.0
+    sm = difflib.SequenceMatcher(None, line_toks, window, autojunk=False)
+    blocks = [b for b in sm.get_matching_blocks() if b.size]
+    if not blocks:
+        return None, 0.0
+    run = next((b for b in blocks if b.size >= 2), blocks[0])
+    matched = sum(b.size for b in blocks)
+    return words[lo + run.b][0] - 0.3 * run.a, matched / len(line_toks)
+
+
 def quietest_gap(word_starts, word_ends, a, b):
     """The middle of the longest stretch without speech between tape times
     a and b: where the recorder was most likely stopped and restarted."""
@@ -171,7 +188,7 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
     mission time (as place_tapes.segments, with tighter agreement), cut
     at the quietest point between neighbouring pieces."""
     groups = []
-    for t, g in sorted(anchors):
+    for t, g, *_ in sorted(anchors):
         off = g - t
         if groups and abs(off - groups[-1][-1][1]) <= 8:
             groups[-1].append((t, off))
@@ -204,8 +221,8 @@ FIXES = ROOT / 'pipeline' / 'transcript_fixes.json'
 
 DICT = Path('/usr/share/dict/words')
 CONFUSED = {'6': 'gb', '0': 'o', '1': 'li', '5': 's', '8': 'b', 'c': 'oe', 'e': 'c', 'o': 'c', '_': 'abcdefghijklmnopqrstuvwxyz', ';': 't',
-            'i': 'l', 'l': 'i', 't': 'c', 'E': 'G', '(': 'G', '!': 'l', '*': 'r', '$': 's', '%': 'r', ']': 'l', '}': 'h',
-            '?': 'h', "'": 'lnh', '¢': 'vc', 'k': 'b', 'r': 'n'}
+            'i': 'l', 'l': 'i', 't': 'c', 'E': 'GH', '(': 'G', '!': 'l', '*': 'r', '$': 's', '%': 'r', ']': 'l', '}': 'h',
+            '?': 'h', "'": 'lnh', '¢': 'vc', 'k': 'b', 'r': 'n', 's': 'a'}
 JOINERS = {'a', 'and', 'the', 'of', 'to', 'in', 'is', 'it', 'we', 'you', 'on', 'at', 'for', 'be', 'are'}
 PAIRS = {'li': 'h', 'Li': 'H', 'rn': 'm', 'ii': 'u', 'Ii': 'H', 'cl': 'd', 'vv': 'w'}
 JUNK_TAIL = re.compile(r"^(.*?[.?!])(\s+\S*[^A-Za-z0-9\s.,?!'\-]\S*(?:\s+\S+)*|\s+[A-Z_]{3,}\S*(?:\s+\S+)*)\s*$")
@@ -328,7 +345,7 @@ CALLSIGNS = {'11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipp
              '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
              '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
 MISSION = {'n': '11'}   # the mission being processed (set in main)
-DIGIT_LOOKS = {'1': '[1!il|It]', '2': '[2Zz]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
+DIGIT_LOOKS = {'1': '[1!il|It]', '2': '[2Zz&]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
 
 
 def _place(word):
@@ -409,7 +426,7 @@ def _tidy(text, vocab):
     if n and text and text[-1].isalnum():
         text += '.'                                                           # "Roger, out TAN_NARIVE (RE_ 2)."
     text = JUNK_TAIL.sub(lambda m: m.group(1) if not _words_in(m.group(2), vocab) else m.group(), text)
-    text = re.sub(r"^(?!\.\.\.)[.,;:'\s]+(?=[A-Z])", '', text)             # ".., We're"
+    text = re.sub(r"^(?!\.\.\.)[.,;:'_\s]+(?=[A-Z])", '', text)            # ".., We're", ".. _ Houston"
     text = re.sub(r",\s*$", '.', text)                                     # a line ending "Over,"
     text = re.sub(r"(?<=\s)_(?=\d)|(?<=\d)_(?=\s|$)", '', text)            # "_103.0"
     n = str(int(MISSION['n']))                                                  # the mission's number, as OCR misreads it
@@ -434,6 +451,15 @@ def _tidy(text, vocab):
     text = re.sub(r"\bG\(\)", 'GO', text)                                  # "G()"
     text = re.sub(r"\s/(?=\s)", '', text)                                   # a lone "/"
     text = re.sub(r"\bOve r\b", 'Over', text)                               # "Ove r."
+    text = re.sub(r"\s+Tape\s+\d+/\d+\s*$", '', text)                          # a page heading: "Tape 1/11"
+    text = re.sub(r"\s+-?\d?\s*NOTE\s*$", '', text)                            # "-3 NOTE": the start of a page note
+    text = re.sub(r"(?<=[.?!])\s+(?:[b-hj-z]|i(?:\s*-\))?)\s*$", '', text)       # a stray letter after the last sentence: "Copy. i"
+    if text.count('"') % 2 == 1:
+        text = re.sub(r'(?<=\w)"(?=\s)', '', text, count=1)                   # an unmatched quote: 'builder number" going'
+    text = re.sub(r"\bPS(\d)\b", r"P5\1", text)                                 # "PS1": program P51
+    text = re.sub(r"\bAil\b", 'All', text)                                    # "Ail we have": nobody here says "ail"
+    text = re.sub(r"\b(\d+)h(?=[\s.,;]|$)", r"\g<1>4", text)                     # "0h", "2351h": a misread 4
+    text = re.sub(r"\b(\d+)h\.(\d)", r"\g<1>4.\2", text)                        # "2h.1"
     text = re.sub(r"\b([a-z]{1,})([A-Z])([a-z]*)\b",                          # "tO", "bY", "oF", "floodliMht"
                   lambda m: (m.group(1) + m.group(2).lower() + m.group(3)) if (m.group(1) + m.group(2) + m.group(3)).lower() in vocab
                   else m.group(), text)
@@ -752,6 +778,52 @@ def find_announcer(segments, lines, tape_words, heard_at):
     return spans, over, said
 
 
+def sync_to_tape(lines, segments, tape_words):
+    """Each line starts where its words are heard on the tape, not at NASA's
+    printed second (which can be several seconds out, typed from the
+    tapes by ear): the transcript highlights with the voice.
+
+    Lines are found in order along each stretch of tape: each is searched
+    for after where the one before it was found, and within a minute of its
+    printed time, so a readback ("A CMC self-check on page F-22-2...") is
+    found in the reply, not in the instruction it repeats. Returns how many
+    lines moved."""
+    end = lambda sg: sg['get'] + (sg['to'] - sg['from']) * sg['rate']
+    gets = [sg['get'] for sg in segments]
+    groups = {}
+    for i, l in enumerate(lines):
+        if l.get('a') or l.get('c'):
+            continue
+        k = bisect.bisect_right(gets, l['g']) - 1
+        if k >= 0 and l['g'] <= end(segments[k]) + 30 and segments[k]['tape'] in tape_words and not segments[k].get('journal'):
+            groups.setdefault(k, []).append(i)
+    n = 0
+    for k, idx in groups.items():
+        sg = segments[k]
+        words, starts = tape_words[sg['tape']]
+        lo_i, hi_i = bisect.bisect_left(starts, sg['from']), bisect.bisect_right(starts, sg['to'])
+        heard = [(sg['get'] + (w[0] - sg['from']) * sg['rate'],) + tuple(w[1:]) for w in words[lo_i:hi_i]]
+        at = [h[0] for h in heard]
+        cursor = 0
+        for i in sorted(idx, key=lambda i: lines[i]['g']):
+            toks = tokens(lines[i]['t'])
+            if len(toks) < MIN_WORDS:
+                continue
+            lo = max(cursor, bisect.bisect_left(at, lines[i]['g'] - 30))
+            hi = bisect.bisect_right(at, lines[i]['g'] + 60)
+            if lo >= hi:
+                continue
+            g, share = find_start(toks, heard, lo, hi)
+            if g is None or share < 0.6:
+                continue
+            j = bisect.bisect_left(at, g)
+            cursor = j + max(1, int(0.7 * len(toks)))
+            if abs(g - lines[i]['g']) >= 0.5:
+                lines[i]['g'] = round(g, 1)
+                n += 1
+    return n
+
+
 def time_untimed(lines, segments, tape_words):
     """Times for NASA's lines whose time the scan lost (or, on the
     moonwalks, printed as the day and hour only), from the tapes: between
@@ -784,7 +856,7 @@ def time_untimed(lines, segments, tape_words):
             toks = tokens(lines[i]['t'])
             if len(toks) < MIN_WORDS or cursor >= len(heard):
                 continue
-            g, share = find(toks, heard, cursor, min(len(heard), cursor + 400 + 3 * len(toks)))
+            g, share = find_start(toks, heard, cursor, min(len(heard), cursor + 400 + 3 * len(toks)))
             if g is not None and share >= 0.6:
                 lines[i]['g'] = round(g)
                 lines[i].pop('a', None)
@@ -977,6 +1049,7 @@ def main():
     name = speaker_names(m, rows)
 
     segments, stats, tape_words, heard_at = [], {'anchored': 0, 'tried': 0}, {}, {}
+    where_heard = {}   # row index -> [(tape, tape time)] where its words were found
     grams = {}   # three-word phrases of NASA's lines (timed ones) -> their GETs
     for r in rows:
         if r['getApprox']:
@@ -997,7 +1070,7 @@ def main():
         anchors = []
         for piece in pieces:
             g0, g1 = piece['get_from'], piece['get_from'] + (piece['tape_to'] - piece['tape_from']) * piece['rate']
-            for r in rows:
+            for k, r in enumerate(rows):
                 if not g0 - 60 <= r['getSeconds'] <= g1 + 60 or r['getApprox']:
                     continue
                 toks = tokens(r['text'])
@@ -1009,18 +1082,21 @@ def main():
                 hi = bisect.bisect_right(starts, t_pred + SEARCH_S)
                 t, share = find(toks, words, lo, hi)
                 if t is not None and share >= 0.6:
-                    anchors.append((t, r['getSeconds']))
+                    anchors.append((t, r['getSeconds'], k))
                     stats['anchored'] += 1
         if not entry.get('pieces'):   # (the stretches searched overlap: count each line once)
             stats['anchored'] -= len(anchors) - len(set(anchors))
             anchors = sorted(set(anchors))
-        heard_at[tape] = sorted(t for t, _ in anchors)
+        heard_at[tape] = sorted(a[0] for a in anchors)
+        for t, _, k in anchors:
+            where_heard.setdefault(k, []).append((tape, t))
         for p in pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words]):
             segments.append({'tape': tape, **p})
 
     segments.sort(key=lambda s: s['get'])
     segments = trim_overlaps(segments)
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text'], **({'a': 1} if r['getApprox'] else {})} for r in rows]
+    synced = sync_to_tape(lines, segments, tape_words)
     untimed = time_untimed(lines, segments, tape_words)
     repaired = repair_ocr(lines, segments, tape_words)
     rebuilt = rebuild_from_tape(lines, segments, tape_words, vocabulary(tape_words)[0])
@@ -1028,12 +1104,16 @@ def main():
     # NASA's page headings read as if spoken ("11 AIR-TO-GROUND VOICE TRANSCRIPTION")
     lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,4}.{0,3}G[RH]OUND|VOICE\s*T\S{0,3}[AJ]\S{0,3}S\S{0,2}R", l['t'])
              and not re.match(r"^\s*[1l]{2}\s+A\S{0,4}-", l['t'])   # "11 A_I_-TO-G][_OlJl_D VOICE ..."
+             and not re.search(r"\((?:GDS|MAD|HSK|GWM|HAW|CRO|TEX|ACN|BDA|CYI|TAN|MIL|GYM)\)|there is cont.nuous|[Ss]ubsequent to TLI", l['t'])   # NASA's page note on tracking stations
              and re.search(r"[A-Za-z0-9]|\.\.\.|\*\*\*", l['t'])]   # (and lines that are only a stray mark: ")", "¢")
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
     announcer, over, said = find_announcer(segments, lines, tape_words, heard_at)
     segments = trim_overlaps(segments)
     lines = sorted(lines + said, key=lambda l: l['g'])
+    for l in lines:   # station names with their capitals, the announcer's lines too
+        l['t'] = re.sub(r"\b(honeysuckle|goldstone|tananarive|carnarvon|guaymas|madrid|bermuda|canberra|vanguard|redstone)\b",
+                        lambda m: m.group(1).capitalize(), l['t'])
     hand = apply_fixes(m, lines)
     lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
     unheard = mark_unheard(lines, segments, tape_words, media / 'envelopes' / 'tapes' / m)
@@ -1044,7 +1124,7 @@ def main():
     covered = sum((s['to'] - s['from']) * s['rate'] for s in segments) / 3600
     print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes; {len(segments)} segments covering {covered:.1f} h; "
           f"{len(lines)} lines ({repaired} words repaired from the tapes, {fixed} lines in the journal's wording, "
-          f"{hand} hand fixes, {untimed} untimed lines timed from the tapes, {rebuilt} rebuilt from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; written to {out}")
+          f"{hand} hand fixes, {untimed} untimed lines timed from the tapes, {synced} lines timed to where they're heard, {rebuilt} rebuilt from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; written to {out}")
 
 
 if __name__ == '__main__':
