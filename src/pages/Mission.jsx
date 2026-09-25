@@ -20,7 +20,7 @@ import { archiveRecordings } from '../data/archiveRecordings'
 import { computePhases } from '../data/phases'
 import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
-import { buildChapters } from '../lib/missionIndex'
+import { buildChapters, chapterTitle, phaseAt } from '../lib/missionIndex'
 import { useMissionTape, withJournalFill, withoutAnnouncer } from '../lib/missionTape'
 
 // The journals' "-pao" clips are the public broadcast: the crew's voices
@@ -316,6 +316,7 @@ export default function Mission() {
   // The journal clip at (or last before) the tapes' position: its phase and chapter.
   let tapeClipIndex = 0
   if (tapeMode) while (tapeClipIndex + 1 < clips.length && clips[tapeClipIndex + 1].getSeconds <= tape.get) tapeClipIndex++
+  const tapePhase = tapeMode ? phaseAt(tape.get, phases[tapeClipIndex], mission.landingSeconds) : null
 
   return (
     <div className="page">
@@ -407,12 +408,12 @@ export default function Mission() {
             lines={timeline.lines}
             start={Math.min(0, timeline.segments[0].get)}
             end={mission.durationSeconds}
-            phase={phases[tapeClipIndex]}
+            phase={tapePhase}
             fill={fill}
             onFill={setFill}
             announcer={commentary}
             onAnnouncer={toggleCommentary}
-            chapter={clips[tapeClipIndex].chapterTitle}
+            chapter={tapePhase === phases[tapeClipIndex] ? clips[tapeClipIndex].chapterTitle : chapterTitle(tape.get, tapePhase)}
             clips={clips}
             clipIndex={tapeClipIndex}
             onTermClick={setActiveGlossaryEntry}

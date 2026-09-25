@@ -942,13 +942,16 @@ def trim_overlaps(segments):
     """Tapes were changed over with some overlap: play each tape to its end
     and pick up the next where it left off (trim the later piece's start)."""
     segments.sort(key=lambda s: s['get'])
-    for a, b in zip(segments, segments[1:]):
-        a_end = a['get'] + (a['to'] - a['from']) * a['rate']
-        if b['get'] < a_end:
-            cut = min(a_end - b['get'], (b['to'] - b['from']) * b['rate'])
+    out, reach = [], -1e9   # reach: the furthest mission time played so far
+    for b in segments:
+        if b['get'] < reach:
+            cut = min(reach - b['get'], (b['to'] - b['from']) * b['rate'])
             b['from'] = round(b['from'] + cut / b['rate'], 2)
             b['get'] = round(b['get'] + cut, 2)
-    return [s for s in segments if s['to'] - s['from'] > 1]
+        if b['to'] - b['from'] > 1:
+            out.append(b)
+            reach = max(reach, b['get'] + (b['to'] - b['from']) * b['rate'])
+    return out
 
 
 def main():
@@ -964,8 +967,11 @@ def main():
     MISSION['n'] = m
     media = Path(args.media).expanduser()
     placement = json.loads((ROOT / 'pipeline' / 'tapes' / f'apollo{m}-placement.json').read_text())
-    rows = [r for r in json.loads((ROOT / 'data' / 'nasa-transcripts' / f'as{m}-tec.json').read_text())
-            if r['getSeconds'] > 0 or r['speaker'] not in ('MS', '?')]
+    rows = json.loads((ROOT / 'data' / 'nasa-transcripts' / f'as{m}-tec.json').read_text())
+    # NASA's introduction pages (how to read the transcript) come before the
+    # first line with a printed time: not speech.
+    first = next((k for k, r in enumerate(rows) if not r['getApprox']), 0)
+    rows = [r for r in rows[first:] if r['getSeconds'] > 0 or r['speaker'] not in ('MS', '?')]
     name = speaker_names(m, rows)
 
     segments, stats, tape_words, heard_at = [], {'anchored': 0, 'tried': 0}, {}, {}

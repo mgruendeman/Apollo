@@ -103,6 +103,7 @@ export const missions = [
       'Struck by lightning twice in its first minute of flight, Apollo 12 went on to land within walking distance of the Surveyor 3 probe for the second crewed Moon landing.',
     status: 'available',
     clipsFile: 'apollo12',
+    timeline: 'apollo12', // whole-mission tapes: public/timeline/apollo12.json
     clipCount: 259,
     launchUtc: '1969-11-14T16:22:00Z',
     durationSeconds: 880584, // 244:36:24

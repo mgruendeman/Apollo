@@ -15,6 +15,21 @@ const SPLIT = new Set(['landing', 'surface', 'ascent'])
 // after that the CSM is simply in lunar orbit again until the burn for home.
 const ASCENT_HOURS = 5
 
+// Powered descent to touchdown took about 12 minutes on every landing.
+const DESCENT_SECONDS = 13 * 60
+
+// The phase at a mission time, from the clip-based phase, corrected by the
+// landing time the mission data gives (clips can lag the descent).
+export function phaseAt(getSeconds, phase, landingSeconds) {
+  if (landingSeconds && getSeconds >= landingSeconds - DESCENT_SECONDS && getSeconds < landingSeconds) return 'landing'
+  if (landingSeconds && phase === 'landing' && getSeconds >= landingSeconds + 60) return 'surface'
+  return phase
+}
+
+export function chapterTitle(getSeconds, phase) {
+  return `Day ${missionDay(getSeconds)} · ${PHASES[phase]?.label || phase}`
+}
+
 export function missionDay(getSeconds) {
   return Math.max(1, Math.floor(getSeconds / DAY) + 1)
 }
