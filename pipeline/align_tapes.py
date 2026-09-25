@@ -153,6 +153,19 @@ def text_pieces(words, grams):
             for t, g in found]
 
 
+def merge_pieces(pieces):
+    """Search stretches that overlap on the tape and agree on its offset (within
+    30 s) as one, so each line is looked for once, not in every stretch."""
+    out = []
+    for p in sorted(pieces, key=lambda p: p['tape_from']):
+        off = p['get_from'] - p['tape_from']
+        if out and p['tape_from'] <= out[-1]['tape_to'] and abs(off - (out[-1]['get_from'] - out[-1]['tape_from'])) <= 30:
+            out[-1]['tape_to'] = max(out[-1]['tape_to'], p['tape_to'])
+        else:
+            out.append(dict(p))
+    return out
+
+
 def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
     """Split a tape's (tape time, GET) anchors into pieces of continuous
     mission time (as place_tapes.segments, with tighter agreement), cut
@@ -969,7 +982,7 @@ def main():
             continue
         words = [(w[0], w[1], w[2], (tokens(w[2]) or [''])[0]) for w in json.loads(asr.read_text())]
         starts = [w[0] for w in words]
-        pieces = entry.get('pieces') or spoken_pieces(words) + text_pieces(words, grams)
+        pieces = entry.get('pieces') or merge_pieces(spoken_pieces(words) + text_pieces(words, grams))
         if not pieces:
             continue
         tape_words[tape] = (words, starts)
