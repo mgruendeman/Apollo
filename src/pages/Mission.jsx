@@ -423,7 +423,7 @@ export default function Mission() {
               ⛶ Full-screen view
             </button>
           </div>
-          <MissionPhaseDiagram phase={phase} />
+          <MissionPhaseDiagram phase={phase} mission={mission} />
         </div>
         <AudioPlayer mission={mission} clips={clips} index={activeIndex} />
         <MissionPhoto photo={photosByClipId[moment.id]} />

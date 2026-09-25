@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import ImmersiveView from './ImmersiveView'
+import MomentPhotos from './MomentPhotos'
 import TranscriptPanel from './TranscriptPanel'
 import MissionPhaseDiagram from './MissionPhaseDiagram'
 import { formatGetSigned } from '../lib/missionTape'
@@ -81,7 +82,7 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
             </a>
           )}
         </div>
-        <MissionPhaseDiagram phase={phase} />
+        <MissionPhaseDiagram phase={phase} mission={mission} />
       </div>
 
       <div className="tape-player">
@@ -159,6 +160,8 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
             : "Off: only NASA's tapes play."}
         </span>
       </label>
+
+      {clips?.[clipIndex] && <MomentPhotos mission={mission} clip={{ ...clips[clipIndex], getSeconds: tape.get }} phase={phase} />}
 
       {immersive && (
         <ImmersiveView

@@ -2740,3 +2740,124 @@ button.transcript-channel-tag {
   color: var(--text);
   white-space: nowrap;
 }
+
+/* the cartoon "where are they" diagram */
+.phase-diagram {
+  width: 260px;
+}
+.pd-path {
+  stroke: rgba(200, 215, 255, 0.35);
+  stroke-width: 1;
+  stroke-dasharray: 2.5 2;
+}
+.pd-arrow {
+  stroke: rgba(200, 215, 255, 0.5);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.pd-orbit {
+  stroke: rgba(200, 215, 255, 0.28);
+  stroke-width: 0.8;
+  stroke-dasharray: 2 2;
+}
+.pd-earth {
+  fill: #2f6fc2;
+  stroke: #7fb2ff;
+  stroke-width: 0.8;
+}
+.pd-land {
+  fill: #4caf6d;
+}
+.pd-cloud {
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+.pd-moon {
+  fill: #b9bec8;
+  stroke: #e5e7eb;
+  stroke-width: 0.6;
+}
+.pd-crater {
+  fill: #8c929c;
+}
+.pd-sm {
+  fill: #d7dce4;
+  stroke: #6b7280;
+  stroke-width: 0.4;
+}
+.pd-cm {
+  fill: #eef1f5;
+  stroke: #6b7280;
+  stroke-width: 0.4;
+}
+.pd-nozzle {
+  fill: #6b7280;
+}
+.pd-lm-descent {
+  fill: #e0a526;
+  stroke: #8a6411;
+  stroke-width: 0.4;
+}
+.pd-lm-ascent {
+  fill: #cfd4dc;
+  stroke: #6b7280;
+  stroke-width: 0.4;
+}
+.pd-legs {
+  stroke: #cfd4dc;
+  stroke-width: 0.8;
+  stroke-linecap: round;
+}
+.pd-rocket {
+  fill: #f3f4f6;
+  stroke: #4b5563;
+  stroke-width: 0.4;
+}
+.pd-rocket-fins {
+  fill: #4b5563;
+}
+.pd-flame {
+  fill: var(--accent);
+}
+.pd-chute {
+  fill: #f97316;
+  stroke: #fff;
+  stroke-width: 0.4;
+}
+.pd-lines {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 0.3;
+}
+.pd-helmet {
+  fill: #ffffff;
+}
+.pd-visor {
+  fill: #1f2a44;
+}
+.pd-scene {
+  animation: pd-arrive 0.6s ease-out;
+}
+@keyframes pd-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+}
+.phase-who {
+  margin: 2px 0 0;
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  line-height: 1.35;
+}
+@media (max-width: 640px) {
+  .phase-diagram {
+    width: 240px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pd-scene {
+    animation: none;
+  }
+}
