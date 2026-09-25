@@ -669,6 +669,11 @@
    "g": 197001,
    "from": "_e[410, Apollo 11. Houston. Do you read?",
    "to": "Hello, Apollo 11. Houston. Do you read?"
+  },
+  {
+   "g": 197515,
+   "speaker": "Collins",
+   "text": "Read you loud and clear, Charlie."
   }
  ]
 }
