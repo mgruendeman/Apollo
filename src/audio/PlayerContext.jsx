@@ -74,7 +74,7 @@ export function PlayerProvider({ children }) {
     if (!('mediaSession' in navigator) || !clip) return
     navigator.mediaSession.metadata = new MediaMetadata({
       title: clip.get
-        ? `GET ${clip.get} · ${stripSourcePrefix(clip.sourceLabel)}`
+        ? `GET ${clip.get} · ${clip.chapterTitle || stripSourcePrefix(clip.sourceLabel)}`
         : clip.sourceLabel,
       artist: session.mission.name,
       album: 'Apollo Audio Archive',

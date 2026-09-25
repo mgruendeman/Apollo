@@ -20,7 +20,7 @@ import { archiveRecordings } from '../data/archiveRecordings'
 import { computePhases } from '../data/phases'
 import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
-import { SOURCE_PREFIX_RE } from '../lib/sourceLabel'
+import { buildChapters } from '../lib/missionIndex'
 import { useMissionTape, withJournalFill, withoutAnnouncer } from '../lib/missionTape'
 
 // The journals' "-pao" clips are the public broadcast: the crew's voices
@@ -77,10 +77,17 @@ export default function Mission() {
   const [allClips, setClips] = useState(null)
   const [commentary, setCommentary] = useState(readCommentary)
   const skippable = useMemo(() => (allClips ? coveredPao(allClips) : new Set()), [allClips])
-  const clips = useMemo(
-    () => (allClips && !commentary ? allClips.filter((c) => !skippable.has(c.id)) : allClips),
-    [allClips, commentary, skippable],
-  )
+  // The site's own index: each clip carries its flight phase and chapter
+  // ("Day 3 · Translunar Coast").
+  const clips = useMemo(() => {
+    const base = allClips && !commentary ? allClips.filter((c) => !skippable.has(c.id)) : allClips
+    if (!base) return base
+    const chapters = buildChapters(base, computePhases(base, mission.durationSeconds, mission.landingSeconds))
+    const out = [...base]
+    for (const ch of chapters)
+      for (let i = ch.startIndex; i < ch.endIndex; i++) out[i] = { ...base[i], phase: ch.phase, chapterTitle: ch.title }
+    return out
+  }, [allClips, commentary, skippable, mission])
   function toggleCommentary() {
     const next = !commentary
     try {
@@ -200,10 +207,7 @@ export default function Mission() {
   }, [mission])
 
   const liveStatus = mission ? getLiveStatus(mission, now) : null
-  const phases = useMemo(
-    () => (clips ? computePhases(clips, mission.durationSeconds, mission.landingSeconds) : []),
-    [clips, mission],
-  )
+  const phases = useMemo(() => (clips ? clips.map((c) => c.phase) : []), [clips])
   // While this mission is the one loaded in the app-wide player, the page
   // follows the player; otherwise it shows its own cued clip.
   const isLoaded = !!mission && player.session?.mission.id === mission.id
@@ -408,7 +412,7 @@ export default function Mission() {
             onFill={setFill}
             announcer={commentary}
             onAnnouncer={toggleCommentary}
-            chapter={clips[tapeClipIndex].sourceLabel.replace(SOURCE_PREFIX_RE, '')}
+            chapter={clips[tapeClipIndex].chapterTitle}
             clips={clips}
             clipIndex={tapeClipIndex}
             onTermClick={setActiveGlossaryEntry}
@@ -418,7 +422,7 @@ export default function Mission() {
         <div className="player-top">
           <div className="player-top-text">
             <p className="get-clock">GET {moment.get}</p>
-            <h2>{moment.sourceLabel.replace(SOURCE_PREFIX_RE, '')}</h2>
+            <h2>{moment.chapterTitle}</h2>
             <button type="button" className="immersive-open" onClick={() => setImmersive(true)}>
               ⛶ Full-screen view
             </button>

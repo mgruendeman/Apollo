@@ -32,7 +32,7 @@ export default function NowPlayingBar() {
             {mission.name}
             {player.clip.get && ` · GET ${player.clip.get}`}
           </span>
-          <span className="now-playing-sub">{stripSourcePrefix(player.clip.sourceLabel)}</span>
+          <span className="now-playing-sub">{player.clip.chapterTitle || stripSourcePrefix(player.clip.sourceLabel)}</span>
         </Link>
       </div>
     </>

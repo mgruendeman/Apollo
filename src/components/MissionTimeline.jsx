@@ -1,59 +1,24 @@
 import { useMemo } from 'react'
 import { classifyEventType, EVENT_TYPE_META } from '../data/eventType'
-import { stripSourcePrefix } from '../lib/sourceLabel'
+import { buildChapters } from '../lib/missionIndex'
 import { photosByClipId } from '../data/photos'
 import { PHASES } from '../data/phases'
 import PhaseIcon from './PhaseIcon'
 
-// The archive's own page labels ("Day 1, part 1" / "part 2" / ...) aren't
-// strictly time-ordered — pages overlap and a handful of clips from an
-// earlier or later page get interleaved by GET — so grouping on an exact
-// label match fragments the timeline into dozens of alternating slivers.
-// Instead we track each label's first-seen order and only open a new
-// chapter when we reach a *later* label than the current one; anything
-// that would be a step backward gets folded into the chapter already in
-// progress. Index ranges stay contiguous, so callers can keep slicing
-// `clips` by startIndex/endIndex as before.
-function buildChapters(clips) {
-  const order = new Map()
-  for (const c of clips) {
-    if (!order.has(c.sourceLabel)) order.set(c.sourceLabel, order.size)
-  }
-
-  const chapters = []
-  for (let i = 0; i < clips.length; i++) {
-    const label = clips[i].sourceLabel
-    const rank = order.get(label)
-    const current = chapters[chapters.length - 1]
-    if (current && rank <= current.rank) {
-      current.endIndex = i + 1
-    } else {
-      chapters.push({ label, rank, startIndex: i, endIndex: i + 1 })
-    }
-  }
-  return chapters
-}
-
-// Brief events that name a chapter even when most of its clips are before
-// or after them: a chapter that includes the landing is the descent.
-const EVENT_PHASES = ['launch', 'landing', 'ascent', 'splashdown']
-
-// The phase a chapter is about, for its icon: a key event among its own
-// clips, or else the phase most of them are in. Only the chapter's own page
-// counts: a chapter also holds the other journal's clips from the same hours
-// (Surface Journal pages take in the Flight Journal's CSM-only clips), which
-// would otherwise swing a surface chapter's icon to lunar orbit.
-function chapterPhase(phases, clips, start, end, label) {
-  const counts = {}
-  for (let i = start; i < end; i++) {
-    if (phases?.[i] && clips[i].sourceLabel === label) counts[phases[i]] = (counts[phases[i]] || 0) + 1
-  }
-  const event = EVENT_PHASES.find((p) => counts[p])
-  return event || Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0]
+// A chapter's kind, for its icon: the flight's big moments (launch, the
+// landing, leaving the Moon, splashdown) and chapters holding one of the
+// mission's highlights are milestones; one whose lines are largely about
+// sleep is a rest.
+const MILESTONE_PHASES = new Set(['launch', 'landing', 'ascent', 'splashdown'])
+function chapterType(ch, chapterClips, highlightIds, previewFor) {
+  if (MILESTONE_PHASES.has(ch.phase) || chapterClips.some((c) => highlightIds.has(c.id))) return 'major'
+  const kinds = chapterClips.map((c) => classifyEventType(previewFor(c) || ''))
+  if (kinds.filter((k) => k === 'rest').length * 3 >= kinds.length) return 'rest'
+  return 'routine'
 }
 
 export default function MissionTimeline({ mission, clips, transcripts, phases, activeIndex, onSelect }) {
-  const chapters = useMemo(() => buildChapters(clips), [clips])
+  const chapters = useMemo(() => buildChapters(clips, phases), [clips, phases])
   const highlightIds = new Set((mission.highlights || []).map((h) => h.id))
   const activeChapterIndex = chapters.findIndex(
     (ch) => activeIndex >= ch.startIndex && activeIndex < ch.endIndex,
@@ -96,21 +61,21 @@ export default function MissionTimeline({ mission, clips, transcripts, phases, a
       </p>
       {chapters.map((ch, ci) => {
         const count = ch.endIndex - ch.startIndex
-        const eventType = classifyEventType(ch.label)
+        const chapterClips = clips.slice(ch.startIndex, ch.endIndex)
+        const eventType = chapterType(ch, chapterClips, highlightIds, previewFor)
         const meta = EVENT_TYPE_META[eventType]
         const highlight = highlightFor(ch)
-        const chapterClips = clips.slice(ch.startIndex, ch.endIndex)
         const types = chapterClips.map((c) =>
           highlightIds.has(c.id)
             ? 'major'
-            : classifyEventType(`${c.sourceLabel} ${previewFor(c) || ''}`),
+            : classifyEventType(previewFor(c) || ''),
         )
 
         return (
           <details key={ch.startIndex} open={ci === activeChapterIndex} className={meta.className}>
             <summary>
               <span className="chapter-phase">
-                <PhaseIcon phase={chapterPhase(phases, clips, ch.startIndex, ch.endIndex, ch.label)} />
+                <PhaseIcon phase={ch.phase} />
               </span>
               <span className="chapter-get">
                 <span>{chapterClips[0].get}</span>
@@ -120,7 +85,7 @@ export default function MissionTimeline({ mission, clips, transcripts, phases, a
               </span>
               <span className="chapter-label">
                 {meta.icon && <span className="chapter-icon">{meta.icon} </span>}
-                {stripSourcePrefix(ch.label)}
+                {ch.title}
               </span>
               <span className="chapter-count">
                 {count} clip{count === 1 ? '' : 's'}
@@ -143,7 +108,7 @@ export default function MissionTimeline({ mission, clips, transcripts, phases, a
                     clip={c}
                     type={types[k]}
                     preview={previewFor(c)}
-                    chapterLabel={ch.label}
+                    chapterLabel={ch.title}
                     isActive={i === activeIndex}
                     onSelect={() => onSelect(i)}
                   />
@@ -170,7 +135,7 @@ function TimelineClipRow({ clip, type, preview, chapterLabel, isActive, onSelect
         <span className="moment-get">{clip.get}</span>
         {meta.icon && <span className="moment-icon">{meta.icon}</span>}
         <span className="moment-title">
-          {(preview || stripSourcePrefix(chapterLabel)).slice(0, type === 'routine' ? 70 : 100)}
+          {(preview || chapterLabel).slice(0, type === 'routine' ? 70 : 100)}
         </span>
         {photo && (
           <img
