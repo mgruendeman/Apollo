@@ -998,28 +998,13 @@
  ],
  "12": [
   {
-   "g": 114,
-   "from": "reading is back.\"",
-   "to": "reading is back."
-  },
-  {
    "g": 659,
    "from": "eight-bali",
    "to": "eight-ball"
   },
   {
-   "g": 835,
-   "from": "for some reason. i -)",
-   "to": "for some reason."
-  },
-  {
    "g": 885,
    "from": "we'll 12, Houston. pick you We up are Canaries about about seconds 16. from LOS;",
-   "to": "12, Houston. We are about 45 seconds from LOS; we'll pick you up at Canaries about 16."
-  },
-  {
-   "g": 885,
-   "from": "we'11 12, Houston. pick you We up are Canaries about about h5 seconds 16. from LOS;",
    "to": "12, Houston. We are about 45 seconds from LOS; we'll pick you up at Canaries about 16."
   },
   {
@@ -1043,19 +1028,9 @@
    "to": "rather than a 4 or a 5 ENTER"
   },
   {
-   "g": 5538,
-   "from": "fire right. z",
-   "to": "fire right."
-  },
-  {
    "g": 5613,
    "from": "Apollo 12, Houston. -",
    "to": "Apollo 12, Houston."
-  },
-  {
-   "g": 5709,
-   "from": "Ail we have",
-   "to": "All we have"
   },
   {
    "g": 5799,
@@ -1151,6 +1126,16 @@
    "g": 98,
    "from": "NCE to auxiliary",
    "to": "SCE to auxiliary"
+  },
+  {
+   "g": 8692,
+   "text": "Apollo 12, Houston. Loud and clear.",
+   "unheard": true
+  },
+  {
+   "g": 8697,
+   "text": "Roger. Would you do some more work for us?",
+   "unheard": true
   }
  ]
 }

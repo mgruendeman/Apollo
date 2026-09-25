@@ -957,7 +957,9 @@ def apply_fixes(mission, lines):
     """Hand corrections from listeners' reports, pipeline/transcript_fixes.json:
     {"11": [{"g": GET seconds, "from": "text as printed", "to": "corrected"}]};
     "speaker" in place of from/to puts a line to the right person; "delete": true
-    (with "text") removes a line that's a scrap of another."""
+    (with "text") removes a line that's a scrap of another; "unheard": true (with
+    "text") marks a line not on this recording where the tape isn't silent
+    (another voice is heard instead)."""
     fixes = json.loads(FIXES.read_text()).get(mission, []) if FIXES.exists() else []
     done = 0
     for f in fixes:
@@ -970,6 +972,8 @@ def apply_fixes(mission, lines):
         for l in hit:
             if f.get('delete'):
                 l['t'] = ''
+            elif f.get('unheard'):   # a listener heard it isn't on this recording
+                l['n'] = 1
             elif 'speaker' in f:
                 l['s'] = f['speaker']
             else:
