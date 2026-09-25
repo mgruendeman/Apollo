@@ -409,6 +409,8 @@ export default function Mission() {
             announcer={commentary}
             onAnnouncer={toggleCommentary}
             chapter={clips[tapeClipIndex].sourceLabel.replace(SOURCE_PREFIX_RE, '')}
+            clips={clips}
+            clipIndex={tapeClipIndex}
             onTermClick={setActiveGlossaryEntry}
           />
         ) : (

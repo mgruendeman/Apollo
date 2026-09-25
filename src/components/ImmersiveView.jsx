@@ -7,6 +7,7 @@ import GlossaryPanel from './GlossaryPanel'
 import ReportDialog from './ReportDialog'
 import { PHASES } from '../data/phases'
 import { formatGet } from '../lib/liveStatus'
+import { formatGetSigned } from '../lib/missionTape'
 import { effectiveOffsets, activeLineIndex } from '../lib/transcriptTiming'
 import { useFrames, photosForMomentAll } from '../lib/archiveFrames'
 import { useTranscriptScroll } from '../lib/useTranscriptScroll'
@@ -58,7 +59,9 @@ function PhotoStage({ photos }) {
 }
 
 // A separate, distraction-free mode: the photo for the current moment fills
-// the screen, with the conversation running underneath it.
+// the screen, with the conversation running underneath it. For the
+// whole-mission tapes, `get` is the mission clock and `controls` the tapes'
+// own buttons; `lines` are timed by mission time then.
 export default function ImmersiveView({
   mission,
   clips,
@@ -72,6 +75,8 @@ export default function ImmersiveView({
   onPrevious,
   onNext,
   report,
+  get,
+  controls,
 }) {
   const rootRef = useRef(null)
   // Its own glossary panel, rendered inside this view: in browser
@@ -149,7 +154,7 @@ export default function ImmersiveView({
       <header className="immersive-top">
         <div>
           <span className="immersive-mission">{mission.name}</span>
-          <span className="immersive-get">GET {formatGet(clip.getSeconds + currentTime)}</span>
+          <span className="immersive-get">GET {get !== undefined ? formatGetSigned(get) : formatGet(clip.getSeconds + currentTime)}</span>
           {PHASES[phase] && <span className="immersive-phase">{PHASES[phase].label}</span>}
         </div>
         <button type="button" className="immersive-close" onClick={onClose} aria-label="Exit full-screen view">
@@ -199,13 +204,17 @@ export default function ImmersiveView({
       </div>
 
       <div className="immersive-controls">
-        <button type="button" className="immersive-skip" onClick={onPrevious} disabled={!onPrevious} aria-label="Previous clip">
-          ⏮
-        </button>
-        <AudioPlayer mission={mission} clips={clips} index={index} />
-        <button type="button" className="immersive-skip" onClick={onNext} disabled={!onNext} aria-label="Next clip">
-          ⏭
-        </button>
+        {controls || (
+          <>
+            <button type="button" className="immersive-skip" onClick={onPrevious} disabled={!onPrevious} aria-label="Previous clip">
+              ⏮
+            </button>
+            <AudioPlayer mission={mission} clips={clips} index={index} />
+            <button type="button" className="immersive-skip" onClick={onNext} disabled={!onNext} aria-label="Next clip">
+              ⏭
+            </button>
+          </>
+        )}
       </div>
       <GlossaryPanel entry={glossaryEntry} onClose={closeGlossary} onTermClick={setGlossaryEntry} />
       {reportDetails && <ReportDialog title={reportDetails.title} context={reportDetails.context} onClose={closeReport} />}

@@ -257,6 +257,12 @@ export const glossary = [
     long: 'An orbit is an ellipse, so the spacecraft is closest to the body it circles at one point and farthest at the opposite one. Around Earth these are the perigee (low point) and apogee (high point); around the Moon, perilune and apolune, which NASA also called pericynthion and apocynthion. Altitudes are given in nautical miles above the surface: before the landing, Eagle\'s descent orbit had a perilune of about 50,000 feet, from which the powered descent began.',
   },
   {
+    id: 'flight-control-teams',
+    terms: ['White Team', 'Black Team', 'Green Team', 'Maroon Team', 'Gold Team', 'Orange Team', 'Purple Team', 'Crimson Team'],
+    short: 'Mission Control worked in shifts, each a team of flight controllers known by a color and led by its flight director.',
+    long: 'Around the clock through a mission, Mission Control was staffed by teams working in shifts, each named for a color and led by a flight director. On Apollo 11 there were four: the White Team under Gene Kranz, which flew the landing; the Black Team under Glynn Lunney; the Green Team under Cliff Charlesworth, which flew the launch and the moonwalk; and the Maroon Team under Milt Windler. Each team had its own CAPCOM, so the voice the crew heard changed with the shift, and crews greeted a team coming on duty by its color.',
+  },
+  {
     id: 'tig',
     abbr: [{ short: 'TIG', full: 'Time of Ignition' }],
     terms: ['DELTA-TIG', 'Delta-TIG', 'TIG'],

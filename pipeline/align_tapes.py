@@ -421,6 +421,18 @@ def _tidy(text, vocab):
     text = re.sub(r"\bG\(\)", 'GO', text)                                  # "G()"
     text = re.sub(r"\s/(?=\s)", '', text)                                   # a lone "/"
     text = re.sub(r"\bOve r\b", 'Over', text)                               # "Ove r."
+    text = re.sub(r"\b([a-z]{1,})([A-Z])([a-z]*)\b",                          # "tO", "bY", "oF", "floodliMht"
+                  lambda m: (m.group(1) + m.group(2).lower() + m.group(3)) if (m.group(1) + m.group(2) + m.group(3)).lower() in vocab
+                  else m.group(), text)
+    text = re.sub(r"\b([A-Za-z]+)V(s|ll|re|ve|d|t|m)\b",                      # "ItVs" for "It's"
+                  lambda m: m.group(1) + "'" + m.group(2) if (m.group(1) + "'" + m.group(2)).lower() in vocab else m.group(), text)
+    text = re.sub(r"\b[GOQ0][o0]\s?ahead,?\s?(?=[A-Z])", 'Go ahead, ', text)    # "Qoahead,Houston"
+    text = re.sub(r"\b[OQ0]o ahead\b", 'Go ahead', text)                       # "Oo ahead"
+    text = re.sub(r"\b(from|the|of|to|and)-(the|a|an)\b", r"\1 \2", text)       # "from-the Sun"
+    text = re.sub(r"\s[?FP]age\s+[\dO\]lt1I]{2,4}(?=\s)", '', text)           # a page number mid-line: "Page ]1t7"
+    text = re.sub(r"\b(REPRESS|DIRECT|PLSS|cabin) 02\b", r"\1 O2", text)
+    if not re.search(r"(^|\s)'\w", text):                                     # "the' Persian Gulf'": closing quotes never opened
+        text = re.sub(r"(?<=[a-rt-z])'(?=[\s.,?!]|$)", '', text)
     text = re.sub(r"\b([NOH]) 2\b", r"\g<1>2", text)                        # "N 2 tank" for N2
     text = re.sub(r"\bPYRO bus\b", 'pyro bus', text)                         # (NASA wrote it both ways)
     text = re.sub(r"(?<=, )[Ili1!|]{2}(?=\.?$)", n_of_mission(), text)        # "..., Ii." for 11
@@ -504,8 +516,8 @@ def repair_ocr(lines, segments, tape_words):
             t = sg['from'] + (line['g'] - sg['get']) / sg['rate']
             if sg['from'] - 5 <= t <= sg['to'] + 5 and sg['tape'] in tape_words:
                 tw, starts = tape_words[sg['tape']]
-                heard = [re.sub(r"[^a-z0-9']", '', w[2].lower())
-                         for w in tw[bisect.bisect_left(starts, t - 45):bisect.bisect_right(starts, t + 20 + 0.6 * len(words))]]
+                span = tw[bisect.bisect_left(starts, t - 45):bisect.bisect_right(starts, t + 20 + 0.6 * len(words))]
+                heard = [re.sub(r"[^a-z0-9']", '', w[2].lower()) for w in span]
                 mine = [_core(w)[1].lower() for w in words]
                 for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, mine, heard, autojunk=False).get_opcodes():
                     if op != 'replace':
@@ -524,6 +536,32 @@ def repair_ocr(lines, segments, tape_words):
                             words[i] = lead + cased(best, core, i, words) + (trail[1:] if "'" in best and trail[:1] == "'" else trail)
                             bad.discard(i)
                             changed += 1
+                # A garbled stretch between words that match the tape on both
+                # sides ("in tho F_ro(!_;__low and"): what the tape says there.
+                ops = difflib.SequenceMatcher(None, [_core(w)[1].lower() for w in words], heard, autojunk=False).get_opcodes()
+                swaps = []
+                for q, (op, i1, i2, j1, j2) in enumerate(ops):
+                    if op != 'replace' or not 1 <= j2 - j1 <= 2 * (i2 - i1) + 1:
+                        continue
+                    before = ops[q - 1] if q else None
+                    after = ops[q + 1] if q + 1 < len(ops) else None
+                    held = lambda o: o is not None and o[0] == 'equal' and o[2] - o[1] >= 2
+                    if not (held(before) and (held(after) or i2 == len(words)) or held(after) and i1 == 0 and before is None):
+                        continue
+                    if any(re.search(r"\d", words[i]) for i in range(i1, i2)):
+                        continue   # numbers are NASA's to keep: the recogniser spells them ("two two", "Niner")
+                    damaged = [i for i in range(i1, i2) if re.search(r"[^A-Za-z'.,?!\-]", _core(words[i])[1])]   # visibly
+                    if len(damaged) * 2 < i2 - i1 or not all(_suspect(_core(words[i])[1], vocab) for i in range(i1, i2)):
+                        continue   # (a real word in the stretch, like DECA, stays NASA's)
+                    new = [re.sub(r"[.,?!]+$", '', w[2]) for w in span[j1:j2] if re.sub(r"[^a-z]", '', w[2].lower()) not in LABELS]
+                    if not new or not all(re.sub(r"[^a-z']", '', w.lower()) in common for w in new):
+                        continue   # the recogniser's odd words ("iPad" for PAD) aren't trusted here
+                    new[-1] += _core(words[i2 - 1])[2]
+                    swaps.append((i1, i2, new))
+                for i1, i2, new in reversed(swaps):
+                    words[i1:i2] = new
+                    bad = {i for i in bad if i < i1} | {i - (i2 - i1) + len(new) for i in bad if i >= i2}
+                    changed += len(new)
         for i in sorted(bad):   # "Roger_" that nothing settled: the "_" was punctuation
             if words[i].endswith('_') and len(words[i]) >= 5 and words[i][:-1].lower() in vocab:
                 words[i] = words[i][:-1]
@@ -745,6 +783,48 @@ def time_untimed(lines, segments, tape_words):
     return done
 
 
+def rebuild_from_tape(lines, segments, tape_words, vocab):
+    """Lines the scan left mostly garbled, written again from the tape.
+
+    Where a third or more of a NASA line's words are still damaged after
+    repair, and the tape at that moment holds about as many words, which
+    agree with the NASA words that did survive, the line's text becomes the
+    words heard on the tape, marked 'r' (from the recording). Returns the
+    count."""
+    gets = [sg['get'] for sg in segments]
+    crew = [l for l in lines if not l.get('c') and not l.get('a')]
+    n = 0
+    for idx, l in enumerate(crew):
+        words = l['t'].split()
+        bad = [w for w in words if _suspect(_core(w)[1], vocab)]
+        if len(words) < 3 or len(bad) < 2 or len(bad) < len(words) / 3:
+            continue
+        k = bisect.bisect_right(gets, l['g']) - 1
+        if k < 0:
+            continue
+        sg = segments[k]
+        if sg['tape'] not in tape_words or sg.get('journal'):
+            continue
+        t0 = sg['from'] + (l['g'] - sg['get']) / sg['rate']
+        nxt = crew[idx + 1]['g'] if idx + 1 < len(crew) else l['g'] + 60
+        t1 = min(sg['to'], sg['from'] + (nxt - sg['get']) / sg['rate'], t0 + 6 + 0.6 * len(words))
+        if not sg['from'] <= t0 < sg['to'] or t1 <= t0:
+            continue
+        tw, starts = tape_words[sg['tape']]
+        heard = [w for w in tw[bisect.bisect_left(starts, t0 - 1.5):bisect.bisect_left(starts, t1 - 0.2)]
+                 if re.sub(r"[^a-z]", '', w[2].lower()) not in LABELS]
+        if not (0.6 * len(words) <= len(heard) <= 1.8 * len(words) + 2):
+            continue
+        kept = [_core(w)[1].lower() for w in words if w not in bad]
+        said = [re.sub(r"[^a-z0-9']", '', w[2].lower()) for w in heard]
+        if difflib.SequenceMatcher(None, kept, said, autojunk=False).ratio() < 0.45:
+            continue
+        text = ' '.join(w[2] for w in heard).strip()
+        l['t'], l['r'] = text[:1].upper() + text[1:], 1
+        n += 1
+    return n
+
+
 def mark_unheard(lines, segments, tape_words, envelopes):
     """NASA's lines that fall where the tape is silent: NASA transcribed the
     full air-to-ground loop, and these tapes are the broadcast copy, which
@@ -922,6 +1002,7 @@ def main():
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text'], **({'a': 1} if r['getApprox'] else {})} for r in rows]
     untimed = time_untimed(lines, segments, tape_words)
     repaired = repair_ocr(lines, segments, tape_words)
+    rebuilt = rebuild_from_tape(lines, segments, tape_words, vocabulary(tape_words)[0])
     fixed = use_journal_text(m, lines) if args.journal_text else 0
     # NASA's page headings read as if spoken ("11 AIR-TO-GROUND VOICE TRANSCRIPTION")
     lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,4}.{0,3}G[RH]OUND|VOICE\s*T\S{0,3}[AJ]\S{0,3}S\S{0,2}R", l['t'])
@@ -942,7 +1023,7 @@ def main():
     covered = sum((s['to'] - s['from']) * s['rate'] for s in segments) / 3600
     print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes; {len(segments)} segments covering {covered:.1f} h; "
           f"{len(lines)} lines ({repaired} words repaired from the tapes, {fixed} lines in the journal's wording, "
-          f"{hand} hand fixes, {untimed} untimed lines timed from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; written to {out}")
+          f"{hand} hand fixes, {untimed} untimed lines timed from the tapes, {rebuilt} rebuilt from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; written to {out}")
 
 
 if __name__ == '__main__':

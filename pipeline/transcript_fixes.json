@@ -131,11 +131,6 @@
    "to": "cut-off"
   },
   {
-   "g": 10281,
-   "from": "the _tS was",
-   "to": "the EMS was"
-  },
-  {
    "g": 10813,
    "from": "about 11's distance",
    "to": "Apollo 11's distance"
@@ -177,7 +172,7 @@
   },
   {
    "g": 13723,
-   "from": "question oF this",
+   "from": "question of this",
    "to": "question on this"
   },
   {
@@ -237,7 +232,7 @@
   },
   {
    "g": 15433,
-   "from": "we are S!l\u00b0",
+   "from": "we are set",
    "to": "we are SEP"
   },
   {
@@ -277,8 +272,8 @@
   },
   {
    "g": 17479,
-   "from": "Great L_fm_s and into Newfo_andland.",
-   "to": "Great Lakes and into Newfoundland."
+   "from": "Newfo_andland.",
+   "to": "Newfoundland."
   },
   {
    "g": 368305,
@@ -524,6 +519,156 @@
    "g": 282701,
    "from": "Roger r .",
    "to": "Roger."
+  },
+  {
+   "g": 173456,
+   "from": "the _;[]f_nt CAP COMM",
+   "to": "the silent CAPCOM"
+  },
+  {
+   "g": 173849,
+   "from": "in tho F_ro(!_;__low and the waste-water dw, p is in work. M_(_-i_ has been canceled.",
+   "to": "in process now and the waste-water dump is in work. MCC-3 has been canceled."
+  },
+  {
+   "g": 173933,
+   "from": "pow_m amplifier",
+   "to": "power amplifier"
+  },
+  {
+   "g": 174002,
+   "from": "plus t pound oxygen",
+   "to": "plus 1 pound oxygen"
+  },
+  {
+   "g": 174084,
+   "from": "descending order ti, 9, _g,d _. Over.",
+   "to": "descending order 8, 9, and 8. Over."
+  },
+  {
+   "g": 174174,
+   "from": "CRYO pressuce warning now in the middle of stirring up tae ...",
+   "to": "CRYO pressure warning now in the middle of stirring up the ..."
+  },
+  {
+   "g": 175046,
+   "from": "d_ap",
+   "to": "dump"
+  },
+  {
+   "g": 175604,
+   "from": "_ow you'd",
+   "to": "how you'd"
+  },
+  {
+   "g": 175640,
+   "from": "that is do_m though",
+   "to": "that is down though"
+  },
+  {
+   "g": 176222,
+   "from": "it never sepm_ to be",
+   "to": "it never seems to be"
+  },
+  {
+   "g": 187202,
+   "from": "cell pu_'ge.",
+   "to": "cell purge."
+  },
+  {
+   "g": 194293,
+   "from": "a m_ al not long ago",
+   "to": "a meal not long ago"
+  },
+  {
+   "g": 196518,
+   "from": "and v e'll accept",
+   "to": "and we'll accept"
+  },
+  {
+   "g": 196529,
+   "speaker": "Armstrong",
+   "text": "to get high gain"
+  },
+  {
+   "g": 196529,
+   "from": "high gain, $_ there any way",
+   "to": "high gain, is there any way"
+  },
+  {
+   "g": 196529,
+   "from": "in o_e of the two",
+   "to": "in one of the two"
+  },
+  {
+   "g": 196531,
+   "speaker": "McCandless",
+   "text": "is Houston. We'll have a look at it."
+  },
+  {
+   "g": 196531,
+   "from": "Phil; is Houston.",
+   "to": "This is Houston."
+  },
+  {
+   "g": 196761,
+   "speaker": "McCandless",
+   "text": "We have a TV attitude for you"
+  },
+  {
+   "g": 197001,
+   "from": "roll a;_d yaw.",
+   "to": "roll and yaw."
+  },
+  {
+   "g": 197001,
+   "text": "nQ _,e_, 11. Over.",
+   "delete": true
+  },
+  {
+   "g": 197586,
+   "from": "dropout of CONF4.",
+   "to": "dropout of COMM."
+  },
+  {
+   "g": 197596,
+   "from": "Roffc. r. Copy.",
+   "to": "Roger. Copy."
+  },
+  {
+   "g": 198122,
+   "from": "did ia the spacecraft",
+   "to": "did in the spacecraft"
+  },
+  {
+   "g": 199189,
+   "from": "you _]most got",
+   "to": "you almost got"
+  },
+  {
+   "g": 200170,
+   "from": "the picture ,,p in the tunnel",
+   "to": "the picture up in the tunnel"
+  },
+  {
+   "g": 200433,
+   "from": "floodliMht",
+   "to": "floodlight"
+  },
+  {
+   "g": 175037,
+   "from": "the' Persian Gulf.",
+   "to": "the Persian Gulf."
+  },
+  {
+   "g": 176261,
+   "from": "the I_M using",
+   "to": "the LM using"
+  },
+  {
+   "g": 197001,
+   "from": "_e[410, Apollo 11. Houston. Do you read?",
+   "to": "Hello, Apollo 11. Houston. Do you read?"
   }
  ]
 }

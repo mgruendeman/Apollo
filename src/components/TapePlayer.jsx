@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import ImmersiveView from './ImmersiveView'
 import TranscriptPanel from './TranscriptPanel'
 import MissionPhaseDiagram from './MissionPhaseDiagram'
 import { formatGetSigned } from '../lib/missionTape'
@@ -9,8 +10,10 @@ const tapeClip = (h) => `tapes-h${h}`
 // The whole mission from NASA's tapes: one scrubber for all ~8 days, the
 // recorded pieces shaded, and NASA's transcript following along an hour at
 // a time. `tape` is useMissionTape()'s state and controls.
-export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, fill, onFill, announcer, onAnnouncer, onTermClick }) {
+export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, fill, onFill, announcer, onAnnouncer, onTermClick, clips, clipIndex }) {
   const [drag, setDrag] = useState(null)
+  const [immersive, setImmersive] = useState(false)
+  const closeImmersive = useCallback(() => setImmersive(false), [])
   const shown = drag ?? tape.get
   const span = end - start
 
@@ -34,6 +37,13 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
   const source = tape.inGap ? null : piece?.journal
     ? { label: 'A clip in place of the tapes (they have a gap here)', href: piece.url }
     : piece && { label: `NASA tape ${piece.tape}`, href: `https://archive.org/details/Apollo${mission.number}Audio` }
+
+  const report = {
+    missionName: mission.name,
+    clipId: piece ? `the whole-mission recording (${piece.journal ? 'gap clip ' : 'NASA tape '}${piece.tape})` : 'the whole-mission recording',
+    audioUrl: tape.url,
+    sourceUrl: source?.href,
+  }
 
   useEffect(() => {
     if (!tape.playing || !('mediaSession' in navigator)) return
@@ -62,6 +72,9 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
           <p className="get-clock">GET {formatGetSigned(shown)}</p>
           <h2>{chapter}</h2>
           {tape.inGap && <p className="tape-gap-note">No recording here: real time counting on to the next one.</p>}
+          <button type="button" className="immersive-open" onClick={() => setImmersive(true)}>
+            ⛶ Full-screen view
+          </button>
           {source && (
             <a className="source-link" href={source.href} target="_blank" rel="noreferrer">
               {source.label} ↗
@@ -147,18 +160,41 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
         </span>
       </label>
 
+      {immersive && (
+        <ImmersiveView
+          mission={mission}
+          clips={clips}
+          index={clipIndex}
+          lines={shownLines}
+          currentTime={tape.get}
+          get={tape.get}
+          phase={phase}
+          onClose={closeImmersive}
+          onLineSeek={(g) => tape.seek(g, true)}
+          report={report}
+          controls={
+            <>
+              <button type="button" className="immersive-skip" onClick={() => tape.seek(tape.get - 30)} aria-label="Back 30 seconds">
+                −30
+              </button>
+              <button type="button" className="play-button" onClick={tape.toggle} aria-label={tape.playing ? 'Pause' : 'Play'}>
+                {tape.loading && tape.playing ? '…' : tape.playing ? '❚❚' : '▶'}
+              </button>
+              <button type="button" className="immersive-skip" onClick={() => tape.seek(tape.get + 30)} aria-label="Forward 30 seconds">
+                +30
+              </button>
+            </>
+          }
+        />
+      )}
+
       {shownLines.length > 0 ? (
         <TranscriptPanel
           lines={shownLines}
           currentTime={tape.get}
           onTermClick={onTermClick}
           onLineSeek={(g) => tape.seek(g, true)}
-          report={{
-            missionName: mission.name,
-            clipId: piece ? `the whole-mission recording (${piece.journal ? 'gap clip ' : 'NASA tape '}${piece.tape})` : 'the whole-mission recording',
-            audioUrl: tape.url,
-            sourceUrl: source?.href,
-          }}
+          report={report}
           mission={mission.id}
           clip={hours.map(tapeClip).join(',')}
         />
