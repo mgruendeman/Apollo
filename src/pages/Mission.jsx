@@ -159,6 +159,16 @@ export default function Mission() {
   useEffect(() => {
     if (!timeline || tapeCued.current) return
     tapeCued.current = true
+    // ?at=<seconds> opens the tapes at that moment (the reviewer's transcript
+    // list links here); otherwise start a few minutes before liftoff.
+    const at = searchParams.get('at')
+    if (at !== null) {
+      setListen('tapes')
+      tape.seek(Number(at), false)
+      searchParams.delete('at')
+      setSearchParams(searchParams, { replace: true })
+      return
+    }
     tape.seek(Math.max(timeline.segments[0].get, -300), false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timeline])

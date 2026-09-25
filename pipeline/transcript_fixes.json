@@ -41,11 +41,6 @@
    "to": "Canary COMM TECH."
   },
   {
-   "g": 1103,
-   "from": "Air insertion",
-   "to": "Your insertion"
-  },
-  {
    "g": 1110,
    "from": "your I delta azimuth",
    "to": "your delta azimuth"
@@ -54,11 +49,6 @@
    "g": 2344,
    "from": "VHF t Simplex",
    "to": "VHF A Simplex"
-  },
-  {
-   "g": 2371,
-   "from": "LOS Tane_ua%*ive;'AO$ Carnarvon",
-   "to": "LOS Tananarive; AOS Carnarvon"
   },
   {
    "g": 3257,
@@ -136,11 +126,6 @@
    "to": "Apollo 11's distance"
   },
   {
-   "g": 11377,
-   "from": "PYPO bus A armed Band pyro",
-   "to": "pyro bus A armed and pyro"
-  },
-  {
    "g": 12575,
    "from": "acq,_isition",
    "to": "acquisition"
@@ -172,11 +157,6 @@
   },
   {
    "g": 13723,
-   "from": "REPRESS O_ package",
-   "to": "REPRESS O2 package"
-  },
-  {
-   "g": 13723,
    "from": "up t 5 psi",
    "to": "up to 5 psi"
   },
@@ -184,16 +164,6 @@
    "g": 13760,
    "from": "tolr_rances",
    "to": "tolerances"
-  },
-  {
-   "g": 13760,
-   "from": "w[I,h this [)rf)(.'(;durf .",
-   "to": "with this procedure."
-  },
-  {
-   "g": 13850,
-   "from": "And Houston, might be interested _ha% Sub _\" left-hand window",
-   "to": "And Houston, you might be interested that out the left-hand window"
   },
   {
    "g": 13850,
@@ -231,11 +201,6 @@
    "to": "we are SEP"
   },
   {
-   "g": 16101,
-   "from": "'your question an RCS usage'",
-   "to": "your question on RCS usage,"
-  },
-  {
    "g": 16914,
    "from": "pitch gimbal 17 Can yo: confirm _ ,__ that OFF?",
    "to": "pitch gimbal 1? Can you confirm that OFF?"
@@ -249,11 +214,6 @@
    "g": 17479,
    "from": "LM ejectioa;",
    "to": "LM ejection;"
-  },
-  {
-   "g": 17479,
-   "from": "Just the ieeeap in Greenland. Ail North Atlantic",
-   "to": "just the icecap in Greenland. All North Atlantic"
   },
   {
    "g": 17479,
@@ -274,11 +234,6 @@
    "g": 368305,
    "from": "high ga_,n, Over.",
    "to": "high gain. Over."
-  },
-  {
-   "g": 368345,
-   "from": "_ Eagle, Houston - Houston, ;:sW_ \u00b7 How do you read",
-   "to": "Eagle, Houston - Houston, Eagle. How do you read?"
   },
   {
    "g": 368557,
@@ -306,19 +261,9 @@
    "to": "You're GO for PDI. Recommend you yaw right 10 degrees and try the high gain again."
   },
   {
-   "g": 368937,
-   "from": "i_,ELD_c,r_'ol eirL'_ breakers.",
-   "to": "... circuit breakers."
-  },
-  {
    "g": 368947,
    "from": "closed? O' circuit breaker?",
    "to": "closed? ... circuit breaker?"
-  },
-  {
-   "g": 368947,
-   "from": "GIMBAL-ENA_LE?",
-   "to": "GIMBAL ENABLE?"
   },
   {
    "g": 368974,
@@ -394,11 +339,6 @@
    "g": 369712,
    "from": "Coming up '_ minutes.",
    "to": "Coming up 9 minutes."
-  },
-  {
-   "g": 369712,
-   "from": "_F, Manual attitude control is ga_d.",
-   "to": "Manual attitude control is good."
   },
   {
    "g": 368345,
@@ -491,11 +431,6 @@
    "to": "the silent CAPCOM"
   },
   {
-   "g": 173849,
-   "from": "in tho F_ro(!_;__low and the waste-water dw, p is in work. M_(_-i_ has been canceled.",
-   "to": "in process now and the waste-water dump is in work. MCC-3 has been canceled."
-  },
-  {
    "g": 173933,
    "from": "pow_m amplifier",
    "to": "power amplifier"
@@ -504,16 +439,6 @@
    "g": 174002,
    "from": "plus t pound oxygen",
    "to": "plus 1 pound oxygen"
-  },
-  {
-   "g": 174084,
-   "from": "descending order ti, 9, _g,d _. Over.",
-   "to": "descending order 8, 9, and 8. Over."
-  },
-  {
-   "g": 174174,
-   "from": "CRYO pressuce warning now in the middle of stirring up tae ...",
-   "to": "CRYO pressure warning now in the middle of stirring up the ..."
   },
   {
    "g": 175046,
@@ -539,11 +464,6 @@
    "g": 187202,
    "from": "cell pu_'ge.",
    "to": "cell purge."
-  },
-  {
-   "g": 194293,
-   "from": "a m_ al not long ago",
-   "to": "a meal not long ago"
   },
   {
    "g": 196518,
@@ -611,11 +531,6 @@
    "to": "the Persian Gulf."
   },
   {
-   "g": 176261,
-   "from": "the I_M using",
-   "to": "the LM using"
-  },
-  {
    "g": 197001,
    "from": "_e[410, Apollo 11. Houston. Do you read?",
    "to": "Hello, Apollo 11. Houston. Do you read?"
@@ -669,11 +584,6 @@
    "g": 16914,
    "from": "pitch gimbal 17 Can yo: confirm ok yoa 4 thet OFF?",
    "to": "pitch gimbal 1? Can you confirm that OFF?"
-  },
-  {
-   "g": 368788,
-   "from": "Our visual altitude checks stoadying out at about 53 000.",
-   "to": "Our visual altitude check is steadying out at about 53,000."
   },
   {
    "g": 368947,
@@ -751,16 +661,6 @@
    "to": "several gimbal motors"
   },
   {
-   "g": 16917,
-   "from": "back with you Me in Just",
-   "to": "back with you in just"
-  },
-  {
-   "g": 17397,
-   "from": "a little closer you vat update as we approach it. .",
-   "to": "a little closer update as we approach it."
-  },
-  {
    "g": 444726,
    "text": "l_r,ady ['or I,h_' blln, l_:ltC - -",
    "delete": true
@@ -774,11 +674,6 @@
    "g": 449571,
    "from": "I called you before about",
    "to": "I called you before about VHF. It's not working. ***"
-  },
-  {
-   "g": 449916,
-   "from": "Columbia. Your Y-dot",
-   "to": "Eagle, Columbia. Your Y-dot"
   },
   {
    "g": 449952,
@@ -814,11 +709,6 @@
    "g": 2464,
    "from": "One minute to LOS this Tananarive",
    "to": "One minute to LOS Tananarive"
-  },
-  {
-   "g": 13984,
-   "from": "And, Houston, you, might be interested _ha% Sub _\" left-hand window",
-   "to": "And, Houston, you might be interested that out the left-hand window"
   },
   {
    "g": 2371,
@@ -879,11 +769,6 @@
    "g": 13723,
    "from": "your question of this step",
    "to": "your question on this step"
-  },
-  {
-   "g": 13984,
-   "from": "you, might be interested _ha% Sub _\" left-hand window",
-   "to": "you might be interested that out the left-hand window"
   },
   {
    "g": 13985,

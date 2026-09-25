@@ -199,7 +199,8 @@ The site can play a mission end to end from NASA's own tapes (Apollo 11 so far):
 1. `place_tapes.py 11 --media $M`: finds the journal's clips inside each tape to place it roughly on the mission clock.
    Writes `pipeline/tapes/apollo11-placement.json`.
 2. `transcribe_tapes.py`: runs speech recognition over each whole tape, keeping the time of every word.
-3. `align_tapes.py 11 --media $M`: times NASA's transcript lines against those words and cuts each tape into
+3. `align_tapes.py 11 --media $M` (the code is in `pipeline/aligner/`, one module per concern: placement, OCR
+   repair, the announcer, timing, hand fixes, review): times NASA's transcript lines against those words and cuts each tape into
    pieces of continuous mission time. NASA's text is OCR, so damaged words ("Ro6er", "We'11", a stray ")") are repaired
    from our own speech recognition at that moment of the tape. Hand fixes from listeners' reports go in
    `pipeline/transcript_fixes.json`. (`--journal-text` would take the Flight Journal's wording instead; it's off, so the
@@ -211,6 +212,13 @@ The site can play a mission end to end from NASA's own tapes (Apollo 11 so far):
    Through quiet hours the recorders ran only for his announcements, so one stretch of tape can hold several hours of them.
    Each is moved to the mission time he gives. Tapes no journal clip placed (166-AAA) are placed from those spoken times too.
    `--cleaned` points the site at our cleaned copies (`audio/NN/<tape>.clean.m4a` in R2, uploaded with rclone).
+
+   It also writes `public/review/transcript/apolloNN.json`, the lines most worth a listener's ear, ranked by doubt
+   (damaged words, a lost time or speaker, words the tape hears differently). The reviewer's Transcript page lists
+   them; each links to the site at that moment (`/#/mission/NN?at=<seconds>`).
+   A hand fix whose text no longer matches and isn't already satisfied stops the run (`--no-strict` to only warn),
+   so a re-read transcript can't silently lose a correction.
+   Tests for the repair rules: `~/.venvs/apollo/bin/python -m pytest pipeline/tests -q`.
 
 On the site, journal clips can fill the gaps between tape pieces (a switch, on for now); with the announcer switch on, that includes the broadcast clips.
 "Real time" (off by default) counts through silent stretches at their true length instead of skipping them.
