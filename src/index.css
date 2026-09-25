@@ -2750,17 +2750,6 @@ button.transcript-channel-tag {
   stroke-width: 1;
   stroke-dasharray: 2.5 2;
 }
-.pd-arrow {
-  stroke: rgba(200, 215, 255, 0.5);
-  stroke-width: 1;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.pd-orbit {
-  stroke: rgba(200, 215, 255, 0.28);
-  stroke-width: 0.8;
-  stroke-dasharray: 2 2;
-}
 .pd-earth {
   fill: #2f6fc2;
   stroke: #7fb2ff;
@@ -2768,11 +2757,6 @@ button.transcript-channel-tag {
 }
 .pd-land {
   fill: #4caf6d;
-}
-.pd-cloud {
-  stroke: rgba(255, 255, 255, 0.75);
-  stroke-width: 1.4;
-  stroke-linecap: round;
 }
 .pd-moon {
   fill: #b9bec8;
@@ -2830,12 +2814,6 @@ button.transcript-channel-tag {
   stroke: rgba(255, 255, 255, 0.6);
   stroke-width: 0.3;
 }
-.pd-helmet {
-  fill: #ffffff;
-}
-.pd-visor {
-  fill: #1f2a44;
-}
 .pd-scene {
   animation: pd-arrive 0.6s ease-out;
 }
@@ -2844,6 +2822,14 @@ button.transcript-channel-tag {
     opacity: 0;
     transform: translateY(2px);
   }
+}
+.pd-tag {
+  font-family: var(--font-mono);
+  font-size: 6px;
+  fill: var(--text);
+  paint-order: stroke;
+  stroke: var(--bg-panel);
+  stroke-width: 2px;
 }
 .phase-who {
   margin: 2px 0 0;
