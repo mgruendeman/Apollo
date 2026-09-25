@@ -127,11 +127,14 @@ def denoise_chunks(audio, fn):
     while start < n:
         end = min(n, start + step + fade)
         piece = fn(audio[start:end])[: end - start]
+        if len(piece) < end - start:   # (a model can hand back a sample or two short)
+            piece = np.pad(piece, (0, end - start - len(piece)))
         w = np.ones(end - start, dtype=np.float32)
+        f = min(fade, end - start)   # a tape's last chunk can be shorter than the crossfade
         if start > 0:
-            w[:fade] = np.linspace(0, 1, fade)
+            w[:f] = np.linspace(0, 1, f)
         if end < n:
-            w[-fade:] = np.linspace(1, 0, fade)
+            w[-f:] = np.linspace(1, 0, f)
         out[start:end] += piece * w
         weight[start:end] += w
         start += step
