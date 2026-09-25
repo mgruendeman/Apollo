@@ -2750,50 +2750,6 @@ button.transcript-channel-tag {
   stroke-width: 1;
   stroke-dasharray: 2.5 2;
 }
-.pd-earth {
-  fill: #2f6fc2;
-  stroke: #7fb2ff;
-  stroke-width: 0.8;
-}
-.pd-land {
-  fill: #4caf6d;
-}
-.pd-moon {
-  fill: #b9bec8;
-  stroke: #e5e7eb;
-  stroke-width: 0.6;
-}
-.pd-crater {
-  fill: #8c929c;
-}
-.pd-sm {
-  fill: #d7dce4;
-  stroke: #6b7280;
-  stroke-width: 0.4;
-}
-.pd-cm {
-  fill: #eef1f5;
-  stroke: #6b7280;
-  stroke-width: 0.4;
-}
-.pd-nozzle {
-  fill: #6b7280;
-}
-.pd-lm-descent {
-  fill: #e0a526;
-  stroke: #8a6411;
-  stroke-width: 0.4;
-}
-.pd-lm-ascent {
-  fill: #cfd4dc;
-  stroke: #6b7280;
-  stroke-width: 0.4;
-}
-.pd-legs {
-  stroke: #cfd4dc;
-  stroke-width: 0.8;
-  stroke-linecap: round;
-}
 .pd-rocket {
   fill: #f3f4f6;
   stroke: #4b5563;
@@ -2804,15 +2760,6 @@ button.transcript-channel-tag {
 }
 .pd-flame {
   fill: var(--accent);
-}
-.pd-chute {
-  fill: #f97316;
-  stroke: #fff;
-  stroke-width: 0.4;
-}
-.pd-lines {
-  stroke: rgba(255, 255, 255, 0.6);
-  stroke-width: 0.3;
 }
 .pd-scene {
   animation: pd-arrive 0.6s ease-out;
