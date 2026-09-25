@@ -244,16 +244,37 @@ def extract(pdf_path, force_ocr=False, pages=None):
 DAMAGE = re.compile(r"[^A-Za-z0-9'.,?!;:()/&\-]|[a-z][0-9]|[0-9][a-z]{2}|[a-z][,:;][a-z]|[A-Za-z][éèàù]")
 
 
+SHORT_WORDS = set('a i am an as at be by do go he if in is it me my no of oh ok on or so to up us we ye'.split())
+
+
 def _word_score(word, vocab):
     """How trustworthy a word reads: 2 a dictionary or oft-seen word, 1 clean
     but unfamiliar, 0 visibly damaged."""
     core = word.strip('.,?!;:"()')
     if not core or DAMAGE.search(core):
         return 0
-    return 2 if core.lower() in vocab or core.isupper() or re.fullmatch(r"[\d.,:/-]+", core) else 1
+    if re.fullmatch(r"[\d.,:/-]+", core):
+        return 2
+    real = core.lower() in vocab and (len(core) >= 3 or core.lower() in SHORT_WORDS)
+    return 2 if real or (core.isupper() and len(core) >= 2) else 1
 
 
-def merge_readings(old, new, vocab, nearby=''):
+def _better(new, old, common, vocab):
+    """Whether Tesseract's word should replace the embedded text's: the old
+    one reads worse, and the new one is a word these transcripts use again
+    and again (a rarer one, "Yates" or "yodates", is more likely a misreading;
+    those are left to the repairs from the tapes)."""
+    if _word_score(old, vocab) == 2:
+        return False
+    if _word_score(new, common) == 2:
+        return True
+    # a dictionary word that looks like what's readable of the damaged one ("readin&s": readings)
+    seen = re.sub(r'[^a-z]', '', old.lower())
+    return (_word_score(new, vocab) == 2 and len(seen) >= 3
+            and difflib.SequenceMatcher(None, seen, re.sub(r'[^a-z]', '', new.lower())).ratio() >= 0.75)
+
+
+def merge_readings(old, new, vocab, nearby='', common=None):
     """Two readings of one line (the PDF's embedded text, and Tesseract's)
     merged word by word: where they disagree, the reading that scores
     better as a word wins; on a tie the embedded text stays.
@@ -262,6 +283,7 @@ def merge_readings(old, new, vocab, nearby=''):
     isn't in the lines around (`nearby`: Tesseract sometimes splits the
     page into lines differently, and a neighbour's words bleed in) and
     doesn't repeat what this line already says."""
+    common = common if common is not None else vocab
     a, b = old.split(), new.split()
     near = ' ' + ' '.join(re.sub(r'[^a-z0-9 ]', '', w.lower()) for w in nearby.split()) + ' '
     out = []
@@ -269,18 +291,18 @@ def merge_readings(old, new, vocab, nearby=''):
         if op == 'equal':
             out += a[i1:i2]
         elif op == 'replace' and i2 - i1 == j2 - j1:
-            out += [y if _word_score(y, vocab) > _word_score(x, vocab) else x for x, y in zip(a[i1:i2], b[j1:j2])]
-        elif op == 'replace':
-            sa = min((_word_score(w, vocab) for w in a[i1:i2]), default=2)
-            sb = min((_word_score(w, vocab) for w in b[j1:j2]), default=2)
-            out += b[j1:j2] if sb > sa and abs((j2 - j1) - (i2 - i1)) <= 2 else a[i1:i2]
+            out += [y if _better(y, x, common, vocab) else x for x, y in zip(a[i1:i2], b[j1:j2])]
+        elif op == 'replace':   # stretches of different lengths: Tesseract's only where every old word is damaged
+            old_all_bad = all(_word_score(w, vocab) == 0 for w in a[i1:i2])
+            new_all_good = all(_word_score(w, common) == 2 for w in b[j1:j2])
+            out += b[j1:j2] if old_all_bad and new_all_good and abs((j2 - j1) - (i2 - i1)) <= 2 else a[i1:i2]
         elif op == 'delete':
             out += [w for w in a[i1:i2] if _word_score(w, vocab) > 0]   # a scrap only the old reading has
         else:   # 'insert': only Tesseract saw these
             run = b[j1:j2]
             plain = ' '.join(re.sub(r'[^a-z0-9]', '', w.lower()) for w in run)
             own = {re.sub(r'[^a-z0-9]', '', w.lower()) for w in a}
-            if (len(run) >= 3 and all(_word_score(w, vocab) == 2 for w in run) and f' {plain} ' not in near
+            if (len(run) >= 3 and all(_word_score(w, common) == 2 for w in run) and f' {plain} ' not in near
                     and sum(re.sub(r'[^a-z0-9]', '', w.lower()) in own for w in run) * 2 < len(run)):
                 out += run
     return ' '.join(out)
@@ -304,7 +326,8 @@ def extract_merged(pdf_path, pages=None, cache=None):
     words = [w.lower().strip('.,?!;:"()') for r in old + new for w in r['text'].split()]
     from collections import Counter
     seen = Counter(words)
-    vocab = {w for w, n in seen.items() if n >= 3 and not DAMAGE.search(w)}
+    common = {w for w, n in seen.items() if n >= 3 and not DAMAGE.search(w)}   # words these transcripts use again and again
+    vocab = set(common)
     dict_path = Path('/usr/share/dict/words')
     if dict_path.exists():
         vocab |= {w.lower() for w in dict_path.read_text(errors='ignore').split()}
@@ -317,7 +340,7 @@ def extract_merged(pdf_path, pages=None, cache=None):
                 i = i1 + k
                 nearby = ' '.join(x['text'] for x in old[max(0, i - 2):i] + old[i + 1:i + 3])
                 m = dict(r)
-                m['text'] = merge_readings(r['text'], q['text'], vocab, nearby)
+                m['text'] = merge_readings(r['text'], q['text'], vocab, nearby, common)
                 if r['getApprox'] and not q['getApprox']:
                     m['getSeconds'], m['getApprox'] = q['getSeconds'], False
                 if r['speaker'] == '?' and q['speaker'] != '?':

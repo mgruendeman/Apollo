@@ -142,11 +142,6 @@
   },
   {
    "g": 12575,
-   "speaker": "Collins",
-   "text": "We are docked."
-  },
-  {
-   "g": 12575,
    "from": "acq,_isition",
    "to": "acquisition"
   },
@@ -282,11 +277,6 @@
   },
   {
    "g": 368345,
-   "speaker": "Armstrong",
-   "text": "How do you read"
-  },
-  {
-   "g": 368345,
    "from": "_ Eagle, Houston - Houston, ;:sW_ \u00b7 How do you read",
    "to": "Eagle, Houston - Houston, Eagle. How do you read?"
   },
@@ -307,18 +297,8 @@
   },
   {
    "g": 368788,
-   "speaker": "Armstrong",
-   "text": "visual altitude check"
-  },
-  {
-   "g": 368788,
    "from": "_t:,adying out at about 53 000",
    "to": "is steadying out at about 53,000"
-  },
-  {
-   "g": 368829,
-   "speaker": "Aldrin",
-   "text": "That wasn't an alarm; that was a code."
   },
   {
    "g": 368914,
@@ -329,11 +309,6 @@
    "g": 368937,
    "from": "i_,ELD_c,r_'ol eirL'_ breakers.",
    "to": "... circuit breakers."
-  },
-  {
-   "g": 368947,
-   "speaker": "Aldrin",
-   "text": "COMMAND OVERRIDE - off?"
   },
   {
    "g": 368947,
@@ -369,11 +344,6 @@
    "g": 369345,
    "from": "a l/tt fluctuation the AC",
    "to": "a little fluctuation in the AC"
-  },
-  {
-   "g": 369352,
-   "speaker": "Aldrin",
-   "text": "Could be our meter"
   },
   {
    "g": 369352,
@@ -444,11 +414,6 @@
    "g": 369352,
    "from": "Stand by, Looki_.,ggo_ ' t _ You're, r,ti]l looking good at 3, coming up : minutes.",
    "to": "Stand by. Looking good. You're still looking good. Coming up 3 minutes."
-  },
-  {
-   "g": 369352,
-   "speaker": "Duke",
-   "text": "Stand by. Looking good."
   },
   {
    "g": 275755,
@@ -587,11 +552,6 @@
   },
   {
    "g": 196529,
-   "speaker": "Armstrong",
-   "text": "to get high gain"
-  },
-  {
-   "g": 196529,
    "from": "high gain, $_ there any way",
    "to": "high gain, is there any way"
   },
@@ -602,18 +562,8 @@
   },
   {
    "g": 196531,
-   "speaker": "McCandless",
-   "text": "is Houston. We'll have a look at it."
-  },
-  {
-   "g": 196531,
    "from": "Phil; is Houston.",
    "to": "This is Houston."
-  },
-  {
-   "g": 196761,
-   "speaker": "McCandless",
-   "text": "We have a TV attitude for you"
   },
   {
    "g": 197001,
@@ -671,9 +621,359 @@
    "to": "Hello, Apollo 11. Houston. Do you read?"
   },
   {
+   "g": 2344,
+   "from": "Read you on Simplex,",
+   "to": "Read you on VHF A Simplex."
+  },
+  {
+   "g": 2371,
+   "from": "Wa're Just coming",
+   "to": "We're just coming"
+  },
+  {
+   "g": 11377,
+   "from": "PYPO bus A armed and TYRO bus B",
+   "to": "pyro bus A armed and pyro bus B"
+  },
+  {
+   "g": 13723,
+   "from": "REPRESS 0, package",
+   "to": "REPRESS O2 package"
+  },
+  {
+   "g": 13850,
+   "from": "our mtnus-X direction",
+   "to": "our minus-X direction"
+  },
+  {
+   "g": 13850,
+   "from": "particles are _' moving along with it The actual velo':ity",
+   "to": "particles are moving along with it. The actual velocity"
+  },
+  {
+   "g": 13850,
+   "from": "high. gee And we've got",
+   "to": "high. And we've got"
+  },
+  {
+   "g": 13850,
+   "from": "Houston. Roger. - Out. rt ee",
+   "to": "Houston. Roger. Out."
+  },
+  {
+   "g": 16103,
+   "from": "your question an RCS usage:",
+   "to": "your question on RCS usage,"
+  },
+  {
+   "g": 16914,
+   "from": "pitch gimbal 17 Can yo: confirm ok yoa 4 thet OFF?",
+   "to": "pitch gimbal 1? Can you confirm that OFF?"
+  },
+  {
+   "g": 368788,
+   "from": "Our visual altitude checks stoadying out at about 53 000.",
+   "to": "Our visual altitude check is steadying out at about 53,000."
+  },
+  {
+   "g": 368947,
+   "from": "GIMBAIL-ENASLE?",
+   "to": "GIMBAL ENABLE?"
+  },
+  {
+   "g": 369575,
+   "from": "Throttle down on tire!",
+   "to": "Throttle down on time!"
+  },
+  {
+   "g": 369608,
+   "from": "great to u.., Eagle.",
+   "to": "great to us, Eagle."
+  },
+  {
+   "g": 278573,
+   "from": "Bank B is holding, thoug..",
+   "to": "Bank B is holding, though."
+  },
+  {
+   "g": 174084,
+   "from": "8, 9, und _. Over.",
+   "to": "8, 9, and 8. Over."
+  },
+  {
+   "g": 174174,
+   "from": "stirring up tae ...",
+   "to": "stirring up the ..."
+  },
+  {
+   "g": 194293,
+   "from": "just finished a al not long ago",
+   "to": "just finished a meal not long ago"
+  },
+  {
+   "g": 176261,
+   "from": "with the IM using",
+   "to": "with the LM using"
+  },
+  {
+   "g": 5360,
+   "from": "Roger. Guaymas)",
+   "to": "Roger."
+  },
+  {
+   "g": 13087,
+   "from": "arid started",
+   "to": "and started"
+  },
+  {
+   "g": 13087,
+   "from": "MANUAI, ATTITUDE PITCH tack to",
+   "to": "MANUAL ATTITUDE PITCH back to"
+  },
+  {
+   "g": 13087,
+   "from": "PRO _EED",
+   "to": "PROCEED"
+  },
+  {
+   "g": 13087,
+   "from": "we: drifted",
+   "to": "we drifted"
+  },
+  {
+   "g": 13087,
+   "from": "And I'd he interested in your numoers",
+   "to": "And I'd be interested in your numbers"
+  },
+  {
+   "g": 16917,
+   "from": "several gimbal ._, motors",
+   "to": "several gimbal motors"
+  },
+  {
+   "g": 16917,
+   "from": "back with you Me in Just",
+   "to": "back with you in just"
+  },
+  {
+   "g": 17397,
+   "from": "a little closer you vat update as we approach it. .",
+   "to": "a little closer update as we approach it."
+  },
+  {
+   "g": 444726,
+   "text": "l_r,ady ['or I,h_' blln, l_:ltC - -",
+   "delete": true
+  },
+  {
+   "g": 445703,
+   "from": "Recommend 331,,",
+   "to": "Recommend 334,"
+  },
+  {
+   "g": 449571,
+   "from": "I called you before about",
+   "to": "I called you before about VHF. It's not working. ***"
+  },
+  {
+   "g": 449916,
+   "from": "Columbia. Your Y-dot",
+   "to": "Eagle, Columbia. Your Y-dot"
+  },
+  {
+   "g": 449952,
+   "from": "This is Houston. i",
+   "to": "This is Houston."
+  },
+  {
+   "g": 449957,
+   "from": "Would you tel Eagle his Y-dot is minus",
+   "to": "Would you tell Eagle his Y-dot is minus 1.0. Over."
+  },
+  {
+   "g": 450489,
+   "from": "Your AOS time -is i minute ,Z ahead",
+   "to": "Your AOS time is 1 minute ahead"
+  },
+  {
+   "g": 453407,
+   "from": "I csn't understand.",
+   "to": "I can't understand."
+  },
+  {
+   "g": 453526,
+   "from": "f_,og_:r.",
+   "to": "Roger. Stand by."
+  },
+  {
+   "g": 368937,
+   "from": "Roger. Understand. DECA GIMBAL",
+   "to": "Roger. Understand. ... circuit breakers. DECA GIMBAL"
+  },
+  {
+   "g": 2464,
+   "from": "One minute to LOS this Tananarive",
+   "to": "One minute to LOS Tananarive"
+  },
+  {
+   "g": 13984,
+   "from": "And, Houston, you, might be interested _ha% Sub _\" left-hand window",
+   "to": "And, Houston, you might be interested that out the left-hand window"
+  },
+  {
+   "g": 2371,
+   "from": "We're Just coming",
+   "to": "We're just coming"
+  },
+  {
+   "g": 13760,
+   "from": "with this [)rf)(.'(;durf -.",
+   "to": "with this procedure."
+  },
+  {
+   "g": 17397,
+   "from": "a little closer you ._ update as we approach it. .",
+   "to": "a little closer update as we approach it."
+  },
+  {
+   "g": 173849,
+   "from": "in tho F_ro(!_;__low and the waste-water dw, p is in work.",
+   "to": "in the process now and the waste-water dump is in work."
+  },
+  {
+   "g": 449916,
+   "from": "Eagle, Col-sbic.",
+   "to": "Eagle, Columbia."
+  },
+  {
+   "g": 16917,
+   "from": "back with you ' h/_ in Just a second",
+   "to": "back with you in just a second"
+  },
+  {
+   "g": 368788,
+   "from": "Our visual altitude checks is steadying",
+   "to": "Our visual altitude check is steadying"
+  },
+  {
+   "g": 17539,
+   "from": "east of _thabaska area",
+   "to": "east of Athabaska area"
+  },
+  {
+   "g": 17539,
+   "from": "seeing Just the ieeeap in ]re",
+   "to": "seeing just the icecap in Gre"
+  },
+  {
+   "g": 17539,
+   "from": "Ail North Atlantic",
+   "to": "All North Atlantic"
+  },
+  {
+   "g": 2344,
+   "from": "Read you on VHF t Simplex.",
+   "to": "Read you on VHF A Simplex."
+  },
+  {
+   "g": 13723,
+   "from": "your question of this step",
+   "to": "your question on this step"
+  },
+  {
+   "g": 13984,
+   "from": "you, might be interested _ha% Sub _\" left-hand window",
+   "to": "you might be interested that out the left-hand window"
+  },
+  {
+   "g": 13985,
+   "from": "Houston. iRoger.. Out.",
+   "to": "Houston. Roger. Out."
+  },
+  {
+   "g": 368788,
+   "from": "Our radar checks indi_ at_ 5C 00-foot perilune.",
+   "to": "Our radar checks indicate 50,000-foot perilune."
+  },
+  {
+   "g": 368788,
+   "from": "Our visual altitude checks _t:,adying out at about 53 000.",
+   "to": "Our visual altitude check is steadying out at about 53,000."
+  },
+  {
+   "g": 369352,
+   "from": "Could be our meter, maybe, b;!h7",
+   "to": "Could be our meter, maybe, huh?"
+  },
+  {
+   "g": 278573,
+   "from": "thoug..",
+   "to": "though."
+  },
+  {
+   "g": 12575,
+   "speaker": "Collins",
+   "text": "We are docked."
+  },
+  {
+   "g": 368345,
+   "speaker": "Armstrong",
+   "text": "How do you read"
+  },
+  {
+   "g": 368788,
+   "speaker": "Armstrong",
+   "text": "visual altitude check"
+  },
+  {
+   "g": 368829,
+   "speaker": "Aldrin",
+   "text": "That wasn't an alarm; that was a code."
+  },
+  {
+   "g": 368947,
+   "speaker": "Aldrin",
+   "text": "COMMAND OVERRIDE - off?"
+  },
+  {
+   "g": 369352,
+   "speaker": "Aldrin",
+   "text": "Could be our meter"
+  },
+  {
+   "g": 369352,
+   "speaker": "Duke",
+   "text": "Stand by. Looking good."
+  },
+  {
+   "g": 196529,
+   "speaker": "Armstrong",
+   "text": "to get high gain"
+  },
+  {
+   "g": 196531,
+   "speaker": "McCandless",
+   "text": "is Houston. We'll have a look at it."
+  },
+  {
+   "g": 196761,
+   "speaker": "McCandless",
+   "text": "We have a TV attitude for you"
+  },
+  {
    "g": 197515,
    "speaker": "Collins",
    "text": "Read you loud and clear, Charlie."
+  },
+  {
+   "g": 13087,
+   "speaker": "Collins",
+   "text": "I thought it went pretty well, Houston"
+  },
+  {
+   "g": 369352,
+   "speaker": "Aldrin",
+   "text": "Could be our meter, maybe, huh?"
   }
  ]
 }
