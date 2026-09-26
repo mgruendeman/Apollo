@@ -75,7 +75,10 @@ def main():
             continue
         words = [(w[0], w[1], w[2], (tokens(w[2]) or [''])[0]) for w in json.loads(asr.read_text())]
         starts = [w[0] for w in words]
-        pieces = entry.get('pieces') or merge_pieces(spoken_pieces(words) + text_pieces(words, grams))
+        # where to look for NASA's lines on this tape: where the journal's clips put it (if they
+        # did), and where what's said on it, and the times the announcer gives, put it (a clip
+        # found in the wrong place mustn't hide the rest: 177-AAA's clips put it two hours late)
+        pieces = merge_pieces(list(entry.get('pieces') or []) + spoken_pieces(words) + text_pieces(words, grams))
         if not pieces:
             continue
         tape_words[tape] = (words, starts)
@@ -96,19 +99,22 @@ def main():
                 if t is not None and share >= 0.6:
                     anchors.append((t, r['getSeconds'], k))
                     stats['anchored'] += 1
-        if not entry.get('pieces'):   # (the stretches searched overlap: count each line once)
-            stats['anchored'] -= len(anchors) - len(set(anchors))
-            anchors = sorted(set(anchors))
+        # (the stretches searched overlap: count each line once)
+        stats['anchored'] -= len(anchors) - len(set(anchors))
+        anchors = sorted(set(anchors))
         # lines between those found, where the recorder ran in bursts
         g_lo = min(p['get_from'] for p in pieces) - 60
         g_hi = max(p['get_from'] + (p['tape_to'] - p['tape_from']) * p['rate'] for p in pieces) + 60
         more = chain_anchors(rows, anchors, words, starts, g_lo, g_hi)
         stats['chained'] = stats.get('chained', 0) + len(more)
-        anchors = sorted(set(anchors) | set(more))
+        # a line the second look places clearly keeps only that place: any other place the first
+        # look found it (a stock phrase matched twice) is dropped
+        again = {k for _, _, k in more}
+        anchors = sorted({a for a in anchors if a[2] not in again} | set(more))
         heard_at[tape] = sorted(a[0] for a in anchors)
         for t, _, k in anchors:
             where_heard.setdefault(k, []).append((tape, t))
-        for p in pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words], sure=more):
+        for p in pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words], sure=more, word_tokens=[w[3] for w in words]):
             segments.append({'tape': tape, **p})
 
     segments.sort(key=lambda s: s['get'])

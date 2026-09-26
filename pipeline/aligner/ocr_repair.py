@@ -44,6 +44,9 @@ def vocabulary(tape_words):
     names = {w.lower() for w in listed if w[:1].isupper()} - lower
     from collections import Counter
     heard = Counter(re.sub(r"[^a-z0-9']", '', w[2].lower()) for tw, _ in tape_words.values() for w in tw)
+    apollo = {w for w in (Path(__file__).parent / 'apollo_words.txt').read_text().split() if not w.startswith('#')} - {'#'}
+    apollo = {w for w in apollo if w.isalpha()}
+    lower |= apollo
     vocab = lower | names | {w for w, n in heard.items() if n >= 2 and w}
     common = lower | {w for w, n in heard.items() if n >= 5 and w}
     spoken = {w for w, n in heard.items() if n >= 3 and w}   # words actually said on these tapes
@@ -285,6 +288,9 @@ def _tidy(text, vocab):
     text = re.sub(r"\bSim\)\s*lex\b", 'Simplex', text)
     text = re.sub(r"\bC[AaKk]P\s+C[O0](?:MM?|_)", 'CAPCOM', text)              # NASA's "CAP COMM" (and "CkP COMM", "CAP C0_")
     text = re.sub(r"\bM&0\b", 'M&O', text)                                   # the stations' maintenance and operations
+    text = re.sub(r"\bNell\b", 'Neil', text)                                 # (no Nell flew: it's Armstrong)
+    text = re.sub(r"\bNei!", 'Neil', text)
+    text = re.sub(r"\ba_d\b", 'and', text)
     text = re.sub(r"(?<![\w'`.])i(?=(?:'(?:m|ll|ve|d)\b)|\s+(?:think|thought|was|had|have|can|can't|could|couldn't|did|didn't|do|"
                   r"don't|went|understand|guess|got|see|saw|know|knew|want|wanted|just|feel|felt|hope|mean|need|said|say|will|would|"
                   r"am|believe|notice|noticed)\b)", 'I', text)            # "Roger. i understand", "i'm", "i guess"
@@ -337,8 +343,9 @@ def _tidy(text, vocab):
     if text.count("'") % 2 == 1 and not re.search(r"\s'\w.*\w'(\s|$|[.,?])", text):
         text = re.sub(r"(?<=\s)'(?=[a-z]{3,})", '', text)                    # an opening quote never closed
     text = re.sub(r"\b[A-Z][A-Z0-9]{2,}\b", lambda m: m.group().replace('0', 'O') if re.fullmatch(r"[A-Z]+0[A-Z]*", m.group()) else m.group(), text)   # CRY0
-    text = re.sub(r"\b([A-Z]+[a-z]+[A-Z]*[a-z]*)\b",                       # HoUSton, OVer
-                  lambda m: m.group().capitalize() if m.group().lower() in vocab else m.group(), text)
+    text = re.sub(r"\b([A-Z]+[a-z]+[A-Z]*[a-z]*)\b",                       # HoUSton, OVer (not REGs, METs: plurals)
+                  lambda m: m.group().capitalize() if m.group().lower() in vocab and not re.fullmatch(r"[A-Z]{2,}s", m.group())
+                  else m.group(), text)
     if text.count('(') < text.count(')'):
         text = re.sub(r"\s+\)(?=\s|$)", '', text)
     return text.strip()

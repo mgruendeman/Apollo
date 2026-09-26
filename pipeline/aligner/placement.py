@@ -169,13 +169,23 @@ def chain_anchors(rows, anchors, words, starts, g_lo, g_hi):
     far from where a steady offset would put it: where the recorder ran in
     bursts (stopped through the quiet, started by a voice) mission time
     outruns the tape, minutes over a quarter of an hour. Only clear, single
-    matches count. anchors: [(tape time, GET, row index)]; returns more."""
+    matches count; lines the first look found that are clearly placed this
+    way are returned too, as sure. anchors: [(tape time, GET, row index)].""" 
     found = _in_order(sorted({a[2]: a for a in anchors}.values(), key=lambda a: a[2]))
     idx = [a[2] for a in found]
     extra, prev_t = [], None
     for k, r in enumerate(rows):
         j = bisect.bisect_left(idx, k)
         if j < len(idx) and idx[j] == k:
+            # found by the first look: sure too if it's the one clear place between its neighbours
+            # (the first look times a line by its first words found, which can be well into it, so
+            # the search runs a little past the next line's time and allows 15 s)
+            toks = tokens(r['text'])
+            if prev_t is not None and j + 1 < len(found) and len(toks) >= 6 and prev_t < found[j + 1][0] <= prev_t + 1200:
+                lo, hi = bisect.bisect_left(starts, prev_t - 5), bisect.bisect_right(starts, found[j + 1][0] + 30)
+                t, share = _find_unique(toks, words, lo, hi)
+                if t is not None and abs(t - found[j][0]) <= 15 and (share >= 0.75 or len(toks) >= 15 and share >= 0.6):
+                    extra.append(found[j])   # (at the first look's time: the grouping by offset was tuned to it)
             prev_t = found[j][0]
             continue
         if r['getApprox'] or not g_lo <= r['getSeconds'] <= g_hi or prev_t is None or j >= len(found):
@@ -184,15 +194,15 @@ def chain_anchors(rows, anchors, words, starts, g_lo, g_hi):
         next_t = found[j][0]
         if len(toks) < 6 or not prev_t < next_t <= prev_t + 1200:
             continue
-        lo, hi = bisect.bisect_left(starts, prev_t), bisect.bisect_right(starts, next_t)
+        lo, hi = bisect.bisect_left(starts, prev_t), bisect.bisect_right(starts, next_t + 30)
         t, share = _find_unique(toks, words, lo, hi)
-        if t is not None and share >= 0.75:
+        if t is not None and (share >= 0.75 or len(toks) >= 15 and share >= 0.6):   # (a long line the scan damaged)
             extra.append((t, r['getSeconds'], k))
             prev_t = t
     return extra
 
 
-def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=()):
+def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_tokens=None):
     """Split a tape's (tape time, GET) anchors into pieces of continuous
     mission time (as place_tapes.segments, with tighter agreement), cut
     at the quietest point between neighbouring pieces. A piece needs three
@@ -244,14 +254,37 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=()):
             if not (0 < i < len(groups) - 1 and len(grp) <= 5 and abs(off(groups[i - 1]) - off(groups[i + 1])) <= 30
                     and abs(off(grp) - off(groups[i - 1])) > 60)]
     groups = keep
+    def cut(j):
+        """Where the tape passes from group j-1's stretch to group j's: its
+        quietest point between them, as (end of j-1's piece, start of j's).
+        Where the tape jumps back in mission time (a delayed playback of the
+        crew's conversation begins), the talk before it is still the live
+        conversation, up to where the announcer takes over ("... we'll play it
+        back after the conference. This is Mission Control Houston."), and
+        the playback starts at its first line: the announcer's bridge between
+        belongs to neither, and is left out."""
+        a, b = groups[j - 1][-1][0], groups[j][0][0]
+        if off(groups[j]) < off(groups[j - 1]) - 30 and word_tokens is not None:
+            i0, i1 = bisect.bisect_right(word_starts, a), bisect.bisect_left(word_starts, b)
+            for i in range(i0 + 1, i1):
+                if word_tokens[i] == 'control' and word_tokens[i - 1] in ('apollo', 'mission'):
+                    k = i - 1   # back to where his speech starts (after a pause of 1.5 s)
+                    while k > i0 and word_starts[k] - word_ends[k - 1] < 1.5:
+                        k -= 1
+                    if b - word_starts[k] <= 240:   # (a bridge of a few minutes; anything longer isn't this)
+                        return round(max(a, word_starts[k] - 0.3), 2), quietest_gap(word_starts, word_ends, max(a, b - 20), b)
+                    break
+        c = quietest_gap(word_starts, word_ends, a, b)
+        return c, c
+
     out = []
     for i, grp in enumerate(groups):
         ts = np.array([x[0] for x in grp])
         offs = np.array([x[1] for x in grp])
         slope = np.polyfit(ts, offs, 1)[0] if np.ptp(ts) > 300 else 0.0
         c = float(np.median(offs - slope * ts))
-        lo = 0.0 if i == 0 else quietest_gap(word_starts, word_ends, groups[i - 1][-1][0], ts[0])
-        hi = seconds if i == len(groups) - 1 else quietest_gap(word_starts, word_ends, ts[-1], groups[i + 1][0][0])
+        lo = 0.0 if i == 0 else cut(i)[1]
+        hi = seconds if i == len(groups) - 1 else cut(i + 1)[0]
         out.append({'from': round(lo, 2), 'to': round(hi, 2), 'get': round(c + (1 + slope) * lo, 2),
                     'rate': round(1 + float(slope), 6), 'anchors': len(grp)})
     return out

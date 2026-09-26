@@ -98,6 +98,9 @@ TIDY_CASES = [
     ('11', 'Deneb and Vega, 007 144 )68. No ullage', 'Deneb and Vega, 007 144 068. No ullage'),
     ('12', 'Then CB(11) LGC/DSKY, close that.', 'Then CB(11) LGC/DSKY, close that.'),   # real parentheses
     ('12', 'Apollo 12) Houston.', 'Apollo 12) Houston.'),
+    ('11', 'Roger, Nell. You are five-by.', 'Roger, Neil. You are five-by.'),
+    ('11', 'We would like you to jettison Eagle a_d stationkeep', 'We would like you to jettison Eagle and stationkeep'),
+    ('14', 'Check your REGs and the BATs.', 'Check your REGs and the BATs.'),   # capitals with a plural s stay
     ('11', 'the DIRECT O2 valve', 'the DIRECT O2 valve'),   # real O2 stays
     ('11', 'AOS Canaries at 1 50 13', 'AOS Canaries at 1 50 13'),   # numbers untouched
     ('11', "P52 is done. I'm looking at the DSKY.", "P52 is done. I'm looking at the DSKY."),   # nothing to fix
@@ -337,3 +340,25 @@ def test_whole_and_retime_only_fixes(tmp_path, monkeypatch):
     assert [l['s'] for l in lines] == ['Aldrin', 'Duke', 'Duke', 'Aldrin']   # the PAD now after "Ready to copy"
     # "whole": the line that is just "Roger." (Duke's, 1 s away), not the nearer one holding it
     assert [l['t'] for l in lines] == ['Okay. Ready to copy.', 'Flyby is the purpose. SPS 62815.', 'Rog.', 'Roger. Roger.']
+
+
+def test_spaceflight_words_are_not_damage(vocab):
+    for w in ('ullage', 'trunnion', 'regolith', 'pericynthion', 'stationkeeping', 'gnomon'):
+        assert not R._suspect(w, vocab), w
+
+
+def test_a_delayed_playback_starts_at_its_first_line_and_the_live_talk_runs_to_the_announcer():
+    from aligner.placement import pieces_from_anchors
+    # live talk at offset 1000 up to 60 s; the announcer takes over at 70 s ("This is Apollo Control ...");
+    # from 100 s a playback of earlier talk, at offset 910 (90 s back in mission time)
+    said = [(t, w) for t, w in [(10, 'roger'), (20, 'copy'), (30, 'go'), (40, 'ahead'), (55, 'likewise'),
+                                (70, 'this'), (70.4, 'is'), (70.8, 'apollo'), (71.2, 'control'), (72, 'at'), (80, 'news'),
+                                (100, 'roger'), (110, 'eleven'), (120, 'angles'), (130, 'roll')]]
+    starts = [t for t, _ in said]
+    anchors = [(10, 1010, 0), (20, 1020, 1), (40, 1040, 2), (100, 1010, 3), (110, 1020, 4), (120, 1030, 5)]
+    pieces = pieces_from_anchors(anchors, 200, starts, [t + 0.3 for t in starts], sure=anchors[3:],
+                                 word_tokens=[w for _, w in said])
+    live, playback = pieces
+    assert 69 < live['to'] <= 70.8          # the live piece keeps the talk, up to the announcer
+    assert 80 < playback['from'] <= 100     # the playback starts just before its first line
+    assert abs(playback['get'] - (playback['from'] + 910)) < 1

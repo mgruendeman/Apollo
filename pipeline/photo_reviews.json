@@ -2213,9 +2213,102 @@
  "AS14-66-09270": {
   "verdict": "good"
  },
+ "AS14-66-09272": {
+  "verdict": "good"
+ },
+ "AS14-66-09275": {
+  "verdict": "good"
+ },
+ "AS14-66-09279": {
+  "verdict": "good"
+ },
+ "AS14-66-09281": {
+  "verdict": "good"
+ },
+ "AS14-66-09284": {
+  "verdict": "reject"
+ },
+ "AS14-66-09286": {
+  "verdict": "good"
+ },
+ "AS14-66-09289": {
+  "verdict": "good"
+ },
+ "AS14-66-09290": {
+  "verdict": "good"
+ },
+ "AS14-66-09291": {
+  "verdict": "good"
+ },
+ "AS14-66-09295": {
+  "verdict": "good"
+ },
+ "AS14-66-09299": {
+  "verdict": "good"
+ },
+ "AS14-66-09302": {
+  "verdict": "good"
+ },
+ "AS14-66-09307": {
+  "verdict": "good"
+ },
+ "AS14-66-09308": {
+  "verdict": "good"
+ },
+ "AS14-66-09311": {
+  "verdict": "good"
+ },
+ "AS14-66-09312": {
+  "verdict": "good"
+ },
+ "AS14-66-09316": {
+  "verdict": "good"
+ },
+ "AS14-66-09319": {
+  "verdict": "good"
+ },
+ "AS14-66-09321": {
+  "verdict": "good"
+ },
+ "AS14-66-09324": {
+  "verdict": "good"
+ },
  "AS14-66-09325": {
   "brightness": 2,
   "contrast": 1,
+  "verdict": "good"
+ },
+ "AS14-66-09329": {
+  "verdict": "good"
+ },
+ "AS14-66-09335": {
+  "verdict": "good"
+ },
+ "AS14-66-09336": {
+  "verdict": "good"
+ },
+ "AS14-66-09341": {
+  "verdict": "good"
+ },
+ "AS14-66-09346": {
+  "verdict": "good"
+ },
+ "AS14-66-09349": {
+  "verdict": "good"
+ },
+ "AS14-66-09352": {
+  "verdict": "good"
+ },
+ "AS14-66-09356": {
+  "verdict": "good"
+ },
+ "AS14-66-09357": {
+  "verdict": "good"
+ },
+ "AS14-66-09360": {
+  "verdict": "good"
+ },
+ "AS14-67-09363": {
   "verdict": "good"
  },
  "AS14-67-09367": {
@@ -2223,12 +2316,96 @@
   "contrast": 1,
   "verdict": "good"
  },
+ "AS14-67-09368": {
+  "verdict": "good"
+ },
+ "AS14-67-09373": {
+  "verdict": "good"
+ },
+ "AS14-67-09377": {
+  "verdict": "good"
+ },
+ "AS14-67-09381": {
+  "verdict": "good"
+ },
+ "AS14-67-09382": {
+  "verdict": "good"
+ },
+ "AS14-67-09387": {
+  "verdict": "good"
+ },
+ "AS14-67-09390": {
+  "verdict": "good"
+ },
+ "AS14-67-09393": {
+  "verdict": "good"
+ },
+ "AS14-68-9396": {
+  "verdict": "good"
+ },
+ "AS14-68-9399": {
+  "verdict": "good"
+ },
+ "AS14-68-9402": {
+  "verdict": "good"
+ },
+ "AS14-68-9406": {
+  "verdict": "good"
+ },
+ "AS14-68-9410": {
+  "verdict": "good"
+ },
+ "AS14-68-9413": {
+  "verdict": "good"
+ },
+ "AS14-68-9417": {
+  "verdict": "good"
+ },
+ "AS14-68-9419": {
+  "verdict": "good"
+ },
+ "AS14-68-9422": {
+  "verdict": "good"
+ },
+ "AS14-68-9425": {
+  "verdict": "good"
+ },
+ "AS14-68-9428": {
+  "verdict": "good"
+ },
+ "AS14-68-9432": {
+  "verdict": "good"
+ },
+ "AS14-68-9435": {
+  "verdict": "good"
+ },
+ "AS14-68-9438": {
+  "verdict": "good"
+ },
+ "AS14-68-9442": {
+  "verdict": "good"
+ },
+ "AS14-68-9445": {
+  "verdict": "good"
+ },
  "AS14-68-9449": {
   "brightness": -6,
   "contrast": -1,
   "verdict": "good"
  },
+ "AS14-68-9450": {
+  "verdict": "good"
+ },
  "AS14-68-9454": {
+  "verdict": "good"
+ },
+ "AS14-68-9458": {
+  "verdict": "good"
+ },
+ "AS14-68-9461": {
+  "verdict": "good"
+ },
+ "AS14-68-9462": {
   "verdict": "good"
  },
  "AS14-69-9533": {

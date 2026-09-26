@@ -747,13 +747,8 @@
   },
   {
    "g": 17539,
-   "from": "east of _thabaska area",
-   "to": "east of Athabaska area"
-  },
-  {
-   "g": 17539,
-   "from": "seeing just the ieeeap in ]re",
-   "to": "seeing just the icecap in Gre"
+   "from": "seeing just the ieeeap in",
+   "to": "seeing just the icecap in"
   },
   {
    "g": 17539,
@@ -1175,6 +1170,11 @@
    "to": "EVAP OUT temperature running low"
   },
   {
+   "g": 379079,
+   "from": "EVAP OUT temp- perature running low",
+   "to": "EVAP OUT temperature running low"
+  },
+  {
    "g": 630624.1,
    "from": "this will be \"change Lima.\"",
    "to": "this will be \"Change Lima.\""
@@ -1246,6 +1246,167 @@
    "g": 575727,
    "from": "up. Ass_es no MCC-6.",
    "to": "up. Assume no MCC-6."
+  },
+  {
+   "g": 468406,
+   "from": "a maneuver foc you",
+   "to": "a maneuver for you"
+  },
+  {
+   "g": 101241,
+   "from": "and from there I eau see all the way",
+   "to": "and from there I can see all the way"
+  },
+  {
+   "g": 101241,
+   "from": "and th,_ southern tip",
+   "to": "and the southern tip"
+  },
+  {
+   "g": 101241,
+   "from": "Roger. · So,raidslike you've got a beauti_l.vtew up there.",
+   "to": "Roger. Sounds like you've got a beautiful view up there."
+  },
+  {
+   "g": 101281,
+   "from": "Absolutely _ fantastic.",
+   "to": "Absolutely fantastic."
+  },
+  {
+   "g": 101281,
+   "from": "where it's going out of vi _,eVregain, j. .",
+   "to": "where it's going out of view again."
+  },
+  {
+   "g": 356658,
+   "from": "read back if you are ready. Over. ] '_li'.c, _'_), ' (_(_ :dlt':Ld.",
+   "to": "read back if you are ready. Over."
+  },
+  {
+   "g": 395539,
+   "from": "Neil is now unveilSng the plaque *** gaar.",
+   "to": "Neil is now unveiling the plaque *** gear."
+  },
+  {
+   "g": 395561,
+   "from": "for those who h_tvof_ ' L road _h_ _;J :J.ql_, we ] ] road the plaque that's on the: front landing gear",
+   "to": "For those who haven't read the plaque, we'll read the plaque that's on the front landing gear"
+  },
+  {
+   "g": 395561,
+   "from": "all mankind.\" it has the crew",
+   "to": "all mankind.\" It has the crew"
+  },
+  {
+   "g": 395647,
+   "from": "The surface material is powdery! *:_* Lo-_ good your lens is, but if you cam *** smudges ...",
+   "to": "The surface material is powdery. I don't know how good your lens is, but if you can see smudges ..."
+  },
+  {
+   "g": 453729.9,
+   "from": "been on Delta, bit he hasn't",
+   "to": "been on Delta, but he hasn't"
+  },
+  {
+   "g": 456356,
+   "from": "Well, to stay on my time line, I should have",
+   "to": "Well, to stay on my time line, I should have in the next couple of minutes."
+  },
+  {
+   "g": 14556,
+   "from": "the PAD is NA, and . no ullage.",
+   "to": "the PAD is NA, and no ullage."
+  },
+  {
+   "g": 395561,
+   "speaker": "Armstrong",
+   "text": "For those who haven't read the plaque, we'll read the plaque"
+  },
+  {
+   "g": 395647,
+   "speaker": "Aldrin",
+   "text": "The surface material is powdery."
+  },
+  {
+   "g": 453738,
+   "text": "I\".:IF.[,'. :,r, y,,11 r,.:.l.¥ I \"'I'Y y,,nr",
+   "delete": true
+  },
+  {
+   "g": 456356,
+   "text": "Okay. L_f,r:r;t estimate, 127 03 39.",
+   "unheard": true
+  },
+  {
+   "g": 101289,
+   "from": "I'm\"waiti_g _ pick it up in the sextant.",
+   "to": "I'm waiting to pick it up in the sextant."
+  },
+  {
+   "g": 101294,
+   "from": "Sounds _i_e one of these rotating restaurants.",
+   "to": "Sounds like one of these rotating restaurants."
+  },
+  {
+   "g": 468477,
+   "from": "3kay.",
+   "to": "Okay.",
+   "whole": true
+  },
+  {
+   "g": 8753,
+   "from": "very loud and very clelr, here.",
+   "to": "very loud and very clear, here."
+  },
+  {
+   "g": 18899,
+   "from": "coming in very weakly _aere.",
+   "to": "coming in very weakly there."
+  },
+  {
+   "g": 25766.8,
+   "from": "wondering if the symmetrical horizon",
+   "to": "wondering if the nonsymmetrical horizon"
+  },
+  {
+   "g": 25766.8,
+   "from": "wondering if the nonsy_etrical horizon",
+   "to": "wondering if the nonsymmetrical horizon"
+  },
+  {
+   "g": 40771,
+   "from": "on Downvoice BACKUP",
+   "to": "on DOWNVOICE BACKUP"
+  },
+  {
+   "g": 40771,
+   "from": "on DOWNVOiCE BACKUP",
+   "to": "on DOWNVOICE BACKUP"
+  },
+  {
+   "g": 111665,
+   "from": "For taat purpose.",
+   "to": "for that purpose."
+  },
+  {
+   "g": 111665,
+   "from": "For that purpose.",
+   "to": "for that purpose."
+  },
+  {
+   "g": 130112,
+   "from": "all four fa_ns off.",
+   "to": "all four fans off."
+  },
+  {
+   "g": 130140,
+   "from": "As the Su_ sinks",
+   "to": "As the Sun sinks"
+  },
+  {
+   "g": 562065,
+   "from": "in the PAO s_ for the evening news",
+   "to": "in the PAO site for the evening news"
   }
  ],
  "12": [
@@ -1418,6 +1579,48 @@
    "g": 709780.6,
    "from": "the top i or 2 inches. RATE minute you draw",
    "to": "the top 1 or 2 inches. The minute you draw"
+  },
+  {
+   "g": 27906,
+   "from": "turns out that the lel_ ",
+   "to": "turns out that the left "
+  },
+  {
+   "g": 212070,
+   "from": "Father Connolly had been over and had",
+   "to": "Father Connally had been over and had"
+  },
+  {
+   "g": 424491,
+   "from": "A_h! We made it.",
+   "to": "Ah! We made it."
+  },
+  {
+   "g": 424510,
+   "from": "on its side as Jong as it points",
+   "to": "on its side as long as it points"
+  },
+  {
+   "g": 479819,
+   "from": "take some pictures or what, Fete?",
+   "to": "take some pictures or what, Pete?"
+  },
+  {
+   "g": 810725,
+   "from": "that m,kes any big deal",
+   "to": "that makes any big deal"
+  },
+  {
+   "g": 810725,
+   "from": "everything e2se is per checklist",
+   "to": "everything else is per checklist"
+  }
+ ],
+ "14": [
+  {
+   "g": 396697,
+   "from": "going for a lock.",
+   "to": "going for a lockon."
   }
  ]
 }
