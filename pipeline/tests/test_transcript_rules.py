@@ -101,6 +101,7 @@ TIDY_CASES = [
     ('11', 'Roger, Nell. You are five-by.', 'Roger, Neil. You are five-by.'),
     ('11', 'We would like you to jettison Eagle a_d stationkeep', 'We would like you to jettison Eagle and stationkeep'),
     ('14', 'Check your REGs and the BATs.', 'Check your REGs and the BATs.'),   # capitals with a plural s stay
+    ('11', "And that 's about the summary. We 'll see.", "And that's about the summary. We'll see."),
     ('11', 'the DIRECT O2 valve', 'the DIRECT O2 valve'),   # real O2 stays
     ('11', 'AOS Canaries at 1 50 13', 'AOS Canaries at 1 50 13'),   # numbers untouched
     ('11', "P52 is done. I'm looking at the DSKY.", "P52 is done. I'm looking at the DSKY."),   # nothing to fix

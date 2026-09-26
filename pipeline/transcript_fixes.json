@@ -1407,6 +1407,87 @@
    "g": 562065,
    "from": "in the PAO s_ for the evening news",
    "to": "in the PAO site for the evening news"
+  },
+  {
+   "g": 534193,
+   "from": "about the s_....... ary of the morning news",
+   "to": "about the summary of the morning news"
+  },
+  {
+   "g": 383776,
+   "from": "Do you have any topo- optics is tracking between two craters.",
+   "to": "Do you have any topographic cues that might help me out here? My optics is tracking between two craters."
+  },
+  {
+   "g": 383776,
+   "from": "as the I24sees it, would be lon_z at 11 o'clock. The oth_'r would be",
+   "to": "as the LM sees it, would be long at 11 o'clock. The other would be"
+  },
+  {
+   "g": 411929,
+   "from": "Have you had enough TV for today? this is Houston. Yes, indeed. It's",
+   "to": "Have you had enough TV for today?"
+  },
+  {
+   "g": 411934,
+   "from": "Tranquility, this Yes, indeed. It's been",
+   "to": "Tranquility, this is Houston. Yes, indeed. It's been"
+  },
+  {
+   "g": 411946,
+   "from": "C,_luJnb[:t, C,,]l_nbia, Lhi:: i:: I{ou:_toll. Ovot.",
+   "to": "Columbia, Columbia, this is Houston. Over."
+  },
+  {
+   "g": 413150,
+   "from": "] th<mf_h[ w,.\"d b,' ,'lo_,.: c..mgh s,_ th:fl when w.' gol. Outside. wt, ,'ould :;(,,, il:: rim back Ibc'r<,.. buL I cou]thtlt. BuL [ dtm't Il:lid. t,hsul, wt.'t,.. i]lol'e L_lf_li _L tl:tk[' mi]c beyond it. That is. a half mile west of it.",
+   "to": "I thought we'd be close enough so that when we got outside we could see its rim back there, but I couldn't. But I don't think that we're more than a half mile beyond it. That is, a half mile west of it."
+  },
+  {
+   "g": 269512,
+   "from": "our roll for MSFN track in on the wrong side.",
+   "to": "our roll for MSFN track in on the wrong sign."
+  },
+  {
+   "g": 269512,
+   "from": "we'll dcletc thc - the pitch that was schcduJ, cd af'l,,n tile TVC check.",
+   "to": "we'll delete the - the pitch that was scheduled after the TVC check."
+  },
+  {
+   "g": 365046,
+   "from": "Roger. I,;l_',,l_',, 11,,_lmL_m. ;Ul_ld hy I'o_' my M:lrk.",
+   "to": "Rog. Eagle, Houston. Stand by for my Mark."
+  },
+  {
+   "g": 365126.5,
+   "from": "Col_nbia/Eagle, Houston.",
+   "to": "Columbia, Eagle, Houston."
+  },
+  {
+   "g": 383776,
+   "speaker": "Collins",
+   "text": "be able to see the LM. Do you have any topographic cues"
+  },
+  {
+   "g": 365046,
+   "text": "Rog. Eagle, Houston.",
+   "split": "Eagle, Houston. Stand by for my Mark.",
+   "speaker": "Duke"
+  },
+  {
+   "g": 411946,
+   "text": "Columbia, Columbia, this is Houston. Over.",
+   "unheard": true
+  },
+  {
+   "g": 365048,
+   "from": "Eagle, Houston. Stand by for my Mark.",
+   "to": "Eagle, Houston. Stand by for my Mark. MARK."
+  },
+  {
+   "g": 365046,
+   "text": "MAIN.",
+   "delete": true
   }
  ],
  "12": [

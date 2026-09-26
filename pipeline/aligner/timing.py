@@ -84,7 +84,7 @@ def retime(lines, segments, tape_words, which, before=45, after=120):
     the line before too. Returns how many moved."""
     n = 0
     for l in lines:
-        if id(l) not in which:
+        if id(l) not in which or l.get('n'):   # (a line marked not on this recording has nothing to find)
             continue
         toks = tokens(l['t'])
         if len(toks) < 2:
