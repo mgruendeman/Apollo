@@ -151,6 +151,7 @@ export const missions = [
       'America\'s first astronaut in space returns to fly the third Moon landing, hauling a two-wheeled cart up Cone Crater and famously hitting two golf balls before leaving the surface.',
     status: 'available',
     clipsFile: 'apollo14',
+    timeline: 'apollo14', // whole-mission tapes: public/timeline/apollo14.json
     clipCount: 307,
     launchUtc: '1971-01-31T21:03:02Z',
     durationSeconds: 777718, // 216:01:58

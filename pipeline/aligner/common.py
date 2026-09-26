@@ -32,23 +32,48 @@ def get_seconds(get):
 
 def speaker_names(mission, rows):
     """Names for NASA's codes: crew by position; for CC (the capsule
-    communicator) the journal's name for whoever was on shift at that time."""
+    communicator) the journal's name for whoever spoke for the ground
+    nearest that time. The journal's labels are tidied: a crew member's
+    onboard tag is that crew member ("Mitchell-LM": NASA's CC for Mitchell's
+    "60 seconds" at the Apollo 14 landing), "LM Crew" is the spacecraft, and
+    a label naming no one ("CC", "Flight controller", "Network (CapCom)")
+    gives way to the nearest person the journal names."""
     journal = json.loads((ROOT / 'public' / 'transcripts' / f'apollo{mission}.json').read_text())
     crew = CREW.get(mission, {})
     crew_names = set(crew.values())
+    person = lambda s: (re.fullmatch(r"[A-Z][a-z]+(?:[A-Z][a-z]+)?", s) is not None and s not in crew_names
+                        and s not in ('Houston', 'Recovery', 'Unknown'))
+
+    def as_name(label):
+        for c in crew_names:
+            if re.match(re.escape(c) + r"[-/ (]", label):
+                return c                                     # "Mitchell-LM", "Bean (on-board)"
+        if re.match(r"(?i)(lm crew|unknown crew)", label):
+            return 'Spacecraft'
+        return label if person(label) else None
+
     capcoms = sorted((get_seconds(l['get']), l['speaker']) for lines in journal.values() for l in lines
                      if l.get('channel', 'air-to-ground') == 'air-to-ground' and l['speaker'] not in crew_names
                      and l['speaker'] not in ('Mission Control', 'PAO'))
-    times = [t for t, _ in capcoms]
+    people = [c for c in capcoms if person(c[1])]
+    times, people_at = [t for t, _ in capcoms], [t for t, _ in people]
+
+    def nearest(pool, at, g):
+        i = min(max(bisect.bisect_left(at, g), 0), len(at) - 1)
+        return min((pool[j] for j in (i - 1, i) if 0 <= j < len(pool)), key=lambda c: abs(c[0] - g))[1]
 
     def name(row):
         code = row['speaker']
         if code in crew:
             return crew[code]
         if code == 'CC' and capcoms:
-            i = min(max(bisect.bisect_left(times, row['getSeconds']), 0), len(times) - 1)
-            near = [capcoms[j] for j in (i - 1, i) if 0 <= j < len(capcoms)]
-            return min(near, key=lambda c: abs(c[0] - row['getSeconds']))[1]
+            label = nearest(capcoms, times, row['getSeconds'])
+            known = as_name(label)
+            if known:
+                return known
+            if people:
+                return nearest(people, people_at, row['getSeconds'])
+            return label
         return OTHER.get(code, 'Unknown' if code == '?' else code)
     return name
 

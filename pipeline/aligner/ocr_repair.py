@@ -128,10 +128,10 @@ def _unconfuse(core, vocab, freq=None, context=None):
         if context:
             prev, nxt, pairs = context
             fit = {w: pairs.get((prev, w), 0) + pairs.get((w, nxt), 0) for w in found}
-            ranked = sorted(found, key=lambda w: -fit[w])
+            ranked = sorted(found, key=lambda w: (-fit[w], w))   # (ties: alphabetical, so every run agrees)
             if fit[ranked[0]] >= 2 and fit[ranked[0]] >= 3 * fit[ranked[1]]:
                 return ranked[0]
-        ranked = sorted(found, key=lambda w: -freq.get(w, 0))
+        ranked = sorted(found, key=lambda w: (-freq.get(w, 0), w))
         if freq.get(ranked[0], 0) >= 3 and freq.get(ranked[0], 0) >= 3 * freq.get(ranked[1], 0):
             return ranked[0]
     return None
@@ -196,7 +196,7 @@ def _caps(word):
         return word
     if "'" in core or '-' in core or not re.search(r"[0!|_%$¢{}\[\]()]|[A-Z][a-z][A-Z]", core):
         return word   # a clean code ("DELTA-V", "PAD's", a rare one): leave it
-    best = max(CAPS['n'], key=lambda c: difflib.SequenceMatcher(None, letters.upper(), c).ratio(), default=None)
+    best = max(sorted(CAPS['n']), key=lambda c: difflib.SequenceMatcher(None, letters.upper(), c).ratio(), default=None)   # (sorted: ties go the same way every run)
     if best and abs(len(best) - len(letters)) <= 1 and difflib.SequenceMatcher(None, letters.upper(), best).ratio() >= 0.75:
         return lead + best + trail
     return word

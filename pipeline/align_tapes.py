@@ -127,7 +127,21 @@ def main():
              and re.search(r"[A-Za-z0-9]|\.\.\.|\*\*\*", l['t'])]   # (and lines that are only a stray mark: ")", "¢")
     out = ROOT / 'public' / 'timeline' / f'apollo{m}.json'
     out.parent.mkdir(parents=True, exist_ok=True)
+    # Tapes nothing placed, though the announcer gives times on them: through
+    # rest periods the recorders ran for his announcements alone, and NASA's
+    # transcript has no lines to find there. Each gets a stand-in piece far off
+    # the mission clock, so find_announcer moves every announcement on it to
+    # the time he gives (where no other tape plays); what's left is dropped.
+    OFF = -1e7
+    placed = {sg['tape'] for sg in segments}
+    for tape in sorted(set(tape_words) - placed):
+        segments.insert(0, {'tape': tape, 'from': 0.0, 'to': float(placement[tape]['seconds']), 'get': OFF, 'rate': 1.0,
+                            'standin': True})
     announcer, over, said = find_announcer(segments, lines, tape_words, heard_at)
+    segments = [sg for sg in segments if not sg.get('standin') and sg['get'] > OFF / 2]
+    said = [l for l in said if l['g'] > OFF / 2]
+    announcer = [sp for sp in announcer if sp[0] > OFF / 2]
+    over = [sp for sp in over if sp[0] > OFF / 2]
     segments = trim_overlaps(segments)
     lines = sorted(lines + said, key=lambda l: l['g'])
     for l in lines:   # station names with their capitals, the announcer's lines too
