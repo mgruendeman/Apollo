@@ -115,6 +115,7 @@ def main():
     fixed = use_journal_text(m, lines) if args.journal_text else 0
     # NASA's page headings read as if spoken ("11 AIR-TO-GROUND VOICE TRANSCRIPTION")
     lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,4}.{0,3}G[RH]OUND|VOICE\s*T\S{0,3}[AJ]\S{0,3}S\S{0,2}R", l['t'])
+             and not re.search(r"V(?:\(\)|_)[iIl]C", l['t'])   # "V()ICI,", "V_iCt,": VOICE, in a heading read worse still
              and not re.match(r"^\s*[1l]{2}\s+A\S{0,4}-", l['t'])   # "11 A_I_-TO-G][_OlJl_D VOICE ..."
              and not re.search(r"\((?:GDS|MAD|HSK|GWM|HAW|CRO|TEX|ACN|BDA|CYI|TAN|MIL|GYM)\)|there is cont.nuous|[Ss]ubsequent to TLI", l['t'])   # NASA's page note on tracking stations
              and re.search(r"[A-Za-z0-9]|\.\.\.|\*\*\*", l['t'])]   # (and lines that are only a stray mark: ")", "¢")
@@ -126,7 +127,7 @@ def main():
     for l in lines:   # station names with their capitals, the announcer's lines too
         l['t'] = re.sub(r"\b(honeysuckle|goldstone|tananarive|carnarvon|guaymas|madrid|bermuda|canberra|vanguard|redstone)\b",
                         lambda m: m.group(1).capitalize(), l['t'])
-    hand = apply_fixes(m, lines, strict=not args.no_strict)
+    hand = apply_fixes(m, lines, strict=not args.no_strict, segments=segments, tape_words=tape_words)
     lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
     unheard = mark_unheard(lines, segments, tape_words, media / 'envelopes' / 'tapes' / m)
     # Lines a reviewer should hear, ranked: written for the reviewer page,

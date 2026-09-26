@@ -57,6 +57,53 @@ def sync_to_tape(lines, segments, tape_words):
     return n
 
 
+def heard_between(segments, tape_words, g0, g1):
+    """The words heard on the tapes over mission time [g0, g1], in order,
+    each as (mission time, ...the recognised word's other fields)."""
+    end = lambda sg: sg['get'] + (sg['to'] - sg['from']) * sg['rate']
+    heard = []
+    for sg in segments:
+        if end(sg) < g0 or sg['get'] > g1 or sg['tape'] not in tape_words or sg.get('journal'):
+            continue
+        words, starts = tape_words[sg['tape']]
+        ta = sg['from'] + (max(g0, sg['get']) - sg['get']) / sg['rate']
+        tb = sg['from'] + (min(g1, end(sg)) - sg['get']) / sg['rate']
+        for w in words[bisect.bisect_left(starts, ta):bisect.bisect_right(starts, tb)]:
+            heard.append((sg['get'] + (w[0] - sg['from']) * sg['rate'],) + tuple(w[1:]))
+    heard.sort()
+    return heard
+
+
+def retime(lines, segments, tape_words, which, before=45, after=120):
+    """Time the given lines afresh, where their words are heard: from a
+    little before their present time to two minutes after (a line whose
+    time the scan lost sits at the time of the line before it). For lines a
+    hand fix has corrected or split off, whose words now match the tape.
+    The line is placed by the longest run of its words heard in order, not
+    the first: a callsign it opens with ("Columbia, Houston") is often in
+    the line before too. Returns how many moved."""
+    n = 0
+    for l in lines:
+        if id(l) not in which:
+            continue
+        toks = tokens(l['t'])
+        if len(toks) < 2:
+            continue
+        heard = heard_between(segments, tape_words, l['g'] - before, l['g'] + after)
+        sm = difflib.SequenceMatcher(None, toks, [h[3] for h in heard], autojunk=False)
+        blocks = [b for b in sm.get_matching_blocks() if b.size]
+        if not blocks:
+            continue
+        run = max(blocks, key=lambda b: b.size)
+        g, share = heard[run.b][0] - 0.3 * run.a, sum(b.size for b in blocks) / len(toks)
+        if run.size >= 2 and share >= 0.5:
+            if abs(g - l['g']) >= 0.5:
+                n += 1
+            l['g'] = round(g, 1)
+            l.pop('a', None)
+    return n
+
+
 def time_untimed(lines, segments, tape_words):
     """Times for NASA's lines whose time the scan lost (or, on the
     moonwalks, printed as the day and hour only), from the tapes: between
@@ -72,17 +119,7 @@ def time_untimed(lines, segments, tape_words):
         g0 = lines[p]['g'] if p >= 0 else -3600
         g1 = lines[n]['g'] if n < len(lines) else g0 + 3600
         g1 = max(g1, g0 + 60)
-        # the tape words over [g0, g1], in mission order, with their mission times
-        heard = []
-        for sg in segments:
-            if end(sg) < g0 or sg['get'] > g1 or sg['tape'] not in tape_words or sg.get('journal'):
-                continue
-            words, starts = tape_words[sg['tape']]
-            ta = sg['from'] + (max(g0, sg['get']) - sg['get']) / sg['rate']
-            tb = sg['from'] + (min(g1, end(sg)) - sg['get']) / sg['rate']
-            for w in words[bisect.bisect_left(starts, ta):bisect.bisect_right(starts, tb)]:
-                heard.append((sg['get'] + (w[0] - sg['from']) * sg['rate'],) + tuple(w[1:]))
-        heard.sort()
+        heard = heard_between(segments, tape_words, g0, g1)   # the tape words over [g0, g1], in mission order
         heard_at = [h[0] for h in heard]
         cursor = 0
         for i in run:

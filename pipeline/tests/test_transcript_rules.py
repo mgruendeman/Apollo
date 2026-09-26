@@ -7,6 +7,7 @@ listening session.
 
     ~/.venvs/apollo/bin/python -m pytest pipeline/tests -q
 """
+import json
 import sys
 from pathlib import Path
 
@@ -71,6 +72,23 @@ TIDY_CASES = [
     ('11', 'Roger. i i', 'Roger.'),
     ('11', 'Roger r . We copy that', 'Roger. We copy that'),
     ('11', "We'll have them for you in a minute, Ii.", "We'll have them for you in a minute, 11."),
+    ('11', 'Houston CkP COMM, Goldstone M&0 NET 1.', 'Houston CAPCOM, Goldstone M&O NET 1.'),
+    ('11', 'CAP C0_, Goldstone. Roger.', 'CAPCOM, Goldstone. Roger.'),
+    ('11', 'Are you receiving CAP COMM\'s voice?', "Are you receiving CAPCOM's voice?"),
+    ('11', 'They started out, [ understand, and then', 'They started out, I understand, and then'),
+    ('12', '] can\'t bend down that far.', "I can't bend down that far."),
+    ('12', 'It is very, very ] unreal to be there.', 'It is very, very ] unreal to be there.'),   # a stray mark, not "I"
+    ('12', 'Okay, we Just lost the platform, gang.', 'Okay, we just lost the platform, gang.'),
+    ('12', 'Your ullage is four Jets for 11 seconds', 'Your ullage is four jets for 11 seconds'),
+    ('11', 'you all are doing great Job up there.', 'you all are doing great job up there.'),
+    ('11', 'We would Like you to zero', 'We would like you to zero'),
+    ('11', 'officially reported to the New York Jets training camp', 'officially reported to the New York Jets training camp'),
+    ('11', 'with chairman Earl Wheeler of the Joint Chiefs of Staff', 'with chairman Earl Wheeler of the Joint Chiefs of Staff'),
+    ('11', 'Several other Jet players who had', 'Several other Jet players who had'),
+    ('11', 'Just a second.', 'Just a second.'),   # a sentence can start with it
+    ('11', '1], this is Houston. We\'ve completed the uplink.', "11, this is Houston. We've completed the uplink."),
+    ('12', ']2, Houston. Go ahead.', '12, Houston. Go ahead.'),
+    ('11', 'There [_age 551 are a couple of tropical storms', 'There are a couple of tropical storms'),
     ('11', 'the DIRECT O2 valve', 'the DIRECT O2 valve'),   # real O2 stays
     ('11', 'AOS Canaries at 1 50 13', 'AOS Canaries at 1 50 13'),   # numbers untouched
     ('11', "P52 is done. I'm looking at the DSKY.", "P52 is done. I'm looking at the DSKY."),   # nothing to fix
@@ -85,6 +103,8 @@ def test_tidy(vocab, mission, scanned, expected):
 
 # A misreading that can only be one word (or that the words around it settle)
 UNCONFUSE_CASES = [
+    ('midcou_rse', 'midcourse'),   # a stray mark inside a longer word
+    ('cau_tion', 'caution'),
     ('Sta6ing', 'staging'),
     ('Cha_lie', 'charlie'),
     ('Ro6er', 'roger'),
@@ -94,7 +114,7 @@ UNCONFUSE_CASES = [
 
 @pytest.mark.parametrize('scanned, expected', UNCONFUSE_CASES)
 def test_unconfuse(vocab, scanned, expected):
-    spoken = {'staging', 'charlie', 'roger', 'complete', 'stating'}
+    spoken = {'staging', 'charlie', 'roger', 'complete', 'stating', 'midcourse', 'caution'}
     freq = {'staging': 30, 'stating': 2, 'charlie': 200, 'roger': 900, 'complete': 40}
     assert R._unconfuse(scanned, spoken | vocab, freq) == expected
 
@@ -173,3 +193,59 @@ def test_speaker_codes_with_the_craft_added():
     assert N.closest_speaker('SC-CM') == 'SC'
     assert N.closest_speaker('CDR-I24') == 'CDR'
     assert N.closest_speaker('CC') == 'CC'
+
+
+def test_short_word_underscore_is_not_simply_dropped(vocab):
+    # "ba_d" is "band" in 8-band; dropping the mark would make "bad"
+    assert R._unconfuse('ba_d', {'bad', 'band', 'bald'}) != 'bad'
+
+
+# Hand fixes: splitting two people run together, and timing corrected lines
+# to where they're heard
+def _tape(words):
+    """One tape piece on the mission clock from 1000 s, with the given
+    (time, word) pairs heard on it."""
+    segments = [{'tape': 't', 'from': 0, 'to': 600, 'get': 1000, 'rate': 1.0}]
+    ws = [(t, t + 0.3, w, w.lower()) for t, w in words]
+    return segments, {'t': (ws, [w[0] for w in ws])}
+
+
+def test_split_and_retime(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    said = 'Okay. Would they call it a horizontal waviness'.split()
+    said2 = "I'm not talking to them directly. Stand by Buzz".split()
+    segments, tape_words = _tape([(10 + 0.4 * i, w.strip('.,?').lower()) for i, w in enumerate(said)] +
+                                 [(20 + 0.4 * i, w.strip('.,?').lower().replace("'", '')) for i, w in enumerate(said2)])
+    lines = [{'g': 1010, 's': 'Unknown', 't': "Okay. Would they call it a horizontal waviness? I'm not talking to them directly. Stand by, Buzz."}]
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'11': [
+        {'g': 1010, 'speaker': 'Aldrin', 'text': 'Would they call it'},
+        {'g': 1010, 'text': 'Would they call it', 'split': "I'm not talking", 'speaker': 'Duke'}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    assert X.apply_fixes('11', lines, segments=segments, tape_words=tape_words) == 2
+    assert [(l['s'], l['t']) for l in lines] == [('Aldrin', 'Okay. Would they call it a horizontal waviness?'),
+                                                 ('Duke', "I'm not talking to them directly. Stand by, Buzz.")]
+    assert abs(lines[1]['g'] - 1020) < 1   # the second part, where it's heard
+
+
+def test_retime_anchors_on_the_longest_run_not_the_callsign(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    # "Columbia, Houston" is heard first in another call; the line itself 80 s on
+    segments, tape_words = _tape([(0, 'columbia'), (0.4, 'houston'), (0.8, 'logic'), (1.2, 'looks'), (1.6, 'good'),
+                                  (80, 'eagle'), (80.4, 'and'), (80.8, 'columbia'), (81.2, 'houston'), (81.6, 'all'),
+                                  (82, 'your'), (82.4, 'solutions'), (82.8, 'look'), (83.2, 'good')])
+    lines = [{'g': 1000, 's': 'Evans', 't': 'Eagle and Columbia, Houston. All your solutions look good.', 'a': 1}]
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'11': [{'g': 1000, 'from': 'look good.', 'to': 'look good to us.'}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    X.apply_fixes('11', lines, segments=segments, tape_words=tape_words)
+    assert 1079 < lines[0]['g'] < 1081 and 'a' not in lines[0]
+
+
+def test_a_fix_that_no_longer_matches_stops_the_run(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'11': [{'g': 1000, 'from': 'Ro6er', 'to': 'Roger. Out.'}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    with pytest.raises(X.FixNotApplied):
+        X.apply_fixes('11', [{'g': 1000, 's': 'Duke', 't': 'Copy.'}])

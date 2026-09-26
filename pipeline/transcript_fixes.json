@@ -62,7 +62,7 @@
   },
   {
    "g": 5360,
-   "from": "tions. _\u00b0_\u00a7t6n. Roger.",
+   "from": "tions. _°_§t6n. Roger.",
    "to": "Houston. Roger."
   },
   {
@@ -427,7 +427,7 @@
   },
   {
    "g": 173456,
-   "from": "the _;[]f_nt CAP COMM",
+   "from": "the _;[]f_nt CAPCOM",
    "to": "the silent CAPCOM"
   },
   {
@@ -737,7 +737,7 @@
   },
   {
    "g": 16917,
-   "from": "back with you ' h/_ in Just a second",
+   "from": "back with you ' h/_ in just a second",
    "to": "back with you in just a second"
   },
   {
@@ -752,7 +752,7 @@
   },
   {
    "g": 17539,
-   "from": "seeing Just the ieeeap in ]re",
+   "from": "seeing just the ieeeap in ]re",
    "to": "seeing just the icecap in Gre"
   },
   {
@@ -802,7 +802,7 @@
   },
   {
    "g": 368345,
-   "from": "Eagle, Houston - Houston, ;:sW_ \u00b7 How do you read",
+   "from": "Eagle, Houston - Houston, ;:sW_ · How do you read",
    "to": "Eagle, Houston - Houston, Eagle. How do you read?"
   },
   {
@@ -879,6 +879,280 @@
    "g": 369352,
    "speaker": "Aldrin",
    "text": "Could be our meter, maybe, huh?"
+  },
+  {
+   "g": 20495,
+   "from": "Could you us a - an AUTO optics check",
+   "to": "Could you give us a - an AUTO optics check"
+  },
+  {
+   "g": 20495,
+   "from": "from '.,heone you've been using?",
+   "to": "from the ones you've been using?"
+  },
+  {
+   "g": 20495,
+   "from": "Sure, be glad to. go back and do thc whole thing aaa pick tJiffrreni ;'.a. rs.",
+   "to": "Sure, be glad to. I can go back and do the whole thing and pick different stars."
+  },
+  {
+   "g": 20512,
+   "from": "there's 'axO' need",
+   "to": "there's any need"
+  },
+  {
+   "g": 20512,
+   "from": "larger than + c expected.",
+   "to": "larger than we expected."
+  },
+  {
+   "g": 20605,
+   "from": "T have a r'n :t__-olu,-11-hour _ _ , PAD",
+   "to": "I have a TLI plus 11 hour PAD"
+  },
+  {
+   "g": 20605,
+   "from": "it is tight dab smack in the middle ,i'thc sextant.",
+   "to": "it is right dab smack in the middle of the sextant."
+  },
+  {
+   "g": 20727,
+   "from": "!i. Ready to copy.",
+   "to": "11. Ready to copy."
+  },
+  {
+   "g": 20727,
+   "from": "Roger, 11 This ls '_-- :,l-t!_s-11-heur:. _l '7 format: 013411 4793, minus 165 01923. Rend back. Over.",
+   "to": "Roger, 11. This is TLI plus 11 hours, P37 format: 01344 4793, minus 165 04923. Read back. Over."
+  },
+  {
+   "g": 20759,
+   "from": "013 013L4 4793",
+   "to": "013 01344 4793"
+  },
+  {
+   "g": 20767,
+   "from": "This Houston. Readback correct, tut.",
+   "to": "This is Houston. Readback correct, out."
+  },
+  {
+   "g": 21514.7,
+   "from": "Houston, Apollo ,11",
+   "to": "Houston, Apollo 11."
+  },
+  {
+   "g": 21514.7,
+   "from": "Do you have update for the roll , p-il a s.nd yaw angles on the top of page 37 in the flight plan. or are they still rood?",
+   "to": "Do you have any update for the roll, pitch, and yaw angles on the top of page 37 in the flight plan, or are they still good?"
+  },
+  {
+   "g": 21595,
+   "from": "in about 5 or 6 seconds, her?.",
+   "to": "in about 5 or 6 seconds, here."
+  },
+  {
+   "g": 111602,
+   "from": "]tin not, I.alk;n_ t,r_ them directly. Zta.d by, _UZZ. [,_L me _(_(t hcJW I,h,:y _b:;;cr'Jb_* it,.",
+   "to": "I'm not talking to them directly. Stand by, Buzz. Let me see what - how they describe it."
+  },
+  {
+   "g": 123357,
+   "from": "We 'can see Portions of the LEB now The _ systems test_'_.met_rpanel\", in the lower part. _\"_ the picture we did have it, anyway,,",
+   "to": "We can see portions of the LEB now, the systems test meter panel, in the lower part of the picture, or we did have it, anyway."
+  },
+  {
+   "g": 123357,
+   "from": "_ 0kav_ _:A_d't_n [_lrec_$!y beh_d hi's'h,'a_\"are our ..,,_ optic_l[_.i_str_e_ts., the aextan t and the telescope",
+   "to": "Okay, and then directly behind his head are our optical instruments, the sextant and the telescope that we use to take sightings with."
+  },
+  {
+   "g": 123379,
+   "from": "Roger.' Only _ _d_e see the DSKY flashing with _. 's7651. Jlfi f_ct,'_we can're s_l registers and 2 ' _ quite clearly...'",
+   "to": "Roger. Copy, and we see the DSKY flashing with a 651. In fact, we can read registers 1 and 2 quite clearly."
+  },
+  {
+   "g": 123390.1,
+   "from": "We have .old high gain",
+   "to": "We have old high gain"
+  },
+  {
+   "g": 356284,
+   "from": "The 404, 406 405, 406 that looks: fine to us.",
+   "to": "The 404, 405, 406, that looks fine to us."
+  },
+  {
+   "g": 356297.2,
+   "from": "I _m soin_ te be setting them n_, te zero for tbs undocking. _ question $_ do you want me",
+   "to": "I'm going to be setting them to zero for the undocking. The question is, do you want me"
+  },
+  {
+   "g": 356297.2,
+   "from": "or san I leave them zero!",
+   "to": "or can I leave them zero?"
+  },
+  {
+   "g": 356373,
+   "from": "like you to _'_(,ro, as called",
+   "to": "like you to zero, as called"
+  },
+  {
+   "g": 356373,
+   "from": "load them hack to",
+   "to": "load them back to"
+  },
+  {
+   "g": 395167.1,
+   "from": "absolutely rio crater",
+   "to": "absolutely no crater"
+  },
+  {
+   "g": 395170,
+   "from": "Z wonder if about ri_i.,tu_ider th_ ._C ne is where the probe mi_h + _lave his.",
+   "to": "I wonder if that's right under the engine is where the probe might have hit."
+  },
+  {
+   "g": 395200,
+   "from": "qbe other two bot! bent over.",
+   "to": "The other two both bent over."
+  },
+  {
+   "g": 407608,
+   "from": "at 113 30. Wake. Lithium",
+   "to": "at 113 30. Return to the nominal timeline at 121 hours wakeup. Lithium"
+  },
+  {
+   "g": 407608,
+   "from": "huh? (',(_l.rnbitL. Thi:: i:; li_m::t,orl. On .ye,lit I)Al I_.ul in 1_2. w_,'t'_' r,.q.,t::t, Jn/_ :L (] :md t'C_llr It::, I.J.t[, _s, Oll] I. Or'er.",
+   "to": "huh? Columbia, this is Houston. On your DAP load in R2, we're requesting a 0 and four 1s. That is 01111. Over."
+  },
+  {
+   "g": 455595,
+   "from": "[':l_, _, 11'['[",
+   "to": "127 02 34 50."
+  },
+  {
+   "g": 455595,
+   "from": "You're about il.' ,.;ct!()nd.t -_-1_-,_LhmJ wt.,",
+   "to": "You're about 32 seconds later than we are."
+  },
+  {
+   "g": 456958,
+   "from": "Okay. ) J':;L:_J.'_:_Lnd (k:lumbJa,, ]l.,ou:;L,or_. Ail your solutio.:; look t_ood to us. Out.",
+   "to": "Okay. Eagle and Columbia, Houston. All your solutions look good to us. Out."
+  },
+  {
+   "g": 461023,
+   "from": "I'm pumpin_ up cabin pressux-e.",
+   "to": "I'm pumping up cabin pressure."
+  },
+  {
+   "g": 461023,
+   "from": "'l'h:,t wa:; _, f'ulmy o_l_. Yon k_n_w, I dicl_l'L I'_'_'l :L :;he)ok, :_ld I t,hou_dlt t,I_[_l_; wc't'c, [_t'_t.by :;t.t,:uiy. [ wenL to I{I,;'I![{AC'I'there, and Lhat':; when ali hi, Il broke loos¢_. Were you guys - did it appealr to you",
+   "to": "That was a funny one. You know, I didn't feel a shock, and I thought things were pretty steady. I went to RETRACT there, and that's when all hell broke loose. Were you guys - did it appear to you"
+  },
+  {
+   "g": 562040,
+   "from": "Could you get a summary of the evening news for",
+   "to": "Could you get a little summary of the evening news for us?"
+  },
+  {
+   "g": 562046,
+   "from": "delete the 0 fuel cell purge",
+   "to": "delete the O2 fuel cell purge"
+  },
+  {
+   "g": 562085,
+   "from": "smd it's been overcast",
+   "to": "and it's been overcast"
+  },
+  {
+   "g": 562085,
+   "from": "last couple c _' days",
+   "to": "last couple of days"
+  },
+  {
+   "g": 562120,
+   "from": "It seem: to have",
+   "to": "It seems to have"
+  },
+  {
+   "g": 562120,
+   "from": "hard to see outs ide.",
+   "to": "hard to see outside."
+  },
+  {
+   "g": 562192.2,
+   "from": "Stand 'b._ h zz. It looks pretty good as far as i coul8 tell, We got the - alon.:_the tropical convergence line there, there's a few clouds sl,.ownoq weather f'm looking at here, Out nu_g of significance. Right now - Stand by. -eb's see, right row in the mid - yes, at the [_iPL,_:.'ve got 3600 scattered, visibility 2. , wa_ : h:igl,t 3 feet, is the present wea _Lcr. : don't think there's anything forecast (4. ._ of significance. There are a couple of - FLIGHT just informed me that what I just _ ¥: ..u was the forecast.",
+   "to": "Stand by, Buzz. It looks pretty good as far as I can tell. We got the - along the tropical convergence line there, there's a few clouds showing on the weather map I'm looking at here, but nothing of significance. Right now - Stand by. Let's see, right now in the mid - yes, at the MPL we've got 3000 scattered, visibility 10, wave height 3 feet, is the present weather. I don't think there's anything forecast to be of significance. There are a couple of - FLIGHT just informed me that what I just gave you was the forecast."
+  },
+  {
+   "g": 562201,
+   "from": "Hey, Cza: Lie, what's the preliminary outlook for the weather i: our recovery area?",
+   "to": "Hey, Charlie, what's the preliminary outlook for the weather in our recovery area?",
+   "retime": true
+  },
+  {
+   "g": 20495,
+   "speaker": "Spacecraft",
+   "text": "Sure, be glad to. I can go back"
+  },
+  {
+   "g": 20663,
+   "speaker": "McCandless",
+   "text": "Houston. Roger."
+  },
+  {
+   "g": 20727,
+   "speaker": "McCandless",
+   "text": "This is TLI plus 11 hours, P37 format"
+  },
+  {
+   "g": 111602,
+   "speaker": "Aldrin",
+   "text": "Would they call it a horizontal waviness"
+  },
+  {
+   "g": 455595,
+   "speaker": "Collins",
+   "text": "127 02 34 50."
+  },
+  {
+   "g": 455595,
+   "speaker": "Aldrin",
+   "text": "You're about 32 seconds later than we are."
+  },
+  {
+   "g": 111602,
+   "text": "Would they call it a horizontal waviness",
+   "split": "I'm not talking to them directly.",
+   "speaker": "Duke"
+  },
+  {
+   "g": 407608,
+   "text": "But you don't want to do that any more, huh?",
+   "split": "Columbia, this is Houston. On your DAP load",
+   "speaker": "McCandless"
+  },
+  {
+   "g": 456958,
+   "text": "Okay. Eagle and Columbia, Houston.",
+   "split": "Eagle and Columbia, Houston.",
+   "speaker": "Evans"
+  },
+  {
+   "g": 455595,
+   "text": "I:\"[ I_.' ',It,41.",
+   "delete": true
+  },
+  {
+   "g": 455595,
+   "text": "t\\",
+   "delete": true
+  },
+  {
+   "g": 457042,
+   "text": "All your solutions look good, out.",
+   "delete": true
   }
  ],
  "12": [

@@ -100,6 +100,8 @@ def _unconfuse(core, vocab, freq=None, context=None):
                 found.add(f'{a} {b}')
     if core.endswith('_') and len(core) >= 5 and core[:-1].lower() in vocab:   # "Roger_": punctuation, or a lost letter; can't tell
         return None
+    if re.fullmatch(r"[A-Za-z]+_[A-Za-z]+", core) and len(core) >= 7 and core.replace('_', '').lower() in vocab:
+        found.add(core.replace('_', '').lower())   # a stray mark inside a longer word: "midcou_rse", "cau_tion"
     spots = [i for i, ch in enumerate(core) if ch in CONFUSED]
     if len(spots) > 8:
         return None
@@ -141,7 +143,7 @@ CALLSIGNS = {'11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipp
              '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
              '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
 MISSION = {'n': '11'}   # the mission being processed (set in main)
-DIGIT_LOOKS = {'1': '[1!il|It]', '2': '[2Zz&]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
+DIGIT_LOOKS = {'1': '[1!il|It\]]', '2': '[2Zz&]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
 
 
 def _place(word):
@@ -262,7 +264,17 @@ def _tidy(text, vocab):
         text = re.sub(r'(?<=\w)"(?=\s)', '', text, count=1)                   # an unmatched quote: 'builder number" going'
     text = re.sub(r"\bPS(\d)\b", r"P5\1", text)                                 # "PS1": program P51
     text = re.sub(r"\bAil\b", 'All', text)
-    text = re.sub(r"\bSim\)\s*lex\b", 'Simplex', text)                      # "Sim) lex Alfa"                                    # "Ail we have": nobody here says "ail"
+    text = re.sub(r"\bSim\)\s*lex\b", 'Simplex', text)
+    text = re.sub(r"\bC[AaKk]P\s+C[O0](?:MM?|_)", 'CAPCOM', text)              # NASA's "CAP COMM" (and "CkP COMM", "CAP C0_")
+    text = re.sub(r"\bM&0\b", 'M&O', text)                                   # the stations' maintenance and operations
+    text = re.sub(r"(?:^|(?<=\s))[\[\]|](?=\s+(?:think|thought|was|had|have|can|can't|could|couldn't|did|didn't|do|don't|went|"
+                  r"understand|guess|got|see|saw|know|knew|want|wanted|just|feel|felt|hope|mean|need|said|say|will|would|am)\b)",
+                  'I', text)                                                    # "[ understand", "] can't": I
+    # the typewriter's j reads as J: "good Job", "four Jets", "Just" mid-sentence
+    # (not in a name: "New York Jets", "the Joint Chiefs")
+    text = re.sub(r"(?<![A-Za-z'])([a-z][a-z']*[,;]? )(J(?:ust|obs?|ets?|ump(?:ed|ing|s)?|oint|oin(?:ed|s)?|ettison(?:ed|ing)?)|Like)\b"
+                  r"(?!\s+(?:[A-Z]|players))",
+                  lambda m: m.group(1) + m.group(2).lower(), text)                      # "Sim) lex Alfa"                                    # "Ail we have": nobody here says "ail"
     text = re.sub(r"\b(\d+)h(?=[\s.,;]|$)", r"\g<1>4", text)                     # "0h", "2351h": a misread 4
     text = re.sub(r"\b(\d+)h\.(\d)", r"\g<1>4.\2", text)                        # "2h.1"
     text = re.sub(r"\b([a-z]{1,})([A-Z])([a-z]*)\b",                          # "tO", "bY", "oF", "floodliMht"
@@ -273,7 +285,7 @@ def _tidy(text, vocab):
     text = re.sub(r"\b[GOQ0][o0]\s?ahead,?\s?(?=[A-Z])", 'Go ahead, ', text)    # "Qoahead,Houston"
     text = re.sub(r"\b[OQ0]o ahead\b", 'Go ahead', text)                       # "Oo ahead"
     text = re.sub(r"\b(from|the|of|to|and)-(the|a|an)\b", r"\1 \2", text)       # "from-the Sun"
-    text = re.sub(r"\s[?FP]age\s+[\dO\]lt1I]{2,4}(?=\s)", '', text)           # a page number mid-line: "Page ]1t7"
+    text = re.sub(r"\s[?FP\[]_?age\s+[\dO\]lt1I]{2,4}(?=\s)", '', text)       # a page number mid-line: "Page ]1t7", "[_age 551"
     text = re.sub(r"\b(REPRESS|DIRECT|PLSS|cabin) 02\b", r"\1 O2", text)
     if not re.search(r"(^|\s)'\w", text):                                     # "the' Persian Gulf'": closing quotes never opened
         text = re.sub(r"(?<=[a-rt-z])'(?=[\s.,?!]|$)", '', text)
