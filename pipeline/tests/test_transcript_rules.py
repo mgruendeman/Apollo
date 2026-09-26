@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / 'scripts'))
 
 from aligner import ocr_repair as R  # noqa: E402
-from aligner.announcer import said_time  # noqa: E402
+from aligner.announcer import ends_sentence, said_time  # noqa: E402
 import nasa_transcripts as N  # noqa: E402
 
 
@@ -104,6 +104,8 @@ TIDY_CASES = [
     ('11', "And that 's about the summary. We 'll see.", "And that's about the summary. We'll see."),
     ('11', 'the DIRECT O2 valve', 'the DIRECT O2 valve'),   # real O2 stays
     ('11', 'AOS Canaries at 1 50 13', 'AOS Canaries at 1 50 13'),   # numbers untouched
+    ('11', 'We got you boresighted. clipping of words and phrases.', 'We got you boresighted.'),   # a page note's tail
+    ('11', 'Traction *** seems quite good. clipping of words and phrases. 1234', 'Traction *** seems quite good.'),
     ('11', "P52 is done. I'm looking at the DSKY.", "P52 is done. I'm looking at the DSKY."),   # nothing to fix
 ]
 
@@ -363,3 +365,23 @@ def test_a_delayed_playback_starts_at_its_first_line_and_the_live_talk_runs_to_t
     assert 69 < live['to'] <= 70.8          # the live piece keeps the talk, up to the announcer
     assert 80 < playback['from'] <= 100     # the playback starts just before its first line
     assert abs(playback['get'] - (playback['from'] + 910)) < 1
+
+
+def test_a_title_does_not_end_the_announcers_sentence():
+    assert ends_sentence('birthday.') and ends_sentence('now?')
+    assert not ends_sentence('Dr.') and not ends_sentence('Mrs.') and not ends_sentence('Paine')
+    assert not ends_sentence('O.')   # Thomas O. Paine
+
+
+def test_a_line_marked_fine_leaves_the_review_list(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    from aligner.review import score_lines
+    lines = [{'g': 1000, 's': 'Unknown', 't': 'All that soot, huh?', 'a': 1}]   # time lost, speaker unknown: listed
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'11': [{'g': 1000, 'text': 'All that soot, huh?', 'ok': True}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    assert X.apply_fixes('11', lines) == 1
+    assert lines[0].get('ok') and lines[0]['t'] == 'All that soot, huh?'
+    assert score_lines(lines, [], {}, set()) == []
+    del lines[0]['ok']
+    assert len(score_lines(lines, [], {}, set())) == 1

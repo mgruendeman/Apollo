@@ -292,6 +292,7 @@ def _tidy(text, vocab):
     text = re.sub(r"\bNei!", 'Neil', text)
     text = re.sub(r"\ba_d\b", 'and', text)
     text = re.sub(r"(?<=\w) '(s|ll|re|ve|d|t|m)\b", r"'\1", text)             # "That 's", "We 'll": a detached contraction
+    text = re.sub(r"\s*\bclipping of words and phrases\.?(?:\s+\d{3,5}\b)?", '', text)   # the tail of a page note on NASA's voice-operated recording
     text = re.sub(r"(?<![\w'`.])i(?=(?:'(?:m|ll|ve|d)\b)|\s+(?:think|thought|was|had|have|can|can't|could|couldn't|did|didn't|do|"
                   r"don't|went|understand|guess|got|see|saw|know|knew|want|wanted|just|feel|felt|hope|mean|need|said|say|will|would|"
                   r"am|believe|notice|noticed)\b)", 'I', text)            # "Roger. i understand", "i'm", "i guess"

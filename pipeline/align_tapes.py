@@ -178,6 +178,8 @@ def main():
     (review / f'apollo{m}.json').write_text(json.dumps(
         [{'g': lines[i]['g'], 's': lines[i]['s'], 't': lines[i]['t'], 'q': q, 'why': why, **where(lines[i])} for q, i, why in ranked],
         separators=(',', ':')))
+    for l in lines:
+        l.pop('ok', None)   # (the review list's business, not the site's)
     timeline = {'mission': m, 'segments': segments, 'lines': lines, 'announcer': announcer, 'over': over}
     if args.cleaned:   # (the site fills in {media}: its media storage address)
         timeline['audio'] = {'base': f'{{media}}/audio/{int(m)}', 'ext': '.clean.m4a'}

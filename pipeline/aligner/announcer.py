@@ -18,6 +18,15 @@ SAID_TIME = re.compile(r"apollo control,? (?:houston,? )?(?:at )?([\w -]+?) hour
                        r"|(?:at |)([\w -]+?) hours?,? (?:and )?([\w -]+?) minutes[\w ,]*?,? this is apollo control", re.I)
 
 
+TITLES = re.compile(r"(?:Dr|Mr|Mrs|Ms|St|Jr|Sr|Gen|Col|Lt|Capt|Gov|Sen|Rep|vs|[B-HJ-Z])\.")   # (and a middle initial: "Thomas O. Paine")
+
+
+def ends_sentence(word):
+    """A word that ends one of the announcer's sentences: a stop, but not a title's ("Dr. Paine") or an initial's."""
+    w = word.strip()
+    return w.endswith(('.', '?', '!')) and not TITLES.fullmatch(w)
+
+
 def _number(text):
     """"59", "fifty-nine", "one hundred and two" -> int, else None."""
     text = text.strip().lower()
@@ -153,7 +162,7 @@ def find_announcer(segments, lines, tape_words, heard_at):
             if not sentence:
                 start = x[0]
             sentence.append(x[2])
-            if x[2].endswith(('.', '?', '!')) or x is allw[-1]:
+            if ends_sentence(x[2]) or x is allw[-1]:
                 extra = {'o': 1} if over_from is not None and start >= over_from else {}
                 said.append({'g': round(g(start)), 's': 'Public Affairs', 't': ' '.join(sentence), 'c': 'pao', **extra})
                 sentence = []

@@ -81,7 +81,8 @@ def retime(lines, segments, tape_words, which, before=45, after=120):
     hand fix has corrected or split off, whose words now match the tape.
     The line is placed by the longest run of its words heard in order, not
     the first: a callsign it opens with ("Columbia, Houston") is often in
-    the line before too. Returns how many moved."""
+    the line before too; then back to its first words heard close before
+    that run. Returns how many moved."""
     n = 0
     for l in lines:
         if id(l) not in which or l.get('n'):   # (a line marked not on this recording has nothing to find)
@@ -96,7 +97,17 @@ def retime(lines, segments, tape_words, which, before=45, after=120):
         if not blocks:
             continue
         run = max(blocks, key=lambda b: b.size)
-        g, share = heard[run.b][0] - 0.3 * run.a, sum(b.size for b in blocks) / len(toks)
+        # then back to its first words: a word the recogniser missed or misheard
+        # breaks the run, so earlier stretches of the line heard just before it
+        # count (a single word only as the line's opening)
+        first = run
+        for b in reversed(blocks[:blocks.index(run)]):
+            if b.size < 2 and b.a > 2:
+                continue
+            if heard[first.b][0] - heard[b.b + b.size - 1][0] > first.a - (b.a + b.size) + 4:
+                break
+            first = b
+        g, share = heard[first.b][0] - 0.3 * first.a, sum(b.size for b in blocks) / len(toks)
         if run.size >= 2 and (share >= 0.5 or run.size >= 5):   # (a long PAD runs past the window)
             if abs(g - l['g']) >= 0.5:
                 n += 1

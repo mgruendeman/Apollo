@@ -128,7 +128,7 @@ export default function ImmersiveView({
   const [reporting, setReporting] = useState(null)
   const closeReport = useCallback(() => setReporting(null), [])
   const { bind, consumeClick } = useLongPress((i) => setReporting(i))
-  const reportDetails = reporting !== null && report ? lineReport(report, lines[reporting], offsets[reporting]) : null
+  const reportDetails = reporting !== null && report ? lineReport(report, lines[reporting], offsets[reporting], offsets[reporting + 1]) : null
   useEffect(() => {
     reportOpen.current = reporting !== null
   }, [reporting])

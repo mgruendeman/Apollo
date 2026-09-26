@@ -60,7 +60,7 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
     return null
   }
 
-  const reportDetails = reporting !== null && report ? lineReport(report, lines[reporting], offsets[reporting]) : null
+  const reportDetails = reporting !== null && report ? lineReport(report, lines[reporting], offsets[reporting], offsets[reporting + 1]) : null
 
   return (
     <div className="transcript-panel">

@@ -25,7 +25,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     Each fix finds its line by time (within 2 s, else the nearest within the
     hour holding the text). "speaker" (with "text") puts a line to the right
     person; "delete": true removes a line that's a scrap of another;
-    "unheard": true marks a line not on this recording; "split" (with
+    "unheard": true marks a line not on this recording; "ok": true (with
+    "text") marks one a listener checked, off the review list; "split" (with
     "text", and "speaker" for the second part) cuts a line in two where the
     "split" text begins, two people run together by the scan.
 
@@ -65,6 +66,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                     l['t'] = l['t'][:cut].strip()
                     lines.insert(lines.index(l) + 1, second)
                     fresh[id(second)] = 120
+                elif f.get('ok'):
+                    l['ok'] = 1   # a listener checked it: off the review list
                 elif 'speaker' in f:
                     l['s'] = f['speaker']
                 elif 'from' in f:
@@ -86,6 +89,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
             ok = not any(abs(l['g'] - f['g']) <= 600 and l['t'].strip() == f['text'].strip() for l in lines)
         elif f.get('retime'):   # (only moves a line: its text is gone, so it's been changed since)
             ok = False
+        elif f.get('ok'):   # (the line has changed since it was checked: the review list can judge it afresh)
+            ok = True
         else:   # unheard
             ok = any(abs(l['g'] - f['g']) <= 3600 and _norm(f['text']) in _norm(l['t']) and l.get('n') for l in lines)
         if not ok:

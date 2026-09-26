@@ -166,7 +166,7 @@ button.play { border-color:var(--accent); color:var(--accent); }
 <main>
   <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a></p>
   <h1>Transcript lines to check</h1>
-  <p class="intro">Lines that look doubtful — damaged words, a speaker or time the scan lost, or words the tape hears differently — each shown with the lines around it, since mistakes come in clusters. Press ▶ to hear a line (a few seconds either side, as often as you like) and Report to say what it should be. Fixed lines drop off at the next run.</p>
+  <p class="intro">Lines that look doubtful — damaged words, a speaker or time the scan lost, or words the tape hears differently — each shown with the lines around it, since mistakes come in clusters. Press ▶ to hear a line (all of it, from a few seconds before; as often as you like) and Report to say what it should be. Fixed lines drop off at the next run.</p>
   <audio id="player" preload="none"></audio>
   <div class="bar">
     <span role="group" aria-label="Mission"><button data-m="11" aria-pressed="true">Apollo 11</button> <button data-m="12" aria-pressed="false">Apollo 12</button> <button data-m="14" aria-pressed="false">Apollo 14</button></span>
@@ -214,11 +214,19 @@ async function load() {
   render()
 }
 
+// how long a line takes to say, roughly (as the site's lineReport.js): to play all of it
+const sayingSeconds = (t) => 2 + (t.match(/[A-Za-z]/g) || []).length * 0.09 + (t.match(/\d/g) || []).length * 0.4
+function lineLength(k) {
+  const l = lines[k], next = lines[k + 1]
+  let length = sayingSeconds(l.t)
+  if (next && next.g > l.g + length && next.g < l.g + 2 * length + 10) length = next.g - l.g
+  return Math.min(180, Math.max(10, length + 1.5))
+}
 function lineHtml(k, main) {
   const l = lines[k], a = audioFor(l.g)
   return `<div class="line${main ? ' is-main' : ''}${l.c ? ' is-pao' : ''}" data-k="${k}">
     <div class="top"><span class="meta"><a href="/#/mission/${mission}?at=${Math.floor(l.g)}" target="_blank" rel="noreferrer">${fmt(l.g)}</a> · ${esc(l.c ? 'Announcer' : l.s)}${l.n ? ' · not on this recording' : ''}</span>
-    <span class="actions">${reported.has(keyOf(l)) ? '<span class="done">✓ reported</span>' : ''}${a ? `<button class="play" data-src="${esc(a.src)}" data-at="${a.at}">▶ Play</button>` : '<span class="meta">no tape here</span>'}<button class="report">Report a fix</button></span></div>
+    <span class="actions">${reported.has(keyOf(l)) ? '<span class="done">✓ reported</span>' : ''}${a ? `<button class="play" data-src="${esc(a.src)}" data-at="${a.at}" data-until="${Math.round((a.at + lineLength(k)) * 10) / 10}">▶ Play</button>` : '<span class="meta">no tape here</span>'}<button class="report">Report a fix</button></span></div>
     <p class="text">${esc(l.t)}</p>
   </div>`
 }
@@ -254,7 +262,7 @@ list.addEventListener('click', (e) => {
     if (player.dataset.src !== play.dataset.src) { player.src = play.dataset.src; player.dataset.src = play.dataset.src }
     player.dataset.at = play.dataset.at
     const at = Number(play.dataset.at)
-    stopAt = at + 9
+    stopAt = Number(play.dataset.until) || at + 9   // (the whole line)
     const start = () => { player.currentTime = Math.max(0, at - 3); player.play().catch(() => {}) }
     if (player.readyState >= 1) start(); else { player.addEventListener('loadedmetadata', start, { once: true }); player.load() }
     document.querySelectorAll('button.play').forEach((b) => (b.textContent = '▶ Play'))

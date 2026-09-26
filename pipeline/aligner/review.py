@@ -64,7 +64,7 @@ def score_lines(lines, segments, tape_words, vocab, common=None):
     gets = [sg['get'] for sg in segments]
     ranked = []
     for i, l in enumerate(lines):
-        if l.get('c') or not l['t'].strip():
+        if l.get('c') or l.get('ok') or not l['t'].strip():
             continue
         words = l['t'].split()
         reasons, score = [], 0

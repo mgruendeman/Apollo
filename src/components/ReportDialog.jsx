@@ -17,15 +17,16 @@ export default function ReportDialog({ title, context, audio, onClose }) {
       a.pause()
       return
     }
-    // about 12 s: 3 before the line, 9 after; stopped by time reached or,
-    // failing that (a coarse timeupdate), by the clock
-    const stopAt = audio.at + 9
-    a.currentTime = Math.max(0, audio.at - 3)
+    // from 3 s before the line to its end (lineReport works out how long it
+    // is); stopped by the time reached or, failing that, by the clock
+    const stopAt = audio.until ?? audio.at + 9
+    const from = Math.max(0, audio.at - 3)
+    a.currentTime = from
     a.ontimeupdate = () => {
       if (a.currentTime >= stopAt) a.pause()
     }
     clearTimeout(a._stop)
-    a._stop = setTimeout(() => a.pause(), 12500)
+    a._stop = setTimeout(() => a.pause(), (stopAt - from) * 1000 + 800)
     a.play().catch(() => {})
   }
   const [message, setMessage] = useState('')
@@ -99,7 +100,7 @@ export default function ReportDialog({ title, context, audio, onClose }) {
                 <button type="button" className="report-replay-button" onClick={replay}>
                   {playing ? '❚❚ Stop' : '▶ Play this line'}
                 </button>
-                <span>a few seconds either side; play it as often as you like</span>
+                <span>the whole line, from a few seconds before; play it as often as you like</span>
               </p>
             )}
             <label className="report-field">
