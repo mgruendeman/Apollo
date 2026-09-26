@@ -72,6 +72,8 @@ def _suspect(core, vocab):
         return False
     if re.fullmatch(r"(?:[A-Za-z]\.)+[A-Za-z]?", core):   # p.m, U.S
         return False
+    if re.fullmatch(r"[A-Za-z]{4,}/[A-Za-z]{4,}", core) and all(p.lower() in vocab for p in core.split("/")):
+        return False   # "latitude/longitude": two words, not a misreading
     if re.search(r"[a-z][\d.,;:/?!%][a-z]|[a-z]\d|\d[a-z]{2}", core):
         return True
     if re.search(r"[a-z]'(?!(?:s|t|d|m|ll|re|ve)$)[a-z]", core) and core.lower() not in vocab:   # "e'aable" (not o'clock)
@@ -167,6 +169,22 @@ def _place(word):
     return best if not word[:1].isalpha() and ratio >= 0.8 else None   # "}:ouston": the capital lost to junk
 
 
+# words too short and common to be one half of a compound: "Bavariahave",
+# "inthe" and "pickit" are two words run together
+SMALL_WORDS = {'the', 'a', 'an', 'and', 'of', 'to', 'in', 'is', 'are', 'was', 'were', 'have', 'has', 'had', 'be', 'been',
+               'we', 'you', 'it', 'its', 'that', 'this', 'for', 'at', 'with', 'from', 'as', 'by', 'or', 'if', 'he', 'she', 'they', 'i',
+               'not', 'go', 'so', 'no', 'my', 'me', 'his', 'her', 'our', 'your', 'us', 'them', 'but'}
+
+# letters the scan mistakes for each other, both ways ("Ckay" for Okay, "Fete" for Pete)
+TWINS = {frozenset(p) for p in ('co', 'uo', 'ec', 'li', 'fp', 'hb', 'nu', 'nh', 'ao', 'rn', 'vy', 'tf', 'jl')}
+
+
+def _ocr_twin(a, b):
+    """Whether b is a with only the scan's usual confusions: same length,
+    each differing letter a known twin."""
+    a, b = a.lower(), b.lower()
+    return len(a) == len(b) and a != b and all(x == y or frozenset(x + y) in TWINS for x, y in zip(a, b))
+
 CAPS = {'n': set()}   # this mission's all-capitals words (switch names, codes) seen often: CRYO, PRESS, PYRO
 
 
@@ -243,7 +261,7 @@ def _tidy(text, vocab):
     text = re.sub(r"\bC[O0][_{}\[\]M]{1,3}\s+TECH\b", 'COMM TECH', text)
     if n == '11':
         text = re.sub(r"(?<![\w-])[!|][1l](?=[,.\s]|$)", '11', text)          # "!1,"
-    text = re.sub(r"\bS[_-]?[bh]and\b", 'S-band', text)
+    text = re.sub(r"\b[S58][_-]?[bh]a[n_]d\b", 'S-band', text)                    # (and "8-ba_d")
     text = re.sub(r"\bP[O0][O0]\b", 'P00', text)                           # program 00 ("P-zero-zero")
     text = re.sub(r"(?<=[A-Za-z'])11\b|\b11(?=[a-z])", 'll', text)
     text = re.sub(r"(?<=[A-Za-z'])1(?=[a-z])", 'l', text)
@@ -267,6 +285,12 @@ def _tidy(text, vocab):
     text = re.sub(r"\bSim\)\s*lex\b", 'Simplex', text)
     text = re.sub(r"\bC[AaKk]P\s+C[O0](?:MM?|_)", 'CAPCOM', text)              # NASA's "CAP COMM" (and "CkP COMM", "CAP C0_")
     text = re.sub(r"\bM&0\b", 'M&O', text)                                   # the stations' maintenance and operations
+    text = re.sub(r"(?<![\w'`.])i(?=(?:'(?:m|ll|ve|d)\b)|\s+(?:think|thought|was|had|have|can|can't|could|couldn't|did|didn't|do|"
+                  r"don't|went|understand|guess|got|see|saw|know|knew|want|wanted|just|feel|felt|hope|mean|need|said|say|will|would|"
+                  r"am|believe|notice|noticed)\b)", 'I', text)            # "Roger. i understand", "i'm", "i guess"
+    text = re.sub(r"(?<![\w'])[il|](?=\s+(?:(?:minute|second|hour|degree|mile|foot|inch)s?\b|through\s+\d))", '1', text)   # "at i minute"
+    text = re.sub(r"(?<=[A-Za-z0-9]),{2,}(?=\s)", ',', text)                     # "PCO,, again"
+    text = re.sub(r"(?<=\d)\)(?=\s+\d)|(?<=\s)\)(?=\d)", '0', text)                # "minus 1650) 11899", ")68": a misread 0
     text = re.sub(r"(?:^|(?<=\s))[\[\]|](?=\s+(?:think|thought|was|had|have|can|can't|could|couldn't|did|didn't|do|don't|went|"
                   r"understand|guess|got|see|saw|know|knew|want|wanted|just|feel|felt|hope|mean|need|said|say|will|would|am)\b)",
                   'I', text)                                                    # "[ understand", "] can't": I
@@ -335,6 +359,7 @@ def repair_ocr(lines, segments, tape_words):
     from collections import Counter
     freq = Counter(re.sub(r"[^a-z0-9']", '', w[2].lower()) for tw, _ in tape_words.values() for w in tw)
     freq.update(w.lower() for l in lines for w in re.findall(r"(?<![\w_])[A-Za-z']+(?![\w_])", l['t']))
+    nasa = Counter(w.lower() for l in lines for w in re.findall(r"(?<![\w_'])[A-Za-z]+(?![\w_'])", l['t']))
     pairs = Counter()   # which words follow which, in the recognised speech and NASA's clean words
     for tw, _ in tape_words.values():
         ws = [re.sub(r"[^a-z0-9']", '', w[2].lower()) for w in tw]
@@ -383,6 +408,27 @@ def repair_ocr(lines, segments, tape_words):
                         if i not in bad:
                             continue
                         lead, core, trail = _core(words[i])
+                        # a compound the recogniser writes as two words ("wake up",
+                        # "push button"): NASA's one word is right, not either half;
+                        # but two words with the space lost ("Bavariahave", "inthe")
+                        # are two words
+                        near = heard[max(0, j1 - 1):j2 + 1]
+                        pair = next(((a, b) for a, b in zip(near, near[1:]) if re.sub(r"[^a-z]", '', core.lower()) == a + b), None)
+                        if pair:
+                            a, b = pair
+                            if a in SMALL_WORDS or b in SMALL_WORDS:
+                                cut = [k for k, ch in enumerate(core) if ch.isalpha()][len(a)]
+                                words[i] = (lead + (a.capitalize() if core[:1].isupper() else a) + ' '
+                                            + (b.capitalize() if core[cut].isupper() else b) + trail)
+                                bad.discard(i)
+                                changed += 1
+                            continue
+                        # a whole word NASA spells the same way three times or more is its word
+                        # ("thrusted"), not a misreading of the nearest dictionary one, unless
+                        # it's the heard word with the scan's usual confusions ("Ckay" on a run
+                        # of bad pages)
+                        if core.isalpha() and nasa[core.lower()] >= 3 and not any(_ocr_twin(core, h) for h in heard[j1:j2]):
+                            continue   # (a misread also repeats in its readback: twice)
                         if i2 - i1 == j2 - j1:   # word for word: the tape's word in the same place
                             options, need = [heard[j1 + i - i1]], (0.75 if _clean(core) else 0.5)
                         else:
@@ -416,6 +462,7 @@ def repair_ocr(lines, segments, tape_words):
                     new[-1] += _core(words[i2 - 1])[2]
                     swaps.append((i1, i2, new))
                 for i1, i2, new in reversed(swaps):
+                    new = ' '.join(new).replace(' -', '-').split(' ')   # the recogniser's "close -up", "all -star"
                     words[i1:i2] = new
                     bad = {i for i in bad if i < i1} | {i - (i2 - i1) + len(new) for i in bad if i >= i2}
                     changed += len(new)

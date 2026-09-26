@@ -70,7 +70,7 @@ def heard_between(segments, tape_words, g0, g1):
         tb = sg['from'] + (min(g1, end(sg)) - sg['get']) / sg['rate']
         for w in words[bisect.bisect_left(starts, ta):bisect.bisect_right(starts, tb)]:
             heard.append((sg['get'] + (w[0] - sg['from']) * sg['rate'],) + tuple(w[1:]))
-    heard.sort()
+    heard.sort(key=lambda h: h[0])   # by time only: words the recogniser gave one time keep their order
     return heard
 
 
@@ -89,14 +89,15 @@ def retime(lines, segments, tape_words, which, before=45, after=120):
         toks = tokens(l['t'])
         if len(toks) < 2:
             continue
-        heard = heard_between(segments, tape_words, l['g'] - before, l['g'] + after)
+        on = which[id(l)] if isinstance(which, dict) else after
+        heard = heard_between(segments, tape_words, l['g'] - before, l['g'] + on)
         sm = difflib.SequenceMatcher(None, toks, [h[3] for h in heard], autojunk=False)
         blocks = [b for b in sm.get_matching_blocks() if b.size]
         if not blocks:
             continue
         run = max(blocks, key=lambda b: b.size)
         g, share = heard[run.b][0] - 0.3 * run.a, sum(b.size for b in blocks) / len(toks)
-        if run.size >= 2 and share >= 0.5:
+        if run.size >= 2 and (share >= 0.5 or run.size >= 5):   # (a long PAD runs past the window)
             if abs(g - l['g']) >= 0.5:
                 n += 1
             l['g'] = round(g, 1)

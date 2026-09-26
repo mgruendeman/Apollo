@@ -207,6 +207,13 @@ The site can play a mission end to end from NASA's own tapes (Apollo 11 so far):
    transcript stands on its own.)
    Writes `public/timeline/apollo11.json`, which the site reads.
 
+   Tapes are placed from NASA's lines found on them. A second look finds more lines between those already found (words
+   on a tape come in the order they were said), which matters where the recording ran in bursts: a delayed playback of
+   the crew's conversation, or a recorder started by each voice, packs a quarter of an hour of mission time into a few
+   minutes of tape, each exchange at its own offset. A burst becomes its own piece of tape only when it's clearly placed
+   and further off than the line timing can absorb (30 s). `python3 pipeline/look_transcript.py 11 130:04:34` prints the
+   transcript around a moment next to what the tape says there.
+
    NASA's air-to-ground tapes are the broadcast mix, so the public-affairs announcer ("This is Apollo Control…") is on them.
    `align_tapes.py` finds his announcements, adds his words to the transcript, and lists his stretches so the site can skip them.
    Through quiet hours the recorders ran only for his announcements, so one stretch of tape can hold several hours of them.

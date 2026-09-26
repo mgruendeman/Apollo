@@ -687,7 +687,7 @@
   },
   {
    "g": 450489,
-   "from": "Your AOS time -is i minute ,Z ahead",
+   "from": "Your AOS time -is 1 minute ,Z ahead",
    "to": "Your AOS time is 1 minute ahead"
   },
   {
@@ -1017,7 +1017,7 @@
   },
   {
    "g": 407608,
-   "from": "at 113 30. Wake. Lithium",
+   "from": "at 113 30. wakeup. Lithium",
    "to": "at 113 30. Return to the nominal timeline at 121 hours wakeup. Lithium"
   },
   {
@@ -1037,7 +1037,7 @@
   },
   {
    "g": 456958,
-   "from": "Okay. ) J':;L:_J.'_:_Lnd (k:lumbJa,, ]l.,ou:;L,or_. Ail your solutio.:; look t_ood to us. Out.",
+   "from": "Okay. ) J':;L:_J.'_:_Lnd (k:lumbJa, ]l.,ou:;L,or_. Ail your solutio.:; look t_ood to us. Out.",
    "to": "Okay. Eagle and Columbia, Houston. All your solutions look good to us. Out."
   },
   {
@@ -1153,6 +1153,99 @@
    "g": 457042,
    "text": "All your solutions look good, out.",
    "delete": true
+  },
+  {
+   "g": 5516,
+   "from": "We are re,_eiving your FM downlink",
+   "to": "We are receiving your FM downlink"
+  },
+  {
+   "g": 17539,
+   "from": "our views out th_ window",
+   "to": "our views out the window"
+  },
+  {
+   "g": 467868.2,
+   "from": "then you - let call P41",
+   "to": "then you - let you call P41"
+  },
+  {
+   "g": 379079,
+   "from": "EVAP OUT temp- temperature running low",
+   "to": "EVAP OUT temperature running low"
+  },
+  {
+   "g": 630624.1,
+   "from": "this will be \"change Lima.\"",
+   "to": "this will be \"Change Lima.\""
+  },
+  {
+   "g": 400354.5,
+   "from": "L hope youtre w.u,tchi:u.': how hard I haw. to hi[. this into the ground, to the tta_e of about 5 inches Houston.",
+   "to": "I hope you're watching how hard I have to hit this into the ground, to the tune of about 5 inches, Houston.",
+   "retime": 240
+  },
+  {
+   "g": 382380.0,
+   "from": "I did cycle out of AUTO into - I did cycle out",
+   "to": "I did cycle out of AUTO into MANUAL, back into AUTO."
+  },
+  {
+   "g": 382380.0,
+   "from": "Houston.",
+   "to": "Houston. Roger. Out.",
+   "whole": true
+  },
+  {
+   "g": 383776,
+   "from": "I'm coming up on _ time for",
+   "to": "I'm coming up on my time for"
+  },
+  {
+   "g": 454445.6,
+   "from": "()ktl,y. '['h_.l,':: Hr,q,l,y -1,,:.' _U?(-'rrl,-r)'l,. A.,J.",
+   "to": "Okay. That's pretty close agreement, and for burn time I still have 126 17."
+  },
+  {
+   "g": 126582,
+   "text": "All right, Buzz. It's - flyby is the purpose.",
+   "retime": true
+  },
+  {
+   "g": 126778,
+   "from": "Roger. Flyby SPS/G&N:",
+   "to": "Roger. Flyby SPS G&N:"
+  },
+  {
+   "g": 468168,
+   "from": "Roger.",
+   "to": "Rog.",
+   "whole": true
+  },
+  {
+   "g": 468274,
+   "from": "We recommend picking up pa_;e li']l -12 ,..d we'd ]ik_' l._, ,l_t.- tison t_t .10 rnJnutos. TI,LL'I.L [)_ lit) 14 015.",
+   "to": "We recommend picking up page F11-12, and we'd like to jettison in 10 minutes. That'll be 130 14 45. Over."
+  },
+  {
+   "g": 400354.5,
+   "speaker": "Aldrin",
+   "text": "I hope you're watching how hard I have to hit this"
+  },
+  {
+   "g": 382380.0,
+   "text": "r}i['.'J.}JY_lJ } I i l,.y I}fJ:;'!, II'r,'l,[}'l_ji ,} [ },.¥ I_,'l,._;f * , [,}ii:; ][] l]_rjlJ:;_,_;fi.",
+   "delete": true
+  },
+  {
+   "g": 7785,
+   "from": "Apollo 11, thl_ is Houston",
+   "to": "Apollo 11, this is Houston"
+  },
+  {
+   "g": 575727,
+   "from": "up. Ass_es no MCC-6.",
+   "to": "up. Assume no MCC-6."
   }
  ],
  "12": [
@@ -1300,6 +1393,26 @@
    "g": 10389,
    "from": "the DSKY reads plus 05003",
    "to": "the DSKY reads 35413, plus 05003"
+  },
+  {
+   "g": 107889.3,
+   "from": "Roger 12. thank you, and",
+   "to": "Roger 12. Thank you, and"
+  },
+  {
+   "g": 541197,
+   "from": "about 3 minutes t_, LOS",
+   "to": "about 3 minutes to LOS"
+  },
+  {
+   "g": 589505,
+   "from": "Okey. We've got Descartes",
+   "to": "Okay. We've got Descartes"
+  },
+  {
+   "g": 622659,
+   "from": "We sureconcur.",
+   "to": "We sure concur."
   }
  ]
 }

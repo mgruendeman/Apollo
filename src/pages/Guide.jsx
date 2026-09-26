@@ -66,6 +66,10 @@ export default function Guide() {
             <strong>Not on this recording</strong> marks a call NASA transcribed from its full radio loop that the broadcast
             copy missed. Tap either tag for more.
           </li>
+          <li>
+            <strong>[unclear]</strong> marks words NASA&apos;s transcribers couldn&apos;t make out (they typed three dots). If
+            you can hear what&apos;s said there, tell me.
+          </li>
         </ul>
       </section>
 

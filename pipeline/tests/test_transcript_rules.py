@@ -89,6 +89,15 @@ TIDY_CASES = [
     ('11', '1], this is Houston. We\'ve completed the uplink.', "11, this is Houston. We've completed the uplink."),
     ('12', ']2, Houston. Go ahead.', '12, Houston. Go ahead.'),
     ('11', 'There [_age 551 are a couple of tropical storms', 'There are a couple of tropical storms'),
+    ('12', 'normal lunar COMM mode except 8-ba_d NORMAL', 'normal lunar COMM mode except S-band NORMAL'),
+    ('11', 'Roger. i understand.', 'Roger. I understand.'),
+    ('12', "Roger. i'll get those numbers for you.", "Roger. I'll get those numbers for you."),
+    ('11', "You're good at i minute.", "You're good at 1 minute."),   # a misread 1, not I
+    ('11', "we've been watching a PCO,, again.", "we've been watching a PCO, again."),
+    ('11', 'minus 0265, minus 1650) 11899 36228', 'minus 0265, minus 16500 11899 36228'),
+    ('11', 'Deneb and Vega, 007 144 )68. No ullage', 'Deneb and Vega, 007 144 068. No ullage'),
+    ('12', 'Then CB(11) LGC/DSKY, close that.', 'Then CB(11) LGC/DSKY, close that.'),   # real parentheses
+    ('12', 'Apollo 12) Houston.', 'Apollo 12) Houston.'),
     ('11', 'the DIRECT O2 valve', 'the DIRECT O2 valve'),   # real O2 stays
     ('11', 'AOS Canaries at 1 50 13', 'AOS Canaries at 1 50 13'),   # numbers untouched
     ('11', "P52 is done. I'm looking at the DSKY.", "P52 is done. I'm looking at the DSKY."),   # nothing to fix
@@ -249,3 +258,82 @@ def test_a_fix_that_no_longer_matches_stops_the_run(tmp_path, monkeypatch):
     monkeypatch.setattr(X, 'FIXES', f)
     with pytest.raises(X.FixNotApplied):
         X.apply_fixes('11', [{'g': 1000, 's': 'Duke', 't': 'Copy.'}])
+
+
+# Placing the tapes: lines found between others, where the recorder ran in bursts
+def test_in_order_keeps_the_longest_run_that_agrees_with_the_tape():
+    from aligner.placement import _in_order
+    # (tape time, GET, row): row 2's stock phrase was found at the wrong place on the tape
+    found = [(10, 0, 0), (20, 0, 1), (5, 0, 2), (30, 0, 3), (25, 0, 4), (40, 0, 5)]
+    assert [a[2] for a in _in_order(found)] == [0, 1, 4, 5]
+
+
+def test_find_unique_refuses_a_readback():
+    from aligner.placement import _find_unique
+    pad = 'roger roll 002.5 pitch 289.3 yaw 357.5 over'.split()
+    other = 'stand by we are copying the numbers now and we will get back to you in a minute on that'.split()
+    back = 'roger i have roll 002.5 pitch 289.3 and yaw 357.5 over'.split()
+    said = pad + other + back
+    words = [(i * 0.5 + (60 if i >= len(pad) + len(other) else 0), 0, w, w) for i, w in enumerate(said)]
+    # the numbers alone: said twice, 30 s apart, so no clear place
+    assert _find_unique('roll 002.5 pitch 289.3 yaw 357.5'.split(), words, 0, len(words))[0] is None
+    # with the words only the readback has, it's found, at its start
+    t, share = _find_unique('roger i have roll 002.5 pitch 289.3 and yaw 357.5 over'.split(), words, 0, len(words))
+    assert abs(t - words[len(pad) + len(other)][0]) < 0.6 and share > 0.9
+
+
+def _pieces(groups, sure=()):
+    """(tape time, offset) groups -> the offsets of the pieces made."""
+    from aligner.placement import pieces_from_anchors
+    anchors = [(t, t + off, 0) for grp in groups for t, off in grp]
+    starts = sorted(t for t, _, _ in anchors)
+    out = pieces_from_anchors(anchors, 10_000, starts, [t + 0.5 for t in starts], sure=[(t, t + off, 0) for t, off in sure])
+    return [round(p['get'] - p['from'] * p['rate']) for p in out]
+
+
+def test_a_burst_stands_as_a_piece_only_when_sure_and_well_off():
+    steady = [(t, 1000) for t in (0, 10, 20, 30)]
+    later = [(t, 1000) for t in (400, 410, 420, 430)]
+    burst = [(200, 1100), (205, 1101)]
+    assert _pieces([steady, burst, later]) == [1000, 1000] or len(_pieces([steady, burst, later])) == 2   # not sure: dropped
+    # sure, but its neighbours agree and it's out of line with both: a misprinted time
+    assert len(_pieces([steady, burst, later], sure=burst[:1])) == 2
+    # sure, and the tape really moves on after it (a recorder running in bursts)
+    after = [(t, 1200) for t in (400, 410, 420, 430)]
+    assert len(_pieces([steady, burst, after], sure=burst[:1])) == 3
+    # sure but within 30 s of its neighbours: the line timing absorbs that, no new piece
+    near = [(200, 1020), (205, 1021)]
+    after2 = [(t, 1040) for t in (400, 410, 420, 430)]
+    assert len(_pieces([steady, near, after2], sure=near[:1])) == 2
+
+
+def test_ocr_twins():
+    assert R._ocr_twin('Ckay', 'okay') and R._ocr_twin('Fete', 'pete') and R._ocr_twin('tnat', 'that')
+    assert not R._ocr_twin('thrusted', 'trusted')   # a letter more, not a misread one
+    assert not R._ocr_twin('updata', 'update')      # NASA's word for the up-data link
+    assert not R._ocr_twin('rilles', 'rills')
+
+
+def test_words_the_recogniser_gave_one_time_keep_their_order():
+    from aligner.timing import heard_between
+    segments = [{'tape': 't', 'from': 0, 'to': 100, 'get': 1000, 'rate': 1.0}]
+    said = ['okay', 'thats', 'pretty', 'close', 'agreement']
+    ws = [(10.0, 10.2, w, w) for w in said]   # all given the same time
+    assert [h[3] for h in heard_between(segments, {'t': (ws, [w[0] for w in ws])}, 1000, 1100)] == said
+
+
+def test_whole_and_retime_only_fixes(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    segments, tape_words = _tape([(10, 'okay'), (10.4, 'ready'), (10.8, 'to'), (11.2, 'copy'),
+                                  (14, 'flyby'), (14.4, 'is'), (14.8, 'the'), (15.2, 'purpose'), (15.6, 'sps'), (16, '62815')])
+    lines = [{'g': 1005, 's': 'Duke', 't': 'Flyby is the purpose. SPS 62815.'},   # printed before the reply it follows
+             {'g': 1010, 's': 'Aldrin', 't': 'Okay. Ready to copy.'},
+             {'g': 1020, 's': 'Duke', 't': 'Roger.'}, {'g': 1021, 's': 'Aldrin', 't': 'Roger. Roger.'}]
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'11': [{'g': 1005, 'text': 'Flyby is the purpose.', 'retime': True},
+                                    {'g': 1021, 'from': 'Roger.', 'to': 'Rog.', 'whole': True}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    X.apply_fixes('11', lines, segments=segments, tape_words=tape_words)
+    assert [l['s'] for l in lines] == ['Aldrin', 'Duke', 'Duke', 'Aldrin']   # the PAD now after "Ready to copy"
+    # "whole": the line that is just "Roger." (Duke's, 1 s away), not the nearer one holding it
+    assert [l['t'] for l in lines] == ['Okay. Ready to copy.', 'Flyby is the purpose. SPS 62815.', 'Rog.', 'Roger. Roger.']

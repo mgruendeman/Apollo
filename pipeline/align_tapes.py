@@ -29,7 +29,7 @@ import re
 from pathlib import Path
 
 from aligner.common import ROOT, CREW, MIN_WORDS, SEARCH_S, tokens, speaker_names
-from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces
+from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors
 from aligner.ocr_repair import MISSION, repair_ocr, vocabulary
 from aligner.announcer import find_announcer
 from aligner.timing import mark_unheard, rebuild_from_tape, sync_to_tape, time_untimed
@@ -99,10 +99,16 @@ def main():
         if not entry.get('pieces'):   # (the stretches searched overlap: count each line once)
             stats['anchored'] -= len(anchors) - len(set(anchors))
             anchors = sorted(set(anchors))
+        # lines between those found, where the recorder ran in bursts
+        g_lo = min(p['get_from'] for p in pieces) - 60
+        g_hi = max(p['get_from'] + (p['tape_to'] - p['tape_from']) * p['rate'] for p in pieces) + 60
+        more = chain_anchors(rows, anchors, words, starts, g_lo, g_hi)
+        stats['chained'] = stats.get('chained', 0) + len(more)
+        anchors = sorted(set(anchors) | set(more))
         heard_at[tape] = sorted(a[0] for a in anchors)
         for t, _, k in anchors:
             where_heard.setdefault(k, []).append((tape, t))
-        for p in pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words]):
+        for p in pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words], sure=more):
             segments.append({'tape': tape, **p})
 
     segments.sort(key=lambda s: s['get'])
@@ -157,7 +163,7 @@ def main():
         timeline['audio'] = {'base': f'{{media}}/audio/{int(m)}', 'ext': '.clean.m4a'}
     out.write_text(json.dumps(timeline, separators=(',', ':')))
     covered = sum((s['to'] - s['from']) * s['rate'] for s in segments) / 3600
-    print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes; {len(segments)} segments covering {covered:.1f} h; "
+    print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes (+{stats.get('chained', 0)} between them); {len(segments)} segments covering {covered:.1f} h; "
           f"{len(lines)} lines ({repaired} words repaired from the tapes, {fixed} lines in the journal's wording, "
           f"{hand} hand fixes, {untimed} untimed lines timed from the tapes, {synced} lines timed to where they're heard, {rebuilt} rebuilt from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; {len(ranked)} lines listed for review; written to {out}")
 

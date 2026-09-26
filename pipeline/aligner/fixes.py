@@ -31,8 +31,10 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
 
     A corrected line whose time the scan lost, and any line split off, is
     timed afresh to where its words are heard (with the tapes given);
-    "retime": true on a fix does the same for a line printed at the wrong
-    time.
+    "whole": true keys a fix on a line that is exactly its text (for short
+    lines like "Roger."). "retime": true on a fix does the same for a line printed at the wrong
+    time ("retime": N looks up to N seconds on, for a line printed further
+    off than the usual two minutes).
 
     A fix whose "from" text is gone is still satisfied if the line already
     reads as "to" (the OCR or a rule got there first); that counts as
@@ -40,10 +42,11 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     FixNotApplied (strict), so a re-read transcript can't silently lose a
     correction. Returns how many fixes changed something."""
     fixes = json.loads(FIXES.read_text()).get(mission, []) if FIXES.exists() else []
-    done, missing, fresh = 0, [], set()
+    done, missing, fresh = 0, [], {}   # fresh: line -> how far on to look for it
     for f in fixes:
         key = f.get('from', f.get('text', ''))
-        match = (lambda t: t.strip() == key) if f.get('delete') else (lambda t: key in t)
+        # "whole": the fix is for a line that is exactly this ("Roger."), not any holding it
+        match = (lambda t: t.strip() == key) if f.get('delete') or f.get('whole') else (lambda t: key in t)
         hit = [l for l in lines if abs(l['g'] - f['g']) <= 2 and match(l['t'])]
         if not hit:
             near = sorted((abs(l['g'] - f['g']), k) for k, l in enumerate(lines) if abs(l['g'] - f['g']) <= 3600 and match(l['t']))
@@ -61,15 +64,15 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                     second = {'g': l['g'], 's': f['speaker'], 't': l['t'][cut:].strip()}
                     l['t'] = l['t'][:cut].strip()
                     lines.insert(lines.index(l) + 1, second)
-                    fresh.add(id(second))
+                    fresh[id(second)] = 120
                 elif 'speaker' in f:
                     l['s'] = f['speaker']
-                else:
+                elif 'from' in f:
                     l['t'] = l['t'].replace(f['from'], f['to'])
                     if l.get('a'):
-                        fresh.add(id(l))
+                        fresh[id(l)] = 120
                 if f.get('retime'):
-                    fresh.add(id(l))
+                    fresh[id(l)] = 120 if f['retime'] is True else f['retime']
             done += 1
             continue
         # nothing to change: is the line already the way the fix wants it?
@@ -81,6 +84,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
             ok = any(abs(l['g'] - f['g']) <= 3600 and _norm(f['text']) in _norm(l['t']) and l['s'] == f['speaker'] for l in lines)
         elif f.get('delete'):
             ok = not any(abs(l['g'] - f['g']) <= 600 and l['t'].strip() == f['text'].strip() for l in lines)
+        elif f.get('retime'):   # (only moves a line: its text is gone, so it's been changed since)
+            ok = False
         else:   # unheard
             ok = any(abs(l['g'] - f['g']) <= 3600 and _norm(f['text']) in _norm(l['t']) and l.get('n') for l in lines)
         if not ok:

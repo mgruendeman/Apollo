@@ -114,10 +114,92 @@ def merge_pieces(pieces):
     return out
 
 
-def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
+def _find_unique(line_toks, words, lo, hi):
+    """Where a line is among words[lo:hi], only if one place clearly beats
+    every other more than 20 s away (a readback repeats the words it reads
+    back). Returns (tape time, share of the line's words matched) or (None, 0)."""
+    n = len(line_toks)
+    scores = []
+    for a in range(lo, max(lo + 1, hi - n // 2), 2):
+        window = [w[3] for w in words[a:min(hi, a + n + 6)]]
+        if not window:
+            break
+        sm = difflib.SequenceMatcher(None, line_toks, window, autojunk=False)
+        blocks = [b for b in sm.get_matching_blocks() if b.size]
+        if blocks:
+            # where the line starts: its first run of two or more words heard,
+            # less the line's words before that run (a scan-damaged opening)
+            run = next((b for b in blocks if b.size >= 2), blocks[0])
+            last = a + blocks[-1].b + blocks[-1].size - 1
+            scores.append((sum(b.size for b in blocks), a + run.b, run.a, a + blocks[0].b, last))
+    if not scores:
+        return None, 0.0
+    best, at, before, first, last = max(scores)
+    # a rival: as good a match whose words are all clear of the best one's
+    rival = max((m for m, _, _, f, e in scores
+                 if words[e][0] < words[first][0] - 20 or words[f][0] > words[last][0] + 20), default=0)
+    if rival >= best - 2:
+        return None, 0.0
+    return words[at][0] - 0.3 * before, best / n
+
+
+def _in_order(found):
+    """The anchors (in NASA's line order) whose tape times also run in order:
+    the longest such run. A stock phrase ("Houston. Roger. Out.") found at
+    the wrong place on the tape breaks the order, so can't bound a search."""
+    tails, prev, at = [], [None] * len(found), []
+    for i, a in enumerate(found):
+        j = bisect.bisect_left([found[k][0] for k in at], a[0])
+        if j == len(at):
+            at.append(i)
+        else:
+            at[j] = i
+        prev[i] = at[j - 1] if j else None
+    out, i = [], at[-1] if at else None
+    while i is not None:
+        out.append(found[i])
+        i = prev[i]
+    return out[::-1]
+
+
+def chain_anchors(rows, anchors, words, starts, g_lo, g_hi):
+    """A second look for NASA's lines the first missed, between the lines it
+    found. Words on a tape come in the order they were said, so a line
+    printed between two found lines is on the tape between them, however
+    far from where a steady offset would put it: where the recorder ran in
+    bursts (stopped through the quiet, started by a voice) mission time
+    outruns the tape, minutes over a quarter of an hour. Only clear, single
+    matches count. anchors: [(tape time, GET, row index)]; returns more."""
+    found = _in_order(sorted({a[2]: a for a in anchors}.values(), key=lambda a: a[2]))
+    idx = [a[2] for a in found]
+    extra, prev_t = [], None
+    for k, r in enumerate(rows):
+        j = bisect.bisect_left(idx, k)
+        if j < len(idx) and idx[j] == k:
+            prev_t = found[j][0]
+            continue
+        if r['getApprox'] or not g_lo <= r['getSeconds'] <= g_hi or prev_t is None or j >= len(found):
+            continue
+        toks = tokens(r['text'])
+        next_t = found[j][0]
+        if len(toks) < 6 or not prev_t < next_t <= prev_t + 1200:
+            continue
+        lo, hi = bisect.bisect_left(starts, prev_t), bisect.bisect_right(starts, next_t)
+        t, share = _find_unique(toks, words, lo, hi)
+        if t is not None and share >= 0.75:
+            extra.append((t, r['getSeconds'], k))
+            prev_t = t
+    return extra
+
+
+def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=()):
     """Split a tape's (tape time, GET) anchors into pieces of continuous
     mission time (as place_tapes.segments, with tighter agreement), cut
-    at the quietest point between neighbouring pieces."""
+    at the quietest point between neighbouring pieces. A piece needs three
+    anchors agreeing, or one of the `sure` ones (a line found between two
+    others, in one clear place: chain_anchors), where the recorder ran in
+    bursts of a line or two."""
+    sure = {(t, g) for t, g, *_ in sure}
     groups = []
     for t, g, *_ in sorted(anchors):
         off = g - t
@@ -125,7 +207,36 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends):
             groups[-1].append((t, off))
         else:
             groups.append([(t, off)])
-    groups = [grp for grp in groups if len(grp) >= 3]
+    # A small group stands as a piece only if it holds a sure anchor and jumps
+    # further from the groups either side than the line timing can absorb
+    # (sync_to_tape looks 30 s back): a burst on a recorder that ran in
+    # bursts. A line anchored a little off mustn't cut a steady stretch.
+    med = lambda grp: float(np.median([x[1] for x in grp]))
+    # First, before any group is dropped: a small group built on the second
+    # look's anchors, out of line with the groups either side, which agree
+    # with each other, is a mismatch or a misprinted time ("51:09:41" for
+    # 51:12:41), not a stretch of the mission. (Groups of the first look's
+    # anchors alone keep the older, looser test below: where NASA's lines are
+    # sparse, as on the moonwalks, a real half hour of tape can rest on three.)
+    has_sure = lambda grp: any((t, t + off) in sure for t, off in grp)
+    groups = [grp for i, grp in enumerate(groups)
+              if not (0 < i < len(groups) - 1 and len(grp) <= 5 and has_sure(grp)
+                      and abs(med(groups[i - 1]) - med(groups[i + 1])) <= 30 and abs(med(grp) - med(groups[i - 1])) > 30)]
+    merged = groups   # (small groups aren't merged: noise at one offset would pass for a stretch)
+    big = [i for i, grp in enumerate(merged) if len(grp) >= 3]
+    keep = []
+    for i, grp in enumerate(merged):
+        if len(grp) >= 3:
+            keep.append(grp)
+            continue
+        if not has_sure(grp):
+            continue
+        before = [j for j in big if j < i]
+        after = [j for j in big if j > i]
+        near = ([merged[before[-1]]] if before else []) + ([merged[after[0]]] if after else [])
+        if all(abs(med(grp) - med(n)) > 30 for n in near):
+            keep.append(grp)
+    groups = keep
     # a small group out of line with neighbours that agree with each other
     # is a mismatch (a phrase said twice), not a stretch of the mission
     off = lambda grp: float(np.median([x[1] for x in grp]))

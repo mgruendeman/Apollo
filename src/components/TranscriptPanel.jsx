@@ -9,6 +9,19 @@ import { useLongPress } from '../lib/useLongPress'
 import { lineReport } from '../lib/lineReport'
 import { REACTIONS, reactionsAvailable, useClipReactions } from '../lib/reactions'
 
+// NASA's typists marked words they couldn't make out with three dots ("A
+// series of three dots (...) is used to designate those portions of the
+// communications that could not be transcribed because of garbling", the
+// transcripts' introduction); some pages use *** instead. Shown as [unclear]
+// so they don't read as a pause. (The announcer's lines come from speech
+// recognition, where dots are a trailing off, and are left alone.)
+function unclearMarked(text) {
+  return text
+    .replace(/\s*(?:\.\s?){3}(\.?)|\s*\*{3}/g, (_, stop) => ' [unclear]' + (stop || '')) // (a fourth dot ends the sentence)
+    .replace(/^ /, '')
+    .replace(/\[unclear\](?=\w)/g, '[unclear] ')
+}
+
 const CHANNEL_TAGS = {
   onboard: 'onboard',
   pao: 'Mission Control',
@@ -87,7 +100,7 @@ export default function TranscriptPanel({ lines, currentTime, onTermClick, onLin
                   {line.unheard && <NoteTag label="not on this recording" note={UNHEARD_NOTE} />}
                   <span className="transcript-get">{line.get}</span>
                   <span className="transcript-text">
-                    <GlossaryText text={line.text} onTermClick={onTermClick} notes />
+                    <GlossaryText text={line.channel === 'pao' ? line.text : unclearMarked(line.text)} onTermClick={onTermClick} notes />
                   </span>
                   {reactionsAvailable && mission && clip && (
                     <Reactions
