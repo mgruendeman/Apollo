@@ -7,17 +7,17 @@
   "lines": 8477,
   "notOnRecording": 47,
   "recordedHours": 101.1,
-  "updated": "2026-09-27"
+  "updated": "2026-09-28"
  },
  "12": {
   "announcerLines": 1905,
   "checkedFine": 0,
-  "corrected": 68,
-  "flagged": 852,
+  "corrected": 70,
+  "flagged": 854,
   "lines": 15506,
   "notOnRecording": 109,
   "recordedHours": 127.2,
-  "updated": "2026-09-27"
+  "updated": "2026-09-28"
  },
  "14": {
   "announcerLines": 1364,
@@ -27,6 +27,6 @@
   "lines": 14011,
   "notOnRecording": 264,
   "recordedHours": 141.2,
-  "updated": "2026-09-27"
+  "updated": "2026-09-28"
  }
 }

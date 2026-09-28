@@ -184,6 +184,7 @@ def main():
         separators=(',', ':')))
     for l in lines:
         l.pop('ok', None)   # (the review list's business, not the site's)
+        l.pop('review', None)
     timeline = {'mission': m, 'segments': segments, 'lines': lines, 'announcer': announcer, 'over': over}
     if args.cleaned:   # (the site fills in {media}: its media storage address)
         timeline['audio'] = {'base': f'{{media}}/audio/{int(m)}', 'ext': '.clean.m4a'}

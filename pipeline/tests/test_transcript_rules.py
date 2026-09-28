@@ -419,3 +419,15 @@ def test_a_line_put_where_a_listener_heard_it(tmp_path, monkeypatch):
     monkeypatch.setattr(X, 'FIXES', f)
     assert X.apply_fixes('11', lines) == 1
     assert [(l['g'], l['t']) for l in lines] == [(1010, 'Can you stationkeep with it, Mike?'), (1015, 'Will do.')]
+
+
+def test_a_question_for_a_listener_tops_the_review_list(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    from aligner.review import score_lines
+    lines = [{'g': 1000, 's': 'Unknown', 't': 'Okay, Pete. Let me level it up.'}, {'g': 1010, 's': 'Duke', 't': 'Rog3r, Houst0n.', 'a': 1}]
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'12': [{'g': 1000, 'text': 'Okay, Pete. Let me level it up.', 'review': "Who's speaking?"}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    assert X.apply_fixes('12', lines) == 1
+    ranked = score_lines(lines, [], {}, set())
+    assert ranked[0][1] == 0 and ranked[0][0] == 100 and ranked[0][2].startswith("Who's speaking?")

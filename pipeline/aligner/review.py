@@ -94,9 +94,12 @@ def score_lines(lines, segments, tape_words, vocab, common=None):
         if l.get('n'):
             score = max(score, 25)
             reasons.append('marked not on this recording')
+        if l.get('review'):   # a question a hand fix asks a listener (Who's speaking?): first on the list
+            score = 100
+            reasons.insert(0, l['review'])
         if score >= 25:
             l['q'] = min(100, score)
             l['why'] = ' · '.join(reasons)
             ranked.append((l['q'], i, l['why']))
-    ranked.sort(key=lambda r: (-r[0], r[1]))
+    ranked.sort(key=lambda r: (not lines[r[1]].get('review'), -r[0], r[1]))   # (questions for a listener first)
     return ranked
