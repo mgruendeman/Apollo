@@ -431,3 +431,18 @@ def test_a_question_for_a_listener_tops_the_review_list(tmp_path, monkeypatch):
     assert X.apply_fixes('12', lines) == 1
     ranked = score_lines(lines, [], {}, set())
     assert ranked[0][1] == 0 and ranked[0][0] == 100 and ranked[0][2].startswith("Who's speaking?")
+
+
+def test_an_acronym_the_recogniser_spells_differently_is_not_a_misread():
+    from aligner.review import _disagreements
+    assert _disagreements('About 2 minutes to LOS on this pass'.split(), 'about 2 minutes to lls on this pass'.split()) == []
+    assert _disagreements('Evasive maneuver SPS G&N: 63481'.split(), 'evasive maneuver sps gnn 63481'.split()) == []
+    assert _disagreements('We read ycu loud'.split(), 'we read you loud'.split()) == [('ycu', 'you')]
+
+
+def test_a_pinned_stretch_of_tape_replaces_what_covered_it():
+    from aligner.segments import pin_pieces
+    pieces = [{'from': 0, 'to': 100, 'get': 1000, 'rate': 1.0, 'anchors': 3}, {'from': 100, 'to': 300, 'get': 500, 'rate': 1.0, 'anchors': 1},
+              {'from': 300, 'to': 600, 'get': 2300, 'rate': 1.0, 'anchors': 4}]
+    out = pin_pieces(pieces, [{'tape_from': 80, 'tape_to': 320, 'get_from': 2080}])
+    assert [(p['from'], p['to'], p['get']) for p in out] == [(0, 80, 1000), (80, 320, 2080), (320, 600, 2320)]

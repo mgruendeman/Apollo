@@ -1766,6 +1766,154 @@
    "g": 471008,
    "text": "That's why we didn't read you up any newscast.",
    "ok": true
+  },
+  {
+   "g": 3216.2,
+   "text": "NOUN 71: we used 30 and 37",
+   "ok": true
+  },
+  {
+   "g": 5360,
+   "text": "Cecil B. deAldrin is standing by for instructions.",
+   "ok": true
+  },
+  {
+   "g": 5705,
+   "text": "TLI plus 90, SPS G&N",
+   "ok": true
+  },
+  {
+   "g": 12766,
+   "text": "quad Bravo problem at separation",
+   "ok": true
+  },
+  {
+   "g": 13085.9,
+   "text": "I expect I used more gas than",
+   "ok": true
+  },
+  {
+   "g": 13669,
+   "text": "within normal tolerances",
+   "ok": true
+  },
+  {
+   "g": 30284,
+   "text": "establish PTC as listed in the flight plan",
+   "ok": true
+  },
+  {
+   "g": 34568,
+   "text": "difficult to find two stars that are not occulted",
+   "ok": true
+  },
+  {
+   "g": 38539,
+   "text": "I haven't seen anything but the DSKY so far.",
+   "ok": true
+  },
+  {
+   "g": 82231.5,
+   "text": "a couple of small flight plan updates",
+   "ok": true
+  },
+  {
+   "g": 6270,
+   "from": "abort pitc l, 223",
+   "to": "abort pitch, 223"
+  },
+  {
+   "g": 6323,
+   "from": "Apollo 11, this is 11, mton.",
+   "to": "Apollo 11, this is Houston."
+  },
+  {
+   "g": 6323,
+   "text": "Would you read back DELTA-V C prime again?",
+   "at": 6356
+  },
+  {
+   "g": 8744,
+   "text": "this is Houston through Carnarvon. Radio check",
+   "retime": true
+  },
+  {
+   "g": 8749,
+   "from": "Roger, MottmtQn Carnarvon. Apollo 11. Loud _r_d clee, r. I",
+   "to": "Roger, Houston through Carnarvon. Apollo 11. Loud and clear.",
+   "retime": true
+  },
+  {
+   "g": 8753,
+   "text": "You're coming in very loud and very clear, here",
+   "retime": true
+  },
+  {
+   "g": 9148,
+   "from": "we read ycu strength 4 and a Jittle scratchy",
+   "to": "we read you strength 4 and a little scratchy"
+  },
+  {
+   "g": 9154,
+   "from": "static in tie _e background",
+   "to": "static in the background",
+   "retime": true
+  },
+  {
+   "g": 13778.6,
+   "from": "shock of separ_ tion",
+   "to": "shock of separation"
+  },
+  {
+   "g": 14619.7,
+   "from": "n( ullage",
+   "to": "no ullage"
+  },
+  {
+   "g": 18955.9,
+   "from": "we have n _w is - Hydrogen heaters: we got i AUTO, 2 CFF. Oxygen heaters; i OFF, 2 AUTO.",
+   "to": "we have now is - Hydrogen heaters: we got 1 AUTO, 2 OFF. Oxygen heaters; 1 OFF, 2 AUTO."
+  },
+  {
+   "g": 19428,
+   "from": "you might v ant to join",
+   "to": "you might want to join"
+  },
+  {
+   "g": 19445,
+   "from": "!dcn't think he is that old",
+   "to": "I don't think he is that old"
+  },
+  {
+   "g": 20604.5,
+   "text": "Wait one.",
+   "whole": true,
+   "at": 20612
+  },
+  {
+   "g": 20604.5,
+   "text": "Old star number 30 looks like",
+   "at": 20654
+  },
+  {
+   "g": 22171,
+   "from": "Ths_k you very much.",
+   "to": "Thank you very much."
+  },
+  {
+   "g": 39569,
+   "from": "Heady _or your readback",
+   "to": "Ready for your readback"
+  },
+  {
+   "g": 39981,
+   "from": "Does the arrow line up with the detent:' Over.",
+   "to": "Does the arrow line up with the detent. Over."
+  },
+  {
+   "g": 6368,
+   "from": "picking up the squesl here",
+   "to": "picking up the squeal here"
   }
  ],
  "12": [

@@ -84,6 +84,7 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                 if 'at' in f:
                     l['g'] = f['at']
                     l.pop('a', None)
+                    fresh.pop(id(l), None)   # (the listener's time stands: no retiming it after a text fix)
                     moved = True
             done += 1
             continue

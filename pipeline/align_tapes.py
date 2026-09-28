@@ -38,7 +38,7 @@ from aligner.announcer import find_announcer
 from aligner.timing import mark_drowned_out, mark_unheard, rebuild_from_tape, sync_to_tape, time_untimed
 from aligner.fixes import apply_fixes, use_journal_text
 from aligner.review import score_lines
-from aligner.segments import trim_overlaps
+from aligner.segments import pin_pieces, trim_overlaps
 
 
 def main():
@@ -63,6 +63,9 @@ def main():
     rows = [r for r in rows[first:] if r['getSeconds'] > 0 or r['speaker'] not in ('MS', '?')]
     name = speaker_names(m, rows)
 
+    # stretches of tape placed by hand, where the tape shows the placement wrong
+    fixes_file = ROOT / 'pipeline' / 'placement_fixes.json'
+    placement_fixes = json.loads(fixes_file.read_text()) if fixes_file.exists() else {}
     segments, stats, tape_words, heard_at = [], {'anchored': 0, 'tried': 0}, {}, {}
     where_heard = {}   # row index -> [(tape, tape time)] where its words were found
     grams = {}   # three-word phrases of NASA's lines (timed ones) -> their GETs
@@ -117,7 +120,9 @@ def main():
         heard_at[tape] = sorted(a[0] for a in anchors)
         for t, _, k in anchors:
             where_heard.setdefault(k, []).append((tape, t))
-        for p in pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words], sure=more, word_tokens=[w[3] for w in words]):
+        placed = pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words], sure=more, word_tokens=[w[3] for w in words])
+        placed = pin_pieces(placed, [f for f in placement_fixes.get(m, []) if f['tape'] == tape])
+        for p in placed:
             segments.append({'tape': tape, **p})
 
     segments.sort(key=lambda s: s['get'])
@@ -156,6 +161,9 @@ def main():
     for l in lines:   # station names with their capitals, the announcer's lines too
         l['t'] = re.sub(r"\b(honeysuckle|goldstone|tananarive|carnarvon|guaymas|madrid|bermuda|canberra|vanguard|redstone)\b",
                         lambda m: m.group(1).capitalize(), l['t'])
+        # the recogniser's spellings of the stations in the announcer's words
+        l['t'] = re.sub(r"\b[Cc]ana(?:rv|rb)[ao]n\b", 'Carnarvon', l['t'])
+        l['t'] = re.sub(r"\bTann?anarive\b|\bTeneneriev\b", 'Tananarive', l['t'])
     hand = apply_fixes(m, lines, strict=not args.no_strict, segments=segments, tape_words=tape_words)
     lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
     unheard = mark_unheard(lines, segments, tape_words, media / 'envelopes' / 'tapes' / m)

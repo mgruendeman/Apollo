@@ -45,13 +45,17 @@ def _disagreements(nasa_words, heard):
     """Words where NASA's text and the tape's reading differ by only a letter
     or two: likely misreads that look like real words. [(nasa, heard)]."""
     out = []
-    mine = [_core(w)[1].lower() for w in nasa_words]
+    cores = [_core(w)[1] for w in nasa_words]
+    # an acronym (LOS, G&N, AOS) is read out letter by letter and the
+    # recogniser spells it any old way ("lls", "gnn"): not a misread
+    acronym = [bool(re.fullmatch(r"[A-Z][A-Z&/]{1,4}s?", c)) for c in cores]
+    mine = [c.lower() for c in cores]
     sm = difflib.SequenceMatcher(None, mine, heard, autojunk=False)
     for op, i1, i2, j1, j2 in sm.get_opcodes():
         if op != 'replace' or i2 - i1 != j2 - j1:
             continue
-        for a, b in zip(mine[i1:i2], heard[j1:j2]):
-            if len(a) < 3 or len(b) < 3 or a == b or a.isdigit() or b.isdigit():
+        for k, (a, b) in enumerate(zip(mine[i1:i2], heard[j1:j2])):
+            if len(a) < 3 or len(b) < 3 or a == b or a.isdigit() or b.isdigit() or acronym[i1 + k]:
                 continue
             if 0 < sum(1 for x, y in zip(a, b) if x != y) + abs(len(a) - len(b)) <= LOOKALIKE_MAX_DIST:
                 out.append((a, b))

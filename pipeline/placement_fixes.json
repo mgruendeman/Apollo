@@ -1,0 +1,6 @@
+{
+ "11": [
+  {"tape": "155-AAA", "tape_from": 9972, "tape_to": 10181, "get_from": 8701,
+   "why": "After the announcer's 'Apollo Control at 2 hours 25 minutes' the tape runs on through the Carnarvon pass: 'Houston through Carnarvon' (NASA 002:25:44) is heard at 10015 s and 'You are GO for TLI' (002:26:38) at 10069 s, the same offset as the piece from 10181 s (002:28:32). Placement had put 10006-10181 at 002:18:17 on one stray match."}
+ ]
+}

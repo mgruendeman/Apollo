@@ -102,3 +102,6 @@ updata
 uplink
 uplinking
 uplinks
+# tracking stations the recogniser misspells (the repair mustn't take its spelling)
+carnarvon
+tananarive
