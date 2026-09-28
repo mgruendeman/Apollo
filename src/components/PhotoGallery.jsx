@@ -132,7 +132,14 @@ export default function PhotoGallery({ mission }) {
         </button>
       )}
       {open !== null && (
-        <PhotoLightbox photos={photos} index={open} onIndex={setOpen} onClose={() => setOpen(null)} />
+        <PhotoLightbox
+          photos={photos}
+          index={open}
+          onIndex={setOpen}
+          onClose={() => setOpen(null)}
+          missionName={mission.name}
+          where={`in the ${mission.name} photo gallery${kind !== 'all' ? ` under "${label(kind)}"` : ''}`}
+        />
       )}
     </section>
   )

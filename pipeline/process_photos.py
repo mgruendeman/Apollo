@@ -139,6 +139,41 @@ def trim_dark_edges(im, limit=0.03):
     return im.crop((left, top, w - right, h - bottom))
 
 
+def cut_scan_bands(im, to_edge=False, reach=0.2):
+    """A black band across a scan with a sliver of the next frame beyond it
+    (the film was scanned a little off the frame): cut through the band.
+    Only for frames a reviewer marked for a crop: on dark frames it can take
+    a run of shadowed terrain for a band.
+    From each side, past a sliver of picture, a run of black lines (black
+    sky can't have picture beyond it). With `to_edge` (a reviewer asked for
+    a crop) a band that runs to the edge counts too, where it meets picture
+    right across the frame (a straight edge, not the Moon's limb against
+    black sky)."""
+    g = np.asarray(im.convert('L'), dtype=np.float32)
+    h, w = g.shape
+    dark = lambda line: line.mean() < 18 and line.std() < 10
+    across = lambda line: (line > 25).mean() >= 0.6
+
+    def cut(lines, n):
+        i = 0
+        while i < reach * n and not dark(lines[i]):   # a sliver of the next frame
+            i += 1
+        if i == 0 and not to_edge or i > 0.12 * n:
+            return 0
+        start = i
+        while i < reach * n and dark(lines[i]):
+            i += 1
+        if i - start < 0.008 * n or i >= reach * n:
+            return 0
+        # picture on both sides of the band can't be black sky; a band that runs
+        # to the edge must end in a straight edge of picture
+        return i if start or any(across(line) for line in lines[i:i + 12]) else 0   # (the edge can fade over a few lines)
+
+    top, bottom = cut(g, h), cut(g[::-1], h)
+    left, right = cut(g.T, w), cut(g.T[::-1], w)
+    return im.crop((left, top, w - right, h - bottom)) if top or bottom or left or right else im
+
+
 def enhance(im):
     # Stretch levels a little (ignoring the extreme 0.5% of pixels), per
     # image not per channel, so the colour balance of the film is kept.
@@ -300,7 +335,10 @@ def process(frame_id, fmt, size, work, out, tint_strength=0.75, tone=True, revie
         return 'download failed', None
     im = load_rgb(src)
     box = frame_box(im) if fmt == 'a' else None
-    pic = enhance(trim_dark_edges(im.crop(box)) if box else im)
+    pic = trim_dark_edges(im.crop(box)) if box else im
+    if review.get('crop'):   # a reviewer saw a band to cut (on its own it would take dark terrain for one)
+        pic = cut_scan_bands(pic, to_edge=True)
+    pic = enhance(pic)
     turn = review.get('rotate', 0) % 360   # a reviewer's rotation, degrees clockwise
     if turn:
         pic = pic.rotate(-turn, expand=True)

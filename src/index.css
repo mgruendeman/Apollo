@@ -2936,3 +2936,15 @@ button.transcript-channel-tag {
   font-size: 0.8rem;
   color: var(--text-dim);
 }
+.lightbox-report {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--text-dim);
+  text-decoration: underline dotted;
+  cursor: pointer;
+}
+.lightbox-report:hover {
+  color: var(--accent-dim);
+}

@@ -140,10 +140,27 @@ async function nameOf(by) {
   return profileCache[by];
 }
 // A filter picks its photos when you choose it; photos don't drop out while you work on them.
-function applyFilter(value) {
-  queue = FRAMES.map(f => f.id).filter(id => value === 'all' || stateOf(id)[0] === value);
+// "To review" keeps the last few you marked just before the first one still to do, so
+// ‹ steps back to them (to undo a slip after a reload).
+const RECENT = 5;
+function recentlyMarked() {
+  return FRAMES.map(f => f.id)
+    .filter(id => reviews[id] && reviews[id].at && stateOf(id)[0] !== 'todo' && (!myId || reviews[id].by === myId))
+    .sort((a, b) => Date.parse(reviews[a].at) - Date.parse(reviews[b].at))
+    .slice(-RECENT);
+}
+function applyFilter(value, start) {
+  store.set('apollo-review-filter', value);
+  let first = 0;
+  if (value === 'todo+recent') {
+    const recent = recentlyMarked();
+    queue = [...recent, ...FRAMES.map(f => f.id).filter(id => stateOf(id)[0] === 'todo' && !recent.includes(id))];
+    first = Math.min(recent.length, queue.length - 1);
+  } else {
+    queue = FRAMES.map(f => f.id).filter(id => value === 'all' || stateOf(id)[0] === value);
+  }
   FRAMES.forEach(f => { thumbs[f.id].hidden = !queue.includes(f.id); });
-  if (queue.length && !queue.includes(cur)) show(queue[0]); else paint();
+  if (queue.length && (start || !queue.includes(cur))) show(queue[first]); else paint();
 }
 
 // ---------- saving, with undo ----------
@@ -481,10 +498,10 @@ show(byId[store.get('apollo-review-at')] ? store.get('apollo-review-at') : FRAME
     changed.forEach(id => paintThumb(id));
     if (changed.size) paintCounts();
     if (changed.has(cur) || first) { paint(); schedulePreview(true); }
-    const at = store.get('apollo-review-at');
-    if (first && (!byId[at] || stateOf(at)[0] === 'good')) {   // start at the first photo still to review
-      const next = FRAMES.find(f => stateOf(f.id)[0] !== 'good');
-      if (next) show(next.id);
+    if (first) {   // open on the chosen view, at the first photo still to review
+      const view = store.get('apollo-review-filter') || 'todo+recent';
+      $('filter').value = view;
+      applyFilter($('filter').value || 'todo+recent', view === 'todo+recent');
     }
     first = false;
   }, () => { $('offline').hidden = false; });

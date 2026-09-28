@@ -7,7 +7,7 @@ import { REPORT_ENDPOINT, REPO_URL } from '../config'
 // pre-filled GitHub issue.
 // With `audio` ({url, at}), a button plays the 12 seconds around the line,
 // as often as needed, while the report is written.
-export default function ReportDialog({ title, context, audio, onClose }) {
+export default function ReportDialog({ title, context, audio, onClose, placeholder }) {
   const playerRef = useRef(null)
   const [playing, setPlaying] = useState(false)
   function replay() {
@@ -110,7 +110,7 @@ export default function ReportDialog({ title, context, audio, onClose }) {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="e.g. the text says 116 but you can hear 176; this line is Aldrin, not Armstrong; or the story behind this moment (with a source)"
+                placeholder={placeholder || "e.g. the text says 116 but you can hear 176; this line is Aldrin, not Armstrong; or the story behind this moment (with a source)"}
                 required
               />
             </label>

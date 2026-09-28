@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react'
 import PhotoLightbox from './PhotoLightbox'
 import { useFrames, photosForMomentAll } from '../lib/archiveFrames'
+import { formatGet } from '../lib/liveStatus'
+import { PHASES } from '../data/phases'
 
 const DAY_MS = 24 * 3600 * 1000
 const MAX = 16
@@ -29,7 +31,16 @@ export default function MomentPhotos({ mission, clip, phase }) {
           </button>
         ))}
       </div>
-      {open !== null && <PhotoLightbox photos={photos} index={open} onIndex={setOpen} onClose={() => setOpen(null)} />}
+      {open !== null && (
+        <PhotoLightbox
+          photos={photos}
+          index={open}
+          onIndex={setOpen}
+          onClose={() => setOpen(null)}
+          missionName={mission.name}
+          where={`with GET ${formatGet(clip.getSeconds)}${PHASES[phase] ? `, ${PHASES[phase].label}` : ''} ("Photos from this part of the flight")`}
+        />
+      )}
     </section>
   )
 }

@@ -109,6 +109,8 @@ TIDY_CASES = [
     ('12', '0key-dokey.', 'Okey-dokey.'),
     ('14', '0keydoke. Thank you.', 'Okeydoke. Thank you.'),
     ('12', 'Ckay. Go get that core tube.', 'Okay. Go get that core tube.'),
+    ('11', '6o ahead.', 'Go ahead.'),
+    ('11', 'as per PGNS-20 of G&N dictionary. Over. Pat_e 43', 'as per PGNS-20 of G&N dictionary. Over.'),
     ('12', "Maybe we did it. We']] have to see.", "Maybe we did it. We'll have to see."),
     ('12', 'Okay. PF_e 465 it looks like maybe', 'Okay. it looks like maybe'),   # a page stamp mid-line
     ('12', 'from halo Pace 950 crater, or coming up', 'from halo crater, or coming up'),

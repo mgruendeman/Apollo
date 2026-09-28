@@ -295,6 +295,7 @@ def _tidy(text, vocab):
     text = re.sub(r"(?<=\w)'\]\]", "'ll", text)                                   # "We']]", "it']]"
     text = re.sub(r"\b0(?=[a-z]{2,})", 'O', text)                                 # "0key-dokey", "0kay": a zero for O ("0h" is a misread 04)
     text = re.sub(r"\bCkay\b", 'Okay', text)
+    text = re.sub(r"\b6o\b", 'Go', text)                                            # "6o ahead."
     text = re.sub(r"\b[A-Z]*0[A-Z]+\b|\b[A-Z]+0[A-Z]*\b",                    # "LIFT-0FF", "0PS", "ENGINE 0VERRIDE": a zero in a capital word
                   lambda m: m.group().replace('0', 'O') if m.group().replace('0', 'O').lower() in vocab else m.group(), text)
     text = re.sub(r"\s*\bclipping of words and phrases\.?(?:\s+\d{3,5}\b)?", '', text)   # the tail of a page note on NASA's voice-operated recording
@@ -334,7 +335,7 @@ def _tidy(text, vocab):
     text = re.sub(r"\b(Roger) r\s*\.", r"\1.", text)                          # "Roger r ."
     text = _scrap_tail(text)                                                  # "... descent. ',F? , }_ /'"
     text = re.sub(r"\s+\S{0,3}(?:[a_g<]e|ag[eo]|_ge)\s+\d{3,4}\s*$", '', text)  # page numbers: "}'_ge 307", "iago 312"
-    text = re.sub(r"\s+[PF][a-z_?]{2}e\s+\d{2,4}\s*$", '', text)                 # "Pase 309", "Fage 12"
+    text = re.sub(r"\s+[PF][a-z_?]{2,3}e\s+\d{2,4}\s*$", '', text)               # "Pase 309", "Fage 12", "Pat_e 43"
     text = re.sub(r"\b([A-Za-z]{3,})- ([a-z]{2,})\b",                         # "sequenc- ing": split at a line end
                   lambda m: m.group(1) + m.group(2) if (m.group(1) + m.group(2)).lower() in vocab else m.group(), text)
     text = re.sub(r"\b(primary|secondary|number|bus|gimbal|motor|quad|tank|bottle|loop|step|channel|position|option|"
