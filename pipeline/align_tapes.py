@@ -6,8 +6,10 @@ Inputs, per mission:
   <media>/asr/NN/<tape>.json               every recognised word with its
                                            time on the tape (transcribe_tapes.py)
   data/nasa-transcripts/asNN-tec.json      NASA's air-to-ground transcript
-  public/transcripts/apolloNN.json         the journal transcript, used only
+  data/journal/transcripts/apolloNN.json   the journal transcript, used only
                                            to put names to NASA's speaker codes
+                                           (public/transcripts/ for a mission
+                                           the site still plays as clips)
 
 For every NASA line in a placed piece it looks for the line's words among
 the recognised words near where the piece puts it, and takes the time of

@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 import numpy as np
-from .common import ROOT, tokens, get_seconds
+from .common import journal_file, tokens, get_seconds
 from .ocr_repair import FIXES
 
 class FixNotApplied(Exception):
@@ -112,7 +112,7 @@ def use_journal_text(mission, lines):
     journal's transcript is the same conversation, corrected by hand. Where
     a line matches a journal line (same moment, mostly the same words), take
     the journal's wording and speaker. Returns how many lines changed."""
-    journal = json.loads((ROOT / 'public' / 'transcripts' / f'apollo{mission}.json').read_text())
+    journal = json.loads(journal_file('transcripts', mission).read_text())
     jl = sorted((get_seconds(l['get']) if not l['get'].startswith('-') else -get_seconds(l['get'][1:]), l['speaker'], l['text'])
                 for ls in journal.values() for l in ls if l.get('channel', 'air-to-ground') == 'air-to-ground')
     times = [x[0] for x in jl]

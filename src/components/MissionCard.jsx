@@ -9,7 +9,9 @@ export default function MissionCard({ mission }) {
       <p className="mission-card-dates">{mission.dates}</p>
       <p className="mission-card-summary">{mission.summary}</p>
       <div className="mission-card-footer">
-        {mission.status === 'archive' ? (
+        {mission.timeline ? (
+          <span className="badge badge-available">Whole mission, NASA&apos;s tapes</span>
+        ) : mission.status === 'archive' ? (
           <span className="badge badge-available">Full NASA tapes</span>
         ) : available ? (
           <span className="badge badge-available">

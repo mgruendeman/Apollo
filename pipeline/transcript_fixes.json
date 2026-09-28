@@ -1714,6 +1714,38 @@
    "g": 403669,
    "from": "the rock boxes into the land.",
    "to": "the rock boxes into the LM."
+  },
+  {
+   "g": 369958.7,
+   "text": "We copy you down, Eagle.",
+   "split": "Houston, Tranquility Base here.",
+   "speaker": "Armstrong"
+  },
+  {
+   "g": 369966.3,
+   "from": "THE EAGLE HAS LANDED.",
+   "to": "The Eagle has landed.",
+   "whole": true
+  },
+  {
+   "g": 393853,
+   "from": "I'm going to step off the _ now.",
+   "to": "I'm going to step off the LM now."
+  },
+  {
+   "g": 393864,
+   "from": "THAT'S ONE SMALL STEP POR MAN, ONE GIANT LEAP",
+   "to": "That's one small step for man, one giant leap for mankind."
+  },
+  {
+   "g": 393887.1,
+   "from": "pick it up loosely with toe.",
+   "to": "pick it up loosely with my toe."
+  },
+  {
+   "g": 369947,
+   "from": "Descent EN._._L, · COMMAND _ OVERRIDE - OFF.",
+   "to": "Descent ENGINE COMMAND OVERRIDE - OFF."
   }
  ],
  "12": [
@@ -1921,6 +1953,11 @@
    "g": 810725,
    "from": "everything e2se is per checklist",
    "to": "everything else is per checklist"
+  },
+  {
+   "g": 0,
+   "from": "Lift-off. The clock's ming.",
+   "to": "Lift-off. The clock's running."
   }
  ],
  "14": [
@@ -1928,6 +1965,11 @@
    "g": 396697,
    "from": "going for a lock.",
    "to": "going for a lockon."
+  },
+  {
+   "g": 3,
+   "from": "LIFT-0FF. Clock starts.",
+   "to": "LIFT-OFF. Clock starts."
   }
  ]
 }

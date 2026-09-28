@@ -65,7 +65,7 @@ function bisectRight(a, x) { let lo = 0, hi = a.length; while (lo < hi) { const 
 // the file and the second in it where mission time g plays (as the pipeline works it out)
 function audioFor(g) {
   const s = segs[bisectRight(gets, g) - 1]
-  if (!s || s.journal || g > s.get + (s.to - s.from) * s.rate) return null
+  if (!s || g > s.get + (s.to - s.from) * s.rate) return null
   const src = ext ? `/api/review/media/audio/${Number(mission)}/${s.tape}${ext}` : `https://archive.org/download/Apollo${Number(mission)}Audio/${s.tape}.mp3`
   return { src, at: Math.round((s.from + (g - s.get) / s.rate) * 10) / 10 }
 }

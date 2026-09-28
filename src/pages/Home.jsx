@@ -4,6 +4,12 @@ import MissionCard from '../components/MissionCard'
 import { missions } from '../data/missions'
 import { getAllLiveMissions, formatGet } from '../lib/liveStatus'
 
+// "Apollo 11, 12 and 14"
+function listOf(ms) {
+  const n = ms.map((m) => m.number)
+  return `Apollo ${n.length > 1 ? `${n.slice(0, -1).join(', ')} and ${n[n.length - 1]}` : n[0]}`
+}
+
 export default function Home() {
   const [now, setNow] = useState(() => new Date())
 
@@ -13,16 +19,18 @@ export default function Home() {
   }, [])
 
   const liveMissions = useMemo(() => getAllLiveMissions(missions, now), [now])
+  const onTapes = listOf(missions.filter((m) => m.timeline))
+  const onClips = listOf(missions.filter((m) => m.clipsFile && !m.timeline))
 
   return (
     <div className="page">
       <header className="hero">
         <p className="eyebrow">GET 000:00:00 — a work in progress</p>
-        <h1>Apollo Audio Archive</h1>
+        <h1>Apollo Rewind</h1>
         <p className="lede">
-          The Apollo lunar missions, told in the astronauts' own voices —
-          thousands of clips across all eleven flights, from launch to
-          splashdown, pulled straight from the original NASA recordings.
+          The Apollo Moon missions in the astronauts&apos; own voices. {onTapes} play end to end from NASA&apos;s own
+          tapes, launch to splashdown, with the conversation written out alongside. The other flights have clips of
+          their key moments while I work through their tapes.
         </p>
         <nav className="home-nav">
           <Link to="/glossary" className="glossary-nav-link">
@@ -67,19 +75,19 @@ export default function Home() {
 
       <footer className="site-footer">
         <p>
-          Edited transcripts and photos © Apollo Audio Archive: free for non-commercial use with credit;{' '}
+          Edited transcripts and photos © Apollo Rewind: free for non-commercial use with credit;{' '}
           <Link to="/guide">see how you can use them</Link>. NASA&apos;s original recordings, transcripts and photographs
           are in the public domain.
         </p>
         <p>
-          Audio and transcripts sourced from the Apollo Flight Journal and
-          Apollo Lunar Surface Journal, public-domain NASA recordings
-          archived at{' '}
+          {onTapes}: NASA&apos;s tapes and air-to-ground transcripts. {onClips}: clips and transcripts from the Apollo
+          Flight Journal and Apollo Lunar Surface Journal, public-domain NASA recordings archived at{' '}
           <a href="https://apollojournals.org" target="_blank" rel="noreferrer">
             apollojournals.org
           </a>
-          . Each clip links back to its source page.
+          ; each clip links back to its source page.
         </p>
+        <p>Apollo Rewind is an independent project, not affiliated with or endorsed by NASA.</p>
       </footer>
     </div>
   )

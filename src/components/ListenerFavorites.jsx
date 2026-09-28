@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react'
 import { REACTIONS, reactionsAvailable, topReactions } from '../lib/reactions'
 
-// The mission's most-reacted transcript lines; tap one to hear it.
-export default function ListenerFavorites({ missionId, onPick }) {
+// The mission's most-reacted transcript lines; tap one to hear it. On a
+// tape mission (`tapesOnly`) only lines on the tapes count.
+export default function ListenerFavorites({ missionId, onPick, tapesOnly = false }) {
   const [top, setTop] = useState([])
   useEffect(() => {
     if (!reactionsAvailable) return undefined
     let live = true
-    topReactions(missionId).then((rows) => live && setTop(rows))
+    topReactions(missionId).then((rows) => live && setTop(tapesOnly ? rows.filter((r) => r.clip?.startsWith('tapes-')) : rows))
     return () => {
       live = false
     }
-  }, [missionId])
+  }, [missionId, tapesOnly])
   if (!top.length) return null
   return (
     <section className="listener-favorites">

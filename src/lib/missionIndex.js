@@ -1,8 +1,9 @@
 import { PHASES } from '../data/phases'
 
 // The site's own index of a mission: chapters by mission day and flight
-// phase ("Day 3 · Translunar Coast"), not the source journals' page
-// structure. Mission days are counted from liftoff, 24 hours each.
+// phase ("Day 3 · Translunar Coast"). Mission days are counted from
+// liftoff, 24 hours each. A tape mission's phases come from NASA's event
+// times (tapeChapters); a clip mission's from its clips (buildChapters).
 //
 // While the crew is split between the Moon and lunar orbit, clips from the
 // orbiting CSM are interleaved with the surface ones; they stay in the
@@ -17,14 +18,6 @@ const ASCENT_HOURS = 5
 
 // Powered descent to touchdown took about 12 minutes on every landing.
 const DESCENT_SECONDS = 13 * 60
-
-// The phase at a mission time, from the clip-based phase, corrected by the
-// landing time the mission data gives (clips can lag the descent).
-export function phaseAt(getSeconds, phase, landingSeconds) {
-  if (landingSeconds && getSeconds >= landingSeconds - DESCENT_SECONDS && getSeconds < landingSeconds) return 'landing'
-  if (landingSeconds && phase === 'landing' && getSeconds >= landingSeconds + 60) return 'surface'
-  return phase
-}
 
 export function chapterTitle(getSeconds, phase) {
   return `Day ${missionDay(getSeconds)} · ${PHASES[phase]?.label || phase}`
@@ -64,6 +57,54 @@ export function buildChapters(clips, rawPhases) {
     } else {
       chapters.push({ phase, day, startIndex: i, endIndex: i + 1, title: `Day ${day} · ${PHASES[phase]?.label || phase}` })
     }
+  }
+  return chapters
+}
+
+// A mission time written "hhh:mm:ss" (or "-hhh:mm:ss") in seconds.
+export function parseGet(get) {
+  const neg = get.startsWith('-')
+  const [h, m, s] = get.replace('-', '').split(':').map(Number)
+  return (neg ? -1 : 1) * (h * 3600 + m * 60 + s)
+}
+
+// Earth orbit insertion came about 11.5 minutes after liftoff on every
+// Saturn V flight.
+const ORBIT_INSERTION_SECONDS = 11 * 60 + 30
+
+// The flight phase at a mission time on a tape mission, from its events
+// (missions.js): NASA's times for each burn, the landing and liftoff.
+export function tapePhaseAt(mission, g) {
+  const e = mission.events
+  const at = (k) => parseGet(e[k])
+  if (g < ORBIT_INSERTION_SECONDS) return 'launch'
+  if (g < at('tli')) return 'earth-orbit'
+  if (g < at('loi')) return 'transit-to-moon'
+  if (g < mission.landingSeconds - DESCENT_SECONDS) return 'lunar-orbit'
+  if (g < mission.landingSeconds + 60) return 'landing'
+  if (g < at('liftoff')) return 'surface'
+  if (g < at('lmJettison')) return 'ascent'
+  if (g < at('tei')) return 'lunar-orbit'
+  if (g < at('cmSep')) return 'transit-to-earth'
+  return 'splashdown'
+}
+
+// A tape mission's chapters, by mission day and flight phase, over
+// [from, to]: [{ title, phase, day, from, to }].
+export function tapeChapters(mission, from, to) {
+  const cuts = new Set([from, to, ORBIT_INSERTION_SECONDS, mission.landingSeconds - DESCENT_SECONDS, mission.landingSeconds + 60])
+  for (const get of Object.values(mission.events)) cuts.add(parseGet(get))
+  for (let d = DAY; d < to; d += DAY) cuts.add(d)
+  const sorted = [...cuts].filter((c) => c >= from && c <= to).sort((a, b) => a - b)
+  const chapters = []
+  for (let i = 0; i + 1 < sorted.length; i++) {
+    const a = sorted[i], b = sorted[i + 1]
+    const phase = tapePhaseAt(mission, a)
+    const day = missionDay(a)
+    const last = chapters[chapters.length - 1]
+    // (a phase running a few minutes past midnight stays in the day it began)
+    if (last && last.phase === phase && (last.day === day || b - a < 3600)) last.to = b
+    else chapters.push({ phase, day, from: a, to: b, title: `Day ${day} · ${PHASES[phase]?.label || phase}` })
   }
   return chapters
 }

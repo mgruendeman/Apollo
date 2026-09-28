@@ -148,7 +148,7 @@ CALLSIGNS = {'11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipp
              '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
              '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
 MISSION = {'n': '11'}   # the mission being processed (set in main)
-DIGIT_LOOKS = {'1': '[1!il|It\]]', '2': '[2Zz&]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
+DIGIT_LOOKS = {'1': r'[1!il|It\]]', '2': '[2Zz&]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
 
 
 def _place(word):
@@ -292,6 +292,8 @@ def _tidy(text, vocab):
     text = re.sub(r"\bNei!", 'Neil', text)
     text = re.sub(r"\ba_d\b", 'and', text)
     text = re.sub(r"(?<=\w) '(s|ll|re|ve|d|t|m)\b", r"'\1", text)             # "That 's", "We 'll": a detached contraction
+    text = re.sub(r"\b[A-Z]*0[A-Z]+\b|\b[A-Z]+0[A-Z]*\b",                    # "LIFT-0FF", "0PS", "ENGINE 0VERRIDE": a zero in a capital word
+                  lambda m: m.group().replace('0', 'O') if m.group().replace('0', 'O').lower() in vocab else m.group(), text)
     text = re.sub(r"\s*\bclipping of words and phrases\.?(?:\s+\d{3,5}\b)?", '', text)   # the tail of a page note on NASA's voice-operated recording
     text = re.sub(r"(?<![\w'`.])i(?=(?:'(?:m|ll|ve|d)\b)|\s+(?:think|thought|was|had|have|can|can't|could|couldn't|did|didn't|do|"
                   r"don't|went|understand|guess|got|see|saw|know|knew|want|wanted|just|feel|felt|hope|mean|need|said|say|will|would|"

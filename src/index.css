@@ -2501,34 +2501,7 @@ a.astronaut-flight:hover {
   color: var(--text-dim);
 }
 
-/* whole mission from the tapes, or the journal's clips */
-.listen-switch {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-.listen-switch button {
-  text-align: left;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-}
-.listen-switch button span {
-  display: block;
-  font-weight: 400;
-  font-size: 0.78rem;
-  color: var(--text-dim);
-}
-.listen-switch button[aria-selected='true'] {
-  border-color: var(--accent);
-  background: var(--bg-panel-raised);
-}
+/* the whole mission from NASA's tapes */
 .tape-player {
   display: flex;
   align-items: center;
@@ -2551,9 +2524,6 @@ a.astronaut-flight:hover {
 }
 .tape-piece {
   fill: #3a4668;
-}
-.tape-piece.is-journal {
-  fill: #2a3350;
 }
 .tape-played {
   fill: var(--accent);

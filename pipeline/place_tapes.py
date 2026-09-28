@@ -107,7 +107,8 @@ def main():
     args = ap.parse_args()
     m = f'{int(args.mission):02d}'
     media = Path(args.media).expanduser()
-    clips = [c for c in json.loads((ROOT / 'src' / 'data' / 'clips' / f'apollo{m}.json').read_text())
+    moved = ROOT / 'data' / 'journal' / 'clips' / f'apollo{m}.json'   # (moved there once a mission is on the tapes)
+    clips = [c for c in json.loads((moved if moved.exists() else ROOT / 'src' / 'data' / 'clips' / f'apollo{m}.json').read_text())
              if c.get('durationSeconds', 0) >= MIN_CLIP_S]
     jdir = media / 'journal' / m
 

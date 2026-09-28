@@ -104,7 +104,10 @@ TIDY_CASES = [
     ('11', "And that 's about the summary. We 'll see.", "And that's about the summary. We'll see."),
     ('11', 'the DIRECT O2 valve', 'the DIRECT O2 valve'),   # real O2 stays
     ('11', 'AOS Canaries at 1 50 13', 'AOS Canaries at 1 50 13'),   # numbers untouched
-    ('11', 'We got you boresighted. clipping of words and phrases.', 'We got you boresighted.'),   # a page note's tail
+    ('11', 'We got you boresighted. clipping of words and phrases.', 'We got you boresighted.'),
+    ('14', 'LIFT-0FF. Clock starts.', 'LIFT-OFF. Clock starts.'),   # a zero for O in a capital word
+    ('11', 'the 0PS pressure readings', 'the OPS pressure readings'),
+    ('11', 'PROP DISPLAYS/ ENGINE 0VERRIDE/LOGIC, CLOSE.', 'PROP DISPLAYS/ ENGINE OVERRIDE/LOGIC, CLOSE.'),   # a page note's tail
     ('11', 'Traction *** seems quite good. clipping of words and phrases. 1234', 'Traction *** seems quite good.'),
     ('11', "P52 is done. I'm looking at the DSKY.", "P52 is done. I'm looking at the DSKY."),   # nothing to fix
 ]

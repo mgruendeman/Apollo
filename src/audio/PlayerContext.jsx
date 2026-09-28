@@ -77,7 +77,7 @@ export function PlayerProvider({ children }) {
         ? `GET ${clip.get} · ${clip.chapterTitle || stripSourcePrefix(clip.sourceLabel)}`
         : clip.sourceLabel,
       artist: session.mission.name,
-      album: 'Apollo Audio Archive',
+      album: 'Apollo Rewind',
     })
     navigator.mediaSession.setActionHandler('play', startPlayback)
     navigator.mediaSession.setActionHandler('pause', () => audioRef.current?.pause())

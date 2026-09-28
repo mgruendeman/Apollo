@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams, Navigate } from 'react-router-dom'
 import AudioPlayer from '../components/AudioPlayer'
 import TranscriptPanel from '../components/TranscriptPanel'
-import TapePlayer from '../components/TapePlayer'
+import TapeMission from './TapeMission'
 import MissionPhaseDiagram from '../components/MissionPhaseDiagram'
 import MissionTimeline from '../components/MissionTimeline'
 import MissionPhoto from '../components/MissionPhoto'
@@ -15,13 +15,12 @@ import PhotoGallery from '../components/PhotoGallery'
 import GlossaryPanel from '../components/GlossaryPanel'
 import ReportIssueButton from '../components/ReportIssueButton'
 import { findMission } from '../data/missions'
-import { photosByClipId } from '../data/photos'
+import { photosByHighlight } from '../data/photos'
 import { archiveRecordings } from '../data/archiveRecordings'
 import { computePhases } from '../data/phases'
 import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
-import { buildChapters, chapterTitle, phaseAt } from '../lib/missionIndex'
-import { useMissionTape, withJournalFill, withoutAnnouncer } from '../lib/missionTape'
+import { buildChapters } from '../lib/missionIndex'
 
 // The journals' "-pao" clips are the public broadcast: the crew's voices
 // with NASA's announcer talking in between (and sometimes over them). Those
@@ -49,31 +48,23 @@ function readCommentary() {
   }
 }
 
-const LISTEN_KEY = 'apollo-listen'
-const FILL_KEY = 'apollo-journal-fill'
-function readListen() {
-  try {
-    return localStorage.getItem(LISTEN_KEY) || 'tapes'
-  } catch {
-    return 'tapes'
-  }
-}
-const toSeconds = (get) => {
-  const neg = get.startsWith('-')
-  const [h, m, s] = get.replace('-', '').split(':').map(Number)
-  return (neg ? -1 : 1) * (h * 3600 + m * 60 + s)
-}
-
 function nearestClipIndex(clips, getSeconds) {
   let i = clips.findIndex((c) => c.getSeconds >= getSeconds)
   if (i === -1) i = clips.length - 1
   return i
 }
 
+// A mission with NASA's tapes plays them end to end (TapeMission); the rest
+// play the journals' clips, one at a time.
 export default function Mission() {
   const { id } = useParams()
-  const [searchParams, setSearchParams] = useSearchParams()
   const mission = findMission(id)
+  if (mission?.timeline) return <TapeMission key={mission.id} mission={mission} />
+  return <ClipMission key={id} mission={mission} />
+}
+
+function ClipMission({ mission }) {
+  const [searchParams, setSearchParams] = useSearchParams()
   const [allClips, setClips] = useState(null)
   const [commentary, setCommentary] = useState(readCommentary)
   const skippable = useMemo(() => (allClips ? coveredPao(allClips) : new Set()), [allClips])
@@ -106,82 +97,6 @@ export default function Mission() {
   const [now, setNow] = useState(() => new Date())
   const didAutoJump = useRef(false)
   const playerRef = useRef(null)
-
-  // Whole-mission playback from NASA's tapes, where a mission has them.
-  const [rawTimeline, setRawTimeline] = useState(null)
-  const [listen, setListenState] = useState(readListen)
-  const [fill, setFillState] = useState(() => {
-    try {
-      return localStorage.getItem(FILL_KEY) !== 'off'
-    } catch {
-      return true
-    }
-  })
-  function setFill(next) {
-    try {
-      localStorage.setItem(FILL_KEY, next ? 'on' : 'off')
-    } catch {
-      /* just for this visit */
-    }
-    setFillState(next)
-  }
-  const timeline = useMemo(() => {
-    const filled = fill ? withJournalFill(rawTimeline, clips) : rawTimeline
-    return commentary ? filled : withoutAnnouncer(filled)
-  }, [rawTimeline, clips, fill, commentary])
-  const tape = useMissionTape(timeline, mission?.number)
-  const tapeMode = !!timeline && listen === 'tapes'
-  function setListen(next) {
-    try {
-      localStorage.setItem(LISTEN_KEY, next)
-    } catch {
-      /* just for this visit */
-    }
-    if (next === 'clips') tape.pause()
-    else if (player.playing) player.toggle()
-    setListenState(next)
-  }
-
-  useEffect(() => {
-    if (!mission?.timeline) return undefined
-    let canceled = false
-    fetch(`${import.meta.env.BASE_URL}timeline/${mission.timeline}.json`)
-      .then((r) => r.json())
-      .then((data) => !canceled && setRawTimeline(data))
-      .catch(() => {})
-    return () => {
-      canceled = true
-    }
-  }, [mission])
-
-  // Start the tapes a few minutes before liftoff.
-  const tapeCued = useRef(false)
-  useEffect(() => {
-    if (!timeline || tapeCued.current) return
-    tapeCued.current = true
-    // ?at=<seconds> opens the tapes at that moment (the reviewer's transcript
-    // list links here); otherwise start a few minutes before liftoff.
-    const at = searchParams.get('at')
-    if (at !== null) {
-      setListen('tapes')
-      tape.seek(Number(at), false)
-      searchParams.delete('at')
-      setSearchParams(searchParams, { replace: true })
-      return
-    }
-    tape.seek(Math.max(timeline.segments[0].get, -300), false)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [timeline])
-
-  // One thing plays at a time: the tapes or the journal's clips.
-  useEffect(() => {
-    if (tape.playing && player.playing) player.toggle()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tape.playing])
-  useEffect(() => {
-    if (player.playing && tape.playing) tape.pause()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [player.playing])
 
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 60000)
@@ -230,10 +145,7 @@ export default function Mission() {
     if (!clips || didAutoJump.current || searchParams.get('live') !== '1') return
     didAutoJump.current = true
     const status = getLiveStatus(mission, new Date())
-    if (status && mission.timeline && readListen() === 'tapes') {
-      tape.setRealTime(true)
-      tape.seek(status.getSeconds, false)
-    } else if (status) {
+    if (status) {
       const i = nearestClipIndex(clips, status.getSeconds)
       if (isLoaded || !player.playing) player.cue(mission, clips, i)
       else setCuedIndex(i)
@@ -293,8 +205,7 @@ export default function Mission() {
   // Picking a clip further down the page (the timeline) brings the player
   // and its transcript into view.
   function selectFromTimeline(i) {
-    if (tapeMode) tape.seek(clips[i].getSeconds, true)
-    else selectClip(i)
+    selectClip(i)
     playerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
@@ -310,23 +221,14 @@ export default function Mission() {
   function jumpToHighlight(id) {
     const i = clips.findIndex((c) => c.id === id)
     if (i === -1) return
-    if (tapeMode) tape.seek(clips[i].getSeconds, true)
-    else selectClip(i)
+    selectClip(i)
   }
 
   function jumpToLive() {
     const status = getLiveStatus(mission, new Date())
     if (!status) return
-    if (tapeMode) {
-      tape.setRealTime(true)
-      tape.seek(status.getSeconds, true)
-    } else selectClip(nearestClipIndex(clips, status.getSeconds))
+    selectClip(nearestClipIndex(clips, status.getSeconds))
   }
-
-  // The journal clip at (or last before) the tapes' position: its phase and chapter.
-  let tapeClipIndex = 0
-  if (tapeMode) while (tapeClipIndex + 1 < clips.length && clips[tapeClipIndex + 1].getSeconds <= tape.get) tapeClipIndex++
-  const tapePhase = tapeMode ? phaseAt(tape.get, phases[tapeClipIndex], mission.landingSeconds) : null
 
   return (
     <div className="page">
@@ -343,7 +245,7 @@ export default function Mission() {
           {clips.length} audio clips · GET {clips[0].get} to{' '}
           {clips[clips.length - 1].get}
         </p>
-        {skippable.size > 0 && !tapeMode && (
+        {skippable.size > 0 && (
           <label className="commentary-toggle">
             <input type="checkbox" checked={commentary} onChange={toggleCommentary} />
             Mission Control announcer
@@ -383,53 +285,15 @@ export default function Mission() {
 
       <ListenerFavorites
         missionId={mission.id}
-        onPick={(id, get) => {
-          if (id.startsWith('tapes-') && get) {
-            if (!tapeMode) setListen('tapes')
-            tape.seek(toSeconds(get), true)
-            playerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            return
-          }
+        onPick={(id) => {
           const i = clips.findIndex((c) => c.id === id)
           if (i === -1) return
-          if (tapeMode) setListen('clips')
           selectClip(i)
           playerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }}
       />
 
       <section className="player-section" ref={playerRef}>
-        {timeline && (
-          <div className="listen-switch" role="tablist" aria-label="How to listen">
-            <button type="button" role="tab" aria-selected={tapeMode} onClick={() => setListen('tapes')}>
-              Whole mission
-              <span>NASA's tapes, end to end</span>
-            </button>
-            <button type="button" role="tab" aria-selected={!tapeMode} onClick={() => setListen('clips')}>
-              Highlight clips
-              <span>{clips.length} moments, with photos</span>
-            </button>
-          </div>
-        )}
-        {tapeMode ? (
-          <TapePlayer
-            mission={mission}
-            tape={tape}
-            lines={timeline.lines}
-            start={Math.min(0, timeline.segments[0].get)}
-            end={mission.durationSeconds}
-            phase={tapePhase}
-            fill={fill}
-            onFill={setFill}
-            announcer={commentary}
-            onAnnouncer={toggleCommentary}
-            chapter={tapePhase === phases[tapeClipIndex] ? clips[tapeClipIndex].chapterTitle : chapterTitle(tape.get, tapePhase)}
-            clips={clips}
-            clipIndex={tapeClipIndex}
-            onTermClick={setActiveGlossaryEntry}
-          />
-        ) : (
-        <>
         <div className="player-top">
           <div className="player-top-text">
             <p className="get-clock">GET {moment.get}</p>
@@ -441,7 +305,7 @@ export default function Mission() {
           <MissionPhaseDiagram phase={phase} mission={mission} />
         </div>
         <AudioPlayer mission={mission} clips={clips} index={activeIndex} />
-        <MissionPhoto photo={photosByClipId[moment.id]} />
+        <MissionPhoto photo={photosByHighlight[moment.id]} />
         <MomentPhotos mission={mission} clip={moment} phase={phase} />
         {activeLines.length > 0 ? (
           <TranscriptPanel
@@ -501,8 +365,6 @@ export default function Mission() {
             Next clip →
           </button>
         </div>
-        </>
-        )}
       </section>
 
       <MissionTimeline
@@ -526,7 +388,7 @@ export default function Mission() {
           lines={activeLines}
           currentTime={currentTime}
           phase={phase}
-          highlightPhoto={photosByClipId[moment.id]}
+          highlightPhoto={photosByHighlight[moment.id]}
           onClose={closeImmersive}
           onLineSeek={seekToLine}
           report={lineReportInfo}

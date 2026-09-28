@@ -11,7 +11,7 @@ const tapeClip = (h) => `tapes-h${h}`
 // The whole mission from NASA's tapes: one scrubber for all ~8 days, the
 // recorded pieces shaded, and NASA's transcript following along an hour at
 // a time. `tape` is useMissionTape()'s state and controls.
-export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, fill, onFill, announcer, onAnnouncer, onTermClick, clips, clipIndex }) {
+export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, announcer, onAnnouncer, onTermClick }) {
   const [drag, setDrag] = useState(null)
   const [immersive, setImmersive] = useState(false)
   const closeImmersive = useCallback(() => setImmersive(false), [])
@@ -35,20 +35,18 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
   const shownLines = useMemo(() => hours.flatMap((h) => byHour.get(h)), [byHour, hours.join()]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const piece = tape.piece
-  const source = tape.inGap ? null : piece?.journal
-    ? { label: 'A clip in place of the tapes (they have a gap here)', href: piece.url }
-    : piece && {
+  const source = !tape.inGap && piece && {
         label: `NASA tape ${piece.tape}${tape.url?.startsWith('https://archive.org') ? '' : ', our cleaned copy'}`,
         href: tape.url?.startsWith('https://archive.org') ? `https://archive.org/details/Apollo${mission.number}Audio` : tape.url,
       }
 
   const report = {
     missionName: mission.name,
-    clipId: piece ? `the whole-mission recording (${piece.journal ? 'gap clip ' : 'NASA tape '}${piece.tape})` : 'the whole-mission recording',
+    clipId: piece ? `the whole-mission recording (NASA tape ${piece.tape})` : 'the whole-mission recording',
     audioUrl: tape.url,
     sourceUrl: source?.href,
     // where a line plays in that file, so the report dialog can replay it
-    audioAt: (g) => (piece && !piece.journal ? piece.from + (g - piece.get) / piece.rate : null),
+    audioAt: (g) => (piece ? piece.from + (g - piece.get) / piece.rate : null),
   }
 
   useEffect(() => {
@@ -56,7 +54,7 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
     navigator.mediaSession.metadata = new MediaMetadata({
       title: `GET ${formatGetSigned(tape.get).slice(0, -3)} · whole mission`,
       artist: mission.name,
-      album: 'Apollo Audio Archive',
+      album: 'Apollo Rewind',
     })
     navigator.mediaSession.setActionHandler('play', tape.toggle)
     navigator.mediaSession.setActionHandler('pause', tape.pause)
@@ -104,7 +102,7 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
             {tape.segments.map((s, i) => (
               <rect
                 key={i}
-                className={s.journal ? 'tape-piece is-journal' : 'tape-piece'}
+                className="tape-piece"
                 x={s.get - start}
                 width={Math.max((s.to - s.from) * s.rate, span / 2000)}
                 y="0"
@@ -156,23 +154,11 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
         </span>
       </label>
 
-      <label className="commentary-toggle">
-        <input type="checkbox" checked={fill} onChange={(e) => onFill(e.target.checked)} />
-        Fill gaps with clips
-        <span>
-          {fill
-            ? "On: where NASA's tapes have no recording, a short clip of that moment plays in its place."
-            : "Off: only NASA's tapes play."}
-        </span>
-      </label>
-
-      {clips?.[clipIndex] && <MomentPhotos mission={mission} clip={{ ...clips[clipIndex], getSeconds: tape.get }} phase={phase} />}
+      <MomentPhotos mission={mission} clip={{ getSeconds: tape.get }} phase={phase} />
 
       {immersive && (
         <ImmersiveView
           mission={mission}
-          clips={clips}
-          index={clipIndex}
           lines={shownLines}
           currentTime={tape.get}
           get={tape.get}

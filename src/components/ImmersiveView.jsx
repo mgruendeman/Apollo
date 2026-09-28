@@ -88,12 +88,12 @@ export default function ImmersiveView({
   }, [glossaryEntry])
   const reportOpen = useRef(false)
   const closeGlossary = useCallback(() => setGlossaryEntry(null), [])
-  const clip = clips[index]
+  const at = get ?? clips[index].getSeconds   // (the tapes give the mission time; a clip, its start)
 
   // Photos depend only on the day, phase and any highlight photo, so the
   // slideshow keeps going across clip changes within the same stretch.
   const dayMs = 24 * 3600 * 1000
-  const utcDay = Math.floor((Date.parse(mission.launchUtc) + clip.getSeconds * 1000) / dayMs)
+  const utcDay = Math.floor((Date.parse(mission.launchUtc) + at * 1000) / dayMs)
   const frames = useFrames(mission.id)
   const poolKey = `${phase}-${utcDay}-${highlightPhoto?.src || ''}-${frames ? 'all' : 'nasa'}`
 
@@ -154,7 +154,7 @@ export default function ImmersiveView({
       <header className="immersive-top">
         <div>
           <span className="immersive-mission">{mission.name}</span>
-          <span className="immersive-get">GET {get !== undefined ? formatGetSigned(get) : formatGet(clip.getSeconds + currentTime)}</span>
+          <span className="immersive-get">GET {get !== undefined ? formatGetSigned(get) : formatGet(at + currentTime)}</span>
           {PHASES[phase] && <span className="immersive-phase">{PHASES[phase].label}</span>}
         </div>
         <button type="button" className="immersive-close" onClick={onClose} aria-label="Exit full-screen view">
@@ -166,7 +166,7 @@ export default function ImmersiveView({
 
       <div className="immersive-transcript-frame">
       <div className="immersive-transcript" ref={listRef} {...listProps}>
-        {shown.length === 0 && <p className="immersive-empty">No transcript for this clip.</p>}
+        {shown.length === 0 && <p className="immersive-empty">No transcript here.</p>}
         {shown.map(({ line, i, text }) => (
           // A div, not a button: glossary terms inside are buttons themselves.
           <div

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { classifyEventType, EVENT_TYPE_META } from '../data/eventType'
 import { buildChapters } from '../lib/missionIndex'
-import { photosByClipId } from '../data/photos'
+import { photosByHighlight } from '../data/photos'
 import { PHASES } from '../data/phases'
 import PhaseIcon from './PhaseIcon'
 
@@ -124,7 +124,7 @@ export default function MissionTimeline({ mission, clips, transcripts, phases, a
 
 function TimelineClipRow({ clip, type, preview, chapterLabel, isActive, onSelect }) {
   const meta = EVENT_TYPE_META[type]
-  const photo = photosByClipId[clip.id]
+  const photo = photosByHighlight[clip.id]
   return (
     <li>
       <button

@@ -18,18 +18,18 @@ export default function Guide() {
       </header>
 
       <section>
-        <h2>Two ways to listen</h2>
+        <h2>Listening</h2>
         <dl className="guide-list">
-          <dt>Whole mission</dt>
+          <dt>The whole mission</dt>
           <dd>
-            NASA&apos;s own tapes, played end to end from before launch to splashdown. Drag the bar to go anywhere in the
-            mission, or pick a moment from the timeline below the player. Shaded stretches of the bar are where there&apos;s
-            a recording. (Apollo 11 so far, with more missions on the way.)
+            Apollo 11, 12 and 14 play from NASA&apos;s own tapes, end to end from before launch to splashdown. Drag the bar
+            to go anywhere in the mission, or pick a moment from the timeline below the player. Shaded stretches of the bar
+            are where there&apos;s a recording. More missions are on the way.
           </dd>
-          <dt>Highlight clips</dt>
+          <dt>Clips</dt>
           <dd>
-            Short clips of the mission&apos;s key moments, each with its photos. Tick &ldquo;Keep playing through the
-            mission&rdquo; to run from one to the next.
+            The other missions, until their tapes are done, play short clips of their key moments, each with its photos.
+            Tick &ldquo;Keep playing through the mission&rdquo; to run from one to the next.
           </dd>
         </dl>
         <h3>Switches on the player</h3>
@@ -47,8 +47,6 @@ export default function Guide() {
             him and the crew on one track, so where he talks over the crew he can&apos;t be taken out; those moments are
             marked in the transcript.
           </dd>
-          <dt>Fill gaps with clips</dt>
-          <dd>Where NASA&apos;s tapes have no recording, a short clip of that moment plays in its place.</dd>
         </dl>
       </section>
 
@@ -128,14 +126,21 @@ export default function Guide() {
           air-to-ground transcripts, timed to the audio by speech recognition and repaired from the tapes where the scan
           went wrong; the announcer&apos;s words are transcribed from the tapes themselves.
         </p>
+        <p>
+          The missions still on clips play them from the Apollo Flight Journal and Apollo Lunar Surface Journal (
+          <a href="https://apollojournals.org" target="_blank" rel="noreferrer">
+            apollojournals.org
+          </a>
+          ), with their transcripts; each clip links back to its source page.
+        </p>
       </section>
 
       <section id="use">
         <h2>Using the transcripts and photos</h2>
         <p>
-          The edited transcripts and processed photos on this site are &copy; Apollo Audio Archive. You&apos;re welcome to
+          The edited transcripts and processed photos on this site are &copy; Apollo Rewind. You&apos;re welcome to
           use them free of charge for non-commercial purposes, such as teaching, study, research and personal projects,
-          with credit to the Apollo Audio Archive and a link back to this site.
+          with credit to Apollo Rewind and a link back to this site.
         </p>
         <p>
           Commercial use (anything sold, or used to promote something sold) needs my permission first:{' '}
@@ -143,7 +148,8 @@ export default function Guide() {
         </p>
         <p>
           NASA&apos;s original recordings, transcripts and photographs are in the public domain, and none of this limits
-          what you can do with those originals.
+          what you can do with those originals. Apollo Rewind is an independent project, not affiliated with or endorsed
+          by NASA.
         </p>
       </section>
 

@@ -61,7 +61,7 @@ export function useMissionTape(timeline, mission) {
     (i, k, g) => {
       const s = segments[k]
       const a = el(i)
-      const url = s.url || tapeUrl(mission, s.tape, timeline.audio)
+      const url = tapeUrl(mission, s.tape, timeline.audio)
       const t = s.from + Math.max(0, g - s.get) / s.rate
       if (a.dataset.tape !== s.tape) {
         a.dataset.tape = s.tape
@@ -98,6 +98,7 @@ export function useMissionTape(timeline, mission) {
       seg.current = k
       gapFrom.current = null
       setInGap(false)
+      setGet(g) // (the clock moves now, not once the tape has loaded)
       const a = cueOn(i, k, g)
       if (play) {
         setLoading(true)
@@ -140,8 +141,8 @@ export function useMissionTape(timeline, mission) {
     [segments, playing, startPiece, cueOn],
   )
 
-  // The pieces can change under the player (the journal-clip fill switched
-  // on or off): pick up at the same mission time in the new set.
+  // The pieces can change under the player (the announcer switched on or
+  // off): pick up at the same mission time in the new set.
   const now = useRef({ get, playing })
   now.current = { get, playing }
   const firstSegments = useRef(true)
@@ -261,31 +262,8 @@ export function useMissionTape(timeline, mission) {
     pause,
     segments,
     piece: segments[seg.current],
-    url: segments[seg.current] && (segments[seg.current].url || tapeUrl(mission, segments[seg.current].tape, timeline?.audio)),
+    url: segments[seg.current] && tapeUrl(mission, segments[seg.current].tape, timeline?.audio),
   }
-}
-
-// The journal's clips fill what the tapes don't cover: every stretch of a
-// clip outside the tape pieces (and outside clips already used) becomes a
-// piece of its own, so the mission plays on through the tapes' gaps.
-export function withJournalFill(timeline, clips) {
-  if (!timeline || !clips) return timeline
-  const covered = timeline.segments.map((s) => [s.get, endGet(s)])
-  const pieces = []
-  for (const c of [...clips].sort((a, b) => a.getSeconds - b.getSeconds)) {
-    if (!c.durationSeconds || !c.audioUrl) continue
-    let parts = [[c.getSeconds, c.getSeconds + c.durationSeconds]]
-    for (const [a, b] of covered) {
-      if (b <= parts[0]?.[0] || a >= parts[parts.length - 1]?.[1]) continue
-      parts = parts.flatMap(([x, y]) => (b <= x || a >= y ? [[x, y]] : [[x, a], [b, y]].filter(([p, q]) => q - p > 0)))
-    }
-    for (const [x, y] of parts) {
-      if (y - x < 8) continue
-      pieces.push({ tape: c.id, url: c.audioUrl, from: x - c.getSeconds, to: y - c.getSeconds, get: x, rate: 1, journal: true })
-      covered.push([x, y])
-    }
-  }
-  return { ...timeline, segments: [...timeline.segments, ...pieces].sort((a, b) => a.get - b.get) }
 }
 
 export function formatGetSigned(g) {

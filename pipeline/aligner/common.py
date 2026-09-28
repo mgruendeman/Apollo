@@ -8,6 +8,16 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent.parent
+
+
+def journal_file(kind, mission):
+    """The journal's clip index ('clips') or clip transcripts ('transcripts')
+    for a mission: in data/journal/ once the site plays the mission from the
+    tapes (the site no longer ships them), else where the site keeps them."""
+    moved = ROOT / 'data' / 'journal' / kind / f'apollo{mission}.json'
+    if moved.exists():
+        return moved
+    return ROOT / ('src/data/clips' if kind == 'clips' else 'public/transcripts') / f'apollo{mission}.json'
 TOKEN = re.compile(r"[a-z0-9]+")
 CREW = {'11': {'CDR': 'Armstrong', 'CMP': 'Collins', 'LMP': 'Aldrin'},
         '12': {'CDR': 'Conrad', 'CMP': 'Gordon', 'LMP': 'Bean'},
@@ -38,7 +48,7 @@ def speaker_names(mission, rows):
     "60 seconds" at the Apollo 14 landing), "LM Crew" is the spacecraft, and
     a label naming no one ("CC", "Flight controller", "Network (CapCom)")
     gives way to the nearest person the journal names."""
-    journal = json.loads((ROOT / 'public' / 'transcripts' / f'apollo{mission}.json').read_text())
+    journal = json.loads(journal_file('transcripts', mission).read_text())
     crew = CREW.get(mission, {})
     crew_names = set(crew.values())
     person = lambda s: (re.fullmatch(r"[A-Z][a-z]+(?:[A-Z][a-z]+)?", s) is not None and s not in crew_names

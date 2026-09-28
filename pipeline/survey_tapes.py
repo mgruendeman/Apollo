@@ -58,7 +58,8 @@ class Clock:
     shared three-word sequences, weighting rare ones."""
 
     def __init__(self, mission):
-        clips = json.loads((ROOT / 'public' / 'transcripts' / f'apollo{mission}.json').read_text())
+        moved = ROOT / 'data' / 'journal' / 'transcripts' / f'apollo{mission}.json'   # (moved there once a mission is on the tapes)
+        clips = json.loads((moved if moved.exists() else ROOT / 'public' / 'transcripts' / f'apollo{mission}.json').read_text())
         self.grams = defaultdict(list)   # trigram -> [get seconds]
         for lines in clips.values():
             for line in lines:
