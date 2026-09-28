@@ -239,6 +239,14 @@ export const glossary = [
     long: 'Spacecraft carried several antennas: simple "omni" antennas that radiate in most directions but have limited range, and a steerable high-gain antenna that had to be aimed at Earth for strong signal — necessary for the best voice quality and especially for TV transmissions across translunar distance.',
   },
   {
+    id: 'reacq',
+    abbr: [{ short: 'REACQ', full: 'Reacquisition' }],
+    terms: ['AUTO REACQ', 'REACQ'],
+    short: 'A track mode of the high-gain antenna: follow Earth, and if it slips out of reach, swing back to preset angles to catch it again.',
+    long: 'The Command and Service Module\'s steerable high-gain antenna had three track modes, set by a switch: MANUAL, AUTO and REACQ (reacquisition). In MANUAL it pointed where the crew set its pitch and yaw dials. In AUTO and REACQ it steered itself to stay locked on the signal from Earth as the spacecraft turned. The difference came when Earth moved beyond the antenna\'s reach: in REACQ it swung back to the angles on the dials, set so it would pick up Earth again as the spacecraft came round (during the slow barbecue roll, or orbiting the Moon), without the crew touching it. Mission Control asked for whichever mode suited the next maneuver.',
+    links: [{ label: 'Heroic Relics: the Apollo high-gain antenna', url: 'http://heroicrelics.org/stafford/apollo-high-gain-antenna/index.html' }],
+  },
+  {
     id: 'omni-antennas',
     terms: ['OMNI Alfa', 'OMNI Alpha', 'OMNI Bravo', 'OMNI Charlie', 'OMNI Delta', 'Omni Alfa', 'Omni Bravo', 'Omni Charlie', 'Omni Delta', 'OMNI', 'OMNIs', 'Omni'],
     short: 'The Command Module\'s four small always-on antennas, named A to D ("Alfa", "Bravo", "Charlie", "Delta").',

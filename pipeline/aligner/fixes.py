@@ -35,7 +35,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     "whole": true keys a fix on a line that is exactly its text (for short
     lines like "Roger."). "retime": true on a fix does the same for a line printed at the wrong
     time ("retime": N looks up to N seconds on, for a line printed further
-    off than the usual two minutes).
+    off than the usual two minutes). "at": seconds (with "text") puts a line
+    at a time a listener heard it, where the recogniser can't find it.
 
     A fix whose "from" text is gone is still satisfied if the line already
     reads as "to" (the OCR or a rule got there first); that counts as
@@ -43,7 +44,7 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     FixNotApplied (strict), so a re-read transcript can't silently lose a
     correction. Returns how many fixes changed something."""
     fixes = json.loads(FIXES.read_text()).get(mission, []) if FIXES.exists() else []
-    done, missing, fresh = 0, [], {}   # fresh: line -> how far on to look for it
+    done, missing, fresh, moved = 0, [], {}, False   # fresh: line -> how far on to look for it
     for f in fixes:
         key = f.get('from', f.get('text', ''))
         # "whole": the fix is for a line that is exactly this ("Roger."), not any holding it
@@ -76,6 +77,10 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                         fresh[id(l)] = 120
                 if f.get('retime'):
                     fresh[id(l)] = 120 if f['retime'] is True else f['retime']
+                if 'at' in f:
+                    l['g'] = f['at']
+                    l.pop('a', None)
+                    moved = True
             done += 1
             continue
         # nothing to change: is the line already the way the fix wants it?
@@ -87,6 +92,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
             ok = any(abs(l['g'] - f['g']) <= 3600 and _norm(f['text']) in _norm(l['t']) and l['s'] == f['speaker'] for l in lines)
         elif f.get('delete'):
             ok = not any(abs(l['g'] - f['g']) <= 600 and l['t'].strip() == f['text'].strip() for l in lines)
+        elif 'at' in f:
+            ok = any(abs(l['g'] - f['at']) <= 1 and _norm(f['text']) in _norm(l['t']) for l in lines)
         elif f.get('retime'):   # (only moves a line: its text is gone, so it's been changed since)
             ok = False
         elif f.get('ok'):   # (the line has changed since it was checked: the review list can judge it afresh)
@@ -103,6 +110,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     if fresh and segments is not None:
         from .timing import retime
         retime(lines, segments, tape_words, fresh)
+        moved = True
+    if moved:
         lines.sort(key=lambda l: l['g'])
     return done
 

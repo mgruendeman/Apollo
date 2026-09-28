@@ -106,6 +106,12 @@ TIDY_CASES = [
     ('11', 'AOS Canaries at 1 50 13', 'AOS Canaries at 1 50 13'),   # numbers untouched
     ('11', 'We got you boresighted. clipping of words and phrases.', 'We got you boresighted.'),
     ('14', 'LIFT-0FF. Clock starts.', 'LIFT-OFF. Clock starts.'),   # a zero for O in a capital word
+    ('12', '0key-dokey.', 'Okey-dokey.'),
+    ('14', '0keydoke. Thank you.', 'Okeydoke. Thank you.'),
+    ('12', 'Ckay. Go get that core tube.', 'Okay. Go get that core tube.'),
+    ('12', "Maybe we did it. We']] have to see.", "Maybe we did it. We'll have to see."),
+    ('12', 'Okay. PF_e 465 it looks like maybe', 'Okay. it looks like maybe'),   # a page stamp mid-line
+    ('12', 'from halo Pace 950 crater, or coming up', 'from halo crater, or coming up'),
     ('11', 'the 0PS pressure readings', 'the OPS pressure readings'),
     ('11', 'PROP DISPLAYS/ ENGINE 0VERRIDE/LOGIC, CLOSE.', 'PROP DISPLAYS/ ENGINE OVERRIDE/LOGIC, CLOSE.'),   # a page note's tail
     ('11', 'Traction *** seems quite good. clipping of words and phrases. 1234', 'Traction *** seems quite good.'),
@@ -388,3 +394,28 @@ def test_a_line_marked_fine_leaves_the_review_list(tmp_path, monkeypatch):
     assert score_lines(lines, [], {}, set()) == []
     del lines[0]['ok']
     assert len(score_lines(lines, [], {}, set())) == 1
+
+
+def test_a_press_conference_on_the_tape_marks_the_lines_under_it_not_on_this_recording():
+    from aligner.timing import mark_drowned_out
+    # the tape plays a press conference from 0 to 600 s; NASA's lines there aren't on it; then the crew are heard
+    press = [(t, t + 0.3, w, w) for t, w in zip(range(0, 600, 2), __import__('itertools').cycle(['question', 'about', 'the', 'rover', 'budget', 'answer']))]
+    crew = [(600 + 0.4 * i, 600 + 0.4 * i + 0.3, w, w) for i, w in enumerate('houston intrepid we read you loud and clear'.split())]
+    ws = press + crew
+    segments = [{'tape': 't', 'from': 0, 'to': 700, 'get': 1000, 'rate': 1.0}]
+    tape_words = {'t': (ws, [w[0] for w in ws])}
+    said = ['Intrepid, one additional word on the checklist cards.', 'Understand the checklist cards.', 'Pete, Jane sends her congratulations tonight.',
+            'Thank you, Houston.', 'We will be coming upon the PLSS check shortly.', 'Standing by for your readings.', 'Confirm you kept the bracket there.']
+    lines = [{'g': 1020 + 80 * i, 's': 'Gibson', 't': t} for i, t in enumerate(said)] + [{'g': 1601, 's': 'Bean', 't': 'Houston, Intrepid. We read you loud and clear.'}]
+    assert mark_drowned_out(lines, segments, tape_words) == 7
+    assert [bool(l.get('n')) for l in lines] == [True] * 7 + [False]
+
+
+def test_a_line_put_where_a_listener_heard_it(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    lines = [{'g': 1000, 's': 'Collins', 't': 'Will do.'}, {'g': 1010, 's': 'Duke', 't': 'Can you stationkeep with it, Mike?'}]
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'11': [{'g': 1000, 'text': 'Will do.', 'at': 1015}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    assert X.apply_fixes('11', lines) == 1
+    assert [(l['g'], l['t']) for l in lines] == [(1010, 'Can you stationkeep with it, Mike?'), (1015, 'Will do.')]

@@ -35,7 +35,7 @@ from aligner.common import ROOT, CREW, MIN_WORDS, SEARCH_S, tokens, speaker_name
 from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors
 from aligner.ocr_repair import FIXES, MISSION, repair_ocr, vocabulary
 from aligner.announcer import find_announcer
-from aligner.timing import mark_unheard, rebuild_from_tape, sync_to_tape, time_untimed
+from aligner.timing import mark_drowned_out, mark_unheard, rebuild_from_tape, sync_to_tape, time_untimed
 from aligner.fixes import apply_fixes, use_journal_text
 from aligner.review import score_lines
 from aligner.segments import trim_overlaps
@@ -159,6 +159,7 @@ def main():
     hand = apply_fixes(m, lines, strict=not args.no_strict, segments=segments, tape_words=tape_words)
     lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
     unheard = mark_unheard(lines, segments, tape_words, media / 'envelopes' / 'tapes' / m)
+    unheard += mark_drowned_out(lines, segments, tape_words)
     # Lines a reviewer should hear, ranked: written for the reviewer page,
     # and each line's doubt score travels with it ('q').
     vocab, _names, common, _spoken = vocabulary(tape_words)

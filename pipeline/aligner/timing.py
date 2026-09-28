@@ -225,7 +225,7 @@ def mark_unheard(lines, segments, tape_words, envelopes):
             continue
         sg = segments[k]
         t = sg['from'] + (l['g'] - sg['get']) / sg['rate']
-        if not (sg['from'] <= t <= sg['to']) or sg['tape'] not in tape_words or sg.get('journal'):
+        if not (sg['from'] <= t <= sg['to']) or sg['tape'] not in tape_words:
             continue
         starts = tape_words[sg['tape']][1]
         span = 6 + 0.3 * len(l['t'].split())
@@ -235,3 +235,39 @@ def mark_unheard(lines, segments, tape_words, envelopes):
     return n
 
 
+def mark_drowned_out(lines, segments, tape_words, run=6, minutes=5, share=0.2):
+    """NASA's lines where the tape plays something else: the broadcast
+    sometimes carried a press conference live instead of the air-to-ground
+    loop (Apollo 12, 130:34 to 130:58). The tape has speech there, but
+    none of the conversation NASA transcribed. A run of at least `run`
+    lines, over `minutes` or more, each with at most `share` of its words
+    heard around it, is marked 'n' (not on this recording), with the short
+    lines between them. Returns how many were marked."""
+    judged = []
+    for i, l in enumerate(lines):
+        if l.get('c') or l.get('n'):
+            continue
+        toks = [t for t in tokens(l['t']) if len(t) >= 4]
+        if not toks:
+            continue   # ("Go.", "Roger.": too short to judge, marked with their neighbours)
+        heard = heard_between(segments, tape_words, l['g'] - 10, l['g'] + 20)
+        if len(heard) < 5:
+            judged.append((i, None))   # (a quiet tape is mark_unheard's business)
+            continue
+        words = {h[3] for h in heard}
+        judged.append((i, sum(t in words for t in toks) / len(toks) <= share))
+    n = 0
+    start = None
+    for k, (i, deaf) in enumerate(judged + [(len(lines), False)]):
+        if deaf:
+            start = k if start is None else start
+            continue
+        if start is not None:
+            a, b = judged[start][0], judged[k - 1][0]
+            if k - start >= run and lines[b]['g'] - lines[a]['g'] >= minutes * 60:
+                for l in lines[a:b + 1]:
+                    if not l.get('c') and not l.get('n'):
+                        l['n'] = 1
+                        n += 1
+            start = None
+    return n

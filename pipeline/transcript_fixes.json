@@ -957,7 +957,7 @@
   },
   {
    "g": 123357,
-   "from": "_ 0kav_ _:A_d't_n [_lrec_$!y beh_d hi's'h,'a_\"are our ..,,_ optic_l[_.i_str_e_ts., the aextan t and the telescope",
+   "from": "_ Okav_ _:A_d't_n [_lrec_$!y beh_d hi's'h,'a_\"are our ..,,_ optic_l[_.i_str_e_ts., the aextan t and the telescope",
    "to": "Okay, and then directly behind his head are our optical instruments, the sextant and the telescope that we use to take sightings with."
   },
   {
@@ -1746,6 +1746,26 @@
    "g": 369947,
    "from": "Descent EN._._L, · COMMAND _ OVERRIDE - OFF.",
    "to": "Descent ENGINE COMMAND OVERRIDE - OFF."
+  },
+  {
+   "g": 350495,
+   "from": "]':agle,liouston. %_e haw yom- g,.yrotoz'quint_ angles",
+   "to": "Eagle, Houston. We have your gyro torquing angles"
+  },
+  {
+   "g": 468612,
+   "text": "Will do.",
+   "at": 468627
+  },
+  {
+   "g": 471008,
+   "speaker": "Unknown",
+   "text": "That's why we didn't read you up any newscast."
+  },
+  {
+   "g": 471008,
+   "text": "That's why we didn't read you up any newscast.",
+   "ok": true
   }
  ],
  "12": [
@@ -1958,6 +1978,174 @@
    "g": 0,
    "from": "Lift-off. The clock's ming.",
    "to": "Lift-off. The clock's running."
+  },
+  {
+   "g": 418197.1,
+   "from": "_,^ I sure \"_'_ ,,A,_ we s'm-e _u_,-'--'_u ..... w_,u_ to touch those cables.",
+   "to": "I sure will. But we sure don't want to touch those cables."
+  },
+  {
+   "g": 418197.1,
+   "speaker": "Bean",
+   "text": "I sure will. But we sure don't want to touch those cables."
+  },
+  {
+   "g": 418216,
+   "from": "we've got %o stay",
+   "to": "we've got to stay"
+  },
+  {
+   "g": 418234,
+   "from": "out I hour and 2 minutes",
+   "to": "out 1 hour and 2 minutes"
+  },
+  {
+   "g": 420794,
+   "from": "If you're going tn.",
+   "to": "If you're going to - -"
+  },
+  {
+   "g": 420824,
+   "from": "; _ _ I *_:-'- uL_x_ I'm ........... II_el.U_U UUt_ _UOUL LnaL way now.",
+   "to": "; and I think I'm headed out about that way now."
+  },
+  {
+   "g": 420842,
+   "from": "I'll go out hera",
+   "to": "I'll go out here"
+  },
+  {
+   "g": 420860,
+   "from": "matter ef fact",
+   "to": "matter of fact"
+  },
+  {
+   "g": 422810.1,
+   "from": "time line· Houston",
+   "to": "time line, Houston"
+  },
+  {
+   "g": 422829,
+   "from": "%_ooo! (Laughter)",
+   "to": "Ooooo! (Laughter)"
+  },
+  {
+   "g": 422829,
+   "from": "_at happened?",
+   "to": "What happened?",
+   "whole": true
+  },
+  {
+   "g": 422829,
+   "speaker": "Bean",
+   "text": "What happened?"
+  },
+  {
+   "g": 422971.6,
+   "from": "interesting *_ _,_,,+ +h;_ bubble",
+   "to": "interesting thing about this bubble"
+  },
+  {
+   "g": 422985.8,
+   "from": "enouKh",
+   "to": "enough"
+  },
+  {
+   "g": 423012,
+   "from": "edge, thc_gh.",
+   "to": "edge, though."
+  },
+  {
+   "g": 423023,
+   "from": "EVA That's okay.",
+   "to": "That's okay."
+  },
+  {
+   "g": 423033.0,
+   "from": "Y_?",
+   "to": "Yes?",
+   "whole": true
+  },
+  {
+   "g": 423033.0,
+   "speaker": "Bean",
+   "text": "Yes?"
+  },
+  {
+   "g": 423075,
+   "from": "','o,I don't either.",
+   "to": "No, I don't either."
+  },
+  {
+   "g": 423082,
+   "from": "Oeps. Got it.",
+   "to": "Oops. Got it."
+  },
+  {
+   "g": 423086,
+   "speaker": "Bean",
+   "text": "It sure wants to come up, doesn't it?"
+  },
+  {
+   "g": 422426,
+   "from": "Okay. it looks like",
+   "to": "Okay. It looks like"
+  },
+  {
+   "g": 426035,
+   "from": "Oh, i wish ge_ _nzs lnszme of that.",
+   "to": "Oh, I wish we could get ... of that."
+  },
+  {
+   "g": 428874,
+   "from": "_aao_n_ _u_,l in _nls _A_I_ HLi'HE_.",
+   "to": "MASTER ALARM, and CABIN REPRESS."
+  },
+  {
+   "g": 109274,
+   "from": "\": WeIt, l_t'm$:k_he_-that IN DELTA-P again.-.",
+   "to": "Well, let me check that ... DELTA-P again."
+  },
+  {
+   "g": 109285,
+   "from": "N · °, not quite. :-.. :. -,- ci_:''",
+   "to": "No, not quite."
+  },
+  {
+   "g": 109317.9,
+   "from": "'Now, weren't' we flowing",
+   "to": "Now, weren't we flowing"
+  },
+  {
+   "g": 109350,
+   "from": "Doyouosee anything",
+   "to": "Do you see anything"
+  },
+  {
+   "g": 109347,
+   "from": "not a thing is _venting a_-far as I _can see",
+   "to": "not a thing is venting as far as I can see"
+  },
+  {
+   "g": 109362,
+   "from": "$hose things",
+   "to": "those things"
+  },
+  {
+   "g": 109362,
+   "from": "don't see · them,.",
+   "to": "don't see them."
+  },
+  {
+   "g": 471370,
+   "from": "P;£S COMM in about 3nuinutes",
+   "to": "PLSS COMM in about 3 minutes"
+  },
+  {
+   "g": 470976,
+   "from": "Thank you. Ed.",
+   "to": "Thank you, Ed.",
+   "whole": true
   }
  ],
  "14": [

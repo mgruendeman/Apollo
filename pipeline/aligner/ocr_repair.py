@@ -292,6 +292,9 @@ def _tidy(text, vocab):
     text = re.sub(r"\bNei!", 'Neil', text)
     text = re.sub(r"\ba_d\b", 'and', text)
     text = re.sub(r"(?<=\w) '(s|ll|re|ve|d|t|m)\b", r"'\1", text)             # "That 's", "We 'll": a detached contraction
+    text = re.sub(r"(?<=\w)'\]\]", "'ll", text)                                   # "We']]", "it']]"
+    text = re.sub(r"\b0(?=[a-z]{2,})", 'O', text)                                 # "0key-dokey", "0kay": a zero for O ("0h" is a misread 04)
+    text = re.sub(r"\bCkay\b", 'Okay', text)
     text = re.sub(r"\b[A-Z]*0[A-Z]+\b|\b[A-Z]+0[A-Z]*\b",                    # "LIFT-0FF", "0PS", "ENGINE 0VERRIDE": a zero in a capital word
                   lambda m: m.group().replace('0', 'O') if m.group().replace('0', 'O').lower() in vocab else m.group(), text)
     text = re.sub(r"\s*\bclipping of words and phrases\.?(?:\s+\d{3,5}\b)?", '', text)   # the tail of a page note on NASA's voice-operated recording
@@ -320,6 +323,7 @@ def _tidy(text, vocab):
     text = re.sub(r"\b[OQ0]o ahead\b", 'Go ahead', text)                       # "Oo ahead"
     text = re.sub(r"\b(from|the|of|to|and)-(the|a|an)\b", r"\1 \2", text)       # "from-the Sun"
     text = re.sub(r"\s[?FP\[]_?age\s+[\dO\]lt1I]{2,4}(?=\s)", '', text)       # a page number mid-line: "Page ]1t7", "[_age 551"
+    text = re.sub(r"\sP[A-Za-z_]{1,2}e\s+\d{3}(?=\s+[a-z])", '', text)          # and "PF_e 465 it looks", "halo Pace 950 crater"
     text = re.sub(r"\b(REPRESS|DIRECT|PLSS|cabin) 02\b", r"\1 O2", text)
     if not re.search(r"(^|\s)'\w", text):                                     # "the' Persian Gulf'": closing quotes never opened
         text = re.sub(r"(?<=[a-rt-z])'(?=[\s.,?!]|$)", '', text)
