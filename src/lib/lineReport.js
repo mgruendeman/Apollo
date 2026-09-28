@@ -1,10 +1,12 @@
 // How long a line takes to say, roughly: about 11 letters a second (the
-// pace of the long lines on the tapes), and figures read out a digit at a
-// time (NASA's PADs and readbacks).
+// pace of the long lines on the tapes), figures read out a digit at a time
+// (NASA's PADs and readbacks), and a few seconds for each stretch NASA's
+// typists couldn't make out ("***", "...": words that aren't in the text).
 export function sayingSeconds(text) {
   const digits = (text.match(/\d/g) || []).length
   const letters = (text.match(/[A-Za-z]/g) || []).length
-  return 2 + letters * 0.09 + digits * 0.4
+  const unclear = (text.match(/\*\*\*|\.\.\./g) || []).length
+  return 2 + letters * 0.09 + digits * 0.4 + unclear * 3
 }
 
 // Title and details for a report about one transcript line, so the report

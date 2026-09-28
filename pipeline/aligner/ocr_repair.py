@@ -296,6 +296,8 @@ def _tidy(text, vocab):
     text = re.sub(r"\b0(?=[a-z]{2,})", 'O', text)                                 # "0key-dokey", "0kay": a zero for O ("0h" is a misread 04)
     text = re.sub(r"\bCkay\b", 'Okay', text)
     text = re.sub(r"\b6o\b", 'Go', text)                                            # "6o ahead."
+    text = re.sub(r"\b([a-z]+) \[([a-z]+)\b(?!\])",                                # "t [me", "humid [ty": an i read as " [" (not "[sic]")
+                  lambda m: m.group(1) + 'i' + m.group(2) if (m.group(1) + 'i' + m.group(2)) in vocab else m.group(), text)
     text = re.sub(r"\b[A-Z]*0[A-Z]+\b|\b[A-Z]+0[A-Z]*\b",                    # "LIFT-0FF", "0PS", "ENGINE 0VERRIDE": a zero in a capital word
                   lambda m: m.group().replace('0', 'O') if m.group().replace('0', 'O').lower() in vocab else m.group(), text)
     text = re.sub(r"\s*\bclipping of words and phrases\.?(?:\s+\d{3,5}\b)?", '', text)   # the tail of a page note on NASA's voice-operated recording

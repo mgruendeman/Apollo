@@ -110,6 +110,10 @@ TIDY_CASES = [
     ('14', '0keydoke. Thank you.', 'Okeydoke. Thank you.'),
     ('12', 'Ckay. Go get that core tube.', 'Okay. Go get that core tube.'),
     ('11', '6o ahead.', 'Go ahead.'),
+    ('11', 'when I really take my t [me and do', 'when I really take my time and do'),
+    ('11', 'any buildup in humid [ty. There', 'any buildup in humidity. There'),
+    ('11', 'the checklist [st dated', 'the checklist [st dated'),   # not a word joined: left
+    ('14', 'about 28 hours to [sic] 27', 'about 28 hours to [sic] 27'),   # NASA's editorial note
     ('11', 'as per PGNS-20 of G&N dictionary. Over. Pat_e 43', 'as per PGNS-20 of G&N dictionary. Over.'),
     ('12', "Maybe we did it. We']] have to see.", "Maybe we did it. We'll have to see."),
     ('12', 'Okay. PF_e 465 it looks like maybe', 'Okay. it looks like maybe'),   # a page stamp mid-line
@@ -456,3 +460,14 @@ def test_photos_between_two_anchors_spread_evenly_by_frame_number():
     frames = ['AS11-40-5844', 'AS11-40-5845', 'AS11-40-5854', 'AS11-40-5864', 'AS11-40-5870']
     t = times_for(frames, [(5844, 1000), (5864, 2000)])
     assert t == {'AS11-40-5844': 1000, 'AS11-40-5845': 1050, 'AS11-40-5854': 1500, 'AS11-40-5864': 2000, 'AS11-40-5870': 2000}
+
+
+def test_a_sentence_the_scan_broke_in_two_joins_up(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    lines = [{'g': 1000, 's': 'Armstrong', 't': 'You want him to go to high gain yaw 0? Say'}, {'g': 1000, 's': 'Unknown', 't': 'again the numbers.', 'a': 1},
+             {'g': 1010, 's': 'Duke', 't': 'Roger, Neil.'}]
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'11': [{'g': 1000, 'text': 'You want him to go to high gain', 'merge': 'again the numbers.'}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    assert X.apply_fixes('11', lines) == 1
+    assert [l['t'] for l in lines if l['t']] == ['You want him to go to high gain yaw 0? Say again the numbers.', 'Roger, Neil.']

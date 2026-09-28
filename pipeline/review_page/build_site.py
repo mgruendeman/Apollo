@@ -215,7 +215,7 @@ async function load() {
 }
 
 // how long a line takes to say, roughly (as the site's lineReport.js): to play all of it
-const sayingSeconds = (t) => 2 + (t.match(/[A-Za-z]/g) || []).length * 0.09 + (t.match(/\d/g) || []).length * 0.4
+const sayingSeconds = (t) => 2 + (t.match(/[A-Za-z]/g) || []).length * 0.09 + (t.match(/\d/g) || []).length * 0.4 + (t.match(/\*\*\*|\.\.\./g) || []).length * 3
 function lineLength(k) {
   const l = lines[k], next = lines[k + 1]
   let length = sayingSeconds(l.t)
