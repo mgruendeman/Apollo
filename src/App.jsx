@@ -9,12 +9,14 @@ import Guide from './pages/Guide'
 import Contact from './pages/Contact'
 import NowPlayingBar from './components/NowPlayingBar'
 import ScrollMemory from './components/ScrollMemory'
+import ConstructionBar from './components/ConstructionBar'
 import { PlayerProvider } from './audio/PlayerContext'
 
 function App() {
   return (
     <PlayerProvider>
       <ScrollMemory />
+      <ConstructionBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/mission/:id" element={<Mission />} />

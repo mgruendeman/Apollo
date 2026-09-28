@@ -1,0 +1,32 @@
+{
+ "11": {
+  "announcerLines": 1882,
+  "checkedFine": 5,
+  "corrected": 218,
+  "flagged": 436,
+  "lines": 8477,
+  "notOnRecording": 48,
+  "recordedHours": 101.1,
+  "updated": "2026-09-27"
+ },
+ "12": {
+  "announcerLines": 1905,
+  "checkedFine": 0,
+  "corrected": 40,
+  "flagged": 852,
+  "lines": 15506,
+  "notOnRecording": 88,
+  "recordedHours": 127.2,
+  "updated": "2026-09-27"
+ },
+ "14": {
+  "announcerLines": 1364,
+  "checkedFine": 0,
+  "corrected": 2,
+  "flagged": 1140,
+  "lines": 14011,
+  "notOnRecording": 264,
+  "recordedHours": 141.2,
+  "updated": "2026-09-27"
+ }
+}

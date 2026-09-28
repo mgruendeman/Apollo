@@ -28,11 +28,12 @@ import argparse
 import bisect
 import json
 import re
+from datetime import date
 from pathlib import Path
 
 from aligner.common import ROOT, CREW, MIN_WORDS, SEARCH_S, tokens, speaker_names
 from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors
-from aligner.ocr_repair import MISSION, repair_ocr, vocabulary
+from aligner.ocr_repair import FIXES, MISSION, repair_ocr, vocabulary
 from aligner.announcer import find_announcer
 from aligner.timing import mark_unheard, rebuild_from_tape, sync_to_tape, time_untimed
 from aligner.fixes import apply_fixes, use_journal_text
@@ -174,7 +175,7 @@ def main():
         if k < 0:
             return {}
         sg = segments[k]
-        if not sg['get'] <= l['g'] <= sg['get'] + (sg['to'] - sg['from']) * sg['rate'] or sg.get('journal'):
+        if not sg['get'] <= l['g'] <= sg['get'] + (sg['to'] - sg['from']) * sg['rate']:
             return {}
         return {'audio': audio(sg['tape']), 'at': round(sg['from'] + (l['g'] - sg['get']) / sg['rate'], 1)}
     (review / f'apollo{m}.json').write_text(json.dumps(
@@ -187,9 +188,32 @@ def main():
         timeline['audio'] = {'base': f'{{media}}/audio/{int(m)}', 'ext': '.clean.m4a'}
     out.write_text(json.dumps(timeline, separators=(',', ':')))
     covered = sum((s['to'] - s['from']) * s['rate'] for s in segments) / 3600
+    write_progress(m, lines, covered, len(ranked), unheard)
     print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes (+{stats.get('chained', 0)} between them); {len(segments)} segments covering {covered:.1f} h; "
           f"{len(lines)} lines ({repaired} words repaired from the tapes, {fixed} lines in the journal's wording, "
           f"{hand} hand fixes, {untimed} untimed lines timed from the tapes, {synced} lines timed to where they're heard, {rebuilt} rebuilt from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; {len(ranked)} lines listed for review; written to {out}")
+
+
+def write_progress(m, lines, covered, flagged, unheard):
+    """Where the mission's work stands, for the site's "under construction"
+    notes: public/progress.json, one entry per tape mission. Corrected lines
+    are those a hand fix changed (from listeners' reports and my own checks);
+    flagged, those the review list still asks a listener to hear."""
+    path = ROOT / 'public' / 'progress.json'
+    progress = json.loads(path.read_text()) if path.exists() else {}
+    fixes = json.loads(FIXES.read_text()).get(m, [])
+    nasa = [l for l in lines if l.get('c') != 'pao']
+    progress[m] = {
+        'recordedHours': round(covered, 1),
+        'lines': len(nasa),
+        'announcerLines': len(lines) - len(nasa),
+        'notOnRecording': unheard,
+        'corrected': len({round(f['g']) for f in fixes if not f.get('ok')}),
+        'checkedFine': sum(1 for f in fixes if f.get('ok')),
+        'flagged': flagged,
+        'updated': date.today().isoformat(),
+    }
+    path.write_text(json.dumps(progress, indent=1, sort_keys=True) + '\n')
 
 
 if __name__ == '__main__':

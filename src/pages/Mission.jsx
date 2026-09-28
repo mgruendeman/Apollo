@@ -7,6 +7,7 @@ import MissionPhaseDiagram from '../components/MissionPhaseDiagram'
 import MissionTimeline from '../components/MissionTimeline'
 import MissionPhoto from '../components/MissionPhoto'
 import MissionOverview from '../components/MissionOverview'
+import MissionProgress from '../components/MissionProgress'
 import ArchiveRecordings from '../components/ArchiveRecordings'
 import ImmersiveView from '../components/ImmersiveView'
 import ListenerFavorites from '../components/ListenerFavorites'
@@ -173,6 +174,7 @@ function ClipMission({ mission }) {
           <p className="mission-header-dates">{mission.dates}</p>
           <p className="lede">{mission.summary}</p>
         </header>
+        <MissionProgress mission={mission} />
         <MissionOverview mission={mission} />
         {archive && <ArchiveRecordings mission={mission} archive={archive} />}
         <PhotoGallery mission={mission} />
@@ -265,6 +267,8 @@ function ClipMission({ mission }) {
           </button>
         )}
       </header>
+
+      <MissionProgress mission={mission} />
 
       <MissionOverview mission={mission} />
 

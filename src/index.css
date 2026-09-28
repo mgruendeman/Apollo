@@ -2774,3 +2774,103 @@ button.transcript-channel-tag {
   color: var(--accent);
   cursor: pointer;
 }
+
+/* under construction: the bar on every page, and each mission's progress */
+.construction-bar {
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-dim);
+  background: rgba(255, 138, 61, 0.08);
+  border-bottom: 1px solid rgba(255, 138, 61, 0.25);
+}
+.construction-bar strong {
+  color: var(--accent-dim);
+}
+.mission-progress {
+  margin-top: 24px;
+  padding: 16px 18px;
+  border: 1px dashed rgba(255, 138, 61, 0.35);
+  border-radius: 12px;
+  background: var(--bg-panel);
+}
+.mission-progress h2 {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-dim);
+}
+.progress-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.progress-steps li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 6px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.progress-mark {
+  font-weight: 700;
+  text-align: center;
+}
+.progress-steps .is-done .progress-mark {
+  color: var(--available);
+}
+.progress-steps .is-doing .progress-mark {
+  color: var(--accent);
+}
+.progress-steps .is-todo {
+  color: var(--text-dim);
+}
+.progress-state {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.progress-text {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+.progress-note {
+  margin: 12px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.mission-card {
+  display: flex;
+  flex-direction: column;
+}
+.mission-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.mission-card-head .mission-card-dates {
+  margin: 0;
+}
+.mission-card-patch {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+.mission-card-footer {
+  margin-top: auto;
+}
+.mission-card-status {
+  margin: 10px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--text-dim);
+}

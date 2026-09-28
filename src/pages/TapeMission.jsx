@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import TapePlayer from '../components/TapePlayer'
 import TapeTimeline from '../components/TapeTimeline'
 import MissionOverview from '../components/MissionOverview'
+import MissionProgress from '../components/MissionProgress'
 import ArchiveRecordings from '../components/ArchiveRecordings'
 import ListenerFavorites from '../components/ListenerFavorites'
 import PhotoGallery from '../components/PhotoGallery'
@@ -141,6 +142,8 @@ export default function TapeMission({ mission }) {
           </button>
         )}
       </header>
+
+      <MissionProgress mission={mission} />
 
       <MissionOverview mission={mission} />
 

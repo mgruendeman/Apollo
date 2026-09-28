@@ -87,7 +87,7 @@ export default function Home() {
           </a>
           ; each clip links back to its source page.
         </p>
-        <p>Apollo Rewind is an independent project, not affiliated with or endorsed by NASA.</p>
+        <p>Mission emblems: NASA. Apollo Rewind is an independent project, not affiliated with or endorsed by NASA.</p>
       </footer>
     </div>
   )
