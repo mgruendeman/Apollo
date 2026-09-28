@@ -16,8 +16,10 @@ export default function MomentPhotos({ mission, clip, phase }) {
   const utcDay = Math.floor((Date.parse(mission.launchUtc) + clip.getSeconds * 1000) / DAY_MS)
 
   const photos = useMemo(
-    () => (frames ? photosForMomentAll(mission.id, frames, utcDay * DAY_MS + DAY_MS / 2, phase, MAX) : []),
-    [frames, mission.id, utcDay, phase],
+    () => (frames ? photosForMomentAll(mission.id, frames, utcDay * DAY_MS + DAY_MS / 2, phase, MAX, clip.getSeconds) : []),
+    // (every two minutes of the mission: photos placed by their time follow along)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [frames, mission.id, utcDay, phase, Math.floor(clip.getSeconds / 120)],
   )
 
   if (photos.length === 0) return null

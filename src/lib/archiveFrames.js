@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { KINDS_FOR_PHASE, photosForMoment, nasaImageUrl } from './momentPhotos'
+import missionPhotos from '../data/missionPhotos.json'
 import { MEDIA_URL } from '../config'
 
 // Every Hasselblad and Nikon frame from the NASA JSC / Arizona State
@@ -7,6 +8,9 @@ import { MEDIA_URL } from '../config'
 // scripts/fetch_archive_frames.py. Rows are
 // [frameId, format, kind, date, description, quality 0-9]; the index is
 // fetched on demand because the bigger missions run to hundreds of KB.
+// Loaded rows gain [.., cleaned 0/1, mission time or null]: the time a
+// frame was taken, where pipeline/photo_times.py could place it
+// (<mission>.times.json, from the film order and anchors).
 
 const ARCHIVE = 'https://tothemoon.im-ldi.com'
 const DAY_MS = 24 * 3600 * 1000
@@ -31,12 +35,15 @@ export function loadFrames(missionId) {
     const p = Promise.all([
       getJson(`photo-index/${missionId}.json`, { frames: [] }),
       getJson(`photo-index/${missionId}.cleaned.json`, { cleaned: [], rejected: [] }),
+      getJson(`photo-index/${missionId}.times.json`, { frames: {}, kinds: {} }),
     ])
-      .then(([index, media]) => {
+      .then(([index, media, times]) => {
         const rejected = new Set(media.rejected)
         const cleaned = new Set(MEDIA_URL ? media.cleaned : [])
-        // A seventh field marks a frame whose cleaned photo is on the media host.
-        return index.frames.filter((f) => !rejected.has(f[0])).map((f) => (cleaned.has(f[0]) ? [...f.slice(0, 6), 1] : f))
+        const at = times.frames || {}, refiled = times.kinds || {}
+        return index.frames
+          .filter((f) => !rejected.has(f[0]))
+          .map(([id, fmt, kind, ...rest]) => [id, fmt, refiled[id] || kind, ...rest.slice(0, 3), cleaned.has(id) ? 1 : 0, at[id] ?? null])
       })
       .catch(() => {
         cache.delete(missionId)
@@ -127,13 +134,29 @@ export function framesForMoment(frames, utcMs, phase, limit = 24) {
   return [...onDay, ...undated].slice(0, limit)
 }
 
-// Curated NASA Image Library photos first (they have real captions), then
-// archive frames.
-export function photosForMomentAll(missionId, frames, utcMs, phase, limit = 24) {
-  const curated = photosForMoment(missionId, utcMs, phase).map(nasaPhotoToPhoto)
-  const seen = new Set(curated.map((p) => frameKey(p.key)))
+// How close to a moment a timed photo must be to show with it.
+const NEAR_SECONDS = 20 * 60
+
+// Photos taken at this moment (`get`, the mission time) first, nearest first,
+// where the film order has placed them; then curated NASA Image Library
+// photos (they have real captions), then archive frames, for the day and
+// phase. A photo whose time is known and isn't near this moment waits for
+// its own.
+export function photosForMomentAll(missionId, frames, utcMs, phase, limit = 24, get = null) {
+  const timeOf = new Map(frames.filter((f) => f[7] != null).map((f) => [frameKey(f[0]), f[7]]))
+  const elsewhere = (key) => get != null && timeOf.has(key) && Math.abs(timeOf.get(key) - get) > NEAR_SECONDS
+  const nasa = new Map((missionPhotos[missionId] || []).map((p) => [frameKey(p.id), p]))
+  const timed = get == null ? [] : frames
+    .filter((f) => f[7] != null && Math.abs(f[7] - get) <= NEAR_SECONDS)
+    .sort((a, b) => Math.abs(a[7] - get) - Math.abs(b[7] - get))
+    .map((f) => (nasa.has(frameKey(f[0])) ? nasaPhotoToPhoto(nasa.get(frameKey(f[0]))) : frameToPhoto(f, missionId)))
+  const seen = new Set(timed.map((p) => frameKey(p.key)))
+  const curated = photosForMoment(missionId, utcMs, phase)
+    .filter((p) => !seen.has(frameKey(p.id)) && !elsewhere(frameKey(p.id)))
+    .map(nasaPhotoToPhoto)
+  curated.forEach((p) => seen.add(frameKey(p.key)))
   const extra = framesForMoment(frames, utcMs, phase, limit)
-    .filter((f) => !seen.has(frameKey(f[0])))
+    .filter((f) => !seen.has(frameKey(f[0])) && !elsewhere(frameKey(f[0])))
     .map((f) => frameToPhoto(f, missionId))
-  return [...curated, ...extra].slice(0, limit)
+  return [...timed, ...curated, ...extra].slice(0, limit)
 }

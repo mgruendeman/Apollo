@@ -1,0 +1,14 @@
+{
+ "11": [
+  {"magazine": "AS11-40", "kind": "surface", "note": "The moonwalk's Hasselblad magazine: frames 5844-5970, in the order taken. Anchors tie NASA's captioned frames to the moment the tape has that activity.",
+   "anchors": [
+    {"frame": "AS11-40-5844", "get": "109:30:52", "why": "Armstrong: \"I'll step out and take some of my first pictures here.\""},
+    {"frame": "AS11-40-5863", "get": "109:41:28", "why": "NASA caption: Aldrin egressing the LM. Aldrin: \"Now I want to back up and partially close the hatch.\""},
+    {"frame": "AS11-40-5868", "get": "109:43:18", "why": "NASA caption: Aldrin descends the ladder steps. Armstrong: \"Isn't that something! Magnificent sight out here.\""},
+    {"frame": "AS11-40-5874", "get": "110:10:00", "why": "NASA caption: Aldrin poses beside the flag. The flag is up at 110:09:43."},
+    {"frame": "AS11-40-5927", "get": "110:52:30", "why": "NASA caption: Aldrin prepares to deploy the experiments. Aldrin at 110:52:01: \"Neil, if you'll take the camera, I'll get to work on the SEQ bay.\""},
+    {"frame": "AS11-40-5951", "get": "111:02:08", "why": "Aldrin with the seismic experiment: \"I have the seismic experiment flipped over now, and I'm aligning it.\""},
+    {"frame": "AS11-40-5970", "get": "111:26:00", "why": "The magazine's last frame, before it was packed: Armstrong at 111:28:12, \"I've got the Hasselblad magazine hooked to the SRC now.\""}
+   ]}
+ ]
+}

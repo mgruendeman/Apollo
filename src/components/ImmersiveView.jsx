@@ -95,12 +95,12 @@ export default function ImmersiveView({
   const dayMs = 24 * 3600 * 1000
   const utcDay = Math.floor((Date.parse(mission.launchUtc) + at * 1000) / dayMs)
   const frames = useFrames(mission.id)
-  const poolKey = `${phase}-${utcDay}-${highlightPhoto?.src || ''}-${frames ? 'all' : 'nasa'}`
+  const poolKey = `${phase}-${utcDay}-${Math.floor(at / 300)}-${highlightPhoto?.src || ''}-${frames ? 'all' : 'nasa'}`   // (a new pool each 5 minutes: timed photos follow along)
 
   // NASA's captioned photos first, then the clearest film-roll scans.
   const photos = useMemo(() => {
     const utcMs = utcDay * dayMs + dayMs / 2
-    const matched = photosForMomentAll(mission.id, frames || [], utcMs, phase, MAX_PHOTOS).map((p) => ({
+    const matched = photosForMomentAll(mission.id, frames || [], utcMs, phase, MAX_PHOTOS, get ?? null).map((p) => ({
       src: p.full,
       caption: p.caption,
       credit: p.credit,

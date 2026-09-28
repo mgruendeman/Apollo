@@ -448,3 +448,11 @@ def test_a_pinned_stretch_of_tape_replaces_what_covered_it():
               {'from': 300, 'to': 600, 'get': 2300, 'rate': 1.0, 'anchors': 4}]
     out = pin_pieces(pieces, [{'tape_from': 80, 'tape_to': 320, 'get_from': 2080}])
     assert [(p['from'], p['to'], p['get']) for p in out] == [(0, 80, 1000), (80, 320, 2080), (320, 600, 2320)]
+
+
+def test_photos_between_two_anchors_spread_evenly_by_frame_number():
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from photo_times import times_for
+    frames = ['AS11-40-5844', 'AS11-40-5845', 'AS11-40-5854', 'AS11-40-5864', 'AS11-40-5870']
+    t = times_for(frames, [(5844, 1000), (5864, 2000)])
+    assert t == {'AS11-40-5844': 1000, 'AS11-40-5845': 1050, 'AS11-40-5854': 1500, 'AS11-40-5864': 2000, 'AS11-40-5870': 2000}
