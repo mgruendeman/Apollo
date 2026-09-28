@@ -4,6 +4,8 @@ import TapePlayer from '../components/TapePlayer'
 import TapeTimeline from '../components/TapeTimeline'
 import MissionOverview from '../components/MissionOverview'
 import MissionProgress from '../components/MissionProgress'
+import MissionPatch from '../components/MissionPatch'
+import MissionSources from '../components/MissionSources'
 import ArchiveRecordings from '../components/ArchiveRecordings'
 import ListenerFavorites from '../components/ListenerFavorites'
 import PhotoGallery from '../components/PhotoGallery'
@@ -124,6 +126,7 @@ export default function TapeMission({ mission }) {
       </Link>
 
       <header className="mission-header">
+        <MissionPatch mission={mission} />
         <p className="eyebrow">Apollo {mission.number}</p>
         <h1>{mission.name}</h1>
         <p className="mission-header-dates">{mission.dates}</p>
@@ -181,6 +184,8 @@ export default function TapeMission({ mission }) {
       {rawTimeline && <TapeTimeline mission={mission} timeline={rawTimeline} get={tape.get} onSeek={seekAndShow} />}
 
       {archive && <ArchiveRecordings mission={mission} archive={archive} />}
+
+      <MissionSources mission={mission} />
 
       <PhotoGallery mission={mission} />
 

@@ -8,6 +8,8 @@ import MissionTimeline from '../components/MissionTimeline'
 import MissionPhoto from '../components/MissionPhoto'
 import MissionOverview from '../components/MissionOverview'
 import MissionProgress from '../components/MissionProgress'
+import MissionPatch from '../components/MissionPatch'
+import MissionSources from '../components/MissionSources'
 import ArchiveRecordings from '../components/ArchiveRecordings'
 import ImmersiveView from '../components/ImmersiveView'
 import ListenerFavorites from '../components/ListenerFavorites'
@@ -169,6 +171,7 @@ function ClipMission({ mission }) {
           ← All missions
         </Link>
         <header className="mission-header">
+          <MissionPatch mission={mission} />
           <p className="eyebrow">Apollo {mission.number}</p>
           <h1>{mission.name}</h1>
           <p className="mission-header-dates">{mission.dates}</p>
@@ -177,6 +180,7 @@ function ClipMission({ mission }) {
         <MissionProgress mission={mission} />
         <MissionOverview mission={mission} />
         {archive && <ArchiveRecordings mission={mission} archive={archive} />}
+        <MissionSources mission={mission} />
         <PhotoGallery mission={mission} />
       </div>
     )
@@ -239,6 +243,7 @@ function ClipMission({ mission }) {
       </Link>
 
       <header className="mission-header">
+        <MissionPatch mission={mission} />
         <p className="eyebrow">Apollo {mission.number}</p>
         <h1>{mission.name}</h1>
         <p className="mission-header-dates">{mission.dates}</p>
@@ -381,6 +386,8 @@ function ClipMission({ mission }) {
       />
 
       {archive && <ArchiveRecordings mission={mission} archive={archive} />}
+
+      <MissionSources mission={mission} />
 
       <PhotoGallery mission={mission} />
 

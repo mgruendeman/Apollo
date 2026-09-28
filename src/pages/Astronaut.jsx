@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { astronauts } from '../data/astronauts'
+import { astronautLinks } from '../data/astronautLinks'
 import facts from '../data/astronautFacts.json'
 import { findMission } from '../data/missions'
 import { speakerAvatar } from '../data/speakers'
@@ -19,9 +20,13 @@ function groupFlights(missions) {
   return PROGRAMS.map(([name, re]) => [name, missions.filter((m) => re.test(m))]).filter(([, list]) => list.length)
 }
 
+// Interviews and sources: what each kind of link is.
+const KIND_ICON = { bio: '📄', transcript: '📝', video: '🎬', audio: '🎧' }
+
 export default function Astronaut() {
   const { id } = useParams()
   const person = astronauts[id]
+  const links = astronautLinks[id]
 
   if (!person) {
     return (
@@ -122,7 +127,7 @@ export default function Astronaut() {
       <section className="astronaut-section">
         <h3>Books</h3>
         {person.books.length === 0 ? (
-          <p className="astronaut-none">We don&apos;t know of a book-length autobiography or biography.</p>
+          <p className="astronaut-none">I don&apos;t know of a book-length autobiography or biography.</p>
         ) : (
           <ul className="astronaut-books">
             {person.books.map((b) => (
@@ -139,6 +144,41 @@ export default function Astronaut() {
           </ul>
         )}
       </section>
+
+      {links && (
+        <section className="astronaut-section">
+          <h3>Interviews and sources</h3>
+          <ul className="astronaut-links">
+            {links.map((l) => (
+              <li key={l.title}>
+                <span className="astronaut-link-kind" aria-hidden="true">
+                  {KIND_ICON[l.kind]}
+                </span>
+                <span>
+                  {l.url ? (
+                    <a href={l.url} target="_blank" rel="noreferrer">
+                      {l.title}
+                    </a>
+                  ) : (
+                    <>
+                      {l.title}:{' '}
+                      {l.parts.map((u, i) => (
+                        <span key={u}>
+                          {i > 0 && ' · '}
+                          <a href={u} target="_blank" rel="noreferrer">
+                            part {i + 1}
+                          </a>
+                        </span>
+                      ))}
+                    </>
+                  )}
+                  <span className="astronaut-link-by">{l.by}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <p className="astronaut-more">
         <a href={person.wikipedia} target="_blank" rel="noreferrer">

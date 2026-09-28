@@ -11,6 +11,10 @@ restarted at any time.
     python3 pipeline/download_nasa_audio.py --missions 11 --format flac --dest ...
     # sample: the first 8 MB (about 5 minutes) of 2 tapes per mission
     python3 pipeline/download_nasa_audio.py --missions 8 11 13 16 --files 2 --head-mb 8 --dest ...
+    # when archive.org is slow: 6 tapes at once, straight from the item's two
+    # storage servers (its /download/ redirect sometimes lands on a node
+    # that answers 500)
+    python3 pipeline/download_nasa_audio.py --missions 15 --parallel 6 --dest ...
 
 Needs: curl
 """
@@ -18,6 +22,8 @@ import argparse
 import json
 import subprocess
 import urllib.parse
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 INVENTORY = Path(__file__).parent / 'nasa_audio_inventory.json'
@@ -30,6 +36,7 @@ def main():
     ap.add_argument('--dest', required=True)
     ap.add_argument('--files', type=int, default=0, help='only the first N tapes per mission (0 = all)')
     ap.add_argument('--head-mb', type=float, default=0, help='sample mode: only the first N MB of each tape')
+    ap.add_argument('--parallel', type=int, default=1, help='tapes at once, from the storage servers directly')
     args = ap.parse_args()
 
     inventory = json.loads(INVENTORY.read_text())
@@ -46,21 +53,33 @@ def main():
         print(f"Apollo {int(m)}: {len(files)} {args.format} files, {total / 1e9:.1f} GB", flush=True)
         out_dir = Path(args.dest).expanduser() / mid
         out_dir.mkdir(parents=True, exist_ok=True)
-        for f in files:
+        servers = None
+        if args.parallel > 1:
+            meta = json.load(urllib.request.urlopen(f"https://archive.org/metadata/{entry['item']}", timeout=120))
+            servers = [f"https://{meta[k]}{meta['dir']}" for k in ('d1', 'd2') if meta.get(k)]
+
+        def fetch(k_f):
+            k, f = k_f
             dest = out_dir / Path(f['name']).name
-            url = f"https://archive.org/download/{entry['item']}/{urllib.parse.quote(f['name'])}"
+            url = (f"{servers[k % len(servers)]}/{urllib.parse.quote(f['name'])}" if servers
+                   else f"https://archive.org/download/{entry['item']}/{urllib.parse.quote(f['name'])}")
             if args.head_mb:
                 if dest.exists():
-                    continue
+                    return
                 cmd = ['curl', '-sSfL', '--retry', '5', '-r', f'0-{int(args.head_mb * 1e6)}', '-o', str(dest), url]
             else:
                 if dest.exists() and dest.stat().st_size == f['bytes']:
-                    continue
+                    return
                 # -C - resumes a partial file where it stopped
                 cmd = ['curl', '-sSfL', '--retry', '5', '-C', '-', '-o', str(dest), url]
             print(f"  {f['name']} ({f['bytes'] / 1e6:.0f} MB)", flush=True)
             if subprocess.run(cmd).returncode != 0:
                 print(f"  ! failed: {f['name']} (run again to retry)", flush=True)
+            else:
+                print(f"  done: {f['name']}", flush=True)
+
+        with ThreadPoolExecutor(max(1, args.parallel)) as pool:
+            list(pool.map(fetch, enumerate(files)))
 
 
 if __name__ == '__main__':

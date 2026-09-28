@@ -2874,3 +2874,65 @@ button.transcript-channel-tag {
   line-height: 1.4;
   color: var(--text-dim);
 }
+.mission-header-patch {
+  float: right;
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  margin: 0 0 12px 20px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.55));
+}
+@media (max-width: 560px) {
+  .mission-header-patch {
+    width: 84px;
+    height: 84px;
+    margin-left: 12px;
+  }
+}
+.mission-header {
+  display: flow-root; /* (holds the floated patch) */
+}
+.astronaut-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.astronaut-links li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 6px;
+  line-height: 1.4;
+}
+.astronaut-link-by {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.mission-sources {
+  margin-top: 40px;
+}
+.mission-sources-group h4 {
+  margin: 16px 0 6px;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+.mission-sources-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.mission-sources-group li {
+  line-height: 1.4;
+}
+.mission-sources-by {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}

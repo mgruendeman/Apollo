@@ -227,6 +227,6 @@ The site can play a mission end to end from NASA's own tapes (Apollo 11 so far):
    so a re-read transcript can't silently lose a correction.
    Tests for the repair rules: `~/.venvs/apollo/bin/python -m pytest pipeline/tests -q`.
 
-On the site, journal clips can fill the gaps between tape pieces (a switch, on for now); with the announcer switch on, that includes the broadcast clips.
+On the site, a tape mission plays only the tapes; the gaps between pieces are silent.
 "Real time" (off by default) counts through silent stretches at their true length instead of skipping them.
 Audio comes from archive.org until the cleaned tapes are uploaded; then set `"audio": {"base": "{media}/audio/11", "ext": ".clean.m4a"}` in the timeline.
