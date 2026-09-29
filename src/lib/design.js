@@ -1,5 +1,5 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
-import { GLOBE_ART } from '../data/globeArt'
+import { ART } from '../data/globeArt'
 
 // The site's designs, to try side by side before settling on one. The
 // choice is this browser's own (localStorage); index.html applies it before
@@ -30,8 +30,9 @@ export function useDesign() {
   return [design, setDesignState]
 }
 
-// The Earth and Moon art (src/data/globeArt.js): one choice each, shared by
-// every diagram on the page, so the menu changes them all at once.
+// The diagram's art (src/data/globeArt.js): one choice for each kind (Earth,
+// Moon, spacecraft), shared by every diagram on the page, so the menu
+// changes them all at once.
 const ART_KEY = (kind) => `apollo-art-${kind}`
 const artListeners = new Set()
 const chosenArt = {}
@@ -42,7 +43,7 @@ function readArt(kind) {
   } catch {
     /* none kept */
   }
-  return GLOBE_ART[kind].some((a) => a.id === id) ? id : GLOBE_ART[kind][0].id
+  return ART[kind].some((a) => a.id === id) ? id : ART[kind][0].id
 }
 export function setGlobeArt(kind, id) {
   chosenArt[kind] = id
@@ -57,8 +58,8 @@ const subscribeArt = (f) => {
   artListeners.add(f)
   return () => artListeners.delete(f)
 }
-// The chosen art for 'earth' or 'moon': its row from GLOBE_ART.
+// The chosen art for 'earth', 'moon' or 'craft': its row from ART.
 export function useGlobeArt(kind) {
   const id = useSyncExternalStore(subscribeArt, () => (chosenArt[kind] ??= readArt(kind)))
-  return GLOBE_ART[kind].find((a) => a.id === id) || GLOBE_ART[kind][0]
+  return ART[kind].find((a) => a.id === id) || ART[kind][0]
 }

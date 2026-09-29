@@ -20,6 +20,13 @@ export default function Home() {
   }, [])
 
   const liveMissions = useMemo(() => getAllLiveMissions(missions, now), [now])
+  const [firstVisit] = useState(() => {
+    try {
+      return !localStorage.getItem('apollo-opened-mission')
+    } catch {
+      return false
+    }
+  })
   const onTapes = listOf(missions.filter((m) => m.timeline))
   const onClips = listOf(missions.filter((m) => m.clipsFile && !m.timeline))
 
@@ -70,6 +77,13 @@ export default function Home() {
         </section>
       )}
 
+      {firstVisit && (
+        <p className="start-tip">
+          <span aria-hidden="true">👋</span> New here? Pick a mission below to start listening. <strong>Apollo 11</strong>, the
+          first landing, is a good place to begin.
+        </p>
+      )}
+      <h2 className="mission-grid-title">Pick a mission to listen</h2>
       <section className="mission-grid">
         {missions.map((mission) => (
           <MissionCard key={mission.id} mission={mission} />

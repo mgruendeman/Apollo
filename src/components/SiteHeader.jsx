@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import logoSmall from '../assets/logo/apollo-rewind-small.webp'
 import { DESIGNS, setGlobeArt, useDesign, useGlobeArt } from '../lib/design'
-import { GLOBE_ART } from '../data/globeArt'
+import { ART } from '../data/globeArt'
 
 // On every page: the logo (home has it large already) and the Design menu.
 export default function SiteHeader() {
@@ -10,7 +10,7 @@ export default function SiteHeader() {
   const [design, setDesign] = useDesign()
   const [open, setOpen] = useState(false)
   const menuRef = useRef(null)
-  const art = { earth: useGlobeArt('earth').id, moon: useGlobeArt('moon').id }
+  const art = { earth: useGlobeArt('earth').id, moon: useGlobeArt('moon').id, craft: useGlobeArt('craft').id }
 
   useEffect(() => {
     if (!open) return undefined
@@ -55,15 +55,15 @@ export default function SiteHeader() {
               </button>
             ))}
             </div>
-            {['earth', 'moon'].map((kind) => (
+            {['earth', 'moon', 'craft'].map((kind) => (
               <div key={kind}>
                 <p className="design-group" id={`design-${kind}`}>
-                  {kind === 'earth' ? 'Earth' : 'Moon'} in the mission diagram
+                  {{ earth: 'Earth', moon: 'Moon', craft: 'Spacecraft' }[kind]} in the mission diagram
                 </p>
                 <div role="radiogroup" aria-labelledby={`design-${kind}`} className="design-art">
-                  {GLOBE_ART[kind].map((a) => (
+                  {ART[kind].map((a) => (
                     <button key={a.id} type="button" role="radio" aria-checked={art[kind] === a.id} onClick={() => setGlobeArt(kind, a.id)}>
-                      <img src={a.sprite[0]} alt="" width="40" height="40" />
+                      <img src={a.thumb} alt="" width="40" height="40" />
                       {a.label}
                     </button>
                   ))}

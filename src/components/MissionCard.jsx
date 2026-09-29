@@ -16,6 +16,15 @@ function statusLine(mission, progress) {
   return 'Recordings listed · not yet on the mission clock'
 }
 
+// Once someone has opened a mission, the home page stops pointing the way.
+function markVisited() {
+  try {
+    localStorage.setItem('apollo-opened-mission', '1')
+  } catch {
+    /* fine */
+  }
+}
+
 export default function MissionCard({ mission }) {
   const progress = useProgress()
   const available = mission.status === 'available' || mission.status === 'archive'
@@ -44,12 +53,17 @@ export default function MissionCard({ mission }) {
           <span className="badge badge-soon">Coming soon</span>
         )}
         {available && <p className="mission-card-status">🚧 {statusLine(mission, progress)}</p>}
+        {available && (
+          <span className="mission-card-cta" aria-hidden="true">
+            {mission.timeline ? 'Listen to the whole mission' : mission.status === 'archive' ? 'Browse the recordings' : 'Listen to the key moments'} →
+          </span>
+        )}
       </div>
     </div>
   )
 
   return available ? (
-    <Link to={`/mission/${mission.id}`} className="mission-card-link">
+    <Link to={`/mission/${mission.id}`} className="mission-card-link" onClick={markVisited}>
       {card}
     </Link>
   ) : (

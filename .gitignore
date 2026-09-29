@@ -26,3 +26,6 @@ dist-ssr
 *.sln
 *.sw?
 __pycache__/
+
+# original artwork (large PNGs; kept on the media drive under art/): scripts/make_painted_craft.py reads it
+/art/
