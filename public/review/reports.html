@@ -15,32 +15,51 @@ article { background:var(--surface); border:1px solid var(--rule); border-radius
 pre { margin:0; white-space:pre-wrap; font-size:.8rem; color:var(--muted); background:var(--ground); padding:8px; border-radius:6px; }
 .actions { display:flex; gap:8px; }
 .empty { color:var(--muted); }
+.from { font-size:.75rem; padding:1px 8px; border-radius:999px; border:1px solid var(--rule); }
+.from.public { border-color:var(--accent); color:var(--accent); }
+.actions .go { border-color:var(--good); color:var(--good); }
 a { color:var(--accent); }
 </style>
 <main>
   <p><a href="./">← Photo review</a></p>
   <h1>Problem reports</h1>
+  <p class="meta">Reports you send while signed in go straight to Claude's fix list. Visitors' reports wait here until you send them on.</p>
   <div class="bar" role="group" aria-label="Show">
-    <button data-s="new" aria-pressed="true">New</button><button data-s="fixed" aria-pressed="false">Fixed</button>
-    <button data-s="dismissed" aria-pressed="false">Dismissed</button><button data-s="all" aria-pressed="false">All</button>
+    <button data-s="pending" aria-pressed="true">Waiting for you<span id="waiting"></span></button><button data-s="new" aria-pressed="false">With Claude</button>
+    <button data-s="fixed" aria-pressed="false">Fixed</button><button data-s="dismissed" aria-pressed="false">Dismissed</button><button data-s="all" aria-pressed="false">All</button>
   </div>
   <div id="list"></div>
 </main>
 <script>
-let status = 'new'
+let status = 'pending'
 const list = document.getElementById('list')
+const LABEL = { pending: 'waiting for you', new: 'with Claude', fixed: 'fixed', dismissed: 'dismissed' }
+// what can be done with a report in each state
+const MOVES = {
+  pending: [['new', 'Send to Claude', 'go'], ['dismissed', 'Dismiss']],
+  new: [['fixed', 'Mark fixed'], ['dismissed', 'Dismiss'], ['pending', 'Back to waiting']],
+  fixed: [['new', 'Reopen']],
+  dismissed: [['pending', 'Back to waiting'], ['new', 'Send to Claude', 'go']],
+}
+const from = (x) => x.source === 'public' ? '<span class="from public">from a visitor</span>' : x.source === 'reviewer' ? '<span class="from">from you</span>' : ''
+async function countWaiting() {
+  const r = await fetch('/api/review/reports?status=pending')
+  if (!r.ok) return
+  const n = (await r.json()).reports.length
+  document.getElementById('waiting').textContent = n ? ` (${n})` : ''
+}
 const esc = (s) => String(s || '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 async function load() {
   const r = await fetch('/api/review/reports?status=' + status)
   if (r.status === 401) { location.href = './'; return }
   const { reports } = await r.json()
   list.innerHTML = reports.length ? reports.map((x) => `<article>
-      <div class="meta">#${x.id} · ${new Date(x.at).toLocaleString()} · ${esc(x.status)}${x.contact ? ' · contact: ' + esc(x.contact) : ''}</div>
+      <div class="meta">#${x.id} · ${new Date(x.at).toLocaleString()} · ${esc(LABEL[x.status] || x.status)} ${from(x)}${x.contact ? ' · contact: ' + esc(x.contact) : ''}</div>
       <strong>${esc(x.subject)}</strong>
       <p class="msg">${esc(x.message)}</p>
       ${x.context ? `<pre>${esc(x.context)}</pre>` : ''}
       ${x.page ? `<div class="meta"><a href="${esc(x.page)}" target="_blank" rel="noreferrer">Page it was sent from ↗</a></div>` : ''}
-      <div class="actions">${['fixed', 'dismissed', 'new'].filter((s) => s !== x.status).map((s) => `<button data-id="${x.id}" data-to="${s}">Mark ${s}</button>`).join('')}</div>
+      <div class="actions">${(MOVES[x.status] || []).map(([to, label, cls]) => `<button data-id="${x.id}" data-to="${to}"${cls ? ` class="${cls}"` : ''}>${label}</button>`).join('')}</div>
     </article>`).join('') : '<p class="empty">Nothing here.</p>'
 }
 document.querySelector('.bar').addEventListener('click', (e) => {
@@ -53,6 +72,8 @@ list.addEventListener('click', async (e) => {
   const b = e.target.closest('button[data-to]'); if (!b) return
   await fetch('/api/review/reports/' + b.dataset.id, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ status: b.dataset.to }) })
   load()
+  countWaiting()
 })
 load()
+countWaiting()
 </script>

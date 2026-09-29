@@ -27,12 +27,18 @@ const LIMITS = { like: 1000, report: 60, react: 5000 } // per scrambled IP addre
 const EMOJIS = ['🤣', '😲', '‼️', '❤️', '😬']
 const SESSION_DAYS = 30
 
+// Columns added since the tables were made (SQLite refuses a column that's
+// already there: that error just means it's done).
+const ADDED = [`ALTER TABLE reports ADD COLUMN source TEXT`]
+
 let schemaReady = null
 function ready(env) {
-  schemaReady ??= env.DB.batch(SCHEMA.map((s) => env.DB.prepare(s))).catch((e) => {
-    schemaReady = null
-    throw e
-  })
+  schemaReady ??= env.DB.batch(SCHEMA.map((s) => env.DB.prepare(s)))
+    .then(() => Promise.all(ADDED.map((s) => env.DB.prepare(s).run().catch(() => {}))))
+    .catch((e) => {
+      schemaReady = null
+      throw e
+    })
   return schemaReady
 }
 
@@ -183,16 +189,19 @@ async function setReaction(env, request) {
 // ---------- problem reports ----------
 const clip = (v, n) => (typeof v === 'string' ? v.slice(0, n) : '')
 
+// A report from someone signed in to the reviewer (the site's owner) goes
+// straight on the fix list ('new'); anyone else's waits ('pending') until the
+// owner has read it and sends it on from the Reports page.
 async function addReport(env, request) {
   const b = await request.json().catch(() => ({}))
   const message = clip(b.message, 4000).trim()
   if (!message) return bad(400, 'message needed')
-  // (anyone signed in to the reviewer is exempt: that's us, correcting transcripts)
-  if (!(await isReviewer(env, request)) && !(await underLimit(env, request, 'report')))
-    return bad(429, 'Too many reports from this connection today.')
-  await env.DB.prepare(`INSERT INTO reports (at, subject, message, context, contact, page) VALUES (?1, ?2, ?3, ?4, ?5, ?6)`)
-    .bind(new Date().toISOString(), clip(b.subject, 300), message, clip(b.context, 4000), clip(b.contact, 200), clip(b.page, 500)).run()
-  return json({ ok: true })
+  const trusted = await isReviewer(env, request)
+  if (!trusted && !(await underLimit(env, request, 'report'))) return bad(429, 'Too many reports from this connection today.')
+  await env.DB.prepare(`INSERT INTO reports (at, subject, message, context, contact, page, status, source) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8)`)
+    .bind(new Date().toISOString(), clip(b.subject, 300), message, clip(b.context, 4000), clip(b.contact, 200), clip(b.page, 500),
+      trusted ? 'new' : 'pending', trusted ? 'reviewer' : 'public').run()
+  return json({ ok: true, trusted })
 }
 
 async function listReports(env, url) {
@@ -203,7 +212,7 @@ async function listReports(env, url) {
 
 async function setReport(env, request, id) {
   const { status } = await request.json().catch(() => ({}))
-  if (!['new', 'fixed', 'dismissed'].includes(status)) return bad(400, 'status: new, fixed or dismissed')
+  if (!['pending', 'new', 'fixed', 'dismissed'].includes(status)) return bad(400, 'status: pending, new, fixed or dismissed')
   await env.DB.prepare(`UPDATE reports SET status = ?1 WHERE id = ?2`).bind(status, Number(id)).run()
   return json({ ok: true })
 }

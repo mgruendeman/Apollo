@@ -32,6 +32,7 @@ export default function ReportDialog({ title, context, audio, onClose, placehold
   const [message, setMessage] = useState('')
   const [contact, setContact] = useState('')
   const [state, setState] = useState('editing') // editing | sending | sent | failed | limit
+  const [trusted, setTrusted] = useState(false) // sent by the signed-in reviewer: straight on the fix list
   const boxRef = useRef(null)
 
   useEffect(() => {
@@ -63,6 +64,8 @@ export default function ReportDialog({ title, context, audio, onClose, placehold
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ subject: title, message: message.trim(), context, contact, page: window.location.href }),
       })
+      const body = res.ok ? await res.json().catch(() => ({})) : {}
+      setTrusted(!!body.trusted)
       setState(res.ok ? 'sent' : res.status === 429 ? 'limit' : 'failed')
     } catch {
       setState('failed')
@@ -85,7 +88,7 @@ export default function ReportDialog({ title, context, audio, onClose, placehold
         <h3>Report a problem</h3>
         {state === 'sent' ? (
           <>
-            <p className="report-done">Thanks — your report was sent.</p>
+            <p className="report-done">{trusted ? 'Sent straight to the fix list (you’re signed in as the reviewer).' : 'Thanks — your report was sent.'}</p>
             <button type="button" className="report-submit" onClick={onClose}>
               Close
             </button>
