@@ -94,6 +94,18 @@ TIDY_CASES = [
     ('12', 'fuel cell 1 would be the one', 'fuel cell 1 would be the one'),   # a number
     ('14', "It hasn'_ gone off yet", "It hasn't gone off yet"),
     ('15', "right under the center of the IM. The IM/CSM", "right under the center of the LM. The LM/CSM"),
+    ('11', "No. Don't leave thc console! It's a docked burn using th_ PTC REFSMMAT.", "No. Don't leave the console! It's a docked burn using the PTC REFSMMAT."),
+    ('11', "crossing over into tile Mojave; lay a tile down", "crossing over into the Mojave; lay a tile down"),
+    ('12', "we've observed th_.tthe high gain antenna", "we've observed th_.tthe high gain antenna"),   # (the tape's to mend)
+    ('11', "I'd like for you tc give me the angles", "I'd like for you to give me the angles"),
+    ('11', "Okay, Itm going to open up the main shutoffs.", "Okay, I'm going to open up the main shutoffs."),
+    ('11', "All your systems look rea[ good to us.", "All your systems look real good to us."),
+    ('14', "We re going to have to. How do you re ad?", "We're going to have to. How do you read?"),
+    ('11', "Is that affirmative ? Over.", "Is that affirmative? Over."),
+    ('15', "We need to have you re - reinitialize the HIGH GAIN", "We need to have you re - reinitialize the HIGH GAIN"),
+    ('11', "Okay. denote clipping of word and phrases.", "Okay."),
+    ('11', "denote clipping of word and phrases.", ""),
+    ('11', "Loud and clear. clipping of word and phrases.", "Loud and clear."),
     ('11', "Check the IMU and I'M ready", "Check the IMU and I'M ready"),
     ('12', "I oon'_ know", "I oon'_ know"),   # (not a word: the tape's business)
     ('12', 'Are you look- lng at it now?', 'Are you looking at it now?'),

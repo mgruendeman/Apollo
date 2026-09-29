@@ -298,6 +298,15 @@ def _tidy(text, vocab):
     text = re.sub(r"\b0(?=[a-z]{2,})", 'O', text)                                 # "0key-dokey", "0kay": a zero for O ("0h" is a misread 04)
     text = re.sub(r"\bCkay\b", 'Okay', text)
     text = re.sub(r"\bIM\b", 'LM', text)                                               # the typewriter's L read as I ("the IM")
+    text = re.sub(r"\b(?:thc|tae|th_)(?=\s|[.,;?!](?:\s|$)|$)", 'the', text)               # "thc console", "tae center", "th_ PTC" (not "th_.tthe")
+    text = re.sub(r"(?<!\ba )(?<!\bthe )\btile\b", 'the', text)                             # "into tile Mojave" (not "a tile")
+    text = re.sub(r"\btc\b", 'to', text)                                                # "for you tc give me"
+    text = re.sub(r"\b(you) re ad\b", r"\1 read", text, flags=re.I)                     # "How do you re ad?"
+    text = re.sub(r"(?<=\w) \?(?=\s|$)", '?', text)                                     # "torquing angles ?"
+    text = re.sub(r"\bItm\b", "I'm", text)
+    text = re.sub(r"\b([a-z]{2,})\[(?=[\s.,;?!]|$)",                                   # "rea[ good": an l read as "["
+                  lambda m: m.group(1) + 'l' if (m.group(1) + 'l') in vocab else m.group(), text)
+    text = re.sub(r"\b([Ww]e|[Yy]ou|[Tt]hey) (ve|re)\b(?!\s+ad\b)(?!\s*-\s*re[a-z])", r"\1'\2", text)   # "we re", "they ve" (not "re ad", "re - reinitialize")
     text = re.sub(r"\b([A-Za-z]+n)'_(?![\w'])",                                    # "hasn'_" (not "oon'_")
                   lambda m: m.group(1) + "'t" if (m.group(1) + "'t").lower() in vocab else m.group(), text)
     text = re.sub(r"\b6o\b", 'Go', text)                                            # "6o ahead."
@@ -305,7 +314,8 @@ def _tidy(text, vocab):
                   lambda m: m.group(1) + 'i' + m.group(2) if (m.group(1) + 'i' + m.group(2)) in vocab else m.group(), text)
     text = re.sub(r"\b[A-Z]*0[A-Z]+\b|\b[A-Z]+0[A-Z]*\b",                    # "LIFT-0FF", "0PS", "ENGINE 0VERRIDE": a zero in a capital word
                   lambda m: m.group().replace('0', 'O') if m.group().replace('0', 'O').lower() in vocab else m.group(), text)
-    text = re.sub(r"\s*\bclipping of words and phrases\.?(?:\s+\d{3,5}\b)?", '', text)   # the tail of a page note on NASA's voice-operated recording
+    text = re.sub(r"\s*(?:\bdenote\s+)?\bclipping of words and phrases\.?(?:\s+\d{3,5}\b)?", '', text)
+    text = re.sub(r"(?:(?<=\S)\s+(?:denote\s+)?|^\s*denote\s+)\bclipping of word and phrases\.?(?:\s+\d{3,5}\b)?", '', text)   # (a line of just "clipping of word and phrases." is left for a listener: one is "***", said there)   # the tail of a page note on NASA's voice-operated recording
     text = re.sub(r"(?<![\w'`.])i(?=(?:'(?:m|ll|ve|d)\b)|\s+(?:think|thought|was|had|have|can|can't|could|couldn't|did|didn't|do|"
                   r"don't|went|understand|guess|got|see|saw|know|knew|want|wanted|just|feel|felt|hope|mean|need|said|say|will|would|"
                   r"am|believe|notice|noticed)\b)", 'I', text)            # "Roger. i understand", "i'm", "i guess"

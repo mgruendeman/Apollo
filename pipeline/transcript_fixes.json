@@ -397,11 +397,6 @@
   },
   {
    "g": 282863,
-   "from": "th_ screen",
-   "to": "the screen"
-  },
-  {
-   "g": 282863,
    "from": "12.:minutes before power decent_;'",
    "to": "12 minutes before powered descent."
   },
@@ -609,11 +604,6 @@
    "g": 174084,
    "from": "8, 9, und _. Over.",
    "to": "8, 9, and 8. Over."
-  },
-  {
-   "g": 174174,
-   "from": "stirring up tae ...",
-   "to": "stirring up the ..."
   },
   {
    "g": 194293,
@@ -887,7 +877,7 @@
   },
   {
    "g": 20495,
-   "from": "Sure, be glad to. go back and do thc whole thing aaa pick tJiffrreni ;'.a. rs.",
+   "from": "Sure, be glad to. go back and do the whole thing aaa pick tJiffrreni ;'.a. rs.",
    "to": "Sure, be glad to. I can go back and do the whole thing and pick different stars."
   },
   {
@@ -907,7 +897,7 @@
   },
   {
    "g": 20605,
-   "from": "it is tight dab smack in the middle ,i'thc sextant.",
+   "from": "it is tight dab smack in the middle ,i'the sextant.",
    "to": "it is right dab smack in the middle of the sextant."
   },
   {
@@ -1002,7 +992,7 @@
   },
   {
    "g": 395170,
-   "from": "Z wonder if about ri_i.,tu_ider th_ ._C ne is where the probe mi_h + _lave his.",
+   "from": "Z wonder if about ri_i.,tu_ider the ._C ne is where the probe mi_h + _lave his.",
    "to": "I wonder if that's right under the engine is where the probe might have hit."
   },
   {
@@ -1153,11 +1143,6 @@
    "g": 5516,
    "from": "We are re,_eiving your FM downlink",
    "to": "We are receiving your FM downlink"
-  },
-  {
-   "g": 17539,
-   "from": "our views out th_ window",
-   "to": "our views out the window"
   },
   {
    "g": 467868.2,
@@ -1450,7 +1435,7 @@
   },
   {
    "g": 269512,
-   "from": "we'll dcletc thc - the pitch that was schcduJ, cd af'l,,n tile TVC check.",
+   "from": "we'll dcletc the - the pitch that was schcduJ, cd af'l,,n the TVC check.",
    "to": "we'll delete the - the pitch that was scheduled after the TVC check."
   },
   {
@@ -1556,7 +1541,7 @@
   },
   {
    "g": 371744,
-   "from": "Piea_ vent thc fuel. It's increasing rapidly. Ov-:.",
+   "from": "Piea_ vent the fuel. It's increasing rapidly. Ov-:.",
    "to": "Please vent the fuel. It's increasing rapidly. Over."
   },
   {
@@ -1642,7 +1627,7 @@
   },
   {
    "g": 197078,
-   "from": "Yes, we're _ going to come,' out. of FTC here at 263 roll and then (to 2 VERB )pi to thc recommended attitude.",
+   "from": "Yes, we're _ going to come,' out. of FTC here at 263 roll and then (to 2 VERB )pi to the recommended attitude.",
    "to": "Yes, we're going to come out of PTC here at 263 roll and then do a VERB 49 to the recommended attitude."
   },
   {
@@ -1942,7 +1927,7 @@
   },
   {
    "g": 122622.7,
-   "from": "Could you tell Us exactly where those cross the lan dm_S Ses ?",
+   "from": "Could you tell Us exactly where those cross the lan dm_S Ses?",
    "to": "Could you tell us exactly where those cross the land masses?"
   },
   {
@@ -2028,7 +2013,7 @@
   },
   {
    "g": 128426,
-   "from": "it would _e about a - oh, maybe a third of an Earth ratii high and tc the left",
+   "from": "it would _e about a - oh, maybe a third of an Earth ratii high and to the left",
    "to": "it would be about a - oh, maybe a third of an Earth radii high and to the left"
   },
   {
@@ -2040,11 +2025,6 @@
    "g": 197778.4,
    "from": "without shunting it again, but the arrow is at about the one o'elock",
    "to": "without shutting it again, but the arrow is at about the one o'clock"
-  },
-  {
-   "g": 197778.4,
-   "from": "the arrow in thc O2 valve",
-   "to": "the arrow in the O2 valve"
   },
   {
    "g": 201588,
@@ -2254,7 +2234,7 @@
   },
   {
    "g": 535560,
-   "from": "And at that t'J]ne thc uit, uat, iou looked",
+   "from": "And at that time the uit, uat, iou looked",
    "to": "And at that time the situation looked"
   },
   {
@@ -2824,6 +2804,382 @@
    "g": 261132.6,
    "from": "looked pretty Bleak. :The Astros",
    "to": "looked pretty bleak. The Astros"
+  },
+  {
+   "g": 389116,
+   "text": "Let me *** up tight *** have to *** up straight",
+   "merge": "*** up. Got her about ***"
+  },
+  {
+   "g": 389257,
+   "text": "q",
+   "delete": true
+  },
+  {
+   "g": 389264,
+   "from": "Well, we_ve got antennas down and *** not real",
+   "to": "Well, we've got antennas down and not real good ***"
+  },
+  {
+   "g": 389264,
+   "from": "good, is it? Okay. Yours is up. We'll put my antenna up.",
+   "to": "Okay. Yours is up. We'll put my antenna up."
+  },
+  {
+   "g": 389264,
+   "speaker": "Aldrin",
+   "text": "Okay. Yours is up. We'll put my antenna up."
+  },
+  {
+   "g": 389295.4,
+   "speaker": "Aldrin",
+   "text": "How do you read now?"
+  },
+  {
+   "g": 389295.4,
+   "text": "How do you read now?",
+   "at": 389294
+  },
+  {
+   "g": 393682,
+   "from": "This is Honky, ton, Roger. We copy. Ar;:_wc'r_ standing L,y for your TV.",
+   "to": "Houston. Roger. We copy, and we're standing by for your TV."
+  },
+  {
+   "g": 393702.8,
+   "from": "Radio check, and verity TV c circuit breaker in.",
+   "to": "Radio check, and verify TV circuit breaker in."
+  },
+  {
+   "g": 393816.7,
+   "from": "The I2! footpads are only depressed in the surface about I or 2 inches",
+   "to": "The LM footpads are only depressed in the surface about 1 or 2 inches"
+  },
+  {
+   "g": 393816.7,
+   "from": "as you get close te it.",
+   "to": "as you get close to it."
+  },
+  {
+   "g": 393816.7,
+   "from": "Down-there, it's very fine.",
+   "to": "Down there, it's very fine."
+  },
+  {
+   "g": 393816.7,
+   "text": "It's almost like a powder. Down there, it's very fine.",
+   "review": "The tape sounds like \"Ground mass is very fine\" where NASA has \"Down there, it's very fine\". Which is it?"
+  },
+  {
+   "g": 456356,
+   "text": "Okay. Latest estimate, 127 03 39.",
+   "delete": true
+  },
+  {
+   "g": 456338.8,
+   "from": "Are you going to be revL' ing that",
+   "to": "Are you going to be revising that one?"
+  },
+  {
+   "g": 98516.7,
+   "text": "I've got a comment about the point on the Earth",
+   "ok": true
+  },
+  {
+   "g": 111138,
+   "from": "look at the CDR's and th, C_-m°'sand see if they go up ann.",
+   "to": "look at the CDR's and the CMP's and see if they go up any."
+  },
+  {
+   "g": 111156,
+   "from": "It's coming ir at Goldstone",
+   "to": "It's coming in at Goldstone"
+  },
+  {
+   "g": 111199,
+   "from": "0k_4",
+   "to": "Okay.",
+   "whole": true
+  },
+  {
+   "g": 113122.7,
+   "from": "about a hour age.",
+   "to": "about an hour ago."
+  },
+  {
+   "g": 113156.5,
+   "from": "right mp- right up along the LM",
+   "to": "right up - right up along the LM"
+  },
+  {
+   "g": 113156.5,
+   "from": "up amgund the Gulf",
+   "to": "up around the Gulf"
+  },
+  {
+   "g": 113156.5,
+   "text": "I can see Alaska right up - right up along the LM",
+   "review": "The tape sounds like \"along the limb\" (the Earth's edge, in the sextant) where NASA has \"along the LM\". Which is it?"
+  },
+  {
+   "g": 118267,
+   "text": "These dang bastards almost always have a 104",
+   "ok": true
+  },
+  {
+   "g": 122791,
+   "text": "we do not have the depths of color at this range",
+   "ok": true
+  },
+  {
+   "g": 284326,
+   "speaker": "Collins",
+   "text": "I'm passing 182 inertial."
+  },
+  {
+   "g": 284326,
+   "from": "I'm going inertial n ow.",
+   "to": "I'm going inertial now."
+  },
+  {
+   "g": 284338,
+   "from": "minus 0C743",
+   "to": "minus 00743"
+  },
+  {
+   "g": 284338,
+   "from": "we would like am R1 20101",
+   "to": "we would like an R1 20101"
+  },
+  {
+   "g": 284338,
+   "from": "28 degress with respect",
+   "to": "28 degrees with respect"
+  },
+  {
+   "g": 284338,
+   "text": "Roger on the inertial. And here we go on the LOI-2 PAD.",
+   "ok": true
+  },
+  {
+   "g": 290158,
+   "text": "and our postburn now 94's",
+   "ok": true
+  },
+  {
+   "g": 370516,
+   "from": "The AUTO targeting was football-field sized crater, with a large number of big boulders and rocks for about ... one taking or two us right crater into diameters a football-field around it, size and it -",
+   "to": "The AUTO targeting was taking us right into a football-field size - football-field sized crater, with a large number of big boulders and rocks for about one or two crater diameters around it, and it required us to go in P66 and fly manually over the rock field to find a reasonably good area."
+  },
+  {
+   "g": 370516,
+   "text": "and it required us to go in P66 and fly manually over the rock field",
+   "review": "NASA's page lost the end of this line (from \"and it required us\"); I wrote it from the tape. Does it match what Neil says?"
+  },
+  {
+   "g": 370558.9,
+   "from": "relative to the zero- phase point",
+   "to": "relative to the zero-phase point"
+  },
+  {
+   "g": 370558.9,
+   "from": "some of the ?ocks and boulders",
+   "to": "some of the rocks and boulders"
+  },
+  {
+   "g": 370558.9,
+   "from": "they're going have some interesting colors",
+   "to": "they're going to have some interesting colors"
+  },
+  {
+   "g": 370558.9,
+   "text": "it looks as though some of the rocks and boulders",
+   "ok": true
+  },
+  {
+   "g": 370634,
+   "from": "That was a beautiful job, you t 3_rs.",
+   "to": "That was a beautiful job, you guys."
+  },
+  {
+   "g": 371563.2,
+   "from": "zero-phase line; smd it's",
+   "to": "zero-phase line; and it's"
+  },
+  {
+   "g": 371563.2,
+   "from": "90 degrees to the The - Some",
+   "to": "90 degrees to the Sun. The - Some"
+  },
+  {
+   "g": 371563.2,
+   "text": "disturbed by the rocket engine plume",
+   "ok": true
+  },
+  {
+   "g": 404491,
+   "text": "We're planning on doing that. I was just wondering",
+   "ok": true
+  },
+  {
+   "g": 412727.3,
+   "text": "I wouldn't say it was necessarily material that had been uncovered",
+   "ok": true
+  },
+  {
+   "g": 442398,
+   "text": "What figure is the crossrange and NOUN 76?",
+   "ok": true
+  },
+  {
+   "g": 448121,
+   "text": "I'm going to open up the main shutoffs",
+   "ok": true
+  },
+  {
+   "g": 460997,
+   "text": "I have thrusters B3 and C4 safetied",
+   "ok": true
+  },
+  {
+   "g": 461255,
+   "from": "l_emlnd me of it later",
+   "to": "remind me of it later"
+  },
+  {
+   "g": 468406,
+   "text": "jettison Eagle and stationkeep",
+   "ok": true
+  },
+  {
+   "g": 468642.7,
+   "text": "I thrusted back - I thrusted back toward it",
+   "ok": true
+  },
+  {
+   "g": 488207.0,
+   "from": "with the one in the [_ flights? Over.",
+   "to": "with the one in the LM flights? Over."
+  },
+  {
+   "g": 552009.3,
+   "from": "The Sim is down in the LEB",
+   "to": "The Sun is down in the LEB"
+  },
+  {
+   "g": 552009.3,
+   "from": "heating the place up. the Earth steady",
+   "to": "heating the place up. We've got the Earth steady"
+  },
+  {
+   "g": 560254,
+   "from": "not finding the r ght landing spot --",
+   "to": "not finding the right landing spot --"
+  },
+  {
+   "g": 560262,
+   "from": "the right lar_d- ing spot when you haven't even got the right planet !",
+   "to": "the right landing spot when you haven't even got the right planet!"
+  },
+  {
+   "g": 563892,
+   "from": "Hour I _n_ Apollo 11.",
+   "to": "Houston, Apollo 11."
+  },
+  {
+   "g": 563892,
+   "from": "Go a_e_ si_'.",
+   "to": "Go ahead."
+  },
+  {
+   "g": 615875,
+   "from": "_. do request that we do a P52",
+   "to": "we do request that we do a P52"
+  },
+  {
+   "g": 615875,
+   "from": "waste-water dump ha _ been complete",
+   "to": "waste-water dump has been complete"
+  },
+  {
+   "g": 615875,
+   "from": "state vector ui- date for you",
+   "to": "state vector update for you"
+  },
+  {
+   "g": 615875,
+   "from": "P00 ar d ACCEPT",
+   "to": "P00 and ACCEPT"
+  },
+  {
+   "g": 615950,
+   "from": "C is 63 ancL D is 59",
+   "to": "C is 63 and D is 59"
+  },
+  {
+   "g": 616007,
+   "from": "Will that ] e possible? Over.",
+   "to": "Will that be possible? Over."
+  },
+  {
+   "g": 616023,
+   "text": "Oh, yes. We'll take care of that.",
+   "ok": true
+  },
+  {
+   "g": 625204,
+   "text": "Hey, ask my chinch bugs",
+   "ok": true
+  },
+  {
+   "g": 626355,
+   "from": "notice any e lange in his data",
+   "to": "notice any change in his data"
+  },
+  {
+   "g": 626375,
+   "from": "if anyt a little on the warm side",
+   "to": "if anything, a little on the warm side"
+  },
+  {
+   "g": 626375,
+   "from": "L _st night it was",
+   "to": "Last night it was"
+  },
+  {
+   "g": 626390,
+   "from": "it's rio big thing",
+   "to": "it's no big thing"
+  },
+  {
+   "g": 627997,
+   "from": "felt cooler 7 side the spacecraft",
+   "to": "felt cooler inside the spacecraft"
+  },
+  {
+   "g": 627997,
+   "from": "the crew of Apollo LO report _a similar feelings",
+   "to": "the crew of Apollo 10 reported similar feelings"
+  },
+  {
+   "g": 627997,
+   "from": "condensed water i. the cabin",
+   "to": "condensed water in the cabin"
+  },
+  {
+   "g": 644246.6,
+   "from": "the ZPN trace down here is flat. 594",
+   "to": "the ZPN trace down here is flat."
+  },
+  {
+   "g": 644276,
+   "from": "ife was shavirl/{a little bit ago. might just let it slip.",
+   "to": "He was shaving a little bit ago. He might have just let it slip."
+  },
+  {
+   "g": 644316,
+   "from": "Charlesw_rth's face",
+   "to": "Charlesworth's face"
   }
  ],
  "12": [
