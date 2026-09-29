@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import MissionCard from '../components/MissionCard'
 import { missions } from '../data/missions'
 import { getAllLiveMissions, formatGet } from '../lib/liveStatus'
+import logo from '../assets/logo/apollo-rewind.webp'
 
 // "Apollo 11, 12 and 14"
 function listOf(ms) {
@@ -26,7 +27,9 @@ export default function Home() {
     <div className="page">
       <header className="hero">
         <p className="eyebrow">GET 000:00:00 — a work in progress</p>
-        <h1>Apollo Rewind</h1>
+        <h1 className="hero-logo">
+          <img src={logo} alt="Apollo Rewind" width="1200" height="571" />
+        </h1>
         <p className="lede">
           The Apollo Moon missions in the astronauts&apos; own voices. {onTapes} play end to end from NASA&apos;s own
           tapes, launch to splashdown, with the conversation written out alongside. The other flights have clips of

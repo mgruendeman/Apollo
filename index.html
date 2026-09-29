@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content="The Apollo Moon missions in the astronauts' own voices, played from NASA's own tapes with the conversation written out alongside." />
     <title>Apollo Rewind</title>
+    <script>
+      // the chosen design (src/lib/design.js), before the page draws
+      try {
+        var d = localStorage.getItem('apollo-design')
+        if (d) document.documentElement.dataset.design = d
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

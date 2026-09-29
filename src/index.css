@@ -8,6 +8,9 @@
   --accent: #ff8a3d;
   --accent-dim: #ffb27a;
   --available: #4ade80;
+  --bg-glow: #101830; /* the glow at the top of every page */
+  --tape: #3a4668; /* recorded stretches on the whole-mission bar */
+  --line: #c8d7ff; /* the phase diagram's orbit lines */
   --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   color-scheme: dark;
 }
@@ -28,7 +31,7 @@ body {
 #root {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse at top, #101830 0%, var(--bg) 60%);
+    radial-gradient(ellipse at top, var(--bg-glow) 0%, var(--bg) 60%);
 }
 
 a {
@@ -142,12 +145,12 @@ a {
 }
 
 .badge-available {
-  background: rgba(74, 222, 128, 0.12);
+  background: color-mix(in srgb, var(--available) 12%, transparent);
   color: var(--available);
 }
 
 .badge-soon {
-  background: rgba(139, 147, 171, 0.12);
+  background: color-mix(in srgb, var(--text-dim) 12%, transparent);
   color: var(--text-dim);
 }
 
@@ -331,7 +334,7 @@ a {
 }
 
 .moment-item.is-active {
-  background: rgba(255, 138, 61, 0.1);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
   color: var(--accent-dim);
 }
 
@@ -462,7 +465,7 @@ a {
 }
 
 .timeline details.is-major {
-  border-color: rgba(255, 138, 61, 0.4);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .timeline details.is-rest {
@@ -685,11 +688,11 @@ a {
 }
 
 .transcript-line:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: color-mix(in srgb, var(--text) 3%, transparent);
 }
 
 .transcript-line.is-active {
-  background: rgba(255, 138, 61, 0.12);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .speaker-badge,
@@ -772,8 +775,8 @@ a {
   gap: 10px;
   text-decoration: none;
   color: var(--text);
-  background: rgba(74, 222, 128, 0.08);
-  border: 1px solid rgba(74, 222, 128, 0.35);
+  background: color-mix(in srgb, var(--available) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--available) 35%, transparent);
   border-radius: 10px;
   padding: 12px 16px;
   font-size: 0.9rem;
@@ -788,8 +791,8 @@ a {
   align-items: center;
   gap: 8px;
   margin-top: 10px;
-  background: rgba(74, 222, 128, 0.1);
-  border: 1px solid rgba(74, 222, 128, 0.4);
+  background: color-mix(in srgb, var(--available) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--available) 40%, transparent);
   color: var(--available);
   border-radius: 999px;
   padding: 6px 14px;
@@ -844,7 +847,7 @@ a {
 }
 
 .phase-orbit-ring {
-  stroke: rgba(200, 215, 255, 0.55);
+  stroke: color-mix(in srgb, var(--line) 55%, transparent);
   stroke-width: 1.5;
   stroke-dasharray: 3 2.5;
 }
@@ -854,7 +857,7 @@ a {
 }
 
 .phase-moon {
-  fill: #9ca3af;
+  fill: var(--text-dim);
 }
 
 .phase-marker {
@@ -1355,7 +1358,7 @@ a {
 }
 
 .archive-item.is-active {
-  border-color: rgba(255, 138, 61, 0.5);
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
 .archive-item-text {
@@ -1447,7 +1450,7 @@ a {
   height: 40px;
   border-radius: 50%;
   border: 1px solid var(--border);
-  background: rgba(20, 27, 46, 0.8);
+  background: color-mix(in srgb, var(--bg-panel-raised) 80%, transparent);
   color: var(--text);
   font-size: 1.4rem;
   cursor: pointer;
@@ -1497,7 +1500,7 @@ a {
   padding: 2px 8px;
   border-radius: 6px;
   font-size: 0.7rem;
-  color: rgba(232, 236, 246, 0.7);
+  color: color-mix(in srgb, var(--text) 70%, transparent);
   background: rgba(0, 0, 0, 0.55);
 }
 
@@ -1525,7 +1528,7 @@ a {
   overflow-y: auto;
   overscroll-behavior: contain;
   align-content: start;
-  background: #05070d;
+  background: var(--bg);
   border-top: 1px solid var(--border);
   scrollbar-width: thin;
 }
@@ -1579,7 +1582,7 @@ a {
   align-items: center;
   gap: 8px;
   padding: 8px 12px calc(10px + env(safe-area-inset-bottom));
-  background: #05070d;
+  background: var(--bg);
 }
 
 .immersive-controls .audio-player {
@@ -2059,7 +2062,7 @@ a {
   padding: 6px 12px;
   border: 1px solid var(--accent);
   border-radius: 999px;
-  background: rgba(13, 18, 32, 0.92);
+  background: color-mix(in srgb, var(--bg-panel) 92%, transparent);
   color: var(--accent-dim);
   font: inherit;
   font-size: 0.78rem;
@@ -2254,7 +2257,7 @@ a {
 }
 
 a.astronaut-flight {
-  border-color: rgba(255, 138, 61, 0.5);
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
   color: var(--accent-dim);
 }
 
@@ -2523,7 +2526,7 @@ a.astronaut-flight:hover {
   border-radius: 3px;
 }
 .tape-piece {
-  fill: #3a4668;
+  fill: var(--tape);
 }
 .tape-played {
   fill: var(--accent);
@@ -2716,7 +2719,7 @@ button.transcript-channel-tag {
   width: 320px;
 }
 .pd-path {
-  stroke: rgba(200, 215, 255, 0.35);
+  stroke: color-mix(in srgb, var(--line) 35%, transparent);
   stroke-width: 1;
   stroke-dasharray: 2.5 2;
 }
@@ -2782,8 +2785,8 @@ button.transcript-channel-tag {
   font-size: 0.8rem;
   line-height: 1.4;
   color: var(--text-dim);
-  background: rgba(255, 138, 61, 0.08);
-  border-bottom: 1px solid rgba(255, 138, 61, 0.25);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
 }
 .construction-bar strong {
   color: var(--accent-dim);
@@ -2791,7 +2794,7 @@ button.transcript-channel-tag {
 .mission-progress {
   margin-top: 24px;
   padding: 16px 18px;
-  border: 1px dashed rgba(255, 138, 61, 0.35);
+  border: 1px dashed color-mix(in srgb, var(--accent) 35%, transparent);
   border-radius: 12px;
   background: var(--bg-panel);
 }
@@ -2947,4 +2950,138 @@ button.transcript-channel-tag {
 }
 .lightbox-report:hover {
   color: var(--accent-dim);
+}
+
+
+/* ---------- designs (the Design menu in the site header; src/lib/design.js) ----------
+   Classic is the :root palette above. Rewind and Daylight take the logo's
+   colors: its sunset stripes (yellow, orange, red), cream letters and
+   near-black outline. */
+:root[data-design='rewind'] {
+  --bg: #0b0806;
+  --bg-panel: #17110c;
+  --bg-panel-raised: #211810;
+  --border: #3b2c1e;
+  --text: #fbf6eb;
+  --text-dim: #b5a58f;
+  --accent: #ff6a13;
+  --accent-dim: #ffb52e;
+  --bg-glow: #2b1307;
+  --tape: #5c4330;
+  --line: #ffd9b0;
+}
+:root[data-design='daylight'] {
+  color-scheme: light;
+  --bg: #f6eddc;
+  --bg-panel: #fffaf0;
+  --bg-panel-raised: #fff2da;
+  --border: #e2d1b4;
+  --text: #1f1711;
+  --text-dim: #6f5f4c;
+  --accent: #d6470e;
+  --accent-dim: #a95207;
+  --available: #177a3c;
+  --bg-glow: #ffdcae;
+  --tape: #d6bf9c;
+  --line: #7a6650;
+}
+/* the full-screen view and the photo viewer stay dark, for the photos */
+:root[data-design='daylight'] :is(.immersive, .lightbox) {
+  color-scheme: dark;
+  --bg: #0b0806;
+  --bg-panel: #17110c;
+  --bg-panel-raised: #211810;
+  --border: #3b2c1e;
+  --text: #fbf6eb;
+  --text-dim: #b5a58f;
+  --accent: #ff7a2a;
+  --accent-dim: #ffb52e;
+}
+/* ---------- site header: the logo and the Design menu ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 10px 20px 0;
+}
+.site-header-logo img {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+.design-menu {
+  position: relative;
+  margin-left: auto;
+}
+.design-menu > button {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  cursor: pointer;
+}
+.design-menu > button:hover {
+  color: var(--text);
+}
+.design-options {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 50;
+  min-width: 230px;
+  padding: 8px;
+  display: grid;
+  gap: 4px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.design-options button {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  text-align: left;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+}
+.design-options button[aria-checked='true'] {
+  border-color: var(--accent);
+}
+.design-options small {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+}
+.design-swatch {
+  display: flex;
+  width: 44px;
+  height: 22px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.design-swatch span {
+  flex: 1;
+}
+.hero-logo {
+  margin: 0 0 8px;
+  line-height: 0;
+}
+.hero-logo img {
+  width: min(560px, 100%);
+  height: auto;
 }
