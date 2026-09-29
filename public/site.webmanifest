@@ -1,0 +1,13 @@
+{
+  "name": "Apollo Rewind",
+  "short_name": "Apollo Rewind",
+  "description": "The Apollo Moon missions in the astronauts' own voices, from NASA's own tapes.",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "start_url": ".",
+  "display": "browser",
+  "background_color": "#05070d",
+  "theme_color": "#05070d"
+}
