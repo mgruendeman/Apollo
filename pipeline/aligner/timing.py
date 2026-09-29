@@ -235,17 +235,32 @@ def mark_unheard(lines, segments, tape_words, envelopes):
     return n
 
 
-def mark_drowned_out(lines, segments, tape_words, run=6, minutes=5, share=0.2):
+def said_on_tape(l, segments, tape_words):
+    """Three of the line's words in a row on the tape, somewhere near its time."""
+    said = tokens(l['t'])
+    seq = [h[3] for h in heard_between(segments, tape_words, l['g'] - 15, l['g'] + 15 + 0.5 * len(said))]
+    grams = set(zip(seq, seq[1:], seq[2:]))
+    return any(g in grams for g in zip(said, said[1:], said[2:]))
+
+
+def mark_drowned_out(lines, segments, tape_words, run=6, minutes=5, share=0.2, other_loop=()):
     """NASA's lines where the tape plays something else: the broadcast
     sometimes carried a press conference live instead of the air-to-ground
     loop (Apollo 12, 130:34 to 130:58). The tape has speech there, but
     none of the conversation NASA transcribed. A run of at least `run`
     lines, over `minutes` or more, each with at most `share` of its words
     heard around it, is marked 'n' (not on this recording), with the short
-    lines between them. Returns how many were marked."""
-    judged = []
+    lines between them. A line of `other_loop` (ids: the command module's
+    talk during a moonwalk, which NASA printed apart) is marked on its own:
+    the tape plays the moonwalk there. Returns how many were marked."""
+    judged, n = [], 0
     for i, l in enumerate(lines):
         if l.get('c') or l.get('n'):
+            continue
+        if id(l) in other_loop:
+            if len(tokens(l['t'])) >= 3 and not said_on_tape(l, segments, tape_words):
+                l['n'] = 1
+                n += 1
             continue
         toks = [t for t in tokens(l['t']) if len(t) >= 4]
         if not toks:
@@ -255,8 +270,15 @@ def mark_drowned_out(lines, segments, tape_words, run=6, minutes=5, share=0.2):
             judged.append((i, None))   # (a quiet tape is mark_unheard's business)
             continue
         words = {h[3] for h in heard}
-        judged.append((i, sum(t in words for t in toks) / len(toks) <= share))
-    n = 0
+        deaf = sum(t in words for t in toks) / len(toks) <= share
+        judged.append((i, deaf))
+    prev = None   # ("Roger." on that loop: with the line before it)
+    for l in lines:
+        if id(l) in other_loop:
+            if not l.get('n') and prev is not None and prev.get('n') and len(tokens(l['t'])) < 3:
+                l['n'] = 1
+                n += 1
+            prev = l
     start = None
     for k, (i, deaf) in enumerate(judged + [(len(lines), False)]):
         if deaf:

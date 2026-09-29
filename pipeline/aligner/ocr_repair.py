@@ -77,6 +77,8 @@ def _suspect(core, vocab):
         return False
     if re.fullmatch(r"[A-Za-z]{4,}/[A-Za-z]{4,}", core) and all(p.lower() in vocab for p in core.split("/")):
         return False   # "latitude/longitude": two words, not a misreading
+    if re.fullmatch(r"(?:\d+/)?\d+(?:st|nd|rd|th|s)", core):
+        return False   # "1/250th", "21st", "1960s"
     if re.search(r"[a-z][\d.,;:/?!%][a-z]|[a-z]\d|\d[a-z]{2}", core):
         return True
     if re.search(r"[a-z]'(?!(?:s|t|d|m|ll|re|ve)$)[a-z]", core) and core.lower() not in vocab:   # "e'aable" (not o'clock)
@@ -295,6 +297,9 @@ def _tidy(text, vocab):
     text = re.sub(r"(?<=\w)'\]\]", "'ll", text)                                   # "We']]", "it']]"
     text = re.sub(r"\b0(?=[a-z]{2,})", 'O', text)                                 # "0key-dokey", "0kay": a zero for O ("0h" is a misread 04)
     text = re.sub(r"\bCkay\b", 'Okay', text)
+    text = re.sub(r"\bIM\b", 'LM', text)                                               # the typewriter's L read as I ("the IM")
+    text = re.sub(r"\b([A-Za-z]+n)'_(?![\w'])",                                    # "hasn'_" (not "oon'_")
+                  lambda m: m.group(1) + "'t" if (m.group(1) + "'t").lower() in vocab else m.group(), text)
     text = re.sub(r"\b6o\b", 'Go', text)                                            # "6o ahead."
     text = re.sub(r"\b([a-z]+) \[([a-z]+)\b(?!\])",                                # "t [me", "humid [ty": an i read as " [" (not "[sic]")
                   lambda m: m.group(1) + 'i' + m.group(2) if (m.group(1) + 'i' + m.group(2)) in vocab else m.group(), text)
@@ -366,14 +371,15 @@ def _tidy(text, vocab):
     return text.strip()
 
 
-def repair_ocr(lines, segments, tape_words):
+def repair_ocr(lines, segments, tape_words, skip=()):
     """Mend OCR damage in NASA's lines, from what the tapes say.
 
     For each line on a tape, its words are matched in order against the
     recognised words at that moment; a damaged word ("Ro6er", "Eone") takes
     the recognised word it lines up with when they're close in spelling.
     Before that, a misreading that can only be one word is corrected
-    ("Sta6ing"); anything else stays as NASA printed it."""
+    ("Sta6ing"); anything else stays as NASA printed it. Lines in `skip`
+    (ids: talk on another loop, not on these tapes) get only the tidying."""
     vocab, names, common, spoken = vocabulary(tape_words)
     from collections import Counter as _C
     caps = _C(w for l in lines for w in re.findall(r"(?<![\w_])[A-Z]{3,}(?![\w_])", l['t']))
@@ -415,7 +421,7 @@ def repair_ocr(lines, segments, tape_words):
                 bad.discard(i)
                 changed += 1
         k = bisect.bisect_right(gets, line['g']) - 1
-        if bad and k >= 0:
+        if bad and k >= 0 and id(line) not in skip:
             sg = segments[k]
             t = sg['from'] + (line['g'] - sg['get']) / sg['rate']
             if sg['from'] - 5 <= t <= sg['to'] + 5 and sg['tape'] in tape_words:

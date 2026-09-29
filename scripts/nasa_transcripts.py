@@ -45,6 +45,24 @@ DIGIT_FIX = str.maketrans({'o': '0', 'O': '0', 'Q': '0', 'D': '0', 'l': '1', 'I'
                            'g': '9', 'Z': '2', 'z': '2', 'b': '6', 'G': '6', 'T': '7',
                            '[': '1', ']': '1', 't': '1', '(': '', ')': ''})
 HEADER = re.compile(r'(?i)^\W*(\(?goss|tape|page|end of tape|\(?rev\b|air.to.ground)')
+# Through a moonwalk NASA printed the command module's talk with Houston as
+# its own blocks, on its own clock: "SEPARATE, SIMULTANEOUS COMMUNICATION(S)
+# LINK IN USE BETWEEN CC AND CM" opens one, "... BETWEEN CC AND LM RESUMED"
+# (when it's printed) closes it. The notes sometimes land inside a spoken
+# line ("Stand COMMUNICATIONS by a second. LINK IN USE BETWEEN CC AND CM").
+CM_LINK = ['COMMUNICATIONS', 'LINK', 'IN', 'USE', 'BETWEEN', 'CC', 'AND', 'CM']
+CM_START = re.compile(r'\bLINK\s+BETWEEN\s+CC\s+AND\s+CM\s+ACTIVATED\b')
+CM_END = re.compile(r'\bAND\s+LM\s+RESUMED\b|\bLINK\s+BETWEEN\s+CC\s+AND\s+CM\s+SECURED\b')
+CM_NOTES = re.compile(r'(?:\b(?:SEPARATE,\s+)?SIMULTANEOUS\s+)?\bCOMMUNICATIONS?\s+LINK\s+BETWEEN\s+CC\s+AND\s+CM\s+(?:ACTIVATED|SECURED)\b'
+                      r'|(?:\b(?:OF\s+)?COMMUNICATIONS?\s+BETWEEN\s+)?(?:\bCC\s+)?\bAND\s+LM\s+RESUMED\b(?:\s+SO\b)?'
+                      r'|\b(?:SEPARATE,\s+)?SIMULTANEOUS\b')
+LUNAR_REV = re.compile(r'\s*\bBEGIN\s+LUNAR\s+REV\s+\d+\b')
+CM_BANNER = re.compile(r'(?i:\bCOMMUNICATIONS?\s+(?:LINK\s+)?IN\s+USE\s+(?:LINK\s+)?BETWEEN\s+CC\s+AND\s+CM)\b')
+
+
+def strip_notes(text):
+    """A row's text without NASA's notes on the command module's link."""
+    return re.sub(r'\s{2,}', ' ', LUNAR_REV.sub('', CM_NOTES.sub('', CM_BANNER.sub('', text)))).strip()
 OCR_DPI = 300
 
 
@@ -211,34 +229,94 @@ def extract(pdf_path, force_ocr=False, pages=None):
                              'words': text, 'page': pno + 1})
             elif rows and text and ws[0][0] >= text_x - 12:
                 rows[-1]['words'] += text
-    # The typed times only go forward, so the rows whose times form the longest
-    # non-decreasing run are trusted; the rest (misread or unreadable) take
-    # the time of the trusted row before them.
-    # A row with only its day and hour starts no earlier than that hour.
-    # A time with a smudged digit or two takes the one value that fits
-    # between its trusted neighbours.
-    trusted = longest_forward_run([r['getSeconds'] for r in rows])
-    nxt, following = None, [None] * len(rows)
-    for i in range(len(rows) - 1, -1, -1):
-        following[i] = nxt
-        if i in trusted:
-            nxt = rows[i]['getSeconds']
-    last = 0
-    for i, r in enumerate(rows):
-        r['getApprox'] = i not in trusted
-        if r['getApprox']:
-            filled = fill_pattern(r['pattern'], last, following[i] if following[i] is not None else 10 ** 7) if r['pattern'] else None
-            r['getSeconds'], r['getApprox'] = (filled, False) if filled is not None else (max(last, r['hour'] or 0), True)
-        last = r['getSeconds']
+    streams = cm_link_streams(rows)
+    resolve_times(rows, streams)
     vocab = {w[2].lower().strip('.,?!;:') for r in rows for w in r['words']}
     out = []
-    for r in rows:
+    for r, stream in zip(rows, streams):
         text = clean_text(' '.join(w[2] for w in r['words']), vocab)
+        text = strip_notes(text)
         if not text:
             continue
         out.append({'getSeconds': r['getSeconds'], 'getApprox': r['getApprox'], 'hourOnly': r['hour'] is not None, 'speaker': r['speaker'],
-                    'text': text, 'unsure': [w[2] for w in r['words'] if w[3] < 80], 'page': r['page']})
+                    'text': text, 'unsure': [w[2] for w in r['words'] if w[3] < 80], 'page': r['page'],
+                    **({'loop': 'CM'} if stream else {})})
     return out
+
+
+def _is_word(read, word):
+    read = re.sub(r'[^A-Za-z]', '', read)
+    if not read or sum(ch.isupper() for ch in read) < 0.6 * len(read):   # (typed in capitals: "LiNK" is a misread)
+        return False
+    read = read.upper()
+    return read == word or (len(word) >= 5 and edit_distance(read, word) <= 2) or (word == 'COMMUNICATIONS' and read == 'COMMUNICATION')
+
+
+def strip_cm_link(words):
+    """The words of a row without NASA's "COMMUNICATIONS LINK IN USE BETWEEN
+    CC AND CM" note, and whether it held the note (all eight words, in order)."""
+    at, k = [], 0
+    for i, w in enumerate(words):
+        if k < len(CM_LINK) and _is_word(w[2], CM_LINK[k]):
+            at.append(i)
+            k += 1
+    if k < len(CM_LINK):
+        # a row that's the note alone, a word or two out of place ("COMMUNICATIONS IN USE LINK BETWEEN")
+        at = [i for i, w in enumerate(words) if any(_is_word(w[2], c) for c in CM_LINK)]
+        if len(at) < 6 or len(words) > len(at) + 1:
+            return words, False
+        return [], True   # (the note alone, and a word of it too damaged to know: "CON[_3NICATIONS")
+    return [w for i, w in enumerate(words) if i not in set(at)], True
+
+
+def cm_link_streams(rows):
+    """Which rows are the command module's separate block (1, 2, ... for
+    each block; 0 for the rest). A block runs from NASA's note to "... AND LM
+    RESUMED", or else to where the crew on the Moon talk again (two CDR/LMP
+    rows close together: only the CMP and CapCom are on that link), or the
+    next note. The note itself is taken out of the row it's in."""
+    streams, block, inside = [0] * len(rows), 0, False
+    for i, r in enumerate(rows):
+        r['words'], note = strip_cm_link(r['words'])
+        text = ' '.join(w[2] for w in r['words'])
+        if note or CM_START.search(text):
+            block, inside = block + 1, True
+        elif inside and CM_END.search(text):
+            inside = False
+        elif inside and r['speaker'] in ('CDR', 'LMP') and any(x['speaker'] in ('CDR', 'LMP') for x in rows[i + 1:i + 4]):
+            inside = False
+        if inside:
+            streams[i] = block
+    return streams
+
+
+def resolve_times(rows, streams):
+    """Each row's mission time, stream by stream (the main transcript, and
+    each of the command module's blocks on its own clock). The typed times
+    only go forward, so the rows whose times form the longest non-decreasing
+    run are trusted; the rest (misread or unreadable) take the time of the
+    trusted row before them. A row with only its day and hour starts no
+    earlier than that hour. A time with a smudged digit or two takes the
+    one value that fits between its trusted neighbours."""
+    for s in sorted(set(streams)):
+        idx = [i for i, x in enumerate(streams) if x == s]
+        part = [rows[i] for i in idx]
+        trusted = longest_forward_run([r['getSeconds'] for r in part])
+        nxt, following = None, [None] * len(part)
+        for i in range(len(part) - 1, -1, -1):
+            following[i] = nxt
+            if i in trusted:
+                nxt = part[i]['getSeconds']
+        last = 0
+        if s:   # a block starts no earlier than the main transcript's last trusted time before its first trusted one
+            first = min((part[i]['getSeconds'] for i in trusted), default=None)
+            last = 0 if first is None else first
+        for i, r in enumerate(part):
+            r['getApprox'] = i not in trusted
+            if r['getApprox']:
+                filled = fill_pattern(r['pattern'], last, following[i] if following[i] is not None else 10 ** 7) if r['pattern'] else None
+                r['getSeconds'], r['getApprox'] = (filled, False) if filled is not None else (max(last, r['hour'] or 0), True)
+            last = r['getSeconds']
 
 
 DAMAGE = re.compile(r"[^A-Za-z0-9'.,?!;:()/&\-]|[a-z][0-9]|[0-9][a-z]{2}|[a-z][,:;][a-z]|[A-Za-z][éèàù]")
@@ -340,7 +418,7 @@ def extract_merged(pdf_path, pages=None, cache=None):
                 i = i1 + k
                 nearby = ' '.join(x['text'] for x in old[max(0, i - 2):i] + old[i + 1:i + 3])
                 m = dict(r)
-                m['text'] = merge_readings(r['text'], q['text'], vocab, nearby, common)
+                m['text'] = strip_notes(merge_readings(r['text'], q['text'], vocab, nearby, common))
                 if r['getApprox'] and not q['getApprox']:
                     m['getSeconds'], m['getApprox'] = q['getSeconds'], False
                 if r['speaker'] == '?' and q['speaker'] != '?':
@@ -348,6 +426,15 @@ def extract_merged(pdf_path, pages=None, cache=None):
                 out.append(m)
         else:
             out += old[i1:i2]   # rows the readings split differently: keep the embedded reading
+    out = [r for r in out if r['text']]
+    # a row neither reading could time follows the row before it (in its own
+    # stream), now the second reading may have timed that one later
+    last = {}
+    for r in out:
+        k = r.get('loop', '')
+        if r['getApprox']:
+            r['getSeconds'] = max(r['getSeconds'], last.get(k, 0))
+        last[k] = r['getSeconds']
     return out
 
 

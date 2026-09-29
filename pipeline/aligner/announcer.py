@@ -21,6 +21,18 @@ SAID_TIME = re.compile(r"apollo control,? (?:houston,? )?(?:at )?([\w -]+?) hour
 TITLES = re.compile(r"(?:Dr|Mr|Mrs|Ms|St|Jr|Sr|Gen|Col|Lt|Capt|Gov|Sen|Rep|vs|[B-HJ-Z])\.")   # (and a middle initial: "Thomas O. Paine")
 
 
+# names the recogniser spells its own way in what the announcer says
+ASR_NAMES = [(r"\bGlenn Lunney\b", 'Glynn Lunney'), (r"\bKrantz\b", 'Kranz'), (r"\bRusa\b", 'Roosa'),
+             (r"\bShepherd\b", 'Shepard'), (r"\bErwin\b", 'Irwin'), (r"\bHennise\b", 'Henize'),
+             (r"\bCarl Henize\b", 'Karl Henize'), (r"\bEndeavor\b", 'Endeavour')]
+
+
+def spell_names(text):
+    for pattern, name in ASR_NAMES:
+        text = re.sub(pattern, name, text)
+    return text
+
+
 def ends_sentence(word):
     """A word that ends one of the announcer's sentences: a stop, but not a title's ("Dr. Paine") or an initial's."""
     w = word.strip()
@@ -164,7 +176,7 @@ def find_announcer(segments, lines, tape_words, heard_at):
             sentence.append(x[2])
             if ends_sentence(x[2]) or x is allw[-1]:
                 extra = {'o': 1} if over_from is not None and start >= over_from else {}
-                said.append({'g': round(g(start)), 's': 'Public Affairs', 't': ' '.join(sentence), 'c': 'pao', **extra})
+                said.append({'g': round(g(start)), 's': 'Public Affairs', 't': spell_names(' '.join(sentence)), 'c': 'pao', **extra})
                 sentence = []
 
     for st in stretches:

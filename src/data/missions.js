@@ -177,20 +177,22 @@ export const missions = [
     summary:
       'The first of the extended "J missions": a longer stay, a heavier scientific payload, and the first Lunar Roving Vehicle, which let the crew range miles from the lander to Hadley Rille.',
     status: 'available',
-    clipsFile: 'apollo15',
-    clipCount: 1149,
+    timeline: 'apollo15', // whole-mission tapes: public/timeline/apollo15.json
     launchUtc: '1971-07-26T13:34:00Z',
     durationSeconds: 1062713, // 295:11:53
     landingSeconds: 376949, // touchdown at GET 104:42:29
+    // (archive.org's Apollo 15 tapes are 540-AAA to 583-AAA)
+    tapesNote: "NASA's tapes on archive.org stop at 199 hours, in lunar orbit: the trip home has no recording here.",
+    events: { tli: '002:56:03', loi: '078:31:47', liftoff: '171:37:23', lmJettison: '179:30:01', tei: '223:48:46', cmSep: '294:43:55' },
     csmName: 'Endeavour',
     lmName: 'Falcon',
     objective: 'Fly the first extended "J" mission: three days on the surface, the first Lunar Roving Vehicle, and geology at Hadley Rille and the Apennine front.',
     landingSite: { name: 'Hadley–Apennine, between Hadley Rille and the Apennine Mountains', lat: 26.13239, lon: 3.6333 },
     highlights: [
-      { id: 'a15_0000013', title: 'Launch — "Tower Clear"' },
-      { id: 'a15a1195255', title: 'Deploying the Lunar Roving Vehicle' },
-      { id: 'a15a1454747', title: 'The Genesis Rock' },
-      { id: 'a15a1651703', title: 'At the edge of Hadley Rille' },
+      { id: 'a15-launch', at: '-000:00:30', title: 'Launch' },
+      { id: 'a15-rover', at: '119:52:55', title: 'Deploying the Lunar Roving Vehicle' },
+      { id: 'a15-genesis', at: '145:47:47', title: 'The Genesis Rock' },
+      { id: 'a15-rille', at: '165:17:03', title: 'At the edge of Hadley Rille' },
     ],
   },
   {

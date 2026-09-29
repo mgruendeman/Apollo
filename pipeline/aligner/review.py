@@ -22,6 +22,8 @@ from .ocr_repair import _core, _suspect
 # Words whose misreading looks like another real word: the dictionary
 # can't catch these, only a second reading can.
 LOOKALIKE_MAX_DIST = 2
+# the same word as heard, spelled NASA's way (a CapCom's name, the CSM's British spelling)
+SOUNDS_SAME = {('karl', 'carl'), ('endeavour', 'endeavor')}
 
 
 def _heard_window(line, segments, tape_words, gets):
@@ -55,7 +57,7 @@ def _disagreements(nasa_words, heard):
         if op != 'replace' or i2 - i1 != j2 - j1:
             continue
         for k, (a, b) in enumerate(zip(mine[i1:i2], heard[j1:j2])):
-            if len(a) < 3 or len(b) < 3 or a == b or a.isdigit() or b.isdigit() or acronym[i1 + k]:
+            if len(a) < 3 or len(b) < 3 or a == b or a.isdigit() or b.isdigit() or acronym[i1 + k] or (a, b) in SOUNDS_SAME:
                 continue
             if 0 < sum(1 for x, y in zip(a, b) if x != y) + abs(len(a) - len(b)) <= LOOKALIKE_MAX_DIST:
                 out.append((a, b))

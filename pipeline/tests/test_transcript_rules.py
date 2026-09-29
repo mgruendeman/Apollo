@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / 'scripts'))
 
 from aligner import ocr_repair as R  # noqa: E402
-from aligner.announcer import ends_sentence, said_time  # noqa: E402
+from aligner.announcer import ends_sentence, said_time, spell_names  # noqa: E402
 import nasa_transcripts as N  # noqa: E402
 
 
@@ -92,6 +92,10 @@ TIDY_CASES = [
     ('11', 'after the first 20 seconds, 1 would guess, of the burn', 'after the first 20 seconds, I would guess, of the burn'),
     ('12', 'No, 1 haven\'t. No, I haven\'t.', "No, I haven't. No, I haven't."),
     ('12', 'fuel cell 1 would be the one', 'fuel cell 1 would be the one'),   # a number
+    ('14', "It hasn'_ gone off yet", "It hasn't gone off yet"),
+    ('15', "right under the center of the IM. The IM/CSM", "right under the center of the LM. The LM/CSM"),
+    ('11', "Check the IMU and I'M ready", "Check the IMU and I'M ready"),
+    ('12', "I oon'_ know", "I oon'_ know"),   # (not a word: the tape's business)
     ('12', 'Are you look- lng at it now?', 'Are you looking at it now?'),
     ('12', 'I was think- tng about it', 'I was thinking about it'),
     ('11', 'the voice sub- carrier part', 'the voice subcarrier part'),
@@ -186,6 +190,11 @@ SAID_TIME_CASES = [
 @pytest.mark.parametrize('text, expected', SAID_TIME_CASES)
 def test_said_time(text, expected):
     assert said_time(text)[0] == expected
+
+
+def test_announcer_names():
+    assert spell_names('Jim Erwin and flight director Glenn Lunney') == 'Jim Irwin and flight director Glynn Lunney'
+    assert spell_names('astronaut Carl Hennise, aboard Endeavor') == 'astronaut Karl Henize, aboard Endeavour'
 
 
 # Merging the scan's embedded text with a Tesseract reading, word by word
@@ -370,8 +379,34 @@ def test_whole_and_retime_only_fixes(tmp_path, monkeypatch):
 
 
 def test_spaceflight_words_are_not_damage(vocab):
-    for w in ('ullage', 'trunnion', 'regolith', 'pericynthion', 'stationkeeping', 'gnomon'):
+    for w in ('ullage', 'trunnion', 'regolith', 'pericynthion', 'stationkeeping', 'gnomon', '1/250th', '21st'):
         assert not R._suspect(w, vocab), w
+
+
+def test_cm_link_note_comes_out_of_the_row():
+    words = lambda t: [(0, 0, w, 100.0) for w in t.split()]
+    kept, note = N.strip_cm_link(words('Hello, COMMUNICATIONS Houston. How LINK do IN you USE read BETWEEN Kitty CC Hawk? AND CM'))
+    assert note and ' '.join(w[2] for w in kept) == 'Hello, Houston. How do you read Kitty Hawk?'
+    assert N.strip_cm_link(words('CON[_3NICATIONS LINK IN USE BETWEEN CC AND CM')) == ([], True)
+    assert N.strip_cm_link(words('COMMUNICATIONS IN USE LINK BETWEEN CC AND CM')) == ([], True)
+    kept, note = N.strip_cm_link(words('Roger, and we will use the link in a minute.'))
+    assert not note
+    assert N.strip_notes('It sounds great. OF COMMUNICATIONS BETWEEN CC AND LM RESUMED') == 'It sounds great.'
+    assert N.strip_notes('Yes. You betcha. BEGIN LUNAR REV 30') == 'Yes. You betcha.'
+
+
+def test_cm_link_block_runs_on_its_own_clock():
+    row = lambda g, spk, text: {'getSeconds': g, 'hour': None, 'pattern': None, 'speaker': spk,
+                                'words': [(0, 0, w, 100.0) for w in text.split()], 'page': 1}
+    rows = [row(1000, 'CDR', 'Okay.'), row(1100, 'LMP', 'Going down.'), row(1200, 'CDR', 'Down.'),
+            row(None, '?', 'COMMUNICATIONS LINK IN USE BETWEEN CC AND CM'),
+            row(900, 'CMP', 'Hello, Houston.'), row(None, 'CC', 'Go ahead.'), row(1150, 'CMP', 'Roger.'),
+            row(1210, 'LMP', 'Okay, Dave.'), row(1220, 'CDR', 'Here we go.')]
+    streams = N.cm_link_streams(rows)
+    assert streams == [0, 0, 0, 1, 1, 1, 1, 0, 0]
+    N.resolve_times(rows, streams)
+    assert [r['getSeconds'] for r in rows] == [1000, 1100, 1200, 900, 900, 900, 1150, 1210, 1220]
+    assert not any(r['getApprox'] for i, r in enumerate(rows) if i not in (3, 5))
 
 
 def test_a_delayed_playback_starts_at_its_first_line_and_the_live_talk_runs_to_the_announcer():

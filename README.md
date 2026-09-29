@@ -3,13 +3,13 @@
 The Apollo Moon missions in the astronauts' own voices, at
 [apollorewind.com](https://apollorewind.com).
 
-- **Apollo 11, 12 and 14** play end to end from NASA's own tapes (the
+- **Apollo 11, 12, 14 and 15** play end to end from NASA's own tapes (the
   broadcast air-to-ground recordings on archive.org), with NASA's
   air-to-ground transcript timed to them and repaired from the tapes. The
   pipeline that builds them is in `pipeline/` (see `pipeline/README.md`);
   the site reads `public/timeline/apolloNN.json`. Their phases and chapters
   come from NASA's event times (`events` in `src/data/missions.js`).
-- **Apollo 8, 10, 13, 15, 16 and 17**, until their tapes are done, play
+- **Apollo 8, 10, 13, 16 and 17**, until their tapes are done, play
   clips from the Apollo Flight Journal and Apollo Lunar Surface Journal,
   as described below. Once a mission moves to the tapes, its journal
   files move to `data/journal/` (the pipeline still reads the journal's

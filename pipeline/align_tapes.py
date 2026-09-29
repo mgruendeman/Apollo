@@ -35,7 +35,7 @@ from aligner.common import ROOT, CREW, MIN_WORDS, SEARCH_S, tokens, speaker_name
 from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors
 from aligner.ocr_repair import FIXES, MISSION, repair_ocr, vocabulary
 from aligner.announcer import find_announcer
-from aligner.timing import mark_drowned_out, mark_unheard, rebuild_from_tape, sync_to_tape, time_untimed
+from aligner.timing import mark_drowned_out, mark_unheard, rebuild_from_tape, said_on_tape, sync_to_tape, time_untimed
 from aligner.fixes import apply_fixes, use_journal_text
 from aligner.review import score_lines
 from aligner.segments import pin_pieces, trim_overlaps
@@ -61,6 +61,9 @@ def main():
     # first line with a printed time: not speech.
     first = next((k for k, r in enumerate(rows) if not r['getApprox']), 0)
     rows = [r for r in rows[first:] if r['getSeconds'] > 0 or r['speaker'] not in ('MS', '?')]
+    # (the command module's blocks through a moonwalk, on their own clock, go in among the moonwalk's lines)
+    if any(r.get('loop') for r in rows):
+        rows.sort(key=lambda r: r['getSeconds'])
     name = speaker_names(m, rows)
 
     # stretches of tape placed by hand, where the tape shows the placement wrong
@@ -128,9 +131,12 @@ def main():
     segments.sort(key=lambda s: s['get'])
     segments = trim_overlaps(segments)
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text'], **({'a': 1} if r['getApprox'] else {})} for r in rows]
+    cm_loop = {id(l) for l, r in zip(lines, rows) if r.get('loop') == 'CM'}
     synced = sync_to_tape(lines, segments, tape_words)
     untimed = time_untimed(lines, segments, tape_words)
-    repaired = repair_ocr(lines, segments, tape_words)
+    # (the command module's talk during a moonwalk that isn't on these tapes: no mending it from them)
+    elsewhere = {id(l) for l in lines if id(l) in cm_loop and not said_on_tape(l, segments, tape_words)}
+    repaired = repair_ocr(lines, segments, tape_words, skip=elsewhere)
     rebuilt = rebuild_from_tape(lines, segments, tape_words, vocabulary(tape_words)[0])
     fixed = use_journal_text(m, lines) if args.journal_text else 0
     # NASA's page headings read as if spoken ("11 AIR-TO-GROUND VOICE TRANSCRIPTION")
@@ -167,7 +173,10 @@ def main():
     hand = apply_fixes(m, lines, strict=not args.no_strict, segments=segments, tape_words=tape_words)
     lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
     unheard = mark_unheard(lines, segments, tape_words, media / 'envelopes' / 'tapes' / m)
-    unheard += mark_drowned_out(lines, segments, tape_words)
+    unheard += mark_drowned_out(lines, segments, tape_words, other_loop=cm_loop)
+    for l in lines:   # (the command module's own link: nothing on these tapes to check it against)
+        if id(l) in cm_loop and l.get('n'):
+            l['ok'] = 1
     # Lines a reviewer should hear, ranked: written for the reviewer page,
     # and each line's doubt score travels with it ('q').
     vocab, _names, common, _spoken = vocabulary(tape_words)

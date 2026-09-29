@@ -108,3 +108,6 @@ tananarive
 # words the scan split at a line end ("super- imposition")
 superimposition
 subcarrier
+# Apollo 15's command module, spelled the British way
+endeavour
+undamped

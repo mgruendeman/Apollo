@@ -18,7 +18,9 @@ export default function MissionProgress({ mission }) {
       {
         state: 'done',
         title: "NASA's tapes placed on the mission clock",
-        text: p ? `${Math.round(p.recordedHours)} of the mission's ${missionHours} hours have a recording.` : null,
+        text: p
+          ? `${Math.round(p.recordedHours)} of the mission's ${missionHours} hours have a recording.${mission.tapesNote ? ` ${mission.tapesNote}` : ''}`
+          : null,
       },
       {
         state: 'done',
