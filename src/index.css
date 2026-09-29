@@ -3085,3 +3085,32 @@ button.transcript-channel-tag {
   width: min(560px, 100%);
   height: auto;
 }
+.design-group {
+  margin: 6px 4px 2px;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+.design-group-options {
+  display: grid;
+  gap: 4px;
+}
+.design-art {
+  display: flex;
+  gap: 6px;
+}
+.design-options .design-art button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+.design-art img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}

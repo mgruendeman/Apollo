@@ -1,6 +1,5 @@
 import { PHASES } from '../data/phases'
-import earthImg from '../assets/sprites/earth.webp'
-import moonImg from '../assets/sprites/moon.webp'
+import { useGlobeArt } from '../lib/design'
 import stackImg from '../assets/sprites/stack.webp'
 import csmImg from '../assets/sprites/csm.webp'
 import lmImg from '../assets/sprites/lm.webp'
@@ -30,9 +29,8 @@ const FIGURE_8 = [
 ].join(' ')
 
 // [image, width, height] in pixels, for the aspect ratio
+// (the Earth and Moon come from the Design menu's choice: src/data/globeArt.js)
 const SPRITES = {
-  earth: [earthImg, 255, 256],
-  moon: [moonImg, 256, 252],
   stack: [stackImg, 256, 86],
   csm: [csmImg, 256, 105],
   lm: [lmImg, 256, 214],
@@ -49,8 +47,8 @@ const WIDE = { stack: 40, csm: 28, lm: 22, chutes: 26, saturn: 18 }
 // left (the CSM's nose, or the LM leading the docked stack); `dir` is the
 // heading in degrees (0 = right, 90 = down). Heading rightward the sprite is
 // mirrored rather than turned upside down. `turn` just rotates it.
-function Sprite({ name, x, y, w, dir, turn }) {
-  const [src, pw, ph] = SPRITES[name]
+function Sprite({ name, x, y, w, dir, turn, art }) {
+  const [src, pw, ph] = art || SPRITES[name]
   const h = (w * ph) / pw
   let spin = ''
   if (dir != null) spin = Math.cos((dir * Math.PI) / 180) > 0 ? ` rotate(${dir}) scale(-1 1)` : ` rotate(${dir - 180})`
@@ -151,13 +149,15 @@ export default function MissionPhaseDiagram({ phase, mission }) {
   const stack = s.stack ? (hasLM ? { stack: s.stack } : { csm: s.stack }) : {}
   const caption = whoWhere(phase, mission)
   const split = s.split && hasLM
+  const earthArt = useGlobeArt('earth')
+  const moonArt = useGlobeArt('moon')
 
   return (
     <div className="phase-diagram">
       <svg viewBox="0 14 240 88" role="img" aria-label={`Currently: ${p.label}${caption ? `. ${caption}` : ''}`}>
         <path d={FIGURE_8} className="pd-path" fill="none" />
-        <Sprite name="earth" x={EARTH.x} y={EARTH.y} w={EARTH.r * 2} />
-        <Sprite name="moon" x={MOON.x} y={MOON.y} w={MOON.r * 2} />
+        <Sprite art={earthArt.sprite} x={EARTH.x} y={EARTH.y} w={EARTH.r * 2} />
+        <Sprite art={moonArt.sprite} x={MOON.x} y={MOON.y} w={MOON.r * 2} />
 
         <g className="pd-scene" key={phase}>
           {s.rocket && <Sprite name="saturn" w={WIDE.saturn} {...s.rocket} />}
