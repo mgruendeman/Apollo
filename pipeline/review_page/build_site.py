@@ -54,7 +54,10 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / 'index.html').write_text('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex">\n' + page)
     (OUT / 'reports.html').write_text(REPORTS)
-    (OUT / 'transcript.html').write_text(TRANSCRIPT)
+    # a button for each mission with a review list (public/review/transcript/apolloNN.json)
+    listed = sorted(int(p.stem.removeprefix('apollo')) for p in (OUT / 'transcript').glob('apollo*.json'))
+    buttons = ' '.join(f'<button data-m="{n}" aria-pressed="{str(k == 0).lower()}">Apollo {n}</button>' for k, n in enumerate(listed))
+    (OUT / 'transcript.html').write_text(TRANSCRIPT.replace('__MISSION_BUTTONS__', buttons))
     print(f'wrote {OUT}/index.html ({len(frames)} photos), reports.html and transcript.html')
 
 
@@ -190,7 +193,7 @@ button.play { border-color:var(--accent); color:var(--accent); }
   <p class="intro">Lines that look doubtful — damaged words, a speaker or time the scan lost, or words the tape hears differently — each shown with the lines around it, since mistakes come in clusters. Press ▶ to hear a line (all of it, from a few seconds before; as often as you like) and Report to say what it should be. Fixed lines drop off at the next run.</p>
   <audio id="player" preload="none"></audio>
   <div class="bar">
-    <span role="group" aria-label="Mission"><button data-m="11" aria-pressed="true">Apollo 11</button> <button data-m="12" aria-pressed="false">Apollo 12</button> <button data-m="14" aria-pressed="false">Apollo 14</button></span>
+    <span role="group" aria-label="Mission">__MISSION_BUTTONS__</span>
     <span class="gap"></span>
     <span role="group" aria-label="Order"><button data-order="rank" aria-pressed="true">Most doubtful first</button> <button data-order="time" aria-pressed="false">In mission order</button></span>
   </div>
