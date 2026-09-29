@@ -105,3 +105,6 @@ uplinks
 # tracking stations the recogniser misspells (the repair mustn't take its spelling)
 carnarvon
 tananarive
+# words the scan split at a line end ("super- imposition")
+superimposition
+subcarrier

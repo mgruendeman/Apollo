@@ -315,6 +315,8 @@ def _tidy(text, vocab):
     text = re.sub(r"(?<![A-Za-z'])([a-z][a-z']*[,;]? )(J(?:ust|obs?|ets?|ump(?:ed|ing|s)?|oint|oin(?:ed|s)?|ettison(?:ed|ing)?)|Like)\b"
                   r"(?!\s+(?:[A-Z]|players))",
                   lambda m: m.group(1) + m.group(2).lower(), text)                      # "Sim) lex Alfa"                                    # "Ail we have": nobody here says "ail"
+    text = re.sub(r"(?<=[A-Za-z'] )Just\b|(?<=[A-Za-z'][,;] )Just\b", 'just', text)   # and after a capital word: "I Just", "We're Just"
+    text = re.sub(r"(?:^|(?<=[.,;!?] ))1(?= (?:would|think|guess|believe|haven't|don't|didn't|can't)\b)", 'I', text)   # ", 1 would guess"
     text = re.sub(r"\b(\d+)h(?=[\s.,;]|$)", r"\g<1>4", text)                     # "0h", "2351h": a misread 4
     text = re.sub(r"\b(\d+)h\.(\d)", r"\g<1>4.\2", text)                        # "2h.1"
     text = re.sub(r"\b([a-z]{1,})([A-Z])([a-z]*)\b",                          # "tO", "bY", "oF", "floodliMht"
@@ -340,6 +342,8 @@ def _tidy(text, vocab):
     text = re.sub(r"\s+[PF][a-z_?]{2,3}e\s+\d{2,4}\s*$", '', text)               # "Pase 309", "Fage 12", "Pat_e 43"
     text = re.sub(r"\b([A-Za-z]{3,})- ([a-z]{2,})\b",                         # "sequenc- ing": split at a line end
                   lambda m: m.group(1) + m.group(2) if (m.group(1) + m.group(2)).lower() in vocab else m.group(), text)
+    text = re.sub(r"\b([A-Za-z]{3,})- [lt]ng\b",                              # "look- lng", "think- tng": and its "ing" misread
+                  lambda m: m.group(1) + 'ing' if (m.group(1) + 'ing').lower() in vocab else m.group(), text)
     text = re.sub(r"\b(primary|secondary|number|bus|gimbal|motor|quad|tank|bottle|loop|step|channel|position|option|"
                   r"battery|stage|NOUN|VERB|PAD|Program)\s+[liI|](?=[\s.,?;]|$)", r"\1 1", text)   # "primary l", "number i"
     text = re.sub(r"\b(one|two|three|four|five)-(?:by|ky|hy|bv|b_|_y|6y)-([\w_]{2,6})\b",   # "five-ky-two", "five-by-_ive"

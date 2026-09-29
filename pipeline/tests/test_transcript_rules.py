@@ -86,6 +86,15 @@ TIDY_CASES = [
     ('11', 'with chairman Earl Wheeler of the Joint Chiefs of Staff', 'with chairman Earl Wheeler of the Joint Chiefs of Staff'),
     ('11', 'Several other Jet players who had', 'Several other Jet players who had'),
     ('11', 'Just a second.', 'Just a second.'),   # a sentence can start with it
+    ('11', "Roger. Just a second.", "Roger. Just a second."),
+    ('11', "I saw it in the flight plan, but I'm Just wondering", "I saw it in the flight plan, but I'm just wondering"),
+    ('11', 'Charlie. I Just wrote it off on the fact', 'Charlie. I just wrote it off on the fact'),
+    ('11', 'after the first 20 seconds, 1 would guess, of the burn', 'after the first 20 seconds, I would guess, of the burn'),
+    ('12', 'No, 1 haven\'t. No, I haven\'t.', "No, I haven't. No, I haven't."),
+    ('12', 'fuel cell 1 would be the one', 'fuel cell 1 would be the one'),   # a number
+    ('12', 'Are you look- lng at it now?', 'Are you looking at it now?'),
+    ('12', 'I was think- tng about it', 'I was thinking about it'),
+    ('11', 'the voice sub- carrier part', 'the voice subcarrier part'),
     ('11', '1], this is Houston. We\'ve completed the uplink.', "11, this is Houston. We've completed the uplink."),
     ('12', ']2, Houston. Go ahead.', '12, Houston. Go ahead.'),
     ('11', 'There [_age 551 are a couple of tropical storms', 'There are a couple of tropical storms'),

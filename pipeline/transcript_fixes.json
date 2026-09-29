@@ -2245,7 +2245,7 @@
   {
    "g": 395384,
    "from": "Yes. The-- are small, sperkly fragments places",
-   "to": "Yup. Very small and sparkly ... fragments ..."
+   "to": "Yep. Very small and sparkly ... fragments ..."
   },
   {
    "g": 535560,
@@ -2509,6 +2509,321 @@
    "g": 215712,
    "from": "but w_ 'ti like to terminate this PTC and start over again. We have no assurance that we're going to get it through the sleep period with this fmmy",
    "to": "but we'd like to terminate this PTC and start over again. We have no assurance that we're going to get it through the sleep period with this funny"
+  },
+  {
+   "g": 395384,
+   "text": "Yep. Very small and sparkly",
+   "ok": true
+  },
+  {
+   "g": 368256,
+   "text": "Roger. The burn was on time.",
+   "ok": true
+  },
+  {
+   "g": 560608.3,
+   "from": "Mike will show you hew the water gun",
+   "to": "Mike will show you how the water gun"
+  },
+  {
+   "g": 560608.3,
+   "text": "Mike will show you how the water gun",
+   "ok": true
+  },
+  {
+   "g": 615631,
+   "from": "all right Here. _o far, we haven't been looking ir the cockpit t. We've been spending our time king _ttside bae cockpit. ***",
+   "to": "all right here so far, we haven't been looking in the cockpit yet. We've been spending our time looking outside the cockpit ***"
+  },
+  {
+   "g": 560432,
+   "text": "We know there's a lot of scientists",
+   "ok": true
+  },
+  {
+   "g": 491301,
+   "text": "The transients were more noticeable",
+   "ok": true
+  },
+  {
+   "g": 560697,
+   "from": "were design _ to remove the problem of having so many cl tm floating around in the cabin, so they; design a particular size that would be able to go : the mouth all at once. I think since .mit of our experience",
+   "to": "were designed to remove the problem of having so many crumbs floating around in the cabin, so they designed a particular size that would be able to go into the mouth all at once. I think since all of our experience"
+  },
+  {
+   "g": 560697,
+   "from": "that we have on Earth As a matter of fact",
+   "to": "that we have on Earth. As a matter of fact"
+  },
+  {
+   "g": 560697,
+   "from": "and along wit!: the bread",
+   "to": "and along with the bread"
+  },
+  {
+   "g": 39981,
+   "from": "in the morning wi th an assessment",
+   "to": "in the morning with an assessment"
+  },
+  {
+   "g": 39981,
+   "text": "in the morning with an assessment",
+   "ok": true
+  },
+  {
+   "g": 86300,
+   "from": "between the star and the Earth horizon",
+   "to": "between the star and the Earth's horizon"
+  },
+  {
+   "g": 86300,
+   "from": "And then the actual super- imposition",
+   "to": "And then the actual superimposition"
+  },
+  {
+   "g": 86247,
+   "text": "The Earth should be a lot smaller in your field of view today.",
+   "merge": "sure you're a lot more qualified"
+  },
+  {
+   "g": 86247,
+   "from": "in your field of view today. sure you're a lot more qualified",
+   "to": "in your field of view today, and I'm sure you're a lot more qualified"
+  },
+  {
+   "g": 92960,
+   "from": "sextant star 30 2082 370. ['al;e 77 The rest of the PAD",
+   "to": "sextant star 30 2082 370. The rest of the PAD"
+  },
+  {
+   "g": 99015.2,
+   "text": "that hydrogen thing",
+   "ok": true
+  },
+  {
+   "g": 129970,
+   "from": "Cocoa 85, £alta 87",
+   "to": "Cocoa 85, Delta 87"
+  },
+  {
+   "g": 129949,
+   "from": "CMP lC006",
+   "to": "CMP 10006"
+  },
+  {
+   "g": 201894,
+   "text": "did you want us to test the cameras",
+   "ok": true
+  },
+  {
+   "g": 214001,
+   "from": "minus 2.24 ... 5 of point plus 0.87",
+   "to": "minus 2.24 ... Y of point plus 0.87"
+  },
+  {
+   "g": 214001,
+   "text": "That completes that card.",
+   "ok": true
+  },
+  {
+   "g": 215416,
+   "from": "it's not like :my- thing we've seen before",
+   "to": "it's not like anything we've seen before"
+  },
+  {
+   "g": 216695,
+   "from": "We're readinf, you in BACKUP VOICE",
+   "to": "We're reading you in BACKUP VOICE"
+  },
+  {
+   "g": 261211.4,
+   "text": "Boston outhit Baltimore",
+   "ok": true
+  },
+  {
+   "g": 279124,
+   "from": "We're recommending a Ditch angle of 0",
+   "to": "We're recommending a pitch angle of 0"
+  },
+  {
+   "g": 279124,
+   "from": "and wide beam- wi dth. Over.",
+   "to": "and wide beam width. Over."
+  },
+  {
+   "g": 353901,
+   "from": "W_'i'c.standing by. Over.",
+   "to": "We're standing by. Over."
+  },
+  {
+   "g": 354202,
+   "text": "I couldn't get a lockon",
+   "ok": true
+  },
+  {
+   "g": 354221,
+   "text": "high-gain lockon",
+   "ok": true
+  },
+  {
+   "g": 363260,
+   "from": "106 37 3500 I'_e 30] 109 10 0000",
+   "to": "106 37 3500 109 10 0000"
+  },
+  {
+   "g": 371287,
+   "from": "our mission _;:;_ is now r_'_,fing 902 34 47",
+   "to": "our mission timer is now reading 902 34 47"
+  },
+  {
+   "g": 371297.6,
+   "from": "your mission timer nc,_'static. It - Say again",
+   "to": "your mission timer is now static. Say again"
+  },
+  {
+   "g": 371472,
+   "text": "I cycled the circuit breaker",
+   "ok": true
+  },
+  {
+   "g": 371497,
+   "from": "W_'i research,, , problem and be back",
+   "to": "We'll research this problem and be back"
+  },
+  {
+   "g": 384033,
+   "from": "Colta}Lbi_ this is Houston.",
+   "to": "Columbia, this is Houston."
+  },
+  {
+   "g": 384033,
+   "from": "the topographical area in _,_i_ ch you were",
+   "to": "the topographical area in which you were"
+  },
+  {
+   "g": 390206,
+   "from": "Pu_hbutt0n sight. RESET.",
+   "to": "Pushbutton light. RESET."
+  },
+  {
+   "g": 390211,
+   "from": "**;_ECS caution light",
+   "to": "*** ECS caution light"
+  },
+  {
+   "g": 390211,
+   "from": "ON. Take s a while",
+   "to": "ON. Takes a while"
+  },
+  {
+   "g": 392117,
+   "from": "Dum_-p. Go to dump.",
+   "to": "Dump. Go to dump."
+  },
+  {
+   "g": 395960,
+   "from": "about north, nor_h- east.",
+   "to": "about north, northeast."
+  },
+  {
+   "g": 395960,
+   "text": "It's taken just a little - about north, northeast.",
+   "at": 395979
+  },
+  {
+   "g": 395434.6,
+   "from": "*** compact 'anderneath ***",
+   "to": "*** compact underneath ***"
+  },
+  {
+   "g": 396878,
+   "from": "So-called ks_geroo hop does work",
+   "to": "So-called kangaroo hop does work"
+  },
+  {
+   "g": 396878,
+   "from": "more eonven- tiona], one foot",
+   "to": "more conventional, one foot"
+  },
+  {
+   "g": 396906,
+   "from": "It's hard saying a s_ie pace might _ be.",
+   "to": "It's hard saying what a sane pace might be."
+  },
+  {
+   "g": 396906,
+   "from": "function of this suit, Es well as",
+   "to": "function of this suit, as well as"
+  },
+  {
+   "g": 398420.4,
+   "from": "that's mounted on quad seems to be",
+   "to": "that's mounted on quad 4 seems to be"
+  },
+  {
+   "g": 398420.4,
+   "text": "I say the jets deflector",
+   "ok": true
+  },
+  {
+   "g": 400717,
+   "from": "while we're talking to the lam. Over.",
+   "to": "while we're talking to the LM. Over."
+  },
+  {
+   "g": 410751.3,
+   "from": "just give us 422 a call, and we can respond with a time like of? about a minul, e I,o a minute and a half in _.l,tiru_ reconfigured.",
+   "to": "just give us a call, and we can respond with a time lag of about a minute to a minute and a half in getting reconfigured."
+  },
+  {
+   "g": 410751.3,
+   "from": "the voice sub- carrier part",
+   "to": "the voice subcarrier part"
+  },
+  {
+   "g": 436124,
+   "text": "it's on its 24-minute warmup",
+   "ok": true
+  },
+  {
+   "g": 440147,
+   "text": "start the warmup on the rendezvous radar",
+   "ok": true
+  },
+  {
+   "g": 560543,
+   "from": "We're down around between, w_Iz around f:11, which we thought would be plenty light. Wel! , we'll lighten",
+   "to": "We're down around between, well, around f:4, which we thought would be plenty light. Well, we'll lighten"
+  },
+  {
+   "g": 615661.8,
+   "from": "..1, Houston. We do have a few items",
+   "to": "11, Houston. We do have a few items"
+  },
+  {
+   "g": 615661.8,
+   "from": "start on a few of these :terns, why",
+   "to": "start on a few of these items, why"
+  },
+  {
+   "g": 615712,
+   "from": "Second Stem on the flight plan",
+   "to": "Second item on the flight plan"
+  },
+  {
+   "g": 491288,
+   "from": "did you not ,'e any transients",
+   "to": "did you notice any transients"
+  },
+  {
+   "g": 99076.4,
+   "from": "You didn't drink it till later, 5id you?",
+   "to": "You didn't drink it till later, did you?"
+  },
+  {
+   "g": 261132.6,
+   "from": "looked pretty Bleak. :The Astros",
+   "to": "looked pretty bleak. The Astros"
   }
  ],
  "12": [
