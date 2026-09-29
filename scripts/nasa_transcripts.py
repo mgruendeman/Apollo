@@ -52,12 +52,13 @@ HEADER = re.compile(r'(?i)^\W*(\(?goss|tape|page|end of tape|\(?rev\b|air.to.gro
 # line ("Stand COMMUNICATIONS by a second. LINK IN USE BETWEEN CC AND CM").
 CM_LINK = ['COMMUNICATIONS', 'LINK', 'IN', 'USE', 'BETWEEN', 'CC', 'AND', 'CM']
 CM_START = re.compile(r'\bLINK\s+BETWEEN\s+CC\s+AND\s+CM\s+ACTIVATED\b')
-CM_END = re.compile(r'\bAND\s+LM\s+RESUMED\b|\bLINK\s+BETWEEN\s+CC\s+AND\s+CM\s+SECURED\b')
+CM_END = re.compile(r'\bLM\s+RESUMED\b|\bLINK\s+BETWEEN\s+CC\s+AND\s+CM\s+SECURED\b')
 CM_NOTES = re.compile(r'(?:\b(?:SEPARATE,\s+)?SIMULTANEOUS\s+)?\bCOMMUNICATIONS?\s+LINK\s+BETWEEN\s+CC\s+AND\s+CM\s+(?:ACTIVATED|SECURED)\b'
-                      r'|(?:\b(?:OF\s+)?COMMUNICATIONS?\s+BETWEEN\s+)?(?:\bCC\s+)?\bAND\s+LM\s+RESUMED\b(?:\s+SO\b)?'
+                      r'|(?:\b(?:OF\s+)?COMMUNICATIONS?\s+BETWEEN\s+)?(?:\bCC\s+)?(?:\bAND\s+)?\bLM\s+RESUMED\b(?:\s+SO\b|\s+\d{2,4}\b)?'
                       r'|\b(?:SEPARATE,\s+)?SIMULTANEOUS\b')
 LUNAR_REV = re.compile(r'\s*\bBEGIN\s+LUNAR\s+REV\s+\d+\b')
-CM_BANNER = re.compile(r'(?i:\bCOMMUNICATIONS?\s+(?:LINK\s+)?IN\s+USE\s+(?:LINK\s+)?BETWEEN\s+CC\s+AND\s+CM)\b')
+CM_BANNER = re.compile(r'(?i:\bCOMMUNICATIONS?\s+(?:LINK\s+)?IN\s+USE\s+(?:LINK\s+)?BETWEEN\s+CC\s+AND\s+CM)\b'
+                       r'|(?:\S+\s+)?\bLINK\s+IN\s+USE\s+\S+\s+CC\s+\S+\s+CM\b')   # (and a damaged one: "C0_CNiCATiONS LINK IN USE BET_EN CC A}_ CM")
 
 
 def strip_notes(text):
@@ -263,7 +264,7 @@ def strip_cm_link(words):
     if k < len(CM_LINK):
         # a row that's the note alone, a word or two out of place ("COMMUNICATIONS IN USE LINK BETWEEN")
         at = [i for i, w in enumerate(words) if any(_is_word(w[2], c) for c in CM_LINK)]
-        if len(at) < 6 or len(words) > len(at) + 1:
+        if len(at) < 6 or len(words) > len(at) + 2:
             return words, False
         return [], True   # (the note alone, and a word of it too damaged to know: "CON[_3NICATIONS")
     return [w for i, w in enumerate(words) if i not in set(at)], True

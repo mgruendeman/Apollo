@@ -393,6 +393,8 @@ def test_cm_link_note_comes_out_of_the_row():
     assert not note
     assert N.strip_notes('It sounds great. OF COMMUNICATIONS BETWEEN CC AND LM RESUMED') == 'It sounds great.'
     assert N.strip_notes('Yes. You betcha. BEGIN LUNAR REV 30') == 'Yes. You betcha.'
+    assert N.strip_notes('LM RESUMED 893') == ''
+    assert N.strip_cm_link(words('C0_CNiCATiONS LINK IN USE BET_EN CC A}_ CM')) == ([], True)
 
 
 def test_cm_link_block_runs_on_its_own_clock():
