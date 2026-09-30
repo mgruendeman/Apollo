@@ -2,10 +2,14 @@
  "11": [
   {"tape": "155-AAA", "tape_from": 9972, "tape_to": 10181, "get_from": 8701,
    "why": "After the announcer's 'Apollo Control at 2 hours 25 minutes' the tape runs on through the Carnarvon pass: 'Houston through Carnarvon' (NASA 002:25:44) is heard at 10015 s and 'You are GO for TLI' (002:26:38) at 10069 s, the same offset as the piece from 10181 s (002:28:32). Placement had put 10006-10181 at 002:18:17 on one stray match."},
-  {"tape": "184-AAA", "tape_from": 2044, "tape_to": 2184, "get_from": 566889,
+  {"tape": "184-AAA", "tape_from": 2044, "tape_to": 2184, "get_from": 565684,
    "why": "The announcer on it says 'Entry countdown clock now showing 37 hours, 53 minutes' (entry at 195:03:06) and 'at 157 hours, 10 minutes': it runs straight on from the piece before, which ends at 157:08:03. Placement had put it at 157:52:51 on three lines whose printed times the scan misread (157:53:57 for 157:08:57)."}
  ],
  "12": [
+  {"tape": "359-AAA", "tape_from": 588, "tape_to": 705, "get_from": 8665.3,
+   "why": "The recorder stops at 001:57:02 and picks up with the announcer at 002:24 ('we are in contact with Apollo 12 through Carnarvon ... here's the start of that pass') and his replay of the pass: 'Tape recorder OFF; HIGH BIT RATE' (NASA 002:25:01) at 621.7 s, 'That time on that torquing' (002:25:33) at 658.5 s. Placement had run the whole piece on from 001:54:45, so the replay played at 001:57:40 and the pass had no tape."},
+  {"tape": "359-AAA", "tape_from": 705, "tape_to": 745.09, "get_from": 8820.46,
+   "why": "After the replay the announcer's 'We're back live now' (708 s) runs straight on into the next piece, from 745 s at 002:27:40."},
   {"tape": "378-AAA", "tape_from": 0, "tape_to": 188, "get_from": 466988,
    "why": "The tape's first three minutes finish the traverse briefing that runs to the end of 377-AAA ('Great minds think alike' at 9 s, 'Okay. Go ahead, Houston' at 146 s, 'It's really weird' at 190 s, NASA 129:46:18), at the same offset as its next piece from 188 s. NASA's times for three lines there are misread by ten minutes (129:35:31 for 129:45:31), so nothing placed it."}
  ]

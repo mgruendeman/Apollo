@@ -304,6 +304,13 @@ def _tidy(text, vocab):
     text = re.sub(r"(?<!\ba )(?<!\bthe )\btile\b", 'the', text)                             # "into tile Mojave" (not "a tile")
     text = re.sub(r"\btc\b", 'to', text)                                                # "for you tc give me"
     text = re.sub(r"\bvou\b", 'you', text)                                              # "How are vou doing?"
+    text = re.sub(r"\b(P?)C02\b", r"\1CO2", text)                                     # "the C02 canister", "the PC02 gage"
+    text = re.sub(r"\bmc\b", 'me', text)                                               # "hand it to mc"
+    text = re.sub(r"(?<=[a-z]{3} )th (?=[a-z]{3,})", 'the ', text)                    # "depressurize th oxygen" (not "wi th you")
+    text = re.sub(r"\bth e\b", 'the', text)                                            # "never hear th e last"
+    # the typewriter's period read as a raised dot: "Okay· PLSS", "Over ·"; one on its own is a speck
+    text = re.sub(r"(?<=[A-Za-z0-9]) ?·$|(?<=[A-Za-z0-9])·(?=\s)", '.', text)
+    text = re.sub(r"^·\s+|\s+·(?=\s)", '', text)
     text = re.sub(r"\b(you) re ad\b", r"\1 read", text, flags=re.I)                     # "How do you re ad?"
     text = re.sub(r"(?<=\w) \?(?=\s|$)", '?', text)                                     # "torquing angles ?"
     text = re.sub(r"\bItm\b", "I'm", text)

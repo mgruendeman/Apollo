@@ -787,7 +787,7 @@
   },
   {
    "g": 368345,
-   "from": "Eagle, Houston - Houston, ;:sW_ · How do you read",
+   "from": "Eagle, Houston - Houston, ;:sW_ How do you read",
    "to": "Eagle, Houston - Houston, Eagle. How do you read?"
   },
   {
@@ -1249,7 +1249,7 @@
   },
   {
    "g": 101241,
-   "from": "Roger. · So,raidslike you've got a beauti_l.vtew up there.",
+   "from": "Roger. So,raidslike you've got a beauti_l.vtew up there.",
    "to": "Roger. Sounds like you've got a beautiful view up there."
   },
   {
@@ -1729,7 +1729,7 @@
   },
   {
    "g": 369947,
-   "from": "Descent EN._._L, · COMMAND _ OVERRIDE - OFF.",
+   "from": "Descent EN._._L, COMMAND _ OVERRIDE - OFF.",
    "to": "Descent ENGINE COMMAND OVERRIDE - OFF."
   },
   {
@@ -3539,7 +3539,7 @@
   },
   {
    "g": 412600,
-   "from": "representative types as I could. l\";L,_';,t · 427",
+   "from": "representative types as I could. l\";L,_';,t 427",
    "to": "representative types as I could."
   },
   {
@@ -4008,6 +4008,248 @@
    "g": 625672.4,
    "from": "Joan wasn't home right now, buzz, but",
    "to": "Joan wasn't home right now, Buzz, but"
+  },
+  {
+   "g": 204094,
+   "text": "still see the banding along the intertropical convergence",
+   "ok": true
+  },
+  {
+   "g": 215388.2,
+   "from": "We switched antennas on you, there, ago, Neil.",
+   "to": "We switched antennas on you, there, moments ago, Neil."
+  },
+  {
+   "g": 215388.2,
+   "from": "give us the t,M/CM DELTA-P reading?",
+   "to": "give us the LM/CM DELTA-P reading?"
+  },
+  {
+   "g": 355893.5,
+   "text": "If you go to REACQ on the high gain, we can acquire you now.",
+   "ok": true
+  },
+  {
+   "g": 371166.3,
+   "text": "Tranquility, Houston. After you get through this P57, we'd like an E-memory dump. Over.",
+   "at": 371157.5
+  },
+  {
+   "g": 383789.7,
+   "text": "Now while we've got time, you can.",
+   "at": 383778.4
+  },
+  {
+   "g": 383778.9,
+   "text": "- - be able to see the LM.",
+   "at": 383781.0
+  },
+  {
+   "g": 384636.7,
+   "text": "Go ahead, Columbia.",
+   "at": 384630.9
+  },
+  {
+   "g": 392065,
+   "text": "It is. Suit circuit's at about 43.",
+   "at": 392083.2
+  },
+  {
+   "g": 392058,
+   "text": "Okay. Verify the PGA pressure is above 45, minus 46.",
+   "at": 392087.0
+  },
+  {
+   "g": 393399.1,
+   "from": "Okay. !our visor.",
+   "to": "Okay. Your visor."
+  },
+  {
+   "g": 397134.0,
+   "text": "Roger. P22 landmark ID, LM: T1, 110 26 56",
+   "at": 397136.9
+  },
+  {
+   "g": 402852,
+   "text": "Neil, this is Houston. If you read, we suggest you unstow one PLSS antenna",
+   "ok": true
+  },
+  {
+   "g": 407608,
+   "text": "Roger. Oxygen fuel cell purge at 113 30.",
+   "ok": true
+  },
+  {
+   "g": 453414.2,
+   "text": "Houston, Columbia. How now?",
+   "unheard": true
+  },
+  {
+   "g": 565596.5,
+   "text": "Hello, Apollo 11. Houston. Buzz, you brought the surgeon right out of his chair. We see you exercising. Over.",
+   "at": 568567.5
+  },
+  {
+   "g": 565596.5,
+   "text": "Say again.",
+   "at": 568574.7,
+   "whole": true
+  },
+  {
+   "g": 565596.5,
+   "text": "We see you exercising. Is that correct, Buzz?",
+   "at": 568576.3
+  },
+  {
+   "g": 565596.5,
+   "text": "Yes, that's right. Buzz is.",
+   "at": 568579.9
+  },
+  {
+   "g": 565737,
+   "text": "Roger. We've got his heartbeat way up.",
+   "at": 568581.7
+  },
+  {
+   "g": 565743,
+   "text": "Right. He's sort of out of shape.",
+   "at": 568586.5
+  },
+  {
+   "g": 565746,
+   "text": "Yes. That's what we thought.",
+   "at": 568588.7
+  },
+  {
+   "g": 568568,
+   "text": "Hello, Apollo 11 Houston.",
+   "delete": true
+  },
+  {
+   "g": 568569,
+   "text": "Buzz, you brought the circuit right out of his gear.",
+   "delete": true
+  },
+  {
+   "g": 568571,
+   "text": "We see you exercising over.",
+   "delete": true
+  },
+  {
+   "g": 568575,
+   "text": "Thank you.",
+   "delete": true
+  },
+  {
+   "g": 568576,
+   "text": "Exercising that correct buzz?",
+   "delete": true
+  },
+  {
+   "g": 568580,
+   "text": "Yeah, I'm hearing buzzes.",
+   "delete": true
+  },
+  {
+   "g": 568582,
+   "text": "But we got his heartbeat way up.",
+   "delete": true
+  },
+  {
+   "g": 568587,
+   "text": "Right, story on the street.",
+   "delete": true
+  },
+  {
+   "g": 568589,
+   "text": "Yeah, that's what we thought.",
+   "delete": true
+  },
+  {
+   "g": 630642.0,
+   "from": "md you can just leave it on",
+   "to": "and you can just leave it on"
+  },
+  {
+   "g": 630642.0,
+   "text": "It should go all the way open",
+   "ok": true
+  },
+  {
+   "g": 127576,
+   "text": "At this roll attitude, what should our high- gain angles be?",
+   "ok": true
+  },
+  {
+   "g": 184589.3,
+   "text": "We would like to terminate the charge on battery B",
+   "ok": true
+  },
+  {
+   "g": 358092,
+   "text": "There will be no television of the undocking.",
+   "ok": true
+  },
+  {
+   "g": 405285.6,
+   "text": "The area that we've been sweeping covers 10's and 20's and 30's",
+   "ok": true
+  },
+  {
+   "g": 442930.0,
+   "text": "How's the Black Team today? All primed and raring to go?",
+   "ok": true
+  },
+  {
+   "g": 481794.8,
+   "text": "to stir up the CRYO's on this pass",
+   "ok": true
+  },
+  {
+   "g": 494280.9,
+   "text": "There was quite a bit of Kapton and parts of the LM",
+   "ok": true
+  },
+  {
+   "g": 562977,
+   "text": "It's called the sternal EKG",
+   "ok": true
+  },
+  {
+   "g": 653796,
+   "text": "the CMP PGA is located in the L-shaped bag",
+   "ok": true
+  },
+  {
+   "g": 356251.7,
+   "from": "Buzz, we've get - The only thing we're missing here is the drift cheek. After we finish our lead, we'd like you te do the drift check",
+   "to": "Buzz, we've got - The only thing we're missing here is the drift check. After we finish our load, we'd like you to do the drift check"
+  },
+  {
+   "g": 358099,
+   "from": "We concur. Over. o ','Oq",
+   "to": "We concur. Over.",
+   "whole": true
+  },
+  {
+   "g": 536703.7,
+   "from": "the secondary CO2 canister; that is, did you go to the secondary water separator first and then the secondary C027 Over.",
+   "to": "the secondary CO2 canister; that is, did you go to the secondary water separator first and then the secondary CO2? Over."
+  },
+  {
+   "g": 654078.7,
+   "from": "it is s pretty difficult job",
+   "to": "it is a pretty difficult job"
+  },
+  {
+   "g": 654078.7,
+   "from": "the Beta cord that you have on hoard.",
+   "to": "the Beta cord that you have on board."
+  },
+  {
+   "g": 654078.7,
+   "text": "Our recommendation on the gear you got in the helmet bag",
+   "ok": true
   }
  ],
  "12": [
@@ -4263,7 +4505,7 @@
   },
   {
    "g": 422810.1,
-   "from": "time line· Houston",
+   "from": "time line. Houston",
    "to": "time line, Houston"
   },
   {
@@ -4350,7 +4592,7 @@
   },
   {
    "g": 109285,
-   "from": "N · °, not quite. :-.. :. -,- ci_:''",
+   "from": "N °, not quite. :-.. :. -,- ci_:''",
    "to": "No, not quite."
   },
   {
@@ -4375,7 +4617,7 @@
   },
   {
    "g": 109362,
-   "from": "don't see · them,.",
+   "from": "don't see them,.",
    "to": "don't see them."
   },
   {
@@ -4471,7 +4713,7 @@
   },
   {
    "g": 416742.1,
-   "from": "We'll he right back with yOU ·",
+   "from": "We'll he right back with yOU.",
    "to": "We'll be right back with you."
   },
   {
@@ -4554,6 +4796,306 @@
    "g": 926.0,
    "text": "We were going into P00 and P00.",
    "ok": true
+  },
+  {
+   "g": 8688,
+   "text": "Hello, Houston. Apollo 12 over Carnarvon.",
+   "unheard": true
+  },
+  {
+   "g": 13855.1,
+   "text": "Okay. We're getting the hatch out now, Houston.",
+   "ok": true
+  },
+  {
+   "g": 15608.2,
+   "text": "Say again, Houston.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 16696,
+   "from": "follow you dowla here",
+   "to": "follow you down here"
+  },
+  {
+   "g": 32390,
+   "text": "Okay, Houston. The evaporator's secured.",
+   "ok": true
+  },
+  {
+   "g": 422921.9,
+   "speaker": "Bean",
+   "text": "Okay, Pete. Let me level it up."
+  },
+  {
+   "g": 423461,
+   "speaker": "Bean",
+   "text": "Boy, I hope - I hope - -"
+  },
+  {
+   "g": 417751.4,
+   "from": "Hey, Al, wny oon'_ you t_d_e a good close look at the lens and make sure it's in the right eon- configuration?",
+   "to": "Hey, Al, why don't you take a good close look at the lens and make sure it's in the right configuration?"
+  },
+  {
+   "g": 417751.4,
+   "speaker": "Gibson",
+   "text": "Hey, Al, why don't you take a good close look at the lens"
+  },
+  {
+   "g": 417751.4,
+   "text": "Hey, Al, why don't you take a good close look at the lens",
+   "at": 417762.2
+  },
+  {
+   "g": 437575,
+   "from": "But I think if you %,_+_ +_ °+ ...._ +here __t_ ....._ ....__ three times as long",
+   "to": "But I think if you wanted to stand there and pound, maybe three times as long"
+  },
+  {
+   "g": 437575,
+   "from": "take those tips out",
+   "to": "take those pins out"
+  },
+  {
+   "g": 436557,
+   "from": "on the nondnal things",
+   "to": "on the nominal things"
+  },
+  {
+   "g": 436557,
+   "from": "There were quite a few points there _'hcrc you _,_,,_* ,,v_* _\",,_,c met the objective, had you not played \"heads up ball.",
+   "to": "There were quite a few points there where we might not have met the objective, had you not played \"heads up\" ball."
+  },
+  {
+   "g": 436580,
+   "from": "_._y heart was in my throat when he couldn't pull that cask out of there. I mean the element Out of the cask.",
+   "to": "Yeah, my heart was in my throat when he couldn't pull that cask out of there. I mean the element out of the cask."
+  },
+  {
+   "g": 437905,
+   "from": "we'd u u_. IJ.J_z.ze5 J U_Lt HIGH GAIN to OFF",
+   "to": "we'd like first of all - you'll be turning your HIGH GAIN to OFF"
+  },
+  {
+   "g": 437905,
+   "from": "do it on BACKUP.",
+   "to": "do it on DOWN VOICE BACKUP."
+  },
+  {
+   "g": 465032,
+   "from": "Grunnnan has come through and - along tb_ _y, _ ...... _na _vcrg! .... _F_= _ have that the weight",
+   "to": "Grumman has come through and - along the way and several people have decided that the weight"
+  },
+  {
+   "g": 109341,
+   "from": "No,:.it's in..tu_nel, c_ent, I'$1venting _he _. d.°jfn.",
+   "to": "No, it's in the tunnel vent. I'm venting the LM down."
+  },
+  {
+   "g": 212392,
+   "text": "She also requests that when you talk, try to be a little funnier.",
+   "ok": true
+  },
+  {
+   "g": 405103.4,
+   "from": "consmnables",
+   "to": "consumables"
+  },
+  {
+   "g": 409632,
+   "from": "up to y_' . We're having",
+   "to": "up to you. We're having"
+  },
+  {
+   "g": 421249,
+   "from": "I always hand]rd it back with r_j hand.",
+   "to": "I always handed it back with my hand."
+  },
+  {
+   "g": 422699,
+   "from": "See, _t's perfect.",
+   "to": "See, it's perfect."
+  },
+  {
+   "g": 428351.0,
+   "from": "hang on to Jt and",
+   "to": "hang on to it and"
+  },
+  {
+   "g": 428383.0,
+   "from": "uKay. /_ i dirty.",
+   "to": "Okay. It's dirty.",
+   "whole": true
+  },
+  {
+   "g": 476685,
+   "from": "stuff around _AA_ O_P_ %_ CLA _ C2.AA %_ S _J_ _ALT-- O 3_iATJ %.%J .LtJA --",
+   "to": "stuff around the spacecraft and it's all the same color."
+  },
+  {
+   "g": 567694.1,
+   "from": "You can dis_ se with",
+   "to": "You can dispense with"
+  },
+  {
+   "g": 808208,
+   "from": "The ne_ question",
+   "to": "The next question"
+  },
+  {
+   "g": 808208,
+   "from": "fall in the wes-k lunar gravity and could you h&ve recovered your footing if A1 Bean ha_u't been",
+   "to": "fall in the weak lunar gravity and could you have recovered your footing if Al Bean hadn't been"
+  },
+  {
+   "g": 420097,
+   "from": "Pete, _u _ua_.",
+   "to": "Pete, go ahead.",
+   "whole": true
+  },
+  {
+   "g": 420097,
+   "speaker": "Gibson",
+   "text": "Pete, go ahead.",
+   "whole": true
+  },
+  {
+   "g": 424270,
+   "from": "wrappad",
+   "to": "wrapped"
+  },
+  {
+   "g": 479551,
+   "from": "take an _fU break",
+   "to": "take an EMU break"
+  },
+  {
+   "g": 523657,
+   "text": "Aye-aye, sir. Okay, Pete. Why don't you let me finish this roll, huh?",
+   "ok": true
+  },
+  {
+   "g": 583141.2,
+   "from": "¥ COMM TECH, Honeysuckle net 1.",
+   "to": "Houston COMM TECH, Honeysuckle net 1."
+  },
+  {
+   "g": 583141.2,
+   "speaker": "Comm Tech",
+   "text": "Houston COMM TECH, Honeysuckle net 1."
+  },
+  {
+   "g": 676531.4,
+   "from": "It was done on 6h5, star angle difference: Four balls l, plus",
+   "to": "It was done on 645, star angle difference: Four balls 1, plus"
+  },
+  {
+   "g": 676552,
+   "from": "18[:5h:_5. And the computer is yours.",
+   "to": "187 54 45. And the computer is yours.",
+   "whole": true
+  },
+  {
+   "g": 676552,
+   "speaker": "Conrad",
+   "text": "187 54 45. And the computer is yours."
+  },
+  {
+   "g": 678017,
+   "from": "Right here, Ho ton. We got you",
+   "to": "Roger, Houston. We got you"
+  },
+  {
+   "g": 418819,
+   "speaker": "Bean",
+   "text": "Yes, sir.",
+   "whole": true
+  },
+  {
+   "g": 418819,
+   "from": "C=--nwe have a quickie here?",
+   "to": "Can we have a quickie here?",
+   "whole": true
+  },
+  {
+   "g": 418819,
+   "speaker": "Conrad",
+   "text": "Can we have a quickie here?",
+   "whole": true
+  },
+  {
+   "g": 414393,
+   "from": "k_lydon't you - wait",
+   "to": "Why don't you - wait"
+  },
+  {
+   "g": 416150,
+   "text": "I should hope so. When you opened the door",
+   "ok": true
+  },
+  {
+   "g": 417608,
+   "from": "Al. k_y don't you try",
+   "to": "Al. Why don't you try"
+  },
+  {
+   "g": 419897,
+   "from": "_q%at is it?",
+   "to": "What is it?",
+   "whole": true
+  },
+  {
+   "g": 426963,
+   "from": "- - in n_f pocket.",
+   "to": "In my pocket.",
+   "whole": true
+  },
+  {
+   "g": 428551,
+   "from": "_nat was easy.",
+   "to": "That was easy.",
+   "whole": true
+  },
+  {
+   "g": 428552,
+   "from": "I just closed my feedwater. You might want to",
+   "to": "I just closed my feedwater. You might want to do that too.",
+   "whole": true
+  },
+  {
+   "g": 473173.0,
+   "from": "egress. . _ ....... -._ -_, _ ho'_ _u of time.",
+   "to": "egress. They're running about 1-1/2 hours ahead of time."
+  },
+  {
+   "g": 475837,
+   "from": "Wl_ere are you?",
+   "to": "Where are you?",
+   "whole": true
+  },
+  {
+   "g": 476997,
+   "from": ",,_w wu ul_ul u get a Pans view, did we?",
+   "to": "Now, we didn't get a PAN view, did we?"
+  },
+  {
+   "g": 477220.8,
+   "from": "_quis one, the big one?",
+   "to": "This one, the big one?",
+   "whole": true
+  },
+  {
+   "g": 477465,
+   "text": "... _tD OF TAPE",
+   "delete": true
+  },
+  {
+   "g": 8692,
+   "text": "Apollo 12, Houston. Loud and clear.",
+   "at": 8692,
+   "whole": true
   }
  ],
  "14": [
@@ -4680,7 +5222,7 @@
   },
   {
    "g": 466325.5,
-   "from": "Yes. That's · firm. We're with you for pressing on at th] s time.",
+   "from": "Yes. That's firm. We're with you for pressing on at th] s time.",
    "to": "Yes. That's affirm. We're with you for pressing on at this time."
   },
   {
