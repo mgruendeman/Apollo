@@ -16,5 +16,15 @@
   ],
   "r2_buckets": [
     { "binding": "MEDIA", "bucket_name": "apollo-media" }
-  ]
+  ],
+  // Preview builds (any branch but the production one) use the live
+  // database and tapes too: reports sent from a preview reach the same list.
+  "previews": {
+    "d1_databases": [
+      { "binding": "DB", "database_id": "703693ee-8eb7-4d16-afa2-9957dca612d0" }
+    ],
+    "r2_buckets": [
+      { "binding": "MEDIA", "bucket_name": "apollo-media" }
+    ]
+  }
 }
