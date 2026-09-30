@@ -10,6 +10,10 @@ export function sayingSeconds(text) {
   return 2 + letters * 0.09 + digits * 1.0 + unclear * 3
 }
 
+// What the "It's correct" button sends (the review page sends the same): a
+// line checked against the tape and right as it is, to come off the list.
+export const CORRECT_MESSAGE = '✓ Correct as it is: mark complete, no changes.'
+
 // Title and details for a report about one transcript line, so the report
 // says exactly which line and where in which recording. `nextOffset` is
 // where the next line starts, so replaying the line can run to it.
@@ -26,6 +30,7 @@ export function lineReport({ missionName, clipId, audioUrl, sourceUrl, audioAt }
   length = Math.min(360, Math.max(10, length + 1.5))
   return {
     title: `${missionName} GET ${line.get}: transcript line`,
+    lineText: line.text,
     audio: audioUrl && playAt != null ? { url: audioUrl, at: playAt, until: playAt + length } : null,
     context: [
       `${line.speaker}: "${line.text}"`,

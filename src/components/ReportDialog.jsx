@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
 import { REPORT_ENDPOINT, REPO_URL } from '../config'
+import { CORRECT_MESSAGE } from '../lib/lineReport'
 
 // A small form for "this looks wrong" reports: what the listener was looking
 // at (`context`) goes along automatically, and they just say what's wrong.
 // Sent to REPORT_ENDPOINT when one is configured, otherwise opened as a
 // pre-filled GitHub issue.
 // With `audio` ({url, at}), a button plays the 12 seconds around the line,
-// as often as needed, while the report is written.
-export default function ReportDialog({ title, context, audio, onClose, placeholder }) {
+// as often as needed, while the report is written. With `lineText` (a
+// transcript line), one button puts the line's text in the box to edit, and
+// another sends it as correct as it is.
+export default function ReportDialog({ title, context, audio, lineText, onClose, placeholder }) {
   const playerRef = useRef(null)
   const [playing, setPlaying] = useState(false)
   function replay() {
@@ -47,11 +50,11 @@ export default function ReportDialog({ title, context, audio, onClose, placehold
     return () => document.removeEventListener('keydown', onKey, true)
   }, [onClose])
 
-  async function submit(e) {
+  async function submit(e, text = message) {
     e.preventDefault()
-    if (!message.trim()) return
+    if (!text.trim()) return
     if (!REPORT_ENDPOINT) {
-      const body = `${message.trim()}\n\n---\n${context}`
+      const body = `${text.trim()}\n\n---\n${context}`
       const params = new URLSearchParams({ title, body, labels: 'content-issue' })
       window.open(`${REPO_URL}/issues/new?${params}`, '_blank', 'noopener')
       onClose()
@@ -62,7 +65,7 @@ export default function ReportDialog({ title, context, audio, onClose, placehold
       const res = await fetch(REPORT_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ subject: title, message: message.trim(), context, contact, page: window.location.href }),
+        body: JSON.stringify({ subject: title, message: text.trim(), context, contact, page: window.location.href }),
       })
       const body = res.ok ? await res.json().catch(() => ({})) : {}
       setTrusted(!!body.trusted)
@@ -104,6 +107,16 @@ export default function ReportDialog({ title, context, audio, onClose, placehold
                   {playing ? '❚❚ Stop' : '▶ Play this line'}
                 </button>
                 <span>the whole line, from a few seconds before; play it as often as you like</span>
+              </p>
+            )}
+            {lineText && (
+              <p className="report-line-actions">
+                <button type="button" className="report-replay-button" onClick={() => { setMessage(lineText); boxRef.current?.focus() }}>
+                  Copy the line to edit
+                </button>
+                <button type="button" className="report-replay-button" disabled={state === 'sending'} onClick={(e) => submit(e, CORRECT_MESSAGE)}>
+                  ✓ It&apos;s correct
+                </button>
               </p>
             )}
             <label className="report-field">

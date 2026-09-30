@@ -96,7 +96,7 @@ function lineHtml(k, main) {
   const l = lines[k], a = audioFor(l.g)
   return `<div class="line${main ? ' is-main' : ''}${l.c ? ' is-pao' : ''}" data-k="${k}">
     <div class="top"><span class="meta"><a href="/#/mission/${mission}?at=${Math.floor(l.g)}" target="_blank" rel="noreferrer">${fmt(l.g)}</a> · ${esc(l.c ? 'Announcer' : l.s)}${l.n ? ' · not on this recording' : ''}</span>
-    <span class="actions">${reported.has(keyOf(l)) ? '<span class="done">✓ reported</span>' : ''}${a ? `<button class="play" data-src="${esc(a.src)}" data-at="${a.at}" data-until="${Math.round((a.at + lineLength(k)) * 10) / 10}">▶ Play</button>` : '<span class="meta">no tape here</span>'}<button class="report">Report a fix</button></span></div>
+    <span class="actions">${reported.has(keyOf(l)) ? '<span class="done">✓ reported</span>' : ''}${a ? `<button class="play" data-src="${esc(a.src)}" data-at="${a.at}" data-until="${Math.round((a.at + lineLength(k)) * 10) / 10}">▶ Play</button>` : '<span class="meta">no tape here</span>'}<button class="good" title="Checked against the tape: right as it is">✓ Correct</button><button class="report">Report a fix</button></span></div>
     <p class="text">${esc(l.t)}</p>
   </div>`
 }
@@ -144,12 +144,21 @@ list.addEventListener('click', (e) => {
     const line = rep.closest('.line')
     let f = line.querySelector('form.fix')
     if (f) { f.remove(); return }
-    line.insertAdjacentHTML('beforeend', `<form class="fix"><textarea rows="3" placeholder="What should it say? e.g. 'Houston, not Horton'; 'this is Bean'; 'the last word is time'"></textarea><div class="actions"><button type="submit">Send</button><button type="button" class="cancel">Cancel</button><span class="meta status"></span></div></form>`)
+    line.insertAdjacentHTML('beforeend', `<form class="fix"><textarea rows="3" placeholder="What should it say? e.g. 'Houston, not Horton'; 'this is Bean'; 'the last word is time'"></textarea><div class="actions"><button type="submit">Send</button><button type="button" class="copy">Copy the line to edit</button><button type="button" class="cancel">Cancel</button><span class="meta status"></span></div></form>`)
     line.querySelector('textarea').focus()
     return
   }
   const cancel = e.target.closest('button.cancel')
   if (cancel) { cancel.closest('form').remove(); return }
+  const copy = e.target.closest('button.copy')
+  if (copy) {
+    const box = copy.closest('form').querySelector('textarea')
+    box.value = lines[Number(copy.closest('.line').dataset.k)].t
+    box.focus()
+    return
+  }
+  const good = e.target.closest('button.good')
+  if (good) { send(good.closest('.line'), CORRECT, null); return }
   const more = e.target.closest('button.more')
   if (more) {
     const card = more.closest('article'), i = Number(card.dataset.i)
@@ -160,13 +169,20 @@ list.addEventListener('click', (e) => {
   if (e.target.id === 'next') { shown += PAGE; render() }
 })
 
+// what "✓ Correct" sends (the site's report dialog sends the same)
+const CORRECT = '✓ Correct as it is: mark complete, no changes.'
+
 list.addEventListener('submit', async (e) => {
   e.preventDefault()
-  const f = e.target, line = f.closest('.line'), card = f.closest('article')
-  const k = Number(line.dataset.k), l = lines[k], x = rows[Number(card.dataset.i)]
+  const f = e.target
   const msg = f.querySelector('textarea').value.trim()
-  if (!msg) return
-  const a = audioFor(l.g), status = f.querySelector('.status')
+  if (msg) send(f.closest('.line'), msg, f)
+})
+
+async function send(line, msg, f) {
+  const card = line.closest('article')
+  const k = Number(line.dataset.k), l = lines[k], x = rows[Number(card.dataset.i)]
+  const a = audioFor(l.g), status = f ? f.querySelector('.status') : { set textContent(v) {} }
   status.textContent = 'Sending…'
   const r = await fetch('/api/reports', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
     subject: `Apollo ${mission} GET ${fmt(l.g)}: transcript line`,
@@ -175,13 +191,14 @@ list.addEventListener('submit', async (e) => {
       + (k === x.k ? `From the review list: ${x.why}` : `Near a line from the review list (GET ${fmt(x.g)})`),
     page: location.href }) })
   status.textContent = r.ok ? 'Sent.' : 'Could not send.'
-  if (!r.ok) return
+  if (!r.ok) { if (!f) alert('Could not send that. Try again in a moment.'); return }
   reported.add(keyOf(l)); saveReported()
+  const done = msg === CORRECT ? '✓ correct' : '✓ reported'
   setTimeout(() => {
-    f.remove()
-    document.querySelectorAll(`.line[data-k="${k}"] .top > .actions`).forEach((el) => { if (!el.querySelector('.done')) el.insertAdjacentHTML('afterbegin', '<span class="done">✓ reported</span>') })
-  }, 700)
-})
+    if (f) f.remove()
+    document.querySelectorAll(`.line[data-k="${k}"] .top > .actions`).forEach((el) => { if (!el.querySelector('.done')) el.insertAdjacentHTML('afterbegin', `<span class="done">${done}</span>`) })
+  }, f ? 700 : 0)
+}
 
 document.querySelector('.bar').addEventListener('click', (e) => {
   const b = e.target.closest('button'); if (!b) return

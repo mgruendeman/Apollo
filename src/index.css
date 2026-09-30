@@ -3156,3 +3156,11 @@ button.transcript-channel-tag {
   outline-offset: 3px;
   border-radius: 12px;
 }
+
+/* the report dialog's "Copy the line to edit" and "It's correct" buttons */
+.report-line-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 10px;
+}
