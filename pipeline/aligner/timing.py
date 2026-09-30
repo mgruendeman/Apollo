@@ -151,6 +151,72 @@ def time_untimed(lines, segments, tape_words):
     return done
 
 
+def _spoken(segments, tape_words, g0, g1):
+    """The words on the tapes over mission time [g0, g1] as (start, end, token), in mission time."""
+    end = lambda sg: sg['get'] + (sg['to'] - sg['from']) * sg['rate']
+    out = []
+    for sg in segments:
+        if end(sg) < g0 or sg['get'] > g1 or sg['tape'] not in tape_words or sg.get('journal'):
+            continue
+        words, starts = tape_words[sg['tape']]
+        ta = sg['from'] + (max(g0, sg['get']) - sg['get']) / sg['rate']
+        tb = sg['from'] + (min(g1, end(sg)) - sg['get']) / sg['rate']
+        for w in words[bisect.bisect_left(starts, ta):bisect.bisect_right(starts, tb)]:
+            at = lambda t: sg['get'] + (t - sg['from']) * sg['rate']
+            out.append((at(w[0]), at(w[1]), w[3]))
+    return sorted(out)
+
+
+def place_unfound(lines, segments, tape_words, skip=()):
+    """Lines whose time the scan lost and whose words time_untimed couldn't
+    find (too short to be sure of, or partly misheard) would all sit at the
+    time of the line before them, and play that line. Each goes instead to
+    where its words start, looked for loosely (two of them, or all of a
+    short line, in order) once most of the line before has been said and
+    before the next timed line; failing that, to where the tape's next
+    stretch of speech starts after the line before; failing that, just
+    after it. Lines in `skip` (the command module's own link) stay put.
+    Returns how many moved."""
+    moved = 0
+    for i in range(1, len(lines)):
+        l = lines[i]
+        if not l.get('a') or id(l) in skip:
+            continue
+        p = lines[i - 1]
+        nxt = next((x for x in lines[i + 1:] if not x.get('a')), None)
+        hi = nxt['g'] if nxt else p['g'] + 300
+        words = [w for w in _spoken(segments, tape_words, p['g'] - 1, hi + 8) if w[0] >= p['g'] - 1]
+        if not words:
+            continue
+        need = max(1, int(0.6 * len(tokens(p['t']))))   # (the line before, mostly said)
+        toks = tokens(l['t'])
+        seq = [w[2] for w in words]
+        best, at = 0, None
+        for j in range(min(need, len(words)), len(words)):
+            if words[j][0] > hi + 5:
+                break
+            if seq[j] not in toks:
+                continue
+            sm = difflib.SequenceMatcher(None, toks, seq[j:j + len(toks) + 3], autojunk=False)
+            got = sum(b.size for b in sm.get_matching_blocks())
+            if got > best:
+                best, at = got, j
+        if at is not None and (best >= 2 and best >= 0.4 * len(toks) or best == len(toks)):
+            g = words[at][0] - 0.2
+        else:
+            k = min(need, len(words)) - 1
+            while k + 1 < len(words) and words[k + 1][0] - words[k][1] < 0.8:
+                k += 1   # (to the end of that stretch of speech)
+            # (NASA's printed time for the next line is often a few seconds early: the
+            # speech that starts just after it can still be this line's)
+            g = words[k + 1][0] - 0.2 if k + 1 < len(words) and words[k + 1][0] < hi + 5 else words[k][1] + 0.5
+        g = round(min(max(g, p['g']), max(p['g'], hi - 0.3)), 1)   # (in order: never past the next timed line)
+        if abs(g - l['g']) >= 0.5:
+            l['g'] = g
+            moved += 1
+    return moved
+
+
 def rebuild_from_tape(lines, segments, tape_words, vocab):
     """Lines the scan left mostly garbled, written again from the tape.
 
@@ -202,7 +268,9 @@ def mark_unheard(lines, segments, tape_words, envelopes):
     loudness is flat (the recogniser misses faint speech a listener can
     still make out). envelopes: folder of place_tapes' loudness envelopes
     (10 a second, normalised). Silence on these tapes varies by about 0.1;
-    faint speech can vary by as little as 0.3."""
+    faint speech can vary by as little as 0.3. Or no words heard at all for
+    a minute and a half either side, whatever the loudness: a stretch of
+    hiss or carrier, not speech (Apollo 11's 186-AAA, nine minutes of it)."""
     import numpy as np
     loud = {}
 
@@ -229,7 +297,8 @@ def mark_unheard(lines, segments, tape_words, envelopes):
             continue
         starts = tape_words[sg['tape']][1]
         span = 6 + 0.3 * len(l['t'].split())
-        if bisect.bisect_right(starts, t + span) == bisect.bisect_left(starts, t - 6) and flat(sg['tape'], t - 2, t + span):
+        if bisect.bisect_right(starts, t + span) == bisect.bisect_left(starts, t - 6) and flat(sg['tape'], t - 2, t + span) \
+                or bisect.bisect_right(starts, t + 90) == bisect.bisect_left(starts, t - 90) and starts and t < starts[-1]:
             l['n'] = 1
             n += 1
     return n

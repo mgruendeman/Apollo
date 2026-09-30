@@ -2,5 +2,9 @@
  "11": [
   {"tape": "155-AAA", "tape_from": 9972, "tape_to": 10181, "get_from": 8701,
    "why": "After the announcer's 'Apollo Control at 2 hours 25 minutes' the tape runs on through the Carnarvon pass: 'Houston through Carnarvon' (NASA 002:25:44) is heard at 10015 s and 'You are GO for TLI' (002:26:38) at 10069 s, the same offset as the piece from 10181 s (002:28:32). Placement had put 10006-10181 at 002:18:17 on one stray match."}
+ ],
+ "12": [
+  {"tape": "378-AAA", "tape_from": 0, "tape_to": 188, "get_from": 466988,
+   "why": "The tape's first three minutes finish the traverse briefing that runs to the end of 377-AAA ('Great minds think alike' at 9 s, 'Okay. Go ahead, Houston' at 146 s, 'It's really weird' at 190 s, NASA 129:46:18), at the same offset as its next piece from 188 s. NASA's times for three lines there are misread by ten minutes (129:35:31 for 129:45:31), so nothing placed it."}
  ]
 }

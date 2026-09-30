@@ -16,6 +16,7 @@ Needs: faster-whisper (in the DeepFilterNet environment), ffmpeg.
 import argparse
 import json
 import os
+import subprocess
 import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
@@ -29,10 +30,29 @@ def _init(name, threads):
     _model = WhisperModel(name, device='cpu', compute_type='int8', cpu_threads=threads)
 
 
+def _length(src):
+    out = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', str(src)],
+                         capture_output=True, text=True).stdout.strip()
+    return float(out) if out else None
+
+
+def _decoded(src):
+    """The tape as 16 kHz mono samples, decoded by ffmpeg (which reads on past
+    a damaged frame where the recogniser's own decoder stops: Apollo 12's
+    373-AAA, 1.6 hours of a 3.2-hour tape)."""
+    import numpy as np
+    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(src), '-ac', '1', '-ar', '16000', '-f', 'f32le', '-'],
+                         capture_output=True).stdout
+    return np.frombuffer(raw, np.float32)
+
+
 def _run(src, dest):
     t = time.time()
-    segs, info = _model.transcribe(str(src), beam_size=1, vad_filter=False, word_timestamps=True,
-                                   condition_on_previous_text=False, language='en')
+    kw = dict(beam_size=1, vad_filter=False, word_timestamps=True, condition_on_previous_text=False, language='en')
+    segs, info = _model.transcribe(str(src), **kw)
+    length = _length(src)
+    if length and info.duration < 0.95 * length:   # (decoding stopped short: again, through ffmpeg)
+        segs, info = _model.transcribe(_decoded(src), **kw)
     words = [[round(w.start, 2), round(w.end, 2), w.word.strip()] for s in segs for w in (s.words or [])]
     tmp = dest.with_suffix('.part')
     tmp.write_text(json.dumps(words, separators=(',', ':')))

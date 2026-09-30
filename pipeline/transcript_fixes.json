@@ -2866,11 +2866,6 @@
    "to": "Down there, it's very fine."
   },
   {
-   "g": 393816.7,
-   "text": "It's almost like a powder. Down there, it's very fine.",
-   "review": "The tape sounds like \"Ground mass is very fine\" where NASA has \"Down there, it's very fine\". Which is it?"
-  },
-  {
    "g": 456356,
    "text": "Okay. Latest estimate, 127 03 39.",
    "delete": true
@@ -2915,11 +2910,6 @@
    "g": 113156.5,
    "from": "up amgund the Gulf",
    "to": "up around the Gulf"
-  },
-  {
-   "g": 113156.5,
-   "text": "I can see Alaska right up - right up along the LM",
-   "review": "The tape sounds like \"along the limb\" (the Earth's edge, in the sextant) where NASA has \"along the LM\". Which is it?"
   },
   {
    "g": 118267,
@@ -2970,11 +2960,6 @@
    "g": 370516,
    "from": "The AUTO targeting was football-field sized crater, with a large number of big boulders and rocks for about ... one taking or two us right crater into diameters a football-field around it, size and it -",
    "to": "The AUTO targeting was taking us right into a football-field size - football-field sized crater, with a large number of big boulders and rocks for about one or two crater diameters around it, and it required us to go in P66 and fly manually over the rock field to find a reasonably good area."
-  },
-  {
-   "g": 370516,
-   "text": "and it required us to go in P66 and fly manually over the rock field",
-   "review": "NASA's page lost the end of this line (from \"and it required us\"); I wrote it from the tape. Does it match what Neil says?"
   },
   {
    "g": 370558.9,
@@ -3180,6 +3165,448 @@
    "g": 644316,
    "from": "Charlesw_rth's face",
    "to": "Charlesworth's face"
+  },
+  {
+   "g": 113156.5,
+   "text": "I can see Alaska right up - right up along the LM",
+   "ok": true
+  },
+  {
+   "g": 370516,
+   "text": "and it required us to go in P66 and fly manually over the rock field",
+   "ok": true
+  },
+  {
+   "g": 393816.7,
+   "text": "It's almost like a powder. Down there, it's very fine.",
+   "ok": true
+  },
+  {
+   "g": 565435,
+   "from": "it should como on in",
+   "to": "it should come on in"
+  },
+  {
+   "g": 565435,
+   "from": "Hc ever, there are some other things of interest f _ ou.",
+   "to": "However, there are some other things of interest for you."
+  },
+  {
+   "g": 565435,
+   "from": "Presi- den!, Nixon",
+   "to": "President Nixon"
+  },
+  {
+   "g": 639702,
+   "from": "next, _ o four administrations",
+   "to": "next, to four administrations"
+  },
+  {
+   "g": 639702,
+   "from": "that built our spacecraft. the Saturn, the Columbia, the Eagle, and the 1 little EMU, the space suit and backpack that was. our small spacecraft",
+   "to": "that built our spacecraft, the Saturn, the Columbia, the Eagle, and the little EMU, the space suit and backpack that was our small spacecraft"
+  },
+  {
+   "g": 639702,
+   "from": "special thanks to ali those Americans",
+   "to": "special thanks to all those Americans"
+  },
+  {
+   "g": 639702,
+   "from": "God bless you. _ Good night from Apollo 11.",
+   "to": "God bless you. Good night from Apollo 11."
+  },
+  {
+   "g": 639702,
+   "text": "agency and industry teams that built our spacecraft",
+   "ok": true
+  },
+  {
+   "g": 645350,
+   "from": "The trace on your respi'ation rate",
+   "to": "The trace on your respiration rate"
+  },
+  {
+   "g": 645350,
+   "from": "we would slggesb that you try",
+   "to": "we would suggest that you try"
+  },
+  {
+   "g": 645350,
+   "from": "side of your lowe: rib cage",
+   "to": "side of your lower rib cage"
+  },
+  {
+   "g": 645373,
+   "text": "eee",
+   "delete": true
+  },
+  {
+   "g": 653788,
+   "from": "L2 is as show. L3 is as show_; there is",
+   "to": "L2 is as shown. L3 is as shown; there is"
+  },
+  {
+   "g": 653773,
+   "from": "L2 and L3. Ire you with me?",
+   "to": "L2 and L3. Are you with me?"
+  },
+  {
+   "g": 653796,
+   "from": "was jettisoned with the I34, and his helmet",
+   "to": "was jettisoned with the LM, and his helmet"
+  },
+  {
+   "g": 686884,
+   "from": "Can you tell us wi_ere the visor",
+   "to": "Can you tell us where the visor"
+  },
+  {
+   "g": 686898.4,
+   "from": "The weatt er fore- case in the landing area right now is .000 scattered",
+   "to": "The weather forecast in the landing area right now is 2000 scattered"
+  },
+  {
+   "g": 686892,
+   "from": "your suggestion :nd stow them",
+   "to": "your suggestion and stow them"
+  },
+  {
+   "g": 687144,
+   "from": "Houston, Apollo 11. tey, Ron, I wondei if you could give us a good Navy explanation for this Delt a-H time. Over. Fage",
+   "to": "Houston, Apollo 11. Hey, Ron, I wonder if you could give us a good Navy explanation for this Delta-H time. Over."
+  },
+  {
+   "g": 700357,
+   "from": "Do you have any r_ commended settings",
+   "to": "Do you have any recommended settings"
+  },
+  {
+   "g": 18827.8,
+   "from": "continuing with the nonpropul- sion vent",
+   "to": "continuing with the non-propulsive vent"
+  },
+  {
+   "g": 18827.8,
+   "from": "a small amount of fuel et this time",
+   "to": "a small amount of fuel at this time"
+  },
+  {
+   "g": 40798.9,
+   "text": "we aren't disturbing you",
+   "ok": true
+  },
+  {
+   "g": 83658.6,
+   "from": "I have a sun,nary here from PAO",
+   "to": "I have a summary here from PAO"
+  },
+  {
+   "g": 96408.8,
+   "text": "Okay. Thank you.",
+   "ok": true
+  },
+  {
+   "g": 98130.8,
+   "text": "Yes, and he is eyeballing the Earth.",
+   "ok": true
+  },
+  {
+   "g": 98892,
+   "text": "... kept me busy, I'm ...",
+   "delete": true
+  },
+  {
+   "g": 98921,
+   "text": "Not if you're in the ...",
+   "delete": true
+  },
+  {
+   "g": 108981,
+   "text": "the DELTA-V T should be 7992",
+   "ok": true
+  },
+  {
+   "g": 122654.5,
+   "text": "intertropical convergence zone",
+   "ok": true
+  },
+  {
+   "g": 127680,
+   "text": "Okay, Charlie. I got you in the telescope.",
+   "ok": true
+  },
+  {
+   "g": 128335,
+   "from": "appear to be coming up, throuFJa the clouds. Mcdonald report that _ leak in the clouds",
+   "to": "appear to be coming up, through the clouds. McDonald reports that there's a break in the clouds"
+  },
+  {
+   "g": 128597,
+   "text": "Roger. Stand by.",
+   "ok": true
+  },
+  {
+   "g": 196978.4,
+   "from": "try until we Find ourselves in",
+   "to": "try until we find ourselves in"
+  },
+  {
+   "g": 199895,
+   "text": "Hey, you get an A-plus.",
+   "ok": true
+  },
+  {
+   "g": 219057,
+   "text": "let you see it postflight",
+   "ok": true
+  },
+  {
+   "g": 263593,
+   "from": "we'll start ouruplinks.",
+   "to": "we'll start our uplinks."
+  },
+  {
+   "g": 266672,
+   "text": "any destratification as a result of the burn",
+   "ok": true
+  },
+  {
+   "g": 279290,
+   "text": "We are inquiring if it is your plan to.",
+   "ok": true
+  },
+  {
+   "g": 284163,
+   "text": "we're just about to get the Sun coming into the lens",
+   "ok": true
+  },
+  {
+   "g": 285832,
+   "text": "Just in TEI-4 SPS/G&N",
+   "ok": true
+  },
+  {
+   "g": 287010,
+   "text": "nitrogen bottle pressures preburn",
+   "ok": true
+  },
+  {
+   "g": 300413.1,
+   "text": "Stand by one, Houston. Are you through with the DSKY?",
+   "ok": true
+  },
+  {
+   "g": 300455.3,
+   "text": "We're powering down. Out.",
+   "at": 300400
+  },
+  {
+   "g": 300455.3,
+   "text": "Roger. Copy. Out.",
+   "at": 300402
+  },
+  {
+   "g": 300677,
+   "text": "All right. I read back: TEI 11",
+   "ok": true
+  },
+  {
+   "g": 300811,
+   "from": "the checklist on page Fl0-14.",
+   "to": "the checklist on page F10-14."
+  },
+  {
+   "g": 304340,
+   "text": "the supercritical helium rise rate is nominal",
+   "ok": true
+  },
+  {
+   "g": 347549,
+   "text": "We are through with the computer.",
+   "ok": true
+  },
+  {
+   "g": 348175.0,
+   "text": "Go ahead, Houston.",
+   "ok": true
+  },
+  {
+   "g": 355480,
+   "from": "[!lag,It, Houston. You car, go ahead",
+   "to": "Eagle, Houston. You can go ahead"
+  },
+  {
+   "g": 355614.3,
+   "text": "Say again on the necessary data on the downlink.",
+   "at": 355608.5
+  },
+  {
+   "g": 355620.5,
+   "text": "Standing by, Houston.",
+   "ok": true
+  },
+  {
+   "g": 356616.4,
+   "text": "Roger. In work.",
+   "ok": true
+  },
+  {
+   "g": 356626.8,
+   "text": "Standing by until your Mark, Neil.",
+   "ok": true
+  },
+  {
+   "g": 369384,
+   "text": "AGS has gone about 2 feet per second greater",
+   "ok": true
+  },
+  {
+   "g": 369504.7,
+   "from": "Houston, you're looking ,'at GE DELTA-HU",
+   "to": "Houston, you're looking at our DELTA-H."
+  },
+  {
+   "g": 378081,
+   "text": "Columbia, Houston. Several items for you. Over.",
+   "ok": true
+  },
+  {
+   "g": 384636.7,
+   "from": "_ _.ahead, Columbia.",
+   "to": "Go ahead, Columbia."
+  },
+  {
+   "g": 390276.0,
+   "from": "*## that #*# if, if it's in.",
+   "to": "*** that's what ***",
+   "whole": true
+  },
+  {
+   "g": 390826,
+   "text": "Yes. Locked and aligned.",
+   "ok": true
+  },
+  {
+   "g": 391097.5,
+   "text": "Okay. Let me get yours.",
+   "ok": true
+  },
+  {
+   "g": 391463.0,
+   "from": "loud and clear on OMNI C -",
+   "to": "loud and clear on OMNI C - Charlie."
+  },
+  {
+   "g": 392582,
+   "text": "Open my RCU there, would you, Buzz?",
+   "ok": true
+  },
+  {
+   "g": 393279.7,
+   "text": "Glycol pump secondary circuit breaker open?",
+   "ok": true
+  },
+  {
+   "g": 393750,
+   "text": "Roger. We're getting a picture on the TV.",
+   "at": 393723
+  },
+  {
+   "g": 393750,
+   "text": "You got a good picture, huh?",
+   "at": 393727.5
+  },
+  {
+   "g": 394097,
+   "text": "Looking up at the LM, I'm standing directly in the shadow",
+   "ok": true
+  },
+  {
+   "g": 395885.7,
+   "text": "sit like that and walk around it.",
+   "ok": true
+  },
+  {
+   "g": 400058,
+   "text": "Neil, how does that appear to be pointing?",
+   "ok": true
+  },
+  {
+   "g": 412600,
+   "from": "core tubes and solar wind ani about half",
+   "to": "core tubes and solar wind and about half"
+  },
+  {
+   "g": 412600,
+   "from": "representative types as I could. l\";L,_';,t · 427",
+   "to": "representative types as I could."
+  },
+  {
+   "g": 412565.1,
+   "from": "Roger. Be Zieve we understand",
+   "to": "Roger. Believe we understand"
+  },
+  {
+   "g": 412980.9,
+   "from": "Yes. That's about it. It wasn't a rapid change",
+   "to": "Yeah. That's about it. It wasn't a rapid change"
+  },
+  {
+   "g": 442424.8,
+   "text": "Roger. Readback follows. TIG 124 22 0000",
+   "ok": true
+  },
+  {
+   "g": 444172,
+   "from": "about TIG minus 50. Over. Why do think I need to move the radar?",
+   "to": "about TIG minus 50. Over."
+  },
+  {
+   "g": 444172,
+   "text": "It looks like you're going to have to reposition the radar here.",
+   "ok": true
+  },
+  {
+   "g": 447032,
+   "text": "And I've got the cross feed on.",
+   "ok": true
+  },
+  {
+   "g": 448175,
+   "text": "And we got - got our residuals.",
+   "ok": true
+  },
+  {
+   "g": 449343,
+   "text": "Okay. Get a pass.",
+   "ok": true
+  },
+  {
+   "g": 456781.6,
+   "from": "M()x nix.",
+   "to": "Mox nix.",
+   "whole": true
+  },
+  {
+   "g": 462614.0,
+   "text": "Eagle, Houston. Over.",
+   "ok": true
+  },
+  {
+   "g": 467892.3,
+   "from": "Out of _;he two, I prefer",
+   "to": "Out of the two, I prefer"
+  },
+  {
+   "g": 483631,
+   "text": "Roger. We've stirred them up.",
+   "ok": true
+  },
+  {
+   "g": 645350,
+   "text": "The trace on your respiration rate is still flat.",
+   "unheard": true
   }
  ],
  "12": [
@@ -3570,6 +3997,137 @@
    "g": 423461,
    "text": "Boy, I hope - I hope - -",
    "review": "Who's speaking? A listener hears Conrad; the conversation suggests Bean (Conrad answers \"You hope, you hope?\")"
+  },
+  {
+   "g": 466531,
+   "text": "Okay. Go ahead, Houston.",
+   "printed": 467131
+  },
+  {
+   "g": 466535,
+   "text": "Last points on sharp crater",
+   "printed": 467135
+  },
+  {
+   "g": 466559,
+   "text": "We have got it.",
+   "printed": 467159
+  },
+  {
+   "g": 437265,
+   "from": "we got to that fellow, so some of that _ul_ ..... we picked up ml_h_'- _ be u_-_ that Copernican ray material.",
+   "to": "we got to that fellow, so some of that - some we picked up might be of that Copernican ray material."
+  },
+  {
+   "g": 437265,
+   "from": "I took a set of stereos Jn that thing",
+   "to": "I took a set of stereos in that thing"
+  },
+  {
+   "g": 437265,
+   "from": "which is right in front \\ of the spacecraft",
+   "to": "which is right in front of the spacecraft"
+  },
+  {
+   "g": 476875,
+   "from": "Beeau._ it lnn_ li_ _ _.la _,,_+ .... _ _ .... time here if we wanted to - -",
+   "to": "Because it looks like we could spend all the time here if we wanted to - -"
+  },
+  {
+   "g": 424462,
+   "from": "Wait, wait. }'old - hold it.",
+   "to": "Wait, wait. Hold - hold it."
+  },
+  {
+   "g": 807355,
+   "from": "there have not been _gy su_rise$, and I'd like",
+   "to": "there have not been any surprises, and I'd like"
+  },
+  {
+   "g": 397550.7,
+   "text": "Better give the AGS an update; it might need it.",
+   "ok": true
+  },
+  {
+   "g": 397544,
+   "from": "IZ_y,it's really giving her heck",
+   "to": "Boy, it's really giving her heck"
+  },
+  {
+   "g": 416745.1,
+   "from": "Okay, b_ out in a minute.",
+   "to": "Okay, be out in a minute."
+  },
+  {
+   "g": 416745.1,
+   "speaker": "Bean",
+   "text": "Okay, be out in a minute."
+  },
+  {
+   "g": 416745.1,
+   "text": "Okay, be out in a minute.",
+   "at": 416758
+  },
+  {
+   "g": 416742.1,
+   "from": "We'll he right back with yOU ·",
+   "to": "We'll be right back with you."
+  },
+  {
+   "g": 422390,
+   "from": ".......... v_. _uu re just - Here, let me give you a hand.",
+   "to": "Okay, here, I'm just going to give you a hand."
+  },
+  {
+   "g": 422390,
+   "speaker": "Bean",
+   "text": "Okay, here, I'm just going to give you a hand."
+  },
+  {
+   "g": 398950,
+   "from": "How do ycq re_? Cv'er.",
+   "to": "How do you read? Over."
+  },
+  {
+   "g": 418632,
+   "from": "I, we're still not getting a good picture. %_ay _n't you press on",
+   "to": "Al, we're still not getting a good picture. Why don't you press on"
+  },
+  {
+   "g": 427781,
+   "from": "Very good. Tn_n 77 /_ Pv4c 512",
+   "to": "Very good. ***",
+   "whole": true
+  },
+  {
+   "g": 436979.5,
+   "from": "give you the recommended .._s __ - , - J I. o, 2er ror the _.)(.)lIlb5 111 brliversc 4.",
+   "to": "give you the recommended order for the points in traverse 4."
+  },
+  {
+   "g": 438514.5,
+   "from": "if you turn the heat wa_ - way up",
+   "to": "if you turn the heat way up"
+  },
+  {
+   "g": 438514.5,
+   "from": "and the other ... is to use gravity _n what :vet way you could",
+   "to": "and the other is to use gravity in whatever way you could"
+  },
+  {
+   "g": 466487.1,
+   "from": "Good morning, s, good morning.",
+   "to": "Good morning, good morning."
+  },
+  {
+   "g": 466487.1,
+   "from": "f%k_v_ Vi r_t _f all. the two prime sites",
+   "to": "Okay, first of all, the two prime sites"
+  },
+  {
+   "g": 466487.1,
+   "speaker": "Weitz",
+   "text": "Okay, first of all, the two prime sites"
   }
  ],
  "14": [

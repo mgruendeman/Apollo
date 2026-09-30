@@ -35,8 +35,8 @@ from aligner.common import ROOT, CREW, MIN_WORDS, SEARCH_S, tokens, speaker_name
 from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors
 from aligner.ocr_repair import FIXES, MISSION, repair_ocr, vocabulary
 from aligner.announcer import find_announcer
-from aligner.timing import mark_drowned_out, mark_unheard, rebuild_from_tape, said_on_tape, sync_to_tape, time_untimed
-from aligner.fixes import apply_fixes, use_journal_text
+from aligner.timing import mark_drowned_out, mark_unheard, place_unfound, rebuild_from_tape, said_on_tape, sync_to_tape, time_untimed
+from aligner.fixes import apply_fixes, fix_printed_times, use_journal_text
 from aligner.review import score_lines
 from aligner.segments import pin_pieces, trim_overlaps
 
@@ -61,6 +61,7 @@ def main():
     # first line with a printed time: not speech.
     first = next((k for k, r in enumerate(rows) if not r['getApprox']), 0)
     rows = [r for r in rows[first:] if r['getSeconds'] > 0 or r['speaker'] not in ('MS', '?')]
+    fix_printed_times(m, rows)   # (NASA's times the scan misread by minutes, from the hand fixes)
     # (the command module's blocks through a moonwalk, on their own clock, go in among the moonwalk's lines)
     if any(r.get('loop') for r in rows):
         rows.sort(key=lambda r: r['getSeconds'])
@@ -138,9 +139,11 @@ def main():
     elsewhere = {id(l) for l in lines if id(l) in cm_loop and not said_on_tape(l, segments, tape_words)}
     repaired = repair_ocr(lines, segments, tape_words, skip=elsewhere)
     rebuilt = rebuild_from_tape(lines, segments, tape_words, vocabulary(tape_words)[0])
+    # (after the mending: it reads each line against the tape where the line sat)
+    spread = place_unfound(lines, segments, tape_words, skip=cm_loop)
     fixed = use_journal_text(m, lines) if args.journal_text else 0
     # NASA's page headings read as if spoken ("11 AIR-TO-GROUND VOICE TRANSCRIPTION")
-    lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,4}.{0,3}G[RH]OUND|VOICE\s*T\S{0,3}[AJ]\S{0,3}S\S{0,2}R", l['t'])
+    lines = [l for l in lines if not re.search(r"AIR.{0,3}T.{0,4}.{0,3}[GC][RH]OUND|VOICE\s*T\S{0,3}[AJ]\S{0,3}S\S{0,2}R", l['t'])
              and not re.search(r"V(?:\(\)|_)[iIl]C", l['t'])   # "V()ICI,", "V_iCt,": VOICE, in a heading read worse still
              and not re.match(r"^\s*[1l]{2}\s+A\S{0,4}-", l['t'])   # "11 A_I_-TO-G][_OlJl_D VOICE ..."
              and not re.search(r"\((?:GDS|MAD|HSK|GWM|HAW|CRO|TEX|ACN|BDA|CYI|TAN|MIL|GYM)\)|there is cont.nuous|[Ss]ubsequent to TLI", l['t'])   # NASA's page note on tracking stations
@@ -210,7 +213,7 @@ def main():
     write_progress(m, lines, covered, len(ranked), unheard)
     print(f"{stats['anchored']} of {stats['tried']} lines found on the tapes (+{stats.get('chained', 0)} between them); {len(segments)} segments covering {covered:.1f} h; "
           f"{len(lines)} lines ({repaired} words repaired from the tapes, {fixed} lines in the journal's wording, "
-          f"{hand} hand fixes, {untimed} untimed lines timed from the tapes, {synced} lines timed to where they're heard, {rebuilt} rebuilt from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; {len(ranked)} lines listed for review; written to {out}")
+          f"{hand} hand fixes, {untimed} untimed lines timed from the tapes ({spread} more set where the tape's speech resumes), {synced} lines timed to where they're heard, {rebuilt} rebuilt from the tapes); announcer: {len(announcer)} stretches, {sum(b - a for a, b in announcer) / 60:.0f} min, over the crew in {len(over)} places; {unheard} lines not on the recording; {len(ranked)} lines listed for review; written to {out}")
 
 
 def write_progress(m, lines, covered, flagged, unheard):

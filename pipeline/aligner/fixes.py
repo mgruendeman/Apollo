@@ -17,6 +17,25 @@ def _norm(text):
     return re.sub(r'[^a-z0-9]', '', text.lower())
 
 
+def fix_printed_times(mission, rows):
+    """NASA's printed times the scan misread ("129:35:31" for 129:45:31), put
+    right before anything is timed: {"g": the time as read, "text": part of
+    the line, "printed": the right time in seconds}. A misread time that
+    still reads as a time throws the lines after it off by minutes. Returns
+    how many were put right; one that finds no line raises FixNotApplied."""
+    fixes = [f for f in (json.loads(FIXES.read_text()).get(mission, []) if FIXES.exists() else []) if 'printed' in f]
+    missing = []
+    for f in fixes:
+        hit = [r for r in rows if abs(r['getSeconds'] - f['g']) <= 2 and _norm(f['text']) in _norm(r['text'])]
+        for r in hit:
+            r['getSeconds'], r['getApprox'] = f['printed'], False
+        if not hit and not any(r['getSeconds'] == f['printed'] and _norm(f['text']) in _norm(r['text']) for r in rows):
+            missing.append(f)
+    if missing:
+        raise FixNotApplied('printed time fix(es) that found no line:\n' + '\n'.join(f"  GET {f['g']}: {f['text']!r}" for f in missing))
+    return len(fixes)
+
+
 def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     """Hand corrections from listeners' reports, pipeline/transcript_fixes.json:
 
@@ -40,6 +59,7 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     time ("retime": N looks up to N seconds on, for a line printed further
     off than the usual two minutes). "at": seconds (with "text") puts a line
     at a time a listener heard it, where the recogniser can't find it.
+    ("printed": a misread printed time, is fix_printed_times', before timing.)
 
     A fix whose "from" text is gone is still satisfied if the line already
     reads as "to" (the OCR or a rule got there first); that counts as
@@ -49,6 +69,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     fixes = json.loads(FIXES.read_text()).get(mission, []) if FIXES.exists() else []
     done, missing, fresh, moved = 0, [], {}, False   # fresh: line -> how far on to look for it
     for f in fixes:
+        if 'printed' in f:
+            continue   # (fix_printed_times' business, before the timing)
         key = f.get('from', f.get('text', ''))
         # "whole": the fix is for a line that is exactly this ("Roger."), not any holding it
         match = (lambda t: t.strip() == key) if f.get('delete') or f.get('whole') else (lambda t: key in t)

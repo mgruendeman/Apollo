@@ -250,9 +250,15 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
     # a small group out of line with neighbours that agree with each other
     # is a mismatch (a phrase said twice), not a stretch of the mission
     off = lambda grp: float(np.median([x[1] for x in grp]))
+    # (and one resting on a few lines, a little out of line with neighbours
+    # that agree closely: the tape ran on unbroken there, so it can't be off by
+    # half a minute; Apollo 11's 035:27, 39 s early on one mismatched line,
+    # and Apollo 12's 117:54, 58 s late on three)
     keep = [grp for i, grp in enumerate(groups)
             if not (0 < i < len(groups) - 1 and len(grp) <= 5 and abs(off(groups[i - 1]) - off(groups[i + 1])) <= 30
-                    and abs(off(grp) - off(groups[i - 1])) > 60)]
+                    and abs(off(grp) - off(groups[i - 1])) > 60)
+            and not (0 < i < len(groups) - 1 and len(grp) <= 5 and abs(off(groups[i - 1]) - off(groups[i + 1])) <= 10
+                     and abs(off(grp) - off(groups[i - 1])) > 20)]
     groups = keep
     def cut(j):
         """Where the tape passes from group j-1's stretch to group j's: its
