@@ -2314,7 +2314,7 @@
   },
   {
    "g": 40797,
-   "from": "Hope aren't you at'on't, - we aren't disturbing you. We'd like vou to",
+   "from": "Hope aren't you at'on't, - we aren't disturbing you. We'd like you to",
    "to": "Hope aren't you - we aren't disturbing you. We'd like you to"
   },
   {
@@ -3607,6 +3607,121 @@
    "g": 645350,
    "text": "The trace on your respiration rate is still flat.",
    "unheard": true
+  },
+  {
+   "g": 361550.3,
+   "from": "PDI less thai 10:",
+   "to": "PDI less than 10:"
+  },
+  {
+   "g": 361550.3,
+   "from": "No PDI plus 12 abort: ?02 44 27.00",
+   "to": "No PDI plus 12 abort: 102 44 27.00"
+  },
+  {
+   "g": 361550.3,
+   "text": "Okay. PDI PAD: 102 33 04.36",
+   "at": 361541
+  },
+  {
+   "g": 127842,
+   "from": "We noticed the CR¥O pressure dropped a moment ago. Di_[ you stir lip the CRYO' s? Over.",
+   "to": "We noticed the CRYO pressure dropped a moment ago. Did you stir up the CRYOs? Over."
+  },
+  {
+   "g": 127850,
+   "from": "We've finished our cycling operatio_s.·_",
+   "to": "We've finished our cycling operations."
+  },
+  {
+   "g": 83658.6,
+   "text": "If you are interested in the morning news, I have a summary here from PAO.",
+   "at": 83650
+  },
+  {
+   "g": 124559.1,
+   "from": "Would you key ERROR ROD on the DSKY",
+   "to": "Would you key ERROR RESET on the DSKY"
+  },
+  {
+   "g": 124559.1,
+   "text": "Would you key ERROR RESET on the DSKY",
+   "at": 124547.5
+  },
+  {
+   "g": 196762.0,
+   "text": "Go ahead, Houston.",
+   "ok": true
+  },
+  {
+   "g": 347361.7,
+   "text": "Stand by one.",
+   "at": 347356
+  },
+  {
+   "g": 355998.5,
+   "text": "Ready to copy.",
+   "ok": true
+  },
+  {
+   "g": 357414,
+   "from": "We're standing by. We' 'e ready. Over.",
+   "to": "We're standing by. We're ready. Over."
+  },
+  {
+   "g": 357416.0,
+   "text": "Columbia, we'd like wide deadband ATT hold. Over.",
+   "at": 357536
+  },
+  {
+   "g": 368796.7,
+   "text": "Our visual altitude check is steadying out",
+   "at": 368794
+  },
+  {
+   "g": 401965.6,
+   "text": "Now we turn the feedwater valve - CLOSED.",
+   "ok": true
+  },
+  {
+   "g": 561058,
+   "from": "I haven't been a. this very long.",
+   "to": "I haven't been at this very long."
+  },
+  {
+   "g": 561058,
+   "text": "the Spaniards used to drink out of wineskins",
+   "ok": true
+  },
+  {
+   "g": 562359.4,
+   "text": "Houston, Apollo 11.",
+   "at": 562622
+  },
+  {
+   "g": 564525,
+   "text": "Roger. How do you read my EKG now?",
+   "ok": true
+  },
+  {
+   "g": 568437,
+   "text": "Roger. We've got his heartbeat way up.",
+   "printed": 565737
+  },
+  {
+   "g": 568443,
+   "text": "Right. He's sort of out of shape.",
+   "printed": 565743
+  },
+  {
+   "g": 568446,
+   "text": "Yes. That's what we thought.",
+   "printed": 565746
+  },
+  {
+   "g": 630937.3,
+   "from": "For your i lformatJoo the All Star game has just ended with the Nat: nal League",
+   "to": "For your information the All Star game has just ended with the National League"
   }
  ],
  "12": [
@@ -4140,6 +4255,137 @@
    "g": 3,
    "from": "LIFT-0FF. Clock starts.",
    "to": "LIFT-OFF. Clock starts."
+  },
+  {
+   "g": 465249,
+   "from": "i_,_zer. Same must have been a good comm attitude.",
+   "to": "Roger. Same here; must have been a good comm attitude."
+  },
+  {
+   "g": 465249,
+   "from": "Roger. I guesz we're coming up in about roughly J5 minutes starting this bistatic radar; and I have some pads to get up plus a little discuss'on; _o, Lf you'll grab the Solo Book, I'll give you a ,ou_le of them right.",
+   "to": "Roger. I guess we're coming up in about roughly 15 minutes starting this bistatic radar; and I have some pads to get up plus a little discussion; so, if you'll grab the Solo Book, I'll give you a couple of them right now."
+  },
+  {
+   "g": 465249,
+   "from": "Okay. I've it.",
+   "to": "Okay. I've got it.",
+   "whole": true
+  },
+  {
+   "g": 465249,
+   "from": "Okay. Got a m p update, REV 26, for page 33.",
+   "to": "Okay. Got a map update, REV 26, for page 33."
+  },
+  {
+   "g": 465249,
+   "from": "_k_ ahead.",
+   "to": "Go ahead.",
+   "whole": true
+  },
+  {
+   "g": 465249,
+   "text": "I guess we're coming up in about roughly 15 minutes",
+   "unheard": true
+  },
+  {
+   "g": 465249,
+   "text": "Okay. I've got it.",
+   "unheard": true
+  },
+  {
+   "g": 465249,
+   "text": "Okay. Got a map update, REV 26",
+   "unheard": true
+  },
+  {
+   "g": 465249,
+   "text": "Go ahead.",
+   "unheard": true
+  },
+  {
+   "g": 465440,
+   "from": "FJ',,tty g_ ,,d. ]tow are you?",
+   "to": "Oh, pretty good. How are you?"
+  },
+  {
+   "g": 465442,
+   "from": "[_:_1 good. What can we for you, Ed?",
+   "to": "Real good. What can we do for you, Ed?"
+  },
+  {
+   "g": 465448.2,
+   "from": "pre-EVA-2 Briefing. We'J'e stal_din_",
+   "to": "pre-EVA-2 briefing. We're standing by."
+  },
+  {
+   "g": 465451,
+   "text": "Okay. You have it.",
+   "unheard": true
+  },
+  {
+   "g": 465453,
+   "from": "O_f. W_ ']'c ,l'king on it back here, Ed. And he'll be wit,I, you here shortly.",
+   "to": "Okay. We're working on it back here, Ed. And he'll be with you here shortly."
+  },
+  {
+   "g": 465463,
+   "from": "Ok:.V.",
+   "to": "Okay.",
+   "whole": true
+  },
+  {
+   "g": 465761,
+   "from": "l_o_er.",
+   "to": "Roger.",
+   "whole": true
+  },
+  {
+   "g": 465775,
+   "from": "Power.",
+   "to": "Roger.",
+   "whole": true
+  },
+  {
+   "g": 465766,
+   "from": "At I had n_ m._dication, and I guess there's no _;,'nsein f'i: ,lng out my do._meter or even getting il out of nr_ pocket. I'w_ got the broken one.",
+   "to": "And I had no medication, and I guess there's no sense in fishing out my dosimeter or even getting it out of my pocket. I've got the broken one."
+  },
+  {
+   "g": 465766,
+   "speaker": "Roosa",
+   "text": "And I had no medication, and I guess there's no sense in fishing out my dosimeter"
+  },
+  {
+   "g": 466317,
+   "from": "Thigh's affirm.",
+   "to": "That's affirm.",
+   "whole": true
+  },
+  {
+   "g": 466318,
+   "from": "And we don't - We can get theft answer any time, 3eae; as _,e g_, out the door even.",
+   "to": "And we don't - We can get that answer any time, we can go out the door even."
+  },
+  {
+   "g": 466325.5,
+   "from": "Yes. That's · firm. We're with you for pressing on at th] s time.",
+   "to": "Yes. That's affirm. We're with you for pressing on at this time."
+  },
+  {
+   "g": 466325.5,
+   "from": "Were they in pretty bad shape, dirt- and dustwi_;e?",
+   "to": "Were they in pretty bad shape, dirt and dust wise?"
+  },
+  {
+   "g": 466339.5,
+   "from": "My right wristring was a little hit dirty.",
+   "to": "My right wristring was a little bit dirty."
+  },
+  {
+   "g": 466339.5,
+   "from": "Ai's are in pretty good shape.",
+   "to": "Al's are in pretty good shape."
   }
  ]
 }

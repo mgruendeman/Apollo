@@ -301,6 +301,7 @@ def _tidy(text, vocab):
     text = re.sub(r"\b(?:thc|tae|th_)(?=\s|[.,;?!](?:\s|$)|$)", 'the', text)               # "thc console", "tae center", "th_ PTC" (not "th_.tthe")
     text = re.sub(r"(?<!\ba )(?<!\bthe )\btile\b", 'the', text)                             # "into tile Mojave" (not "a tile")
     text = re.sub(r"\btc\b", 'to', text)                                                # "for you tc give me"
+    text = re.sub(r"\bvou\b", 'you', text)                                              # "How are vou doing?"
     text = re.sub(r"\b(you) re ad\b", r"\1 read", text, flags=re.I)                     # "How do you re ad?"
     text = re.sub(r"(?<=\w) \?(?=\s|$)", '?', text)                                     # "torquing angles ?"
     text = re.sub(r"\bItm\b", "I'm", text)

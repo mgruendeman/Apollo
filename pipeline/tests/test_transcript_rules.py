@@ -102,6 +102,7 @@ TIDY_CASES = [
     ('11', "All your systems look rea[ good to us.", "All your systems look real good to us."),
     ('14', "We re going to have to. How do you re ad?", "We're going to have to. How do you read?"),
     ('11', "Is that affirmative ? Over.", "Is that affirmative? Over."),
+    ('14', "Or good evening. How are vou doing?", "Or good evening. How are you doing?"),
     ('15', "We need to have you re - reinitialize the HIGH GAIN", "We need to have you re - reinitialize the HIGH GAIN"),
     ('11', "Okay. denote clipping of word and phrases.", "Okay."),
     ('11', "denote clipping of word and phrases.", ""),

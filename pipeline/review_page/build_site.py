@@ -239,12 +239,12 @@ async function load() {
 }
 
 // how long a line takes to say, roughly (as the site's lineReport.js): to play all of it
-const sayingSeconds = (t) => 2 + (t.match(/[A-Za-z]/g) || []).length * 0.09 + (t.match(/\d/g) || []).length * 0.4 + (t.match(/\*\*\*|\.\.\./g) || []).length * 3
+const sayingSeconds = (t) => 2 + (t.match(/[A-Za-z]/g) || []).length * 0.09 + (t.match(/\d/g) || []).length * 1.0 + (t.match(/\*\*\*|\.\.\./g) || []).length * 3
 function lineLength(k) {
   const l = lines[k], next = lines[k + 1]
   let length = sayingSeconds(l.t)
   if (next && next.g > l.g + length && next.g < l.g + 2 * length + 10) length = next.g - l.g
-  return Math.min(180, Math.max(10, length + 1.5))
+  return Math.min(360, Math.max(10, length + 1.5))
 }
 function lineHtml(k, main) {
   const l = lines[k], a = audioFor(l.g)

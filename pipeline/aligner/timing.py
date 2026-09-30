@@ -131,19 +131,26 @@ def time_untimed(lines, segments, tape_words):
         g0 = lines[p]['g'] if p >= 0 else -3600
         g1 = lines[n]['g'] if n < len(lines) else g0 + 3600
         g1 = max(g1, g0 + 60)
-        heard = heard_between(segments, tape_words, g0, g1)   # the tape words over [g0, g1], in mission order
-        heard_at = [h[0] for h in heard]
-        cursor = 0
-        for i in run:
-            toks = tokens(lines[i]['t'])
-            if len(toks) < MIN_WORDS or cursor >= len(heard):
-                continue
-            g, share = find_start(toks, heard, cursor, min(len(heard), cursor + 400 + 3 * len(toks)))
-            if g is not None and share >= 0.6:
-                lines[i]['g'] = round(g)
-                lines[i].pop('a', None)
-                cursor = bisect.bisect_right(heard_at, g)
-                done += 1
+        # (and if none of them is heard there, up to a quarter of an hour on, and
+        # surer of each: timed lines from another loop can sit between them and
+        # where they were said, as Apollo 14's 129:19, the LM's talk heard at 129:22)
+        for far, need, least in ((g1, 0.6, MIN_WORDS), (max(g1, g0 + 900), 0.8, 6)):
+            heard = heard_between(segments, tape_words, g0, far)   # the tape words over [g0, far], in mission order
+            heard_at = [h[0] for h in heard]
+            cursor, found = 0, 0
+            for i in run:
+                toks = tokens(lines[i]['t'])
+                if not lines[i].get('a') or len(toks) < least or cursor >= len(heard):
+                    continue
+                g, share = find_start(toks, heard, cursor, min(len(heard), cursor + 400 + 3 * len(toks)))
+                if g is not None and share >= need:
+                    lines[i]['g'] = round(g)
+                    lines[i].pop('a', None)
+                    cursor = bisect.bisect_right(heard_at, g)
+                    done += 1
+                    found += 1
+            if found or far > g1 or not any(len(tokens(lines[i]['t'])) >= MIN_WORDS for i in run):
+                break
     # still-untimed lines keep their place between their neighbours
     for i in range(1, len(lines)):
         if lines[i].get('a') and lines[i]['g'] < lines[i - 1]['g']:

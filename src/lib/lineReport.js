@@ -1,12 +1,13 @@
 // How long a line takes to say, roughly: about 11 letters a second (the
 // pace of the long lines on the tapes), figures read out a digit at a time
-// (NASA's PADs and readbacks), and a few seconds for each stretch NASA's
-// typists couldn't make out ("***", "...": words that aren't in the text).
+// with pauses between the groups (NASA's PADs: Apollo 11's entry PAD, 132
+// digits, takes four and a half minutes), and a few seconds for each
+// stretch NASA's typists couldn't make out ("***", "...").
 export function sayingSeconds(text) {
   const digits = (text.match(/\d/g) || []).length
   const letters = (text.match(/[A-Za-z]/g) || []).length
   const unclear = (text.match(/\*\*\*|\.\.\./g) || []).length
-  return 2 + letters * 0.09 + digits * 0.4 + unclear * 3
+  return 2 + letters * 0.09 + digits * 1.0 + unclear * 3
 }
 
 // Title and details for a report about one transcript line, so the report
@@ -18,11 +19,11 @@ export function lineReport({ missionName, clipId, audioUrl, sourceUrl, audioAt }
   // the second in the audio file where the line plays: a clip's offset, or the tape's
   const playAt = audioAt ? audioAt(offsetSeconds) : at
   // play the whole line: its likely length, or on to the next line if that
-  // starts within about twice that; at least 10 s, at most 3 minutes
+  // starts within about twice that; at least 10 s, at most 6 minutes
   let length = sayingSeconds(line.text)
   if (nextOffset != null && nextOffset > offsetSeconds + length && nextOffset < offsetSeconds + 2 * length + 10)
     length = nextOffset - offsetSeconds
-  length = Math.min(180, Math.max(10, length + 1.5))
+  length = Math.min(360, Math.max(10, length + 1.5))
   return {
     title: `${missionName} GET ${line.get}: transcript line`,
     audio: audioUrl && playAt != null ? { url: audioUrl, at: playAt, until: playAt + length } : null,
