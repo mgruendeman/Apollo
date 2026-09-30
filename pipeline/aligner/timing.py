@@ -266,6 +266,10 @@ def rebuild_from_tape(lines, segments, tape_words, vocab):
     return n
 
 
+# what the recogniser writes into silence and tones ("You", again and again; "Beep"): not speech
+FILLER = {'you', 'beep'}
+
+
 def mark_unheard(lines, segments, tape_words, envelopes):
     """NASA's lines that fall where the tape is silent: NASA transcribed the
     full air-to-ground loop, and these tapes are the broadcast copy, which
@@ -276,8 +280,9 @@ def mark_unheard(lines, segments, tape_words, envelopes):
     still make out). envelopes: folder of place_tapes' loudness envelopes
     (10 a second, normalised). Silence on these tapes varies by about 0.1;
     faint speech can vary by as little as 0.3. Or no words heard at all for
-    a minute and a half either side, whatever the loudness: a stretch of
-    hiss or carrier, not speech (Apollo 11's 186-AAA, nine minutes of it)."""
+    a minute and a half either side, whatever the loudness (but the
+    recogniser's "You" in silence): a stretch of hiss or carrier, not
+    speech (Apollo 11's 186-AAA, nine minutes of it)."""
     import numpy as np
     loud = {}
 
@@ -304,8 +309,9 @@ def mark_unheard(lines, segments, tape_words, envelopes):
             continue
         starts = tape_words[sg['tape']][1]
         span = 6 + 0.3 * len(l['t'].split())
+        near = tape_words[sg['tape']][0][bisect.bisect_left(starts, t - 90):bisect.bisect_right(starts, t + 90)]
         if bisect.bisect_right(starts, t + span) == bisect.bisect_left(starts, t - 6) and flat(sg['tape'], t - 2, t + span) \
-                or bisect.bisect_right(starts, t + 90) == bisect.bisect_left(starts, t - 90) and starts and t < starts[-1]:
+                or not any(w[3] not in FILLER for w in near) and starts and t < starts[-1]:
             l['n'] = 1
             n += 1
     return n

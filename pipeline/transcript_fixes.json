@@ -917,7 +917,7 @@
   },
   {
    "g": 20767,
-   "from": "This Houston. Readback correct, tut.",
+   "from": "This is Houston. Readback correct, tut.",
    "to": "This is Houston. Readback correct, out."
   },
   {
@@ -937,7 +937,7 @@
   },
   {
    "g": 111602,
-   "from": "]tin not, I.alk;n_ t,r_ them directly. Zta.d by, _UZZ. [,_L me _(_(t hcJW I,h,:y _b:;;cr'Jb_* it,.",
+   "from": "]tin not, I.alk;n_ t,r_ them directly. Zta.d by, _UZZ. [,_L me _(_(t hcJW They _b:;;cr'Jb_* it,.",
    "to": "I'm not talking to them directly. Stand by, Buzz. Let me see what - how they describe it."
   },
   {
@@ -1440,7 +1440,7 @@
   },
   {
    "g": 365046,
-   "from": "Roger. I,;l_',,l_',, 11,,_lmL_m. ;Ul_ld hy I'o_' my M:lrk.",
+   "from": "Roger. I,;l_',,l_',, 11,,_lmL_m. ;Ul_ld hy I'o_' my Mark.",
    "to": "Rog. Eagle, Houston. Stand by for my Mark."
   },
   {
@@ -2802,7 +2802,7 @@
   },
   {
    "g": 261132.6,
-   "from": "looked pretty Bleak. :The Astros",
+   "from": "looked pretty Bleak. The Astros",
    "to": "looked pretty bleak. The Astros"
   },
   {
@@ -3722,6 +3722,292 @@
    "g": 630937.3,
    "from": "For your i lformatJoo the All Star game has just ended with the Nat: nal League",
    "to": "For your information the All Star game has just ended with the National League"
+  },
+  {
+   "g": 370012,
+   "from": "eee",
+   "to": "Just ***",
+   "whole": true
+  },
+  {
+   "g": 690237,
+   "from": "You'll ge_ P65, but no P66.",
+   "to": "You'll get P65, but no P66."
+  },
+  {
+   "g": 197035,
+   "text": "Hello, Apollo 11. Houston. Do you read? Over.",
+   "at": 197053.5
+  },
+  {
+   "g": 197053.6,
+   "text": "Houston, Apollo 11. Over.",
+   "at": 197061.3
+  },
+  {
+   "g": 197053.6,
+   "text": "Roger, 11. Do you read me? Over.",
+   "at": 197064.5
+  },
+  {
+   "g": 197053.9,
+   "text": "Hello, Apollo 11. Houston. Over.",
+   "at": 197079.1
+  },
+  {
+   "g": 347361.7,
+   "text": "Go ahead with the 130 update.",
+   "ok": true
+  },
+  {
+   "g": 355943.5,
+   "text": "If you go to REACQ on the high gain, we can acquire you now.",
+   "at": 355893.5
+  },
+  {
+   "g": 356677,
+   "text": "That's correct.",
+   "at": 356667
+  },
+  {
+   "g": 356808.8,
+   "text": "Roger. Standing by for your K-factor.",
+   "at": 356785.3
+  },
+  {
+   "g": 356808.8,
+   "text": "Roger. Stand by.",
+   "at": 356788.6
+  },
+  {
+   "g": 356808.8,
+   "text": "We have got a load for you. Could we have P00 and ACCEPT?",
+   "at": 356796.4
+  },
+  {
+   "g": 356808.8,
+   "text": "You got it.",
+   "at": 356804.3
+  },
+  {
+   "g": 362332.5,
+   "from": "Okay, Magde. One minute until TG, YOU guys",
+   "to": "Okay, Eagle. One minute until TIG. You guys take care."
+  },
+  {
+   "g": 369221.6,
+   "text": "We've lost them. Tell them to go aft OMNI.",
+   "ok": true
+  },
+  {
+   "g": 369301,
+   "text": "Beta ARM. Altitudes are a little high.",
+   "at": 369313
+  },
+  {
+   "g": 369426.5,
+   "speaker": "Aldrin",
+   "text": "... it's going to stop."
+  },
+  {
+   "g": 98306.5,
+   "from": "Yes, it would be nicer if it had",
+   "to": "Yes, it would be nice if it had"
+  },
+  {
+   "g": 99054,
+   "text": "especially on the guns, in removing a lot of the hydrogen bubbles",
+   "ok": true
+  },
+  {
+   "g": 196975.6,
+   "text": "When we pass the proper roll angle",
+   "ok": true
+  },
+  {
+   "g": 200516.9,
+   "from": "On the LCG sight gave, you got about",
+   "to": "On the LCG sight gauge, you got about"
+  },
+  {
+   "g": 200516.9,
+   "from": "Is that what yom'd like to see?",
+   "to": "Is that what you'd like to see?"
+  },
+  {
+   "g": 203140,
+   "from": "That's a real Mood view of that camera.",
+   "to": "That's a real good view of that camera."
+  },
+  {
+   "g": 204094,
+   "from": "still see the banding along the tropical convergence. I guess the most predominate one",
+   "to": "still see the banding along the intertropical convergence. I guess the most predominant one"
+  },
+  {
+   "g": 209167.3,
+   "from": "Where rates are steady, you can proceed on.",
+   "to": "When rates are steady, you can proceed on."
+  },
+  {
+   "g": 282856,
+   "text": "you should be looking back at Smyth Sea now",
+   "ok": true
+  },
+  {
+   "g": 282895.7,
+   "text": "we show you at an altitude now of about 110 miles",
+   "ok": true
+  },
+  {
+   "g": 283182.5,
+   "text": "We concur on the identification of that crater.",
+   "ok": true
+  },
+  {
+   "g": 284212.5,
+   "text": "thruster firing versus pitch angle",
+   "ok": true
+  },
+  {
+   "g": 299662.9,
+   "text": "Since we're in sleep attitude, I'll give you another long count.",
+   "ok": true
+  },
+  {
+   "g": 305608.4,
+   "text": "I got you locked back on again REACQ and narrow.",
+   "ok": true
+  },
+  {
+   "g": 383959,
+   "text": "Its going past now, Bruce",
+   "ok": true
+  },
+  {
+   "g": 389338,
+   "text": "Better keep it pretty close to your mouth, though.",
+   "ok": true
+  },
+  {
+   "g": 396283,
+   "text": "I noticed in the soft spots where we had footprints",
+   "ok": true
+  },
+  {
+   "g": 400717,
+   "text": "do you plan on commencing your sleep on the backside",
+   "ok": true
+  },
+  {
+   "g": 441719.3,
+   "text": "I used Capella in the last sighting",
+   "ok": true
+  },
+  {
+   "g": 441810,
+   "text": "The RCS check looked mighty fine to us.",
+   "ok": true
+  },
+  {
+   "g": 383024,
+   "from": "LMP is reading 09017 and three-quar_e_s.",
+   "to": "LMP is reading 09017 and three-quarters."
+  },
+  {
+   "g": 383024,
+   "speaker": "Aldrin",
+   "text": "LMP is reading 09017 and three-quarters."
+  },
+  {
+   "g": 384534.6,
+   "from": "Tranquility Ease, this is Houston. Cen you give us",
+   "to": "Tranquility Base, this is Houston. Can you give us"
+  },
+  {
+   "g": 393266,
+   "speaker": "Aldrin",
+   "text": "I've got good cooling now."
+  },
+  {
+   "g": 394916,
+   "from": "over the RCU, landing gear pads. It's a very simple matter to hop down from one step to tle next.",
+   "to": "over the RCU, landing gear pad. It's a very simple matter to hop down from one step to the next."
+  },
+  {
+   "g": 395953,
+   "from": "you're going too fas' on the panorama sweep",
+   "to": "you're going too fast on the panorama sweep"
+  },
+  {
+   "g": 401182,
+   "from": "Did you get that solar wind rolled up there, Buzz?",
+   "to": "Did you get the solar wind rolled up there, Buzz?"
+  },
+  {
+   "g": 401246,
+   "speaker": "Aldrin",
+   "text": "And I'll get the LEC all ready for the rock box."
+  },
+  {
+   "g": 401246,
+   "text": "And I'll get the LEC all ready for the rock box.",
+   "ok": true
+  },
+  {
+   "g": 404096.7,
+   "from": "OkM , Columbia. We've completed the uplink",
+   "to": "Okay, Columbia. We've completed the uplink"
+  },
+  {
+   "g": 404096.7,
+   "from": "attempt to find the I24 this pass",
+   "to": "attempt to find the LM this pass"
+  },
+  {
+   "g": 405285.6,
+   "from": "covers 10's and 20's and BO's of them.",
+   "to": "covers 10's and 20's and 30's of them."
+  },
+  {
+   "g": 412887,
+   "from": "might have been about 8 oz 9 inches",
+   "to": "might have been about 8 to 9 inches"
+  },
+  {
+   "g": 442930.0,
+   "from": "How's the Black Team today? All primed and",
+   "to": "How's the Black Team today? All primed and raring to go?"
+  },
+  {
+   "g": 457484.0,
+   "from": "Houston. Al't, Orl,Hi, low-bit rate, and we'll sec you ;J,b J2'( plus 51.",
+   "to": "Eagle, Houston. Aft OMNI, low-bit rate, and we'll see you at 127 plus 51."
+  },
+  {
+   "g": 626152,
+   "from": "the shrew is one animal which csu eat six times",
+   "to": "the shrew is one animal which can eat six times"
+  },
+  {
+   "g": 626152,
+   "from": "your spaghetti calculations on A1 Bean.",
+   "to": "your spaghetti calculations on Al Bean."
+  },
+  {
+   "g": 625985,
+   "from": "the spacecraft 11 take that l: h extra weight.",
+   "to": "the spacecraft will take that much extra weight."
+  },
+  {
+   "g": 624929,
+   "from": "late news here you'd like to find out",
+   "to": "late news here if you'd like to find out"
+  },
+  {
+   "g": 625672.4,
+   "from": "Joan wasn't home right now, buzz, but",
+   "to": "Joan wasn't home right now, Buzz, but"
   }
  ],
  "12": [
@@ -4243,6 +4529,11 @@
    "g": 466487.1,
    "speaker": "Weitz",
    "text": "Okay, first of all, the two prime sites"
+  },
+  {
+   "g": 109393,
+   "from": "little ding timer there, will out. And then",
+   "to": "little ding timer there, will you, Al. And then"
   }
  ],
  "14": [
@@ -4325,7 +4616,7 @@
   },
   {
    "g": 465453,
-   "from": "O_f. W_ ']'c ,l'king on it back here, Ed. And he'll be wit,I, you here shortly.",
+   "from": "O_f. W_ ']'c ,l'king on it back here, Ed. And he'll be with, you here shortly.",
    "to": "Okay. We're working on it back here, Ed. And he'll be with you here shortly."
   },
   {

@@ -69,7 +69,9 @@ def _suspect(core, vocab):
     letters = re.sub(r"[^A-Za-z]", '', core)
     if not letters or re.fullmatch(r"[A-Z]+s", letters) or letters.isupper() and len(letters) <= 4:
         return False   # codes: SEP, AOS, DSKY (damaged or not, no guessing)
-    if re.search(r"[^A-Za-z0-9'.,?!;:/&\-]", core) or re.match(r"[;:,.][a-z]", core):   # ";he"
+    if re.search(r"[^A-Za-z0-9'.,?!;:/&\-]", core) or re.match(r"[;:,.][A-Za-z]", core):   # ";he", ";J,b"
+        return True
+    if re.search(r"[A-Za-z][,;:][A-Za-z]", core):   # "Orl,Hi": punctuation inside a word, capitals or not
         return True
     if letters.isupper() or re.fullmatch(r"(?:Mc|Mac|O')[A-Z][a-z]+", core):   # McGhee
         return False

@@ -394,6 +394,8 @@ def test_whole_and_retime_only_fixes(tmp_path, monkeypatch):
 def test_spaceflight_words_are_not_damage(vocab):
     for w in ('ullage', 'trunnion', 'regolith', 'pericynthion', 'stationkeeping', 'gnomon', '1/250th', '21st'):
         assert not R._suspect(w, vocab), w
+    for w in ('Orl,Hi', ';J,b'):
+        assert R._suspect(w, vocab), w
 
 
 def test_cm_link_note_comes_out_of_the_row():
