@@ -4544,6 +4544,16 @@
    "g": 256,
    "from": "We've --_ .y I'm going to give you a mark at 4 plus 30.",
    "to": "We've got a good clock running here. Correct me, I'm going to give you a mark at 4 plus 30."
+  },
+  {
+   "g": 926.0,
+   "from": "We were going into P00 and P00. How, can we reset",
+   "to": "We were going into P00 and P00. Now, can we reset"
+  },
+  {
+   "g": 926.0,
+   "text": "We were going into P00 and P00.",
+   "ok": true
   }
  ],
  "14": [
