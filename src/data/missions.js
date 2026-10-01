@@ -204,18 +204,23 @@ export const missions = [
     summary:
       'The first landing in the lunar highlands, at the Descartes region, returning the largest single rock collected during the program — the 11.7 kg "Big Muley."',
     status: 'available',
-    clipsFile: 'apollo16',
-    clipCount: 911,
+    timeline: 'apollo16', // whole-mission tapes: public/timeline/apollo16.json
     launchUtc: '1972-04-16T17:54:00Z',
     durationSeconds: 957065, // 265:51:05
     landingSeconds: 376175, // touchdown at GET 104:29:35
+    // (archive.org's Apollo 16 tapes are 657-AAA to 710-AAA, without 684 and 685)
+    tapesNote: "Two of NASA's tapes are missing from archive.org: from 122:14 to 125:23, the end of the first moonwalk, there's no recording here.",
+    events: { tli: '002:39:28', loi: '074:28:28', liftoff: '175:31:48', lmJettison: '195:00:12', tei: '200:21:33', cmSep: '265:22:23' },
     csmName: 'Casper',
     lmName: 'Orion',
     objective: 'Make the first landing in the lunar highlands, to sample rock that geologists expected to be volcanic (it turned out to be impact breccia).',
     landingSite: { name: 'Descartes Highlands', lat: -8.9734, lon: 15.5011 },
     highlights: [
-      { id: 'a16_0000015', title: 'Launch' },
-      { id: 'a16a1232408', title: 'The "Big Muley" rock' },
+      { id: 'a16-launch', at: '-000:00:30', title: 'Launch' },
+      { id: 'a16-landing', at: '104:26:50', title: 'Landing at Descartes' },
+      { id: 'a16-salute', at: '120:25:10', title: "John Young's jump salute" },
+      { id: 'a16-liftoff', at: '175:31:20', title: 'Liftoff from the Moon' },
+      { id: 'a16-ken-eva', at: '218:56:30', title: "Ken Mattingly's spacewalk" },
     ],
   },
   {

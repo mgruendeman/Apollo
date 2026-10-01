@@ -38,5 +38,15 @@
   "notOnRecording": 2041,
   "recordedHours": 112.8,
   "updated": "2026-09-30"
+ },
+ "16": {
+  "announcerLines": 2579,
+  "checkedFine": 0,
+  "corrected": 0,
+  "flagged": 1403,
+  "lines": 29011,
+  "notOnRecording": 3437,
+  "recordedHours": 153.4,
+  "updated": "2026-10-01"
  }
 }
