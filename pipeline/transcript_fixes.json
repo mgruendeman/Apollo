@@ -2330,7 +2330,7 @@
   },
   {
    "g": 394827,
-   "from": "little of foot movcclent *** porch. Little arching of the hack. Helmet comes up and clears vhe bulkhead -_itncut any trouble",
+   "from": "little of foot movcclent *** porch. Little arching of the hack. Helmet comes up and clears the bulkhead -_itncut any trouble",
    "to": "little of foot movement *** porch. Little arching of the back. Helmet comes up and clears the bulkhead without any trouble"
   },
   {
@@ -4250,6 +4250,677 @@
    "g": 654078.7,
    "text": "Our recommendation on the gear you got in the helmet bag",
    "ok": true
+  },
+  {
+   "g": 701339,
+   "text": "Same here, Ron. Thank you.",
+   "ok": true
+  },
+  {
+   "g": 701334,
+   "text": "Apollo 11, Houston. We see you getting ready for SEP. Everything",
+   "ok": true
+  },
+  {
+   "g": 645320,
+   "text": "Okay. Thank you.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 645320,
+   "text": "Okay. Thank you.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 645346,
+   "text": "Houston, Apollo 11. Say again.",
+   "ok": true
+  },
+  {
+   "g": 645320,
+   "text": "Okay. Thank you.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 645317,
+   "text": "Mike's off the loop right now. I'll convey that message.",
+   "ok": true
+  },
+  {
+   "g": 435755,
+   "text": "Roger. Stand by.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 435751,
+   "text": "I'd like its grid square, please.",
+   "ok": true
+  },
+  {
+   "g": 380870,
+   "text": "Roger, Tranquility.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 380863,
+   "text": "I think that we'll be ready to start EVA PREP in about a half an hour",
+   "ok": true
+  },
+  {
+   "g": 380837,
+   "text": "Tranquility Base, Houston. We'd like some estimate of how far along",
+   "ok": true
+  },
+  {
+   "g": 374815,
+   "text": "All right. Thank you.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 354247,
+   "text": "Okay. LM weight 33627, CSM weight 36651, pitch trim 00470, roll trim",
+   "ok": true
+  },
+  {
+   "g": 354245,
+   "text": "Roger. Ready to copy.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 354197,
+   "text": "Roger. Are you reading me, Buzz? Over.",
+   "ok": true
+  },
+  {
+   "g": 354196,
+   "text": "Houston, Eagle. Go ahead.",
+   "ok": true
+  },
+  {
+   "g": 354190,
+   "text": "Eagle, Houston. Over.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 354156,
+   "text": "Columbia, Houston. Over.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 354053,
+   "text": "Eagle, Houston. No voice. Will you verify forward OMNI? Over.",
+   "ok": true
+  },
+  {
+   "g": 354019,
+   "text": "Columbia, Houston. Over.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 350701,
+   "text": "Roger. Go ahead.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 350677,
+   "text": "Okay.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 350668,
+   "text": "Stand by. That's affirmative, Eagle. We'd like you to go ahead and",
+   "ok": true
+  },
+  {
+   "g": 350570,
+   "text": "Roger, Eagle. Good readback. Out.",
+   "ok": true
+  },
+  {
+   "g": 350554,
+   "text": "Understand. X minus 00060, Y plus 00620, Z plus 01080.",
+   "ok": true
+  },
+  {
+   "g": 350519,
+   "text": "Roger. Eagle. For X minus 00060, Y plus 00620, Z plus 01080. Over.",
+   "ok": true
+  },
+  {
+   "g": 307729,
+   "text": "Roger, Mike. Thank you.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 307722,
+   "text": "Okay. We'll do that. We haven't chlorinated the water yet, and we",
+   "ok": true
+  },
+  {
+   "g": 307707,
+   "text": "Roger. The thing that we're still puzzling on is the antenna, and if",
+   "ok": true
+  },
+  {
+   "g": 307705,
+   "text": "Somebody will be up.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 274772,
+   "text": "Apollo 11, this is Houston. Are you in the process of acquiring data",
+   "ok": true
+  },
+  {
+   "g": 216187,
+   "text": "Apollo 11, Houston. Over.",
+   "ok": true
+  },
+  {
+   "g": 175126,
+   "text": "Roger.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 124216,
+   "text": "Copy.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 124124,
+   "text": "Roger.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 124121,
+   "text": "It's open all the way. We're going to have to move Buzz around a",
+   "ok": true
+  },
+  {
+   "g": 124060,
+   "text": "Roger.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 124057,
+   "text": "Stand by one, Charlie; we'll try and give you a closeup.",
+   "ok": true
+  },
+  {
+   "g": 124021,
+   "text": "Forgot to give Buzz his flashlight back.",
+   "ok": true
+  },
+  {
+   "g": 124011,
+   "text": "It's really comfortable.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 92687,
+   "text": "Okay. Roger. Out.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 33514,
+   "text": "Roger, 11. We copy. Recommend you go to this P52, option 1 preferred,",
+   "ok": true
+  },
+  {
+   "g": 33505,
+   "text": "... not a very good attitude at all for COMM, and as soon as we",
+   "ok": true
+  },
+  {
+   "g": 33491,
+   "text": "Hello, Apollo 11. Houston. If you read, this attitude 000 is pretty",
+   "ok": true
+  },
+  {
+   "g": 33370,
+   "text": "Hello, Apollo 11. Houston. Do you read? Over.",
+   "ok": true
+  },
+  {
+   "g": 10158,
+   "text": "Apollo 11, this is Houston. You are GO at 5 minutes.",
+   "ok": true
+  },
+  {
+   "g": 565435,
+   "text": "Apollo 11, Houston. Based on our sighting since the midcourse, we're",
+   "ok": true
+  },
+  {
+   "g": 535560,
+   "text": "Roger. I docked in CMC AUTO, and as I said, I wasn't really sure of",
+   "ok": true
+  },
+  {
+   "g": 476361,
+   "text": "Looking at the world of sports, let's see here. While you were busy",
+   "ok": true
+  },
+  {
+   "g": 464037.2,
+   "text": "Roger. That ACA out of detent didn't quite do it because the mode",
+   "ok": true
+  },
+  {
+   "g": 412887,
+   "text": "Not significantly. I could get down to about the first 2 inches",
+   "ok": true
+  },
+  {
+   "g": 404096.7,
+   "text": "Okay, Columbia. We've completed the uplink; the computer is yours.",
+   "ok": true
+  },
+  {
+   "g": 365023,
+   "text": "Eagle, Houston. We've lost the high bit rate. Would you please select",
+   "ok": true
+  },
+  {
+   "g": 279124,
+   "text": "11, Houston. In order to improve the communications a little bit",
+   "ok": true
+  },
+  {
+   "g": 276131.6,
+   "text": "And Boothill, Duke Island, Sidewinder, looking at Maskelyne W, that's",
+   "ok": true
+  },
+  {
+   "g": 261132.6,
+   "text": "And the big news around Houston today concerns the Astros. In the",
+   "ok": true
+  },
+  {
+   "g": 217377,
+   "text": "Okay. Will do. I don't see any constraint here, Charlie. I was just",
+   "ok": true
+  },
+  {
+   "g": 211311,
+   "text": "Roger. We have a couple of changes on the mission rules NO-GO for",
+   "ok": true
+  },
+  {
+   "g": 132734.0,
+   "text": "Roger. Mike, I think we can explain that seven- tenths rate. When we",
+   "ok": true
+  },
+  {
+   "g": 123507.5,
+   "text": "While we're pointing up in this direction, we see out our side",
+   "ok": true
+  },
+  {
+   "g": 117561.7,
+   "text": "Roger. Mike, when you were playing with the P37 a while ago and we",
+   "ok": true
+  },
+  {
+   "g": 117561.7,
+   "text": "Roger. Mike, when you were playing with the P37 a while ago and we",
+   "ok": true
+  },
+  {
+   "g": 116821.6,
+   "text": "Charlie, Apollo 11. I have a couple oi questions on stopping the PTC.",
+   "ok": true
+  },
+  {
+   "g": 113132.5,
+   "text": "Yes. I see one fairly large and isolated one. There are couple of",
+   "ok": true
+  },
+  {
+   "g": 112745.6,
+   "text": "Okay. Thank you much. Our biggest drift on the GYRO's is 0.03 degrees",
+   "ok": true
+  },
+  {
+   "g": 98898.5,
+   "text": "Oh, yes. It's been nice. I've been very busy so far. I'm looking",
+   "ok": true
+  },
+  {
+   "g": 96915.7,
+   "text": "Not that we've seen. We had word on tie voice loop that MILA reported",
+   "ok": true
+  },
+  {
+   "g": 83901.8,
+   "text": "Roger. And I understand he was down there and really enjoyed watching",
+   "ok": true
+  },
+  {
+   "g": 545996,
+   "text": "Yes. You remember I initially started on the cut side of the LM that",
+   "ok": true
+  },
+  {
+   "g": 463087,
+   "text": "Houston, Columbia. Say again the jettison roll, pitch, and yaw,",
+   "ok": true
+  },
+  {
+   "g": 454869.8,
+   "text": "Roger. Did you copy on the LCG, there, and the reading on the water",
+   "ok": true
+  },
+  {
+   "g": 448364.7,
+   "text": "Eagle, Houston. You can go ahead and proceed with P52 as per nominal.",
+   "ok": true
+  },
+  {
+   "g": 442934,
+   "text": "You bet you there, Mike.",
+   "ok": true,
+   "whole": true
+  },
+  {
+   "g": 391463.0,
+   "text": "Columbia reads you loud and clear on OMNI C - Charlie.",
+   "ok": true
+  },
+  {
+   "g": 389485.4,
+   "text": "- - time is 107 30 38. Over.",
+   "ok": true
+  },
+  {
+   "g": 369388.1,
+   "text": "... ought to be ... Stand by,",
+   "ok": true
+  },
+  {
+   "g": 370040,
+   "speaker": "Aldrin",
+   "text": "Roger.",
+   "whole": true
+  },
+  {
+   "g": 370057.3,
+   "speaker": "Armstrong",
+   "text": "... circuit breaker."
+  },
+  {
+   "g": 370191.0,
+   "from": "And do you want V horizontal 5515.27",
+   "to": "And do you want V horizontal 5515.2?"
+  },
+  {
+   "g": 370191.0,
+   "text": "And do you want V horizontal 5515.2?",
+   "at": 370226.5
+  },
+  {
+   "g": 389477,
+   "from": "All right, on your panel, VHF A, OFF; '7IF B, OFF.",
+   "to": "All right, on your audio panel, VHF A, OFF; VHF B, OFF."
+  },
+  {
+   "g": 390062.4,
+   "text": "Say again, Neil.",
+   "at": 390026,
+   "whole": true
+  },
+  {
+   "g": 390469.7,
+   "text": "All right. Check my diverter valves, VERTICAL.",
+   "at": 390464.0
+  },
+  {
+   "g": 397908,
+   "from": "There's several eral rocks",
+   "to": "There's several rocks"
+  },
+  {
+   "g": 497271,
+   "text": "Apollo 11, Houston. How do you read me through Honeysuckle now?",
+   "at": 497227.4
+  },
+  {
+   "g": 497282,
+   "text": "You're loud and clear. Over.",
+   "at": 497237.6
+  },
+  {
+   "g": 497283,
+   "text": "Very good. Reading you better now.",
+   "at": 497240.0
+  },
+  {
+   "g": 497283,
+   "text": "That's the configuration we're in.",
+   "at": 497251.1
+  },
+  {
+   "g": 550161,
+   "from": "a PTC program _m built",
+   "to": "a PTC program built"
+  },
+  {
+   "g": 563201,
+   "from": "the same problem thai; we had",
+   "to": "the same problem that we had"
+  },
+  {
+   "g": 563201,
+   "from": "change it out if you c ,ul_ TM. Over.",
+   "to": "change it out if you could. Over."
+  },
+  {
+   "g": 565545.0,
+   "text": "And back in Washington, the House Ways and Means Committee",
+   "ok": true
+  },
+  {
+   "g": 615712,
+   "from": "to put it on the line; and third item",
+   "to": "to put it on the line, and third item"
+  },
+  {
+   "g": 615712,
+   "from": "which we think wJ 11 hold it",
+   "to": "which we think will hold it"
+  },
+  {
+   "g": 615712,
+   "from": "a desirable opportunity coming a lol_l_ in",
+   "to": "a desirable opportunity coming along in"
+  },
+  {
+   "g": 624973.4,
+   "from": "2 billion dolla?s per year",
+   "to": "2 billion dollars per year"
+  },
+  {
+   "g": 624973.4,
+   "from": "tax reform mat be on the way",
+   "to": "tax reform may be on the way"
+  },
+  {
+   "g": 655427.7,
+   "from": "It's good night fr _m the White Team For the last time.",
+   "to": "It's good night from the White Team for the last time."
+  },
+  {
+   "g": 655427.7,
+   "from": "It wis a beautiful show",
+   "to": "It was a beautiful show"
+  },
+  {
+   "g": 103292.7,
+   "from": "On that 20 flow transducer town here",
+   "to": "On that O2 flow transducer down here"
+  },
+  {
+   "g": 103292.7,
+   "from": "a Fore complete diagnosis",
+   "to": "a more complete diagnosis"
+  },
+  {
+   "g": 111810,
+   "from": "The same as Apollo 11, they said.",
+   "to": "The same as Apollo 10, they said."
+  },
+  {
+   "g": 124907.6,
+   "from": "to start P_'C in. We'd be satisfied with this attitude. We'd Like you to disable",
+   "to": "to start PTC in. We'd be satisfied with this attitude. So we'd like you to disable"
+  },
+  {
+   "g": 124907.6,
+   "from": "and than we'll establish the PTC",
+   "to": "and then we'll establish the PTC"
+  },
+  {
+   "g": 194322.1,
+   "from": "go through that dry- out procedure",
+   "to": "go through that dry-out procedure"
+  },
+  {
+   "g": 299536,
+   "from": "and DOWN- VOICE BACKUP",
+   "to": "and DOWN VOICE BACKUP"
+  },
+  {
+   "g": 562632,
+   "from": "the EVA visors were brought hack into",
+   "to": "the EVA visors were brought back into"
+  },
+  {
+   "g": 654123,
+   "from": "Yes. We'll look at it, Charlie",
+   "to": "Yeah. We'll look at it, Charlie"
+  },
+  {
+   "g": 256148,
+   "speaker": "Aldrin",
+   "text": "Okay. We'll get started on the fuel cell purge while we're eating."
+  },
+  {
+   "g": 369576,
+   "speaker": "Duke",
+   "text": "Roger. We copy throttle down."
+  },
+  {
+   "g": 127783.8,
+   "text": "11, Houston. They don't have it turned on yet.",
+   "merge": "on. Over."
+  },
+  {
+   "g": 127783.8,
+   "speaker": "Duke",
+   "text": "11, Houston. They don't have it turned on yet."
+  },
+  {
+   "g": 274772,
+   "text": "Apollo 11, this is Houston. Are you in the process of acquiring data on the burn? Over.",
+   "heard": true
+  },
+  {
+   "g": 356837.0,
+   "from": "Roger. 90 O0 00 15.",
+   "to": "Roger. 90 00 00 15.",
+   "whole": true
+  },
+  {
+   "g": 356837.0,
+   "speaker": "Aldrin",
+   "text": "Roger. 90 00 00 15.",
+   "whole": true
+  },
+  {
+   "g": 370620.7,
+   "text": "plane.",
+   "delete": true
+  },
+  {
+   "g": 370620,
+   "text": "Roger.",
+   "delete": true
+  },
+  {
+   "g": 383366,
+   "text": "Houston, Columbia. How do you read on OMNI D.",
+   "merge": "Dog?"
+  },
+  {
+   "g": 383366,
+   "from": "How do you read on OMNI D. Dog?",
+   "to": "How do you read on OMNI D, Dog?"
+  },
+  {
+   "g": 383366,
+   "speaker": "Collins",
+   "text": "Houston, Columbia. How do you read on OMNI D, Dog?"
+  },
+  {
+   "g": 390936.5,
+   "text": "***",
+   "delete": true
+  },
+  {
+   "g": 453516,
+   "text": "Roger. We saw you come up over the horizon",
+   "merge": "and it looks like you had a laser operating."
+  },
+  {
+   "g": 453564,
+   "speaker": "Aldrin",
+   "text": "Okay. The CSI burn was on scheduled time of 125 19 3470"
+  },
+  {
+   "g": 453540.2,
+   "speaker": "Aldrin",
+   "text": "Roger. Stand by.",
+   "whole": true
+  },
+  {
+   "g": 454229.9,
+   "text": "Okay. And what was your CSI - CDH solution.",
+   "merge": "Mike?"
+  },
+  {
+   "g": 454229.9,
+   "from": "what was your CSI - CDH solution. Mike?",
+   "to": "what was your CSI - CDH solution, Mike?"
+  },
+  {
+   "g": 546380.8,
+   "text": "Apollo 11, this is Houston.",
+   "heard": true
+  },
+  {
+   "g": 17540.3,
+   "from": "a front stretching From the center",
+   "to": "a front stretching from the center"
   }
  ],
  "12": [
@@ -4713,7 +5384,7 @@
   },
   {
    "g": 416742.1,
-   "from": "We'll he right back with yOU.",
+   "from": "We'll he right back with you.",
    "to": "We'll be right back with you."
   },
   {

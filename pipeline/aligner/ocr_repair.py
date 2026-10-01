@@ -152,6 +152,9 @@ CALLSIGNS = {'11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipp
              '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
              '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
 MISSION = {'n': '11'}   # the mission being processed (set in main)
+# a word read with its first letter small and the rest capitals: plain words go small, switch settings and terms capital
+COMMON_LOWER = {'you', 'now', 'how', 'from', 'the', 'and', 'for', 'our', 'out', 'are', 'was', 'with', 'that', 'this', 'have', 'here'}
+SWITCH_WORDS = {'PAD', 'LOS', 'AOS', 'STAY', 'FORWARD', 'AFT', 'AUTO', 'OPEN', 'CLOSE', 'CLOSED', 'NORMAL', 'OFF', 'ON', 'ARM', 'SAFE'}
 DIGIT_LOOKS = {'1': r'[1!il|It\]]', '2': '[2Zz&]', '4': '[4hA]', '5': '[5sS]', '6': '[6bG]', '7': '[7T]', '0': '[0oO]'}
 
 
@@ -263,7 +266,7 @@ def _tidy(text, vocab):
     n = str(int(MISSION['n']))                                                  # the mission's number, as OCR misreads it
     looks = ''.join(DIGIT_LOOKS.get(ch, ch) for ch in n)
     text = re.sub(r"\bApollo\s+" + looks + r"(?![A-Za-z0-9])", 'Apollo ' + n, text)   # "Apollo !1", "Apollo lZ", "Apollo l&,"
-    text = re.sub(r"\bAp[\w_!|]{2,5}\s+(?:" + looks + ('|[o0l1!|iI]{2,3}' if n == '11' else '') + r")\b(?=,|\s)",
+    text = re.sub(r"\bAp[\w_!|]{2,5}\s+(?:" + looks + ('|(?!\\d+\\b)[o0l1!|iI]{2,3}' if n == '11' else '') + r")\b(?=,|\s)",
                   'Apollo ' + n, text)                                          # "Apo_I_ 11", "ApQiI oll"
     text = re.sub(r"\bC[O0][_{}\[\]M]{1,3}\s+TECH\b", 'COMM TECH', text)
     if n == '11':
@@ -304,6 +307,12 @@ def _tidy(text, vocab):
     text = re.sub(r"(?<!\ba )(?<!\bthe )\btile\b", 'the', text)                             # "into tile Mojave" (not "a tile")
     text = re.sub(r"\btc\b", 'to', text)                                                # "for you tc give me"
     text = re.sub(r"\bvou\b", 'you', text)                                              # "How are vou doing?"
+    text = re.sub(r"\bvhe\b", 'the', text)                                              # "on vhe picture"
+    text = re.sub(r"\biow\b", 'low', text)                                              # "stay iow bit rate"
+    text = re.sub(r"\bcur\b", 'our', text)                                              # "picking out cur landing spot"
+    text = re.sub(r"\b([a-z])([A-Z]{2,})\b",                                          # "Thank yOU", "fROM"; "pAD's", "sTAY", "iCS"
+                  lambda m: m.group().lower() if m.group().lower() in COMMON_LOWER
+                  else m.group().upper() if m.group().upper() in SWITCH_WORDS or m.group(1) == 'i' else m.group(), text)   # (not "gIN": a garble left for a listener)
     text = re.sub(r"\b(P?)C02\b", r"\1CO2", text)                                     # "the C02 canister", "the PC02 gage"
     text = re.sub(r"\bmc\b", 'me', text)                                               # "hand it to mc"
     text = re.sub(r"(?<=[a-z]{3} )th (?=[a-z]{3,})", 'the ', text)                    # "depressurize th oxygen" (not "wi th you")

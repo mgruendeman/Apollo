@@ -44,7 +44,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     Each fix finds its line by time (within 2 s, else the nearest within the
     hour holding the text). "speaker" (with "text") puts a line to the right
     person; "delete": true removes a line that's a scrap of another;
-    "unheard": true marks a line not on this recording; "ok": true (with
+    "unheard": true marks a line not on this recording, "heard": true one a
+    listener hears on it (the recogniser couldn't make it out); "ok": true (with
     "text") marks one a listener checked, off the review list; "review": a
     note (with "text") puts one at the top of the review list with that
     question ("Who's speaking?"); "merge": the start of the next line (with
@@ -86,6 +87,9 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                     l['t'] = ''
                 elif f.get('unheard'):
                     l['n'] = 1
+                elif f.get('heard'):
+                    l['heard'] = 1
+                    l.pop('n', None)
                 elif 'split' in f:
                     cut = l['t'].index(f['split'], 1)
                     second = {'g': l['g'], 's': f['speaker'], 't': l['t'][cut:].strip()}
@@ -113,7 +117,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                     fresh[id(l)] = 120 if f['retime'] is True else f['retime']
                 if 'at' in f:
                     l['g'] = f['at']
-                    l['placed'] = 1   # (where a listener heard it: the announcer's stretch ends before it)
+                    l['placed'] = l['heard'] = 1   # (where a listener heard it: on the recording, and the announcer's stretch ends before it)
+                    l.pop('n', None)
                     l.pop('a', None)
                     fresh.pop(id(l), None)   # (the listener's time stands: no retiming it after a text fix)
                     moved = True
@@ -134,6 +139,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
             ok = any(abs(l['g'] - f['g']) <= 3600 and _norm(f['text']) in _norm(l['t']) and _norm(f['merge']) in _norm(l['t']) for l in lines)
         elif f.get('retime'):   # (only moves a line: its text is gone, so it's been changed since)
             ok = False
+        elif f.get('heard'):
+            ok = any(abs(l['g'] - f['g']) <= 3600 and _norm(f['text']) in _norm(l['t']) and not l.get('n') for l in lines)
         elif f.get('ok') or 'review' in f:   # (the line has changed since: the review list can judge it afresh)
             ok = True
         else:   # unheard

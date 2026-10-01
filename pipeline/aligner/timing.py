@@ -298,7 +298,7 @@ def mark_unheard(lines, segments, tape_words, envelopes):
     gets = [sg['get'] for sg in segments]
     n = 0
     for l in lines:
-        if l.get('c') or l.get('a'):   # (a line whose time NASA's scan lost can't be placed that finely)
+        if l.get('c') or l.get('a') or l.get('heard'):   # (a line whose time NASA's scan lost can't be placed that finely; one a listener heard)
             continue
         k = bisect.bisect_right(gets, l['g']) - 1
         if k < 0:
@@ -337,7 +337,7 @@ def mark_drowned_out(lines, segments, tape_words, run=6, minutes=5, share=0.2, o
     the tape plays the moonwalk there. Returns how many were marked."""
     judged, n = [], 0
     for i, l in enumerate(lines):
-        if l.get('c') or l.get('n'):
+        if l.get('c') or l.get('n') or l.get('heard'):
             continue
         if id(l) in other_loop:
             if len(tokens(l['t'])) >= 3 and not said_on_tape(l, segments, tape_words):
@@ -357,7 +357,7 @@ def mark_drowned_out(lines, segments, tape_words, run=6, minutes=5, share=0.2, o
     prev = None   # ("Roger." on that loop: with the line before it)
     for l in lines:
         if id(l) in other_loop:
-            if not l.get('n') and prev is not None and prev.get('n') and len(tokens(l['t'])) < 3:
+            if not l.get('n') and not l.get('heard') and prev is not None and prev.get('n') and len(tokens(l['t'])) < 3:
                 l['n'] = 1
                 n += 1
             prev = l
@@ -370,7 +370,7 @@ def mark_drowned_out(lines, segments, tape_words, run=6, minutes=5, share=0.2, o
             a, b = judged[start][0], judged[k - 1][0]
             if k - start >= run and lines[b]['g'] - lines[a]['g'] >= minutes * 60:
                 for l in lines[a:b + 1]:
-                    if not l.get('c') and not l.get('n'):
+                    if not l.get('c') and not l.get('n') and not l.get('heard'):
                         l['n'] = 1
                         n += 1
             start = None
