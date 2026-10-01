@@ -33,20 +33,13 @@ export default function Guide() {
             Tick &ldquo;Keep playing through the mission&rdquo; to run from one to the next.
           </dd>
         </dl>
-        <h3>Switches on the player</h3>
+        <h3>The player&apos;s switch</h3>
         <dl className="guide-list">
           <dt>Real time</dt>
           <dd>
             Off, the silent stretches between recordings are skipped. On, they count by at their true length, so the
             mission unfolds as it happened: start at launch and listen along, or use &ldquo;Happening right now&rdquo; on a
             mission&apos;s anniversary to hear it live, the same hour it happened.
-          </dd>
-          <dt>Mission Control announcer</dt>
-          <dd>
-            The public-affairs announcer (&ldquo;This is Apollo Control&hellip;&rdquo;) who explained the mission to the
-            press and public. Switch him off to hear just the crew and the ground. The tapes are the broadcast copy, with
-            him and the crew on one track, so where he talks over the crew he can&apos;t be taken out; those moments are
-            marked in the transcript.
           </dd>
         </dl>
       </section>

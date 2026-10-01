@@ -28,7 +28,7 @@ const CHANNEL_TAGS = {
 }
 
 const OVER_NOTE =
-  "NASA's recordings are the broadcast mix: the announcer and the crew on one track. Where he talks over them, his voice can't be taken out, so he stays even with the announcer switched off."
+  "NASA's recordings are the broadcast mix: the announcer and the crew on one track. Where he talks over them, the crew's words are under his voice there."
 const UNHEARD_NOTE =
   "NASA's transcript was typed from the full air-to-ground loop. This recording is the broadcast copy, which missed this call; it's shown so the conversation reads on."
 

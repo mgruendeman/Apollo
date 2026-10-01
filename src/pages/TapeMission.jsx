@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import TapePlayer from '../components/TapePlayer'
 import TapeTimeline from '../components/TapeTimeline'
@@ -14,16 +14,7 @@ import { archiveRecordings } from '../data/archiveRecordings'
 import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
 import { chapterTitle, parseGet, tapePhaseAt } from '../lib/missionIndex'
-import { formatGetSigned, useMissionTape, withoutAnnouncer } from '../lib/missionTape'
-
-const COMMENTARY_KEY = 'apollo-commentary'
-function readCommentary() {
-  try {
-    return localStorage.getItem(COMMENTARY_KEY) !== 'off'
-  } catch {
-    return true
-  }
-}
+import { formatGetSigned, useMissionTape } from '../lib/missionTape'
 
 const endOf = (s) => s.get + (s.to - s.from) * s.rate
 
@@ -31,31 +22,19 @@ const endOf = (s) => s.get + (s.to - s.from) * s.rate
 // timed to them (public/timeline/<id>.json).
 export default function TapeMission({ mission }) {
   const [searchParams, setSearchParams] = useSearchParams()
-  const [rawTimeline, setRawTimeline] = useState(null)
-  const [commentary, setCommentary] = useState(readCommentary)
+  const [timeline, setTimeline] = useState(null)
   const [activeGlossaryEntry, setActiveGlossaryEntry] = useState(null)
   const [now, setNow] = useState(() => new Date())
   const playerRef = useRef(null)
   const player = usePlayer()
 
-  const timeline = useMemo(() => (commentary ? rawTimeline : withoutAnnouncer(rawTimeline)), [rawTimeline, commentary])
   const tape = useMissionTape(timeline, mission.number)
-
-  function toggleCommentary() {
-    const next = !commentary
-    try {
-      localStorage.setItem(COMMENTARY_KEY, next ? 'on' : 'off')
-    } catch {
-      /* just for this visit */
-    }
-    setCommentary(next)
-  }
 
   useEffect(() => {
     let canceled = false
     fetch(`${import.meta.env.BASE_URL}timeline/${mission.timeline}.json`)
       .then((r) => r.json())
-      .then((data) => !canceled && setRawTimeline(data))
+      .then((data) => !canceled && setTimeline(data))
       .catch(() => {})
     return () => {
       canceled = true
@@ -110,7 +89,7 @@ export default function TapeMission({ mission }) {
   const liveStatus = getLiveStatus(mission, now)
   const archive = archiveRecordings[mission.id]
   const phase = tapePhaseAt(mission, tape.get)
-  const recordedHours = rawTimeline ? rawTimeline.segments.reduce((sum, s) => sum + (s.to - s.from), 0) / 3600 : 0
+  const recordedHours = timeline ? timeline.segments.reduce((sum, s) => sum + (s.to - s.from), 0) / 3600 : 0
 
   function jumpToLive() {
     const status = getLiveStatus(mission, new Date())
@@ -131,10 +110,10 @@ export default function TapeMission({ mission }) {
         <h1>{mission.name}</h1>
         <p className="mission-header-dates">{mission.dates}</p>
         <p className="lede">{mission.summary}</p>
-        {rawTimeline && (
+        {timeline && (
           <p className="clip-stats">
-            {Math.round(recordedHours)} hours of NASA&apos;s tapes · GET {formatGetSigned(rawTimeline.segments[0].get)} to{' '}
-            {formatGetSigned(Math.max(...rawTimeline.segments.map(endOf)))}
+            {Math.round(recordedHours)} hours of NASA&apos;s tapes · GET {formatGetSigned(timeline.segments[0].get)} to{' '}
+            {formatGetSigned(Math.max(...timeline.segments.map(endOf)))}
           </p>
         )}
         {liveStatus && (
@@ -172,8 +151,6 @@ export default function TapeMission({ mission }) {
             end={mission.durationSeconds}
             phase={phase}
             chapter={chapterTitle(tape.get, phase)}
-            announcer={commentary}
-            onAnnouncer={toggleCommentary}
             onTermClick={setActiveGlossaryEntry}
           />
         ) : (
@@ -181,7 +158,7 @@ export default function TapeMission({ mission }) {
         )}
       </section>
 
-      {rawTimeline && <TapeTimeline mission={mission} timeline={rawTimeline} get={tape.get} onSeek={seekAndShow} />}
+      {timeline && <TapeTimeline mission={mission} timeline={timeline} get={tape.get} onSeek={seekAndShow} />}
 
       {archive && <ArchiveRecordings mission={mission} archive={archive} />}
 

@@ -11,7 +11,7 @@ const tapeClip = (h) => `tapes-h${h}`
 // The whole mission from NASA's tapes: one scrubber for all ~8 days, the
 // recorded pieces shaded, and NASA's transcript following along an hour at
 // a time. `tape` is useMissionTape()'s state and controls.
-export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, announcer, onAnnouncer, onTermClick }) {
+export default function TapePlayer({ mission, tape, lines, start, end, phase, chapter, onTermClick }) {
   const [drag, setDrag] = useState(null)
   const [immersive, setImmersive] = useState(false)
   const closeImmersive = useCallback(() => setImmersive(false), [])
@@ -23,13 +23,12 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
   const byHour = useMemo(() => {
     const out = new Map()
     for (const l of lines || []) {
-      if (l.c === 'pao' && !announcer && !l.o) continue   // (where he talks over the crew he can't be cut)
       const h = hourOf(l.g)
       if (!out.has(h)) out.set(h, [])
       out.get(h).push({ get: formatGetSigned(l.g), offsetSeconds: l.g, speaker: l.s, text: l.t, channel: l.c, over: l.o, unheard: l.n, clip: tapeClip(h) })
     }
     return out
-  }, [lines, announcer])
+  }, [lines])
   const hour = hourOf(tape.get)
   const hours = [hour - 1, hour, hour + 1].filter((h) => byHour.has(h))
   const shownLines = useMemo(() => hours.flatMap((h) => byHour.get(h)), [byHour, hours.join()]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -141,16 +140,6 @@ export default function TapePlayer({ mission, tape, lines, start, end, phase, ch
           {tape.realTime
             ? 'On: silent stretches between recordings count by at their true length, as they happened.'
             : 'Off: silent stretches between recordings are skipped.'}
-        </span>
-      </label>
-
-      <label className="commentary-toggle">
-        <input type="checkbox" checked={announcer} onChange={onAnnouncer} />
-        Mission Control announcer
-        <span>
-          {announcer
-            ? 'On: the public-affairs announcer ("This is Apollo Control…") plays, as it was broadcast.'
-            : 'Off: his announcements are cut out. Where he talks over the crew he stays, as the two were recorded together.'}
         </span>
       </label>
 

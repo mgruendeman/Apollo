@@ -2372,7 +2372,7 @@ a.astronaut-flight:hover {
   scroll-margin-top: 72px;
 }
 
-/* Mission Control announcer switch */
+/* a switch on the player (Real time) */
 .commentary-toggle {
   display: grid;
   grid-template-columns: auto 1fr;

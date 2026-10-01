@@ -25,32 +25,6 @@ import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
 import { buildChapters } from '../lib/missionIndex'
 
-// The journals' "-pao" clips are the public broadcast: the crew's voices
-// with NASA's announcer talking in between (and sometimes over them). Those
-// that a plain air-to-ground clip mostly covers can be skipped; the rest are
-// the only recording of their moment and stay.
-const isPao = (c) => /[-_.]?pao(\b|_|$)/i.test(c.id)
-function coveredPao(clips) {
-  const ag = clips.filter((c) => !isPao(c)).map((c) => [c.getSeconds, c.getSeconds + (c.durationSeconds || 0)])
-  const out = new Set()
-  for (const c of clips) {
-    if (!isPao(c) || !c.durationSeconds) continue
-    const s = c.getSeconds, e = s + c.durationSeconds
-    let covered = 0
-    for (const [a, b] of ag) covered += Math.max(0, Math.min(e, b) - Math.max(s, a))
-    if (covered / (e - s) >= 0.8) out.add(c.id)
-  }
-  return out
-}
-const COMMENTARY_KEY = 'apollo-commentary'
-function readCommentary() {
-  try {
-    return localStorage.getItem(COMMENTARY_KEY) !== 'off'
-  } catch {
-    return true
-  }
-}
-
 function nearestClipIndex(clips, getSeconds) {
   let i = clips.findIndex((c) => c.getSeconds >= getSeconds)
   if (i === -1) i = clips.length - 1
@@ -69,28 +43,16 @@ export default function Mission() {
 function ClipMission({ mission }) {
   const [searchParams, setSearchParams] = useSearchParams()
   const [allClips, setClips] = useState(null)
-  const [commentary, setCommentary] = useState(readCommentary)
-  const skippable = useMemo(() => (allClips ? coveredPao(allClips) : new Set()), [allClips])
   // The site's own index: each clip carries its flight phase and chapter
   // ("Day 3 · Translunar Coast").
   const clips = useMemo(() => {
-    const base = allClips && !commentary ? allClips.filter((c) => !skippable.has(c.id)) : allClips
-    if (!base) return base
-    const chapters = buildChapters(base, computePhases(base, mission.durationSeconds, mission.landingSeconds))
-    const out = [...base]
+    if (!allClips) return allClips
+    const chapters = buildChapters(allClips, computePhases(allClips, mission.durationSeconds, mission.landingSeconds))
+    const out = [...allClips]
     for (const ch of chapters)
-      for (let i = ch.startIndex; i < ch.endIndex; i++) out[i] = { ...base[i], phase: ch.phase, chapterTitle: ch.title }
+      for (let i = ch.startIndex; i < ch.endIndex; i++) out[i] = { ...allClips[i], phase: ch.phase, chapterTitle: ch.title }
     return out
-  }, [allClips, commentary, skippable, mission])
-  function toggleCommentary() {
-    const next = !commentary
-    try {
-      localStorage.setItem(COMMENTARY_KEY, next ? 'on' : 'off')
-    } catch {
-      /* just for this visit */
-    }
-    setCommentary(next)
-  }
+  }, [allClips, mission])
   const [transcripts, setTranscripts] = useState(null)
   const player = usePlayer()
   const [cuedIndex, setCuedIndex] = useState(0)
@@ -252,17 +214,6 @@ function ClipMission({ mission }) {
           {clips.length} audio clips · GET {clips[0].get} to{' '}
           {clips[clips.length - 1].get}
         </p>
-        {skippable.size > 0 && (
-          <label className="commentary-toggle">
-            <input type="checkbox" checked={commentary} onChange={toggleCommentary} />
-            Mission Control announcer
-            <span>
-              {commentary
-                ? `On: includes ${skippable.size} broadcast clips where the announcer talks between (and over) the crew.`
-                : `Off: those ${skippable.size} clips are skipped for the plain air-to-ground recording. Moments with only the broadcast recording keep it.`}
-            </span>
-          </label>
-        )}
         {liveStatus && (
           <button type="button" className="live-badge" onClick={jumpToLive}>
             <span className="live-dot" />
