@@ -113,6 +113,7 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                     fresh[id(l)] = 120 if f['retime'] is True else f['retime']
                 if 'at' in f:
                     l['g'] = f['at']
+                    l['placed'] = 1   # (where a listener heard it: the announcer's stretch ends before it)
                     l.pop('a', None)
                     fresh.pop(id(l), None)   # (the listener's time stands: no retiming it after a text fix)
                     moved = True

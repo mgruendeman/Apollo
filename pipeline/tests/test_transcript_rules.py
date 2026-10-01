@@ -541,3 +541,29 @@ def test_a_sentence_the_scan_broke_in_two_joins_up(tmp_path, monkeypatch):
     monkeypatch.setattr(X, 'FIXES', f)
     assert X.apply_fixes('11', lines) == 1
     assert [l['t'] for l in lines if l['t']] == ['You want him to go to high gain yaw 0? Say again the numbers.', 'Roger, Neil.']
+
+
+def _spoken(*parts):
+    """Recognised words [[start, end, word]] from (start second, text) parts, a word every 0.4 s."""
+    out = []
+    for t, text in parts:
+        for k, word in enumerate(text.split()):
+            out.append([t + 0.4 * k, t + 0.4 * k + 0.3, word])
+    return out
+
+
+def test_announcer_runs_on_past_a_pause_and_back_from_a_sign_off_but_not_into_the_crew():
+    from aligner.announcer import find_announcer
+    words = _spoken((10, 'Roger, Houston. Reading you loud and clear.'),
+                    (20, 'This is Apollo Control. All is well aboard the spacecraft.'),
+                    (30, 'The crew is now eating a meal before the rest period.'),     # after a 5 s pause: still him
+                    (42, 'Nice, over. Roger, Houston. Read you the same.'),             # after a 7 s pause: the crew
+                    (94, 'The spacecraft is now well on its way to the Moon.'),
+                    (99.5, 'The crew is at rest and all systems are normal at this time.'),
+                    (106, 'And this is Apollo Control.'))                               # a sign-off: back to his start
+    segments = [{'tape': 'T', 'from': 0, 'to': 200, 'get': 1000, 'rate': 1.0}]
+    lines = [{'g': 1010, 's': 'Aldrin', 't': 'Roger, Houston. Reading you loud and clear.'}]
+    spans, over, said = find_announcer(segments, lines, {'T': (words,)}, {'T': [10]})
+    assert [[round(a), round(b)] for a, b in spans] == [[1020, 1035], [1094, 1108]]
+    assert not any('Nice' in l['t'] for l in said)
+    assert said[-3]['t'] == 'The spacecraft is now well on its way to the Moon.'

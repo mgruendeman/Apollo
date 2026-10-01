@@ -227,6 +227,15 @@ export function useMissionTape(timeline, mission) {
           const s = segsRef.current[seg.current]
           if (a === el(active.current) && s && a.dataset.tape === s.tape) advanceRef.current(seg.current)
         },
+        // With the page hidden (a locked phone, another tab) the clock above
+        // doesn't run, so the end of each piece is caught here instead: the
+        // tape would otherwise play on through what's cut (the announcer).
+        timeupdate: () => {
+          if (!document.hidden || a !== el(active.current) || gapFrom.current) return
+          const s = segsRef.current[seg.current]
+          if (!s || a.dataset.tape !== s.tape || a.currentTime < s.from - 1) return
+          if (a.currentTime >= Math.min(s.to, a.duration || Infinity) - 0.05) advanceRef.current(seg.current)
+        },
       }
       Object.entries(handlers).forEach(([e, f]) => a.addEventListener(e, f))
       return () => Object.entries(handlers).forEach(([e, f]) => a.removeEventListener(e, f))

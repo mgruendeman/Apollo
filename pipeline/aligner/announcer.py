@@ -18,6 +18,9 @@ SAID_TIME = re.compile(r"apollo control,? (?:houston,? )?(?:at )?([\w -]+?) hour
                        r"|(?:at |)([\w -]+?) hours?,? (?:and )?([\w -]+?) minutes[\w ,]*?,? this is apollo control", re.I)
 
 
+RADIO_WORDS = {'roger', 'copy', 'okay', 'ok', 'affirmative', 'negative', 'wilco', 'readback'}
+
+
 TITLES = re.compile(r"(?:Dr|Mr|Mrs|Ms|St|Jr|Sr|Gen|Col|Lt|Capt|Gov|Sen|Rep|vs|[B-HJ-Z])\.")   # (and a middle initial: "Thomas O. Paine")
 
 
@@ -71,8 +74,13 @@ def find_announcer(segments, lines, tape_words, heard_at):
     """The public-affairs announcer on the tapes: NASA's air-to-ground tapes
     are the broadcast mix, with "This is Apollo Control ..." between (and
     sometimes over) the crew and the ground. Each announcement runs from the
-    start of the speech holding "this is Apollo Control" until a pause of 4 s,
-    a change of voice, or NASA's next transcript line.
+    run of speech holding "this is Apollo Control" (or "Mission Control"),
+    back and on through pauses shorter than 4 s, until a change of voice,
+    NASA's next transcript line, or words of NASA's lines (three in a row:
+    the crew's, never his). On past a pause of up to 10 s where what follows
+    is more of the same (four words or more, none of NASA's), as he often
+    stops to read the next figure; and back from a sign-off ("... at 65 hours,
+    29 minutes, this is Apollo Control") to the start of that announcement.
 
     Through quiet hours the recorders were run only for the announcements,
     so one stretch of tape can hold announcements from hours apart. Where the
@@ -90,34 +98,64 @@ def find_announcer(segments, lines, tape_words, heard_at):
     words as transcript lines {g, s, t, c: 'pao'}, a sentence each."""
     end = lambda sg: sg['get'] + (sg['to'] - sg['from']) * sg['rate']
     gets = [sg['get'] for sg in segments]
-    by_tape = {}
+    by_tape, grams = {}, {}   # NASA's lines on each tape: where they start (and how many words), and their runs of three words
     for l in lines:
         k = bisect.bisect_right(gets, l['g']) - 1
         if k >= 0 and l['g'] <= end(segments[k]):
             sg = segments[k]
-            by_tape.setdefault(sg['tape'], []).append(sg['from'] + (l['g'] - sg['get']) / sg['rate'])
+            t = sg['from'] + (l['g'] - sg['get']) / sg['rate']
+            words = re.findall(r"[a-z0-9]+", l['t'].lower())
+            by_tape.setdefault(sg['tape'], []).append((t, len(words)))
+            for j in range(len(words) - 2):
+                grams.setdefault(sg['tape'], {}).setdefault(tuple(words[j:j + 3]), []).append(t)
     stretches = []   # {tape, t0, t1, words, get (at t0), rate}
     for sg in segments:
         if sg['tape'] not in tape_words:
             continue
         w = tape_words[sg['tape']][0]
         toks = [re.sub(r"[^a-z]", '', x[2].lower()) for x in w]
-        starts_here = sorted(by_tape.get(sg['tape'], []))
+        here = sorted(by_tape.get(sg['tape'], []))
+        starts_here = [t for t, _ in here]
         lo, hi = bisect.bisect_left([x[0] for x in w], sg['from']), bisect.bisect_right([x[0] for x in w], sg['to'])
-        i = max(lo, 1)
+        # words that are NASA's lines (three in a row as one of them has it, said within five minutes): the crew's
+        nt = [re.sub(r"[^a-z0-9]", '', x[2].lower()) for x in w[lo:hi]]
+        gr = grams.get(sg['tape'], {})
+        crew = [False] * (hi - lo)
+        for j in range(len(nt) - 2):
+            if all(nt[j:j + 3]) and any(abs(t - w[lo + j][0]) < 300 for t in gr.get(tuple(nt[j:j + 3]), ())):
+                crew[j] = crew[j + 1] = crew[j + 2] = True
+        # (and radio talk he never uses: "Roger", "copy", a sentence ending "over")
+        radio = lambda k: toks[k] in RADIO_WORDS or bool(re.fullmatch(r"over[.?!]", w[k][2].strip().lower()))
+        is_crew = lambda k: crew[k - lo] or radio(k)
+        i, floor = max(lo, 1), lo   # (floor: his first word no earlier than this, past his announcement before)
         while i < hi - 1:
-            if not (toks[i] == 'apollo' and toks[i + 1] == 'control' and toks[i - 1] in ('is', 'this')):
+            if not (toks[i] in ('apollo', 'mission') and toks[i + 1] == 'control' and toks[i - 1] in ('is', 'this')):
                 i += 1
                 continue
+            # back to the start of his announcement: not into NASA's line before (its words, or the time it takes to say)
+            prv = here[:bisect.bisect_left(starts_here, w[i][0] - 0.5)][-1:]
+            before = prv[0][0] + 0.5 + 0.35 * prv[0][1] if prv else -1
             a = i
-            while a > lo and w[a][0] - w[a - 1][1] < 1.5 and w[i][0] - w[a - 1][0] < 8 and toks[a - 1] not in LABELS:
+            while a > floor and toks[a - 1] not in LABELS and (
+                    (w[a][0] - w[a - 1][1] < 1.5 and w[i][0] - w[a - 1][0] < 8)
+                    or (w[a][0] - w[a - 1][1] < 4 and w[i][0] - w[a - 1][0] < 600 and w[a - 1][0] > before and not is_crew(a - 1))):
                 a -= 1
             t0 = max(w[a][0] - 0.3, sg['from'])
             nxt = starts_here[bisect.bisect_right(starts_here, t0 + 2):][:1]
             b = i
-            while (b + 1 < hi and w[b + 1][0] - w[b][1] < 4 and toks[b + 1] not in LABELS
-                   and (not nxt or w[b + 1][0] < nxt[0] - 0.5) and w[b + 1][0] - t0 < 600):
-                b += 1
+            while True:
+                while (b + 1 < hi and w[b + 1][0] - w[b][1] < 4 and toks[b + 1] not in LABELS
+                       and (not nxt or w[b + 1][0] < nxt[0] - 0.5) and w[b + 1][0] - t0 < 600):
+                    b += 1
+                # past a pause, more of his: four words or more, none of them NASA's, before NASA's next line
+                r = b + 1
+                if not (r < hi and w[r][0] - w[b][1] < 10 and (not nxt or w[r][0] < nxt[0] - 0.5)):
+                    break
+                while r + 1 < hi and w[r + 1][0] - w[r][1] < 4 and (not nxt or w[r + 1][0] < nxt[0] - 0.5):
+                    r += 1
+                if (r - b < 4 or w[r][0] - t0 >= 600 or any(is_crew(k) or toks[k] in LABELS for k in range(b + 1, r + 1))):
+                    break
+                b = r
             t1 = min(w[b][1] + 0.3, sg['to'])
             # does he carry on over a line nobody can make out?
             heard = heard_at.get(sg['tape'], [])
@@ -133,7 +171,7 @@ def find_announcer(segments, lines, tape_words, heard_at):
                               'words': [x for x, tk in zip(w[a:tail + 1], toks[a:tail + 1]) if tk not in LABELS],
                               'over': (t1, min(w[c][1] + 0.3, sg['to'])) if covers else None,
                               'over_words': [x for x, tk in zip(w[b + 1:c + 1], toks[b + 1:c + 1]) if tk not in LABELS] if covers else []})
-            i = max(c if covers else b, tail) + 1
+            i = floor = max(c if covers else b, tail) + 1
 
     # announcements recorded out of their time: out to the time he gives
     moved = []

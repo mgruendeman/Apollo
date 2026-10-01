@@ -2,7 +2,7 @@
  "11": [
   {"tape": "155-AAA", "tape_from": 9972, "tape_to": 10181, "get_from": 8701,
    "why": "After the announcer's 'Apollo Control at 2 hours 25 minutes' the tape runs on through the Carnarvon pass: 'Houston through Carnarvon' (NASA 002:25:44) is heard at 10015 s and 'You are GO for TLI' (002:26:38) at 10069 s, the same offset as the piece from 10181 s (002:28:32). Placement had put 10006-10181 at 002:18:17 on one stray match."},
-  {"tape": "184-AAA", "tape_from": 2044, "tape_to": 2184, "get_from": 565684,
+  {"tape": "184-AAA", "tape_from": 2044, "tape_to": 2189.3, "get_from": 565684,
    "why": "The announcer on it says 'Entry countdown clock now showing 37 hours, 53 minutes' (entry at 195:03:06) and 'at 157 hours, 10 minutes': it runs straight on from the piece before, which ends at 157:08:03. Placement had put it at 157:52:51 on three lines whose printed times the scan misread (157:53:57 for 157:08:57)."}
  ],
  "12": [

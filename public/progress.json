@@ -1,6 +1,6 @@
 {
  "11": {
-  "announcerLines": 1872,
+  "announcerLines": 2256,
   "checkedFine": 143,
   "corrected": 468,
   "flagged": 125,
@@ -10,33 +10,33 @@
   "updated": "2026-09-30"
  },
  "12": {
-  "announcerLines": 1897,
+  "announcerLines": 2391,
   "checkedFine": 8,
   "corrected": 128,
   "flagged": 756,
   "lines": 15504,
   "notOnRecording": 124,
-  "recordedHours": 127.4,
+  "recordedHours": 127.2,
   "updated": "2026-09-30"
  },
  "14": {
-  "announcerLines": 1366,
+  "announcerLines": 1660,
   "checkedFine": 0,
   "corrected": 16,
   "flagged": 521,
   "lines": 13986,
   "notOnRecording": 1300,
-  "recordedHours": 141.3,
+  "recordedHours": 140.8,
   "updated": "2026-09-30"
  },
  "15": {
-  "announcerLines": 1133,
+  "announcerLines": 1507,
   "checkedFine": 0,
   "corrected": 0,
   "flagged": 719,
   "lines": 21091,
   "notOnRecording": 2041,
-  "recordedHours": 112.7,
+  "recordedHours": 112.8,
   "updated": "2026-09-30"
  }
 }

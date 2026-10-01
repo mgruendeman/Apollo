@@ -175,6 +175,9 @@ def main():
         l['t'] = re.sub(r"\bTann?anarive\b|\bTeneneriev\b", 'Tananarive', l['t'])
     hand = apply_fixes(m, lines, strict=not args.no_strict, segments=segments, tape_words=tape_words)
     lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
+    # NASA's lines a listener heard inside one of the announcer's stretches (crew talk he played back): his stretch ends before them
+    by_hand = sorted(l['g'] for l in lines if l.pop('placed', None))
+    announcer = [[a, min([b] + [g - 0.3 for g in by_hand if a + 1 < g < b])] for a, b in announcer]
     unheard = mark_unheard(lines, segments, tape_words, media / 'envelopes' / 'tapes' / m)
     unheard += mark_drowned_out(lines, segments, tape_words, other_loop=cm_loop)
     for l in lines:   # (the command module's own link: nothing on these tapes to check it against)
