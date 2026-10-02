@@ -3604,11 +3604,6 @@
    "ok": true
   },
   {
-   "g": 645350,
-   "text": "The trace on your respiration rate is still flat.",
-   "unheard": true
-  },
-  {
    "g": 361550.3,
    "from": "PDI less thai 10:",
    "to": "PDI less than 10:"
@@ -5026,7 +5021,7 @@
   },
   {
    "g": 12786,
-   "from": "How much fuel did I I",
+   "from": "How much fuel did I",
    "to": "How much fuel did I waste during that docking?"
   },
   {
@@ -5767,6 +5762,172 @@
    "text": "Apollo 12, Houston. Loud and clear.",
    "at": 8692,
    "whole": true
+  },
+  {
+   "g": 109274,
+   "from": "check that ... DELTA-P",
+   "to": "check that LM DELTA-P"
+  },
+  {
+   "g": 109330,
+   "from": "You got any of the",
+   "to": "You got any of the vents open down there, Al?"
+  },
+  {
+   "g": 109330,
+   "speaker": "Gordon",
+   "text": "We haven't opened anything."
+  },
+  {
+   "g": 109330,
+   "text": "think so. I don't",
+   "printed": 109333
+  },
+  {
+   "g": 109333,
+   "from": "-_i_e.t_eccheck_ _.._gn,_tthink so. I don't .thSnk",
+   "to": "Let me check. I don't think so. I don't think we're flowing anything."
+  },
+  {
+   "g": 109333,
+   "speaker": "Bean",
+   "text": "Let me check. I don't think so."
+  },
+  {
+   "g": 109330,
+   "text": "Everything's closed in here",
+   "printed": 109337
+  },
+  {
+   "g": 109337,
+   "from": ", -_ _ we're flowing- anything. ' \" '.... \"7 .: Everything's closed in here and the DELTA-P",
+   "to": "Everything's closed in here and the DELTA-P - -"
+  },
+  {
+   "g": 109337,
+   "speaker": "Gordon",
+   "text": "Everything's closed in here and the DELTA-P"
+  },
+  {
+   "g": 109341,
+   "speaker": "Conrad",
+   "text": "No, it's in the tunnel vent."
+  },
+  {
+   "g": 109350,
+   "from": "you just ma_v b_ _aking _B_some in the cabin",
+   "to": "you just may be making up some in the cabin"
+  },
+  {
+   "g": 109362,
+   "from": "Very good. ..... ...",
+   "to": "Very good."
+  },
+  {
+   "g": 109373.3,
+   "from": "W e got 30",
+   "to": "We got 30"
+  },
+  {
+   "g": 109393,
+   "from": "little ding timer there, will you, Al. And then fasten it to that LOS j",
+   "to": "little ding-ding timer there, will you, Al. And then fasten it to that tunnel vent so I don't forget it."
+  },
+  {
+   "g": 383549,
+   "from": "an 06, 20, whenever",
+   "to": "an 06 20, whenever"
+  },
+  {
+   "g": 402441.4,
+   "from": "LOS is 112:53:h8, Roger, Jerry.",
+   "to": "LOS is 112:53:48, 113:18:23, 113:39:28. Roger, Jerry."
+  },
+  {
+   "g": 402441.4,
+   "text": "Map update REV 16",
+   "split": "Roger, Jerry. Copied",
+   "speaker": "Gordon"
+  },
+  {
+   "g": 465663.8,
+   "speaker": "Bean",
+   "text": "You might can, but I don't know."
+  },
+  {
+   "g": 465666,
+   "from": "That's A_r_,t_,,_ ............ _c-- _,, 4 _-_ ,,_u --_ _ - oop - okay.",
+   "to": "That's affirmative. They had and - oop - okay."
+  },
+  {
+   "g": 465711,
+   "from": "v_. _d one other thing",
+   "to": "Okay. And one other thing"
+  },
+  {
+   "g": 465711,
+   "speaker": "Weitz",
+   "text": "And one other thing, on your tiedown"
+  },
+  {
+   "g": 467003,
+   "from": "sample the b ...... 1_o_ , if .... _v_lb_.'_ And lastly",
+   "to": "sample the bench itself, if possible. And lastly"
+  },
+  {
+   "g": 467039,
+   "from": "in bench crater, ................. _m bench crater",
+   "to": "in bench crater, look northwest and southwest from the rim of bench crater"
+  },
+  {
+   "g": 474361,
+   "from": "I notice the two bags that I put in the SRC y__u- yesterday - they're that way.",
+   "to": "I noticed the two bags that I put in the SRC yesterday - were that way."
+  },
+  {
+   "g": 479732,
+   "from": "You're right there by",
+   "to": "You're right there by a crater."
+  },
+  {
+   "g": 479740.9,
+   "from": "There'b the LA{. Right in the background. Looked great.",
+   "to": "There's the LM. Right in the background. Looks great."
+  },
+  {
+   "g": 479756.3,
+   "from": "at a slnwer !ace.",
+   "to": "at a slower pace."
+  },
+  {
+   "g": 809544,
+   "from": "NOUN 47 is 25036; HA; NA, 241:21:53.33; NOUN 81: minus 0006.0, all zips, plus 0Ob0.2; roll, pitch, and yaw are all zips; 310, all zir _ NOUN 44 is NA; :IA: DELTA V T 0006.1, 0.13, 0006.1; sextant, i1, 241.4, 39.7; boresight, 044, up 01.3, left 5.0; the r:-st is NA. Comments: Sirius and Rigel for GDC align; ] roll is 336;",
+   "to": "NOUN 47 is 25036; NA; NA, 241 21 53 33; NOUN 81: minus 00060, all zips, plus 00002; roll, pitch, and yaw are all zips; 310, all zips. NOUN 44 is NA NA. DELTA V T 00061, 013, 00061; sextant, 11, 2414, 397; boresight, 044, up 013, left 50; the rest is NA. Comments: Sirius and Rigel for GDC align. Roll is 336;"
+  },
+  {
+   "g": 809677,
+   "from": "310, 000; N_; NA;",
+   "to": "310, 000; NA; NA;"
+  },
+  {
+   "g": 809677,
+   "from": "left 5.03 Sirius",
+   "to": "left 5.0; Sirius"
+  },
+  {
+   "g": 809765,
+   "from": "Go ahead end give it to us",
+   "to": "Go ahead and give it to us"
+  },
+  {
+   "g": 809767,
+   "from": "We'll ochre it up",
+   "to": "We'll scare it up"
+  },
+  {
+   "g": 402441.4,
+   "text": "Roger, Jerry. Copied 112:53:48",
+   "at": 402459
   }
  ],
  "14": [
@@ -5910,6 +6071,98 @@
    "g": 466339.5,
    "from": "Ai's are in pretty good shape.",
    "to": "Al's are in pretty good shape."
+  },
+  {
+   "g": 93529,
+   "text": "We'll wait for that, and then I'll go ahead and give you the complete propulsion checks",
+   "ok": true
+  },
+  {
+   "g": 101566,
+   "from": "No. We did not [Answering CDR or CMl°].",
+   "to": "No. We did not."
+  },
+  {
+   "g": 102456,
+   "from": "Stand by i minut e.",
+   "to": "Stand by 1 minute."
+  },
+  {
+   "g": 102561,
+   "from": "reposition the mike?",
+   "to": "reposition the mic?"
+  },
+  {
+   "g": 102573.9,
+   "from": "I have the mike right",
+   "to": "I have the mic right"
+  },
+  {
+   "g": 102586,
+   "from": "comm,_uications",
+   "to": "communications"
+  },
+  {
+   "g": 121164.3,
+   "text": "It's better to be number 4900 than not to be at all",
+   "ok": true
+  },
+  {
+   "g": 131236,
+   "from": "semisizable",
+   "to": "semi-sizable"
+  },
+  {
+   "g": 132009,
+   "from": "Right now -and it is in f%Jll-Sun outside",
+   "to": "Right now and it is in full sun outside"
+  },
+  {
+   "g": 216196.6,
+   "from": "Yes. That's a little better, I can now see the - your little card there showing the antenna patterns.",
+   "to": "Yeah. That's a little better, I can now see the - your little card there showing the antenna pattern."
+  },
+  {
+   "g": 240433,
+   "text": "First of all, Al's got a sensor replaced.",
+   "ok": true
+  },
+  {
+   "g": 271917.4,
+   "text": "Let me doublecheck.",
+   "ok": true
+  },
+  {
+   "g": 296193,
+   "text": "We had an extremely fine burn, the burn report as follows",
+   "ok": true
+  },
+  {
+   "g": 464826,
+   "from": "E_'s suit",
+   "to": "Ed's suit"
+  },
+  {
+   "g": 477700.1,
+   "from": "sayabout",
+   "to": "say about"
+  },
+  {
+   "g": 477700.1,
+   "from": "smooth- walled",
+   "to": "smooth walled"
+  }
+ ],
+ "15": [
+  {
+   "g": 612162,
+   "from": "m_dsection",
+   "to": "midsection"
+  },
+  {
+   "g": 612162,
+   "from": "side is hag 7",
+   "to": "side is bag 7"
   }
  ]
 }

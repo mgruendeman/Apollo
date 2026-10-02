@@ -3,50 +3,60 @@
   "announcerLines": 2256,
   "checkedFine": 221,
   "corrected": 501,
-  "flagged": 19,
+  "flagged": 17,
   "lines": 8458,
-  "notOnRecording": 53,
+  "notOnRecording": 47,
   "recordedHours": 101.2,
-  "updated": "2026-09-30"
+  "updated": "2026-10-01"
  },
  "12": {
   "announcerLines": 2391,
   "checkedFine": 8,
-  "corrected": 128,
-  "flagged": 755,
-  "lines": 15504,
-  "notOnRecording": 124,
+  "corrected": 147,
+  "flagged": 739,
+  "lines": 15505,
+  "notOnRecording": 118,
   "recordedHours": 127.2,
-  "updated": "2026-09-30"
+  "updated": "2026-10-01"
  },
  "14": {
-  "announcerLines": 1660,
-  "checkedFine": 0,
-  "corrected": 16,
-  "flagged": 520,
+  "announcerLines": 1725,
+  "checkedFine": 5,
+  "corrected": 26,
+  "flagged": 513,
   "lines": 13986,
-  "notOnRecording": 1300,
-  "recordedHours": 140.8,
-  "updated": "2026-09-30"
+  "notOnRecording": 1297,
+  "recordedHours": 143.9,
+  "updated": "2026-10-01"
  },
  "15": {
-  "announcerLines": 1507,
+  "announcerLines": 1867,
   "checkedFine": 0,
-  "corrected": 0,
-  "flagged": 719,
+  "corrected": 1,
+  "flagged": 718,
   "lines": 21091,
-  "notOnRecording": 2041,
-  "recordedHours": 112.8,
-  "updated": "2026-09-30"
+  "notOnRecording": 2032,
+  "recordedHours": 121.9,
+  "updated": "2026-10-01"
  },
  "16": {
   "announcerLines": 2579,
   "checkedFine": 0,
   "corrected": 0,
-  "flagged": 1403,
+  "flagged": 1402,
   "lines": 29011,
-  "notOnRecording": 3437,
+  "notOnRecording": 3434,
   "recordedHours": 153.4,
+  "updated": "2026-10-01"
+ },
+ "17": {
+  "announcerLines": 2576,
+  "checkedFine": 0,
+  "corrected": 0,
+  "flagged": 4909,
+  "lines": 32995,
+  "notOnRecording": 3681,
+  "recordedHours": 186.4,
   "updated": "2026-10-01"
  }
 }

@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 import numpy as np
-from .common import ROOT, tokens
+from .common import MISSION, ROOT, tokens
 from .placement import find
 
 LABELS = {'capcom', 'sc', 'cdr', 'lmp', 'cmp', 'cc'}   # the recogniser sometimes writes a speaker label at a change of voice
@@ -151,7 +151,6 @@ PLACES = ['Apollo', 'Houston', 'Tananarive', 'Carnarvon', 'Canary', 'Goldstone',
 CALLSIGNS = {'11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipper', 'Yankee', 'Intrepid', 'Hornet'],
              '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
              '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
-MISSION = {'n': '11'}   # the mission being processed (set in main)
 # a word read with its first letter small and the rest capitals: plain words go small, switch settings and terms capital
 COMMON_LOWER = {'you', 'now', 'how', 'from', 'the', 'and', 'for', 'our', 'out', 'are', 'was', 'with', 'that', 'this', 'have', 'here'}
 SWITCH_WORDS = {'PAD', 'LOS', 'AOS', 'STAY', 'FORWARD', 'AFT', 'AUTO', 'OPEN', 'CLOSE', 'CLOSED', 'NORMAL', 'OFF', 'ON', 'ARM', 'SAFE'}
@@ -237,6 +236,17 @@ def _places(text, vocab):
     return ' '.join(out)
 
 
+def _page_heading(text):
+    """A line without the page heading the scan ran into it: "... gets
+    stopped. Tap'e69/5", "target load I Tape 52/6 and your REFSMMAT" (the
+    page's edge read as a letter before it), "Okay. Page 762". Looked for
+    again once the words are mended ("Pag_ 598" is "Page 598" by then)."""
+    head = r"\s+(?:['\"]?[IiFfl1|]['\"]?\s+)?[Tr]ap\W?e\s*[\w_]{1,4}/[\w_\]]{1,3}"
+    text = re.sub(head + r"(?:\s+\S{1,2})*(?:\s+Page\s+\d{2,4})?\s*$", '', text)   # closing a line, with the scraps after it: "... 12. i Tape h/2 [ D"
+    text = re.sub(head + r"(?=\s)", '', text)                                      # inside one, where a page turned
+    return re.sub(r"\s+Page\s+\d{2,4}\s*$", '', text)
+
+
 def _scrap_tail(text):
     """Drop a line's closing run of scraps (no two letters or digits
     together, not NASA's "..."), when it holds an OCR-junk character."""
@@ -285,7 +295,7 @@ def _tidy(text, vocab):
     text = re.sub(r"\bG\(\)", 'GO', text)                                  # "G()"
     text = re.sub(r"\s/(?=\s)", '', text)                                   # a lone "/"
     text = re.sub(r"\bOve r\b", 'Over', text)                               # "Ove r."
-    text = re.sub(r"\s+Tape\s+\d+/\d+\s*$", '', text)                          # a page heading: "Tape 1/11"
+    text = _page_heading(text)                                                # a page heading: "Tape 1/11"
     text = re.sub(r"\s+-?\d?\s*NOTE\s*$", '', text)                            # "-3 NOTE": the start of a page note
     text = re.sub(r"(?<=[.?!])\s+(?:[b-hj-z]|i(?:\s*-\))?)\s*$", '', text)       # a stray letter after the last sentence: "Copy. i"
     if text.count('"') % 2 == 1:
@@ -526,7 +536,7 @@ def repair_ocr(lines, segments, tape_words, skip=()):
         for i in sorted(bad):   # "Roger_" that nothing settled: the "_" was punctuation
             if words[i].endswith('_') and len(words[i]) >= 5 and words[i][:-1].lower() in vocab:
                 words[i] = words[i][:-1]
-        text = _places(' '.join(words), vocab)
+        text = _page_heading(_places(' '.join(words), vocab))
         if text and text[-1].isalnum() and line['t'].rstrip()[-1:] in '.?!':   # a repair that took the full stop
             text += '.'
         line['t'] = text

@@ -232,21 +232,27 @@ export const missions = [
     summary:
       'The last Apollo Moon mission and the only night launch, carrying the program\'s first scientist-astronaut for the longest stay, longest EVAs, and most samples of any landing.',
     status: 'available',
-    clipsFile: 'apollo17',
-    clipCount: 965,
+    timeline: 'apollo17', // whole-mission tapes: public/timeline/apollo17.json
     launchUtc: '1972-12-07T05:33:00Z',
     durationSeconds: 1086719, // 301:51:59
-    // The journals use the mission clock as NASA reset it mid-flight (+2:40:00
-    // for the late launch), so touchdown is 113:01:58 rather than 110:21:58.
-    landingSeconds: 406918, // touchdown at GET 113:01:58
+    // Times are from liftoff, as NASA's transcript keeps them. Mission Control
+    // set its own clock ahead 2:40:00 at 65 hours (the launch was that late),
+    // so the announcer's times from then on run 2:40 ahead of these.
+    landingSeconds: 397318, // touchdown at GET 110:21:58
+    // (archive.org's Apollo 17 tapes are 765-AAA to 830-AAA, without 793; 828 is a 7-second stub)
+    tapesNote: "Two of NASA's tapes are missing from archive.org: there's no recording from 126:16 to 133:46, the first night on the Moon, or from 286:57 to 296:47, the last night before splashdown. Times here run from liftoff; from 65 hours on, the announcer's times are 2 hours 40 minutes ahead, because Mission Control set its clock forward to match the flight plan after the late launch.",
+    events: { tli: '003:18:38', loi: '086:14:23', liftoff: '185:21:37', lmJettison: '191:18:31', tei: '234:02:09', cmSep: '301:23:49' },
     csmName: 'America',
     lmName: 'Challenger',
     objective: 'Close out Apollo with the longest landing: sample ancient highland rock from the valley walls and look for young volcanic material, with the first geologist on the Moon.',
     landingSite: { name: 'Taurus–Littrow valley, on the edge of the Sea of Serenity', lat: 20.1911, lon: 30.7723 },
     highlights: [
-      { id: 'a17_0000027', title: 'Launch — the only night launch' },
-      { id: 'a17_1125539csm', title: '"The Challenger has landed"' },
-      { id: 'A17A1702454', title: "Cernan's farewell to the Moon" },
+      { id: 'a17-launch', at: '-000:00:30', title: 'Launch — the only night launch' },
+      { id: 'a17-landing', at: '110:19:30', title: '"The Challenger has landed"' },
+      { id: 'a17-orange-soil', at: '142:46:10', title: 'Orange soil at Shorty crater' },
+      { id: 'a17-farewell', at: '168:01:20', title: "Cernan's farewell to the Moon" },
+      { id: 'a17-liftoff', at: '185:21:10', title: 'Liftoff from the Moon' },
+      { id: 'a17-evans-eva', at: '254:59:40', title: "Ron Evans's spacewalk" },
     ],
   },
 ]

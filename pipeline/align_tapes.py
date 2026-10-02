@@ -79,6 +79,30 @@ def main():
         toks = tokens(r['text'])
         for k in range(len(toks) - 2):
             grams.setdefault(' '.join(toks[k:k + 3]), []).append(r['getSeconds'])
+    # and with NASA's untimed lines too, at times spread between the printed ones around them (Apollo 17
+    # printed a time only at the start of an exchange): only for a tape nothing else places
+    grams_all, run = {}, []
+    timed_at = [r['getSeconds'] if not r['getApprox'] else None for r in rows]
+    for k, r in enumerate(rows + [None]):
+        if r is not None and r['getApprox']:
+            run.append(k)
+            continue
+        if run:
+            before = timed_at[run[0] - 1] if run[0] > 0 else None
+            after = r['getSeconds'] if r is not None else None
+            if before is not None:
+                n_words = [len(tokens(rows[j]['text'])) for j in run]
+                total, done = sum(n_words) + 1, 0
+                for j, n in zip(run, n_words):
+                    done += n
+                    g = before + (after - before) * done / total if after is not None and 0 <= after - before <= 1200 \
+                        else before + 0.5 * done
+                    toks = tokens(rows[j]['text'])
+                    for i in range(len(toks) - 2):
+                        grams_all.setdefault(' '.join(toks[i:i + 3]), []).append(g)
+            run = []
+    for key, gs in grams.items():
+        grams_all.setdefault(key, []).extend(gs)
     for tape, entry in sorted(placement.items()):
         asr = media / 'asr' / m / f'{tape}.json'
         if not asr.exists():
@@ -89,6 +113,8 @@ def main():
         # did), and where what's said on it, and the times the announcer gives, put it (a clip
         # found in the wrong place mustn't hide the rest: 177-AAA's clips put it two hours late)
         pieces = merge_pieces(list(entry.get('pieces') or []) + spoken_pieces(words) + text_pieces(words, grams))
+        if not pieces:
+            pieces = merge_pieces(text_pieces(words, grams_all))
         if not pieces:
             continue
         tape_words[tape] = (words, starts)
@@ -134,7 +160,7 @@ def main():
     lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text'], **({'a': 1} if r['getApprox'] else {})} for r in rows]
     cm_loop = {id(l) for l, r in zip(lines, rows) if r.get('loop') == 'CM'}
     synced = sync_to_tape(lines, segments, tape_words)
-    untimed = time_untimed(lines, segments, tape_words)
+    untimed = time_untimed(lines, segments, tape_words, other_loop=cm_loop)
     # (the command module's talk during a moonwalk that isn't on these tapes: no mending it from them)
     elsewhere = {id(l) for l in lines if id(l) in cm_loop and not said_on_tape(l, segments, tape_words)}
     repaired = repair_ocr(lines, segments, tape_words, skip=elsewhere)

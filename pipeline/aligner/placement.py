@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 import numpy as np
-from .common import tokens, MIN_WORDS
+from .common import from_liftoff, tokens, MIN_WORDS
 
 def find(line_toks, words, lo, hi):
     """Best place for a line's words among words[lo:hi]: (tape time, share
@@ -69,7 +69,7 @@ def spoken_pieces(words):
         i = bisect.bisect_right(at, mt.start()) - 1
         near = text[max(0, mt.start() - 80):mt.end() + 80].lower()
         if 'apollo control' in near:
-            found.append((words[i][0], int(mt.group(1)) * 3600 + int(mt.group(2)) * 60))
+            found.append((words[i][0], from_liftoff(int(mt.group(1)) * 3600 + int(mt.group(2)) * 60)))
     good = [(t, g) for t, g in found if sum(abs((g2 - t2) - (g - t)) <= 180 for t2, g2 in found) >= 2]
     return [{'tape_from': max(0.0, t - 1200), 'tape_to': t + 1200, 'get_from': g - (t - max(0.0, t - 1200)), 'rate': 1.0}
             for t, g in good]

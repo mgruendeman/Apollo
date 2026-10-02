@@ -576,3 +576,128 @@ def test_announcer_runs_on_past_a_pause_and_back_from_a_sign_off_but_not_into_th
     assert [[round(a), round(b)] for a, b in spans] == [[1020, 1035], [1094, 1108]]
     assert not any('Nice' in l['t'] for l in said)
     assert said[-3]['t'] == 'The spacecraft is now well on its way to the Moon.'
+
+
+def test_apollo_17_announcer_times_after_the_clock_was_set_ahead():
+    from aligner.announcer import from_liftoff
+    from aligner.ocr_repair import MISSION
+    MISSION['n'] = '17'
+    assert from_liftoff(60 * 3600) == 60 * 3600                  # before 65 hours: as said
+    assert from_liftoff(115 * 3600) == 115 * 3600 - 9600         # "Apollo Control at 115 hours": 112:20 from liftoff
+    MISSION['n'] = '16'
+    assert from_liftoff(115 * 3600) == 115 * 3600
+
+
+def test_page_headings_the_scan_ran_into_a_line_are_taken_out():
+    from aligner.ocr_repair import _page_heading
+    assert _page_heading("And we owe him an 06 20, whenever he gets stopped. Tap'e69/5") == "And we owe him an 06 20, whenever he gets stopped."
+    assert _page_heading("we'll send up your target load I Tape 52/6 and your REFSMMAT") == "we'll send up your target load and your REFSMMAT"
+    assert _page_heading("Here's a beauty. I Tape 86/_5") == "Here's a beauty."
+    assert _page_heading("Okay; understand. Tape 77/]") == "Okay; understand."
+    assert _page_heading("Okay. Page 762") == "Okay."
+    assert _page_heading("Open hatch slowly, and verify that our hex clears. rape 170/35") == "Open hatch slowly, and verify that our hex clears."
+    assert _page_heading("Say, Houston, 12. i Tape h/2 [ D") == "Say, Houston, 12."
+    assert _page_heading("How much fuel did I I Tape 3/4 i Page 26") == "How much fuel did I"
+    assert _page_heading("You're looking at, Houston. I Tape 1_1/15 '1") == "You're looking at, Houston."
+    assert _page_heading("I'm approaching the Emplemus side. Page 598") == "I'm approaching the Emplemus side."
+    assert _page_heading("I taped 2/3 of it. Turn to page 12 now.") == "I taped 2/3 of it. Turn to page 12 now."
+
+
+# Apollo 17: each tape transcribed as two (A the lunar module's link, B the
+# command module's), and a time printed only where an exchange starts
+def test_tape_letters_make_the_command_modules_pages_their_own_blocks():
+    row = lambda page, g, spk: {'getSeconds': g, 'hour': None, 'pattern': None, 'speaker': spk, 'words': [(0, 0, 'Okay.', 100.0)], 'page': page}
+    letters = {p: 'A' for p in range(10, 40)}
+    letters.update({p: 'B' for p in range(20, 30)})
+    letters[5] = 'B'      # a lone "2B/3" far from the lettered pages: 28/3 misread
+    letters[24] = None    # a heading the scan couldn't read, on a page where the CMP speaks
+    letters[33] = None    # and one where nobody settles it: with the page before
+    rows = [row(5, 100, 'CMP'), row(12, 1000, 'CDR'), row(19, 2000, 'LMP'),
+            row(20, 1500, 'CMP'), row(24, 1700, 'CMP'), row(29, 9000000, 'CMP'), row(29, 2500, 'CC'),
+            row(30, 2100, 'CDR'), row(33, None, 'CC'), row(39, 2600, 'LMP')]
+    streams = N.tape_letter_streams(rows, letters)
+    assert streams == [0, 0, 0, 1, 1, 1, 1, 0, 0, 0]
+    N.resolve_times(rows, streams)
+    # the lunar module's times run on past the block; the block keeps its own; a time far off (a misread day) isn't trusted
+    assert [r['getSeconds'] for r in rows] == [100, 1000, 2000, 1500, 1700, 1700, 2500, 2100, 2100, 2600]
+    assert [r['getApprox'] for r in rows] == [False, False, False, False, False, True, False, False, True, False]
+    assert N.tape_letter_streams(rows, {p: None for p in range(40)}) == [0] * len(rows)   # no lettered tapes: one stream
+
+
+def test_tape_letter_from_a_page_heading():
+    line = lambda text: [[(0, 0, w, 100.0) for w in text.split()]]
+    assert N.tape_letter(line('Tape 80B/1')) == 'B'
+    assert N.tape_letter(line('Tape 8lA/14')) == 'A'
+    assert N.tape_letter(line('Tape 28/3')) is None
+    assert N.tape_letter(line('Tape B/5')) is None      # "3/5" misread
+    assert N.tape_letter(line('APOLLO 17 AIR-TO-GROUND VOICE TRANSCRIPTION')) is None
+
+
+def test_a_long_run_of_untimed_lines_is_lined_up_with_the_tape_at_once():
+    from aligner.timing import time_untimed
+    said = ("houston we are at station two . okay copy that . there is a big boulder here with white clasts . "
+            "okay that is good . i will get a sample of the white clast . bag four seven six . copy four seven six . "
+            "now the gray matrix . okay that is good . that one is in bag four seven seven . and the soil beside it . "
+            "okay we see you on the television . we are moving on to the rake sample now").replace(' .', '').split()
+    segments, tape = _tape([(10 + 0.5 * k, w) for k, w in enumerate(said)])
+    text = ["Houston, we are at station 2.", "Okay, copy that.", "There is a big boulder here with white clasts.", "Okay, that is good.",
+            "I will get a sample of the white clast.", "Bag four seven six.", "Copy four seven six.", "Now the gray matrix.",
+            "Okay, that is good.", "That one is in bag four seven seven.", "And the soil beside it.", "Okay, we see you on the television.",
+            "We are moving on to the rake sample now."]
+    lines = [{'g': 1010, 's': 'Schmitt', 't': text[0]}] + [{'g': 1010, 's': 'x', 't': t, 'a': 1} for t in text[1:-1]] \
+        + [{'g': 1010 + 0.5 * said.index('moving') - 1, 's': 'Cernan', 't': text[-1]}]
+    cm = {'g': 1015, 's': 'Evans', 't': 'Houston, America. The mapping camera is off.'}   # the other loop's line, timed, in among them
+    lines.insert(4, cm)
+    assert time_untimed(lines, segments, tape, other_loop={id(cm)}) == 11
+    where = lambda t, nth=0: 1010 + 0.5 * [k for k in range(len(said)) if said[k:k + 2] == t.split()][nth]
+    got = {l['t']: l['g'] for l in lines if l is not cm}
+    assert abs([l['g'] for l in lines if l['t'] == 'Okay, that is good.'][1] - where('okay that', 1)) <= 1   # the second "that is good", not the first
+    assert abs(got['Now the gray matrix.'] - where('now the')) <= 1
+    assert abs(got['Okay, we see you on the television.'] - where('okay we')) <= 1
+    assert not any(l.get('a') for l in lines)
+
+
+def test_a_long_line_is_found_before_a_time_printed_late():
+    from aligner.timing import sync_to_tape
+    said = "okay houston there is the classic raindrop pattern over this fine debris".split()
+    segments, tape = _tape([(100 + 0.4 * k, w) for k, w in enumerate(said)] + [(200, 'copy'), (200.4, 'that'), (200.8, 'jack')])
+    lines = [{'g': 1158, 's': 'Schmitt', 't': "Okay, Houston. There's - the classic raindrop pattern over this fine debris."},   # printed 58 s late
+             {'g': 1200, 's': 'Parker', 't': 'Copy that, Jack.'}]
+    sync_to_tape(lines, segments, tape)
+    assert lines[0]['g'] == 1100.0 and lines[1]['g'] == 1200
+    # the short lines before it, printed late too, come back with it: where they're heard, or just before it
+    said2 = "okay charlie ready to copy roger go ahead over battery c is thirty seven point zero and we got an entry pad if you are ready".split()
+    segments, tape = _tape([(100 + 0.4 * k, w) for k, w in enumerate(said2)])
+    lines = [{'g': 1165, 's': 'Armstrong', 't': 'Okay, Charlie. Ready to copy?'}, {'g': 1167, 's': 'Duke', 't': 'Hmm.'},
+             {'g': 1170, 's': 'Armstrong', 't': 'Battery C is 37.0.'},
+             {'g': 1175, 's': 'Duke', 't': "And we got an entry PAD if you are ready."}]
+    sync_to_tape(lines, segments, tape)
+    battery = 1100 + 0.4 * said2.index('battery')
+    assert lines[0]['g'] == 1100.0 and lines[2]['g'] == pytest.approx(battery) and lines[3]['g'] == pytest.approx(1100 + 0.4 * said2.index('and'))
+    assert 1100 < lines[1]['g'] < battery   # (the one not heard: between the lines heard either side of it)
+    assert sorted(lines, key=lambda l: l['g'])[-1]['s'] == 'Duke'
+    # a line's words in order but strewn over minutes of other talk aren't the line said early
+    strewn = [(100, 'antares'), (100.4, 'this'), (100.8, 'is'), (101.2, 'houston'), (101.6, 'over')] \
+        + [(110 + 0.5 * k, w) for k, w in enumerate('go ahead houston we would like the pre liftoff configuration okay stand by'.split())] \
+        + [(160, 'how'), (160.4, 'do'), (160.8, 'you'), (161.2, 'read'), (161.6, 'that')]
+    segments, tape = _tape(strewn)
+    lines = [{'g': 1380, 's': 'Haise', 't': 'Antares, this is Houston. How do you read?'}]
+    sync_to_tape(lines, segments, tape)
+    assert lines[0]['g'] == 1380
+    segments, tape = _tape([(100 + 0.4 * k, w) for k, w in enumerate(said)] + [(200, 'copy'), (200.4, 'that'), (200.8, 'jack')])
+    short = [{'g': 1158, 's': 'Schmitt', 't': 'Okay, Houston. There is.'}]   # too short to be sure of that far off
+    sync_to_tape(short, segments, tape)
+    assert short[0]['g'] == 1158
+
+
+def test_apollo_17_capcoms_are_looked_up_on_the_clock_from_liftoff():
+    from aligner.common import MISSION, speaker_names
+    MISSION['n'] = '17'
+    try:
+        name = speaker_names('17', [])
+        # the orange soil, 142:46 from liftoff (145:26 on Mission Control's clock): Bob Parker has the moonwalk
+        assert name({'speaker': 'CC', 'getSeconds': 142 * 3600 + 46 * 60 + 57}) == 'Parker'
+        # after the first moonwalk, 122:19 from liftoff ("Thank you, Joe"): Joe Allen, whom the journal has from 124:5x on its clock
+        assert name({'speaker': 'CC', 'getSeconds': 122 * 3600 + 19 * 60 + 55}) == 'Allen'
+    finally:
+        MISSION['n'] = '11'

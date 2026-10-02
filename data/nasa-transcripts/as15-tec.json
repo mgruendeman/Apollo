@@ -41120,8 +41120,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 384622,
-"getApprox": true,
+"getSeconds": 384631,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Roger; 2 minutes and B0 seconds, Al.",
@@ -43134,17 +43134,17 @@
 "page": 348
 },
 {
-"getSeconds": 390628,
-"getApprox": true,
+"getSeconds": 390629,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
-"text": "...",
+"text": "see",
 "unsure": [],
 "page": 348
 },
 {
-"getSeconds": 390628,
-"getApprox": true,
+"getSeconds": 390630,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "- - Roger. Go ahead. We've had a site handover. It's complete now.",
@@ -43782,8 +43782,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1336271,
-"getApprox": false,
+"getSeconds": 390646,
+"getApprox": true,
 "hourOnly": false,
 "speaker": "?",
 "text": "surprised at the amount",
@@ -43792,7 +43792,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1336271,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43802,7 +43802,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1336271,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43812,8 +43812,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
-"getApprox": false,
+"getSeconds": 390646,
+"getApprox": true,
 "hourOnly": false,
 "speaker": "?",
 "text": "quite distinct. And I can",
@@ -43822,7 +43822,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43832,7 +43832,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43842,7 +43842,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43852,7 +43852,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43862,7 +43862,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43872,7 +43872,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43882,7 +43882,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43892,7 +43892,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -43902,7 +43902,7 @@
 "loop": "CM"
 },
 {
-"getSeconds": 1595711,
+"getSeconds": 390646,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
@@ -60945,7 +60945,7 @@
 "getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
-"text": "Al, this is Houston. Az spacecraft Endeavour swings majestically around the eastern limb of the Moon, all systems are GO.",
+"text": "Al, this is Houston. As spacecraft Endeavour swings majestically around the eastern limb of the Moon, all systems are GO.",
 "unsure": [],
 "page": 484,
 "loop": "CM"
@@ -61321,8 +61321,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 440030,
-"getApprox": true,
+"getSeconds": 440044,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "We're Just looking at the real-time electrical) both Signatures, when this - this thing is working - extending and retracting, Al. And, we'd like to have a hack so we will know when you - when we can start looking.",
@@ -73495,8 +73495,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 447932,
-"getApprox": true,
+"getSeconds": 447935,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Go ahead, Endeavour.",
@@ -73535,8 +73535,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 448288,
-"getApprox": true,
+"getSeconds": 448296,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "Roger, Karl. Right with you. Count down 45 seconds.",
@@ -84320,8 +84320,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 506308,
-"getApprox": true,
+"getSeconds": 506311,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "That's right. And the computer is yours.",
@@ -84330,8 +84330,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 506308,
-"getApprox": true,
+"getSeconds": 506316,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Okay. The only other important thing on this front side pass is to get up the camera pad to you. That's about the same page there - -",
@@ -84340,8 +84340,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 506308,
-"getApprox": true,
+"getSeconds": 506333,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "All right, go ahead.",
@@ -84350,8 +84350,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 506308,
-"getApprox": true,
+"getSeconds": 506334,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "- - Okay. The mapping camera photo pad starts 141:17:26; 144:09:B0. And right down below is the pan camera pad, 141:46:11; 142:01:31. And as a part of this, Just across the page there, at 141:45, we would like to move down that statement, \"Mapping camera image motion, increase;\" move that down to 57 - 141: 57. And that 's all.",
@@ -84400,8 +84400,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 506468,
-"getApprox": true,
+"getSeconds": 506497,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Roger. 2B149.",
@@ -97330,8 +97330,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 518299,
-"getApprox": true,
+"getSeconds": 518301,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "Okay, I have my mapping camera photo pad.",
@@ -97340,8 +97340,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 518299,
-"getApprox": true,
+"getSeconds": 518303,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Roger.",
@@ -105476,7 +105476,7 @@
 "getApprox": true,
 "hourOnly": false,
 "speaker": "CC",
-"text": "Okay, Al, in case you don't have your Flight Plan handy, we need to start a P20 plus X forward in a couple of minutes, and that will be followed by deploy of the g,w_, ray boom.",
+"text": "Okay, Al, in case you don't have your Flight Plan handy, we need to start a P20 plus X forward in a couple of minutes, and that will be followed by deploy of the gamma ray boom.",
 "unsure": [],
 "page": 804,
 "loop": "CM"
@@ -105492,8 +105492,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 520131,
-"getApprox": true,
+"getSeconds": 520123,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Al, are we in time to get a mark from you to when you start the gamma ray boom out?",
@@ -105832,8 +105832,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 524180,
-"getApprox": true,
+"getSeconds": 524196,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "Very good. Very good. Hello, folks.",
@@ -106052,8 +106052,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 525040,
-"getApprox": true,
+"getSeconds": 525065,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Okay. I guess I should keep quiet awhile and let you look at Littrow coming up in about a minute.",
@@ -113830,8 +113830,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 526692,
-"getApprox": true,
+"getSeconds": 526703,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "Okay. Go ahead.",
@@ -121332,8 +121332,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 532602,
-"getApprox": true,
+"getSeconds": 532608,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "You - you did see - -",
@@ -121362,8 +121362,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 532619,
-"getApprox": true,
+"getSeconds": 532721,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Al, another bulletin from the lunar surface. The fellows have been back at the IM for some time and working again on the ATMEP. And the problems they had with the drill, they're trying to catch up with now. And yesterday they got in one of the heat sensors and then had trouble finding the time to get in the second one. But they did get the second one in today, and I guess now they're going to go after the core - the core drill sample.",
@@ -121382,8 +121382,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 532762,
-"getApprox": true,
+"getSeconds": 532765,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Yes, they are having a good time there, all right.",
@@ -124742,8 +124742,8 @@
 "page": 938
 },
 {
-"getSeconds": 545747,
-"getApprox": true,
+"getSeconds": 545760,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CDR",
 "text": "Yes, let's say hello to our old Endeavour buddy up there.",
@@ -124751,7 +124751,7 @@
 "page": 938
 },
 {
-"getSeconds": 545747,
+"getSeconds": 545760,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "CC",
@@ -124760,8 +124760,8 @@
 "page": 938
 },
 {
-"getSeconds": 545747,
-"getApprox": true,
+"getSeconds": 546757,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Falcon, Houston. Over.",
@@ -124769,8 +124769,8 @@
 "page": 938
 },
 {
-"getSeconds": 545747,
-"getApprox": true,
+"getSeconds": 546763,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CDR",
 "text": "Go ahead.",
@@ -127801,8 +127801,8 @@
 "page": 963
 },
 {
-"getSeconds": 586081,
-"getApprox": true,
+"getSeconds": 586091,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CDR",
 "text": "Okay. Well, can we proceed on here - and you want to give us the changes now? It might be better for us to proceed on out, and you change us as we drive or something.",
@@ -128345,7 +128345,7 @@
 "getApprox": false,
 "hourOnly": false,
 "speaker": "CDR",
-"text": "Okay, I'11 verify yours. Okay, your's are locked, and locked. Okay .... the covers over.",
+"text": "Okay, I'11 verify yours. Okay, your's are locked, and locked. Okay -.. the covers over.",
 "unsure": [],
 "page": 970
 },
@@ -135456,8 +135456,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 588714,
-"getApprox": true,
+"getSeconds": 588794,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "Roger; understand. TEI-52, SPS/G&N; 36003; plus 0.60, plus 1.07; 180:31:51.88; plus 3030.0, minus 0893.9, minus 0231.0; 180, 088, 346; two jet, 17 seconds, using quads B and D. And lambda Tig, is plus 177.77; and the pad assumes the plane change and asc - ascent REFSMMAT.",
@@ -143244,8 +143244,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 595816,
-"getApprox": true,
+"getSeconds": 595882,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Endeavour, this is Houston. Will you please give us ACCEPT.",
@@ -143314,8 +143314,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 596055,
-"getApprox": true,
+"getSeconds": 596064,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "AUTO.",
@@ -149378,7 +149378,7 @@
 "getApprox": false,
 "hourOnly": false,
 "speaker": "CDR",
-"text": "... really cling to that stuff. Getting it off your -",
+"text": "really cling to that stuff. Getting it off your -",
 "unsure": [],
 "page": 1114
 },
@@ -152269,8 +152269,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 605182,
-"getApprox": true,
+"getSeconds": 605773,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "Houston, Endeavour.",
@@ -152639,8 +152639,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 609975,
-"getApprox": false,
+"getSeconds": 609994,
+"getApprox": true,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Falcon, the computer is yours.",
@@ -153654,8 +153654,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 612119,
-"getApprox": true,
+"getSeconds": 612133,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CC",
 "text": "Endeavour, Houston. Best OMNI.",
@@ -153814,8 +153814,8 @@
 "loop": "CM"
 },
 {
-"getSeconds": 613055,
-"getApprox": true,
+"getSeconds": 613061,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "CMP",
 "text": "Roger, Houston; Endeavour. And did you get the gyro torquing angles, Ed?",

@@ -27,9 +27,12 @@ const photos = [
   ['a16-salute', '16/jump-salute.jpg', 'as16-113-18339', 'John Young leaps from the surface as he salutes the flag on the first moonwalk, with Orion, the rover and Stone Mountain behind him. Charlie Duke took the picture.'],
   ['a16-liftoff', '16/liftoff-tv.jpg', 'S72-35613', "Orion's ascent stage lifts off, seen live by the TV camera the crew left on the rover."],
   ['a16-ken-eva', '16/mattingly-eva.jpg', 'S72-37001', "Ken Mattingly outside Casper on the way home, retrieving film from the service module's cameras, with Charlie Duke at the hatch: a frame from 16mm film."],
-  ['a17_0000027', '17/launch.jpg', 'S72-55070', 'Apollo 17 lifts off at 12:33 a.m. EST, December 7, 1972 — the only night launch of the program.'],
-  ['a17_1125539csm', '17/challenger-on-surface.jpg', 'as17-134-20382', 'Challenger at Taurus-Littrow, with Harrison Schmitt, the flag and the rover — photographed two days after the landing.'],
-  ['A17A1702454', '17/last-eva-ladder.jpg', 'S72-55299', 'From the live TV feed: Schmitt climbs Challenger\'s ladder at the end of the final moonwalk, minutes before Cernan\'s last words on the surface.'],
+  ['a17-launch', '17/launch.jpg', 'S72-55070', 'Apollo 17 lifts off at 12:33 a.m. EST, December 7, 1972 — the only night launch of the program.'],
+  ['a17-landing', '17/challenger-on-surface.jpg', 'as17-134-20382', 'Challenger at Taurus-Littrow, with Harrison Schmitt, the flag and the rover — photographed two days after the landing.'],
+  ['a17-orange-soil', '17/orange-soil.jpg', 'as17-137-20990', 'The orange soil Harrison Schmitt found on the rim of Shorty crater on the second moonwalk, with the gnomon set beside it for scale and color.'],
+  ['a17-farewell', '17/last-eva-ladder.jpg', 'S72-55299', 'From the live TV feed: Schmitt climbs Challenger\'s ladder at the end of the final moonwalk, minutes before Cernan\'s last words on the surface.'],
+  ['a17-liftoff', '17/liftoff-tv.jpg', 'S72-55421', "Challenger's ascent stage lifts off from Taurus-Littrow, seen live by the TV camera on the rover, which Mission Control steered from Houston."],
+  ['a17-evans-eva', '17/evans-eva.jpg', 'as17-152-23391', "Ron Evans outside America on the way home, bringing in film from the service module's cameras; the cylinder at his side is the mapping camera's cassette."],
 ]
 
 export const photosByHighlight = Object.fromEntries(

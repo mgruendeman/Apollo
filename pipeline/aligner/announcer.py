@@ -7,6 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
+from .common import from_liftoff
 from .ocr_repair import LABELS  # noqa: F401 (defined there; the repair step uses it too)
 
 
@@ -179,6 +180,7 @@ def find_announcer(segments, lines, tape_words, heard_at):
         spoken, at_start = said_time(' '.join(x[2] for x in st['words']))
         if spoken is None:
             continue
+        spoken = from_liftoff(spoken)
         length = st['t1'] - st['t0']
         want = spoken + 20 if at_start else spoken + 40 - length
         if -90 <= st['get'] - want <= 150:

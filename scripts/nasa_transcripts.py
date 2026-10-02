@@ -199,12 +199,49 @@ def longest_forward_run(values):
     return keep
 
 
+_ocr_doc = {}
+
+
+def _ocr_page(job):
+    """One page's words by Tesseract (a worker process: it keeps the PDF open)."""
+    pdf_path, pno = job
+    if pdf_path not in _ocr_doc:
+        _ocr_doc[pdf_path] = pymupdf.open(pdf_path)
+    return page_words(_ocr_doc[pdf_path][pno], True)
+
+
+TAPE_HEAD = re.compile(r'(?i)^\W*tape\W+(\S+)')
+
+
+def tape_letter(lines):
+    """'A' or 'B' from a page's heading "Tape 80B/1" (Apollo 17: from
+    undocking to the rendezvous each tape was transcribed as two, A the lunar
+    module's link and B the command module's), or None."""
+    for ws in lines[:6]:
+        m = TAPE_HEAD.match(' '.join(w[2] for w in ws))
+        if m:
+            core = m.group(1).split('/')[0]
+            if len(core) >= 2 and core[-1] in 'AB' and re.search(r'[0-9lIiOo]', core[:-1]):
+                return core[-1]
+            return None
+    return None
+
+
 def extract(pdf_path, force_ocr=False, pages=None):
     doc = pymupdf.open(pdf_path)
     use_ocr = force_ocr or 'Acrobat Capture' in (doc.metadata.get('creator') or '')
-    rows = []
-    for pno in (pages if pages is not None else range(doc.page_count)):
-        lines = group_lines(page_words(doc[pno], use_ocr))
+    rows, letters = [], {}
+    page_list = list(pages if pages is not None else range(doc.page_count))
+    read = {}
+    if use_ocr and len(page_list) > 8:   # Tesseract page by page, on every core
+        import os
+        from concurrent.futures import ProcessPoolExecutor
+        os.environ.setdefault('OMP_THREAD_LIMIT', '1')
+        with ProcessPoolExecutor(max(1, (os.cpu_count() or 4) - 2)) as pool:
+            read = dict(zip(page_list, pool.map(_ocr_page, [(str(pdf_path), n) for n in page_list], chunksize=4)))
+    for pno in page_list:
+        lines = group_lines(read[pno] if pno in read else page_words(doc[pno], use_ocr))
+        letters[pno + 1] = tape_letter(lines)
         # The speaker column is where exact speaker codes line up.
         spk_x = sorted(w[0] for ws in lines for w in ws if w[2].strip('.:') in SPEAKERS and w[0] > 100)
         if not spk_x:
@@ -231,6 +268,8 @@ def extract(pdf_path, force_ocr=False, pages=None):
             elif rows and text and ws[0][0] >= text_x - 12:
                 rows[-1]['words'] += text
     streams = cm_link_streams(rows)
+    if not any(streams):
+        streams = tape_letter_streams(rows, letters)
     resolve_times(rows, streams)
     vocab = {w[2].lower().strip('.,?!;:') for r in rows for w in r['words']}
     out = []
@@ -291,6 +330,46 @@ def cm_link_streams(rows):
     return streams
 
 
+def tape_letter_streams(rows, letters):
+    """The command module's blocks where NASA printed no note of them but
+    transcribed each tape as two (Apollo 17: "Tape 80A", the lunar module's
+    link, then "Tape 80B", the command module's, over the same hours): 1, 2,
+    ... for the rows of each run of B pages, 0 for the rest. A heading read
+    as a letter counts only with another lettered page within two pages of it
+    (a lone "2B/3" is 28/3 misread). Between the first and last lettered
+    pages, a page whose letter can't be read goes by who speaks on it (the
+    CMP: the command module's; the CDR or LMP: the lunar module's), or else
+    with the page before it."""
+    known = sorted(p for p, x in letters.items() if x)
+    sure = [p for p in known if any(q != p and abs(q - p) <= 2 for q in known)]
+    if len(sure) < 20:
+        return [0] * len(rows)
+    first, last = sure[0], sure[-1]
+    speakers = {}
+    for r in rows:
+        speakers.setdefault(r['page'], []).append(r['speaker'])
+    page_letter, prev = {}, 'A'
+    for p in range(first, last + 1):
+        x = letters.get(p) if p in sure else None
+        if not x:
+            who = speakers.get(p, [])
+            cm, lm = who.count('CMP'), who.count('CDR') + who.count('LMP')
+            x = 'B' if cm > lm else 'A' if lm > cm else prev
+        page_letter[p] = prev = x
+    streams, block, before = [0] * len(rows), 0, 'A'
+    for i, r in enumerate(rows):
+        x = page_letter.get(r['page'], 'A')
+        if x == 'B' and before != 'B':
+            block += 1
+        before = x
+        if x == 'B':
+            streams[i] = block
+    return streams
+
+
+BLOCK_SLACK = 6 * 3600   # how far a command-module block's times may lie from the main transcript's on either side of it
+
+
 def resolve_times(rows, streams):
     """Each row's mission time, stream by stream (the main transcript, and
     each of the command module's blocks on its own clock). The typed times
@@ -302,7 +381,13 @@ def resolve_times(rows, streams):
     for s in sorted(set(streams)):
         idx = [i for i, x in enumerate(streams) if x == s]
         part = [rows[i] for i in idx]
-        trusted = longest_forward_run([r['getSeconds'] for r in part])
+        values = [r['getSeconds'] for r in part]
+        if s:   # a block's times lie near the main transcript's around it: one far off is a misread ("02 17 59 52" for day 04)
+            lo = next((rows[i]['getSeconds'] for i in range(idx[0] - 1, -1, -1) if not streams[i]), None)
+            hi = next((rows[i]['getSeconds'] for i in range(idx[-1] + 1, len(rows)) if not streams[i] and not rows[i]['getApprox']), None)
+            values = [None if v is None or (lo is not None and v < lo - BLOCK_SLACK) or (hi is not None and v > hi + BLOCK_SLACK)
+                      else v for v in values]
+        trusted = longest_forward_run(values)
         nxt, following = None, [None] * len(part)
         for i in range(len(part) - 1, -1, -1):
             following[i] = nxt

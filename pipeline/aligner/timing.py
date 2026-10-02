@@ -7,9 +7,22 @@ from pathlib import Path
 
 import numpy as np
 from .common import tokens, MIN_WORDS
-from .placement import find, find_start
+from .placement import find, find_start, _find_unique
 from .ocr_repair import _suspect, _core
 from .announcer import LABELS
+
+EARLY_S = 300   # how long before NASA's printed time a long line is still looked for
+
+
+def _speech_ends(at, j, n_words):
+    """About when a line found at word j (of the heard words' times `at`) has
+    been said: the end of that run of speech (pauses under 2 s), no longer
+    than the line could take."""
+    k, limit = j, at[j] + 2 + 0.6 * n_words
+    while k + 1 < len(at) and at[k + 1] - at[k] < 2 and at[k + 1] <= limit:
+        k += 1
+    return at[k] + 0.5
+
 
 def sync_to_tape(lines, segments, tape_words):
     """Each line starts where its words are heard on the tape, not at NASA's
@@ -37,20 +50,62 @@ def sync_to_tape(lines, segments, tape_words):
         lo_i, hi_i = bisect.bisect_left(starts, sg['from']), bisect.bisect_right(starts, sg['to'])
         heard = [(sg['get'] + (w[0] - sg['from']) * sg['rate'],) + tuple(w[1:]) for w in words[lo_i:hi_i]]
         at = [h[0] for h in heard]
-        cursor = 0
+        cursor, waiting = 0, []   # waiting: lines since the last one found that weren't: still at their printed times
+        said_until = None         # about when the last line found has been said
         for i in sorted(idx, key=lambda i: lines[i]['g']):
             toks = tokens(lines[i]['t'])
             if len(toks) < MIN_WORDS:
+                waiting.append(i)
                 continue
             lo = max(cursor, bisect.bisect_left(at, lines[i]['g'] - 30))
             hi = bisect.bisect_right(at, lines[i]['g'] + 60)
-            if lo >= hi:
-                continue
-            g, share = find_start(toks, heard, lo, hi)
+            g, share = find_start(toks, heard, lo, hi) if lo < hi else (None, 0.0)
+            early = False
+            if (g is None or share < 0.6) and len(toks) >= 6:
+                # a time NASA printed a minute or more late (Apollo 17's moonwalks: "04 23 58 52" on a line
+                # said at 57:54): a long line clearly said earlier, after the line before it
+                lo2, hi2 = max(cursor, bisect.bisect_left(at, lines[i]['g'] - EARLY_S)), min(len(heard), lo + len(toks))
+                if lo2 < hi2:
+                    # (its words together in one place, and no second place as good: over five minutes
+                    # of talk a line's words turn up in order here and there by chance)
+                    g, share = _find_unique(toks, heard, lo2, hi2)
+                    if g is not None and share < 0.8:
+                        g = None
+                    early = g is not None
             if g is None or share < 0.6:
+                waiting.append(i)
                 continue
             j = bisect.bisect_left(at, g)
-            cursor = j + max(1, int(0.7 * len(toks)))
+            if early:
+                # the lines before it whose printed times are late too come back with it, in order: each to
+                # where it's heard between the last line found and this one, or else to just before this one
+                c, back, found = cursor, [q for q in waiting if lines[q]['g'] > g], {}
+                for q in back:
+                    tq = tokens(lines[q]['t'])
+                    gq, sq = _find_unique(tq, heard, c, j) if len(tq) >= MIN_WORDS and c < j else (None, 0.0)
+                    if gq is not None and sq >= 0.6:
+                        found[q] = gq
+                        c = bisect.bisect_left(at, gq) + max(1, int(0.7 * len(tq)))
+                # (those not heard: spread over the gap between the lines heard either side of them, where
+                # they were said; often a stretch the tape missed, and they're marked so there)
+                kept = [lines[q]['g'] + 0.5 + 0.35 * len(tokens(lines[q]['t'])) for q in waiting if lines[q]['g'] <= g]
+                left, gap = max([x for x in [said_until] + kept if x is not None], default=None), []   # (after the lines that stay before it)
+                for q in back + [None]:
+                    if q is not None and q not in found:
+                        gap.append(q)
+                        continue
+                    right = found[q] if q is not None else g
+                    lo_g = max(left if left is not None else right - 3 * len(gap), right - 60)
+                    for k, u in enumerate(gap):
+                        lines[u]['g'] = round(lo_g + (right - lo_g) * k / len(gap) if right - lo_g > 1 else right - 0.5, 1)
+                        n += 1
+                    gap = []
+                    if q is not None:
+                        lines[q]['g'] = round(found[q], 1)
+                        left = _speech_ends(at, bisect.bisect_left(at, found[q]), len(tokens(lines[q]['t'])))
+                        n += 1
+            cursor, waiting = j + max(1, int(0.7 * len(toks))), []
+            said_until = _speech_ends(at, j, len(toks))
             if abs(g - lines[i]['g']) >= 0.5:
                 lines[i]['g'] = round(g, 1)
                 n += 1
@@ -116,11 +171,59 @@ def retime(lines, segments, tape_words, which, before=45, after=120):
     return n
 
 
-def time_untimed(lines, segments, tape_words):
+LONG_RUN = 8   # this many untimed lines in a row are lined up with the tape all together
+
+
+def _align_run(lines, run, before, heard):
+    """Times for a long run of untimed lines (Apollo 17 printed a time only
+    where an exchange starts: a minute or five of talk follows each), by
+    lining the whole run up with the words heard over its stretch at once:
+    the longest stretches of matching words settle first and the rest fall
+    in order between them. Looking for each line in turn after the one
+    before (as for a short run) lets one short line found too far on
+    ("Okay, that's good") carry every line after it past its place. The
+    timed line before goes in with the run, to take its own words.
+    A line is timed where at least 0.6 of its words fell in order, two of
+    them together; returns how many were."""
+    owner, flat = [], []
+    for i in ([before] if before is not None else []) + list(run):
+        for k, tok in enumerate(tokens(lines[i]['t'])):
+            owner.append((i, k))
+            flat.append(tok)
+    if not flat or not heard:
+        return 0
+    sm = difflib.SequenceMatcher(None, flat, [h[3] for h in heard], autojunk=False)
+    hits = {}
+    for a, b, size in sm.get_matching_blocks():
+        for d in range(size):
+            i, k = owner[a + d]
+            hits.setdefault(i, []).append((k, b + d))
+    done, last = 0, lines[before]['g'] if before is not None else None
+    for i in run:
+        got, n = hits.get(i, []), len(tokens(lines[i]['t']))
+        if not lines[i].get('a') or n < MIN_WORDS or len(got) < 0.6 * n:
+            continue
+        pair = next(((k, j) for (k, j), (k2, j2) in zip(got, got[1:]) if k2 == k + 1 and j2 == j + 1), None)
+        if pair is None:
+            continue
+        g = round(heard[pair[1]][0] - 0.3 * pair[0])
+        if last is not None:
+            g = max(g, last)   # (in order)
+        lines[i]['g'], last = g, g
+        lines[i].pop('a', None)
+        done += 1
+    return done
+
+
+def time_untimed(lines, segments, tape_words, other_loop=()):
     """Times for NASA's lines whose time the scan lost (or, on the
     moonwalks, printed as the day and hour only), from the tapes: between
     the timed lines either side, each is looked for in order among the words
-    heard on the tape over that stretch. Returns how many were timed."""
+    heard on the tape over that stretch. A long run is lined up all at once
+    (_align_run), over the stretch to the next timed line of its own loop:
+    the command module's lines (`other_loop`, ids), each with its printed
+    time, sit in among a moonwalk's and would cut the stretch short.
+    Returns how many were timed."""
     end = lambda sg: sg['get'] + (sg['to'] - sg['from']) * sg['rate']
     done = 0
     timed = [i for i, l in enumerate(lines) if not l.get('a')]
@@ -134,6 +237,16 @@ def time_untimed(lines, segments, tape_words):
         # (and if none of them is heard there, up to a quarter of an hour on, and
         # surer of each: timed lines from another loop can sit between them and
         # where they were said, as Apollo 14's 129:19, the LM's talk heard at 129:22)
+        if len(run) >= LONG_RUN:
+            n2 = next((i for i in range(n, len(lines)) if not lines[i].get('a') and id(lines[i]) not in other_loop), len(lines))
+            far = max(lines[n2]['g'] if n2 < len(lines) else g0 + 3600, g0 + 60)
+            mine = [i for i in range(p + 1, n2) if lines[i].get('a') and id(lines[i]) not in other_loop]
+            # (to where the next timed line starts and no further: its words, and a second "Houston, Apollo 11. Over."
+            # after it, aren't this run's)
+            found = _align_run(lines, mine, p if p >= 0 else None, heard_between(segments, tape_words, g0 - 1, min(far, g0 + 3600)))
+            done += found
+            if found:
+                continue
         for far, need, least in ((g1, 0.6, MIN_WORDS), (max(g1, g0 + 900), 0.8, 6)):
             heard = heard_between(segments, tape_words, g0, far)   # the tape words over [g0, far], in mission order
             heard_at = [h[0] for h in heard]
@@ -190,7 +303,7 @@ def place_unfound(lines, segments, tape_words, skip=()):
         if not l.get('a') or id(l) in skip:
             continue
         p = lines[i - 1]
-        nxt = next((x for x in lines[i + 1:] if not x.get('a')), None)
+        nxt = next((x for x in lines[i + 1:] if not x.get('a') and id(x) not in skip), None)   # (the next timed line of its own loop)
         hi = nxt['g'] if nxt else p['g'] + 300
         words = [w for w in _spoken(segments, tape_words, p['g'] - 1, hi + 8) if w[0] >= p['g'] - 1]
         if not words:

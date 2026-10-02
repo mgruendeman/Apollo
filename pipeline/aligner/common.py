@@ -18,6 +18,21 @@ def journal_file(kind, mission):
     if moved.exists():
         return moved
     return ROOT / ('src/data/clips' if kind == 'clips' else 'public/transcripts') / f'apollo{mission}.json'
+
+
+MISSION = {'n': '11'}   # the mission being processed (set in main)
+# Apollo 17 launched 2:40 late, and at 65 hours Mission Control set its clock ahead
+# by that much to match the Flight Plan. NASA's transcript keeps time from liftoff
+# (as the site does); the announcer gives the new clock's times from then on.
+CLOCK_SET_AHEAD = {'17': (65 * 3600, 2 * 3600 + 40 * 60)}   # mission: (from mission time, by)
+
+
+def from_liftoff(spoken):
+    """A time the announcer gives, as time from liftoff."""
+    at, by = CLOCK_SET_AHEAD.get(str(int(MISSION.get('n') or 0)), (None, 0))
+    return spoken - by if at is not None and spoken >= at + by else spoken
+
+
 TOKEN = re.compile(r"[a-z0-9]+")
 CREW = {'11': {'CDR': 'Armstrong', 'CMP': 'Collins', 'LMP': 'Aldrin'},
         '12': {'CDR': 'Conrad', 'CMP': 'Gordon', 'LMP': 'Bean'},
@@ -62,7 +77,8 @@ def speaker_names(mission, rows):
             return 'Spacecraft'
         return label if person(label) else None
 
-    capcoms = sorted((get_seconds(l['get']), l['speaker']) for lines in journal.values() for l in lines
+    # (the journal keeps Mission Control's clock: Apollo 17's, set ahead 2:40 at 65 hours, is brought back to time from liftoff)
+    capcoms = sorted((from_liftoff(get_seconds(l['get'])), l['speaker']) for lines in journal.values() for l in lines
                      if l.get('channel', 'air-to-ground') == 'air-to-ground' and l['speaker'] not in crew_names
                      and l['speaker'] not in ('Mission Control', 'PAO'))
     people = [c for c in capcoms if person(c[1])]
