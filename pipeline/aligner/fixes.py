@@ -53,6 +53,9 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
     "text", and "speaker" for the second part) cuts a line in two where the
     "split" text begins, two people run together by the scan.
 
+    Any of these but "review" is a listener's word on the line: it leaves the
+    review list, unless what's left of it is still visibly garbled.
+
     A corrected line whose time the scan lost, and any line split off, is
     timed afresh to where its words are heard (with the tapes given);
     "whole": true keys a fix on a line that is exactly its text (for short
@@ -113,6 +116,10 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                     l['t'] = l['t'].replace(f['from'], f['to'])
                     if l.get('a'):
                         fresh[id(l)] = 120
+                if not f.get('ok') and 'review' not in f:
+                    l['fixed'] = 1   # a listener's report has dealt with this line: off the review list (score_lines)
+                    if 'split' in f:
+                        second['fixed'] = 1
                 if f.get('retime'):
                     fresh[id(l)] = 120 if f['retime'] is True else f['retime']
                 if 'at' in f:

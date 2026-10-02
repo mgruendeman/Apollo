@@ -767,3 +767,27 @@ def test_apollo_14_capcoms_are_looked_up_as_the_journal_has_them():
         assert speaker_names('14', [])({'speaker': 'CC', 'getSeconds': 109 * 3600 + 45 * 60}) == 'Haise'
     finally:
         MISSION['n'] = '11'
+
+
+def test_a_line_a_report_has_dealt_with_leaves_the_review_list(tmp_path, monkeypatch):
+    from aligner import fixes as X
+    from aligner.review import score_lines
+    vocab = {'this', 'is', 'the', 'left', 'hand', 'bag', 'okay', 'you', 'have', 'it', 'page', 'before', 'update', 'and'}
+    lines = [{'g': 1000, 's': 'Unknown', 't': '... circuit breaker.', 'a': 1},                     # the listener names the speaker
+             {'g': 2000, 's': 'Collins', 't': 'Okay. You have it.'},                                # says it isn't on the recording
+             {'g': 3000, 's': 'Irwin', 't': 'The lefthand m_dsection is bag 2.'},                   # corrects it: "lefthand" is NASA's word
+             {'g': 4000, 's': 'Haise', 't': 'And the 2age before, yoor tonsorial,les update.', 'a': 1},   # names the speaker; the garble stays
+             {'g': 5000, 's': 'Unknown', 't': 'Boy, I hope - I hope - -', 'a': 1}]                  # a question still put to the listener
+    listed = lambda: sorted(lines[i]['g'] for _q, i, _why in score_lines(lines, [], {}, vocab))
+    assert listed() == [1000, 3000, 4000, 5000]   # (the second isn't listed until it's marked unheard)
+    f = tmp_path / 'fixes.json'
+    f.write_text(json.dumps({'11': [{'g': 1000, 'speaker': 'Armstrong', 'text': '... circuit breaker.'},
+                                    {'g': 2000, 'text': 'Okay. You have it.', 'unheard': True},
+                                    {'g': 3000, 'from': 'm_dsection', 'to': 'midsection'},
+                                    {'g': 4000, 'speaker': 'Mitchell', 'text': 'And the 2age before'},
+                                    {'g': 5000, 'text': 'Boy, I hope', 'review': "Who's speaking?"}]}))
+    monkeypatch.setattr(X, 'FIXES', f)
+    assert X.apply_fixes('11', lines) == 5
+    ranked = score_lines(lines, [], {}, vocab)
+    assert [lines[i]['g'] for _q, i, _why in ranked] == [5000, 4000]          # the question first, then the line still garbled
+    assert ranked[1][2] == '2 damaged words: 2age, tonsorial,les'            # ("yoor" may be a word: only the plain garble is named)

@@ -233,6 +233,7 @@ def main():
         separators=(',', ':')))
     for l in lines:
         l.pop('ok', None)   # (the review list's business, not the site's)
+        l.pop('fixed', None)
         l.pop('heard', None)
         l.pop('review', None)
     timeline = {'mission': m, 'segments': segments, 'lines': lines, 'announcer': announcer, 'over': over}

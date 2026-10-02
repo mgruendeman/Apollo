@@ -24,6 +24,8 @@ from .ocr_repair import _core, _suspect
 LOOKALIKE_MAX_DIST = 2
 # the same word as heard, spelled NASA's way (a CapCom's name, the CSM's British spelling)
 SOUNDS_SAME = {('karl', 'carl'), ('endeavour', 'endeavor')}
+# a word the scan plainly mangled: a stray mark or digit inside it ("w__", "2age", "tonsorial,les"), not just an unusual word ("wristrings")
+GARBLE = re.compile(r"[^A-Za-z0-9'&/.\-]|[A-Za-z]\d|\d[A-Za-z]{2}")
 
 
 def _heard_window(line, segments, tape_words, gets):
@@ -103,6 +105,13 @@ def score_lines(lines, segments, tape_words, vocab, common=None):
         if l.get('review'):   # a question a hand fix asks a listener (Who's speaking?): first on the list
             score = 100
             reasons.insert(0, l['review'])
+        if l.get('fixed') and not l.get('review'):
+            # a listener's report has dealt with it (the words, the speaker, where it's heard, or that it isn't):
+            # what the list would say of it they've already judged. Only garble still in it brings it back.
+            garbled = [w for w in damaged if GARBLE.search(_core(w)[1])]
+            if not garbled:
+                continue
+            score, reasons = min(60, 20 * len(garbled)) + 5, [f"{len(garbled)} damaged word{'s' if len(garbled) > 1 else ''}: {', '.join(garbled[:3])}"]
         if score >= 25:
             l['q'] = min(100, score)
             l['why'] = ' · '.join(reasons)
