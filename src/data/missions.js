@@ -158,6 +158,7 @@ export const missions = [
     launchUtc: '1971-01-31T21:03:02Z',
     durationSeconds: 777718, // 216:01:58
     landingSeconds: 389709, // touchdown at GET 108:15:09
+    tapesNote: "Times here run from liftoff; from 55 hours on, the announcer's times are 40 minutes ahead, because Mission Control set its clock forward to make up for the launch's weather hold.",
     events: { tli: '002:34:33', loi: '081:56:41', liftoff: '141:45:40', lmJettison: '145:44:58', tei: '148:36:02', cmSep: '215:32:42' },
     csmName: 'Kitty Hawk',
     lmName: 'Antares',
@@ -209,7 +210,7 @@ export const missions = [
     durationSeconds: 957065, // 265:51:05
     landingSeconds: 376175, // touchdown at GET 104:29:35
     // (archive.org's Apollo 16 tapes are 657-AAA to 710-AAA, without 684 and 685)
-    tapesNote: "Two of NASA's tapes are missing from archive.org: from 122:14 to 125:23, the end of the first moonwalk, there's no recording here.",
+    tapesNote: "Two of NASA's tapes are missing from archive.org: from 122:14 to 125:23, the end of the first moonwalk, there's no recording here. Times here run from liftoff; the announcer's times are 12 minutes ahead from 118 hours on and 24 hours 46 minutes ahead from 202 hours on, because Mission Control twice set its clock forward to match the flight plan.",
     events: { tli: '002:39:28', loi: '074:28:28', liftoff: '175:31:48', lmJettison: '195:00:12', tei: '200:21:33', cmSep: '265:22:23' },
     csmName: 'Casper',
     lmName: 'Orion',

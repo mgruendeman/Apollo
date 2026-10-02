@@ -65,6 +65,7 @@ def strip_notes(text):
     """A row's text without NASA's notes on the command module's link."""
     return re.sub(r'\s{2,}', ' ', LUNAR_REV.sub('', CM_NOTES.sub('', CM_BANNER.sub('', text)))).strip()
 OCR_DPI = 300
+SECOND_OCR_DPI = 200
 
 
 def edit_distance(a, b):
@@ -88,20 +89,24 @@ def closest_speaker(raw):
     return best if edit_distance(raw, best) <= max(1, len(best) // 2) else '?'
 
 
-def page_words(page, use_ocr):
+def page_words(page, use_ocr, dpi=OCR_DPI):
     """[(x, y, text, confidence)] in PDF points."""
     if not use_ocr:
         return [(w[0], (w[1] + w[3]) / 2, w[4], 100.0) for w in page.get_text('words')]
-    png = page.get_pixmap(dpi=OCR_DPI, colorspace=pymupdf.csGRAY).tobytes('png')
+    png = page.get_pixmap(dpi=dpi, colorspace=pymupdf.csGRAY).tobytes('png')
     out = subprocess.run(['tesseract', '-', '-', '--psm', '6', 'tsv'], input=png,
                          capture_output=True, check=True).stdout.decode()
-    scale = 72 / OCR_DPI
-    words = []
-    for r in csv.DictReader(io.StringIO(out), delimiter='\t', quoting=csv.QUOTE_NONE):
-        if r['level'] == '5' and r['text'].strip():
-            y = (int(r['top']) + int(r['height']) / 2) * scale
-            words.append((int(r['left']) * scale, y, r['text'], float(r['conf'])))
-    return words
+    scale = 72 / dpi
+    read = [r for r in csv.DictReader(io.StringIO(out), delimiter='\t', quoting=csv.QUOTE_NONE)
+            if r['level'] == '5' and r['text'].strip()]
+    # Every word takes the height of the line Tesseract read it in (the middle
+    # one of that line's words): on a page scanned at a slight tilt (Apollo 8's)
+    # a line's two ends differ by more than the lines are told apart by.
+    heights = {}
+    for r in read:
+        heights.setdefault((r['block_num'], r['par_num'], r['line_num']), []).append(int(r['top']) + int(r['height']) / 2)
+    middle = {k: sorted(v)[len(v) // 2] * scale for k, v in heights.items()}
+    return [(int(r['left']) * scale, middle[(r['block_num'], r['par_num'], r['line_num'])], r['text'], float(r['conf'])) for r in read]
 
 
 def group_lines(words):
@@ -127,11 +132,15 @@ def parse_hour(tokens):
     return (int(d) * 24 + int(h)) * 3600
 
 
-def get_pattern(tokens):
+def get_pattern(tokens, read_by_ocr=False):
     """A time with smudged digits ("00 02 25 _1") as 8 characters, '?' for
-    each unreadable digit, or None when it isn't a time at all."""
-    chars = ''.join(t.translate(DIGIT_FIX) for t in tokens)
-    chars = re.sub(r'[^0-9_]', '', chars).replace('_', '?')
+    each unreadable digit, or None when it isn't a time at all. In a
+    Tesseract reading a smudged digit comes out as any character ("3%" for
+    34, "he" for 42): each one inside a group counts as unreadable."""
+    if read_by_ocr:
+        chars = ''.join(re.sub(r'[^0-9]', '?', t.strip('.,:;\'"`-').translate(DIGIT_FIX)) for t in tokens)
+    else:
+        chars = re.sub(r'[^0-9_]', '', ''.join(t.translate(DIGIT_FIX) for t in tokens)).replace('_', '?')
     return chars if len(chars) == 8 and 0 < chars.count('?') <= 3 else None
 
 
@@ -204,10 +213,10 @@ _ocr_doc = {}
 
 def _ocr_page(job):
     """One page's words by Tesseract (a worker process: it keeps the PDF open)."""
-    pdf_path, pno = job
+    pdf_path, pno, dpi = job
     if pdf_path not in _ocr_doc:
         _ocr_doc[pdf_path] = pymupdf.open(pdf_path)
-    return page_words(_ocr_doc[pdf_path][pno], True)
+    return page_words(_ocr_doc[pdf_path][pno], True, dpi)
 
 
 TAPE_HEAD = re.compile(r'(?i)^\W*tape\W+(\S+)')
@@ -227,9 +236,14 @@ def tape_letter(lines):
     return None
 
 
-def extract(pdf_path, force_ocr=False, pages=None):
+def needs_ocr(doc):
+    """The early scans (Apollo 7-10) carry a garbled 1999 text layer: read afresh."""
+    return 'Acrobat Capture' in (doc.metadata.get('creator') or '')
+
+
+def extract(pdf_path, force_ocr=False, pages=None, dpi=OCR_DPI):
     doc = pymupdf.open(pdf_path)
-    use_ocr = force_ocr or 'Acrobat Capture' in (doc.metadata.get('creator') or '')
+    use_ocr = force_ocr or needs_ocr(doc)
     rows, letters = [], {}
     page_list = list(pages if pages is not None else range(doc.page_count))
     read = {}
@@ -238,9 +252,9 @@ def extract(pdf_path, force_ocr=False, pages=None):
         from concurrent.futures import ProcessPoolExecutor
         os.environ.setdefault('OMP_THREAD_LIMIT', '1')
         with ProcessPoolExecutor(max(1, (os.cpu_count() or 4) - 2)) as pool:
-            read = dict(zip(page_list, pool.map(_ocr_page, [(str(pdf_path), n) for n in page_list], chunksize=4)))
+            read = dict(zip(page_list, pool.map(_ocr_page, [(str(pdf_path), n, dpi) for n in page_list], chunksize=4)))
     for pno in page_list:
-        lines = group_lines(read[pno] if pno in read else page_words(doc[pno], use_ocr))
+        lines = group_lines(read[pno] if pno in read else page_words(doc[pno], use_ocr, dpi))
         letters[pno + 1] = tape_letter(lines)
         # The speaker column is where exact speaker codes line up.
         spk_x = sorted(w[0] for ws in lines for w in ws if w[2].strip('.:') in SPEAKERS and w[0] > 100)
@@ -250,6 +264,12 @@ def extract(pdf_path, force_ocr=False, pages=None):
         firsts = sorted(w[0] for ws in lines for w in ws if w[0] > col + 20)
         text_x = min(firsts) if firsts else col + 40
         for ws in lines:
+            if use_ocr:
+                # specks on the old scans are read as stray marks: left of the text a word has a letter
+                # or digit in it, and a lone "|" anywhere is the page's edge
+                ws = [w for w in ws if w[2] != '|' and (w[0] >= text_x - 12 or re.search(r'[A-Za-z0-9]', w[2]))]
+                if not ws:
+                    continue
             if HEADER.match(' '.join(w[2] for w in ws)):
                 continue
             spk = [w for w in ws if abs(w[0] - col) <= 14]
@@ -262,11 +282,14 @@ def extract(pdf_path, force_ocr=False, pages=None):
                 rows[-1]['words'] += text
             elif spk:
                 stamp = [w[2] for w in ws if w[0] < col - 14]
-                rows.append({'getSeconds': parse_get(stamp), 'hour': parse_hour(stamp), 'pattern': get_pattern(stamp),
+                while use_ocr and len(stamp) > 1 and len(re.sub(r'\D', '', ''.join(t.translate(DIGIT_FIX) for t in stamp))) > 8:
+                    stamp = stamp[1:]   # (a punch hole or the page's edge read as a character before the time)
+                rows.append({'getSeconds': parse_get(stamp), 'hour': parse_hour(stamp), 'pattern': get_pattern(stamp, use_ocr),
                              'speaker': closest_speaker(spk[0][2]),
                              'words': text, 'page': pno + 1})
-            elif rows and text and ws[0][0] >= text_x - 12:
-                rows[-1]['words'] += text
+            elif rows and text and (ws[0][0] >= text_x - 12 or use_ocr and len(ws) - len(text) <= 2
+                                    and all(len(w[2]) <= 3 for w in ws if w[0] < text_x - 12)):
+                rows[-1]['words'] += text   # (a line carried on; on the old scans, past a speck or two read as "C)", "7:")
     streams = cm_link_streams(rows)
     if not any(streams):
         streams = tape_letter_streams(rows, letters)
@@ -486,7 +509,9 @@ def extract_merged(pdf_path, pages=None, cache=None):
             path.write_text(json.dumps(rows))
         return rows
     old = reading('embedded')
-    new = reading('tesseract', force_ocr=True)
+    # (an early scan's first reading is Tesseract's already: its second is at another resolution,
+    # where Tesseract misreads different words and digits)
+    new = reading('tesseract', force_ocr=True, **({'dpi': SECOND_OCR_DPI} if needs_ocr(pymupdf.open(pdf_path)) else {}))
     words = [w.lower().strip('.,?!;:"()') for r in old + new for w in r['text'].split()]
     from collections import Counter
     seen = Counter(words)

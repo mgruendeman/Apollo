@@ -585,7 +585,14 @@ def test_apollo_17_announcer_times_after_the_clock_was_set_ahead():
     assert from_liftoff(60 * 3600) == 60 * 3600                  # before 65 hours: as said
     assert from_liftoff(115 * 3600) == 115 * 3600 - 9600         # "Apollo Control at 115 hours": 112:20 from liftoff
     MISSION['n'] = '16'
-    assert from_liftoff(115 * 3600) == 115 * 3600
+    assert from_liftoff(115 * 3600) == 115 * 3600                       # Apollo 16: before its first update
+    assert from_liftoff(139 * 3600 + 25 * 60) == 139 * 3600 + 13 * 60 + 12   # 11:48 ahead from 118:06
+    assert from_liftoff(240 * 3600 + 38 * 60) == 215 * 3600 + 52 * 60   # and 24:46 ahead from 202:18
+    MISSION['n'] = '14'
+    assert from_liftoff(50 * 3600) == 50 * 3600
+    assert from_liftoff(142 * 3600) == pytest.approx(141 * 3600 + 19 * 60 + 57.1)   # 40:02.9 ahead from 54:53
+    MISSION['n'] = '11'
+    assert from_liftoff(150 * 3600) == 150 * 3600
 
 
 def test_page_headings_the_scan_ran_into_a_line_are_taken_out():
@@ -699,5 +706,64 @@ def test_apollo_17_capcoms_are_looked_up_on_the_clock_from_liftoff():
         assert name({'speaker': 'CC', 'getSeconds': 142 * 3600 + 46 * 60 + 57}) == 'Parker'
         # after the first moonwalk, 122:19 from liftoff ("Thank you, Joe"): Joe Allen, whom the journal has from 124:5x on its clock
         assert name({'speaker': 'CC', 'getSeconds': 122 * 3600 + 19 * 60 + 55}) == 'Allen'
+    finally:
+        MISSION['n'] = '11'
+
+
+# The announcer through a rest period: the recorder ran only while he spoke,
+# so the hourly announcements sit back to back on the tape
+MORE_SAID_TIMES = [
+    ('This is Apollo Control at 65 hours.', [(65 * 3600, 'open')]),
+    ("This is Apollo Control, it's 66 hours one minute, Apollo 15 at present time.", [(66 * 3600 + 60, 'open')]),
+    ('This is Apollo Control Houston at 90 hours at 10 minutes down to the flight.', [(90 * 3600 + 600, 'open')]),
+    ('At 67 hours, this Apollo Control.', [(67 * 3600, 'close')]),
+    ('This is Apollo Control at 200 hours 53 minutes.', [(200 * 3600 + 53 * 60, 'open')]),      # (past 200 hours: Apollo 15, 16, 17)
+    ('This is Apollo control at 113 hours, 53.', []),                                             # (minutes he didn't finish: not "on the hour")
+    ('This is Mission Control Houston at 172 hours, 28 minutes.', [(172 * 3600 + 28 * 60, 'open')]),
+    ('Apollo control Houston, now 175 hours at 31 minutes.', [(175 * 3600 + 31 * 60, 'open')]),
+    ('The clock on the front screen of mission control here is showing a wake time 7 hours 22 minutes from now.', []),
+    ('This is Apollo Control at 62 hours, 21 minutes. We have secured. At 62 hours, 22 minutes, this is Mission Control Houston.',
+     [(62 * 3600 + 21 * 60, 'open'), (62 * 3600 + 22 * 60, 'close')]),
+]
+
+
+@pytest.mark.parametrize('text, expected', MORE_SAID_TIMES)
+def test_every_time_the_announcer_gives(text, expected):
+    from aligner.announcer import said_times
+    assert [(s, kind) for _at, s, kind in said_times(text)] == expected
+
+
+def test_announcements_back_to_back_on_the_tape_each_go_to_the_time_given():
+    from aligner.announcer import find_announcer
+    from aligner.common import MISSION
+    MISSION['n'] = '15'
+    words = _spoken((100, 'This is Apollo Control at 62 hours, 21 minutes. We have secured the voice communications with Apollo 15 now.'),
+                    (108, 'At 62 hours, 22 minutes, this is Mission Control Houston.'),
+                    (113, 'This is Apollo Control at 65 hours. The crew now about two and a half hours into their rest period.'),
+                    (121, 'This is Apollo Control at 68 hours. All systems functioning normally on the spacecraft.'),
+                    (128, 'At 68 hours, one minute, this is Apollo Control.'))
+    start = 62 * 3600 + 21 * 60 + 20 - 100   # the tape piece is placed by his first announcement
+    segments = [{'tape': 'T', 'from': 0, 'to': 200, 'get': start, 'rate': 1.0}]
+    spans, over, said = find_announcer(segments, [], {'T': (words,)}, {'T': []})
+    at = {l['t']: l['g'] for l in said}
+    assert abs(at['This is Apollo Control at 62 hours, 21 minutes.'] - (62 * 3600 + 21 * 60 + 20)) <= 2      # stays where it was
+    assert abs(at['This is Apollo Control at 65 hours.'] - (65 * 3600 + 20)) <= 2                              # each of the others out to its own hour
+    assert abs(at['This is Apollo Control at 68 hours.'] - (68 * 3600 + 20)) <= 2
+    assert at['At 68 hours, one minute, this is Apollo Control.'] > at['All systems functioning normally on the spacecraft.'] > at['This is Apollo Control at 68 hours.']
+    assert len(spans) == 3 and len([s for s in segments if s.get('spoken')]) == 2
+    # one announcement that runs on in step with its own clock isn't cut
+    words = _spoken((100, 'This is Apollo Control at 62 hours, 21 minutes. We have secured the voice communications.'),
+                    (160, 'At 62 hours, 22 minutes, this is Apollo Control.'))
+    segments = [{'tape': 'T', 'from': 0, 'to': 200, 'get': start, 'rate': 1.0}]
+    spans, over, said = find_announcer(segments, [], {'T': (words,)}, {'T': []})
+    assert len(segments) == 1 and not any(s.get('spoken') for s in segments)
+
+
+def test_apollo_14_capcoms_are_looked_up_as_the_journal_has_them():
+    from aligner.common import MISSION, speaker_names
+    MISSION['n'] = '14'   # (its journal keeps time from liftoff through the clock update: nothing to undo)
+    try:
+        # Fred Haise until 110:05; 40 minutes out, this would be Bruce McCandless, who took over then
+        assert speaker_names('14', [])({'speaker': 'CC', 'getSeconds': 109 * 3600 + 45 * 60}) == 'Haise'
     finally:
         MISSION['n'] = '11'

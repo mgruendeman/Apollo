@@ -15,8 +15,18 @@ NUMBER_WORDS = {w: i for i, w in enumerate(
     'zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen '
     'seventeen eighteen nineteen'.split())}
 NUMBER_WORDS.update({w: 10 * i for i, w in enumerate('_ _ twenty thirty forty fifty sixty seventy eighty ninety'.split()) if i >= 2})
-SAID_TIME = re.compile(r"apollo control,? (?:houston,? )?(?:at )?([\w -]+?) hours?,? (?:and )?([\w -]+?) minutes"
-                       r"|(?:at |)([\w -]+?) hours?,? (?:and )?([\w -]+?) minutes[\w ,]*?,? this is apollo control", re.I)
+_NUM = r"(?:\d|(?:" + '|'.join(sorted(NUMBER_WORDS, key=len, reverse=True)) + r")\b)"
+_WHO = r"(?:apollo|mission) control,? (?:houston,? )?"
+# "This is Apollo Control at 59 hours, 9 minutes" ("it's 66 hours one minute", "at 90 hours at 10 minutes");
+# his sign-off "At 78 hours, 58 minutes ..., this is Apollo Control"; and each on the hour, with no minutes
+# ("This is Apollo Control at 65 hours.", "At 67 hours, this is Apollo Control.")
+SAID_TIME = [
+    ('open', re.compile(_WHO + r"(?:at |it'?s |it is )?([\w -]+?) hours?,? (?:and |at |of |is )?([\w -]+?) minutes?\b", re.I)),
+    ('close', re.compile(r"(?:at |)([\w -]+?) hours?,? (?:and )?([\w -]+?) minutes?\b[\w ,]*?,? this is (?:apollo|mission) control", re.I)),
+    ('open', re.compile(_WHO + r"(?:at |it'?s |it is )([\w-]+(?: [\w-]+){0,3}?) hours?\b(?!,? (?:and |at |of |is )?" + _NUM + r")()", re.I)),
+    ('close', re.compile(r"\bat ([\w-]+(?: [\w-]+){0,3}?) hours?,? this (?:is )?(?:apollo|mission) control()", re.I)),
+]
+LAST_HOUR = 320   # (Apollo 17 ran 302 hours, and Mission Control's clock 2:40 ahead of that)
 
 
 RADIO_WORDS = {'roger', 'copy', 'okay', 'ok', 'affirmative', 'negative', 'wilco', 'readback'}
@@ -60,15 +70,97 @@ def _number(text):
     return n if seen else None
 
 
+def said_times(text):
+    """Every mission time the announcer gives in `text`, in order: [(where
+    in the text, seconds, 'open' or 'close')], 'open' for the time he starts
+    an announcement with and 'close' for the one he signs off with."""
+    found = []
+    for kind, pattern in SAID_TIME:
+        for m in pattern.finditer(text):
+            h, mnt = m.group(1), m.group(2)
+            # ("Apollo Control Houston, now 175 hours": a word or two before the figure, not a sentence
+            # of them: "mission control here is showing a wake time 7 hours 22 minutes" is no announcement's time)
+            h = (int(h.split()[-1]) if len(h.split()) <= 3 else None) if h.split()[-1].isdigit() else _number(h)
+            mnt = _number(mnt) if mnt else 0
+            if h is not None and mnt is not None and h < LAST_HOUR and mnt < 60:
+                found.append((m.start(), m.end(), h * 3600 + mnt * 60, kind))
+    found.sort()
+    out, upto = [], -1
+    for a, b, seconds, kind in found:
+        if a >= upto:   # (one reading of each stretch of words)
+            out.append((a, seconds, kind))
+            upto = b
+    return out
+
+
 def said_time(text):
     """The mission time the announcer gives ("This is Apollo Control at 59
     hours, 9 minutes"), in seconds, and whether he says it at the start."""
-    for m in SAID_TIME.finditer(text):
-        h, mnt = (m.group(1), m.group(2)) if m.group(1) else (m.group(3), m.group(4))
-        h, mnt = _number(h.split()[-1] if h.split()[-1].isdigit() else h), _number(mnt)
-        if h is not None and mnt is not None and h < 200 and mnt < 60:
-            return h * 3600 + mnt * 60, m.start() < len(text) / 2
+    for at, seconds, _kind in said_times(text):
+        return seconds, at < len(text) / 2
     return None, None
+
+
+FAR_S = 12 * 3600      # an announcement on a placed tape is never moved further than this (a rest period is shorter)
+OUT_OF_STEP_S = 240   # a time he gives this far from where the one before puts it: the recorder was stopped between them
+
+
+def split_announcements(st):
+    """One stretch of his speech as the announcements in it. Through a rest
+    period the recorder ran only while he spoke, so the hourly announcements
+    sit one after another on the tape with no gap, and are found as one
+    stretch; the first time he gives would place them all. It's cut where a
+    time he gives doesn't follow from the one before: at the start of the
+    sentence that opens the later announcement ("This is Apollo Control at
+    65 hours"), or, where it only signs off with its time, after the sign-off
+    before it (else at his last "this is Apollo Control" between the two,
+    else at the longest pause)."""
+    words = st['words']
+    starts, pos = [], 0
+    for x in words:
+        starts.append(pos)
+        pos += len(x[2]) + 1
+    text = ' '.join(x[2] for x in words)
+    said = [(bisect.bisect_right(starts, at) - 1, from_liftoff(seconds), kind) for at, seconds, kind in said_times(text)]
+    if len(said) < 2:
+        return [st]
+
+    def sentence_start(k, floor):
+        while k > floor and not ends_sentence(words[k - 1][2]):
+            k -= 1
+        return k
+
+    def sentence_end(k):
+        while k + 1 < len(words) and not ends_sentence(words[k][2]):
+            k += 1
+        return k + 1
+
+    toks = [re.sub(r"[^a-z]", '', x[2].lower()) for x in words]
+    cuts = []
+    for (i, s0, kind0), (j, s1, kind1) in zip(said, said[1:]):
+        if abs(s1 - (s0 + (words[j][0] - words[i][0]) * st['rate'])) <= OUT_OF_STEP_S:
+            continue
+        lo = min(sentence_end(i), j)
+        if kind1 == 'open':
+            cut = sentence_start(j, lo)
+        elif kind0 == 'close':
+            cut = lo
+        else:
+            opens = [k for k in range(lo, j) if toks[k] == 'this' and toks[k + 1:k + 2] == ['is'] and toks[k + 2:k + 3] in (['apollo'], ['mission'])
+                     and toks[k + 3:k + 4] == ['control'] and (k == 0 or ends_sentence(words[k - 1][2]))]
+            cut = opens[-1] if opens else max(range(lo, j + 1), key=lambda k: words[k][0] - words[k - 1][1], default=None) if lo <= j else None
+        if cut and (not cuts or cut > cuts[-1]) and cut < len(words):
+            cuts.append(cut)
+    if not cuts:
+        return [st]
+    pieces = []
+    for a, b in zip([0] + cuts, cuts + [len(words)]):
+        t0 = st['t0'] if a == 0 else words[a][0] - 0.3
+        t1 = st['t1'] if b == len(words) else min(words[b - 1][1] + 0.3, words[b][0] - 0.3)
+        last = b == len(words)
+        pieces.append({**st, 't0': t0, 't1': max(t1, t0), 'get': st['get'] + (t0 - st['t0']) * st['rate'], 'words': words[a:b],
+                       'over': st['over'] if last else None, 'over_words': st['over_words'] if last else []})
+    return pieces
 
 
 def find_announcer(segments, lines, tape_words, heard_at):
@@ -175,6 +267,7 @@ def find_announcer(segments, lines, tape_words, heard_at):
             i = floor = max(c if covers else b, tail) + 1
 
     # announcements recorded out of their time: out to the time he gives
+    stretches = [piece for st in stretches for piece in split_announcements(st)]
     moved = []
     for st in stretches:
         spoken, at_start = said_time(' '.join(x[2] for x in st['words']))
@@ -185,21 +278,35 @@ def find_announcer(segments, lines, tape_words, heard_at):
         want = spoken + 20 if at_start else spoken + 40 - length
         if -90 <= st['get'] - want <= 150:
             continue
+        if st['get'] > -5e6 and abs(st['get'] - want) > FAR_S:
+            continue   # (on a placed tape, half a day from where he is: a time to an event misheard as the time, "3 hours 52 minutes remaining")
         moved.append((st, want))
     for st, want in moved:
+        own = None
         for k, sg in enumerate(segments):   # cut it out of the piece it was in
             if sg['tape'] == st['tape'] and sg['from'] <= st['t0'] < sg['to']:
-                rest = []
+                own, rest = sg, []
                 if st['t0'] - sg['from'] > 1:
                     rest.append({**sg, 'to': st['t0']})
                 if sg['to'] - st['t1'] > 1:
                     rest.append({**sg, 'from': st['t1'], 'get': sg['get'] + (st['t1'] - sg['from']) * sg['rate']})
                 segments[k:k + 1] = rest
                 break
-        covered = any(sg['get'] < want + (st['t1'] - st['t0']) and end(sg) > want for sg in segments)
-        st['get'], st['rate'] = (None, 1.0) if covered else (want, 1.0)
+        length = st['t1'] - st['t0']
+        in_the_way = lambda w: [sg for sg in segments if sg['get'] < w + length and end(sg) > w]
+        block = in_the_way(want)
+        for _ in range(6):   # behind announcements already put there (two that give the same minute): straight after them
+            if not block or not all(sg.get('spoken') for sg in block):
+                break
+            want = max(end(sg) for sg in block) + 1
+            block = in_the_way(want)
+        if block and own is not None and not own.get('standin'):
+            # another tape plays at the time he gives: it stays where it is on its own tape, not lost
+            segments.append({**own, 'from': st['t0'], 'to': st['t1'], 'get': st['get']})
+            continue
+        st['get'], st['rate'] = (None, 1.0) if block else (want, 1.0)
         st['over'], st['over_words'] = None, []
-        if not covered:
+        if not block:
             segments.append({'tape': st['tape'], 'from': round(st['t0'], 2), 'to': round(st['t1'], 2), 'get': round(want, 2),
                              'rate': 1.0, 'anchors': 0, 'spoken': True})
     segments.sort(key=lambda sg: sg['get'])

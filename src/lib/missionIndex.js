@@ -80,10 +80,13 @@ export function tapePhaseAt(mission, g) {
   if (g < ORBIT_INSERTION_SECONDS) return 'launch'
   if (g < at('tli')) return 'earth-orbit'
   if (g < at('loi')) return 'transit-to-moon'
-  if (g < mission.landingSeconds - DESCENT_SECONDS) return 'lunar-orbit'
-  if (g < mission.landingSeconds + 60) return 'landing'
-  if (g < at('liftoff')) return 'surface'
-  if (g < at('lmJettison')) return 'ascent'
+  if (mission.landingSeconds != null) {
+    if (g < mission.landingSeconds - DESCENT_SECONDS) return 'lunar-orbit'
+    if (g < mission.landingSeconds + 60) return 'landing'
+    if (g < at('liftoff')) return 'surface'
+    if (g < at('lmJettison')) return 'ascent'
+  }
+  // (Apollo 8 went into lunar orbit and came home: no landing between the two burns)
   if (g < at('tei')) return 'lunar-orbit'
   if (g < at('cmSep')) return 'transit-to-earth'
   return 'splashdown'
@@ -92,7 +95,8 @@ export function tapePhaseAt(mission, g) {
 // A tape mission's chapters, by mission day and flight phase, over
 // [from, to]: [{ title, phase, day, from, to }].
 export function tapeChapters(mission, from, to) {
-  const cuts = new Set([from, to, ORBIT_INSERTION_SECONDS, mission.landingSeconds - DESCENT_SECONDS, mission.landingSeconds + 60])
+  const cuts = new Set([from, to, ORBIT_INSERTION_SECONDS])
+  if (mission.landingSeconds != null) cuts.add(mission.landingSeconds - DESCENT_SECONDS).add(mission.landingSeconds + 60)
   for (const get of Object.values(mission.events)) cuts.add(parseGet(get))
   for (let d = DAY; d < to; d += DAY) cuts.add(d)
   const sorted = [...cuts].filter((c) => c >= from && c <= to).sort((a, b) => a - b)

@@ -76,9 +76,11 @@ back underneath (`--dry 0.15`: without it the AI can make voices pump in and
 out on noisy tapes), and steady whines notched out. These are the defaults.
 
 **Tapes with known faults** are listed in `tape_fixes.json` and corrected
-as they're decoded: 037-AAA (Apollo 8) is recorded backwards, 11-03349
-(Apollo 11) runs slow at an uneven speed (sped up 1.33x, the best single
-match by ear). Add any others the checks turn up.
+as they're decoded: 11-03349 (Apollo 11) runs slow at an uneven speed (sped
+up 1.33x, the best single match by ear). Add any others the checks turn up.
+Tapes archive.org holds backward (Apollo 8's 037-AAA, and others on 14, 15
+and 17) are turned around on disk before anything reads them, the
+originals kept aside, so they need no entry there.
 
 `--atten-db` caps how much noise may be removed (in dB): lower sounds more
 natural, higher is cleaner but can make voices watery. Try other values
