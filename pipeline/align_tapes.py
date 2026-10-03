@@ -49,6 +49,8 @@ def main():
                     help="take the Flight Journal's wording where a line matches (off: NASA's text, repaired from the tapes)")
     ap.add_argument('--no-strict', action='store_true',
                     help="only warn about hand fixes that no longer match (default: stop, so a re-read can't lose a correction)")
+    ap.add_argument('--show', type=float, metavar='SECONDS',
+                    help='print the lines within 90 s of this mission time as the hand fixes see them (to key a fix on)')
     ap.add_argument('--cleaned', action='store_true',
                     help='play our cleaned copies (uploaded to <media>/audio/NN/<tape>.clean.m4a) instead of NASA\'s originals')
     args = ap.parse_args()
@@ -200,6 +202,10 @@ def main():
         # the recogniser's spellings of the stations in the announcer's words
         l['t'] = re.sub(r"\b[Cc]ana(?:rv|rb)[ao]n\b", 'Carnarvon', l['t'])
         l['t'] = re.sub(r"\bTann?anarive\b|\bTeneneriev\b", 'Tananarive', l['t'])
+    if args.show:   # the lines as a hand fix sees them (their text before the fixes and the later scrubbing): to key a fix on
+        for l in sorted(lines, key=lambda l: l['g']):
+            if abs(l['g'] - args.show) <= 90 and not l.get('c'):
+                print(f"  {float(l['g'])!r} {l['s']}{' (a)' if l.get('a') else ''}: {json.dumps(l['t'])}")
     hand = apply_fixes(m, lines, strict=not args.no_strict, segments=segments, tape_words=tape_words)
     lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
     # The scan's scraps, after the hand fixes (which key on the scraps they mend): a row with no word

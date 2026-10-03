@@ -1,12 +1,12 @@
 {
  "08": {
-  "announcerLines": 2232,
+  "announcerLines": 2294,
   "checkedFine": 0,
-  "corrected": 0,
-  "flagged": 1541,
-  "lines": 9246,
-  "notOnRecording": 427,
-  "recordedHours": 124.8,
+  "corrected": 15,
+  "flagged": 1507,
+  "lines": 9210,
+  "notOnRecording": 429,
+  "recordedHours": 129.9,
   "updated": "2026-10-03"
  },
  "11": {

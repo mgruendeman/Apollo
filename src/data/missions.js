@@ -24,17 +24,23 @@ export const missions = [
     summary:
       'The first crewed spacecraft to leave low Earth orbit, reach the Moon, and orbit it — ten lunar orbits on Christmas Eve, capped by a live reading from Genesis and the Earthrise photograph.',
     status: 'available',
-    clipsFile: 'apollo08',
-    clipCount: 1388,
+    timeline: 'apollo08', // whole-mission tapes: public/timeline/apollo08.json
     launchUtc: '1968-12-21T12:51:00Z',
     durationSeconds: 529242, // 147:00:42
+    // (archive.org's Apollo 8 tapes are 000-AAA to 049-AAA and 056-AAA; 013, 037 and 045 are held backward there and are turned on disk)
+    tapesNote: "NASA's typed transcript of this flight survives only as a rough scan, so more of its lines are flagged for a listen than on the later missions.",
+    events: { tli: '002:56:06', loi: '069:08:20', tei: '089:19:17', cmSep: '146:28:48' },
     csmName: null,
     lmName: null,
     spacecraftNote: 'The Command Module had no name (it flew as "Apollo 8"), and there was no Lunar Module; a dummy test article rode in its place.',
     objective: 'Fly the first crew to the Moon: ten orbits to prove the spacecraft, navigation and communications for a landing, and to photograph candidate landing sites.',
     highlights: [
-      { id: 'a08_0000000', title: 'Launch' },
-      { id: 'a08_0850219-onboard-nr', title: 'Christmas Eve: the Genesis reading' },
+      { id: 'a08-launch', at: '-000:00:30', title: 'Launch: the first crew on a Saturn V' },
+      { id: 'a08-tli', at: '002:27:00', title: '"You are GO for TLI": leaving Earth' },
+      { id: 'a08-earthrise', at: '075:49:20', title: 'Earthrise' },
+      { id: 'a08-genesis', at: '086:06:40', title: 'Christmas Eve: the Genesis reading' },
+      { id: 'a08-santa', at: '089:34:10', title: '"Please be informed there is a Santa Claus"' },
+      { id: 'a08-splashdown', at: '146:58:30', title: 'Splashdown' },
     ],
   },
   {

@@ -4,8 +4,12 @@
 // works from images.nasa.gov, resized for the web.
 
 const photos = [
-  ['a08_0000000', '08/launch.jpg', 'S68-56001', 'Apollo 8 lifts off from Pad 39A at 7:51 a.m. EST, December 21, 1968 — the first crewed Saturn V.'],
-  ['a08_0850219-onboard-nr', '08/earthrise.jpg', 'as08-14-2383', 'Earthrise, photographed from lunar orbit on December 24, 1968 — the same day as the crew\'s Christmas Eve broadcast.'],
+  ['a08-launch', '08/launch.jpg', 'S68-56001', 'Apollo 8 lifts off from Pad 39A at 7:51 a.m. EST, December 21, 1968 — the first crewed Saturn V.'],
+  ['a08-tli', '08/whole-earth.jpg', 'AS08-16-2593', 'The whole Western Hemisphere, from Newfoundland to Tierra del Fuego, photographed a few hours after the burn out of Earth orbit on December 21, 1968.'],
+  ['a08-earthrise', '08/earthrise.jpg', 'as08-14-2383', "Earthrise, photographed as Apollo 8 came round the Moon on its fourth orbit, December 24, 1968. The crew's words at that moment were caught only by the spacecraft's own recorder; here Houston is calling them as they reappear."],
+  ['a08-genesis', '08/goclenius.jpg', 'as08-13-2225', 'The crater Goclenius, with Magelhaens and Colombo beyond, photographed from lunar orbit on Christmas Eve, 1968 — the kind of view the crew described before reading from Genesis.'],
+  ['a08-santa', '08/mission-control.jpg', 'S68-56007', "Mission Control on December 23, 1968, the third day of the flight, with the Earth on the big screen as the crew televised it from 176,000 miles out."],
+  ['a08-splashdown', '08/recovery.jpg', 'S68-56304', 'The command module is hoisted aboard the USS Yorktown after splashdown in the Pacific on December 27, 1968.'],
   ['a10-0000254', '10/launch.jpg', '6975432', 'Apollo 10\'s Saturn V (SA-505) lifts off on May 18, 1969.'],
   ['a11-launch', '11/launch.jpg', '6901001', 'Apollo 11\'s Saturn V (SA-506) lifts off from Launch Complex 39A, July 16, 1969.'],
   ['a11-landing', '11/eagle-on-surface.jpg', 'as11-40-5927', 'Eagle at Tranquility Base, photographed by Neil Armstrong during the moonwalk a few hours after landing, with Buzz Aldrin unpacking experiments.'],

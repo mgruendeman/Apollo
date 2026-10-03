@@ -56,7 +56,7 @@ def main():
     (OUT / 'reports.html').write_text(REPORTS)
     # a button for each mission with a review list (public/review/transcript/apolloNN.json)
     listed = sorted(int(p.stem.removeprefix('apollo')) for p in (OUT / 'transcript').glob('apollo*.json'))
-    buttons = ' '.join(f'<button data-m="{n}" aria-pressed="{str(k == 0).lower()}">Apollo {n}</button>' for k, n in enumerate(listed))
+    buttons = ' '.join(f'<button data-m="{n:02d}" aria-pressed="{str(k == 0).lower()}">Apollo {n}</button>' for k, n in enumerate(listed))
     (OUT / 'transcript.html').write_text(TRANSCRIPT.replace('__MISSION_BUTTONS__', buttons))
     print(f'wrote {OUT}/index.html ({len(frames)} photos), reports.html and transcript.html')
 
@@ -201,7 +201,7 @@ button.play { border-color:var(--accent); color:var(--accent); }
 </main>
 <script>
 const PAGE = 100, AROUND = 2
-let mission = '11', order = 'rank', shown = PAGE
+let mission = (document.querySelector('[data-m][aria-pressed=true]') || { dataset: { m: '11' } }).dataset.m, order = 'rank', shown = PAGE
 let rows = [], lines = [], segs = [], gets = [], ext = null
 const around = new Map()   // card -> lines shown either side
 const list = document.getElementById('list')
