@@ -33,7 +33,7 @@ from pathlib import Path
 
 from aligner.common import ROOT, CREW, MIN_WORDS, SEARCH_S, tokens, speaker_names
 from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors
-from aligner.ocr_repair import FIXES, MISSION, repair_ocr, vocabulary
+from aligner.ocr_repair import FIXES, MISSION, junk_row, repair_ocr, scrap_after_sentence, vocabulary
 from aligner.announcer import find_announcer
 from aligner.timing import mark_drowned_out, mark_unheard, place_unfound, rebuild_from_tape, said_on_tape, sync_to_tape, time_untimed
 from aligner.fixes import apply_fixes, fix_printed_times, use_journal_text
@@ -164,7 +164,8 @@ def main():
     # (the command module's talk during a moonwalk that isn't on these tapes: no mending it from them)
     elsewhere = {id(l) for l in lines if id(l) in cm_loop and not said_on_tape(l, segments, tape_words)}
     repaired = repair_ocr(lines, segments, tape_words, skip=elsewhere)
-    rebuilt = rebuild_from_tape(lines, segments, tape_words, vocabulary(tape_words)[0])
+    known = vocabulary(tape_words)[0]
+    rebuilt = rebuild_from_tape(lines, segments, tape_words, known)
     # (after the mending: it reads each line against the tape where the line sat)
     spread = place_unfound(lines, segments, tape_words, skip=cm_loop)
     fixed = use_journal_text(m, lines) if args.journal_text else 0
@@ -201,6 +202,13 @@ def main():
         l['t'] = re.sub(r"\bTann?anarive\b|\bTeneneriev\b", 'Tananarive', l['t'])
     hand = apply_fixes(m, lines, strict=not args.no_strict, segments=segments, tape_words=tape_words)
     lines = [l for l in lines if l['t']]   # (lines a hand fix deleted)
+    # The scan's scraps, after the hand fixes (which key on the scraps they mend): a row with no word
+    # in it (a margin note read as a row, "eee") goes, and the handwriting read after a line's last
+    # sentence; a line a listener's report has dealt with is left as they left it.
+    for l in lines:
+        if not l.get('c') and not l.get('fixed'):
+            l['t'] = scrap_after_sentence(l['t'], known)
+    lines = [l for l in lines if l.get('c') or l.get('fixed') or not junk_row(l['t'], known)]
     # NASA's lines a listener heard inside one of the announcer's stretches (crew talk he played back): his stretch ends before them
     by_hand = sorted(l['g'] for l in lines if l.pop('placed', None))
     announcer = [[a, min([b] + [g - 0.3 for g in by_hand if a + 1 < g < b])] for a, b in announcer]

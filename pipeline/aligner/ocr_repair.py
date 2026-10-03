@@ -247,6 +247,69 @@ def _page_heading(text):
     return re.sub(r"\s+Page\s+\d{2,4}\s*$", '', text)
 
 
+def junk_row(text, vocab):
+    """A row with no word in it: handwriting in the margin of a page read as
+    a row of its own ("bee oy", "2 oY BO o ek ae", "eee") on the early scans.
+    A word is one the dictionary (or the tapes) know, a number, a code
+    ("P64", "REFSMMAT"), a name with its capital, or NASA's marks for a
+    break ("- -", "..."). A lone word with a capital is given the benefit
+    of the doubt ("Ahh!")."""
+    toks = text.split()
+    if not toks:
+        return True
+    if re.fullmatch(r"[-. *?!()]+", text.strip()):
+        return False
+    for t in toks:
+        word = re.sub(r"^[^A-Za-z0-9]+|[^A-Za-z0-9]+$", '', re.sub(r"'(?:s|t|d|m|ll|re|ve)[^A-Za-z]*$", '', t, flags=re.I))
+        if len(re.sub(r"[^A-Za-z]", '', word)) >= 4:
+            return False   # (a mangled word is still a word to mend or report: "_0TRAL", "(_aughter)")
+        for part in re.split(r"[-/]", word):
+            letters = re.sub(r"[^A-Za-z]", '', part)
+            if re.fullmatch(r"\d[\d.,:+]*", part) or re.fullmatch(r"[A-Z]+\d+[A-Z]*", part) or (letters.isupper() and len(letters) >= 2 and letters == part):
+                return False
+            if part.isalpha() and (len(part) >= 2 and (part.lower() in vocab or part.lower().rstrip('s') in vocab)
+                                   or part.lower() in ('a', 'i') or re.fullmatch(r"[A-Z][a-z]{2,}", part)):
+                return False
+    lone = re.sub(r"^[^A-Za-z0-9]+", '', toks[0])
+    return len(toks) >= 2 or not (lone[:1].isupper() and len(re.sub(r"[^A-Za-z]", '', lone)) >= 2)
+
+
+SHORT_WORDS = {'a', 'i', 'go', 'no', 'ok', 'oh', 'ah', 'ha', 'um', 'uh', 'eh', 'so', 'we', 'it', 'is', 'to', 'up', 'on', 'in', 'at', 'of', 'by',
+               'me', 'my', 'he', 'us', 'do', 'if', 'or', 'an', 'as', 'be', 'am', 'hi', 'yo'}   # (two letters the dictionary's two-letter junk isn't: "aa", "ga")
+
+
+def scrap_after_sentence(text, vocab):
+    """A line without the scraps after its last sentence: on the early scans
+    the margin's handwriting is read as a tail of letters ("Apollo 8 here.
+    ( . aot, ifr Coe x Fp ga MON Tey aa you # 4 a", "a Santa Claus. ASL y
+    ST"). The tail goes when no word of it is one the dictionary knows,
+    a number, or a name; NASA's own marks ("- -", "...") stay."""
+    m = None
+    for m in re.finditer(r"(?<=[A-Za-z0-9)\"])[.?!]['\")]?\s+(?=\S)", text):
+        pass
+    if m is None:
+        return text
+    tail = text[m.end():]
+    if re.fullmatch(r"[-. *?!()]+", tail.strip()):
+        return text
+    toks, words, scraps = [t for t in tail.split() if re.search(r"[A-Za-z0-9]", t)], 0, 0   # (not NASA's dashes and dots)
+    for t in toks:
+        if re.search(r"[^A-Za-z0-9'.,;:?!\"()/&+\-]", t):
+            scraps += 1   # (a character no typewriter has)
+        word = re.sub(r"^[^A-Za-z0-9]+|[^A-Za-z0-9]+$", '', re.sub(r"'(?:s|t|d|m|ll|re|ve)[^A-Za-z]*$", '', t, flags=re.I))
+        for part in re.split(r"[-/]", word):
+            if re.search(r"\d{2,}|\d[.:,]\d", part) or re.fullmatch(r"[A-Z][A-Z&]+", part) or re.fullmatch(r"[A-Z][a-z]{3,}", part) \
+                    or (part.isalpha() and len(part) >= 3 and part.lower() in vocab) or part.lower() in SHORT_WORDS:
+                words += 1
+                break
+        else:
+            if re.fullmatch(r"[a-z]{1,3}", word):
+                scraps += 1   # (a short run of letters that is no word: "aot", "ga", "aa")
+    if not toks or not scraps or 3 * words >= len(toks):
+        return text   # (a word among three scraps is a scrap too: "aa you # 4")
+    return text[:m.start() + 1]
+
+
 def _scrap_tail(text):
     """Drop a line's closing run of scraps (no two letters or digits
     together, not NASA's "..."), when it holds an OCR-junk character."""

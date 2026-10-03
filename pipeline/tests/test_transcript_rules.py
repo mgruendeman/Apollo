@@ -791,3 +791,31 @@ def test_a_line_a_report_has_dealt_with_leaves_the_review_list(tmp_path, monkeyp
     ranked = score_lines(lines, [], {}, vocab)
     assert [lines[i]['g'] for _q, i, _why in ranked] == [5000, 4000]          # the question first, then the line still garbled
     assert ranked[1][2] == '2 damaged words: 2age, tonsorial,les'            # ("yoor" may be a word: only the plain garble is named)
+
+
+def test_a_row_with_no_word_in_it_is_junk(vocab):
+    from aligner.ocr_repair import junk_row
+    for text in ('ee .', 'J', 'eee', 'vee', 'wae', ',', '~ @', 'en nee', '0k_y.', 'H_?'):
+        assert junk_row(text, vocab), text
+    for text in ('Go.', 'No.', "That's it.", 'Al?', 'Okey-dokey.', 'Roger-Roger.', 'Cut-off.', 'S-BAND T/R, T/R.', 'ULLAGE.', 'P64',
+                 'I -', "I'm ...", 'Ahh!', 'Uh-huh.', '108,285.1.', 'Fal - -', '- -', '...', '...?', '... )', '7 ***', '... REFSMMAT.',
+                 '\u2018America.', 'bee oy', '_0TRAL.', '(_aughter)', 'uKay.', 'Lay\u201d H - ia A AY oe ae iy we : ano were the first aay Ana God said, "let there be'):
+        assert not junk_row(text, vocab), text
+
+
+def test_handwriting_after_the_last_sentence_goes(vocab):
+    from aligner.ocr_repair import scrap_after_sentence as scrap
+    assert scrap('Go ahead, Houston. Apollo 8 here. ( . aot, ifr “ Coe x Fp ga MON Tey aa you # 4 a', vocab) == 'Go ahead, Houston. Apollo 8 here.'
+    assert scrap('Roger. Please be informed there is a Santa Claus. ASL y ST', vocab) == 'Roger. Please be informed there is a Santa Claus. ASL y ST'   # (codes in capitals: left for the review list)
+    assert scrap('Houston, Apollo 8. Over. 1', vocab) == 'Houston, Apollo 8. Over. 1'   # (a figure is never a scrap: "Roger. 0.9.")
+    assert scrap("Roger. We've got it. Over.", vocab) == "Roger. We've got it. Over."
+    assert scrap('Roger. Going to P00 and to ACCEPT, Houston.', vocab) == 'Roger. Going to P00 and to ACCEPT, Houston.'
+    assert scrap('Okay. We got 30 minutes to the burn.', vocab) == 'Okay. We got 30 minutes to the burn.'
+    assert scrap('Stand by. - -', vocab) == 'Stand by. - -'
+    assert scrap('Roger. Copy. 112:53:48.', vocab) == 'Roger. Copy. 112:53:48.'
+    assert scrap("That's affirmative. Over. Say again, Jim?", vocab) == "That's affirmative. Over. Say again, Jim?"
+    for kept in ('Roger. 0.9.', 'MARK it. YAW 1 -', 'Roger. LM/CM DELTA-P, 0.2.', 'Roger. And turning over a page to 60 hours. And - -',
+                 "Apollo, Terre. Salute de l'Endeavour.", 'Roger. Good readb ack.', 'Ha, ha, ha. Ha, ha, ha.',
+                 "Look at me carry it! I'm carrying it over my shoulder! Ha ha ha!", 'Umm. Now wa - what - wha -', '*** we go. Yea! It came open! Ha ha!',
+                 "We're counting up to 34 hours 11 minutes and 50 seconds. 4, 3, 2, 1 -", 'Okay, Tony. Had one more. Okay - -', 'On page 2-17. AOS - -'):
+        assert scrap(kept, vocab) == kept, kept
