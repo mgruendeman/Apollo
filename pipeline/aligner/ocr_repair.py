@@ -148,7 +148,7 @@ def _unconfuse(core, vocab, freq=None, context=None):
 PLACES = ['Apollo', 'Houston', 'Tananarive', 'Carnarvon', 'Canary', 'Goldstone', 'Guaymas', 'Honeysuckle', 'Hawaii',
           'Vanguard', 'Madrid', 'Texas', 'Bermuda', 'Redstone', 'Mercury', 'Ascension', 'Canberra', 'Guam', 'Antigua',
           'Goddard']
-CALLSIGNS = {'08': ['Yorktown'], '11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipper', 'Yankee', 'Intrepid', 'Hornet'],
+CALLSIGNS = {'08': ['Yorktown'], '09': ['Gumdrop', 'Spider', 'Guadalcanal'], '11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipper', 'Yankee', 'Intrepid', 'Hornet'],
              '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
              '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
 # a word read with its first letter small and the rest capitals: plain words go small, switch settings and terms capital

@@ -4,6 +4,9 @@ import missionPhotos from '../data/missionPhotos.json'
 export const KINDS_FOR_PHASE = {
   launch: ['launch'],
   'earth-orbit': ['earth', 'launch', 'interior'],
+  'earth-orbit-docked': ['earth', 'interior', 'other'],
+  spacewalk: ['other', 'earth', 'interior'],
+  'lm-solo': ['other', 'earth', 'interior'],
   'transit-to-moon': ['earth', 'interior', 'other'],
   'lunar-orbit': ['lunar-orbit', 'interior'],
   landing: ['lunar-orbit', 'surface'],

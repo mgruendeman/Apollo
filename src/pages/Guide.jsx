@@ -22,8 +22,8 @@ export default function Guide() {
         <dl className="guide-list">
           <dt>The whole mission</dt>
           <dd>
-            Apollo 8, 11, 12, 14, 15, 16 and 17 play from NASA&apos;s own tapes, from before launch to splashdown (Apollo 15&apos;s tapes
-            stop at 199 hours, in lunar orbit). Drag the bar
+            Apollo 8, 9, 11, 12, 14, 15, 16 and 17 play from NASA&apos;s own tapes, from before launch to splashdown (Apollo 9&apos;s tapes
+            stop at 189 hours and Apollo 15&apos;s at 199, in lunar orbit). Drag the bar
             to go anywhere in the mission, or pick a moment from the timeline below the player. Shaded stretches of the bar
             are where there&apos;s a recording. More missions are on the way.
           </dd>

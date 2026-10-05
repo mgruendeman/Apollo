@@ -14,6 +14,10 @@ import { stripSourcePrefix } from '../lib/sourceLabel'
 export const PHASES = {
   launch: { label: 'Launch', x: 34, y: 60 },
   'earth-orbit': { label: 'Earth Orbit', x: 40, y: 35 },
+  // (Apollo 9 never left Earth orbit: the docked stack, the spacewalk, the Lunar Module flying alone)
+  'earth-orbit-docked': { label: 'Earth Orbit, Docked', x: 40, y: 35 },
+  spacewalk: { label: 'Spacewalk', x: 40, y: 35 },
+  'lm-solo': { label: 'Lunar Module Flying Alone', x: 40, y: 35 },
   'transit-to-moon': { label: 'Translunar Coast', x: 100, y: 16 },
   'lunar-orbit': { label: 'Lunar Orbit', x: 165, y: 39 },
   landing: { label: 'Descent to the Surface', x: 178, y: 58 },
@@ -56,6 +60,9 @@ const RULES = [
 const STAGE = {
   launch: 0,
   'earth-orbit': 1,
+  'earth-orbit-docked': 1,
+  spacewalk: 1,
+  'lm-solo': 1,
   'transit-to-moon': 2,
   'lunar-orbit': 3,
   landing: 3,

@@ -47,6 +47,7 @@ def from_liftoff(spoken):
 
 TOKEN = re.compile(r"[a-z0-9]+")
 CREW = {'08': {'CDR': 'Borman', 'CMP': 'Lovell', 'LMP': 'Anders'},
+        '09': {'CDR': 'McDivitt', 'CMP': 'Scott', 'LMP': 'Schweickart'},
         '11': {'CDR': 'Armstrong', 'CMP': 'Collins', 'LMP': 'Aldrin'},
         '12': {'CDR': 'Conrad', 'CMP': 'Gordon', 'LMP': 'Bean'},
         '14': {'CDR': 'Shepard', 'CMP': 'Roosa', 'LMP': 'Mitchell'},
@@ -76,9 +77,11 @@ def speaker_names(mission, rows):
     "60 seconds" at the Apollo 14 landing), "LM Crew" is the spacecraft, and
     a label naming no one ("CC", "Flight controller", "Network (CapCom)")
     gives way to the nearest person the journal names."""
-    journal = json.loads(journal_file('transcripts', mission).read_text())
     crew = CREW.get(mission, {})
     crew_names = set(crew.values())
+    if not journal_file('transcripts', mission).exists():
+        return capcom_names(mission, crew)
+    journal = json.loads(journal_file('transcripts', mission).read_text())
     person = lambda s: (re.fullmatch(r"[A-Z][a-z]+(?:[A-Z][a-z]+)?", s) is not None and s not in crew_names
                         and s not in ('Houston', 'Recovery', 'Unknown'))
 
@@ -119,3 +122,38 @@ def speaker_names(mission, rows):
     return name
 
 
+
+
+CAPCOM_REACH_S = 4 * 3600   # a CapCom named this close to a line is the one speaking it
+
+
+def capcom_names(mission, crew):
+    """Names for a mission without a journal (Apollo 9): the capsule
+    communicators from data/capcoms/apolloNN.json, a list of [time, name]
+    for moments the transcript or the tapes name who is on ("Okay, Ron.";
+    the announcer's "CapCom is astronaut Stu Roosa"). A CC line takes the
+    nearest named moment within four hours, else plain 'CapCom'."""
+    path = ROOT / 'data' / 'capcoms' / f'apollo{mission}.json'
+    named = []
+    if path.exists():
+        for get, who in json.loads(path.read_text()):
+            h, m = get.split(':')[:2]
+            named.append((int(h) * 3600 + int(m) * 60, who))
+        named.sort()
+    at = [t for t, _ in named]
+
+    def name(row):
+        code = row['speaker']
+        if code in crew:
+            return crew[code]
+        if code == 'CC':
+            g = row['getSeconds']
+            i = bisect.bisect_left(at, g)
+            near = [named[j] for j in (i - 1, i) if 0 <= j < len(named)]
+            if near:
+                t, who = min(near, key=lambda c: abs(c[0] - g))
+                if abs(t - g) <= CAPCOM_REACH_S:
+                    return who
+            return 'CapCom'
+        return OTHER.get(code, 'Unknown' if code == '?' else code)
+    return name

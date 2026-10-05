@@ -18,6 +18,30 @@ const PATHS = {
       <ellipse cx="12" cy="12" rx="10.5" ry="3.6" transform="rotate(-20 12 12)" />
     </>
   ),
+  // Earth with an orbit ring and the docked pair riding it (Apollo 9)
+  'earth-orbit-docked': (
+    <>
+      <circle cx="12" cy="12" r="5.5" />
+      <ellipse cx="12" cy="12" rx="10.5" ry="3.6" transform="rotate(-20 12 12)" />
+      <path d="M18.5 4.5h3.5M20.25 3v3" />
+    </>
+  ),
+  // an astronaut on a tether
+  spacewalk: (
+    <>
+      <circle cx="13" cy="6" r="2.2" />
+      <path d="M13 8.2v6M9.5 10.5l3.5 1 3.5-1M13 14.2l-2.5 5M13 14.2l2.5 5" />
+      <path d="M3 4c2 3 3.5 4 6.5 6.5" strokeDasharray="1.6 2" />
+    </>
+  ),
+  // the lander on its own, Earth below
+  'lm-solo': (
+    <>
+      <path d="M8.5 5h7l1 4h-9z" />
+      <path d="M9.5 9l-1.5 4M14.5 9l1.5 4M7 13h2M15 13h2" />
+      <path d="M3 21a9 9 0 0 1 18 0" />
+    </>
+  ),
   // Earth to Moon, outbound
   'transit-to-moon': (
     <>

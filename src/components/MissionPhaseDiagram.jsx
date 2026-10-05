@@ -103,6 +103,13 @@ function scene(phase, craft) {
     case 'earth-orbit':
       // in parking orbit the LM is still stowed below the CSM, on the rocket's last stage
       return { csm: { x: 67, y: 32, dir: -169 } }
+    case 'earth-orbit-docked':
+    case 'spacewalk':
+      // (Apollo 9: the docked stack stayed in Earth orbit)
+      return { stack: { x: 67, y: 32, dir: -169 } }
+    case 'lm-solo':
+      // (Apollo 9: the Lunar Module flew off on its own, in Earth orbit, and came back)
+      return { csm: { x: 67, y: 32, dir: -169 }, lm: { name: 'lm', x: 30, y: 22, w: lmW }, tagX: 110, split: true }
     case 'transit-to-moon':
       return { stack: { x: 143, y: 40, dir: -29 } }
     case 'lunar-orbit':
@@ -133,8 +140,15 @@ function lastName(full) {
 
 // Who's where, in words, when the crew are split up.
 function whoWhere(phase, mission) {
-  if (!mission?.crew || !mission.lmName || !['landing', 'surface', 'ascent'].includes(phase)) return null
+  if (!mission?.crew || !mission.lmName) return null
   const [cdr, cmp, lmp] = mission.crew.map(lastName)
+  if (phase === 'spacewalk') {
+    return `${lmp} outside, on ${mission.lmName}'s porch · ${cmp} in ${mission.csmName}'s open hatch · ${cdr} in ${mission.lmName}`
+  }
+  if (phase === 'lm-solo') {
+    return `${cdr} & ${lmp} in ${mission.lmName}, flying on their own · ${cmp} in ${mission.csmName}, both in Earth orbit`
+  }
+  if (!['landing', 'surface', 'ascent'].includes(phase)) return null
   const where = { landing: 'descending to the Moon', surface: 'on the Moon', ascent: 'rising to meet the CSM' }[phase]
   return `${cdr} & ${lmp} in ${mission.lmName}, ${where} · ${cmp} in ${mission.csmName}, in lunar orbit`
 }
@@ -171,7 +185,7 @@ export default function MissionPhaseDiagram({ phase, mission }) {
               <text x={s.lm.x - s.lm.w / 2 - 2} y={s.lm.y + 1} className="pd-tag" textAnchor="end">
                 {mission.lmName} · 2
               </text>
-              <text x={236} y={s.csm.y + 22} className="pd-tag" textAnchor="end">
+              <text x={s.tagX ?? 236} y={s.csm.y + 22} className="pd-tag" textAnchor="end">
                 {mission.csmName} · 1
               </text>
             </>

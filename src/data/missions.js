@@ -51,13 +51,29 @@ export const missions = [
     crew: ['James McDivitt', 'David Scott', 'Rusty Schweickart'],
     summary:
       'The first crewed flight of the full Apollo hardware stack, testing the Lunar Module — including docking, undocking, and a solo flight — in Earth orbit.',
-    status: 'archive',
+    status: 'available',
+    timeline: 'apollo09', // whole-mission tapes: public/timeline/apollo09.json
     launchUtc: '1969-03-03T16:00:00Z',
     durationSeconds: 867654, // 241:00:54
+    // (archive.org's Apollo 9 tapes are 065-AAA to 085-AAA, without 068, 069 and 078; 079 is a stub; they end at 189 hours)
+    tapesNote: "Apollo 9 never left Earth orbit, so its tapes run out of contact for most of each 90-minute orbit, between the tracking stations. NASA's tapes of this flight stop at 189 hours, two days before splashdown.",
+    // Earth-orbit flight: no translunar injection; the Lunar Module's docking, the spacewalk and the solo flight instead
+    events: {
+      docking: '003:01:59', evaStart: '072:59:02', evaEnd: '073:49:56', undocking: '092:39:36', redocking: '099:02:26',
+      lmJettison: '101:22:45', cmSep: '240:36:04',
+    },
     csmName: 'Gumdrop',
     lmName: 'Spider',
     objective: 'Fly the complete Apollo spacecraft for the first time, in Earth orbit: dock with the Lunar Module, test the lunar spacesuit and backpack outside the spacecraft, and fly Spider on its own and rendezvous back with Gumdrop, as a lunar landing crew would.',
     landingNote: 'None: Apollo 9 stayed in Earth orbit, testing the Lunar Module.',
+    highlights: [
+      { id: 'a09-launch', at: '-000:00:30', title: 'Launch' },
+      { id: 'a09-docking', at: '003:01:40', title: 'Docking with Spider' },
+      { id: 'a09-eva', at: '073:02:00', title: 'Schweickart on the porch: the spacesuit\'s first flight' },
+      { id: 'a09-undocking', at: '092:38:00', title: 'Spider flies alone' },
+      { id: 'a09-rendezvous', at: '099:00:00', title: 'Spider and Gumdrop dock again' },
+      { id: 'a09-last-burn', at: '101:52:30', title: "Spider's last burn, fired until the tank ran dry" },
+    ],
   },
   {
     id: '10',

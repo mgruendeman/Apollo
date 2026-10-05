@@ -78,6 +78,7 @@ export function tapePhaseAt(mission, g) {
   const e = mission.events
   const at = (k) => parseGet(e[k])
   if (g < ORBIT_INSERTION_SECONDS) return 'launch'
+  if (e.tli == null) return earthOrbitPhaseAt(e, g)
   if (g < at('tli')) return 'earth-orbit'
   if (g < at('loi')) return 'transit-to-moon'
   if (mission.landingSeconds != null) {
@@ -89,6 +90,20 @@ export function tapePhaseAt(mission, g) {
   // (Apollo 8 went into lunar orbit and came home: no landing between the two burns)
   if (g < at('tei')) return 'lunar-orbit'
   if (g < at('cmSep')) return 'transit-to-earth'
+  return 'splashdown'
+}
+
+// A flight that stayed in Earth orbit (Apollo 9): the CSM alone until it
+// docked with the Lunar Module, the docked stack (with the spacewalk from
+// it), the Lunar Module flying alone between undocking and docking again,
+// the CSM alone again once the Lunar Module was cast off, then home.
+function earthOrbitPhaseAt(e, g) {
+  const at = (k) => parseGet(e[k])
+  if (e.docking && g < at('docking')) return 'earth-orbit'
+  if (e.evaStart && g >= at('evaStart') && g < at('evaEnd')) return 'spacewalk'
+  if (e.undocking && g >= at('undocking') && g < at('redocking')) return 'lm-solo'
+  if (e.lmJettison && g >= at('lmJettison') && g < at('cmSep')) return 'earth-orbit'
+  if (g < at('cmSep')) return 'earth-orbit-docked'
   return 'splashdown'
 }
 
