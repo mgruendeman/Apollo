@@ -365,9 +365,9 @@ def test_a_burst_stands_as_a_piece_only_when_sure_and_well_off():
     steady = [(t, 1000) for t in (0, 10, 20, 30)]
     later = [(t, 1000) for t in (400, 410, 420, 430)]
     burst = [(200, 1100), (205, 1101)]
-    assert _pieces([steady, burst, later]) == [1000, 1000] or len(_pieces([steady, burst, later])) == 2   # not sure: dropped
+    assert set(_pieces([steady, burst, later])) == {1000}   # not sure: dropped (the steady stretch carries on past it)
     # sure, but its neighbours agree and it's out of line with both: a misprinted time
-    assert len(_pieces([steady, burst, later], sure=burst[:1])) == 2
+    assert set(_pieces([steady, burst, later], sure=burst[:1])) == {1000}
     # sure, and the tape really moves on after it (a recorder running in bursts)
     after = [(t, 1200) for t in (400, 410, 420, 430)]
     assert len(_pieces([steady, burst, after], sure=burst[:1])) == 3

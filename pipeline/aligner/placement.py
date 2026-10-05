@@ -75,6 +75,61 @@ def spoken_pieces(words):
             for t, g in good]
 
 
+# The announcer counting down and counting up through a launch: "T minus 15, 14, 13", "T minus five
+# minutes and counting", "at 6 minutes, 10 seconds into the flight", "mark, eight minutes"
+COUNTDOWN = re.compile(r"\bt[ -]?minus (\d+)(?: (hours?|minutes?|seconds?))?(?:,? (\d+) (minutes?|seconds?))?(?:,? (\d+) seconds?)?")
+INTO_FLIGHT = re.compile(r"\b(?:at |mark,? )?(\d+) minutes?(?:,? (?:and )?(\d+) seconds?)? into the (?:flight|mission)")
+MARK = re.compile(r"\bmark,? (\d+) minutes?(?: (\d+) seconds?)?\b(?! into)")
+
+
+NUMBER_WORDS = {w: str(n) for n, w in enumerate(('zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten',
+                                                    'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen',
+                                                    'eighteen', 'nineteen', 'twenty'))}
+NUMBER_WORDS.update({'thirty': '30', 'forty': '40', 'fifty': '50', 'sixty': '60'})
+
+
+def said_anchors(words):
+    """Anchors from the announcer's own count through a launch, where NASA's
+    lines can't be heard under him: (tape time, GET, weight). "T minus 15"
+    is -15 s at that word; "6 minutes, 10 seconds into the flight" is 370
+    s; "mark, eight minutes" 480 s (a count given to the second weighs as a
+    long line, one to the minute half). Only in the first hour: later he
+    gives the hour too, to the minute, which is too loose to anchor on
+    (spoken_pieces searches around those)."""
+    text, at = '', []
+    for w in words:
+        at.append(len(text))
+        word = w[2].lower().strip('.,!?;:-')
+        text += NUMBER_WORDS.get(word, word) + ' '
+    out = []
+    def seconds(n, unit):
+        n = int(n)
+        return n * 3600 if unit.startswith('hour') else n * 60 if unit.startswith('minute') else n
+    for mt in COUNTDOWN.finditer(text):
+        i = bisect.bisect_right(at, mt.start()) - 1
+        n, u1, m, u2, sec = mt.groups()
+        if u1 is None:   # "T minus 15": seconds, the count
+            if int(n) > 60:
+                continue
+            g = -int(n)
+        else:
+            g = -(seconds(n, u1) + (seconds(m, u2) if m else 0) + (int(sec) if sec else 0))
+            if g < -3600:
+                continue
+        to_the_second = u1 is None or sec or any(u.startswith('second') for u in (u1, u2 or ''))
+        marked = text[max(0, mt.start() - 6):mt.start()].startswith('mark')   # ("Mark, T minus five minutes": on the second)
+        out.append((words[i][0], g, 1.0 if to_the_second or marked else 0.5))
+    for rx in (INTO_FLIGHT, MARK):
+        for mt in rx.finditer(text):
+            i = bisect.bisect_right(at, mt.start()) - 1
+            mins, secs = mt.group(1), mt.group(2)
+            g = int(mins) * 60 + (int(secs) if secs else 0)
+            if g > 3600:
+                continue
+            out.append((words[i][0], g, 1.0 if secs or rx is MARK else 0.5))
+    return out
+
+
 def text_pieces(words, grams):
     """Rough places on the mission clock for a tape nothing else placed,
     from what's said on it: every three-word phrase the recogniser heard
@@ -202,21 +257,110 @@ def chain_anchors(rows, anchors, words, starts, g_lo, g_hi):
     return extra
 
 
-def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_tokens=None):
-    """Split a tape's (tape time, GET) anchors into pieces of continuous
-    mission time (as place_tapes.segments, with tighter agreement), cut
-    at the quietest point between neighbouring pieces. A piece needs three
-    anchors agreeing, or one of the `sure` ones (a line found between two
-    others, in one clear place: chain_anchors), where the recorder ran in
-    bursts of a line or two."""
-    sure = {(t, g) for t, g, *_ in sure}
+STRAY_SPAN = 600   # a group goes on past a stray anchor in its midst, up to this far along the tape
+STEP_S = 8   # an anchor joins a group when its offset is within this of the group's last (15 lost two points on the other missions)
+SHORT_WEIGHT = 0.5   # what a line under six words counts for
+
+
+def _weight(toks, repeated=False):
+    """How much a line counts for in placing a tape: a line of six words or
+    more in full, a shorter one half (the short ones are the stock phrases,
+    "Apollo 8, Houston. Over.", found at the wrong place as often as the
+    right one: three of them at one offset mustn't pass for a stretch of
+    the mission), and a line printed again within ten minutes a quarter
+    (a voice check calls the same thing over and over, and each call finds
+    the others on the tape)."""
+    if repeated:
+        return 0.25
+    return 1.0 if len(toks) >= 6 else SHORT_WEIGHT
+
+
+def repeated_lines(rows):
+    """The rows (by index) whose text is printed again, as it stands,
+    within ten minutes on NASA's transcript."""
+    by_text = {}
+    for k, r in enumerate(rows):
+        key = ' '.join(tokens(r['text']))
+        if len(key) >= 8:
+            by_text.setdefault(key, []).append((r['getSeconds'], k))
+    out = set()
+    for hits in by_text.values():
+        hits.sort()
+        for i in range(1, len(hits)):
+            if hits[i][0] - hits[i - 1][0] <= 600:
+                out.add(hits[i][1])
+                out.add(hits[i - 1][1])
+    return out
+
+
+def _group_by_offset(anchors, weight):
+    """Anchors (tape time, GET) in tape order, grouped by their offset: each
+    joins the latest group whose last offset is within 8 s of its own (so a
+    stray anchor between two that agree, a stock phrase found at the wrong
+    place, is left on its own instead of ending the group: Apollo 8's launch
+    tape, where the live liftoff had six agreeing anchors and never made a
+    group). A group lets a stray through only within STRAY_SPAN of its last
+    anchor. Where two groups interleave on the tape (a short playback cut
+    into the live conversation), the one carrying on around the other is
+    split at it, so every group is a single stretch of tape. Returns groups
+    of (tape time, offset), in tape order."""
     groups = []
     for t, g, *_ in sorted(anchors):
         off = g - t
-        if groups and abs(off - groups[-1][-1][1]) <= 8:
-            groups[-1].append((t, off))
+        home = next((grp for grp in reversed(groups) if t - grp[-1][0] <= STRAY_SPAN and abs(off - grp[-1][1]) <= STEP_S), None)
+        if home is not None:
+            home.append((t, off, weight.get((t, g), 1.0)))
         else:
-            groups.append([(t, off)])
+            groups.append([(t, off, weight.get((t, g), 1.0))])
+    return _split_interleaved(groups, least=3)
+
+
+def _heft(grp):
+    """A group's weight: what its lines count for (see _weight)."""
+    return sum(x[2] for x in grp)
+
+
+def _split_interleaved(groups, least=1):
+    """Groups of (tape time, offset) as single stretches of tape: where one
+    group (of at least `least` anchors) sits in the midst of another, the
+    outer one is split around it. Returned in tape order."""
+    done = False
+    while not done:
+        done = True
+        for inner in groups:
+            if len(inner) < least:
+                continue
+            a, b = inner[0][0], inner[-1][0]
+            for outer in groups:
+                if outer is inner or len(outer) < 2:
+                    continue
+                before = [x for x in outer if x[0] < a]
+                after = [x for x in outer if x[0] > b]
+                within = [x for x in outer if a <= x[0] <= b]
+                if before and after:   # the outer one carries on around the inner: split it there
+                    outer[:] = before
+                    groups.append(after)
+                    if within:
+                        groups.append(within)
+                    done = False
+                    break
+            if not done:
+                break
+    groups = [grp for grp in groups if grp]
+    groups.sort(key=lambda grp: grp[0][0])
+    return groups
+
+
+def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_tokens=None, weight=None):
+    """Split a tape's (tape time, GET) anchors into pieces of continuous
+    mission time (as place_tapes.segments, with tighter agreement), cut
+    at the quietest point between neighbouring pieces. A piece needs
+    anchors agreeing to the weight of three long lines (_weight), or one
+    of the `sure` ones (a line found between two others, in one clear
+    place: chain_anchors), where the recorder ran in bursts of a line or
+    two. weight: {(tape time, GET): weight} for the anchors (default 1)."""
+    sure = {(t, g) for t, g, *_ in sure}
+    groups = _group_by_offset(anchors, weight or {})
     # A small group stands as a piece only if it holds a sure anchor and jumps
     # further from the groups either side than the line timing can absorb
     # (sync_to_tape looks 30 s back): a burst on a recorder that ran in
@@ -228,15 +372,15 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
     # 51:12:41), not a stretch of the mission. (Groups of the first look's
     # anchors alone keep the older, looser test below: where NASA's lines are
     # sparse, as on the moonwalks, a real half hour of tape can rest on three.)
-    has_sure = lambda grp: any((t, t + off) in sure for t, off in grp)
+    has_sure = lambda grp: any((t, t + off) in sure for t, off, *_ in grp)
     groups = [grp for i, grp in enumerate(groups)
               if not (0 < i < len(groups) - 1 and len(grp) <= 5 and has_sure(grp)
                       and abs(med(groups[i - 1]) - med(groups[i + 1])) <= 30 and abs(med(grp) - med(groups[i - 1])) > 30)]
     merged = groups   # (small groups aren't merged: noise at one offset would pass for a stretch)
-    big = [i for i, grp in enumerate(merged) if len(grp) >= 3]
+    big = [i for i, grp in enumerate(merged) if _heft(grp) >= 3]
     keep = []
     for i, grp in enumerate(merged):
-        if len(grp) >= 3:
+        if _heft(grp) >= 3:
             keep.append(grp)
             continue
         if not has_sure(grp):
@@ -260,6 +404,13 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
             and not (0 < i < len(groups) - 1 and len(grp) <= 5 and abs(off(groups[i - 1]) - off(groups[i + 1])) <= 10
                      and abs(off(grp) - off(groups[i - 1])) > 20)]
     groups = keep
+    # a small group in the midst of a bigger one is a stray, not a stretch of the mission; and
+    # every group that stands must be a single stretch of tape (one in the midst of another, a
+    # playback cut into the live conversation, splits the other around it)
+    spans = [(grp[0][0], grp[-1][0]) for grp in groups if _heft(grp) >= 3]
+    groups = [grp for grp in groups if _heft(grp) >= 3
+              or not any(a < grp[0][0] and grp[-1][0] < b for a, b in spans)]
+    groups = _split_interleaved(groups)
     def cut(j):
         """Where the tape passes from group j-1's stretch to group j's: its
         quietest point between them, as (end of j-1's piece, start of j's).
@@ -270,16 +421,22 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
         the playback starts at its first line: the announcer's bridge between
         belongs to neither, and is left out."""
         a, b = groups[j - 1][-1][0], groups[j][0][0]
-        if off(groups[j]) < off(groups[j - 1]) - 30 and word_tokens is not None:
-            i0, i1 = bisect.bisect_right(word_starts, a), bisect.bisect_left(word_starts, b)
-            for i in range(i0 + 1, i1):
-                if word_tokens[i] == 'control' and word_tokens[i - 1] in ('apollo', 'mission'):
-                    k = i - 1   # back to where his speech starts (after a pause of 1.5 s)
-                    while k > i0 and word_starts[k] - word_ends[k - 1] < 1.5:
-                        k -= 1
-                    if b - word_starts[k] <= 240:   # (a bridge of a few minutes; anything longer isn't this)
-                        return round(max(a, word_starts[k] - 0.3), 2), quietest_gap(word_starts, word_ends, max(a, b - 20), b)
-                    break
+        if off(groups[j]) < off(groups[j - 1]) - 30:
+            start = quietest_gap(word_starts, word_ends, max(a, b - 20), b)
+            if word_tokens is not None:
+                i0, i1 = bisect.bisect_right(word_starts, a), bisect.bisect_left(word_starts, b)
+                for i in range(i1 - 1, i0, -1):   # (his last hand-over before the playback)
+                    if word_tokens[i] == 'control' and word_tokens[i - 1] in ('apollo', 'mission'):
+                        k = i - 1   # back to where his speech starts (after a pause of 1.5 s)
+                        while k > i0 and word_starts[k] - word_ends[k - 1] < 1.5:
+                            k -= 1
+                        if b - word_starts[k] <= 240:   # (a bridge of a few minutes; anything longer isn't this)
+                            return round(max(a, word_starts[k] - 0.3), 2), start
+                        break
+            # (no hand-over found: the live conversation, and the announcer's own commentary on
+            # it, run on to where the playback starts; Apollo 8's 008-AAA, where the playback's
+            # piece had reached back over twenty minutes of the live talk and pushed it out)
+            return start, start
         c = quietest_gap(word_starts, word_ends, a, b)
         return c, c
 
@@ -288,11 +445,12 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
         ts = np.array([x[0] for x in grp])
         offs = np.array([x[1] for x in grp])
         slope = np.polyfit(ts, offs, 1)[0] if np.ptp(ts) > 300 else 0.0
+        slope = float(np.clip(slope, -0.01, 0.01))   # (a tape doesn't run 3% off speed: that's the anchors' jitter)
         c = float(np.median(offs - slope * ts))
         lo = 0.0 if i == 0 else cut(i)[1]
         hi = seconds if i == len(groups) - 1 else cut(i + 1)[0]
         out.append({'from': round(lo, 2), 'to': round(hi, 2), 'get': round(c + (1 + slope) * lo, 2),
-                    'rate': round(1 + float(slope), 6), 'anchors': len(grp)})
+                    'rate': round(1 + float(slope), 6), 'anchors': len(grp), 'first': round(float(ts[0]), 2)})
     return out
 
 

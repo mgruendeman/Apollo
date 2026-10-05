@@ -32,7 +32,7 @@ from datetime import date
 from pathlib import Path
 
 from aligner.common import ROOT, CREW, MIN_WORDS, SEARCH_S, tokens, speaker_names
-from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors
+from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors, _weight, repeated_lines, said_anchors
 from aligner.ocr_repair import FIXES, MISSION, junk_row, repair_ocr, scrap_after_sentence, vocabulary
 from aligner.announcer import find_announcer
 from aligner.timing import mark_drowned_out, mark_unheard, place_unfound, rebuild_from_tape, said_on_tape, sync_to_tape, time_untimed
@@ -53,6 +53,7 @@ def main():
                     help='print the lines within 90 s of this mission time as the hand fixes see them (to key a fix on)')
     ap.add_argument('--cleaned', action='store_true',
                     help='play our cleaned copies (uploaded to <media>/audio/NN/<tape>.clean.m4a) instead of NASA\'s originals')
+    ap.add_argument('--anchors', metavar='TAPE', help='print the anchors that place this tape and its pieces, then stop')
     args = ap.parse_args()
     m = f'{int(args.mission):02d}'
     MISSION['n'] = m
@@ -105,6 +106,7 @@ def main():
             run = []
     for key, gs in grams.items():
         grams_all.setdefault(key, []).extend(gs)
+    repeated = repeated_lines(rows)   # (lines printed again close by: a voice check's calls count for little)
     for tape, entry in sorted(placement.items()):
         asr = media / 'asr' / m / f'{tape}.json'
         if not asr.exists():
@@ -152,8 +154,23 @@ def main():
         heard_at[tape] = sorted(a[0] for a in anchors)
         for t, _, k in anchors:
             where_heard.setdefault(k, []).append((tape, t))
-        placed = pieces_from_anchors(anchors, entry['seconds'], starts, [w[1] for w in words], sure=more, word_tokens=[w[3] for w in words])
+        weight = {(t, g): _weight(tokens(rows[k]['text']), k in repeated) for t, g, k in anchors}
+        # (and the announcer's own count through a launch, where NASA's lines can't be heard under him)
+        said = said_anchors(words)
+        counted = [(t, g, -1) for t, g, _ in said if (t, g) not in weight]
+        weight.update({(t, g): w_ for t, g, w_ in said})
+        placed = pieces_from_anchors(sorted(anchors + counted), entry['seconds'], starts, [w[1] for w in words], sure=more, word_tokens=[w[3] for w in words], weight=weight)
         placed = pin_pieces(placed, [f for f in placement_fixes.get(m, []) if f['tape'] == tape])
+        if args.anchors == tape:
+            hms = lambda g: f"{'-' if g < 0 else ''}{int(abs(g)) // 3600:03d}:{int(abs(g)) % 3600 // 60:02d}:{int(abs(g)) % 60:02d}"
+            sure = {(a[0], a[1]) for a in more}
+            print(f"{tape}: searched in {len(pieces)} rough stretches: " + '; '.join(f"tape {p['tape_from']:.0f}-{p['tape_to']:.0f} at {hms(p['get_from'])}" for p in pieces))
+            for t, g, k in sorted(anchors + counted):
+                what = f"{rows[k]['speaker']}: {rows[k]['text'][:70]}" if k >= 0 else "(the announcer's count)"
+                print(f"  tape {t:8.1f}  {hms(g)}  offset {g - t:+9.1f}{'  sure' if (t, g) in sure else ''}  {what}")
+            for p in placed:
+                print(f"  piece: tape {p['from']:.0f}-{p['to']:.0f} at {hms(p['get'])}, rate {p['rate']}, {p['anchors']} anchors")
+            return
         for p in placed:
             segments.append({'tape': tape, **p})
 

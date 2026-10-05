@@ -17,6 +17,53 @@ def _norm(text):
     return re.sub(r'[^a-z0-9]', '', text.lower())
 
 
+def _same(text, key):
+    """The line is the fix's whole text: by letters and digits, and for a long
+    line (a scrap-strewn one a listener had deleted) near enough, since the
+    OCR repair may since have mended a word or two of it."""
+    a, b = _norm(text), _norm(key)
+    if a == b:
+        return True
+    return len(b) >= 40 and difflib.SequenceMatcher(None, a, b, autojunk=False).ratio() >= 0.85
+
+
+def _span(text, key):
+    """Where `key` is in `text`, going by letters and digits alone (the OCR
+    repair may since have changed a stray mark or a capital, "‘a" to "A"):
+    (start, end) in text, or None. The span takes in the marks before and
+    after it that the key had ("...Heavens ." keeps its full stop)."""
+    k = _norm(key)
+    if not k:
+        return None
+    idx = [i for i, ch in enumerate(text) if ch.isalnum()]
+    flat = ''.join(text[i].lower() for i in idx)
+    j = flat.find(k)
+    if j >= 0:
+        end = j + len(k)
+    elif len(k) >= 12:
+        # near enough: the repair may have mended a word of it differently since ("comintl" for
+        # "coming"), so most of the key's letters, in order, within a stretch little longer than it
+        sm = difflib.SequenceMatcher(None, flat, k, autojunk=False)
+        blocks = [x for x in sm.get_matching_blocks() if x.size]
+        if not blocks:
+            return None
+        j, end = blocks[0].a, blocks[-1].a + blocks[-1].size
+        if sum(x.size for x in blocks) < 0.85 * len(k) or end - j > 1.25 * len(k):
+            return None
+    else:
+        return None
+    a, b = idx[j], idx[end - 1] + 1
+    if not key.lstrip()[:1].isalnum():
+        while a > 0 and not text[a - 1].isalnum() and not text[a - 1].isspace():
+            a -= 1
+    if not key.rstrip()[-1:].isalnum():
+        while b < len(text) and not text[b].isalnum() and not text[b].isspace():
+            b += 1
+        while b < len(text) and text[b] in ' ' and b + 1 < len(text) and not text[b + 1].isalnum() and not text[b + 1].isspace():
+            b += 2
+    return a, b
+
+
 def fix_printed_times(mission, rows):
     """NASA's printed times the scan misread ("129:35:31" for 129:45:31), put
     right before anything is timed: {"g": the time as read, "text": part of
@@ -77,12 +124,12 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
             continue   # (fix_printed_times' business, before the timing)
         key = f.get('from', f.get('text', ''))
         # "whole": the fix is for a line that is exactly this ("Roger."), not any holding it
-        match = (lambda t: t.strip() == key) if f.get('delete') or f.get('whole') else (lambda t: key in t)
+        match = (lambda t: _same(t, key)) if f.get('delete') or f.get('whole') else (lambda t: _span(t, key) is not None)
         hit = [l for l in lines if abs(l['g'] - f['g']) <= 2 and match(l['t'])]
         if not hit:
             near = sorted((abs(l['g'] - f['g']), k) for k, l in enumerate(lines) if abs(l['g'] - f['g']) <= 3600 and match(l['t']))
             hit = [lines[near[0][1]]] if near else []
-        if hit and 'split' in f and f['split'] not in hit[0]['t'][1:]:
+        if hit and 'split' in f and not _span(hit[0]['t'][1:], f['split']):
             hit = []
         if hit:
             for l in hit:
@@ -94,7 +141,7 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                     l['heard'] = 1
                     l.pop('n', None)
                 elif 'split' in f:
-                    cut = l['t'].index(f['split'], 1)
+                    cut = 1 + _span(l['t'][1:], f['split'])[0]
                     second = {'g': l['g'], 's': f['speaker'], 't': l['t'][cut:].strip()}
                     l['t'] = l['t'][:cut].strip()
                     lines.insert(lines.index(l) + 1, second)
@@ -105,7 +152,7 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                     l['review'] = f['review']   # a question for a listener: top of the review list
                 elif 'merge' in f:
                     rest = sorted((abs(x['g'] - l['g']), k) for k, x in enumerate(lines)
-                                  if x is not l and x['t'].startswith(f['merge']) and abs(x['g'] - l['g']) <= 120)
+                                  if x is not l and _norm(x['t']).startswith(_norm(f['merge'])) and abs(x['g'] - l['g']) <= 120)
                     if rest:
                         second = lines[rest[0][1]]
                         l['t'] = f"{l['t'].rstrip()} {second['t'].lstrip()}"
@@ -113,7 +160,8 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
                 elif 'speaker' in f:
                     l['s'] = f['speaker']
                 elif 'from' in f:
-                    l['t'] = l['t'].replace(f['from'], f['to'])
+                    a, b = _span(l['t'], f['from'])
+                    l['t'] = l['t'][:a] + f['to'] + l['t'][b:]
                     if l.get('a'):
                         fresh[id(l)] = 120
                 if not f.get('ok') and 'review' not in f:
@@ -139,7 +187,7 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
         elif 'speaker' in f:
             ok = any(abs(l['g'] - f['g']) <= 3600 and _norm(f['text']) in _norm(l['t']) and l['s'] == f['speaker'] for l in lines)
         elif f.get('delete'):
-            ok = not any(abs(l['g'] - f['g']) <= 600 and l['t'].strip() == f['text'].strip() for l in lines)
+            ok = not any(abs(l['g'] - f['g']) <= 600 and _same(l['t'], f['text']) for l in lines)
         elif 'at' in f:
             ok = any(abs(l['g'] - f['at']) <= 1 and _norm(f['text']) in _norm(l['t']) for l in lines)
         elif 'merge' in f:
