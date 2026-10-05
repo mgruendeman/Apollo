@@ -166,6 +166,9 @@ TIDY_CASES = [
     ('11', 'PROP DISPLAYS/ ENGINE 0VERRIDE/LOGIC, CLOSE.', 'PROP DISPLAYS/ ENGINE OVERRIDE/LOGIC, CLOSE.'),   # a page note's tail
     ('11', 'Traction *** seems quite good. clipping of words and phrases. 1234', 'Traction *** seems quite good.'),
     ('11', "P52 is done. I'm looking at the DSKY.", "P52 is done. I'm looking at the DSKY."),   # nothing to fix
+    ('12', 'Okay. I have a good GDC, and A1 has got the fuel cells back on.', 'Okay. I have a good GDC, and Al has got the fuel cells back on.'),   # the l of Al read as a 1
+    ('17', 'up around A1-Biruni and around Reiner Gamma', 'up around Al-Biruni and around Reiner Gamma'),
+    ('16', 'For the Commander, A1 is still stowed, A3 is 7 hours.', 'For the Commander, A1 is still stowed, A3 is 7 hours.'),   # stowage codes stay
 ]
 
 

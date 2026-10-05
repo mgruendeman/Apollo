@@ -395,7 +395,12 @@ def mark_unheard(lines, segments, tape_words, envelopes):
     faint speech can vary by as little as 0.3. Or no words heard at all for
     a minute and a half either side, whatever the loudness (but the
     recogniser's "You" in silence): a stretch of hiss or carrier, not
-    speech (Apollo 11's 186-AAA, nine minutes of it)."""
+    speech (Apollo 11's 186-AAA, nine minutes of it). (A hole of a minute or more
+    in the recognition isn't enough on its own: the recogniser drops whole
+    stretches of clear speech on its pass over a tape, Apollo 11's 99:24
+    "The RCS hot-fire is complete" among them. Where the broadcast dropped
+    to noise mid-sentence, Apollo 12's 359-AAA at 4:18, the lines inside
+    are marked by hand.)"""
     import numpy as np
     loud = {}
 

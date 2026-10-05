@@ -369,6 +369,8 @@ def _tidy(text, vocab):
     text = re.sub(r"\bC[AaKk]P\s+C[O0](?:MM?|_)", 'CAPCOM', text)              # NASA's "CAP COMM" (and "CkP COMM", "CAP C0_")
     text = re.sub(r"\bM&0\b", 'M&O', text)                                   # the stations' maintenance and operations
     text = re.sub(r"\bNell\b", 'Neil', text)                                 # (no Nell flew: it's Armstrong)
+    if not re.search(r"\b[A-D][2-9]\b", text):                                    # (not among stowage codes: "A1 is still stowed, A3")
+        text = re.sub(r"\bA1\b", 'Al', text)                                   # "A1 Bean", "Al-Biruni": the l read as a 1 (user, 2026-10-05)
     text = re.sub(r"\bNei!", 'Neil', text)
     text = re.sub(r"\ba_d\b", 'and', text)
     text = re.sub(r"(?<=\w) '(s|ll|re|ve|d|t|m)\b", r"'\1", text)             # "That 's", "We 'll": a detached contraction

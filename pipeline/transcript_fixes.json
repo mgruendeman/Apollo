@@ -4916,6 +4916,26 @@
    "g": 17540.3,
    "from": "a front stretching From the center",
    "to": "a front stretching from the center"
+  },
+  {
+   "g": 10162,
+   "text": "Roger. We're GO.",
+   "ok": true
+  },
+  {
+   "g": 282428,
+   "text": "That's a good, reasonable way of describing it",
+   "ok": true
+  },
+  {
+   "g": 562359,
+   "text": "AUTO it is.",
+   "ok": true
+  },
+  {
+   "g": 575522,
+   "text": "It's an entry PAD, MPL, starting with roll 05",
+   "ok": true
   }
  ],
  "12": [
@@ -5918,6 +5938,186 @@
    "g": 402441.4,
    "text": "Roger, Jerry. Copied 112:53:48",
    "at": 402459
+  },
+  {
+   "g": 13903,
+   "text": "mode.",
+   "delete": true
+  },
+  {
+   "g": 17478,
+   "from": "Okw i looks like about 11 hours, and we'll w_ . ! mood solid plan for you and come up.",
+   "to": "Okay it looks like about 11 hours, and we'll work up a good solid plan for you and come up with it later."
+  },
+  {
+   "g": 17487,
+   "from": "01'_ _ _A that was a proposal, you'd better wa - of that language.",
+   "to": "Okay, and if that was a proposal, you'd better watch the use of that language."
+  },
+  {
+   "g": 15476,
+   "text": "As a matter of fact, Houston, I suspect that maybe you ought to enable that maneuver",
+   "ok": true
+  },
+  {
+   "g": 31315,
+   "from": "reading t gmuk1, 758",
+   "to": "reading tank 1, 758"
+  },
+  {
+   "g": 31350,
+   "text": "We're going to leave our H - I mean our O2 fans on",
+   "ok": true
+  },
+  {
+   "g": 38108,
+   "text": "world's record for ingress/ egressing",
+   "ok": true
+  },
+  {
+   "g": 38776,
+   "text": "When you pulled that circuit breaker",
+   "ok": true
+  },
+  {
+   "g": 58020,
+   "text": "Okay. We understand about the battery charge, and we intend to change the canister on time",
+   "at": 58060
+  },
+  {
+   "g": 286825,
+   "from": "minus 0.17, 085:25:17.92, plus 1601.0 plus 1561.9, minus 3h98.1.",
+   "to": "minus 017 08525 17 92, plus 16010 plus 15619, minus 34981."
+  },
+  {
+   "g": 286825,
+   "from": "that's no ,,llag_ and",
+   "to": "that's no ullage and"
+  },
+  {
+   "g": 475447,
+   "from": "grapefruit rock of ,11 grapefruit rocks",
+   "to": "grapefruit rock of all grapefruit rocks"
+  },
+  {
+   "g": 475447,
+   "from": "I'll roll a bouldex for you",
+   "to": "I'll roll a boulder for you"
+  },
+  {
+   "g": 475447,
+   "text": "Man, have I got the grapefruit rock of all grapefruit rocks",
+   "at": 475427
+  },
+  {
+   "g": 475447,
+   "text": "Okay. There's the one on the sunny side.",
+   "at": 475424
+  },
+  {
+   "g": 476525,
+   "from": "Okay and !et me get a picture",
+   "to": "Okay and let me get a picture"
+  },
+  {
+   "g": 476529,
+   "from": "G_t the stereopair on",
+   "to": "Get the stereopair on"
+  },
+  {
+   "g": 601383,
+   "from": "all the time %-e were taking",
+   "to": "all the time we were taking"
+  },
+  {
+   "g": 601383,
+   "from": "that the eanera was, in fact, running",
+   "to": "that the camera was, in fact, running"
+  },
+  {
+   "g": 601383,
+   "from": "500 millimeter ind_i- cated approximately",
+   "to": "500 millimeter indicated approximately"
+  },
+  {
+   "g": 601383,
+   "from": "until we finally eonc ded that",
+   "to": "until we finally concluded that"
+  },
+  {
+   "g": 601383,
+   "from": "whether it's lightstruek or not",
+   "to": "whether it's lightstruck or not"
+  },
+  {
+   "g": 763429,
+   "from": "purges, and _nbalance-eouple P23's",
+   "to": "purges, and unbalanced couple P23's"
+  },
+  {
+   "g": 763429,
+   "from": "the extreme aeeurac; that you",
+   "to": "the extreme accuracy; that you"
+  },
+  {
+   "g": 807512,
+   "from": "let's take them ali in order",
+   "to": "let's take them all in order"
+  },
+  {
+   "g": 807512,
+   "from": "in my bnmmock that night",
+   "to": "in my hammock that night"
+  },
+  {
+   "g": 807512,
+   "from": "take my suit olf; it was",
+   "to": "take my suit off; it was"
+  },
+  {
+   "g": 807512,
+   "from": "the suit . was pressing",
+   "to": "the suit was pressing"
+  },
+  {
+   "g": 807512,
+   "from": "my feet and nly shoulders, ') and it sounds",
+   "to": "my feet and my shoulders, and it sounds"
+  },
+  {
+   "g": 807512,
+   "from": "about an hour, zo that",
+   "to": "about an hour, so that"
+  },
+  {
+   "g": 808059,
+   "from": "everything there ehAuges color",
+   "to": "everything there changes color"
+  },
+  {
+   "g": 808059,
+   "from": "things that will eld you in",
+   "to": "things that will help you in"
+  },
+  {
+   "g": 15483,
+   "text": "We'll do it, Pete.",
+   "unheard": true
+  },
+  {
+   "g": 15483,
+   "text": "it sure is throwing a lot of stuff out of the back of it",
+   "unheard": true
+  },
+  {
+   "g": 15508,
+   "text": "Okay. I can see it firing thrusters",
+   "unheard": true
+  },
+  {
+   "g": 15529,
+   "text": "Try to get it out of the center hatch window now",
+   "unheard": true
   }
  ],
  "14": [
@@ -6141,6 +6341,76 @@
    "g": 477700.1,
    "from": "smooth- walled",
    "to": "smooth walled"
+  },
+  {
+   "g": 3112,
+   "text": "ready for a IMU REFSMMAT realine check",
+   "ok": true
+  },
+  {
+   "g": 5975,
+   "text": "Before the pad, would you give us P00 and ACCEPT",
+   "ok": true
+  },
+  {
+   "g": 12293,
+   "text": "At 3 plus B4:24, a nonpropulsive vent in the booster will be sequenced open. Over.",
+   "delete": true
+  },
+  {
+   "g": 12294,
+   "from": "at 3 plus B4:24, a nonpropulsive",
+   "to": "at 3 plus 34 24, a nonpropulsive"
+  },
+  {
+   "g": 24667,
+   "from": "scheduled for about 9:50 in the flight - correction 9:30",
+   "to": "scheduled for about 9:50 in the flight plan - correction 9:30"
+  },
+  {
+   "g": 24667,
+   "from": "other information °n to go then",
+   "to": "other information to go then"
+  },
+  {
+   "g": 24979,
+   "text": "Readback correct. Okay, the fourth star will be star number 24",
+   "ok": true
+  },
+  {
+   "g": 41498,
+   "text": "trying to describe the depth of penetration",
+   "ok": true
+  },
+  {
+   "g": 41992,
+   "text": "From the looks and from the feel, I believe it appears that the probe hit the drogue",
+   "ok": true
+  },
+  {
+   "g": 42041,
+   "text": "manually depress all three capture latch triggers",
+   "ok": true
+  },
+  {
+   "g": 42520,
+   "text": "now that you've got the drogue out, we'd like you to position the drogue",
+   "ok": true
+  },
+  {
+   "g": 42996,
+   "text": "Hey, Bruce, there just wasn't any place that worked handily",
+   "ok": true
+  },
+  {
+   "g": 100283,
+   "from": "no more than twic e.",
+   "to": "no more than twice."
+  },
+  {
+   "g": 278787,
+   "text": "I'm through the tunnel and ingressing the LM at this point",
+   "ok": true
   }
  ],
  "15": [
