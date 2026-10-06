@@ -6936,6 +6936,16 @@
    "g": 518979,
    "from": "Alright, thank you. 7 . ry ; . : [ £ § . t i § a . \\ ‘ a . a Oo",
    "to": "Alright, thank you."
+  },
+  {
+   "g": 40091,
+   "from": "We noticed on our systems test battery vent ! , pressure that wnen we opened the battery vent walve, we get an immediate drop-off to pressure which nulls out at about two-terths of 2 = to three-tentha of a volt. And we think this is sero and the battery manifold. Do you concur?",
+   "to": "We noticed on our systems test battery vent pressure that when we opened the battery vent valve, we get an immediate drop-off to pressure which nulls out at about two-tenths of 2 - to three-tenths of a volt. And we think this is sero and the battery manifold. Do you concur?"
+  },
+  {
+   "g": 165698,
+   "text": "immune os ci nts ilcntenatlatinentastntm meetin mentome, suite rte cena ne lL",
+   "delete": true
   }
  ],
  "09": [
@@ -6948,6 +6958,73 @@
    "g": 344861,
    "text": "9 ATR-_9-GROUND voI.u_,f_____i__cf!m..!?!'l..ON Gux s(Rzv61)",
    "delete": true
+  }
+ ],
+ "10": [
+  {
+   "g": 173768,
+   "from": "Apollo lo. this 18 Notlltc_. We cv¥] the _econda_ 1 eye,tarot oper&tin4 mow. We'd like you to let f it rrm for 3 to 5 minute, t_s time if you voul_. Over.",
+   "to": "Apollo 10. this is Houston. We copy the secondary evaporator now. We'd like you to let it run for 3 to 5 minute, this time if you would. Over."
+  },
+  {
+   "g": 172919,
+   "from": "leo. Eve_lb<g_ is nodd_-_ their hea_la \"TesJ here. . 000 Biles c_ oo; that's a pretty Mg target out t",
+   "to": "Yes. Everybody is nodding their heads \"Yes\" here. We think so. It - You ought to be able to see 400 miles or so; that's a pretty big target out there, and we think you ought to be able to see it."
+  },
+  {
+   "g": 170522,
+   "from": "Veil, '.hat ems% be it, thcs, that I saw., Because it's _ _eflectinc and tm_linG out there.",
+   "to": "Well, that must be it, then, that I saw, because it's really reflecting and tumbling out there."
+  },
+  {
+   "g": 170508,
+   "from": "k'l w_king on it; ye got sc_e - FIDO safe he's eot yom- - the S-I_B about 970 miles.",
+   "to": "He's working on it; we got some - FIDO says he's got your - the S-IVB about 3970 miles."
+  },
+  {
+   "g": 169574,
+   "from": "Refer, 10. We're still h-van s probl,_e locking up, so ve'd like to have you go to WIDE U_alq for 30 secondn aed then back to NARROW. Over.",
+   "to": "Roger, 10. We're still having problems locking up, so we'd like to have you go to WIDE BEAM for 30 seconds and then back to NARROW. Over."
+  },
+  {
+   "g": 169194,
+   "from": "Hello, Apollo 10. Houston. Ve request tFnt you I_ve us & Mark when you turn the TV on, so'd _ll set the vord.",
+   "to": "Hello, Apollo 10. Houston. We request that you give us a Mark when you turn the TV on, so Madrid will get the word."
+  },
+  {
+   "g": 168919,
+   "from": "Okay. And vh&t ve'a like to knov l- - It'Ll take -! you Little time to dig it up - _ did you indicate mm telemetry for the thrust chamber l prellu_e vhen ve had both banks on yesterday durin c that midcourse? ,-!",
+   "to": "Okay. And what we'd like to knov is - It'll take you little time to dig it up - What did you indicate on telemetry for the thrust chamber pressure when we had both banks on yesterday during that midcourse?"
+  },
+  {
+   "g": 160852,
+   "from": "Jerk, just after I put the H2 and O2 fans on, we got & C_YO pressure light. I-&qAes8 it could be H2 t--_ 1 or O2 t__nk2 at this time.",
+   "to": "Jerk, just after I put the H2 and O2 fans on, we got a CRYO pressure light. I guess it could be H2 tank 1 or O2 tank 2 at this time."
+  },
+  {
+   "g": 157294,
+   "from": "Good morning. Great Ehapc. Understand you are little alov on r_YeLlle this z_ornin6.",
+   "to": "Good morning. Great shape. Understand you are little slow on reveille this morning."
+  },
+  {
+   "g": 114574,
+   "from": "]b_ger,10. -At this time, we'd like you to select H2 tank 2 heaters to OFF. We're doing thtm in order to &void giving you a meter eautton and warning light during your sleep period, if at all possible. Over.",
+   "to": "Roger,10. At this time, we'd like you to select H2 tank 2 heaters to OFF. We're doing this in order to avoid giving you a mater cautton and warning light during your sleep period, if at all possible. Over."
+  },
+  {
+   "g": 104086,
+   "from": "I _,,ess so, but w_ never really seemed to lose lock for _j great length of time for it to go back to those REACQ angles. It has been wavering lock RFACQ mode to put it back at the angles.",
+   "to": "I guess so, but we never really seemed to lose lock for any great length of time for it to go back to those REACQ angles. It has been wavering lock RFACQ mode to put it back at the angles."
+  },
+  {
+   "g": 100855,
+   "from": "Houston, 10. We - We're mtarting a roll ri_t nov. You want me to initiate O_3I's an_ te_o care of the h/_ gain?",
+   "to": "Houston, 10. We - We're mtarting a roll right now. You want me to initiate OMNI's and take care of the high gain?"
+  },
+  {
+   "g": 97848,
+   "from": "Okay. Before you do tint, would you open %_a leao &bout two stops slowly &nd than stop it go,fa I f fairly rapidly for us?",
+   "to": "Okay. Before you do that, would you open the lens up about two stops slowly and than stop it down fairly rapidly for us?"
   }
  ]
 }

@@ -130,7 +130,8 @@ function lineHtml(k, main, x) {
   const help = main && x ? [
     x.tape ? `<p class="tape">Tape: ${esc(x.tape.length > 420 ? x.tape.slice(0, 420) + '…' : x.tape)}</p>` : '',
     x.pg != null ? `<div class="rowwrap"><img class="row" loading="lazy" alt="This row on NASA's page" src="/api/review/media/review/pages/${mission}/${x.pg}-${x.pr}.jpg" onerror="this.parentNode.remove()"></div>` : '',
-    x.suggest ? `<p class="suggest">Suggested: ${suggestHtml(l.t, x.suggest)} <button class="accept" data-i="${rows.indexOf(x)}">Accept</button></p>` : '',
+    x.suggest === '' ? `<p class="suggest">Suggested: nothing is said here, the row is scan scraps. <button class="accept" data-i="${rows.indexOf(x)}">Remove</button>${x.by === 'model' ? ' <span class="meta">(model' + (x.conf != null ? ', ' + Math.round(x.conf * 100) + '% sure' : '') + ')</span>' : ''}</p>`
+    : x.suggest ? `<p class="suggest">Suggested: ${suggestHtml(l.t, x.suggest)} <button class="accept" data-i="${rows.indexOf(x)}">Accept</button>${x.by === 'model' ? ' <span class="meta">(model' + (x.conf != null ? ', ' + Math.round(x.conf * 100) + '% sure' : '') + ')</span>' : ''}</p>` : '',
   ].join('') : ''
   return `<div class="line${main ? ' is-main' : ''}${l.c ? ' is-pao' : ''}" data-k="${k}">
     <div class="top"><span class="meta"><a href="/#/mission/${mission}?at=${Math.floor(l.g)}" target="_blank" rel="noreferrer">${fmt(l.g)}</a> · ${esc(l.c ? 'Announcer' : l.s)}${l.n ? ' · not on this recording' : ''}</span>
@@ -220,7 +221,7 @@ list.addEventListener('click', (e) => {
   const good = e.target.closest('button.good')
   if (good) { send(good.closest('.line'), CORRECT, null); return }
   const accept = e.target.closest('button.accept')
-  if (accept) { send(accept.closest('.line'), rows[Number(accept.dataset.i)].suggest, null); return }
+  if (accept) { const sg = rows[Number(accept.dataset.i)].suggest; send(accept.closest('.line'), sg === '' ? 'Remove: scan scraps, nothing said here.' : sg, null); return }
   const more = e.target.closest('button.more')
   if (more) {
     const card = more.closest('article'), i = Number(card.dataset.i)

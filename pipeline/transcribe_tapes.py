@@ -36,28 +36,52 @@ def _length(src):
     return float(out) if out else None
 
 
-def _decoded(src):
-    """The tape as 16 kHz mono samples, decoded by ffmpeg (which reads on past
-    a damaged frame where the recogniser's own decoder stops: Apollo 12's
-    373-AAA, 1.6 hours of a 3.2-hour tape)."""
+def _decoded(src, start=None, seconds=None):
+    """The tape (or a stretch of it) as 16 kHz mono samples, decoded by
+    ffmpeg (which reads on past a damaged frame where the recogniser's own
+    decoder stops: Apollo 12's 373-AAA, 1.6 hours of a 3.2-hour tape)."""
     import numpy as np
-    raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', str(src), '-ac', '1', '-ar', '16000', '-f', 'f32le', '-'],
+    cut = ([] if start is None else ['-ss', str(start)]) + ([] if seconds is None else ['-t', str(seconds)])
+    raw = subprocess.run(['ffmpeg', '-v', 'error', *cut, '-i', str(src), '-ac', '1', '-ar', '16000', '-f', 'f32le', '-'],
                          capture_output=True).stdout
     return np.frombuffer(raw, np.float32)
+
+
+CHUNK_S, OVERLAP_S = 3600, 12   # a long tape is recognised an hour at a time (a whole 6.6-hour reel took 19 GB)
 
 
 def _run(src, dest):
     t = time.time()
     kw = dict(beam_size=1, vad_filter=False, word_timestamps=True, condition_on_previous_text=False, language='en')
-    segs, info = _model.transcribe(str(src), **kw)
     length = _length(src)
-    if length and info.duration < 0.95 * length:   # (decoding stopped short: again, through ffmpeg)
-        segs, info = _model.transcribe(_decoded(src), **kw)
-    words = [[round(w.start, 2), round(w.end, 2), w.word.strip()] for s in segs for w in (s.words or [])]
+    if length and length > CHUNK_S * 1.5:
+        # hour by hour, each stretch overlapping the next, every word taken from the stretch it
+        # sits deepest in
+        words, done = [], 0.0
+        start = 0.0
+        while start < length:
+            audio = _decoded(src, start, CHUNK_S + OVERLAP_S)
+            segs, info = _model.transcribe(audio, **kw)
+            lo = start + (OVERLAP_S / 2 if start else 0)
+            hi = start + CHUNK_S + OVERLAP_S / 2
+            for sg in segs:
+                for w in (sg.words or []):
+                    at = start + w.start
+                    if lo <= at < hi:
+                        words.append([round(at, 2), round(start + w.end, 2), w.word.strip()])
+            done = start + info.duration
+            start += CHUNK_S
+        duration = min(done, length)
+    else:
+        segs, info = _model.transcribe(str(src), **kw)
+        if length and info.duration < 0.95 * length:   # (decoding stopped short: again, through ffmpeg)
+            segs, info = _model.transcribe(_decoded(src), **kw)
+        words = [[round(w.start, 2), round(w.end, 2), w.word.strip()] for s in segs for w in (s.words or [])]
+        duration = info.duration
     tmp = dest.with_suffix('.part')
     tmp.write_text(json.dumps(words, separators=(',', ':')))
     tmp.rename(dest)
-    return src.stem, len(words), info.duration, time.time() - t
+    return src.stem, len(words), duration, time.time() - t
 
 
 def main():
