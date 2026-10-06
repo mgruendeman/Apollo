@@ -128,6 +128,7 @@ function lineHtml(k, main, x) {
   // for the listed line itself: what the tape says over it, NASA's typed row from the scanned page, and a
   // suggested reading from the tape's words to accept with one tap
   const help = main && x ? [
+    x.asTyped ? `<p class="suggest">The model reads this line as NASA typed it (${Math.round(x.asTyped * 100)}% sure).</p>` : '',
     x.tape ? `<p class="tape">Tape: ${esc(x.tape.length > 420 ? x.tape.slice(0, 420) + '…' : x.tape)}</p>` : '',
     x.pg != null ? `<div class="rowwrap"><img class="row" loading="lazy" alt="This row on NASA's page" src="/api/review/media/review/pages/${mission}/${x.pg}-${x.pr}.jpg" onerror="this.parentNode.remove()"></div>` : '',
     x.suggest === '' ? `<p class="suggest">Suggested: nothing is said here, the row is scan scraps. <button class="accept" data-i="${rows.indexOf(x)}">Remove</button>${x.by === 'model' ? ' <span class="meta">(model' + (x.conf != null ? ', ' + Math.round(x.conf * 100) + '% sure' : '') + ')</span>' : ''}</p>`
@@ -155,6 +156,7 @@ function toCheck() {
   const all = rows.map((_, i) => i)
   const idx = showReported ? all : all.filter((i) => !isReported(i))
   if (order === 'time') idx.sort((a, b) => rows[a].g - rows[b].g)
+  else idx.sort((a, b) => (rows[a].asTyped ? 1 : 0) - (rows[b].asTyped ? 1 : 0))   // (lines the model reads as typed go last; the sort is stable)
   return idx
 }
 

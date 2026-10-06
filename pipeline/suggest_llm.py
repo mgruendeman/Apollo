@@ -184,6 +184,7 @@ def main():
             continue
         text = a['text'].strip()
         if text and norm(text) == norm(x['t']):
+            x['asTyped'] = round(a['conf'], 2)   # (the model reads the line as NASA typed it: the page ranks these last)
             continue
         x['suggest'] = text if text else ''
         x['by'] = 'model'
