@@ -148,7 +148,7 @@ def _unconfuse(core, vocab, freq=None, context=None):
 PLACES = ['Apollo', 'Houston', 'Tananarive', 'Carnarvon', 'Canary', 'Goldstone', 'Guaymas', 'Honeysuckle', 'Hawaii',
           'Vanguard', 'Madrid', 'Texas', 'Bermuda', 'Redstone', 'Mercury', 'Ascension', 'Canberra', 'Guam', 'Antigua',
           'Goddard']
-CALLSIGNS = {'08': ['Yorktown'], '09': ['Gumdrop', 'Spider', 'Guadalcanal'], '10': ['Charlie', 'Brown', 'Snoopy', 'Princeton'], '11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipper', 'Yankee', 'Intrepid', 'Hornet'],
+CALLSIGNS = {'08': ['Yorktown'], '09': ['Gumdrop', 'Spider', 'Guadalcanal'], '10': ['Charlie', 'Brown', 'Snoopy', 'Princeton'], '13': ['Odyssey', 'Aquarius', 'Iwo', 'Jima'], '11': ['Columbia', 'Eagle', 'Tranquility', 'Hornet'], '12': ['Clipper', 'Yankee', 'Intrepid', 'Hornet'],
              '14': ['Kitty', 'Hawk', 'Antares', 'Mauro', 'Orleans'], '15': ['Endeavour', 'Falcon', 'Hadley', 'Okinawa'],
              '16': ['Casper', 'Orion', 'Descartes', 'Ticonderoga'], '17': ['America', 'Challenger', 'Taurus', 'Littrow', 'Ticonderoga']}
 # a word read with its first letter small and the rest capitals: plain words go small, switch settings and terms capital
@@ -276,6 +276,28 @@ def junk_row(text, vocab):
 
 SHORT_WORDS = {'a', 'i', 'go', 'no', 'ok', 'oh', 'ah', 'ha', 'um', 'uh', 'eh', 'so', 'we', 'it', 'is', 'to', 'up', 'on', 'in', 'at', 'of', 'by',
                'me', 'my', 'he', 'us', 'do', 'if', 'or', 'an', 'as', 'be', 'am', 'hi', 'yo'}   # (two letters the dictionary's two-letter junk isn't: "aa", "ga")
+
+
+def fold_row(text, vocab):
+    """A row that is no words at all: the 1968 scan of Apollo 8's transcript
+    has the page's fold and edge lines read as rows of letter scraps ("TE EE
+    ET I a _ aeennnneieneitinbigtimmmasl", "ORT TT nee"), with no speaker and
+    no time. Three or more letter clumps, under two in five of them words
+    and none a word of four letters, no digit, and not a sentence followed
+    by scraps (that's scrap_after_sentence's). The caller keeps it to lines
+    with no speaker and no printed time: a damaged real line ("Taa_'_
+    affira_ti-_e.") usually has both."""
+    if re.search(r"\d", text):
+        return False
+    alpha = [t for t in re.findall(r"[A-Za-z']+", text) if len(t) >= 2]
+    if len(alpha) < 3:
+        return False
+    words = [t for t in alpha if t.lower() in vocab]
+    if any(len(t) >= 4 for t in words):
+        return False
+    if re.match(r"^\W*[A-Za-z]+[.?!]", text) and alpha[0].lower() in vocab:
+        return False
+    return len(words) / len(alpha) < 0.4
 
 
 def scrap_after_sentence(text, vocab):

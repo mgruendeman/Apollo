@@ -33,7 +33,7 @@ from pathlib import Path
 
 from aligner.common import ROOT, CREW, MIN_WORDS, SEARCH_S, tokens, speaker_names
 from aligner.placement import find, merge_pieces, pieces_from_anchors, spoken_pieces, text_pieces, chain_anchors, _weight, repeated_lines, said_anchors
-from aligner.ocr_repair import FIXES, MISSION, junk_row, repair_ocr, scrap_after_sentence, vocabulary
+from aligner.ocr_repair import FIXES, MISSION, fold_row, junk_row, repair_ocr, scrap_after_sentence, vocabulary
 from aligner.announcer import find_announcer
 from aligner.timing import mark_drowned_out, mark_unheard, place_unfound, rebuild_from_tape, said_on_tape, sync_to_tape, time_untimed
 from aligner.fixes import apply_fixes, fix_printed_times, use_journal_text
@@ -235,6 +235,9 @@ def main():
         if not l.get('c') and not l.get('fixed'):
             l['t'] = scrap_after_sentence(l['t'], known)
     lines = [l for l in lines if l.get('c') or l.get('fixed') or not junk_row(l['t'], known)]
+    # (and on Apollo 8's scan, the page's fold and edge lines read as rows of scraps, with no speaker and no time)
+    if m == '08':
+        lines = [l for l in lines if l.get('c') or l.get('fixed') or l['s'] != 'Unknown' or not l.get('a') or not fold_row(l['t'], known)]
     # NASA's lines a listener heard inside one of the announcer's stretches (crew talk he played back): his stretch ends before them
     by_hand = sorted(l['g'] for l in lines if l.pop('placed', None))
     announcer = [[a, min([b] + [g - 0.3 for g in by_hand if a + 1 < g < b])] for a, b in announcer]

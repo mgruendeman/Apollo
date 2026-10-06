@@ -20,6 +20,7 @@ Needs: curl
 """
 import argparse
 import json
+import re
 import subprocess
 import urllib.parse
 import urllib.request
@@ -37,6 +38,7 @@ def main():
     ap.add_argument('--files', type=int, default=0, help='only the first N tapes per mission (0 = all)')
     ap.add_argument('--head-mb', type=float, default=0, help='sample mode: only the first N MB of each tape')
     ap.add_argument('--parallel', type=int, default=1, help='tapes at once, from the storage servers directly')
+    ap.add_argument('--match', help="only files whose name matches this regular expression (Apollo 13's '_TRACK-1\\.mp3$')")
     args = ap.parse_args()
 
     inventory = json.loads(INVENTORY.read_text())
@@ -47,6 +49,8 @@ def main():
             print(f'Apollo {int(m)}: no audio listed (run survey_nasa_audio.py again later)')
             continue
         files = sorted((f for f in entry['files'] if f['format'] == args.format), key=lambda f: f['name'])
+        if args.match:
+            files = [f for f in files if re.search(args.match, f['name'])]
         if args.files:
             files = files[:args.files]
         total = sum(f['bytes'] for f in files)

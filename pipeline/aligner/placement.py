@@ -361,6 +361,12 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
     two. weight: {(tape time, GET): weight} for the anchors (default 1)."""
     sure = {(t, g) for t, g, *_ in sure}
     groups = _group_by_offset(anchors, weight or {})
+    import os
+    debug = os.environ.get('APOLLO_DEBUG_GROUPS')
+    def show(stage):
+        if debug:
+            print(f'    [{stage}] ' + ' | '.join(f"{grp[0][0]:.0f}-{grp[-1][0]:.0f} off {float(np.median([x[1] for x in grp])):+.0f} n{len(grp)} w{_heft(grp):.1f}{' S' if any((t, t + off) in sure for t, off, *_ in grp) else ''}" for grp in groups))
+    show('grouped')
     # A small group stands as a piece only if it holds a sure anchor and jumps
     # further from the groups either side than the line timing can absorb
     # (sync_to_tape looks 30 s back): a burst on a recorder that ran in
@@ -373,9 +379,19 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
     # anchors alone keep the older, looser test below: where NASA's lines are
     # sparse, as on the moonwalks, a real half hour of tape can rest on three.)
     has_sure = lambda grp: any((t, t + off) in sure for t, off, *_ in grp)
-    groups = [grp for i, grp in enumerate(groups)
-              if not (0 < i < len(groups) - 1 and len(grp) <= 5 and has_sure(grp)
-                      and abs(med(groups[i - 1]) - med(groups[i + 1])) <= 30 and abs(med(grp) - med(groups[i - 1])) > 30)]
+    # (the groups either side: the nearest with some weight to them, not a stray match each way,
+    # which agree with each other by chance; Apollo 8's 004-AAA lost three sure lines to two strays)
+    solid = [i for i, grp in enumerate(groups) if _heft(grp) >= 2]
+    def beside(i):
+        before = [j for j in solid if j < i]
+        after = [j for j in solid if j > i]
+        return (groups[before[-1]] if before else None), (groups[after[0]] if after else None)
+    def misprint(i, grp):
+        a, b = beside(i)
+        return (a is not None and b is not None and len(grp) <= 5 and has_sure(grp)
+                and abs(med(a) - med(b)) <= 30 and abs(med(grp) - med(a)) > 30)
+    groups = [grp for i, grp in enumerate(groups) if not misprint(i, grp)]
+    show('after misprint filter')
     merged = groups   # (small groups aren't merged: noise at one offset would pass for a stretch)
     big = [i for i, grp in enumerate(merged) if _heft(grp) >= 3]
     keep = []
@@ -391,6 +407,7 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
         if all(abs(med(grp) - med(n)) > 30 for n in near):
             keep.append(grp)
     groups = keep
+    show('kept')
     # a small group out of line with neighbours that agree with each other
     # is a mismatch (a phrase said twice), not a stretch of the mission
     off = lambda grp: float(np.median([x[1] for x in grp]))
@@ -410,6 +427,7 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
     spans = [(grp[0][0], grp[-1][0]) for grp in groups if _heft(grp) >= 3]
     groups = [grp for grp in groups if _heft(grp) >= 3
               or not any(a < grp[0][0] and grp[-1][0] < b for a, b in spans)]
+    show('after neighbour filters')
     groups = _split_interleaved(groups)
     # Two groups that overlap on the tape without one sitting inside the other are rival readings
     # of the same stretch (Apollo 10's 094-AAA: six loose matches at one offset strung across the
@@ -429,6 +447,7 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
                     break
             if changed:
                 break
+    show('final')
     def cut(j):
         """Where the tape passes from group j-1's stretch to group j's: its
         quietest point between them, as (end of j-1's piece, start of j's).

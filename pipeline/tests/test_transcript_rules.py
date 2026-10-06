@@ -822,3 +822,13 @@ def test_handwriting_after_the_last_sentence_goes(vocab):
                  "Look at me carry it! I'm carrying it over my shoulder! Ha ha ha!", 'Umm. Now wa - what - wha -', '*** we go. Yea! It came open! Ha ha!',
                  "We're counting up to 34 hours 11 minutes and 50 seconds. 4, 3, 2, 1 -", 'Okay, Tony. Had one more. Okay - -', 'On page 2-17. AOS - -'):
         assert scrap(kept, vocab) == kept, kept
+
+
+def test_fold_rows_on_the_apollo_8_scan(vocab):
+    from aligner.ocr_repair import fold_row
+    assert fold_row('TE EE ET I a _ aeennnneieneitinbigtimmmasl . .', vocab)
+    assert fold_row('ORT TT nee .', vocab)
+    assert not fold_row('Roger. 7 . RRR mmm a . {. -', vocab)            # a sentence, then scraps
+    assert not fold_row('Roger. 82:55:54, 83:05:49, 83:11:38.', vocab)   # a readback of times
+    assert not fold_row('DELTA-V, LM/CSM.', vocab)                      # too few clumps to judge
+    assert not fold_row('INVERTER 2, INVERTER 1, OP_.', vocab)
