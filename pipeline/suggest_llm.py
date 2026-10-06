@@ -8,10 +8,14 @@ of the scanned row (the PDF's text layer and Tesseract's), the lines around
 it, and the picture of the typed row (pipeline/page_rows.py), which the model
 can read where the text layers are garbage.
 
-    python pipeline/suggest_llm.py 12 --media /media/mark/T7/apollo-media [--limit 50] [--model claude-sonnet-5-5]
+    python pipeline/suggest_llm.py 12 --media /media/mark/T7/apollo-media [--limit 50] [--model sonnet] [--via api]
 
-Needs an API key: ANTHROPIC_API_KEY in the environment, or
-~/.config/apollo/anthropic.json {"api_key": "..."}. Answers are cached in
+Two ways to ask. By default it runs through Claude Code's headless mode
+(`claude -p`, the `claude` command on this machine), which uses the Claude
+subscription this machine is signed in to, not a separate API bill; it
+reads the row's picture itself. With --via api it uses the API instead
+(ANTHROPIC_API_KEY in the environment, or ~/.config/apollo/anthropic.json
+{"api_key": "..."}). Answers are cached in
 <media>/suggest/NN.json by the line's time and text, so a re-run only asks
 about new lines. Writes each confident answer that changes the line into
 public/review/transcript/apolloNN.json as `suggest` (with `by: "model"` and
@@ -36,7 +40,7 @@ SYSTEM = """You correct one line of a NASA Apollo air-to-ground transcript. NASA
 
 You are given: the line as it stands; the words a speech recognizer heard on the tape at that moment (often noisy, sometimes the wrong stretch); two OCR readings of the same typed row (the PDF's text layer and Tesseract's); the lines before and after; and, when available, a picture of the typed row from the scanned page, which is usually legible where the text layers are not. The picture is the best evidence of what NASA typed; the tape settles what was said when the page is unreadable.
 
-Return the line as NASA typed it, with only the OCR damage mended. Keep NASA's wording, punctuation style and capitalisation (switch names in CAPITALS, "Roger.", "Over."). Keep PAD figures as digit groups the way they were read ("plus 00185 48587 603"). Do not reword, modernise or add anything, and do not drop words that are on the page. If a word cannot be settled from the evidence, leave it as it stands rather than guess. If the whole row is scan scraps with no words on the page (a fold line, a margin note), return an empty text.
+Return the text column of the line only (not the time stamp or the speaker code), as NASA typed it, with only the OCR damage mended. Where the picture shows the row running on (a second part from the top of the next page), include that continuation. Keep NASA's wording, punctuation style and capitalisation (switch names in CAPITALS, "Roger.", "Over."). Keep PAD figures as digit groups the way they were read ("plus 00185 48587 603"). Do not reword, modernise or add anything, and do not drop words that are on the page. If a word cannot be settled from the evidence, leave it as it stands rather than guess. If the whole row is scan scraps with no words on the page (a fold line, a margin note), return an empty text.
 
 Answer with JSON only: {"text": "<the line>", "confidence": <0 to 1>, "changed": <true if your text differs from the line as it stands>}."""
 
@@ -65,6 +69,29 @@ def readings(media, m, page, text):
 READINGS = {}
 
 
+def ask_claude_code(model, prompt, image_path):
+    """The same question through Claude Code's headless mode, which reads the
+    picture by its path (the subscription's usage, not the API's)."""
+    import subprocess
+    text = SYSTEM + '\n\n' + prompt
+    if image_path:
+        text += f'\n\nRead the picture of the typed row at {image_path} before answering.'
+    cmd = ['claude', '-p', '--model', model, '--output-format', 'json', '--allowedTools', 'Read', '--max-turns', '4', text]
+    for attempt in range(4):
+        try:
+            r = subprocess.run(cmd, capture_output=True, text=True, timeout=240, stdin=subprocess.DEVNULL)
+            out = json.loads(r.stdout) if r.stdout.strip().startswith('{') else {}
+            if out.get('is_error') or not out.get('result'):
+                raise RuntimeError((out.get('result') or r.stderr or r.stdout)[:200])
+            mt = re.search(r'\{.*\}', out['result'], re.S)
+            return json.loads(mt.group(0)) if mt else None
+        except Exception as e:   # (a usage limit, a hiccup: wait and try again)
+            if attempt == 3:
+                print(f'  failed: {e}', file=sys.stderr)
+                return None
+            time.sleep(20 * (attempt + 1))
+
+
 def ask(client, model, prompt, image):
     content = [{'type': 'text', 'text': prompt}]
     if image:
@@ -86,21 +113,25 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('mission')
     ap.add_argument('--media', required=True)
-    ap.add_argument('--model', default='claude-sonnet-5-5')
+    ap.add_argument('--via', choices=['claude-code', 'api'], default='claude-code')
+    ap.add_argument('--model', default=None, help="claude-code: sonnet (default) or opus; api: claude-sonnet-5-5 (default)")
     ap.add_argument('--limit', type=int, default=0, help='only the first N listed lines (most doubtful first)')
-    ap.add_argument('--workers', type=int, default=4)
+    ap.add_argument('--workers', type=int, default=3)
     ap.add_argument('--min-conf', type=float, default=0.5, help='keep answers at least this confident')
     args = ap.parse_args()
     m = f'{int(args.mission):02d}'
     media = Path(args.media).expanduser()
-    key = os.environ.get('ANTHROPIC_API_KEY')
-    conf_path = Path.home() / '.config' / 'apollo' / 'anthropic.json'
-    if not key and conf_path.exists():
-        key = json.loads(conf_path.read_text()).get('api_key')
-    if not key:
-        sys.exit('No API key: set ANTHROPIC_API_KEY or put {"api_key": "..."} in ~/.config/apollo/anthropic.json')
-    import anthropic
-    client = anthropic.Anthropic(api_key=key)
+    client = None
+    if args.via == 'api':
+        key = os.environ.get('ANTHROPIC_API_KEY')
+        conf_path = Path.home() / '.config' / 'apollo' / 'anthropic.json'
+        if not key and conf_path.exists():
+            key = json.loads(conf_path.read_text()).get('api_key')
+        if not key:
+            sys.exit('No API key: set ANTHROPIC_API_KEY or put {"api_key": "..."} in ~/.config/apollo/anthropic.json')
+        import anthropic
+        client = anthropic.Anthropic(api_key=key)
+    model = args.model or ('claude-sonnet-5-5' if args.via == 'api' else 'sonnet')
     review_path = ROOT / 'public' / 'review' / 'transcript' / f'apollo{m}.json'
     listed = json.loads(review_path.read_text())
     timeline = json.loads((ROOT / 'public' / 'timeline' / f'apollo{m}.json').read_text())
@@ -110,7 +141,7 @@ def main():
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}
     todo = [x for x in listed if f"{x['g']}|{x['t']}" not in cache][:args.limit or None]
-    print(f'{len(listed)} lines listed, {len(todo)} to ask about ({args.model})')
+    print(f'{len(listed)} lines listed, {len(todo)} to ask about ({args.via}, {model})')
 
     def context(x):
         import bisect
@@ -130,7 +161,9 @@ def main():
                   f"Scan reading, Tesseract:\n{reads.get('tesseract', '(none)')}\n\n"
                   f"Lines around it:\n{context(x)}\n\n"
                   + ("The picture of the typed row is attached." if image else "No picture of the row."))
-        return x, ask(client, args.model, prompt, image)
+        if args.via == 'api':
+            return x, ask(client, model, prompt, image)
+        return x, ask_claude_code(model, prompt, str(img) if image else None)
 
     done = 0
     with ThreadPoolExecutor(args.workers) as pool:
