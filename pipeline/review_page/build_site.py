@@ -176,10 +176,24 @@ article { background:var(--surface); border:1px solid var(--rule); border-radius
 .line.is-pao .text { color:var(--muted); font-style:italic; }
 .text { margin:0; overflow-wrap:anywhere; }
 .tape { margin:4px 0 0; color:var(--muted); font-size:.8rem; overflow-wrap:anywhere; }
-img.row { display:block; max-width:100%; height:auto; margin:6px 0 0; border:1px solid var(--rule); border-radius:4px; background:#fff; }
+/* the page's row: wider than the screen on a phone and scrolled sideways, so the typing is legible; a tap enlarges it */
+.rowwrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:6px 0 0; border:1px solid var(--rule); border-radius:4px; background:#fff; }
+img.row { display:block; width:max(100%, 760px); height:auto; }
 .suggest { margin:6px 0 0; font-size:.93rem; overflow-wrap:anywhere; }
 .suggest mark { background:#fde9b8; padding:0 2px; border-radius:2px; }
 .suggest .accept { margin-left:6px; }
+img.row { cursor: zoom-in; }
+body.one .intro { display:none; }   /* (one at a time: the line itself at the top of the screen) */
+body.one .line.is-main .text { font-size:1.05rem; }
+body.one .line.is-main img.row { margin:10px 0; }
+body.one .line.is-main .actions button { padding:8px 12px; font-size:1rem; }
+body.one .suggest .accept { padding:8px 12px; font-size:1rem; }
+.nav { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:6px 0; }
+.nav button { padding:8px 14px; font-size:1rem; }
+#zoom { position:fixed; inset:0; background:#111; z-index:50; overflow:hidden; touch-action:none; }
+#zoom img { position:absolute; left:0; top:40%; width:100%; transform-origin:0 0; user-select:none; -webkit-user-drag:none; }
+#zoom .close { position:absolute; top:12px; right:12px; z-index:2; padding:8px 14px; font-size:1rem; }
+#zoom .hint { position:absolute; bottom:12px; left:0; right:0; text-align:center; color:#bbb; font-size:.85rem; margin:0; pointer-events:none; }
 a { color:var(--accent); }
 .empty { color:var(--muted); }
 .actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
@@ -201,12 +215,18 @@ button.play { border-color:var(--accent); color:var(--accent); }
     <span role="group" aria-label="Mission">__MISSION_BUTTONS__</span>
     <span class="gap"></span>
     <span role="group" aria-label="Order"><button data-order="rank" aria-pressed="true">Most doubtful first</button> <button data-order="time" aria-pressed="false">In mission order</button></span>
+    <span class="gap"></span>
+    <span role="group" aria-label="View"><button data-mode="list" aria-pressed="true">As a list</button> <button data-mode="one" aria-pressed="false">One at a time</button></span>
   </div>
   <div id="list"></div>
+  <div id="zoom" hidden><img alt="The row on NASA's page, enlarged"><button class="close">Close</button><p class="hint">Pinch to zoom, drag to move, double-tap to reset</p></div>
 </main>
 <script>
 const PAGE = 100, AROUND = 2
 let mission = (document.querySelector('[data-m][aria-pressed=true]') || { dataset: { m: '11' } }).dataset.m, order = 'rank', shown = PAGE
+let mode = 'list', at = 0   // the view, and in the one-at-a-time view which of the lines to check is up
+try { mode = localStorage.getItem('review-mode') === 'one' ? 'one' : 'list' } catch {}
+if (/\bone\b/.test(location.hash)) mode = 'one'   // (a bookmark straight into the one-at-a-time view)
 let rows = [], lines = [], segs = [], gets = [], ext = null
 const around = new Map()   // card -> lines shown either side
 const list = document.getElementById('list')
@@ -262,8 +282,8 @@ function lineHtml(k, main, x) {
   // for the listed line itself: what the tape says over it, NASA's typed row from the scanned page, and a
   // suggested reading from the tape's words to accept with one tap
   const help = main && x ? [
-    x.tape ? `<p class="tape">Tape: ${esc(x.tape)}</p>` : '',
-    x.pg != null ? `<img class="row" loading="lazy" alt="This row on NASA's page" src="/api/review/media/review/pages/${mission}/${x.pg}-${x.pr}.jpg" onerror="this.remove()">` : '',
+    x.tape ? `<p class="tape">Tape: ${esc(x.tape.length > 420 ? x.tape.slice(0, 420) + '…' : x.tape)}</p>` : '',
+    x.pg != null ? `<div class="rowwrap"><img class="row" loading="lazy" alt="This row on NASA's page" src="/api/review/media/review/pages/${mission}/${x.pg}-${x.pr}.jpg" onerror="this.parentNode.remove()"></div>` : '',
     x.suggest ? `<p class="suggest">Suggested: ${suggestHtml(l.t, x.suggest)} <button class="accept" data-i="${rows.indexOf(x)}">Accept</button></p>` : '',
   ].join('') : ''
   return `<div class="line${main ? ' is-main' : ''}${l.c ? ' is-pao' : ''}" data-k="${k}">
@@ -274,7 +294,7 @@ function lineHtml(k, main, x) {
 }
 
 function cardHtml(i) {
-  const x = rows[i], r = around.get(i) || AROUND
+  const x = rows[i], r = around.get(i) || (mode === 'one' ? 1 : AROUND)
   const lo = Math.max(0, x.k - r), hi = Math.min(lines.length - 1, x.k + r)
   let body = ''
   for (let k = lo; k <= hi; k++) body += lineHtml(k, k === x.k, x)
@@ -284,13 +304,29 @@ function cardHtml(i) {
 // Lines already reported from this device wait for the next rebuild of the list: put aside meanwhile.
 let showReported = false
 const isReported = (i) => reported.has(keyOf(lines[rows[i].k] || rows[i]))
-function render() {
-  if (!rows.length) { list.innerHTML = '<p class="empty">Nothing left to check.</p>'; return }
+function toCheck() {
   const all = rows.map((_, i) => i)
-  const mine = all.filter(isReported).length
   const idx = showReported ? all : all.filter((i) => !isReported(i))
   if (order === 'time') idx.sort((a, b) => rows[a].g - rows[b].g)
+  return idx
+}
+
+function render() {
+  document.querySelectorAll('[data-mode]').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.mode === mode)))
+  document.body.classList.toggle('one', mode === 'one')
+  if (!rows.length) { list.innerHTML = '<p class="empty">Nothing left to check.</p>'; return }
+  const mine = rows.map((_, i) => i).filter(isReported).length
+  const idx = toCheck()
   const aside = mine ? ` · ${mine} you've reported ${showReported ? 'shown' : 'put aside'} <button id="aside">${showReported ? 'Put them aside' : 'Show them'}</button>` : ''
+  if (mode === 'one') {
+    // one line per screen: the page's row at full width, the buttons under your thumb, Next to move on
+    if (!idx.length) { list.innerHTML = `<p class="empty">Nothing left to check.${aside}</p>`; return }
+    at = Math.min(Math.max(0, at), idx.length - 1)
+    const nav = `<div class="nav"><button class="prev" ${at ? '' : 'disabled'}>‹ Previous</button><span class="meta">${at + 1} of ${idx.length}</span><button class="next" ${at < idx.length - 1 ? '' : 'disabled'}>Next ›</button></div>`
+    list.innerHTML = nav + cardHtml(idx[at]) + nav + (aside ? `<p class="meta">${aside.slice(3)}</p>` : '')
+    window.scrollTo(0, 0)
+    return
+  }
   list.innerHTML = `<p class="meta">${idx.length} lines to check${order === 'time' ? ', in mission order' : ', most doubtful first'}${aside}</p>`
     + (idx.length ? idx.slice(0, shown).map(cardHtml).join('') : '<p class="empty">Nothing left to check.</p>')
     + (shown < idx.length ? `<button id="next">Show ${Math.min(PAGE, idx.length - shown)} more</button>` : '')
@@ -378,6 +414,8 @@ async function send(line, msg, f) {
   setTimeout(() => {
     if (f) f.remove()
     document.querySelectorAll(`.line[data-k="${k}"] .top > .actions`).forEach((el) => { if (!el.querySelector('.done')) el.insertAdjacentHTML('afterbegin', `<span class="done">${done}</span>`) })
+    // (one at a time: the line you've dealt with leaves the list, so the next one takes its place)
+    if (mode === 'one' && k === x.k && !showReported) setTimeout(render, 500)
   }, f ? 700 : 0)
 }
 
@@ -388,11 +426,63 @@ document.querySelector('.bar').addEventListener('click', (e) => {
     document.querySelectorAll('[data-m]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)))
     load()
   } else if (b.dataset.order) {
-    order = b.dataset.order; shown = PAGE
+    order = b.dataset.order; shown = PAGE; at = 0
     document.querySelectorAll('[data-order]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)))
+    render()
+  } else if (b.dataset.mode) {
+    mode = b.dataset.mode; at = 0
+    try { localStorage.setItem('review-mode', mode) } catch {}
     render()
   }
 })
+
+list.addEventListener('click', (e) => {
+  if (e.target.closest('button.prev')) { at -= 1; render() }
+  else if (e.target.closest('button.next')) { at += 1; render() }
+  else if (e.target.closest('img.row')) openZoom(e.target.closest('img.row').src)
+})
+
+// The page's row, enlarged: pinch to zoom, drag to move, double-tap to reset.
+const zoom = document.getElementById('zoom'), zimg = zoom.querySelector('img')
+let z = { scale: 1, x: 0, y: 0 }, pointers = new Map(), pinch = null, lastTap = 0
+function place() { zimg.style.transform = `translate(${z.x}px, ${z.y}px) scale(${z.scale})` }
+function openZoom(src) {
+  zimg.src = src; z = { scale: 1, x: 0, y: 0 }; place()
+  zoom.hidden = false; document.body.style.overflow = 'hidden'
+}
+function closeZoom() { zoom.hidden = true; document.body.style.overflow = '' }
+zoom.querySelector('.close').addEventListener('click', closeZoom)
+zoom.addEventListener('pointerdown', (e) => {
+  if (e.target.closest('button')) return
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+  zoom.setPointerCapture(e.pointerId)
+  if (pointers.size === 2) {
+    const [a, b] = [...pointers.values()]
+    pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), scale: z.scale, cx: (a.x + b.x) / 2, cy: (a.y + b.y) / 2, x: z.x, y: z.y }
+  } else if (pointers.size === 1) {
+    const now = Date.now()
+    if (now - lastTap < 300) { z = z.scale > 1 ? { scale: 1, x: 0, y: 0 } : { scale: 2.5, x: -(e.clientX - zoom.clientWidth / 2) * 1.5, y: -(e.clientY - zoom.clientHeight / 2) * 1.5 }; place() }
+    lastTap = now
+  }
+})
+zoom.addEventListener('pointermove', (e) => {
+  if (!pointers.has(e.pointerId)) return
+  const was = pointers.get(e.pointerId)
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY })
+  if (pointers.size === 2 && pinch) {
+    const [a, b] = [...pointers.values()]
+    const k = Math.hypot(a.x - b.x, a.y - b.y) / pinch.d
+    const scale = Math.min(6, Math.max(1, pinch.scale * k))
+    const cx = (a.x + b.x) / 2, cy = (a.y + b.y) / 2
+    // zoom about the pinch's centre, and follow it as it moves
+    z = { scale, x: cx - (pinch.cx - pinch.x) * (scale / pinch.scale), y: cy - (pinch.cy - pinch.y) * (scale / pinch.scale) }
+    place()
+  } else if (pointers.size === 1) {
+    z.x += e.clientX - was.x; z.y += e.clientY - was.y; place()
+  }
+})
+const lift = (e) => { pointers.delete(e.pointerId); if (pointers.size < 2) pinch = null }
+zoom.addEventListener('pointerup', lift); zoom.addEventListener('pointercancel', lift)
 load()
 </script>
 """

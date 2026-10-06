@@ -8,7 +8,8 @@ a reader).
 Reads public/review/transcript/apolloNN.json (each line's page and row),
 finds the row on the page the way the scan reader does (a speaker code in
 the speaker column starts a row; the lines after it without one carry it
-on), renders the row at 110 dpi to <media>/review-pages/NN/<page>-<row>.jpg
+on), renders the row from its time stamp to the text's right edge at 170
+dpi to <media>/review-pages/NN/<page>-<row>.jpg
 and, with --upload, copies the folder to r2:apollo-media/review/pages/NN.
 The review page shows each listed line's picture from there. Rows already
 rendered are kept.
@@ -30,31 +31,39 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'scripts'))
 from nasa_transcripts import HEADER, SPEAKERS, group_lines, needs_ocr, page_words   # noqa: E402
 
-DPI = 110
+DPI = 170   # (sharp enough to pinch-zoom on a phone)
 
 
 def page_rows(page, use_ocr):
-    """The rows typed on a page: [(y_top, y_bottom, text)] in PDF points."""
+    """The rows typed on a page: ([(y_top, y_bottom, text)] in PDF points,
+    (x_left, x_right)): the columns from the time stamp to the text's
+    right edge, without the margin and its punch holes."""
     lines = group_lines(page_words(page, use_ocr))
     spk_x = sorted(w[0] for ws in lines for w in ws if w[2].strip('.:') in SPEAKERS and w[0] > 100)
     if not spk_x:
-        return []
+        return [], (0, page.rect.width)
     col = spk_x[len(spk_x) // 2]
     firsts = sorted(w[0] for ws in lines for w in ws if w[0] > col + 20)
     text_x = min(firsts) if firsts else col + 40
-    rows = []
+    rows, stamps, right = [], [], text_x
     for ws in lines:
         if HEADER.match(' '.join(w[2] for w in ws)):
             continue
         y = ws[0][1]
         spk = [w for w in ws if abs(w[0] - col) <= 14]
         text = ' '.join(w[2] for w in ws if w[0] >= text_x - 12)
+        right = max([right] + [w[0] for w in ws if w[0] >= text_x - 12])
         if spk and not spk[0][2].startswith('('):
             rows.append([y, y, text])
+            digits = [w[0] for w in ws if w[0] < col - 14 and re.search(r'\d', w[2])]
+            if digits:
+                stamps.append(min(digits))
         elif rows and text:
             rows[-1][1] = y
             rows[-1][2] += ' ' + text
-    return rows
+    x0 = (sorted(stamps)[len(stamps) // 2] - 6) if stamps else max(0, col - 70)
+    x1 = min(page.rect.width - 6, right + 46)
+    return rows, (max(0, x0), x1)
 
 
 def norm(t):
@@ -81,7 +90,7 @@ def main():
     done = 0
     for pno, ls in sorted(by_page.items()):
         page = doc[pno - 1]
-        rows = page_rows(page, use_ocr)
+        rows, (x0, x1) = page_rows(page, use_ocr)
         if not rows:
             continue
         for l in ls:
@@ -91,8 +100,8 @@ def main():
             best = max(range(len(rows)), key=lambda i: difflib.SequenceMatcher(None, key, norm(rows[i][2])[:60], autojunk=False).ratio())
             y0 = rows[best][0] - 9
             y1 = (rows[best + 1][0] - 3) if best + 1 < len(rows) else rows[best][1] + 12
-            y1 = min(y1, rows[best][1] + 14, y0 + 90)
-            clip = pymupdf.Rect(0, y0, page.rect.width, max(y1, y0 + 16))
+            y1 = min(y1, rows[best][1] + 14, y0 + 300)
+            clip = pymupdf.Rect(x0, y0, x1, max(y1, y0 + 16))
             pix = page.get_pixmap(dpi=DPI, clip=clip, colorspace=pymupdf.csGRAY)
             (out / f"{l['pg']}-{l['pr']}.jpg").write_bytes(pix.tobytes('jpeg', jpg_quality=72))
             done += 1
