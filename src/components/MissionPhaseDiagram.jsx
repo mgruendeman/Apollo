@@ -94,7 +94,7 @@ function onMoon(craft, name, w) {
 // What's drawn for each phase: the craft and where (positions and headings
 // taken from the figure-8's curves). While the crew are split, each craft is
 // labeled with its name and how many are aboard.
-function scene(phase, craft) {
+function scene(phase, craft, lunar) {
   const lmW = wide(craft, 'lm')
   const csmInOrbit = { x: 229, y: 53, dir: 75 } // on the lunar loop's right side, heading down
   switch (phase) {
@@ -108,7 +108,9 @@ function scene(phase, craft) {
       // (Apollo 9: the docked stack stayed in Earth orbit)
       return { stack: { x: 67, y: 32, dir: -169 } }
     case 'lm-solo':
-      // (Apollo 9: the Lunar Module flew off on its own, in Earth orbit, and came back)
+      // (Apollo 10: the Lunar Module flew down toward the Moon on its own and came back up;
+      // Apollo 9: it flew off on its own in Earth orbit)
+      if (lunar) return { csm: csmInOrbit, lm: { name: 'lm', x: MOON.x - 17, y: MOON.y - 22, w: lmW }, split: true }
       return { csm: { x: 67, y: 32, dir: -169 }, lm: { name: 'lm', x: 30, y: 22, w: lmW }, tagX: 110, split: true }
     case 'transit-to-moon':
       return { stack: { x: 143, y: 40, dir: -29 } }
@@ -146,7 +148,8 @@ function whoWhere(phase, mission) {
     return `${lmp} outside, on ${mission.lmName}'s porch · ${cmp} in ${mission.csmName}'s open hatch · ${cdr} in ${mission.lmName}`
   }
   if (phase === 'lm-solo') {
-    return `${cdr} & ${lmp} in ${mission.lmName}, flying on their own · ${cmp} in ${mission.csmName}, both in Earth orbit`
+    const where = mission.events?.loi ? 'in lunar orbit' : 'both in Earth orbit'
+    return `${cdr} & ${lmp} in ${mission.lmName}, flying on their own · ${cmp} in ${mission.csmName}, ${where}`
   }
   if (!['landing', 'surface', 'ascent'].includes(phase)) return null
   const where = { landing: 'descending to the Moon', surface: 'on the Moon', ascent: 'rising to meet the CSM' }[phase]
@@ -157,7 +160,7 @@ export default function MissionPhaseDiagram({ phase, mission }) {
   const p = PHASES[phase] || PHASES['transit-to-moon']
   const hasLM = !mission || !!mission.lmName
   const craft = useGlobeArt('craft')
-  const s = scene(phase, craft)
+  const s = scene(phase, craft, !!mission?.events?.loi)
   // A mission without a Lunar Module (Apollo 8) flies the CSM alone throughout.
   const stack = s.stack ? (hasLM ? { stack: s.stack } : { csm: s.stack }) : {}
   const caption = whoWhere(phase, mission)

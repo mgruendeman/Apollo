@@ -87,6 +87,8 @@ export function tapePhaseAt(mission, g) {
     if (g < at('liftoff')) return 'surface'
     if (g < at('lmJettison')) return 'ascent'
   }
+  // (Apollo 10's Lunar Module flew down to 47,000 feet and back without landing)
+  if (e.undocking && g >= at('undocking') && g < at('redocking')) return 'lm-solo'
   // (Apollo 8 went into lunar orbit and came home: no landing between the two burns)
   if (g < at('tei')) return 'lunar-orbit'
   if (g < at('cmSep')) return 'transit-to-earth'

@@ -176,7 +176,10 @@ def main():
 
     segments.sort(key=lambda s: s['get'])
     segments = trim_overlaps(segments)
-    lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text'], **({'a': 1} if r['getApprox'] else {})} for r in rows]
+    on_page = {}   # (each row's place on its scanned page: the review list shows the page's own row)
+    for r in rows:
+        r['_row'] = on_page[r['page']] = on_page.get(r['page'], -1) + 1
+    lines = [{'g': r['getSeconds'], 's': name(r), 't': r['text'], 'pg': r['page'], 'pr': r['_row'], **({'a': 1} if r['getApprox'] else {})} for r in rows]
     cm_loop = {id(l) for l, r in zip(lines, rows) if r.get('loop') == 'CM'}
     synced = sync_to_tape(lines, segments, tape_words)
     untimed = time_untimed(lines, segments, tape_words, other_loop=cm_loop)
@@ -260,12 +263,15 @@ def main():
             return {}
         return {'audio': audio(sg['tape']), 'at': round(sg['from'] + (l['g'] - sg['get']) / sg['rate'], 1)}
     (review / f'apollo{m}.json').write_text(json.dumps(
-        [{'g': lines[i]['g'], 's': lines[i]['s'], 't': lines[i]['t'], 'q': q, 'why': why, **where(lines[i])} for q, i, why in ranked],
+        [{'g': lines[i]['g'], 's': lines[i]['s'], 't': lines[i]['t'], 'q': q, 'why': why, **where(lines[i]),
+          **{k: lines[i][k] for k in ('tape', 'suggest', 'pg', 'pr') if k in lines[i]}} for q, i, why in ranked],
         separators=(',', ':')))
     for l in lines:
         l.pop('ok', None)   # (the review list's business, not the site's)
         l.pop('fixed', None)
         l.pop('heard', None)
+        for k in ('tape', 'suggest', 'pg', 'pr'):
+            l.pop(k, None)
         l.pop('review', None)
     timeline = {'mission': m, 'segments': segments, 'lines': lines, 'announcer': announcer, 'over': over}
     if args.cleaned:   # (the site fills in {media}: its media storage address)

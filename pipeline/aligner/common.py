@@ -48,6 +48,7 @@ def from_liftoff(spoken):
 TOKEN = re.compile(r"[a-z0-9]+")
 CREW = {'08': {'CDR': 'Borman', 'CMP': 'Lovell', 'LMP': 'Anders'},
         '09': {'CDR': 'McDivitt', 'CMP': 'Scott', 'LMP': 'Schweickart'},
+        '10': {'CDR': 'Stafford', 'CMP': 'Young', 'LMP': 'Cernan'},
         '11': {'CDR': 'Armstrong', 'CMP': 'Collins', 'LMP': 'Aldrin'},
         '12': {'CDR': 'Conrad', 'CMP': 'Gordon', 'LMP': 'Bean'},
         '14': {'CDR': 'Shepard', 'CMP': 'Roosa', 'LMP': 'Mitchell'},

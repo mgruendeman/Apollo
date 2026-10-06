@@ -411,6 +411,24 @@ def pieces_from_anchors(anchors, seconds, word_starts, word_ends, sure=(), word_
     groups = [grp for grp in groups if _heft(grp) >= 3
               or not any(a < grp[0][0] and grp[-1][0] < b for a, b in spans)]
     groups = _split_interleaved(groups)
+    # Two groups that overlap on the tape without one sitting inside the other are rival readings
+    # of the same stretch (Apollo 10's 094-AAA: six loose matches at one offset strung across the
+    # live launch's anchors at another): the lighter one goes where half or more of it overlaps.
+    changed = True
+    while changed:
+        changed = False
+        for a in sorted(groups, key=_heft):
+            for b in groups:
+                if b is a or _heft(b) < _heft(a):
+                    continue
+                lo, hi = b[0][0], b[-1][0]
+                inside = sum(1 for x in a if lo <= x[0] <= hi)
+                if 0 < inside and 2 * inside >= len(a) and not (a[0][0] < lo and hi < a[-1][0]):
+                    groups.remove(a)
+                    changed = True
+                    break
+            if changed:
+                break
     def cut(j):
         """Where the tape passes from group j-1's stretch to group j's: its
         quietest point between them, as (end of j-1's piece, start of j's).

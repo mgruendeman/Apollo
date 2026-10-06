@@ -21,6 +21,11 @@ article { background:var(--surface); border:1px solid var(--rule); border-radius
 .line:not(.is-main) .text { font-size:.93rem; }
 .line.is-pao .text { color:var(--muted); font-style:italic; }
 .text { margin:0; overflow-wrap:anywhere; }
+.tape { margin:4px 0 0; color:var(--muted); font-size:.8rem; overflow-wrap:anywhere; }
+img.row { display:block; max-width:100%; height:auto; margin:6px 0 0; border:1px solid var(--rule); border-radius:4px; background:#fff; }
+.suggest { margin:6px 0 0; font-size:.93rem; overflow-wrap:anywhere; }
+.suggest mark { background:#fde9b8; padding:0 2px; border-radius:2px; }
+.suggest .accept { margin-left:6px; }
 a { color:var(--accent); }
 .empty { color:var(--muted); }
 .actions { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
@@ -36,10 +41,10 @@ button.play { border-color:var(--accent); color:var(--accent); }
 <main>
   <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a></p>
   <h1>Transcript lines to check</h1>
-  <p class="intro">Lines that look doubtful — damaged words, a speaker or time the scan lost, or words the tape hears differently — each shown with the lines around it, since mistakes come in clusters. Press ▶ to hear a line (all of it, from a few seconds before; as often as you like) and Report to say what it should be. A line you've reported is put aside here straight away, and leaves the list at the next run.</p>
+  <p class="intro">Lines that look doubtful — damaged words, a speaker or time the scan lost, or words the tape hears differently — each shown with the lines around it, since mistakes come in clusters. Under each listed line: what the tape says over it, the row as NASA typed it on the scanned page, and where the tape's words mend a damaged word, a suggested reading to Accept with one tap. Press ▶ to hear a line (all of it, from a few seconds before; as often as you like) and Report to say what it should be. A line you've reported is put aside here straight away, and leaves the list at the next run.</p>
   <audio id="player" preload="none"></audio>
   <div class="bar">
-    <span role="group" aria-label="Mission"><button data-m="08" aria-pressed="true">Apollo 8</button> <button data-m="09" aria-pressed="false">Apollo 9</button> <button data-m="11" aria-pressed="false">Apollo 11</button> <button data-m="12" aria-pressed="false">Apollo 12</button> <button data-m="14" aria-pressed="false">Apollo 14</button> <button data-m="15" aria-pressed="false">Apollo 15</button> <button data-m="16" aria-pressed="false">Apollo 16</button> <button data-m="17" aria-pressed="false">Apollo 17</button></span>
+    <span role="group" aria-label="Mission"><button data-m="08" aria-pressed="true">Apollo 8</button> <button data-m="09" aria-pressed="false">Apollo 9</button> <button data-m="10" aria-pressed="false">Apollo 10</button> <button data-m="11" aria-pressed="false">Apollo 11</button> <button data-m="12" aria-pressed="false">Apollo 12</button> <button data-m="14" aria-pressed="false">Apollo 14</button> <button data-m="15" aria-pressed="false">Apollo 15</button> <button data-m="16" aria-pressed="false">Apollo 16</button> <button data-m="17" aria-pressed="false">Apollo 17</button></span>
     <span class="gap"></span>
     <span role="group" aria-label="Order"><button data-order="rank" aria-pressed="true">Most doubtful first</button> <button data-order="time" aria-pressed="false">In mission order</button></span>
   </div>
@@ -92,12 +97,25 @@ function lineLength(k) {
   if (next && next.g > l.g + length && next.g < l.g + 2 * length + 10) length = next.g - l.g
   return Math.min(360, Math.max(10, length + 1.5))
 }
-function lineHtml(k, main) {
+// The suggested line with the words it changes marked
+function suggestHtml(from, to) {
+  const was = new Set(from.split(' '))
+  return to.split(' ').map((w) => (was.has(w) ? esc(w) : `<mark>${esc(w)}</mark>`)).join(' ')
+}
+
+function lineHtml(k, main, x) {
   const l = lines[k], a = audioFor(l.g)
+  // for the listed line itself: what the tape says over it, NASA's typed row from the scanned page, and a
+  // suggested reading from the tape's words to accept with one tap
+  const help = main && x ? [
+    x.tape ? `<p class="tape">Tape: ${esc(x.tape)}</p>` : '',
+    x.pg != null ? `<img class="row" loading="lazy" alt="This row on NASA's page" src="/api/review/media/review/pages/${mission}/${x.pg}-${x.pr}.jpg" onerror="this.remove()">` : '',
+    x.suggest ? `<p class="suggest">Suggested: ${suggestHtml(l.t, x.suggest)} <button class="accept" data-i="${rows.indexOf(x)}">Accept</button></p>` : '',
+  ].join('') : ''
   return `<div class="line${main ? ' is-main' : ''}${l.c ? ' is-pao' : ''}" data-k="${k}">
     <div class="top"><span class="meta"><a href="/#/mission/${mission}?at=${Math.floor(l.g)}" target="_blank" rel="noreferrer">${fmt(l.g)}</a> · ${esc(l.c ? 'Announcer' : l.s)}${l.n ? ' · not on this recording' : ''}</span>
     <span class="actions">${reported.has(keyOf(l)) ? '<span class="done">✓ reported</span>' : ''}${a ? `<button class="play" data-src="${esc(a.src)}" data-at="${a.at}" data-until="${Math.round((a.at + lineLength(k)) * 10) / 10}">▶ Play</button>` : '<span class="meta">no tape here</span>'}<button class="good" title="Checked against the tape: right as it is">✓ Correct</button><button class="report">Report a fix</button></span></div>
-    <p class="text">${esc(l.t)}</p>
+    <p class="text">${esc(l.t)}</p>${help}
   </div>`
 }
 
@@ -105,7 +123,7 @@ function cardHtml(i) {
   const x = rows[i], r = around.get(i) || AROUND
   const lo = Math.max(0, x.k - r), hi = Math.min(lines.length - 1, x.k + r)
   let body = ''
-  for (let k = lo; k <= hi; k++) body += lineHtml(k, k === x.k)
+  for (let k = lo; k <= hi; k++) body += lineHtml(k, k === x.k, x)
   return `<article data-i="${i}"><div class="head"><span class="q">${x.q}</span><span class="why">${esc(x.why)}</span></div>${body}<button class="more">More around it</button></article>`
 }
 
@@ -165,6 +183,8 @@ list.addEventListener('click', (e) => {
   }
   const good = e.target.closest('button.good')
   if (good) { send(good.closest('.line'), CORRECT, null); return }
+  const accept = e.target.closest('button.accept')
+  if (accept) { send(accept.closest('.line'), rows[Number(accept.dataset.i)].suggest, null); return }
   const more = e.target.closest('button.more')
   if (more) {
     const card = more.closest('article'), i = Number(card.dataset.i)

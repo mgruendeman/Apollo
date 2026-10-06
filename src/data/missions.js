@@ -84,16 +84,23 @@ export const missions = [
     summary:
       'The "dress rehearsal" for the first landing: a full lunar-orbit run-through, with the Lunar Module descending to within 8.4 nautical miles of the surface.',
     status: 'available',
-    clipsFile: 'apollo10',
-    clipCount: 184,
+    timeline: 'apollo10', // whole-mission tapes: public/timeline/apollo10.json
     launchUtc: '1969-05-18T16:49:00Z',
     durationSeconds: 691403, // 192:03:23
+    // (archive.org's Apollo 10 broadcast tapes are the -AAC series, 848-862 and 910-929, with 094 and 095-AAA; 856-AAC is held backward there and is turned on disk)
+    events: { tli: '002:39:20', loi: '075:55:54', undocking: '098:11:57', redocking: '106:22:02', lmJettison: '108:24:36', tei: '137:36:29', cmSep: '191:33:26' },
     csmName: 'Charlie Brown',
     lmName: 'Snoopy',
     objective: 'Rehearse every step of a landing except the touchdown itself, with Snoopy swooping low over the planned Apollo 11 landing area before rejoining Charlie Brown.',
     highlights: [
-      { id: 'a10-0000254', title: 'Launch' },
-      { id: 'a10-s-ivb-sep-0035600', title: '"Snoopy\'s coming out of the doghouse"' },
+      { id: 'a10-launch', at: '-000:00:30', title: 'Launch' },
+      { id: 'a10-tli', at: '002:30:20', title: '"You\'re GO for TLI"' },
+      { id: 'a10-moon', at: '076:25:40', title: 'The first look at the Moon up close' },
+      { id: 'a10-undocking', at: '098:27:00', title: 'Snoopy flies on its own' },
+      { id: 'a10-low-pass', at: '100:45:00', title: 'Snoopy at 47,000 feet over the landing site' },
+      { id: 'a10-staging', at: '102:45:00', title: 'Staging: "a wild gyration"' },
+      { id: 'a10-redocking', at: '106:21:30', title: 'Snoopy and Charlie Brown together again' },
+      { id: 'a10-splashdown', at: '192:02:50', title: 'Splashdown' },
     ],
   },
   {

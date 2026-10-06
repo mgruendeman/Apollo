@@ -66,6 +66,56 @@ def _disagreements(nasa_words, heard):
     return out
 
 
+def suggest(text, heard, vocab, common=None):
+    """A proposed reading of a damaged line from the words heard over it:
+    each damaged word (per _suspect) that lines up with a heard word of the
+    same shape (half its letters in order, or one letter off) takes that
+    word, keeping NASA's punctuation and capital. Returns (text, changed)
+    with changed as [(from, to)], or (text, []) when nothing changes."""
+    words = text.split()
+    cores = [_core(w) for w in words]
+    mine = [c[1].lower() for c in cores]
+    heard = [h for h in heard if h]
+    if not heard:
+        return text, []
+    good = lambda h: h in vocab or (common is not None and h in common) or re.fullmatch(r"\d+", h)
+    changed, out = [], list(words)
+    sm = difflib.SequenceMatcher(None, [re.sub(r"[^a-z0-9']", '', m) for m in mine], heard, autojunk=False)
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op != 'replace':
+            continue
+        used = set()
+        for k in range(i1, i2):
+            lead, core, trail = cores[k]
+            if not _suspect(core, vocab) or core[:1].isupper() and core[1:].isalpha() and core.lower() in vocab:
+                continue
+            plain = re.sub(r"[^a-z0-9]", '', core.lower())
+            if re.sub(r"[^a-z]", '', core.lower()) in vocab and len(plain) >= 4:
+                continue   # (a stray mark on a sound word, "{Laughter": for the eye, not the tape)
+            garbled = bool(GARBLE.search(core))
+            best, score = None, 0.0
+            for j in range(j1, j2):
+                h = heard[j]
+                if j in used or not good(h) or len(h) < 2:
+                    continue
+                if core.isalpha() and h in plain and len(h) < len(plain):
+                    continue   # (a word NASA ran together, "wetwipes", "suitpants": not damage, and "wipes" isn't it)
+                r = difflib.SequenceMatcher(None, plain, h, autojunk=False).ratio()
+                # a word of letters alone that just isn't in the dictionary ("vesicular") only gives way
+                # to a near-identical heard word that starts the same way
+                if not garbled and (r < 0.8 or plain[:2] != h[:2]):
+                    continue
+                if r > score:
+                    best, score, at = h, r, j
+            if best is None or score < 0.6 or (len(best) <= 3 and score < 0.67):
+                continue
+            used.add(at)
+            new = best[:1].upper() + best[1:] if core[:1].isupper() else best
+            out[k] = lead + new + trail
+            changed.append((core, new))
+    return (' '.join(out), changed) if changed else (text, [])
+
+
 def score_lines(lines, segments, tape_words, vocab, common=None):
     """Set line['q'] (0-100, higher = more doubtful) and line['why'] on lines
     worth a look. Returns the ranked list [(score, index, why)]."""
@@ -115,6 +165,11 @@ def score_lines(lines, segments, tape_words, vocab, common=None):
         if score >= 25:
             l['q'] = min(100, score)
             l['why'] = ' · '.join(reasons)
+            if heard:
+                l['tape'] = ' '.join(heard)   # (the review list's: what the tape says over it)
+                proposed, changed = suggest(l['t'], heard, vocab, common)
+                if changed:
+                    l['suggest'] = proposed
             ranked.append((l['q'], i, l['why']))
     ranked.sort(key=lambda r: (not lines[r[1]].get('review'), -r[0], r[1]))   # (questions for a listener first)
     return ranked
