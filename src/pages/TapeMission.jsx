@@ -14,6 +14,7 @@ import { archiveRecordings } from '../data/archiveRecordings'
 import { usePlayer } from '../audio/PlayerContext'
 import { getLiveStatus, formatGet } from '../lib/liveStatus'
 import { chapterTitle, parseGet, tapePhaseAt } from '../lib/missionIndex'
+import { track } from '../lib/track'
 import { formatGetSigned, useMissionTape } from '../lib/missionTape'
 
 const endOf = (s) => s.get + (s.to - s.from) * s.rate
@@ -132,7 +133,7 @@ export default function TapeMission({ mission }) {
       {mission.highlights && (
         <section className="highlights-row">
           {mission.highlights.map((h) => (
-            <button key={h.id} type="button" className="highlight-chip" onClick={() => seekAndShow(parseGet(h.at))}>
+            <button key={h.id} type="button" className="highlight-chip" onClick={() => { track('highlight', mission.id, h.id); seekAndShow(parseGet(h.at)) }}>
               {h.title}
             </button>
           ))}

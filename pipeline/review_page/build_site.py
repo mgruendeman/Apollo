@@ -49,11 +49,12 @@ def main():
     page = (HERE / 'template.html').read_text()
     page = page.replace('__SCRIPT__', (HERE / 'site_shim.js').read_text() + '\n' + script)
     page = page.replace("Reviews can't be saved in this view. Open the page in Claude to review.", 'Sign in to review.')
-    page = page.replace('<nav class="strip"', '<p class="notice" style="background:none;padding:4px 16px"><a href="reports.html">Problem reports →</a> · <a href="transcript.html">Transcript lines to check →</a></p>\n  <nav class="strip"', 1)
+    page = page.replace('<nav class="strip"', '<p class="notice" style="background:none;padding:4px 16px"><a href="reports.html">Problem reports →</a> · <a href="transcript.html">Transcript lines to check →</a> · <a href="stats.html">Site statistics →</a></p>\n  <nav class="strip"', 1)
     page = page.replace('</style>', SIGNIN_CSS + '</style>', 1)
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / 'index.html').write_text('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex">\n' + page)
     (OUT / 'reports.html').write_text(REPORTS)
+    (OUT / 'stats.html').write_text(STATS)
     # a button for each mission with a review list (public/review/transcript/apolloNN.json)
     listed = sorted(int(p.stem.removeprefix('apollo')) for p in (OUT / 'transcript').glob('apollo*.json'))
     buttons = ' '.join(f'<button data-m="{n:02d}" aria-pressed="{str(k == 0).lower()}">Apollo {n}</button>' for k, n in enumerate(listed))
@@ -151,6 +152,101 @@ load()
 countWaiting()
 </script>
 """
+
+STATS = r"""<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Site Statistics</title>
+<style>
+:root { --ground:#eef1ee; --surface:#fff; --ink:#1b2320; --muted:#5d6a65; --rule:#d3dad6; --accent:#b8741a; --bar:#c9873a; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --ground:#101513; --surface:#182019; --ink:#e3eae5; --muted:#98a69f; --rule:#2c3830; --accent:#e3a444; --bar:#e3a444; color-scheme: dark; } }
+body { margin:0; background:var(--ground); color:var(--ink); font:15px/1.5 system-ui, sans-serif; padding:20px 16px 40px; }
+main { max-width:900px; margin:0 auto; display:grid; gap:14px; }
+h1 { margin:0; font-size:1.5rem; } h2 { margin:0 0 8px; font-size:1.05rem; }
+a { color:var(--accent); }
+.bar { display:flex; flex-wrap:wrap; gap:8px; }
+.bar button { font:inherit; padding:5px 12px; border:1px solid var(--rule); border-radius:999px; background:var(--surface); color:var(--ink); cursor:pointer; }
+.bar button[aria-pressed=true] { background:var(--ink); color:var(--ground); }
+.tiles { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px; }
+.tile, section { background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:12px 14px; }
+.tile b { display:block; font-size:1.6rem; line-height:1.2; } .tile span { color:var(--muted); font-size:.82rem; }
+.chart { display:flex; align-items:flex-end; gap:2px; height:120px; }
+.chart div { flex:1; background:var(--bar); border-radius:2px 2px 0 0; min-height:1px; position:relative; }
+.axis { display:flex; justify-content:space-between; color:var(--muted); font-size:.75rem; margin-top:4px; }
+table { width:100%; border-collapse:collapse; font-size:.9rem; }
+td { padding:4px 0; border-bottom:1px solid var(--rule); vertical-align:middle; }
+td.n { text-align:right; white-space:nowrap; padding-left:10px; font-variant-numeric:tabular-nums; }
+td.w { width:40%; padding-left:10px; } td.w i { display:block; height:8px; background:var(--bar); border-radius:4px; }
+.grid2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; }
+.meta, .empty { color:var(--muted); font-size:.85rem; }
+</style>
+<main>
+  <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a> · <a href="transcript.html">Transcript lines</a></p>
+  <h1>Site statistics</h1>
+  <p class="meta">Counted by the site itself: totals by day, with no cookies, no addresses and nothing that follows a visitor. Visitors are distinct devices per day. Cloudflare's Web Analytics has the traffic side (referrers, devices, speed).</p>
+  <div class="bar" role="group" aria-label="Period"><button data-d="7" aria-pressed="false">7 days</button><button data-d="30" aria-pressed="true">30 days</button><button data-d="90" aria-pressed="false">90 days</button><button data-d="365" aria-pressed="false">A year</button></div>
+  <div class="tiles" id="tiles"></div>
+  <section><h2>Visitors a day</h2><div class="chart" id="daily"></div><div class="axis" id="axis"></div></section>
+  <div class="grid2">
+    <section><h2>Missions opened</h2><table id="missions"></table></section>
+    <section><h2>Hours of tape listened</h2><table id="listened"></table></section>
+    <section><h2>Highlights played</h2><table id="highlights"></table></section>
+    <section><h2>Pages</h2><table id="pages"></table></section>
+    <section><h2>Countries</h2><table id="countries"></table></section>
+    <section><h2>Reactions</h2><table id="reacts"></table></section>
+    <section><h2>Most-heard mission hours</h2><table id="hours"></table></section>
+    <section><h2>Photos opened</h2><table id="photos"></table></section>
+  </div>
+</main>
+<script>
+let days = 30
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
+const fmt = (n) => n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'k' : String(Math.round(n))
+const mname = (m) => m ? 'Apollo ' + Number(m) : '(none)'
+function sum(rows, kind, key) {
+  const out = new Map()
+  for (const r of rows) if (r.kind === kind) { const k = key(r); out.set(k, (out.get(k) || 0) + r.n) }
+  return [...out.entries()].sort((a, b) => b[1] - a[1])
+}
+function table(id, entries, label = (k) => k, value = fmt, limit = 12) {
+  const el = document.getElementById(id), top = entries.slice(0, limit), max = top.length ? top[0][1] : 1
+  el.innerHTML = top.length ? top.map(([k, n]) => `<tr><td>${esc(label(k))}</td><td class="w"><i style="width:${Math.max(2, 100 * n / max)}%"></i></td><td class="n">${value(n)}</td></tr>`).join('')
+    : '<tr><td class="empty">Nothing yet.</td></tr>'
+}
+async function load() {
+  const r = await fetch('/api/review/stats?days=' + days)
+  if (r.status === 401) { location.href = './'; return }
+  const { since, rows, visitors, reports } = await r.json()
+  const dayList = []
+  for (let t = Date.parse(since + 'T00:00:00Z'); t <= Date.now(); t += 86400000) dayList.push(new Date(t).toISOString().slice(0, 10))
+  const vis = new Map(visitors.map((v) => [v.day, v.n]))
+  const total = (kind) => rows.filter((r) => r.kind === kind).reduce((a, r) => a + r.n, 0)
+  const tiles = [
+    [visitors.reduce((a, v) => a + v.n, 0), 'visitor-days'], [total('page'), 'pages viewed'], [total('play'), 'times the tapes were played'],
+    [total('listen') / 60, 'hours of tape listened'], [total('highlight'), 'highlights played'], [total('photo'), 'photos opened'],
+    [reports.reduce((a, v) => a + v.n, 0), 'reports sent'],
+  ]
+  document.getElementById('tiles').innerHTML = tiles.map(([n, l]) => `<div class="tile"><b>${fmt(n)}</b><span>${l}</span></div>`).join('')
+  const max = Math.max(1, ...dayList.map((d) => vis.get(d) || 0))
+  document.getElementById('daily').innerHTML = dayList.map((d) => `<div title="${d}: ${vis.get(d) || 0}" style="height:${100 * (vis.get(d) || 0) / max}%"></div>`).join('')
+  document.getElementById('axis').innerHTML = `<span>${dayList[0]}</span><span>most ${max}</span><span>${dayList[dayList.length - 1]}</span>`
+  table('missions', sum(rows, 'mission', (r) => r.mission), mname)
+  table('listened', sum(rows, 'listen', (r) => r.mission), mname, (n) => (n / 60).toFixed(1) + ' h')
+  table('highlights', sum(rows, 'highlight', (r) => r.item), (k) => k)
+  table('pages', sum(rows, 'page', (r) => r.item), (k) => k)
+  table('countries', sum(rows, 'country', (r) => r.item), (k) => k)
+  table('reacts', sum(rows, 'react', (r) => r.item + ' ' + mname(r.mission)), (k) => k)
+  table('hours', sum(rows, 'listen', (r) => mname(r.mission) + ', hour ' + r.item), (k) => k, (n) => n + ' min')
+  table('photos', sum(rows, 'photo', (r) => r.item), (k) => k)
+}
+document.querySelector('.bar').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return
+  days = Number(b.dataset.d)
+  document.querySelectorAll('.bar button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)))
+  load()
+})
+load()
+</script>
+"""
+
 
 TRANSCRIPT = r"""<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
 <title>Transcript lines to check</title>

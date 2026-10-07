@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { MEDIA_URL } from '../config'
+import { track, trackListening } from './track'
 
 // Playback of a whole mission from NASA's tapes, by mission time (GET).
 //
@@ -45,6 +46,8 @@ export function useMissionTape(timeline, mission) {
   const [loading, setLoading] = useState(false)
   const [realTime, setRealTime] = useState(false)
   const realTimeRef = useRef(false)
+  const lastTick = useRef(0)
+  const playedOnce = useRef(false)
   realTimeRef.current = realTime
 
   const el = (i) => {
@@ -204,11 +207,19 @@ export function useMissionTape(timeline, mission) {
       const t = a.currentTime
       if (t < s.from - 1) return // still seeking into the piece
       setGet(s.get + (t - s.from) * s.rate)
+      const now = performance.now()   // (minutes heard, for the site's statistics)
+      if (lastTick.current && now - lastTick.current < 1000) trackListening(mission, s.get + (t - s.from) * s.rate, (now - lastTick.current) / 1000)
+      lastTick.current = now
       // (a tape file can end a moment before the piece's measured end)
       if (t >= Math.min(s.to, a.duration || Infinity) - 0.05) advance(k)
     }
-    if (playing) raf = requestAnimationFrame(tick)
+    if (playing) {
+      raf = requestAnimationFrame(tick)
+      if (!playedOnce.current) { playedOnce.current = true; track('play', mission) }
+    }
+    lastTick.current = 0
     return () => cancelAnimationFrame(raf)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playing, segments, startPiece, advance])
 
   // Keep React's playing/loading state in step with the elements.

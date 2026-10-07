@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { track } from '../lib/track'
 import LikeButton from './LikeButton'
 import ReportDialog from './ReportDialog'
 import { KIND_LABELS } from '../lib/archiveFrames'
@@ -20,6 +21,10 @@ export default function PhotoLightbox({ photos, index, onIndex, onClose, mission
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
   }, [index, photos.length, onIndex, onClose, reporting])
+
+  useEffect(() => {
+    if (photo?.title) track('photo', (photo.title.match(/^AS(\d+)/i) || [])[1] || '', photo.title)
+  }, [photo?.title])
 
   if (!photo) return null
   const context = [

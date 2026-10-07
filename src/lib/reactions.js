@@ -1,3 +1,4 @@
+import { track } from './track'
 import { useEffect, useState } from 'react'
 import { API_BASE } from '../config'
 import { visitorId } from './likes'
@@ -54,6 +55,7 @@ export function useClipReactions(mission, clip) {
     const on = !was.mine
     const set = (v) => setState((s) => ({ ...s, [id]: { ...(s[id] || {}), [emoji]: v } }))
     set({ n: Math.max(0, was.n + (on ? 1 : -1)), mine: on })
+    if (on) track('react', mission, emoji)
     try {
       const r = await fetch(`${API_BASE}/reactions`, {
         method: 'POST',

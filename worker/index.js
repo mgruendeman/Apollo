@@ -21,8 +21,16 @@ const SCHEMA = [
   `CREATE TABLE IF NOT EXISTS reaction_lines (line TEXT PRIMARY KEY, mission TEXT NOT NULL, clip TEXT NOT NULL,
      get TEXT, speaker TEXT, text TEXT)`,
   `CREATE INDEX IF NOT EXISTS reaction_lines_clip ON reaction_lines (mission, clip)`,
+  // site statistics: counts by day, never single visits (no addresses, no cookies, no visitor ids)
+  `CREATE TABLE IF NOT EXISTS stats (day TEXT NOT NULL, kind TEXT NOT NULL, mission TEXT NOT NULL DEFAULT '', item TEXT NOT NULL DEFAULT '',
+     n INTEGER NOT NULL, PRIMARY KEY (day, kind, mission, item))`,
+  // a day's distinct visitors: a hash of the address salted with the day, so it can't be followed from one day to the next
+  `CREATE TABLE IF NOT EXISTS stats_visitors (day TEXT NOT NULL, visitor TEXT NOT NULL, PRIMARY KEY (day, visitor))`,
 ]
-const LIMITS = { like: 1000, report: 60, react: 5000 } // per scrambled IP address, per day
+const LIMITS = { like: 1000, report: 60, react: 5000, stat: 3000 } // per scrambled IP address, per day
+// what the site counts (src/lib/track.js): a page, a mission opened, the tapes played, minutes listened
+// (item: the mission hour), a highlight, a photo opened, a reaction, a search, a report sent
+const STAT_KINDS = new Set(['page', 'mission', 'play', 'listen', 'highlight', 'photo', 'react', 'report', 'clip'])
 // 🤣 funny, 😲 wow, ‼️ big moment, ❤️ moving, 😬 tense (src/lib/reactions.js has the same list)
 const EMOJIS = ['🤣', '😲', '‼️', '❤️', '😬']
 const SESSION_DAYS = 30
@@ -60,6 +68,43 @@ async function underLimit(env, request, kind) {
     `INSERT INTO limits (key, n) VALUES (?1, 1) ON CONFLICT(key) DO UPDATE SET n = n + 1 RETURNING n`,
   ).bind(key).first()
   return row.n <= LIMITS[kind]
+}
+
+// ---------- site statistics ----------
+async function addStat(env, request) {
+  let body
+  try { body = JSON.parse(await request.text()) } catch { return bad(400, 'Bad JSON.') }
+  const events = (Array.isArray(body) ? body : [body]).slice(0, 20)
+  if (!(await underLimit(env, request, 'stat'))) return json({ ok: true })   // (quietly: no point telling a bot)
+  const day = today()
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown'
+  const visitor = (await sha256(`${env.HASH_SALT || ''}|visit|${day}|${ip}|${request.headers.get('User-Agent') || ''}`)).slice(0, 24)
+  const country = (request.cf && request.cf.country) || ''
+  const stmts = [env.DB.prepare(`INSERT OR IGNORE INTO stats_visitors (day, visitor) VALUES (?1, ?2)`).bind(day, visitor)]
+  for (const e of events) {
+    const kind = String(e.kind || '')
+    if (!STAT_KINDS.has(kind)) continue
+    const mission = String(e.mission || '').slice(0, 4)
+    const item = String(e.item || '').slice(0, 80)
+    const n = Math.max(1, Math.min(120, Math.round(Number(e.n) || 1)))
+    stmts.push(env.DB.prepare(`INSERT INTO stats (day, kind, mission, item, n) VALUES (?1, ?2, ?3, ?4, ?5)
+      ON CONFLICT(day, kind, mission, item) DO UPDATE SET n = n + ?5`).bind(day, kind, mission, item, n))
+    if (kind === 'page' && country) stmts.push(env.DB.prepare(`INSERT INTO stats (day, kind, mission, item, n) VALUES (?1, 'country', '', ?2, 1)
+      ON CONFLICT(day, kind, mission, item) DO UPDATE SET n = n + 1`).bind(day, country))
+  }
+  await env.DB.batch(stmts)
+  return json({ ok: true })
+}
+
+async function getStats(env, url) {
+  const days = Math.max(1, Math.min(365, Number(url.searchParams.get('days')) || 30))
+  const since = new Date(Date.now() - (days - 1) * 86400000).toISOString().slice(0, 10)
+  const [rows, visitors, reports] = await Promise.all([
+    env.DB.prepare(`SELECT day, kind, mission, item, n FROM stats WHERE day >= ?1`).bind(since).all(),
+    env.DB.prepare(`SELECT day, COUNT(*) AS n FROM stats_visitors WHERE day >= ?1 GROUP BY day`).bind(since).all(),
+    env.DB.prepare(`SELECT substr(at, 1, 10) AS day, COUNT(*) AS n FROM reports WHERE at >= ?1 GROUP BY day`).bind(since).all(),
+  ])
+  return json({ since, rows: rows.results, visitors: visitors.results, reports: reports.results })
 }
 
 // ---------- reviewer sign-in: a password, then a signed cookie ----------
@@ -287,6 +332,7 @@ export default {
       if (pathname === '/api/reactions/top' && method === 'GET') return topReactions(env, url)
       if (pathname === '/api/reactions' && method === 'POST') return setReaction(env, request)
       if (pathname === '/api/review/login' && method === 'POST') return login(env, request)
+      if (pathname === '/api/stat' && method === 'POST') return addStat(env, request)
 
       if (pathname.startsWith('/api/review/')) {
         if (!(await isReviewer(env, request))) return bad(401, 'Sign in needed.')
@@ -298,6 +344,7 @@ export default {
           await env.DB.prepare(`DELETE FROM reviews WHERE id = ?1`).bind(rest.slice(6)).run()
           return json({ ok: true })
         }
+        if (rest === 'stats' && method === 'GET') return getStats(env, url)
         if (rest === 'reports' && method === 'GET') return listReports(env, url)
         if (rest.startsWith('reports/') && method === 'PUT') return setReport(env, request, rest.slice(8))
         if (rest.startsWith('media/') && method === 'GET') return media(env, rest.slice(6), request)
