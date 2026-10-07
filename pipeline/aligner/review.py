@@ -128,7 +128,8 @@ def score_lines(lines, segments, tape_words, vocab, common=None):
         reasons, score = [], 0
         # a capitalised word that isn't damaged is a name (Alou, Valdespino): not our problem
         damaged = [w for w in words if _suspect(_core(w)[1], vocab)
-                   and not (_core(w)[1][:1].isupper() and _core(w)[1][1:].isalpha())]
+                   and not (_core(w)[1][:1].isupper() and _core(w)[1][1:].isalpha())
+                   and not re.fullmatch(r"\[?sic\]?|\d+/\d+(?:st|nd|rd|th)s?", _core(w)[1], re.I)]   # (NASA's [sic], "16/100ths")
         if damaged:
             score += min(60, 20 * len(damaged))
             reasons.append(f"{len(damaged)} damaged word{'s' if len(damaged) > 1 else ''}: {', '.join(damaged[:3])}")
