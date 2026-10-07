@@ -80,6 +80,12 @@ export function tapePhaseAt(mission, g) {
   if (g < ORBIT_INSERTION_SECONDS) return 'launch'
   if (e.tli == null) return earthOrbitPhaseAt(e, g)
   if (g < at('tli')) return 'earth-orbit'
+  // (Apollo 13 never entered lunar orbit: out to the far side and straight home)
+  if (e.loi == null) {
+    if (g < at('pericynthion')) return 'transit-to-moon'
+    if (g < at('cmSep')) return 'transit-to-earth'
+    return 'splashdown'
+  }
   if (g < at('loi')) return 'transit-to-moon'
   if (mission.landingSeconds != null) {
     if (g < mission.landingSeconds - DESCENT_SECONDS) return 'lunar-orbit'

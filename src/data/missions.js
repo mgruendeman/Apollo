@@ -161,17 +161,26 @@ export const missions = [
     summary:
       'An oxygen tank explosion two days out crippled the Service Module and scrapped the Moon landing — the crew looped around the Moon and used the Lunar Module as a lifeboat to get home.',
     status: 'available',
-    clipsFile: 'apollo13',
-    clipCount: 237,
+    timeline: 'apollo13', // whole-mission tapes: public/timeline/apollo13.json
     launchUtc: '1970-04-11T19:13:00Z',
     durationSeconds: 514481, // 142:54:41
+    // (archive.org's Apollo 13 tapes are 25 reels, 405 to 429, of about 6.6 hours, digitized as seven tracks each; track 1 is the broadcast line and plays here)
+    tapesNote: "NASA's Apollo 13 recordings are 25 long reels covering the whole flight, from before launch to splashdown.",
+    // no lunar orbit: out around the far side (pericynthion behind the Moon, between loss and reacquisition of signal) and home
+    events: { tli: '002:41:47', docking: '003:19:09', accident: '055:54:54', freeReturn: '061:29:43', pericynthion: '077:21:00', tei: '079:27:39', smSep: '138:01:48', cmSep: '141:30:00' },
     csmName: 'Odyssey',
     lmName: 'Aquarius',
     objective: 'Planned as the third landing, at the Fra Mauro highlands. After the oxygen tank explosion two days out, the objective became getting the crew home alive.',
     plannedSite: { name: 'Fra Mauro highlands (planned; Apollo 14 later landed there)', lat: -3.64589, lon: -17.47194 },
     highlights: [
-      { id: 'a13_0000002ag', title: 'Launch' },
-      { id: 'a13_0555519', title: '"Houston, we\'ve had a problem"' },
+      { id: 'a13-launch', at: '-000:00:30', title: 'Launch' },
+      { id: 'a13-problem', at: '055:55:15', title: '"Houston, we\'ve had a problem"' },
+      { id: 'a13-lifeboat', at: '057:41:40', title: '"I got LM power on": Aquarius as a lifeboat' },
+      { id: 'a13-free-return', at: '061:28:45', title: 'The burn back onto a free return' },
+      { id: 'a13-far-side', at: '077:34:35', title: 'Round the far side: signal reacquired' },
+      { id: 'a13-pc2', at: '079:27:00', title: 'The PC+2 burn: speeding the way home' },
+      { id: 'a13-sm', at: '138:04:40', title: '"There\'s one whole side of that spacecraft missing"' },
+      { id: 'a13-splashdown', at: '142:54:00', title: 'Splashdown' },
     ],
   },
   {
