@@ -78055,476 +78055,566 @@
 "getSeconds": 409660,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "where you are. I'm going to get mine.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "breaker is -",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "got a tone.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "P.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "flag, P.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "flag and 02, momentarily.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "flag, and I still got an 02 flag.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "your tone.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "tone is gone. The 02 flag cleared.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "02 PRESS quantity.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "I'm reading 10 percent.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "crewman in MODE B, that's me, cannot",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "Houston, broadcasting in the blind",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
 "speaker": "CDR",
-"text": "Houston reads you loud and clear.",
+"text": "Okay. Stay where you are. I'm going to get mine. Okay. AUDIO breaker is -",
 "unsure": [],
 "page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "loud and clear, Gene .... me?",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "MS",
-"text": "call again.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "do you read, Gene? 1, 2, 3, 4, 5.",
-"unsure": [],
-"page": 643
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "4, 5.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "SC",
-"text": "I can't - Okay. I'm reading you.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "LMP go B.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "and clear, and I got a tone.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "me a short count once.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "had a tone, too. I still got a PRESSURE",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "flag.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "how do you read the LMP?",
-"unsure": [],
-"page": 644
 },
 {
 "getSeconds": 409660,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "We read you loud and clear.",
+"text": "...",
 "unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "I'm reading you loud and clear, and",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "reading you in this mode. How me?",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "loud and clear also, Gene.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "good. We're both going AR, now.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "to get a tone. I didn't, but my VENT",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "clear.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "a VENT flag.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "HORNET",
-"text": "and- VENT flag.",
-"unsure": [],
-"page": 644
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "The wheel is Houston and the blade is",
-"unsure": [],
-"page": 645
-},
-{
-"getSeconds": 409660,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "there; Houston. How are you reading",
-"unsure": [],
-"page": 645
+"page": 643
 },
 {
 "getSeconds": 409660,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "CDR",
-"text": "loud and clear. And, for your information,",
+"text": "...",
 "unsure": [],
-"page": 645
+"page": 643
 },
 {
 "getSeconds": 409660,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "on the PLSSs looks good.",
+"speaker": "LMP",
+"text": "...",
 "unsure": [],
-"page": 645
+"page": 643
 },
 {
 "getSeconds": 409660,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
+"speaker": "CDR",
+"text": "B.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409777,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. I got a tone.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409777,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "VENT flag, P.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409779,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "I got a VENT flag, P.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409779,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "PRESSURE flag and 02, momentarily.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409783,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "PRESSURE flag, and I still got an 02 flag.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409783,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Off with your tone.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409787,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. The tone is gone. The 02 flag cleared.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409787,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. PLSS 02 PRESS quantity.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409793,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay; and I'm reading 10 percent.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409793,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409799,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. Note crewman in MODE B, that's me, cannot hear Houston. Houston, broadcasting in the blind 100 percent on the CDR.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409806,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CC",
+"text": "Roger, CDR. Houston reads you loud and clear.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409813,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "I read you loud and clear, Gene .... me?",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409813,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "i'm reading you loud and clear.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409813,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409813,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Give me a call again.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409813,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. How do you read, Gene? 1, 2, 3, 4, 5.",
+"unsure": [],
+"page": 643
+},
+{
+"getSeconds": 409813,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Give me again.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409813,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "1, 2, 3, 4, 5.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409813,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "I think so. I can't - Okay. I'm reading you. Okay. PLSS. LMP go B.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Going B.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Try that. B ... A. Okay. How do you read me, Jack.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "You're loud and clear, and I got a tone.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. Give me a short count once.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Starting. 1, 2, 3, 4, 5.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "...",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "You're great.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. I had a tone, too. I still got a PRESSURE and a VENT flag.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "And, Houston, how do you read the LMP?",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CC",
+"text": "Roger, LMP. We read you loud and clear.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, Bob. I'm reading you loud and clear, and he's not reading you in this mode. How me?",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409832,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CC",
+"text": "I read you loud and clear also, Gene.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409879,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Very, very, good. We're both going AR, now.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409879,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
 "text": "Let's go.",
 "unsure": [],
-"page": 645
+"page": 644
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409879,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "you read, Houston? This is the LMP.",
+"speaker": "CDR",
+"text": "Okay. Ought to get a tone. I didn't, but my VENT flag did clear.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409879,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Here it is.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409879,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Tone and a VENT flag.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409879,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "... my tone and- VENT flag.",
+"unsure": [],
+"page": 644
+},
+{
+"getSeconds": 409879,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, Jack. The wheel is Houston and the blade is me. Hello, there; Houston. How are you reading CDR?",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409879,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "Jack, we gave them our quantities already;",
+"speaker": "CC",
+"text": "Read CDR loud and clear. And, for your information, your TM on the PLSSs looks good.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
-"getApprox": true,
+"getSeconds": 409912,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "VHF B LMP, FULL DECREASE.",
+"speaker": "CDR",
+"text": "Okay. Let's go.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409912,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "SC",
-"text": "affirm.",
+"speaker": "LMP",
+"text": "How do you read, Houston? This is the LMP.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409912,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "It's FULL DECREASE.",
+"speaker": "CC",
+"text": "Houston reads LMP loud and clear now. You're much clearer than you were before, Jack.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409912,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "On 60, leave that PUMP breaker CLOSED.",
+"speaker": "LMP",
+"text": "Very good.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409912,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "cold; but that's good. Okay. On 16,",
+"speaker": "CDR",
+"text": "Okay. Jack, we gave them our quantities already; so, SQUELCH, VHF B LMP, FULL DECREASE.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409912,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "REPRESS, CLOSED.",
+"speaker": "LMP",
+"text": "SQUELCH B is to FULL DECREASE, huh?",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409912,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "It's - Is that a verify?",
+"speaker": "CDR",
+"text": "That' s affirm.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
-"getApprox": true,
+"getSeconds": 409936,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "a verify.",
+"speaker": "LMP",
+"text": "Okay. It's FULL DECREASE.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409936,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "It's CLOSED.",
+"speaker": "CDR",
+"text": "Okay. On 60, leave that PUMP breaker CLOSED.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409936,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "DELTA-P, OPEN.",
+"speaker": "LMP",
+"text": "Okay.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409936,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "DELTA-P is OPEN.",
+"speaker": "CDR",
+"text": "Oh, that's cold; but that's good. Okay. On 16, ECS, CABIN REPRESS, CLOSED.",
 "unsure": [],
 "page": 645
 },
 {
-"getSeconds": 409660,
+"getSeconds": 409936,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "FAN number 2, OPEN.",
+"speaker": "LMP",
+"text": "Okay. It's - Is that a verify?",
+"unsure": [],
+"page": 645
+},
+{
+"getSeconds": 409936,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "That's a verify.",
+"unsure": [],
+"page": 645
+},
+{
+"getSeconds": 409950,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. It's CLOSED.",
+"unsure": [],
+"page": 645
+},
+{
+"getSeconds": 409950,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "SUIT FAN DELTA-P, OPEN.",
+"unsure": [],
+"page": 645
+},
+{
+"getSeconds": 409953,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. DELTA-P is OPEN.",
+"unsure": [],
+"page": 645
+},
+{
+"getSeconds": 409953,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "And SUIT FAN number 2, OPEN.",
+"unsure": [],
+"page": 645
+},
+{
+"getSeconds": 409956,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "2's open.",
 "unsure": [],
 "page": 645
 },
@@ -78880,155 +78970,182 @@
 "page": 654
 },
 {
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "clear, 3.1 to 3.4.",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "that.",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "at home.",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "up, coming up.",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "mine on.",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "of you then.",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "will clear 37 -",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "when I 'm pressurized?",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "check.",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "hard?",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "you get up - Okay. A",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "commander. Okay. The",
-"unsure": [],
-"page": 659
-},
-{
-"getSeconds": 410851,
+"getSeconds": 411296,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "at 3 - 8 - Okay. 02",
+"text": "I l_ope so.",
 "unsure": [],
 "page": 659
 },
 {
-"getSeconds": 410851,
+"getSeconds": 411296,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "I suppose.",
+"speaker": "CDR",
+"text": "Okay. PLSS 02 ON.",
 "unsure": [],
 "page": 659
 },
 {
-"getSeconds": 410851,
+"getSeconds": 411296,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "MS",
-"text": "my PLSS 02 OFF for 1 -",
+"speaker": "LMP",
+"text": "Mine 's on.",
 "unsure": [],
 "page": 659
 },
 {
-"getSeconds": 410851,
+"getSeconds": 411296,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "me know when you're up,",
+"speaker": "CDR",
+"text": "PRESSURE flag and 02 flag clear, 3.1 to 3.4.",
 "unsure": [],
 "page": 659
 },
 {
-"getSeconds": 410851,
+"getSeconds": 411338,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. I'm coming up. I know that.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "minute hand.",
+"speaker": "CDR",
+"text": "Gee, it's 10 minutes to 6 at home.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. Okay. I'm still coming up, coming up.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Keep coming up. Just got mine on.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Oh, okay. Well, I'm ahead of you then.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Yes. Okay. The PRESS flag will clear 37 - correction - 3.1 to 3.4.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "What do you want me to do when I 'm pressurized?",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "We'11 want to make an integrity check.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Yes, but then what?",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Can you reach those water hoses right there? By chance before you get too hard?",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411338,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Throw them out of the way?",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411385,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. When you get - when you get up - Okay. A PRESS flag cleared on the commander. Okay. The 02 flag did not clear. I'm at 3 - 8 - Okay. 02 flag cleared on the commander.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411385,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Still got an 02 on the LMP.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411385,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, you're not up yet; I suppose.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411385,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "No.",
+"unsure": [],
+"page": 659
+},
+{
+"getSeconds": 411418,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. I'm going to take my PLSS 02 OFF for 1 - counting' 1 minute, 57. Let me know when you're up, Jack, and I'11 give you a minute hand.",
 "unsure": [],
 "page": 659
 },
@@ -87669,8 +87786,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "- quick peek at the drill,",
+"speaker": "LMP",
+"text": "Oh, I snuck a queek - quick peek at the drill, and it does work. What in the world is that?",
 "unsure": [],
 "page": 726
 },
@@ -87678,8 +87795,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "his VHF on, that fink. Hey, you",
+"speaker": "CDR",
+"text": "That 's Ron.",
 "unsure": [],
 "page": 726
 },
@@ -87687,8 +87804,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "can hear him.",
+"speaker": "LMP",
+"text": "Ron?",
 "unsure": [],
 "page": 726
 },
@@ -87696,8 +87813,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "seat. With seat belt - Bob,",
+"speaker": "CDR",
+"text": "That's Ron. Got his VHF on, that fink. Hey, you might tell Ron we can hear him.",
 "unsure": [],
 "page": 726
 },
@@ -87705,8 +87822,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "together in the barbell mode.",
+"speaker": "CDR",
+"text": "Okay. Drill - LMP seat. With seat belt - Bob, you still with us?",
 "unsure": [],
 "page": 726
 },
@@ -87714,8 +87831,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "If you read, we're reading you.",
+"speaker": "LMP",
+"text": "Okay, ALSEP is put together in the barbell mode. And Charlie Duke, I have checked it - and it is locked.",
 "unsure": [],
 "page": 726
 },
@@ -87723,8 +87840,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "off to see the Wizard.\"",
+"speaker": "CDR",
+"text": "Hello, there, Ron. If you read, we're reading you.",
 "unsure": [],
 "page": 726
 },
@@ -87732,8 +87849,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "MS",
-"text": "Gene?",
+"speaker": "CDR",
+"text": "Well, (singing) \"We're off to see the Wizard.\"",
 "unsure": [],
 "page": 726
 },
@@ -87741,8 +87858,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "go deploy an ALSEP.",
+"speaker": "LMP",
+"text": "Hey, do you need me, Gene?",
 "unsure": [],
 "page": 726
 },
@@ -87750,8 +87867,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "find an ALSEP site.",
+"speaker": "CDR",
+"text": "No. I'm going to go deploy an ALSEP.",
 "unsure": [],
 "page": 726
 },
@@ -87759,8 +87876,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "to read a TGE.",
+"speaker": "LMP",
+"text": "Have at it.",
 "unsure": [],
 "page": 726
 },
@@ -87768,8 +87885,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "to read the TGE? We are.",
+"speaker": "CDR",
+"text": "First, I've got to find an ALSEP site.",
 "unsure": [],
 "page": 726
 },
@@ -87777,8 +87894,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "it.",
+"speaker": "LMP",
+"text": "Don't fall into Camelot.",
 "unsure": [],
 "page": 726
 },
@@ -87786,8 +87903,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "fender. Oh, shoot l",
+"speaker": "CDR",
+"text": "Okay, Bob. I'd like to read a TGE.",
 "unsure": [],
 "page": 726
 },
@@ -87795,8 +87912,8 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "down-Sun.",
+"speaker": "CC",
+"text": "Roger. You're ready to read the TGE? We are.",
 "unsure": [],
 "page": 726
 },
@@ -87804,8 +87921,44 @@
 "getSeconds": 418173,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "in a minute.",
+"speaker": "CDR",
+"text": "Oh, you won't believe it.",
+"unsure": [],
+"page": 726
+},
+{
+"getSeconds": 418173,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "You did it again.",
+"unsure": [],
+"page": 726
+},
+{
+"getSeconds": 418173,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Ah - there goes a fender. Oh, shoot l",
+"unsure": [],
+"page": 726
+},
+{
+"getSeconds": 418173,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Say, Bob, I'm moving down-Sun.",
+"unsure": [],
+"page": 726
+},
+{
+"getSeconds": 418173,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Well, I'11 get that in a minute.",
 "unsure": [],
 "page": 726
 },
@@ -98002,8 +98155,8 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "on one",
+"speaker": "CDR",
+"text": "Let's see if I can't get a bigger bite - you on one end, and let me stand on the treadle and we might be able to get a bigger bite. See, I can't get a very big bite. That's one of the problems.",
 "unsure": [],
 "page": 794
 },
@@ -98011,8 +98164,8 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "might",
+"speaker": "CC",
+"text": "And, Jack, could you verify we have the LMP ENABLE on ... - -",
 "unsure": [],
 "page": 794
 },
@@ -98020,8 +98173,8 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "get a",
+"speaker": "CDR",
+"text": "I just hope that Jack doesn't break.",
 "unsure": [],
 "page": 794
 },
@@ -98030,7 +98183,7 @@
 "getApprox": true,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "ENABLE",
+"text": "No, I'11 get it. I knew there was something I needed to do.",
 "unsure": [],
 "page": 794
 },
@@ -98038,8 +98191,8 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "Let me -",
+"speaker": "CDR",
+"text": "Get the jack end over here - other side. Let me - let me put some weight here. See if you can - See - what - what kind of bite you can get.",
 "unsure": [],
 "page": 794
 },
@@ -98047,8 +98200,8 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "-",
+"speaker": "LMP",
+"text": "Oh, man.",
 "unsure": [],
 "page": 794
 },
@@ -98056,8 +98209,8 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "can",
+"speaker": "CDR",
+"text": "Yes, that's what I've been doing. See if you can get a bigger -",
 "unsure": [],
 "page": 794
 },
@@ -98065,8 +98218,8 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "me get",
+"speaker": "LMP",
+"text": "Oh, no.",
 "unsure": [],
 "page": 794
 },
@@ -98074,8 +98227,8 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "Jack.",
+"speaker": "CDR",
+"text": "It's coming, though. See, Just - Here, let me get my foot down there and you get - you get - Jack. See, that's the key. No, I think I can -",
 "unsure": [],
 "page": 794
 },
@@ -98083,8 +98236,71 @@
 "getSeconds": 425899,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "a",
+"speaker": "LMP",
+"text": "Okay. If I do it that way -",
+"unsure": [],
+"page": 794
+},
+{
+"getSeconds": 425899,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Get her way down there.",
+"unsure": [],
+"page": 794
+},
+{
+"getSeconds": 425899,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. Now try it.",
+"unsure": [],
+"page": 794
+},
+{
+"getSeconds": 425899,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "See, we got a couple of inches there to throw. We're all right. There you go. Do that for a little bit.",
+"unsure": [],
+"page": 794
+},
+{
+"getSeconds": 425899,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. Let me put m_ foot on it.",
+"unsure": [],
+"page": 794
+},
+{
+"getSeconds": 425899,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, ready?",
+"unsure": [],
+"page": 794
+},
+{
+"getSeconds": 425899,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Yes.",
+"unsure": [],
+"page": 794
+},
+{
+"getSeconds": 425899,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "It's got to loosen up sooner or later.",
 "unsure": [],
 "page": 794
 },
@@ -125511,164 +125727,191 @@
 "page": 1024
 },
 {
-"getSeconds": 495106,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "already get - let's see, where",
-"unsure": [],
-"page": 1026
-},
-{
-"getSeconds": 495106,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "MS",
-"text": "now. MASTER ALARM and ECS light;",
-"unsure": [],
-"page": 1026
-},
-{
-"getSeconds": 495106,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "MS",
-"text": "... is on.",
-"unsure": [],
-"page": 1026
-},
-{
-"getSeconds": 495106,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "211, right?",
-"unsure": [],
-"page": 1026
-},
-{
-"getSeconds": 495106,
+"getSeconds": 495159,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "is getting purge 211.",
+"text": "Okay. Did you already get - let's see, where are we here?",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
+"getSeconds": 495159,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "side - there you go.",
+"speaker": "CDR",
+"text": "Right here.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
-"getApprox": true,
+"getSeconds": 495176,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "that. Thank you.",
+"speaker": "LMP",
+"text": "Oh, here it is, now. MASTER ALARM and ECS light; WATER SEP light.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
-"getApprox": true,
+"getSeconds": 495190,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "it. Okay. And you are LOW and",
+"speaker": "CDR",
+"text": "Okay. It is locked, ... is on.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
+"getSeconds": 495190,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "you are locked.",
+"speaker": "LMP",
+"text": "Okay.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
+"getSeconds": 495190,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "is in. And you're vertical.",
+"speaker": "CDR",
+"text": "Now, you want 211, right?",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
+"getSeconds": 495190,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "to do the same. Okay, get my hose?",
+"speaker": "LMP",
+"text": "Roger. 211.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
-"getApprox": true,
+"getSeconds": 495200,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "my shoulder.",
+"speaker": "CDR",
+"text": "Okay. Bob, LMP is getting purge 211.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
+"getSeconds": 495200,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "there. Okay, it's in there and",
+"speaker": "LMP",
+"text": "And out to the side - there you go.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
+"getSeconds": 495200,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "and the dust cover is on.",
+"speaker": "CC",
+"text": "Okay. We copy that. Thank you.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
-"getApprox": true,
+"getSeconds": 495215,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "to put your PURGE, in 208.",
+"speaker": "CDR",
+"text": "Here, I'11 lock it. Okay. And you are LOW and you are in and you are locked.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
-"getApprox": true,
+"getSeconds": 495222,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "in LOW.",
+"speaker": "CDR",
+"text": "Okay. Purge valve is in. And you're vertical.",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
+"getSeconds": 495222,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "and the pin is in. Okay. And you",
+"speaker": "LMP",
+"text": "Okay. You get to do the same. Okay, get my hose?",
 "unsure": [],
 "page": 1026
 },
 {
-"getSeconds": 495106,
+"getSeconds": 495227,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Water hose.",
+"unsure": [],
+"page": 1026
+},
+{
+"getSeconds": 495227,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "just - no, let me show you.",
+"speaker": "LMP",
+"text": "Come around behind my shoulder.",
+"unsure": [],
+"page": 1026
+},
+{
+"getSeconds": 495227,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "It won't fit in there. Okay, it's in there and it's locked, vented, and the dust cover is on.",
+"unsure": [],
+"page": 1026
+},
+{
+"getSeconds": 495227,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 1026
+},
+{
+"getSeconds": 495227,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "And now, we get to put your PURGE, in 208.",
+"unsure": [],
+"page": 1026
+},
+{
+"getSeconds": 495227,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Make sure it's in LOW.",
+"unsure": [],
+"page": 1026
+},
+{
+"getSeconds": 495258,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "It is, and LOW, and the pin is in. Okay. And you like it where? Down a little bit?",
+"unsure": [],
+"page": 1026
+},
+{
+"getSeconds": 495258,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "No. Same place just - no, let me show you.",
 "unsure": [],
 "page": 1026
 },
@@ -127337,92 +127580,173 @@
 "loop": "CM"
 },
 {
-"getSeconds": 496375,
+"getSeconds": 496690,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "here.",
+"speaker": "CDR",
+"text": "Okay.",
 "unsure": [],
 "page": 1051
 },
 {
-"getSeconds": 496375,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "about a",
-"unsure": [],
-"page": 1051
-},
-{
-"getSeconds": 496375,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "-",
-"unsure": [],
-"page": 1051
-},
-{
-"getSeconds": 496375,
+"getSeconds": 496690,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "out of the way",
+"text": "I mean affirm. Get my terminology straight here.",
 "unsure": [],
 "page": 1051
 },
 {
-"getSeconds": 496375,
+"getSeconds": 496690,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "pressure is 4.6.",
+"speaker": "CDR",
+"text": "Okay, Jack. I'm going to start doing about a 90 here.",
 "unsure": [],
 "page": 1051
 },
 {
-"getSeconds": 496375,
+"getSeconds": 496690,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "is going to",
+"speaker": "LMP",
+"text": "Okay. Let me - I need to turn around as soon as you do so I can help you get under that -",
 "unsure": [],
 "page": 1051
 },
 {
-"getSeconds": 496375,
-"getApprox": true,
+"getSeconds": 496764,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "- Just a",
+"speaker": "LMP",
+"text": "That's better.",
 "unsure": [],
 "page": 1051
 },
 {
-"getSeconds": 496375,
+"getSeconds": 496764,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "there.",
+"speaker": "CDR",
+"text": "Okay; I knocked it off. Okay. I'm out of the way now, if you can move your left leg. Okay. I got an 02 FLAG. And it's cleared. The pressure is 4.6. Okay, Houston. If you're happy - CDR is going to get out.",
 "unsure": [],
 "page": 1051
 },
 {
-"getSeconds": 496375,
+"getSeconds": 496764,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "- still at",
+"speaker": "CC",
+"text": "Roger. We're happy, Geno.",
 "unsure": [],
 "page": 1051
 },
 {
-"getSeconds": 496375,
+"getSeconds": 496764,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay ....",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496805,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. Hatch is full open.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496805,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496805,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
-"text": "reaay.",
+"text": "And you're still - your scraping your - Just a little bit. Just get your buttons down there. That's good. Okay. Oh, hey, remind me to fix your -",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496805,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Foot straps.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496805,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "?",
+"text": "Your - your donning straps.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496805,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. That is ice, by the way, Jack.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496837,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Oh, man, I tell you, with a stiff suit - still at 4.5. But, I am out here on the porch.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496837,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496837,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Oh, man. Okay, I'm out here.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496837,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "... assisted you.",
+"unsure": [],
+"page": 1051
+},
+{
+"getSeconds": 496837,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Here comes the jett bag whenever you're reaay.",
 "unsure": [],
 "page": 1051
 },
@@ -181386,8 +181710,8 @@
 "getSeconds": 577483,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "I cannot hear Houston but, Houston,",
+"speaker": "CDR",
+"text": "And 02.",
 "unsure": [],
 "page": 1469
 },
@@ -181395,8 +181719,8 @@
 "getSeconds": 577483,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "MS",
-"text": "with 91 percent.",
+"speaker": "LMP",
+"text": "... you're loud and clear.",
 "unsure": [],
 "page": 1469
 },
@@ -181405,7 +181729,7 @@
 "getApprox": true,
 "hourOnly": false,
 "speaker": "CDR",
-"text": "and LMP. We read the CDR loud and",
+"text": "Okay. Okay, I cannot hear Houston but, Houston, this is CDR with 91 percent.",
 "unsure": [],
 "page": 1469
 },
@@ -181413,8 +181737,8 @@
 "getSeconds": 577483,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "have good _P medical data.",
+"speaker": "CC",
+"text": "Roger, CDR and LMP. We read the CDR loud and clear. We have good _P medical data.",
 "unsure": [],
 "page": 1469
 },
@@ -181422,8 +181746,8 @@
 "getSeconds": 577483,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "loud and clear and they got good data",
+"speaker": "LMP",
+"text": "Okay, you're loud and clear and they got good data on me.",
 "unsure": [],
 "page": 1469
 },
@@ -181431,8 +181755,8 @@
 "getSeconds": 577483,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "go B and I '11 go A.",
+"speaker": "CDR",
+"text": "Okay, you go B and I '11 go A.",
 "unsure": [],
 "page": 1469
 },
@@ -181440,116 +181764,125 @@
 "getSeconds": 577483,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "to B.",
+"speaker": "LMP",
+"text": "Okay, going to B.",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
-"getApprox": true,
+"getSeconds": 577610,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "do you read me?",
+"speaker": "CDR",
+"text": "Okay, how do you read me?",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "and clear. Houston, this is the I_",
+"speaker": "LMP",
+"text": "You're loud and clear. Houston, this is the I_ in Bravo. How do you read?",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "read the LMP loud and clear.",
+"speaker": "CC",
+"text": "Re, er. We read the LMP loud and clear.",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "And how me?",
+"speaker": "CDR",
+"text": "Okay, Bob. And how me?",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "loud end clear also, Gene. And we have",
+"speaker": "CC",
+"text": "Read you loud end clear also, Gene. And we have good medical data on you, Gene.",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "data on you, Gene.",
+"speaker": "CDR",
+"text": "Okay, Jack, let' s go AR.",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
-"text": "let' s go AR.",
+"text": "Okay, going to AR.",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "to AR.",
+"speaker": "CDR",
+"text": "Okay, Houston, how do you read CDR?",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "how do you read CDR?",
+"speaker": "CC",
+"text": "Loud en_ clear on AR.",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "clear on AR.",
+"speaker": "LMP",
+"text": "And the LMP?",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "and clear on AR.",
+"speaker": "CC",
+"text": "Also loud and clear on AR.",
 "unsure": [],
 "page": 1469
 },
 {
-"getSeconds": 577483,
+"getSeconds": 577610,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "SQUELCH VNF B, full decrease.",
+"speaker": "CDR",
+"text": "Okay, Jack, SQUELCH VNF B, full decrease.",
+"unsure": [],
+"page": 1469
+},
+{
+"getSeconds": 577610,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Decrease.",
 "unsure": [],
 "page": 1469
 },
@@ -181728,8 +182061,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "closed, locked. That's all those.",
+"speaker": "LMP",
+"text": "*** ... valve closed, locked. That's all those.",
 "unsure": [],
 "page": 1472
 },
@@ -181737,8 +182070,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "DIVERTER VALVE - VERTICAL.",
+"speaker": "CDR",
+"text": "Okay. Okay, you want it on VERTICAL. Pick up my OPS hose.",
 "unsure": [],
 "page": 1472
 },
@@ -181746,8 +182079,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "want it on VERTICAL. Pick up my",
+"speaker": "LMP",
+"text": "It's your OPS hose time.",
 "unsure": [],
 "page": 1472
 },
@@ -181755,8 +182088,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "time.",
+"speaker": "CDR",
+"text": "Where's the top ?. I'11 put yours on top.",
 "unsure": [],
 "page": 1472
 },
@@ -181764,8 +182097,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "?. I'11 put yours on top.",
+"speaker": "LMP",
+"text": "That 's fine. It 's as good as anything.",
 "unsure": [],
 "page": 1472
 },
@@ -181773,8 +182106,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "CT",
-"text": "It 's as good as anything.",
+"speaker": "CDR",
+"text": "I'm not sure it makes any difference. Okay, over and locked, and dust cover, verify.",
 "unsure": [],
 "page": 1472
 },
@@ -181782,8 +182115,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "CT",
-"text": "makes any difference. Okay, over",
+"speaker": "CDR",
+"text": "Okay. And the com_?. ...",
 "unsure": [],
 "page": 1472
 },
@@ -181791,8 +182124,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "dust cover, verify.",
+"speaker": "LMP",
+"text": "...",
 "unsure": [],
 "page": 1472
 },
@@ -181800,8 +182133,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "com_?. ...",
+"speaker": "CDR",
+"text": "That one's locked, verified. Here's purge valve, and it's number 208, I hope.",
 "unsure": [],
 "page": 1472
 },
@@ -181809,8 +182142,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "verified. Here's purge valve,",
+"speaker": "LMP",
+"text": "No, you wanted a 211.",
 "unsure": [],
 "page": 1472
 },
@@ -181818,8 +182151,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "208. I want 208 and you want 211.",
+"speaker": "CDR",
+"text": "No. I wanted 208. I want 208 and you want 211.",
 "unsure": [],
 "page": 1472
 },
@@ -181827,8 +182160,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "the LMP",
+"speaker": "LMP",
+"text": "No. I 'm sorry. That 's what I copied down.",
 "unsure": [],
 "page": 1472
 },
@@ -181836,8 +182169,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "you, Bob?",
+"speaker": "CC",
+"text": "Roger. 211 for the LMP",
 "unsure": [],
 "page": 1472
 },
@@ -181845,8 +182178,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "SC",
-"text": "what he 's got.",
+"speaker": "CDR",
+"text": "Verify that, will you, Bob?",
 "unsure": [],
 "page": 1472
 },
@@ -181854,8 +182187,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "the wrong one.",
+"speaker": "CC",
+"text": "211 for the LMP.",
 "unsure": [],
 "page": 1472
 },
@@ -181863,8 +182196,8 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "MS",
-"text": "208.",
+"speaker": "LMP",
+"text": "That 's right. That 's - -",
 "unsure": [],
 "page": 1472
 },
@@ -181872,8 +182205,35 @@
 "getSeconds": 577687,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "had yesterday.",
+"speaker": "CDR",
+"text": "Okay. That 's what he 's got.",
+"unsure": [],
+"page": 1472
+},
+{
+"getSeconds": 577687,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Somehow I copied the wrong one.",
+"unsure": [],
+"page": 1472
+},
+{
+"getSeconds": 577687,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, give me 208.",
+"unsure": [],
+"page": 1472
+},
+{
+"getSeconds": 577687,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Same thing we had yesterday.",
 "unsure": [],
 "page": 1472
 },
@@ -182328,128 +182688,191 @@
 "page": 1477
 },
 {
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "up. Hope the old suit integrity",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "MS",
-"text": "as it has been.",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "why not.",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "Okay, let me know when you are up.",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
+"getSeconds": 578763,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "up; I'm 3.8.",
+"text": "Okay, I'm coming up. Hope the old suit integrity",
 "unsure": [],
 "page": 1480
 },
 {
-"getSeconds": 578493,
+"getSeconds": 578763,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "yours.",
+"speaker": "LMP",
+"text": "I don't see why not.",
 "unsure": [],
 "page": 1480
 },
 {
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "-",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "for I minute.",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "at 383.",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "about exactly where I was. Another",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "go.",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "SC",
-"text": "it looks as tight as it was",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "seconds. Maybe lunar dust is a good",
-"unsure": [],
-"page": 1480
-},
-{
-"getSeconds": 578493,
+"getSeconds": 578763,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "CDR",
-"text": "... at 382 to 270.",
+"text": "Coming up?",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Yes.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "About 3.5 now.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Yes, me too. Okay, let me know when you are up.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "I think I'm up; I'm 3.8.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, let's see if we can't get these -",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "I can't get yours.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "I can't -",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, mine's OFF.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578763,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Mine's OFF -",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "MARK it.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "We wanted decay for I minute.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, I started at 383.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. That's about exactly where I was. Another 45 seconds to go.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. So far, it looks as tight as it was yesterday.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "?",
+"text": "Another 30 seconds. Maybe lunar dust is a good sealant.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Houston, CDR ... at 382 to 270.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "?",
+"text": "27o? 37o.",
+"unsure": [],
+"page": 1480
+},
+{
+"getSeconds": 578907,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "370.",
 "unsure": [],
 "page": 1480
 },
@@ -187695,8 +188118,8 @@
 "getSeconds": 582742,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "one of -",
+"speaker": "CDR",
+"text": "Jack, there's our target - there's - either one of - that's one right down there on - on ... break in slope.",
 "unsure": [],
 "page": 1519
 },
@@ -187704,26 +188127,8 @@
 "getSeconds": 582742,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "break in",
-"unsure": [],
-"page": 1519
-},
-{
-"getSeconds": 582742,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "was",
-"unsure": [],
-"page": 1519
-},
-{
-"getSeconds": 582742,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "about",
+"speaker": "LMP",
+"text": "See the one we've got over there has a boulder track. That's the one, that crossslope.",
 "unsure": [],
 "page": 1519
 },
@@ -187732,7 +188137,169 @@
 "getApprox": true,
 "hourOnly": false,
 "speaker": "CDR",
-"text": "is on",
+"text": "Yes, if we could get up high - -",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Can we get up there?",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "We'11 see.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "That's the one - That's station 6, and that was the - the turning boulder.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Yes, that 's it.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "The one right there.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Station 6 - we can probably get up there.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. Here we are - 1.5 and 185.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CC",
+"text": "Okay; copy that.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay, is this a Rover sample?",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "A Rover sample.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay - -",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Tell me where you want it.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "- - see that little pit right over there about 30 feet ahead.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Yes, I think so.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay, I've got two pictures there.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "How's that?",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "That's great. Okay, this is soil sample - Hey, Geno.",
+"unsure": [],
+"page": 1519
+},
+{
+"getSeconds": 582742,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, and I Just took a locator; and CDR is on frame _l.",
 "unsure": [],
 "page": 1519
 },
@@ -195772,187 +196339,178 @@
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
-"text": "AIR-TO-GROUND VOICE TRANSCRIPTION",
+"text": "17 AIR-TO-GROUND VOICE TRANSCRIPTION",
 "unsure": [],
 "page": 1581
 },
 {
-"getSeconds": 588130,
+"getSeconds": 588250,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Couldn't help that one.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "help that one.",
+"speaker": "CDR",
+"text": "Yes. I think we get some more level spots, I can dust this thing back there.",
 "unsure": [],
 "page": 1581
 },
 {
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "I think we get some more level spots, I can",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "this thing back there.",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "I really on?",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "high. You're twisted. Go away from me one",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "MS",
-"text": "it caught in something? Yes, it is. You're -",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "it - wait a minute - get up, get up, get up.",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "got - you're sitting on - get up.",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "am I sitting on?",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "get out. You didn't put this away. Wait",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "Get up, out - all the way.",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "that thing.",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "this thing.",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "right. That's where it's setting high. I",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "I'd forget that. Okay. Now, let me get this",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "out. Okay. Okay. Let's press. Better get",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "All set?",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "rolling, Bob.",
-"unsure": [],
-"page": 1581
-},
-{
-"getSeconds": 588130,
+"getSeconds": 588250,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "frame - is 130.",
+"text": "Am I really on?",
 "unsure": [],
 "page": 1581
 },
 {
-"getSeconds": 588130,
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "You're high. You're twisted. Go away from me one twist.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Is it caught in something? Yes, it is. You're - Hold it - wait a minute - get up, get up, get up. You've got - you're sitting on - get up.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "What am I sitting on?",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Can't get out. You didn't put this away. Wait a minute. Get up, out - all the way.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Oh, that thing.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Yes, this thing.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "That's right. That's where it's setting high. I knew I'd forget that. Okay. Now, let me get this thing out. Okay. Okay. Let's press. Better get latched.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. All set?",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
-"text": "got a lot of static now?",
+"text": "Yes.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588250,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588336,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "We're rolling, Bob.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588336,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "LMP frame - is 130.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588336,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "You got a lot of static now?",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588336,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Yes.",
+"unsure": [],
+"page": 1581
+},
+{
+"getSeconds": 588336,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay.",
 "unsure": [],
 "page": 1581
 },
@@ -232176,56 +232734,209 @@
 "page": 1864
 },
 {
-"getSeconds": 659410,
+"getSeconds": 659488,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "up. I'm in DIRECT 02 .",
+"speaker": "LMP",
+"text": "Okay; you can go on up. I'm in DIRECT 02 .",
 "unsure": [],
 "page": 1866
 },
 {
-"getSeconds": 659410,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "shortly. I'm off the peg.",
-"unsure": [],
-"page": 1866
-},
-{
-"getSeconds": 659410,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "your cuff gage .--",
-"unsure": [],
-"page": 1866
-},
-{
-"getSeconds": 659410,
+"getSeconds": 659488,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "CDR",
-"text": "was 3.75.",
+"text": "Okay; suit circuit's coming up.",
 "unsure": [],
 "page": 1866
 },
 {
-"getSeconds": 659410,
+"getSeconds": 659488,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "to be good.",
+"speaker": "CDR",
+"text": "Okay; suit circuit's about 7.2 now. Should be coming off the peg shortly. I'm off the peg.",
 "unsure": [],
 "page": 1866
 },
 {
-"getSeconds": 659410,
+"getSeconds": 659488,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "from 3.75 to 3.60.",
+"speaker": "LMP",
+"text": "And I'm off the peg.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659488,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "You can stop it on your cuff gage .--",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659488,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Yes, I will.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659488,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "-- at 3.7.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659488,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "That's 3.0, 3.5, 3.7.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659488,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay; go to EGRESS.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659488,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "I'm in EGRESS.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659488,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "MARK it.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay. 3.75 and CDR was 3.75.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Got about 4 minutes for VHF.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Our suits are going to be good.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "That's the whole circuit.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Yes, I know.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "It's about the same.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Got about 10 seconds to go.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659589,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659664,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "MARK it. CDR dropped from 3.75 to 3.60.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659664,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 1866
+},
+{
+"getSeconds": 659664,
+"getApprox": true,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay; SUIT CIRCUIT RELIEF, AUTO. Hold your ears.",
 "unsure": [],
 "page": 1866
 },

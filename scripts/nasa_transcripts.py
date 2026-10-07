@@ -257,10 +257,15 @@ def extract(pdf_path, force_ocr=False, pages=None, dpi=OCR_DPI):
         lines = group_lines(read[pno] if pno in read else page_words(doc[pno], use_ocr, dpi))
         letters[pno + 1] = tape_letter(lines)
         # The speaker column is where exact speaker codes line up.
-        spk_x = sorted(w[0] for ws in lines for w in ws if w[2].strip('.:') in SPEAKERS and w[0] > 100)
+        # (a code may carry its vehicle, "CDR-LM", "LMP-EVA"; and the codes are the column's, not the same
+        # letters inside the text, "read the LMP?": the column is where most of them line up, not their median)
+        is_code = lambda t: t.strip('.:') in SPEAKERS or ('-' in t and t.split('-')[0].strip('.:') in SPEAKERS)
+        spk_x = sorted(w[0] for ws in lines for w in ws if is_code(w[2]) and w[0] > 100)
         if not spk_x:
             continue
-        col = spk_x[len(spk_x) // 2]
+        from collections import Counter as _Counter
+        col = _Counter(round(x / 8) for x in spk_x).most_common(1)[0][0] * 8
+        col = min(spk_x, key=lambda x: abs(x - col))
         firsts = sorted(w[0] for ws in lines for w in ws if w[0] > col + 20)
         text_x = min(firsts) if firsts else col + 40
         for ws in lines:

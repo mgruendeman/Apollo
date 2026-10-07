@@ -4936,6 +4936,26 @@
    "g": 575522,
    "text": "It's an entry PAD, MPL, starting with roll 05",
    "ok": true
+  },
+  {
+   "g": 369352,
+   "from": "Could be our meter, maybe, huh?uh?",
+   "to": "Could be our meter, maybe, huh?"
+  },
+  {
+   "g": 644291,
+   "from": "Okay, Mike. We had a request that yo_ disconnect. the yellow connector from the signal conditioner and verify that it looks okay, reconnect it and then, if you would, check the two electrodes that are placed one on each side of your lower rib cage. Over.",
+   "to": "Okay, Mike. We had a request that you disconnect the yellow connector from the signal conditioner and verify that it looks okay, reconnect it and then, if you would, check the two electrodes that are placed one on each side of your lower rib cage. Over."
+  },
+  {
+   "g": 18114,
+   "from": "Okay, Houston. You got to us just a Little late. Our maneuver's already begun, so it's going to cost us about the same amount of fuel to stop it, no matter where we stc_ it, and we may as well keep going.",
+   "to": "Okay, Houston. You got to us just a little late. Our maneuver's already begun, so it's going to cost us about the same amount of fuel to stop it, no matter where we stop it, and we may as well keep going."
+  },
+  {
+   "g": 726,
+   "from": "Apollo 11, this is Houston. You are cor.firmed GO for orbit.",
+   "to": "Apollo 11, this is Houston. You are confirmed GO for orbit."
   }
  ],
  "12": [
@@ -7900,6 +7920,26 @@
    "g": 471394,
    "from": "_u_r, W_ w±_n you.",
    "to": "Roger. We're with you."
+  },
+  {
+   "g": 406649,
+   "from": "That's what we think, too. I'll tell you what we're going to do. I'll give you a good description here; and we're going to get ready; and when we get oat, we'll take the TV and show you the craters; and I think you'll have a pretty good handle on it. Generally, right now, we're sitting on a, not a level surface, but we don't see any particularly high hills, either. It's just sort ,' when we get out, of course; and we'll also be able to use that close-up stereocamera on it and just get some good pictures of it.",
+   "to": "That's what we think, too. I'll tell you what we're going to do. I'll give you a good description here; and we're going to get ready; and when we get out, we'll take the TV and show you the craters; and I think you'll have a pretty good handle on it. Generally, right now, we're sitting on a, not a level surface, but we don't see any particularly high hills, either. It's just sort when we get out, of course; and we'll also be able to use that close-up stereocamera on it and just get some good pictures of it."
+  },
+  {
+   "g": 624023,
+   "from": "That ought to do it. When you end up like - I don't know if you can see this camera that I have got on TV - the one that I was taking pictures of the Moon with, but they float around just like you see. The funny part is - The funny part is when you're not watching them, they'll float off, and then you will hunt for them, but the problem is all your training all of your life has been to hunt for them on top of things - like on top of the seat or on top of the floor, or somewhere else. And so you walk around the spacecraft hunting for them, but really they may be in plain view, just resting right on the underside of the seat, or maybe just up there near the top of the strut, and you have one whale of a time finding these objects. You look all around aud then somebody on the other side will say \"Look, it's right by your left ear.\" It really becomes quite a lot of fun when one of these things gets lost. You spend a few minutes hunting aromld usually end up right in plain view, but you just don't look there from all these habits you built up over the years.",
+   "to": "That ought to do it. When you end up like - I don't know if you can see this camera that I have got on TV - the one that I was taking pictures of the Moon with, but they float around just like you see. The funny part is - The funny part is when you're not watching them, they'll float off, and then you will hunt for them, but the problem is all your training all of your life has been to hunt for them on top of things - like on top of the seat or on top of the floor, or somewhere else. And so you walk around the spacecraft hunting for them, but really they may be in plain view, just resting right on the underside of the seat, or maybe just up there near the top of the strut, and you have one whale of a time finding these objects. You look all around and then somebody on the other side will say \"Look, it's right by your left ear.\" It really becomes quite a lot of fun when one of these things gets lost. You spend a few minutes hunting around and usually end up right in plain view, but you just don't look there from all these habits you built up over the years."
+  },
+  {
+   "g": 475447,
+   "from": "Roger. Copy NARROW and SECONDARY. Dick, we have a m,p update for you when you're ready to copy.",
+   "to": "Roger. Copy NARROW and SECONDARY. Dick, we have a map update for you when you're ready to copy."
+  },
+  {
+   "g": 475447,
+   "from": "Dick, we copy that you have - in the REACQ position aa_d say your second comment? It's REACQ, NARROW BEAM width, SERVO FLFLTRONICS in SECONDARY.",
+   "to": "Dick, we copy that you have - in the REACQ position and say your second comment? It's REACQ, NARROW BEAM width, SERVO ELECTRONICS in SECONDARY."
   }
  ],
  "14": [
@@ -8537,16 +8577,6 @@
    "to": "Okay. LOI, SPS/G&N; 66244; plus 1.21, minus 0.12; 078:31:45.91; minus 2897.5, minus 0776.4, minus 0044.1; all zips for roll, all zips for pitch, all zips for yaw; 0169.6, plus 0058.4; 3000.1, 6:41, 2993.9; 25, 267.1, 22.8; the rest is NA. Set stars are Vega and Deneb; 264; 090; 349. No ullage. LM weight, 36258. Single-bank burn time is 6 plus 52; and just a reminder that, if bank B doesn't burn, we are expecting you to go into lunar orbit on bank A."
   },
   {
-   "g": 510858,
-   "from": "PUMP. i'_gc 697",
-   "to": "I'll turn off the LCG PUMP."
-  },
-  {
-   "g": 429108,
-   "from": "a tone-on, vent flag please - P [sic].",
-   "to": "Okay. I have a tone-on, vent flag plee - P [sic], and pressure flag 0. 0. pressure gage is reading"
-  },
-  {
    "g": 525836,
    "from": "Yes. Yes, we'll just finish off Jim's collection hag here. I want to stow it anyway. Oh, look at that glass spherel - spherule down there. See that big one? I got to - Listen --",
    "to": "Yes. Yes, we'll just finish off Jim's collection bag here. I want to stow it anyway. Oh, look at that glass spherel - spherule down there. See that big one? I got to - Listen --"
@@ -8555,6 +8585,446 @@
    "g": 522959,
    "from": "It seems to be a - surface material or else it's a very frangible clast in this big piece of breccia. Dig m_ tongs into it.",
    "to": "It seems to be a - surface material or else it's a very frangible clast in this big piece of breccia. Dig my tongs into it."
+  },
+  {
+   "g": 260682,
+   "from": "Roger, Joe; copy. Plane change plus 2 SPS/G&N; 66313, pius 1.23, minus 0.12; 080:29:13.47; plus 3189.4, minus 2437.0, minus 1356.5; 175, 079, 332; no ullage; and that burn equals SPS docked.",
+   "to": "Roger, Joe; copy. Plane change plus 2 SPS/G&N; 66313, plus 1.23, minus 0.12; 080:29:13.47; plus 3189.4, minus 2437.0, minus 1356.5; 175, 079, 332; no ullage; and that burn equals SPS docked."
+  },
+  {
+   "g": 5255,
+   "from": "15 AIR-TO-",
+   "to": "Apollo 15, Houston. Over."
+  },
+  {
+   "g": 1062655,
+   "from": "This is Houston. Lost contact due.to cloud cover.",
+   "to": "This is Photo. Lost contact due to cloud cover."
+  },
+  {
+   "g": 1062612,
+   "from": "Okinawa, this Photo 1. _e extra fuel has been jettisoned and burned off.",
+   "to": "Okinawa, this Photo 1. The extra fuel has been jettisoned and burned off."
+  },
+  {
+   "g": 1058372,
+   "from": "Okay. Understand the weather is generally good. It's 2000 scattered; lo; 10 knots from the east; 3-foot waves; altimeter, 3006. The Okinawa's there. The helos are Swim 2, l, and Recovery; C-130s are Hawaii Rescue i and 2.",
+   "to": "Okay. Understand the weather is generally good. It's 2000 scattered; 10; 10 knots from the east; 3-foot waves; altimeter, 3006. The Okinawa's there. The helos are Swim 2, 1, and Recovery; C-130s are Hawaii Rescue 1 and 2."
+  },
+  {
+   "g": 658534,
+   "from": "Thought we'd give you a crew status report and the onboard read-outs before we called it a night. I just wanted to check and make sure we got everything turned on for you. We'll the guys looking at that - -",
+   "to": "Thought we'd give you a crew status report and the onboard read-outs before we called it a night. I just wanted to check and make sure we got everything turned on for you."
+  },
+  {
+   "g": 531138,
+   "from": "Okay, Jim. When you get out to the ALSEP sight, once again being very careful with your dust, and particularly the exposed side experiment, we'd like for you to do a photo pan out there.",
+   "to": "Okay, Jim. When you get out to the ALSEP sight, once again being very careful with your dust, and particularly the exposed side experiment, we'd like for you to do a photo pan out there. And - stand by. Let's see, stand by."
+  },
+  {
+   "g": 530736,
+   "from": "If you'll tell me what's there, I'll continue. If one or maybe two sections, however many you think you can put on and still drill. Once you get the sections on, we want you to use the drill again. And first, recycle the check several and then start the drill, and put only a few pounds of force on top of the drill. And, while _-_ it's running, if you notice from the torques that it starts to seize up, we want you to try to pull it back out of the hole a bit to free it, as you drill. Over.",
+   "to": "If you'll tell me what's there, I'll continue. If one or maybe two sections, however many you think you can put on and still drill. Once you get the sections on, we want you to use the drill again. And first, recycle the check several times, as - as you used to do in the simulation, and then start the drill, and put only a few pounds of force on top of the drill. And, while it's running, if you notice from the torques that it starts to seize up, we want you to try to pull it back out of the hole a bit to free it, as you drill. Over."
+  },
+  {
+   "g": 522206,
+   "from": "Yes, that's right, Joe. And the slope is real steep. And - like I'd mentioned before, the sighting device doesn't transmit eno-gh light to really make it very easy to find the Earth. It could take me a couple of minutes there to be - Just to find you, and I think you've seen the same thing. But if you would like, I'll give it a try.",
+   "to": "Yes, that's right, Joe. And the slope is real steep. And - like I'd mentioned before, the sighting device doesn't transmit enough light to really make it very easy to find the Earth. It could take me a couple of minutes there to be - just to find you, and I think you've seen the same thing. But if you would like, I'll give it a try."
+  },
+  {
+   "g": 506974,
+   "from": "Roger. Step 4. Connect LM H20 to PLSS H20 FILL.",
+   "to": "Roger. Step 4. Connect LM H2O to PLSS H2O FILL."
+  },
+  {
+   "g": 497671,
+   "from": "Okay Jim. Your readback's correct. And, Jim, one other question. If - if you can remember back to before you went to sleep, this is in reference to the problem you had with the flags at the start of the EVA-l, and we're figuring that that was probably caused by an air bubble that was in your PLSS feed water system. We're wondering if, when you recharged the PLSS feed water here after EVA-l, were you holding the PLSS in a vertical position? That would eliminate any possibility of a bubble and we wanted to verify if that was the case or was it tilted over somewhat.P Over.",
+   "to": "Okay Jim. Your readback's correct. And, Jim, one other question. If - if you can remember back to before you went to sleep, this is in reference to the problem you had with the flags at the start of the EVA-1, and we're figuring that that was probably caused by an air bubble that was in your PLSS feed water system. We're wondering if, when you recharged the PLSS feed water here after EVA-1, were you holding the PLSS in a vertical position? That would eliminate any possibility of a bubble and we wanted to verify if that was the case or was it tilted over somewhat? Over."
+  },
+  {
+   "g": 465425,
+   "from": "Joe, I think we have a great variety of - of fragments out here. I - I wouldn't want to pin down any particular type in any area until we had more time to look. We've got a couple of surprises for you. We have one fragment on the order of 6 inches which is a - a fairly well rounded, highly vesicular, basalt with vesicles on the order of B millimeters all over it, apparently quite old and rounded, and it's a - a brown - a brownish gray. We also have a - a large piece of glass, just sheer glass, apparently, which is about a foot long and about 6 inches wide and very rough-textured surface; and that was the one that was right out the front window here that I described yesterday. And the basalt we picked up halfway back when I had to change my seatbelt; I saw it on the ground, and I just couldn't resist it. And it's unlike anything you've seen from the Moon before as is the large piece of glass. And I think those are indicators, to me, that we have a great variety of samples out there, and we really need to do some good careful looking as we head down towards the Front.",
+   "to": "Joe, I think we have a great variety of - of fragments out here. I - I wouldn't want to pin down any particular type in any area until we had more time to look. We've got a couple of surprises for you. We have one fragment on the order of 6 inches which is a - a fairly well rounded, highly vesicular basalt with vesicles on the order of 3 millimeters all over it, apparently quite old and rounded, and it's a - a brown - a brownish gray. We also have a - a large piece of glass, just sheer glass, apparently, which is about a foot long and about 6 inches wide and very rough-textured surface; and that was the one that was right out the front window here that I described yesterday. And the basalt we picked up halfway back when I had to change my seatbelt; I saw it on the ground, and I just couldn't resist it. And it's unlike anything you've seen from the Moon before as is the large piece of glass. And I think those are indicators, to me, that we have a great variety of samples out there, and we really need to do some good careful looking as we head down towards the Front."
+  },
+  {
+   "g": 465228,
+   "from": "Okay; if you consider the boulder being divided in apparently, by this sort of topographic contact. We took one chip from that side and one chip from a corner on the other side.",
+   "to": "Okay; if you consider the boulder being divided in fifths, 1/5th of it was a different type, apparently, by this sort of topographic contact. We took one chip from that side and one chip from a corner on the other side."
+  },
+  {
+   "g": 461882,
+   "from": "Yes, it's pretty nice. I understand that the old S_M bay's gobbling up the data faster that the Moon can produce it. Is everything nice and clean up there? Boy, is it dirty down here! But we're going to bring this up.",
+   "to": "Yes, it's pretty nice. I understand that the old SIM bay's gobbling up the data faster that the Moon can produce it. Is everything nice and clean up there? Boy, is it dirty down here! But we're going to bring this up."
+  },
+  {
+   "g": 448538,
+   "from": "Man, things really go - go when you throw then!",
+   "to": "Man, things really go - go when you throw them!"
+  },
+  {
+   "g": 441058,
+   "from": "Okay, it's about 20 - 25 meters across, and it looked like it excavated the bedrock, it had a very blocky ejecta blanket and blocky rims, and the ejecta blanket was about halfway out. Blocks on the order of about a foot and a half - at the largest. And some angular, some angular.",
+   "to": "Okay, it's about 20 - 25 meters across, and it looked like it excavated the bedrock; it had a very blocky ejecta blanket and blocky rims, and the ejecta blanket was about halfway out. Blocks on the order of about a foot and a half - at the largest. And some angular, some quadangular."
+  },
+  {
+   "g": 440349,
+   "from": "Yes, give me the bag. I'll fill it up, too. Dig a little light trench in there, amd we'll - I got - I got a feeling that Dr. Schmitt's going to win his bet. Not that part, get another part. Not where we picked the rock up, right - right in front of it. Okay, that's good. Just - hit the - spot, too.",
+   "to": "Yes, give me the bag. I'll fill it up, too. Dig a little light trench in there, and we'll - I got - I got a feeling that Dr. Schmitt's going to win his bet. Not that part, get another part. Not where we picked the rock up, right - right in front of it. Okay, that's good. Just - hit the - spot, too."
+  },
+  {
+   "g": 336768,
+   "from": "- - And at the moment, 15, you're sitting in a 58.8 by 7.6 orbit; and, at PPI, we're extrapolating you to approximately 33,000 feet. This is with a plus or minus 9000 feet on top of it, due primarily to the uncertainty of the RLS. Because of this, we're pretty well decided we're going to do DOI trim, but we're holding a decision on that until after we get the data for this pass, which we'll process, of course, while you're behind the Moon. We're talking about something like a 6-foot-per-second burn and probably targeting for 50,000 feet at PDI. As far as the rest of the spacecraft, all your systems look good. No problems at all during the night. We do have a pan camera problem, which may or may not be serious. We're going to look at it later on today after Al for that later on in the day. A short item. We'd like a - during your eat periods if you have the time, also would like you to give us a gain step on the gamma ray up to 1. And we'd like to get a medication report, too, this morning. We apparently missed that last night. Over.",
+   "to": "- - And at the moment, 15, you're sitting in a 58.8 by 7.6 orbit; and, at PDI, we're extrapolating you to approximately 33,000 feet. This is with a plus or minus 9000 feet on top of it, due primarily to the uncertainty of the RLS. Because of this, we're pretty well decided we're going to do DOI trim, but we're holding a decision on that until after we get the data for this pass, which we'll process, of course, while you're behind the Moon. We're talking about something like a 6-foot-per-second burn and probably targeting for 50,000 feet at PDI. As far as the rest of the spacecraft, all your systems look good. No problems at all during the night. We do have a pan camera problem, which may or may not be serious. We're going to look at it later on today after CIRC, and we'll be coming up with a procedure for Al for that later on in the day. A short item. We'd like a - during your eat periods if you have the time, also would like you to give us a gain step - on the gamma ray - up to 1. And we'd like to get a medication report, too, this morning. We apparently missed that last night. Over."
+  },
+  {
+   "g": 92976,
+   "from": "Roger, Jim. And we're going to lose corem in a minute; I'll be back with you.",
+   "to": "Roger, Jim. And we're going to lose comm in a minute; I'll be back with you."
+  },
+  {
+   "g": 694700,
+   "from": "The United States will support Communist China's admission to the United Nations this fall, Secretary of State William Rogers announced. The U.S. will also fight against expelling the Nationalist Chinese Government on Taiwan. U.S. Steel, the industry pace setter announced a price hike averaging 8 percent on virtually all its products and several other companies followed suit, as an aftermath of a new 3-year labor contract. Trainmen won pay in- creases of nearly a dollar and a half an hour spread over a 42 months in a nationwide contract settlement, and called off their crippling strike against 10 railroads. The union yielded on the railroad's demands for some work-rule changes, yet to be worked out. Among those viewing Apollo 15 activities, Monday, in the MOCR, was artist Robert Mccall, de- signer of the commemorative stamp for Apollo 15. And just an edited note here: He was also making sketches of the scenes down here as he saw them and he would turn them out almost as fast as the photographer would take pictures. That was most interest- f_ And, apparently, rain is slowing up the Oilers s preparations for the Giants. The Oilers - Giant exhibition game is scheduled for Monday night in the Astrodome. And I've got the Monday's baseball scoreboard - which I'll run through quickly for you baseball fans. In the American League: Boston 7, Baltimore 4; New York 7, Cleveland 0; Oakland 2, Kansas City 1; Chicago 7, Minnesota 5; Detroit 11, Washington 7; California 3, Milwaukee 1. Read back.",
+   "to": "The United States will support Communist China's admission to the United Nations this fall, Secretary of State William Rogers announced. The U.S. will also fight against expelling the Nationalist Chinese Government on Taiwan. U.S. Steel, the industry pace setter announced a price hike averaging 8 percent on virtually all its products and several other companies followed suit, as an aftermath of a new 3-year labor contract. Trainmen won pay in- creases of nearly a dollar and a half an hour spread over a 42 months in a nationwide contract settlement, and called off their crippling strike against 10 railroads. The union yielded on the railroad's demands for some work-rule changes, yet to be worked out. Among those viewing Apollo 15 activities, Monday, in the MOCR, was artist Robert McCall, de- signer of the commemorative stamp for Apollo 15. And just an edited note here: He was also making sketches of the scenes down here as he saw them and he would turn them out almost as fast as the photographer would take pictures. That was most interest- ing. Turning to the sporting news, Don Wilson pitched a two-hitter and Jesus Alou drove home the winning run and then made a game-saving catch as the Houston Astros downed the Chicago Cubs, 2 to 1. And, apparently, rain is slowing up the Oilers' preparations for the Giants. The Oilers - Giant exhibition game is scheduled for Monday night in the Astrodome. And I've got the Monday's baseball scoreboard - which I'll run through quickly for you baseball fans. In the American League: Boston 7, Baltimore 4; New York 7, Cleveland 0; Oakland 2, Kansas City 1; Chicago 7, Minnesota 5; Detroit 11, Washington 7; California 3, Milwaukee 1. Read back."
+  },
+  {
+   "g": 624638,
+   "from": "LOGIC i - LOGIC 2.",
+   "to": "LOGIC 1 - LOGIC 2."
+  },
+  {
+   "g": 619942,
+   "from": "Roger, FIDO thinks you had a good solution, but not a great solution before. He's now saying the Z component will be - should converge to about a minus 19. And if it does, your approach angle with be more nominal - rather than along the horizont horizontal.",
+   "to": "Roger, FIDO thinks you had a good solution, but not a great solution before. He's now saying the Z component will be - should converge to about a minus 19. And if it does, your approach angle with be more nominal - rather than along the horizontal."
+  },
+  {
+   "g": 615889,
+   "from": "Okay. At - lift-off is 171:40:13.41. And GET is CSI, 172:35:08.00, and NOUN 37, your T. TPI is Tie 174:27, all zeros. Read back.",
+   "to": "Okay. At - lift-off is 171:40:13.41. And GET is CSI, 172:35:08.00, and NOUN 37, your Tig TPI is 174:27, all zeros. Read back."
+  },
+  {
+   "g": 552190,
+   "from": "Roger. I was t-lking to Jim and Dave. Go ahead.",
+   "to": "Roger. I was talking to Jim and Dave. Go ahead."
+  },
+  {
+   "g": 552190,
+   "from": "Endeavour, Houston? you called Houston?",
+   "to": "Endeavour, you called Houston?"
+  },
+  {
+   "g": 532095,
+   "from": "Of course the tip of the rammer Jammer is smaller",
+   "to": "Of course the tip of the rammer jammer is smaller than the tip of the probe."
+  },
+  {
+   "g": 524580,
+   "from": "Almost all plage .... As a matter of fact - (laughter) Oh, boy, I think we might - ourselves something close to anorthocite, because its crystalline, and there's just a bunch - it's just almost all plage. What a beauty.",
+   "to": "Almost all plage. ... As a matter of fact - (laughter) Oh, boy, I think we might - ourselves something close to anorthocite, because its crystalline, and there's just a bunch - it's just almost all plage. What a beaut."
+  },
+  {
+   "g": 524112,
+   "from": "It's sort of caked on the top, though. Yes. Another black matrix fine grain with white clast - millimeter size - and there are some very fine grained little sparkles in there, though..",
+   "to": "It's sort of caked on the top, though. Yes. Another black matrix, fine-grained with white clast - millimeter size - and there are some very fine grained little sparkles in there, though.."
+  },
+  {
+   "g": 519971,
+   "from": "Oh, yesl MY word! Look it, they're dipping - to the northwest, right?",
+   "to": "Oh, yes! My word! Look it, they're dipping - to the northwest, right?"
+  },
+  {
+   "g": 464847,
+   "from": "Joe, I sort of kicked through a rim of a small, 1-meter subdued crater; and, as I did that, i kicked up the white soil. And so I kicked a couple of more times and it spread out; and whether I was - breaking up a very viable rock or not, I don't know. But there was a couple of kickfuls it on the - on the return trip to the LM, why, I pointed it out to Jim and he saw it too. And I'm not sure whether that was just at that one small crater, which was an old crater, or whether that was typical of that particular area. We just didn't have time to look at it.",
+   "to": "Joe, I sort of kicked through a rim of a small, 1-meter subdued crater; and, as I did that, I kicked up the white soil. And so I kicked a couple of more times and it spread out; and whether I was - breaking up a very viable rock or not, I don't know. But there was a couple of kickfuls of dirt that was white, and as we came back past it on the - on the return trip to the LM, why, I pointed it out to Jim and he saw it too. And I'm not sure whether that was just at that one small crater, which was an old crater, or whether that was typical of that particular area. We just didn't have time to look at it."
+  },
+  {
+   "g": 452812,
+   "from": "Hey, Joe, I need a I_oger-Out 0f that so I know you're ...",
+   "to": "Hey, Joe, I need a Roger out of that so I know you're ..."
+  },
+  {
+   "g": 452403,
+   "from": "Oh, the contents of bag number 1, Joe. - Have we got - Certainly not full. We have core stems in _nere?",
+   "to": "Oh, the contents of bag number 1, Joe. - Have we got - Certainly not full. We have core stems in there?"
+  },
+  {
+   "g": 441566,
+   "from": "There is one boulder! Very angular, very rough surface texture. Looks like it's partially - Well, bles, and they're about a centimeter across. And one corner of it has got all this glass covering on it; seems like there's a linear fracture through one side. It almost looks like that might be a contact; it is, within the rock. It looks like we have a - maybe a breccia on top of a - a crystalline rock. It's sort of covered with glass; I can't really tell, but I can see a - a definite linear feature through one side of it which is about a fifth, and the glass covers both sides of what I guess I'm calling a contact. And there's also, parallel to that contact, one surface, which is quite flat, only for about 8 inches or so. Looks like it's been chipped off. The boulder itself is on the order of about a meter across and maybe a - Gee, it looks like a half meter thick or so. It's got a fillet up one side, and the Earth side is in a shadow. I can't really tell whether - It doesn't look like it's filled. It's got a fillet on the downslope side, and - the upslope side is - is open and free. As a matter of fact, it looks like it's almost excavated beneath it.",
+   "to": "There is one boulder! Very angular, very rough surface texture. Looks like it's partially - Well, it's got glass on one side of it with lots of bubbles, and they're about a centimeter across. And one corner of it has got all this glass covering on it; seems like there's a linear fracture through one side. It almost looks like that might be a contact; it is, within the rock. It looks like we have a - maybe a breccia on top of a - a crystalline rock. It's sort of covered with glass; I can't really tell, but I can see a - a definite linear feature through one side of it which is about a fifth, and the glass covers both sides of what I guess I'm calling a contact. And there's also, parallel to that contact, one surface, which is quite flat, only for about 8 inches or so. Looks like it's been chipped off. The boulder itself is on the order of about a meter across and maybe a - Gee, it looks like a half meter thick or so. It's got a fillet up one side, and the Earth side is in a shadow. I can't really tell whether - It doesn't look like it's filled. It's got a fillet on the downslope side, and - the upslope side is - is open and free. As a matter of fact, it looks like it's almost excavated beneath it."
+  },
+  {
+   "g": 390497,
+   "from": "Yes. That's what we found here. Yes. I'd say that, in the - in the near field, the surface is covered by - probably less than i percent of fragmental debris. And, of that debris, I'd say 70 percent of it is on the order of an inch to 2 inches, or less. And maybe the other 30 percent seems to be in a range of maybe 4 or 5 inches, something like that; no large frags anywhere. They mostly -",
+   "to": "Yes. That's what we found here. Yes. I'd say that, in the - in the near field, the surface is covered by - probably less than 1 percent of fragmental debris. And, of that debris, I'd say 70 percent of it is on the order of an inch to 2 inches, or less. And maybe the other 30 percent seems to be in a range of maybe 4 or 5 inches, something like that; no large frags anywhere. They mostly - -"
+  },
+  {
+   "g": 380837,
+   "from": "And, Falcon; Houston. As soon as you get the radar parked, we're ready for the E-MOD dnmp.",
+   "to": "And, Falcon; Houston. As soon as you get the radar parked, we're ready for the E-MOD dump."
+  },
+  {
+   "g": 285458,
+   "from": "And, you know, as we look at all this after the many months we've been studying the Moon and learning all the technical features and names and everything, why - when you get it all at once, it's just absolutely overwhelming. There are so many different things down there and such a great variety of landforms and stratigraphy and albedo, that's it's hard for the mental computer to sort it all out and give it back to you. I hope over the next few days, we can sort of get our minds we're seeing. But I'll tell you, this is absolutely mind-boggling up here.",
+   "to": "And, you know, as we look at all this after the many months we've been studying the Moon and learning all the technical features and names and everything, why - when you get it all at once, it's just absolutely overwhelming. There are so many different things down there and such a great variety of landforms and stratigraphy and albedo, that's it's hard for the mental computer to sort it all out and give it back to you. I hope over the next few days, we can sort of get our minds organized and get a little more precise on what we're seeing. But I'll tell you, this is absolutely mind-boggling up here."
+  },
+  {
+   "g": 257966,
+   "from": "Roger. This is from the MOCR Gold Bugle and Taglich $eitung News. The Administration effort to rescue Lockheed Aircraft cleared a major hurdle in the Senate yesterday when an amendment to deny favored status was rejected 60 to 35. Houston unemployment rose to 4.1 percent in June, an increase of a full percentage point from May, which is the highest in 6 years. And this morning's Post reports that the checkout of Falcon went on with a few words from Worden and virtually nothing from the other astronauts. However, I think that's incorrect, and I enjoyed talking to you very much yesterday. In sporting news, Houston dumped Philadelphia, 6 to 3, and is now in fourth place, 10 games behind the Giants. And an interesting note from the North. Bart Start underwent surgery yesterday for a bicep tendon transplant and will be out of action for at least 12 weeks. And that's all from the Daily Zeitung this morning.",
+   "to": "Roger. This is from the MOCR Gold Bugle and Taglich Zeitung News. The Administration effort to rescue Lockheed Aircraft cleared a major hurdle in the Senate yesterday when an amendment to deny favored status was rejected 60 to 35. Houston unemployment rose to 4.1 percent in June, an increase of a full percentage point from May, which is the highest in 6 years. And this morning's Post reports that the checkout of Falcon went on with a few words from Worden and virtually nothing from the other astronauts. However, I think that's incorrect, and I enjoyed talking to you very much yesterday. In sporting news, Houston dumped Philadelphia, 6 to 3, and is now in fourth place, 10 games behind the Giants. And an interesting note from the North. Bart Starr underwent surgery yesterday for a bicep tendon transplant and will be out of action for at least 12 weeks. And that's all from the Daily Zeitung this morning."
+  },
+  {
+   "g": 254937,
+   "from": "Okay, and, in the second block, the lower block, under the updates for the times and angles, we have the following readings under the \"Update\" colum. The GET of LOI ignition is \"78:31:34.2,\" the second time is \"79:01:34.2,\" and the angles are \"144, 358, and 68.\" Over.",
+   "to": "Okay, and, in the second block, the lower block, under the updates for the times and angles, we have the following readings under the \"Update\" column. The GET of LOI ignition is \"78:31:34.2,\" the second time is \"79:01:34.2,\" and the angles are \"144, 358, and 68.\" Over."
+  },
+  {
+   "g": 252072,
+   "from": "And we've got the usual quota of checklist changes, Flight Plan updates, et cetera. When you guys are ready, give me a call. Look like yo u g_s had a good night's sleep last night, for you anyway, Dave.",
+   "to": "And we've got the usual quota of checklist changes, Flight Plan updates, et cetera. When you guys are ready, give me a call. Look like you guys had a good night's sleep last night, for you anyway, Dave."
+  },
+  {
+   "g": 215842,
+   "from": "15, this is Houston. You're GO to turn on the Pal! CAMERA telemetry. We need to bring up the HIGH GAIN ANTENNA first and then turn on the PAN CAMERA t el emet ry.",
+   "to": "15, this is Houston. You're GO to turn on the PAN CAMERA telemetry. We need to bring up the HIGH GAIN ANTENNA first and then turn on the PAN CAMERA telemetry."
+  },
+  {
+   "g": 212836,
+   "from": "Okay. _n the bottom of the page, this is applicable to LOI only. And at 6 minutes into the burn, we want the line \"Circuit breakers SPS PILOT VALVE MAIN A, open.\"",
+   "to": "Okay. In the bottom of the page, this is applicable to LOI only. And at 6 minutes into the burn, we want the line \"Circuit breakers SPS PILOT VALVE MAIN A, open.\""
+  },
+  {
+   "g": 189220,
+   "from": "Okay. Houston, 15. I guess - we realize the interest behind this and the significance of the thing and - and we'll each try and describe what we saw in the way of the flashes. And I think - because of the randomnum - randomness of the flashes, it was probably better to let us go ahead and work out the events on the DSE. And I think, also, you'll find on the DSE, when you review the tape, that we've come up with a little scheme to give you some quantitative data, which may or not- may not be the best. And if you have any suggestions on future tests or how we can make it a little better for you, we'd be glad to hear that. As to our positions in the spacecraft, we're in our launch - regular and launch positions; I'm in the left, and you still copy?",
+   "to": "Okay. Houston, 15. I guess - we realize the interest behind this and the significance of the thing and - and we'll each try and describe what we saw in the way of the flashes. And I think - because of the randomnum - randomness of the flashes, it was probably better to let us go ahead and work out the events on the DSE. And I think, also, you'll find on the DSE, when you review the tape, that we've come up with a little scheme to give you some quantitative data, which may or not- may not be the best. And if you have any suggestions on future tests or how we can make it a little better for you, we'd be glad to hear that. As to our positions in the spacecraft, we're in our launch - regular and launch positions; I'm in the left, and Al's in the center, and Jim's in the right. Do you still copy?"
+  },
+  {
+   "g": 974971,
+   "from": "Okay. I guess to show you around, we have to unstow everything. We're - we're pretty well stowed for reentry right now. We have all the samples stowed, the suits are all stowed, and I guess, in _-_ order to show you around, we'd have to do some unstowing because under - beneath the couches right now, it's jammed full. And I guess we'd like to do that for you, but it's some - somewhat impractical, in that all you can see would be some edges of some white bags, and that's why we have the room in the cabin here. Every - everything's pretty well squared away. Hut, when we get back, I'm sure you'll have an opportunity to see the many things we have, and there's really a lot of it.",
+   "to": "Okay. I guess to show you around, we have to unstow everything. We're - we're pretty well stowed for reentry right now. We have all the samples stowed, the suits are all stowed, and I guess, in order to show you around, we'd have to do some unstowing because under - beneath the couches right now, it's jammed full. And I guess we'd like to do that for you, but it's some - somewhat impractical, in that all you can see would be some edges of some white bags, and that's why we have the room in the cabin here. Every - everything's pretty well squared away. But, when we get back, I'm sure you'll have an opportunity to see the many things we have, and there's really a lot of it."
+  },
+  {
+   "g": 973796,
+   "from": "Yes. The comment on the cinder cones was one df color, but we noticed particularly on - on some of the lighter part of the back side that many many of the craters that we flew over were filled with what appeared to be lava. There seemed to be a great number of lava flows in the - in the mare area, particularly Mare Imbrium. Mare Imbrium -- seems to be a- Just a - countless numbers of - of lava flows, which were all apparently very thin and very fluid. And you can see - you can just count number - numbers of flow fronts covering Mare Imbrium. So we got, I think, quite a distinct impression of a - of a - of a great deal of volcanism around the Moon. And, in same particular isolated area such as the Littrow area and such as areas like probably the Aristarchus Plateau, there's a great deal of volcanism and some cinder cones and - and certainly a lot of lava flows.",
+   "to": "Yes. The comment on the cinder cones was one of color, but we noticed particularly on - on some of the lighter part of the back side that many many of the craters that we flew over were filled with what appeared to be lava. There seemed to be a great number of lava flows in the - in the mare area, particularly Mare Imbrium. Mare Imbrium seems to be a - just a - countless numbers of - of lava flows, which were all apparently very thin and very fluid. And you can see - you can just count number - numbers of flow fronts covering Mare Imbrium. So we got, I think, quite a distinct impression of a - of a - of a great deal of volcanism around the Moon. And, in some particular isolated area such as the Littrow area and such as areas like probably the Aristarchus Plateau, there's a great deal of volcanism and some cinder cones and - and certainly a lot of lava flows."
+  },
+  {
+   "g": 973679,
+   "from": "Well, I think, to begin with, we had every confidence that we could get to the landing site. The trajectory had been modified such that we had adequate clearance over the mountains. And the first sight I had out the window was somewhere around probably 9 or 10,000 feet as we passed down below the upper elevations of Mount Hadley. And I could see Mount Hadley to my left before we pitch - pitched over and saw the - the plain at Hadley, and that was probably as impressive sight - a sight as I've seen. The landing itself, once we pitched over, was somewhat of a surprise in that the - the craterio_ was much more subtle than we fragments or boulders on the surface. It was apparently quite smooth, and those rather deep craters which we had anticipated using as landmarks because of their subtlety did not appear quite as readily as we had hoped. I think we did recognize our relative position east-west of the rille because of the size of the rille itself. I think we were a little off on the north-south, but close enough to handle the traverses in the Rover. I think that having a vehicle such as that - as that enables us to go into more cGnplicated, difficult landing areas because it's not necessary to land on an exact point. We can take advantage of our mobility and land anywhere within a certain prescribed area which was initially our goal on this flight.",
+   "to": "Well, I think, to begin with, we had every confidence that we could get to the landing site. The trajectory had been modified such that we had adequate clearance over the mountains. And the first sight I had out the window was somewhere around probably 9 or 10,000 feet as we passed down below the upper elevations of Mount Hadley. And I could see Mount Hadley to my left before we pitch - pitched over and saw the - the plain at Hadley, and that was probably as impressive sight - a sight as I've seen. The landing itself, once we pitched over, was somewhat of a surprise in that the - the cratering was much more subtle than we had expected. There was a great lack of any large fragments or boulders on the surface. It was apparently quite smooth, and those rather deep craters which we had anticipated using as landmarks because of their subtlety did not appear quite as readily as we had hoped. I think we did recognize our relative position east-west of the rille because of the size of the rille itself. I think we were a little off on the north-south, but close enough to handle the traverses in the Rover. I think that having a vehicle such as that - as that enables us to go into more complicated, difficult landing areas because it's not necessary to land on an exact point. We can take advantage of our mobility and land anywhere within a certain prescribed area which was initially our goal on this flight."
+  },
+  {
+   "g": 943980,
+   "from": "We want to interrupt here. If we could have ACCEPT, please, we'll Provide you with a new state vector. The Senate shelves until September 13. that compromise draft-extension bill, which Nix - President Nixon wants now, and when it comes up, it will, quite possibly, face a filibuster. The U.S. Middle East expert Joseph Sisco concludes \"practical and concrete,\" and those are in quotes, talks in Israel. He says no decisive breakthrough was achieved, and he didn't expect any. The Middle East cease-fire, which went into effect last August 7, hasn't ushered The last 12 months have been the best year for Israel since 1967 and the euphoria induced byresults of the 6-day war. A Government study says Americans will spend more than 105 billion for medical care in 1974, and even the most ambitious Federal health insurance proposal would add less than 12 billion to the tab. Congress is set to embark on a month- long summer vacation after the Senate completes action on a measure keeping Federal agencies in business until October 15. That's good news. And - a - an added word which could be a science update, you may have heard yesterday, but let me repeat it anyway. We've had very clean laser returns off the LR cubed, which is located at Hadley Base; in fact, very good and returns from that. Also, as you know, we have a good subsatellite orbiting the Moon and are getting data from",
+   "to": "We want to interrupt here. If we could have ACCEPT, please, we'll provide you with a new state vector. The Senate shelves until September 13 that compromise draft-extension bill, which Nix - President Nixon wants now, and when it comes up, it will, quite possibly, face a filibuster. The U.S. Middle East expert Joseph Sisco concludes \"practical and concrete,\" and those are in quotes, talks in Israel. He says no decisive breakthrough was achieved, and he didn't expect any. The Middle East cease-fire, which went into effect last August 7, hasn't ushered in peace, but it has suspended Israeli-Arab fighting. The last 12 months have been the best year for Israel since 1967 and the euphoria induced by results of the 6-day war. A Government study says Americans will spend more than 105 billion for medical care in 1974, and even the most ambitious Federal health insurance proposal would add less than 12 billion to the tab. Congress is set to embark on a month-long summer vacation after the Senate completes action on a measure keeping Federal agencies in business until October 15. That's good news. And - a - an added word which could be a science update, you may have heard yesterday, but let me repeat it anyway. We've had very clean laser returns off the LR cubed, which is located at Hadley Base; in fact, very good and immediate returns from that. Also, as you know, we have a good subsatellite orbiting the Moon and are getting data from"
+  },
+  {
+   "g": 789450,
+   "from": "Roger, Troops. We'd like to tag up with you on the recommended TEI procedures. And, Al, I guess maybe you'll be doing this. And we - we're interested in reverifying the entries which you've made in your P40 SPS Thrusting Checklist, - guess, two new entries to put in, but we want to reverify the entries that you've already got in there. Your choice, if you want to read those entries to us, or if you'd like to have us to read them to you. Over.",
+   "to": "Roger, Troops. We'd like to tag up with you on the recommended TEI procedures. And, Al, I guess maybe you'll be doing this. And we - we're interested in reverifying the entries which you've made in your P40 SPS Thrusting Checklist, pages G 5-1 through to the end. And we've got, I guess, two new entries to put in, but we want to reverify the entries that you've already got in there. Your choice, if you want to read those entries to us, or if you'd like to have us to read them to you. Over."
+  },
+  {
+   "g": 694271,
+   "from": "Okay, real fine. You can start that right now at - Just put it in at 192:52, I guess. And also, right after that, list fuel cell purge H20 dump and Lioh canister change.",
+   "to": "Okay, real fine. You can start that right now at - Just put it in at 192:52, I guess. And also, right after that, list fuel cell purge H2O dump and LiOH canister change."
+  },
+  {
+   "g": 614563,
+   "from": "Okay, for direct. Readback 171:37:22.36; 5530.4, 0032.0, minus 000.4; plus 33742; plus 01722; plus 58516; plus 56943; plus 0032.0; plus 0149.6; 172:24:039.00; 10936. T. one rev late, 173:35:34. lg CSI coelliptic rather: 171:40:13.41; 5532.0, 0020.0, minus 000.5; plus 37742; plus 01722; plus 58550; plus 56943; plus 0020.0.",
+   "to": "Okay, for direct. Readback 171:37:22.36; 5530.4, 0032.0, minus 000.4; plus 33742; plus 01722; plus 58516; plus 56943; plus 0032.0; plus 0149.6; 172:24:039.00; 10936. Tig one rev late, 173:35:34. CSI - coelliptic rather: 171:40:13.41; 5532.0, 0020.0, minus 000.5; plus 37742; plus 01722; plus 58550; plus 56943; plus 0020.0."
+  },
+  {
+   "g": 604278,
+   "from": "As the space poet Rhesling [fictitious poet in Robert Heinlin's \"The Green Fields of Earth\"] would say, we're ready for you to come back again to the homes of men on the cool green hills of Earth.",
+   "to": "As the space poet Rhesling [fictitious poet in Robert Heinlein's \"The Green Fields of Earth\"] would say, we're ready for you to come back again to the homes of men on the cool green hills of Earth."
+  },
+  {
+   "g": 597789,
+   "from": "Here's your harmer.",
+   "to": "Here's your hammer."
+  },
+  {
+   "g": 596224,
+   "from": "Yes, I took some eloseups of that.",
+   "to": "Yes, I took some closeups of that."
+  },
+  {
+   "g": 576165,
+   "from": "Guten Morgen, mein Here. Ist gut.",
+   "to": "Guten Morgen, mein Herr. Ist gut."
+  },
+  {
+   "g": 547022,
+   "from": "Yes, we are too, we're - Got a little over 100 pounds today. Got up the side of the mountain. Got a good look around. Things are going real well. Oh, meu, it was super, just super. We got some great pictures for you. Yes, I tell you, I hope you can see these Rover tracks, because outside the LM here, it looks like a freeway.",
+   "to": "Yes, we are too, we're - Got a little over 100 pounds today. Got up the side of the mountain. Got a good look around. Things are going real well. Oh, man, it was super, just super. We got some great pictures for you. Yes, I tell you, I hope you can see these Rover tracks, because outside the LM here, it looks like a freeway."
+  },
+  {
+   "g": 535389,
+   "from": "Okay, I have the sample contair_nent bags out here, Dave. I'll just leave them here on top.",
+   "to": "Okay, I have the sample containment bags out here, Dave. I'll just leave them here on top."
+  },
+  {
+   "g": 523442,
+   "from": "We're -.]most to Split now.",
+   "to": "We're almost to Spur now."
+  },
+  {
+   "g": 516129,
+   "from": "Oh, whoa babyl",
+   "to": "Oh, whoa baby!"
+  },
+  {
+   "g": 510620,
+   "from": "That's better. Okay. CB(il) COMM, CDR AUDIO, open, and connected to PLSS comm.",
+   "to": "That's better. Okay. CB(11) COMM, CDR AUDIO, open, and connected to PLSS comm."
+  },
+  {
+   "g": 465641,
+   "from": "Joe, we've talked it over, and we think the best have now. I think we understand what we're looking for, and even though we didn't find any - some of the things we were looking for today, that doesn't mean that we won't find them as we head down to Front Crater. And I - I guess about the only input we'd have would be that, if we can make as good a time on the Rover tomorrow as we did today, perhaps we'd have more time to sample a - a variety of stations along the Front and on the way back. But, in general, I think we'd do better if we stuck with our preflight - preflight plan.",
+   "to": "Joe, we've talked it over, and we think the best thing to do is to stick exactly with the plan we have now. I think we understand what we're looking for, and even though we didn't find any - some of the things we were looking for today, that doesn't mean that we won't find them as we head down to Front Crater. And I - I guess about the only input we'd have would be that, if we can make as good a time on the Rover tomorrow as we did today, perhaps we'd have more time to sample a - a variety of stations along the Front and on the way back. But, in general, I think we'd do better if we stuck with our preflight - preflight plan."
+  },
+  {
+   "g": 445495,
+   "from": "Okay, ready to hand me m_ - -",
+   "to": "Okay, ready to hand me my - -"
+  },
+  {
+   "g": 445454,
+   "from": "You know, Joe, these small fresh craters that we've commented on -whatever caused them, must erea - must create or indurate the soil into the rocks - creates its own - own rocks, because there's just a concentration of rocks around the very fresh ones. And the small I'm talking about may be a foot to 3 feet diameter.",
+   "to": "You know, Joe, these small fresh craters that we've commented on - whatever caused them, must crea - must create or indurate the soil into the rocks - creates its own - own rocks, because there's just a concentration of rocks around the very fresh ones. And the small I'm talking about may be a foot to 3 feet diameter."
+  },
+  {
+   "g": 419496,
+   "from": "Roger, Dave. My first flip comment there was the comment before you leave the Moon. The second comment on the \"selected samples should be taken at the crew's convenience at the end of the EVA\" was apparently intended by the geologists to mean selected samples of these black rocks and other",
+   "to": "Roger, Dave. My first flip comment there was the comment before you leave the Moon. The second comment on the \"selected samples should be taken at the crew's convenience at the end of the EVA\" was apparently intended by the geologists to mean selected samples of these black rocks and other interesting frags. Over."
+  },
+  {
+   "g": 374842,
+   "from": "Roger. India 104:30:08.54; NOUN 61 erossrange, plus 000.33 and your DEDA's 231 entry, plus 569.43.",
+   "to": "Roger. India 104:30:08.54; NOUN 61 crossrange, plus 000.33 and your DEDA's 231 entry, plus 569.43."
+  },
+  {
+   "g": 367980,
+   "from": "Okay, Houston. The burn got off on time. Burn time, 4 seconds; Vgx, minus 0000.9; and I trimmed that to 0 at - roll of 0, pitch of 107, and yaw of 358. V was plus all zero's, V was plus all gx gy zero s, V was minus 0000.5 DELTA-V was gz c minus 11.2; fuel was 29.25; oxidizer, 29.15; and unbalance meter was decreased 50. And I've got me in a 65.2 by 54.8.",
+   "to": "Okay, Houston. The burn got off on time. Burn time, 4 seconds; Vgx, minus 0000.9; and I trimmed that to 0 at - roll of 0, pitch of 107, and yaw of 358. Vgx was plus all zero's, Vgy was plus all zero's, Vgz was minus 0000.5. DELTA-Vc was minus 11.2; fuel was 29.25; oxidizer, 29.15; and unbalance meter was decreased 50. And I've got me in a 65.2 by 54.8."
+  },
+  {
+   "g": 364120,
+   "from": "Understand VERB 21 NOUN 1 Elite:R,1765 EII'£_:R,01605 ENTER.",
+   "to": "Understand VERB 21 NOUN 1 ENTER, 1765 ENTER, 01605 ENTER."
+  },
+  {
+   "g": 355061,
+   "from": "Okay; readhack on the AGS abort constants. 60442, 29365, 60449, 01659, 55021, and 32306.",
+   "to": "Okay; readback on the AGS abort constants. 60442, 29365, 60449, 01659, 55021, and 32306."
+  },
+  {
+   "g": 307306,
+   "from": "0SO's two-word s,,w,Baryof it is that we're getting beautiful data. Incidentally, Al, if - if you'd like sometime, let us have, say - 12 to 24 hours operation, would you like to have a summary sometime tomorrow on some of the details? Pag'e 249",
+   "to": "OSO's two-word summary of it is that we're getting beautiful data. Incidentally, Al, if - if you'd like sometime, let us have, say - 12 to 24 hours operation, would you like to have a summary sometime tomorrow on some of the details?"
+  },
+  {
+   "g": 276168,
+   "from": "Roger. TEI-4, SPS/G&N; 40015; plus 0.59, plus 1.21; 087:12:40.06; plus 3121.1, minus 2074.0, minus 06h3.0; 182, 057, 329; the rest is NA. Ullage, 4 jets, 12 seconds, and this assumes burn undocked; and no DOI; and the roll, pitch, and yaw angles assume landing site REFSMMAT. And that's all.",
+   "to": "Roger. TEI-4, SPS/G&N; 40015; plus 0.59, plus 1.21; 087:12:40.06; plus 3121.1, minus 2074.0, minus 0643.0; 182, 057, 329; the rest is NA. Ullage, 4 jets, 12 seconds, and this assumes burn undocked; and no DOI; and the roll, pitch, and yaw angles assume landing site REFSMMAT. And that's all."
+  },
+  {
+   "g": 177743,
+   "from": "Okay, RCS, 90, 89, 90, and 89. On H2, 92, 90, 70. o2; 90, 90, ana 85.",
+   "to": "Okay, RCS, 90, 89, 90, and 89. On H2, 92, 90, 70. O2; 90, 90, and 85."
+  },
+  {
+   "g": 131014,
+   "from": "Roger; understand. Purpose is flyby, that's SPS/ G&N; and pad's as follows: 66655; plus 1.24, minus 0.11; 073-30:56.80; plus 0257.2, plus 0230.9, minus 0314.9; 331, 109, 079; and the next is NA; and I missed a couple in there. Picking up that sextant star would be 02, 148.5, 26.4; boresight star is NA; latitude is plus 13.32, longitude, minus 174.04; 1098.7, 36170; 170:59:57. Vega and Deneb are set stars; with angles of 209; 009; and 349. No ullage. And the SPB docked burn, use a preferred REFSMMAT because of the yaw gimbal angle, and the LM weight is 33260.",
+   "to": "Roger; understand. Purpose is flyby, that's SPS/G&N; and pad's as follows: 66655; plus 1.24, minus 0.11; 073:30:56.80; plus 0257.2, plus 0230.9, minus 0314.9; 331, 109, 079; and the next is NA; and I missed a couple in there. Picking up that sextant star would be 02, 148.5, 26.4; boresight star is NA; latitude is plus 13.32, longitude, minus 174.04; 1098.7, 36170; 170:59:57. Vega and Deneb are set stars; with angles of 209; 009; and 349. No ullage. And the SPS docked burn, use a preferred REFSMMAT because of the yaw gimbal angle, and the LM weight is 33260."
+  },
+  {
+   "g": 94388,
+   "from": "Roger, Jim. Sorry for the inter - interruption there. We had severe noise on our comm momentarily, but it's cleared up now. I'll go ahead with the morning's news and a quote from President Nixon. \"The flight of Apollo 15 is the most ambitious exploration yet undertaken in space. Even as it reflects man's restless quest for his future, so it also reenacts another of the deeper rituals of his bones, not only the compulsion of the inner spirit to know where we are going, but the primal need in man's blood to know from what we have come. We hope, by this Journey, to know better the origins of Earth, the Moon, and other planets. We hope to understand something more of the mysteries of God's great work. And, in this seeking, we hope to understand more of man himself. To the men of Apollo 15, for all men, I say s Godspeed.\" End quote. And there's a second message here that was telephoned to Dr. Fletcher yesterday through the State Department. It reads, \"Congratulations on flawless launch. Please pass my best wishes for a successful mission to the crew of Apollo 15 and to your entire staff.\" And that message is signed Spiro T. Agnew. And a third comment about the launch was the launch is called flawless and you three are described as being very businesslike. And Kappy is quoted as saying, quote, \"The mission was the most nominal launch we have ever had.\" Unquote. And I'd like to put in an editor's note here. That's probably technically correct, but it's aesthetically very incorrect. You could track the vehicle for hundreds of miles, literally hundreds of miles through beautiful clear sky, and it was a sensational launch aesthetically. I suspect you - I'm sure you will agree with that. Let's see, we've got an item here on Muhammad Ali- Jimmy Ellis fight here in the Astrodome, and it was declared a technical knockout in favor of Muhammad Ali in the last round - the 12th round. And it says that Ali took control of the fight in the 6th round and signaled the start of the end with an uppercut midway through the final round. And continuing on with the news, if you're still reading. Western Union employees - -",
+   "to": "Roger, Jim. Sorry for the inter - interruption there. We had severe noise on our comm momentarily, but it's cleared up now. I'll go ahead with the morning's news and a quote from President Nixon. \"The flight of Apollo 15 is the most ambitious exploration yet undertaken in space. Even as it reflects man's restless quest for his future, so it also reenacts another of the deeper rituals of his bones, not only the compulsion of the inner spirit to know where we are going, but the primal need in man's blood to know from what we have come. We hope, by this journey, to know better the origins of Earth, the Moon, and other planets. We hope to understand something more of the mysteries of God's great work. And, in this seeking, we hope to understand more of man himself. To the men of Apollo 15, for all men, I say, Godspeed.\" End quote. And there's a second message here that was telephoned to Dr. Fletcher yesterday through the State Department. It reads, \"Congratulations on flawless launch. Please pass my best wishes for a successful mission to the crew of Apollo 15 and to your entire staff.\" And that message is signed Spiro T. Agnew. And a third comment about the launch was the launch is called flawless and you three are described as being very businesslike. And Kappy is quoted as saying, quote, \"The mission was the most nominal launch we have ever had.\" Unquote. And I'd like to put in an editor's note here. That's probably technically correct, but it's aesthetically very incorrect. You could track the vehicle for hundreds of miles, literally hundreds of miles through beautiful clear sky, and it was a sensational launch aesthetically. I suspect you - I'm sure you will agree with that. Let's see, we've got an item here on Muhammad Ali- Jimmy Ellis fight here in the Astrodome, and it was declared a technical knockout in favor of Muhammad Ali in the last round - the 12th round. And it says that Ali took control of the fight in the 6th round and signaled the start of the end with an uppercut midway through the final round. And continuing on with the news, if you're still reading. Western Union employees - -"
+  },
+  {
+   "g": 10655,
+   "from": "Okay. We cut off on a V I of 35614. TFC was plus 02; VG was .o. 05; DELTA-V C ... minus ... 4.5 ... H-dot ... and altitude is 167.4.",
+   "to": "Okay. We cut off on a V I of 35614. TFC was plus 02; VG was ... 05; DELTA-V C ... minus ... 4.5 ... H-dot ... and altitude is 167.4."
+  },
+  {
+   "g": 5476,
+   "from": "TLI plus 90, SPS/G&N; NOUN 47 is 66938; minus 0.52, plus 1.90; GET for ignition is 004:19:56.99; NOUN 81, minus 0425.4, plus four zeroes 1, plus 4921.7; attitude, 180, 166, 002; HA is NA, Hp, plus 0021.0; 4940.1, 6:34, 4920.8. Sextant star is 40, 079.5, 35.9; boresight star, NA; NOUN 61, plus 16.04, minus 030.00; 1099.0, 34492; GET for 05g, 017:43:58; GDC aline stars are Deneb and Vega; 112, 128, 356; no ullage. Go ahead. usssVm.",
+   "to": "TLI plus 90, SPS/G&N; NOUN 47 is 66938; minus 0.52, plus 1.90; GET for ignition is 004:19:56.99; NOUN 81, minus 0425.4, plus four zeroes 1, plus 4921.7; attitude, 180, 166, 002; HA is NA, Hp, plus 0021.0; 4940.1, 6:34, 4920.8. Sextant star is 40, 079.5, 35.9; boresight star, NA; NOUN 61, plus 16.04, minus 030.00; 1099.0, 34492; GET for 05g, 017:43:58; GDC aline stars are Deneb and Vega; 112, 128, 356; no ullage. Go ahead."
+  },
+  {
+   "g": 503190,
+   "from": "Okay, Dave. Thank you. I'm going to go through the stations and the rationale behind our - some of our decisions now, starting with the first one. _-_ Egress the I_, we'll have a couple of small housekeeping chores for you to get out of the way on the Rover for us. And they're basically - we're going to give - invest BO more seconds in our front-steering problem, and we'll - perhaps a minute in taping up the TV antenna cable, and I'll be back to you on that a little late. Then we're going to strike out immediately for the Front, in other words, head south. We want to delete Station 4, outbound, and the rationale is, as all of us already know, the priority on that is considerably lower than other stations. And we may very well pick up Station 4 on the way home anyway. We're not going to try to range all the way down to Front Crater; we think there are plenty of craters similar to Front along the way, and the long-travel time decreases our geology time along the Front. Now, we want to reroute our front traverses to the area of Window Crater and Spur Crater; in other words, Stations 6 and 7, the Station 6 and 7 area right there in the highly counted boudinage. And we're going to depend very much on the observations from the two of you, and it's going to be dealer's choice - Your choice on exactly where you'd like to range and where you'd like to carry out your major sampling tasks. Let me emphasize that we're looking now, primarily, for a wide variety of rock samples from the Front. We've - You've seen the breccias already. We think there may very well be some large crystal igneous, and we'd like samples of those and whatever variety of rocks which you're able to find for us - but primarily, a large number of documented samples and fragment samples. We're going to add a comprehensive rake and soil sample someplace in this area. Once again, we'd like you _-_ to try the rake but, if it doesn't work - with about the first swipe across the surface, we'll give that up as a bad idea; just don't want you to spend too much time using the rake. I'll key now mud ask for any more questions.",
+   "to": "Okay, Dave. Thank you. I'm going to go through the stations and the rationale behind our - some of our decisions now, starting with the first one. Egress the LM, we'll have a couple of small housekeeping chores for you to get out of the way on the Rover for us. And they're basically - we're going to give - invest 30 more seconds in our front-steering problem, and we'll - perhaps a minute in taping up the TV antenna cable, and I'll be back to you on that a little late. Then we're going to strike out immediately for the Front, in other words, head south. We want to delete Station 4, outbound, and the rationale is, as all of us already know, the priority on that is considerably lower than other stations. And we may very well pick up Station 4 on the way home anyway. We're not going to try to range all the way down to Front Crater; we think there are plenty of craters similar to Front along the way, and the long-travel time decreases our geology time along the Front. Now, we want to reroute our front traverses to the area of Window Crater and Spur Crater; in other words, Stations 6 and 7, the Station 6 and 7 area right there in the highly counted boudinage. And we're going to depend very much on the observations from the two of you, and it's going to be dealer's choice - Your choice on exactly where you'd like to range and where you'd like to carry out your major sampling tasks. Let me emphasize that we're looking now, primarily, for a wide variety of rock samples from the Front. We've - You've seen the breccias already. We think there may very well be some large crystal igneous, and we'd like samples of those and whatever variety of rocks which you're able to find for us - but primarily, a large number of documented samples and fragment samples. We're going to add a comprehensive rake and soil sample someplace in this area. Once again, we'd like you to try the rake but, if it doesn't work - with about the first swipe across the surface, we'll give that up as a bad idea; just don't want you to spend too much time using the rake. I'll unkey now and ask for any more questions."
+  },
+  {
+   "g": 1062474,
+   "from": "This is photo, I have visual contact again. I - have 1_0 from the ship, 1/2 mile. Bearing is 130 ·to - Three m,ln chutes. I have vis,,-1 contact three main chutes.",
+   "to": "This is photo, I have visual contact again. I have 140 from the ship, 1/2 mile. Bearing is 130 to - Three main chutes. I have visual contact three main chutes."
+  },
+  {
+   "g": 517531,
+   "from": "Yes. Okay, good. Take a little lean to the left here. No, that - those weren't very big holes at all were they? I guess the shadow mRde them look -",
+   "to": "Yes. Okay, good. Take a little lean to the left here. No, that - those weren't very big holes at all were they? I guess the shadow made them look -"
+  },
+  {
+   "g": 213387,
+   "from": "Okay; that makes sense. I guess we've got one point here, and looking at the postignition sequence on the LOI burn. In order to monitor start transients and retain Al's capability to take over in case we have a gimbal handover at start or something like that, perhaps it might be better to push that circuit breaker, the SPS PILOT VALVE MAIN A, closed, as soon as we get ignition. And then that would enable Al to get back over in the THC in case he's got a problem there. How about that?",
+   "to": "Okay; that makes sense. I guess we've got one point here, and looking at the postignition sequence on the LOI burn. In order to monitor start transients and retain Al's capability to take over in case we have a gimbal hardover at start or something like that, perhaps it might be better to push that circuit breaker, the SPS PILOT VALVE MAIN A, closed, as soon as we get ignition. And then that would enable Al to get back over in the THC in case he's got a problem there. How about that?"
+  },
+  {
+   "g": 595835,
+   "from": "No, I didn't even look on this side, to tell you the truth, Jim. Oh, there's a - I can see a couple might be in place at about the LO-percent level - of the rille. Very large boulders with fractures in them, rounded. It's hard to tell whether they're really in place, but they may be in place covered by - by talus. And they're about 50 percent down. Let's see if there's any continuity to it. I can see some suggestions of continuity there. Jim, look at that. Well, it looks like that the talus of fragments and fines is covering another layer. Or sug - a suggestion of continuity of outcrops, which are rounded, at about the LO- to 50-percent level down.",
+   "to": "No, I didn't even look on this side, to tell you the truth, Jim. Oh, there's a - I can see a couple of outcrops on the far side, which look like they might be in place at about the 40-percent level - of the rille. Very large boulders with fractures in them, rounded. It's hard to tell whether they're really in place, but they may be in place covered by - by talus. And they're about 50 percent down. Let's see if there's any continuity to it. I can see some suggestions of continuity there. Jim, look at that. Well, it looks like that the talus of fragments and fines is covering another layer. Or sug - a suggestion of continuity of outcrops, which are rounded, at about the 40- to 50-percent level down."
+  },
+  {
+   "g": 552190,
+   "from": "Well, I guess that meens yes. Delta P and the gamma ray extend was 2 plus 37, end on the mapping camera, retract was 3 plus 32.",
+   "to": "Well, I guess that means yes. Delta P and the gamma ray extend was 2 plus 37, and on the mapping camera, retract was 3 plus 32."
+  },
+  {
+   "g": 419619,
+   "from": "Okay. Let me talk to you about Rover status. The additional distance - this 0.6 - will - and your new position - will not affect the electrical power profile. It's really a very small and almost trivial distance. And, secondly, the LM slope, the 9 degrees by 9 degrees, is within the angles for which the deployment is specified, which is 15 degrees, and also within the angles for which it's been tested. And I guess a couple of days ago they did test 15 degrees of pitch and 5 degrees of roll at Marshall, and 14 degrees of pitch and 14 degrees of roll. And, right now, we will, in real time, have the moekup at Marshall positioned corresponding to our pitchup of 9 and roll of 6 degrees. Over.",
+   "to": "Okay. Let me talk to you about Rover status. The additional distance - this 0.6 - will - and your new position - will not affect the electrical power profile. It's really a very small and almost trivial distance. And, secondly, the LM slope, the 9 degrees by 9 degrees, is within the angles for which the deployment is specified, which is 15 degrees, and also within the angles for which it's been tested. And I guess a couple of days ago they did test 15 degrees of pitch and 5 degrees of roll at Marshall, and 14 degrees of pitch and 14 degrees of roll. And, right now, we will, in real time, have the mockup at Marshall positioned corresponding to our pitchup of 9 and roll of 6 degrees. Over."
+  },
+  {
+   "g": 177238,
+   "from": "All right. Moving right along, now, the national news, Secretary of Labor Hodgson has asked the United Transportation Union and the rail industry to put their dispute before a neutral panel for settlement. U.S. Be nate will vote today on an amendment to delay a federally guaranteed loan to Lockheed. The vote is expected to be very close. In local news, a Texas Animal Health Commission employee said that he thinks that the Harris County vaccination program against sleeping sickness is almost at an end. I don't know if they're going to institute preflight quarantine on the anita-is or not. And more than a hundred people were arrested during a raid of the Arlington Country Club in Texas, last night, and gambling equipment was confiscated. Maybe you left town just in time In sports, yesterday, the Baltimore Orioles increased their lead to four games in the American League East by winning the double header from the Oakland Athletics, 1-0 and 6-4. And the Houston Astros split a twilight double header last night with the Phillies, 8 to 3 and 5 to 1. Muhammad Ali announced that - and I'll stand - all right, Mubammad Ali announced that he will fight Jerry Quarry, September, in the Astrodome and Ali also wants a rematch with Joe Frazier sometime in March, 1972. The Oilers have trimmed their roster to 59 players by placing two of the players, Johnny Peacock and Tom Smiley, on waivers. Four golfers were inducted into the American Golf Hall of Fame last Bight. They are Julius Boros, Cary Middlecoff, Jock Hutchinson, and the late Walter J. Travis. And we hate to tell you this, but Elizabeth Taylor is a grandmother, at age 39 when _ her 19-year-old daughter-in-law gave birth to a 6-pound_2-ounce girl yesterday. And that's all from the Houston MOCR News Center.",
+   "to": "All right. Moving right along, now, the national news, Secretary of Labor Hodgson has asked the United Transportation Union and the rail industry to put their dispute before a neutral panel for settlement. U.S. Senate will vote today on an amendment to delay a federally guaranteed loan to Lockheed. The vote is expected to be very close. In local news, a Texas Animal Health Commission employee said that he thinks that the Harris County vaccination program against sleeping sickness is almost at an end. I don't know if they're going to institute preflight quarantine on the animals or not. And more than a hundred people were arrested during a raid of the Arlington Country Club in Texas, last night, and gambling equipment was confiscated. Maybe you left town just in time. In sports, yesterday, the Baltimore Orioles increased their lead to four games in the American League East by winning the double header from the Oakland Athletics, 1-0 and 6-4. And the Houston Astros split a twilight double header last night with the Phillies, 8 to 3 and 5 to 1. Muhammad Ali announced that - and I'll stand - all right, Muhammad Ali announced that he will fight Jerry Quarry, September, in the Astrodome and Ali also wants a rematch with Joe Frazier sometime in March, 1972. The Oilers have trimmed their roster to 59 players by placing two of the players, Johnny Peacock and Tom Smiley, on waivers. Four golfers were inducted into the American Golf Hall of Fame last night. They are Julius Boros, Cary Middlecoff, Jock Hutchinson, and the late Walter J. Travis. And we hate to tell you this, but Elizabeth Taylor is a grandmother, at age 39 when her 19-year-old daughter-in-law gave birth to a 6-pound, 2-ounce girl yesterday. And that's all from the Houston MOCR News Center."
+  },
+  {
+   "g": 967232,
+   "from": "Roger. And at 271:45, we add GAMMA RAY BOOM. D_OY, 4[['_econ_$, _hen-off.-GA_94A RAY, GAIN- STEP, center, anti,start contamination photos.",
+   "to": "Roger. And at 271:45, we add GAMMA RAY BOOM DEPLOY, 41 seconds, then off. GAMMA RAY, GAIN-STEP, center, and start contamination photos."
+  },
+  {
+   "g": 858123,
+   "from": "Roger, Dave. We're looking down the l/ne here towards the EVA. And the Surgeon's getting good hiomed data on Al now, except one of the three EKG sensors is apparently marginal, and there's some noise creeping in. We're just wondering what your standard procedure is regarding sensor- ing before the EVA exercise. If he's going to ing it's probably no problem; if he's not planning to, maybe we ought to talk it over a little. Over. We're all three all sensored, ready to go.",
+   "to": "Roger, Dave. We're looking down the line here towards the EVA. And the Surgeon's getting good biomed data on Al now, except one of the three EKG sensors is apparently marginal, and there's some noise creeping in. We're just wondering what your standard procedure is regarding sensor- ing before the EVA exercise. If he's going to resensor, it's probably no problem; if he's not planning to, maybe we ought to talk it over a little. Over."
+  },
+  {
+   "g": 849087,
+   "from": "Okay, Dave. I guess, let me start with the CSM consumables. At 235 plus BO, RCS total, 41; quad A: 43, ho, 38, _l; H2 t_-k 1, 41; 0, 36; O2 tank 1, 56; 58, 45. And the only immediate other thing I have for you, Dave, is a comment on the maneuver at 236 hours - about the ga.,*_aray boom retract. We'd like for you to confirm - I'll be back when ...",
+   "to": "Okay, Dave. I guess, let me start with the CSM consumables. At 235 plus 30, RCS total, 41; quad A: 43, 40, 38, 41; H2 tank 1, 41; 40, 36; O2 tank 1, 56; 58, 45. And the only immediate other thing I have for you, Dave, is a comment on the maneuver at 236 hours - about the gamma ray boom retract. We'd like for you to confirm - I'll be back when ..."
+  },
+  {
+   "g": 794211,
+   "from": "Right on, Jim. DELTA-V T is 0o66.4, 0:o3, 0o54.8; sextant, 13, 164.3, 12.6; 001, down 09.1, left 4.6. aline, 102; 178; 028. Four Jet, 12 seconds. Other is subsat launch GET 222 plus 39 plus 27; roll, 266; pitch, 141; yaw, 038. HIGH GAIN: PITCH, minus 70; YAW, plus 113. Standing by for readback starting with DELTA-V,,. Over.",
+   "to": "Right on, Jim. DELTA-V T is 0066.4, 0:03, 0054.8; sextant, 13, 164.3, 12.6; 001, down 09.1, left 4.6. The rest is NA. GDC aline, Vega and Deneb; roll aline, 102; 178; 028. Four jet, 12 seconds. Other is subsat launch GET 222 plus 39 plus 27; roll, 266; pitch, 141; yaw, 038. HIGH GAIN: PITCH, minus 70; YAW, plus 113. Standing by for readback starting with DELTA-V T. Over."
+  },
+  {
+   "g": 524882,
+   "from": "I've got - Man, oh m_u. I got about a 4 incher, Joe. It's subrounded, and on one half of it, we have a very dark, black, fine-grained basalt with some - it looks like some very thin laths in it of plage - nothing else. And, in one region, there is some millimeter-type vesicles along a linear pattern very close to the contact. And, the other side of the contact, we have a pure, solid-white, fine-grained frag, which looks not unlike the white clasts in the 14 rock. But it's a beautiful contact in here. And, we'll call this one bag number - -",
+   "to": "I've got - Man, oh man. I got about a 4 incher, Joe. It's subrounded, and on one half of it, we have a very dark, black, fine-grained basalt with some - it looks like some very thin laths in it of plage - nothing else. And, in one region, there is some millimeter-type vesicles along a linear pattern very close to the contact. And, the other side of the contact, we have a pure, solid-white, fine-grained frag, which looks not unlike the white clasts in the 14 rock. But it's a beautiful contact in here. And, we'll call this one bag number - -"
+  },
+  {
+   "g": 395918,
+   "from": "and I went Index. right down the line, Matthew, Mark, Luke.",
+   "to": "I went right down the line, Matthew, Mark, Luke, and Index."
+  },
+  {
+   "g": 510853,
+   "from": "I'll turn off the LCG PUMP. i'_gc 697",
+   "to": "I'll turn off the LCG PUMP."
   }
  ],
  "08": [
@@ -9158,5 +9628,1095 @@
    "from": "Okay. Before you do tint, would you open %_a leao &bout two stops slowly &nd than stop it go,fa I f fairly rapidly for us?",
    "to": "Okay. Before you do that, would you open the lens up about two stops slowly and than stop it down fairly rapidly for us?"
   }
- ]
+ ],
+ "16": [
+  {
+   "g": 374059,
+   "from": "Good ._]ba,:L.",
+   "to": "Good readback."
+  },
+  {
+   "g": 244421,
+   "from": "Okay - maybe I'm off on a tangent. What it looked to me like is that if you pick up one of these glitches, I'm not sure that the rates are all going to be confined to just - just one axis by the time it stops, and if you then take and load register 3 and NOUN 20 to zeros, you may, in facts be at some other middle gimbal angle than 0. So, once you do that - I guess that - that has no effect if I do a VERB 40, huh? I guess that's the - I missed that point. That merely gets me out of the coarse align, and--",
+   "to": "Okay - maybe I'm off on a tangent. What it looked to me like is that if you pick up one of these glitches, I'm not sure that the rates are all going to be confined to just - just one axis by the time it stops, and if you then take and load register 3 and NOUN 20 to zeros, you may, in fact, be at some other middle gimbal angle than 0. So, once you do that - I guess that - that has no effect if I do a VERB 40, huh? I guess that's the - I missed that point. That merely gets me out of the coarse align, and--"
+  },
+  {
+   "g": 773273,
+   "from": "_ie said he takes it. And we'd like to know how far that rail protrudes through the bind there, and if you can see any obstructions to retractions, you know, like the harness, or the guides, or the Loom cable fingers, proximity switches, any of those things - report them.",
+   "to": "He said he takes it. And we'd like to know how far that rail protrudes through the bind there, and if you can see any obstructions to retractions, you know, like the harness, or the guides, or the boom cable fingers, proximity switches, any of those things - report them."
+  },
+  {
+   "g": 695548,
+   "from": "Okay. Minus 02900, minus 08320, minus 02930. And we'd - after you've torqued vhat, would you get us another set of NOUN 208 on the DSKY?",
+   "to": "Okay. Minus 02900, minus 08320, minus 04930. And we'd - after you've torqued that, would you get us another set of NOUN 20s on the DSKY?"
+  },
+  {
+   "g": 690214,
+   "from": "Ye_Pl, I know.",
+   "to": "Yeah, I know."
+  },
+  {
+   "g": 689466,
+   "from": "<k _d_ead.",
+   "to": "Go ahead."
+  },
+  {
+   "g": 687900,
+   "from": "C'kn:-. low, 217 is w!, .. t.",
+   "to": "Okay. Now, 217 is what?"
+  },
+  {
+   "g": 687271,
+   "from": "Okay. In the form of review, Ken, when we get to 192 hours, we're going te flip over to what was originally 214:00 in the Flight Plan, and that's going to become 192:10. There's a 10-minute pad in there. And, at 192:10, we work through those changes down to the point where i read you \"Start hatch closing\" at 194:23. Amd, at 194:27, we want to jump hack to the \"LM jett procedures,\" and there is only one change in that. so I think that's the best place to go, which was at 176:50, originally.",
+   "to": "Okay. In the form of review, Ken, when we get to 192 hours, we're going to flip over to what was originally 214:00 in the Flight Plan, and that's going to become 192:10. There's a 10-minute pad in there. And, at 192:10, we work through those changes down to the point where I read you \"Start hatch closing\" at 194:23. And, at 194:27, we want to jump back to the \"LM jett procedures,\" and there is only one change in that. So, I think that's the best place to go, which was at 176:50, originally."
+  },
+  {
+   "g": 683055,
+   "from": "(Laughter) Okay. Just a second, Hank, let me - I'll - I'll get this page aane, and then we can work on it, and I'1! be right with you.",
+   "to": "(Laughter) Okay. Just a second, Hank, let me - I'll - I'll get this page done, and then we can work on it, and I'll be right with you."
+  },
+  {
+   "g": 682735,
+   "from": "And leave the alpha-particle cover open and all that. Okay. I'll just delete all those guys, and let me read you what I have. That's the \"LASER ALTIMETER - Starting at 191:50 we'll go \"LASER ALTIMETER, OFF; mapping C/LMERA/LASER ALTIMETER when it's in, the \"MAPPING Camera/LASER ALTIMETER COVER is to \"CLOSE,\" the HAPPINC CAMERA\" then comes \"OFF_\" and we go through a little ditty of \"33 seconds, STANDBY; IHC, OFF.\" While we're doing this, we can do a VERB h9 to the attitude 322, 115, 305; AOS HIGH GAIN angles will be PITCH, minus 35; YAJ, 235. I need to be in attitude by 192:10. Starting about 19!:55 you want to start transfer of :24 equipment.",
+   "to": "And leave the alpha-particle cover open and all that. Okay. I'll just delete all those guys, and let me read you what I have. That's the \"LASER ALTIMETER - Starting at 191:50 we'll go \"LASER ALTIMETER, OFF; MAPPING CAMERA/LASER ALTIMETER when it's in, the \"MAPPING CAMERA/LASER ALTIMETER COVER\" is to \"CLOSE,\" the MAPPING CAMERA\" then comes \"OFF,\" and we go through a little ditty of \"30 seconds, STANDBY; IMC, OFF.\" While we're doing this, we can do a VERB 49 to the attitude 322, 115, 305; AOS HIGH GAIN angles will be PITCH, minus 35; YAW, 238. I need to be in attitude by 192:10. Starting about 191:55, you want to start transfer of LM equipment."
+  },
+  {
+   "g": 682690,
+   "from": "('kc?. Now, give me that time that you've got to ce in altitude again, i didnrz gel that one.",
+   "to": "Okay. Now, give me that time that you've got to be in attitude again. I didn't get that one."
+  },
+  {
+   "g": 646135,
+   "from": "And, them on _,a__e! 16, INVERTER number 2, closed, mhd !%UCA, closed. Over.",
+   "to": "And, then on panel 16, INVERTER number 2, closed, and ATCA, closed. Over."
+  },
+  {
+   "g": 640213,
+   "from": "Okay, t_der \"IVT to CSM,\" delete step 2, and prior to \"LM to CM transfer list,\" add \"Perform final deactivation per Contingency Checklist, page 3-12 to 3-15.\" Over.",
+   "to": "Okay, under \"IVT to CSM,\" delete step 2, and prior to \"LM to CM transfer list,\" add \"Perform final deactivation per Contingency Checklist, page 3-12 to 3-15.\" Over."
+  },
+  {
+   "g": 626634,
+   "from": "Yeah, we're all stowed. We're grabbing a cuick bite.",
+   "to": "Yeah, we're all stowed. We're grabbing a quick bite."
+  },
+  {
+   "g": 626620,
+   "from": "We look pretty presentable now though, Jim. An hc:_r ago, I wouldn't have given two shakes though.",
+   "to": "We look pretty presentable now though, Jim. An hour ago, I wouldn't have given two shakes though."
+  },
+  {
+   "g": 623097,
+   "from": "()kay, that's in work.",
+   "to": "Okay, that's in work."
+  },
+  {
+   "g": 621372,
+   "from": "8kay. Thank you, Tony. I don't - _'m afraid ...",
+   "to": "Okay. Thank you, Tony. I don't - I'm afraid ... yet."
+  },
+  {
+   "g": 533142,
+   "from": "Ah ha. Yeah, Houston, I'm looking back at the LM. Charlie, you can get a picture of the - I cmn get a picture if I put it on f/whatehacallit, and it'll show that - that rock is between us and the LM.",
+   "to": "Ah ha. Yeah, Houston, I'm looking back at the LM. Charlie, you can get a picture of the - I can get a picture if I put it on f/whatchacallit, and it'll show that - that rock is between us and the LM."
+  },
+  {
+   "g": 531992,
+   "from": "Oh, I did from there, hut I didn't see that - I eculdn't tell whether - you can't see this west side - east side of it to see whether the thing is really filled in from a flow or not or whether it's just subsident. That's what I really wanted to find out.",
+   "to": "Oh, I did from there, but I didn't see that - I couldn't tell whether - you can't see this west side - east side of it to see whether the thing is really filled in from a flow or not or whether it's just subsident. That's what I really wanted to find out."
+  },
+  {
+   "g": 454348,
+   "from": "Boy, that tasted good. Okay; verify safety. DESCENT H20 0 [sic] valve, OPEN. Remove PURGE VALVE; stow in purse. Okay; disconnect OPO - S O2 hose.",
+   "to": "Boy, that tasted good. Okay; verify safety. DESCENT H2O O [sic] valve, OPEN. Remove PURGE VALVE; stow in purse. Okay; disconnect OPO - S O2 hose."
+  },
+  {
+   "g": 367297,
+   "from": "Okay. Orion can always tell Casper what his problem is, but it looks like an open circuit in the rate feedback and your servo loop. We've run exhaustive tests down here, on the west coast and east coast on controllability aspects smd structural aspects and everything looks satisfactory. On Apollo 9, we ran - a similar test was run, as you probably remember. And if such a - such a problem did occur up there, you could expect oscillations, of course, wivh the gimbal, but you could expect a steady attitude, would be a limit cycle. So we're convinced down here that we have a satisfactory control mode if we have to revert to that one. Over.",
+   "to": "Okay. Orion can always tell Casper what his problem is, but it looks like an open circuit in the rate feedback and your servo loop. We've run exhaustive tests down here, on the west coast and east coast on controllability aspects and structural aspects, and everything looks satisfactory. On Apollo 9, we ran - a similar test was run, as you probably remember. And if such a - such a problem did occur up there, you could expect oscillations, of course, with the gimbal, but you could expect a steady attitude, would be a limit cycle. So we're convinced down here that we have a satisfactory control mode if we have to revert to that one. Over."
+  },
+  {
+   "g": 336050,
+   "from": "And when I was trying to talk to you before, I just wanted to give you the word on thav under voltage which y'all had last night. The reason for that was the fact that all the heaters came on at the same time. Over. I maybe I jumped the gun, but it seemed",
+   "to": "And when I was trying to talk to you before, I just wanted to give you the word on that under voltage which y'all had last night. The reason for that was the fact that all the heaters came on at the same time. Over."
+  },
+  {
+   "g": 270211,
+   "from": "Of course, we're start - we're starting to come up over the flatlands now, over the Smyth Sea. I remember a landmark track down there on Apollo 10. It's still there. You can't really tell by looking at it that the Smyth Sea is any - any deeper or lower than the data shows it is right in the surrounding terrain.",
+   "to": "Of course, we're start - we're starting to come up over the flatlands now, over the Smyth Sea. I remember a landmarking track down there on Apollo 10. It's still there. You can't really tell by looking at it that the Smyth Sea is any - any deeper or lower than the data shows it is right in the surrounding terrain."
+  },
+  {
+   "g": 186252,
+   "from": "And, Ker, you can go on )'our - in your there down to the MSFN cue any time you're ready.",
+   "to": "And, Ken, you can go on your - in your checklist there down to the MSFN cue any time you're ready."
+  },
+  {
+   "g": 183983,
+   "from": "Okay. Iow I've still got vhis note that we've had since about 24 hours ago on changing the angle on that Sun wheel, and if you have that out now, we can clean that up; otherwise, I'll hold it a while.",
+   "to": "Okay. Now I've still got this note that we've had since about 24 hours ago on changing the angle on that Sun wheel, and if you have that out now, we can clean that up; otherwise, I'll hold it a while."
+  },
+  {
+   "g": 182794,
+   "from": "Okay, what you would do then is - we're gonna set Saturn DAP in average g in order to prevent coarse aligning in the event middle gimbal picks up spurious signals. And to do vhis, we set VERB 48 with a NOUN 46. Digit A is set to a 3, and we set the average g flag with a VERB 25 NOUN 07, address 75, bit 1, set it to the 1. Then we should call P52 normally, and if the glitch occurs, it'll be ignored. I assume from this if the glitch occurs some time while we're in the process of taking marks, that we get some kind of garbage out of P52, bus it should be obvious. And from what you gave me on this list up at the top, it looks like normally we would not run across TVC ENABLE during that period. At the completion of a 52, we go back into a VERB 48, and now we take NOUN 46 back to its original values. Then we reset the average g flag by taking channel 75 bit 1 to a zero, using VERB 2_: NOUN 07, and the restrictions on this EMP is shat we will not use VERB 46 at any time while this is punched in.",
+   "to": "Okay, what you would do then is - we're gonna set Saturn DAP in average g in order to prevent coarse aligning in the event middle gimbal picks up spurious signals. And to do this, we set VERB 48 with a NOUN 46. Digit A is set to a 3, and we set the average g flag with a VERB 25 NOUN 07, address 75, bit 1, set it to the 1. Then we should call P52 normally, and if the glitch occurs, it'll be ignored. I assume from this if the glitch occurs some time while we're in the process of taking marks, that we get some kind of garbage out of P52, but it should be obvious. And from what you gave me on this list up at the top, it looks like normally we would not run across TVC ENABLE during that period. At the completion of a 52, we go back into a VERB 48, and now we take NOUN 46 back to its original values. Then we reset the average g flag by taking channel 75 bit 1 to a zero, using VERB 2_: NOUN 07, and the restrictions on this EMP is that we will not use VERB 46 at any time while this is punched in."
+  },
+  {
+   "g": 182220,
+   "from": "Okay, we'l_ start here on this thing. First of all, the - the problem occurs, apparently, in CSM-117 when the TVC relay changes state, either going from enable to disable or from disable to enable. And it causes an electric: glitch that makes the CDUs go to 90 degrees; in particular, the yaw CDU_ and therefore the CMC thinks it's in gimbal lock and goes into a coarse align mode. The - Some of the cases that could cause this, for example, are when you go to --when you select MANUAL OPTICS, you have the TVC relay enabled and then if you go from MANUAL to ALTO, or if you hit the ZERO OPTICS switch with MANUAL OPTICS selected, or if you go from P52 to P00 with the MANUAL OPTICS selected, you will reset the TVC relay, and that can cause the glitch. This is apparently what happened last night.",
+   "to": "Okay, we'll start here on this thing. First of all, the - the problem occurs, apparently, in CSM-117 when the TVC relay changes state, either going from enable to disable or from disable to enable. And it causes an electric glitch that makes the CDUs go to 90 degrees; in particular, the yaw CDU, and therefore the CMC thinks it's in gimbal lock and goes into a coarse align mode. The - Some of the cases that could cause this, for example, are when you go to - when you select MANUAL OPTICS, you have the TVC relay enabled and then if you go from MANUAL to AUTO, or if you hit the ZERO OPTICS switch with MANUAL OPTICS selected, or if you go from P52 to P00 with the MANUAL OPTICS selected, you will reset the TVC relay, and that can cause the glitch. This is apparently what happened last night."
+  },
+  {
+   "g": 16876,
+   "from": "Ok_r, we're GO for the battery charge on B, and we'd also like you to dial in the Flight Plan high-gain angles, minus 47 and 98, and go to REACQ.",
+   "to": "Okay, we're GO for the battery charge on B, and we'd also like you to dial in the Flight Plan high-gain angles, minus 47 and 98, and go to REACQ."
+  },
+  {
+   "g": 854661,
+   "from": "I could be 100 percent out - wrong on that. But we sure drove over a lot of - in the regolith there in particular. The upper layer in regolith, which contained these - I mean the - the ejecta blanket - which contained - the upper layer in the ejecta blanket contained a lot of boulders with just their heads sticking through, and those were the ones I was looking at because I was trying to go around them. And they - and I don't ever remember seeing a - a dark breec - breecialike rock in those boulders.",
+   "to": "I could be 100 percent out - wrong on that. But we sure drove over a lot of - in the regolith there in particular. The upper layer in regolith, which contained these - I mean the - the ejecta blanket - which contained - the upper layer in the ejecta blanket contained a lot of boulders with just their heads sticking through, and those were the ones I was looking at because I was trying to go around them. And they - and I don't ever remember seeing a - a dark brecc - breccialike rock in those boulders."
+  },
+  {
+   "g": 723624,
+   "from": "Stand by 1, Charlie. We'll cneck on is.",
+   "to": "Stand by 1, Charlie. We'll check on it."
+  },
+  {
+   "g": 723469,
+   "from": "Roger. Understand a bluish-bro_Tlisk :,lack cast. You guys have invented a new one this time, any.",
+   "to": "Roger. Understand a bluish-brownish black cast. You guys have invented a new one this time, anyway."
+  },
+  {
+   "g": 723446,
+   "from": "John says brcT_nish.",
+   "to": "John says brownish."
+  },
+  {
+   "g": 694307,
+   "from": "i _css far some reason, they _ diin'% copy the CDR.",
+   "to": "I guess for some reason, they didn't copy the CDR."
+  },
+  {
+   "g": 694259,
+   "from": "it's ':'-,OFF. ,An! the Com configuration yeu read w_s the DOWN VOICE BACKUP.",
+   "to": "It's OFF. And the comm configuration you read me was the DOWN VOICE BACKUP."
+  },
+  {
+   "g": 689948,
+   "from": "Okay; i_l! continue on here while they're thinking about that, Ken. Charlie, step 2 there, scratch the \"V47 ENTER,\" et cetera, and substitute with the 't_RB 77 ENTER.\"",
+   "to": "Okay; I'll continue on here while they're thinking about that, Ken. Charlie, step 4 there, scratch the \"V47 ENTER,\" et cetera, and substitute with the \"VERB 77 ENTER.\""
+  },
+  {
+   "g": 689775,
+   "from": "Okay; after we get done with the un-links, put _'! Maneuver to jett attitude and select FORWARD o_li.\"",
+   "to": "Okay; after we get done with the up-links, put \"CSM maneuver to jett attitude and select FORWARD omni.\""
+  },
+  {
+   "g": 689258,
+   "from": "Oka}_; and _naer the \"Glycol\" note, you can add two more caution lights, \"RCS and ECS.\"",
+   "to": "Okay; and under the \"GLYCOL\" note, you can add two more caution lights, \"RCS and ECS.\""
+  },
+  {
+   "g": 688978,
+   "from": "Then all four items that are under \"CFi {i6) STAB/CONTROL,\" from there on, vhese four -ines scratch.",
+   "to": "Then all four items that are under \"CB (16) STAB/CONTROL,\" from there on, those four lines scratch."
+  },
+  {
+   "g": 684028,
+   "from": "0t_T,_.._ , now. Let me write the times on this page.",
+   "to": "Okay, now. Let me write the times on this page."
+  },
+  {
+   "g": 683372,
+   "from": "Roger. You'll copy t_-av at - on page 283. That's a_ 176:15 in the orig-na! Flight Plan.",
+   "to": "Roger. You'll copy that at - on page 283. That's at 176:15 in the original Flight Plan."
+  },
+  {
+   "g": 683153,
+   "from": ",last a minute, Ken.",
+   "to": "Just a minute, Ken."
+  },
+  {
+   "g": 682969,
+   "from": "lk3br,-2' iown here - -",
+   "to": "Nobody down here - -"
+  },
+  {
+   "g": 682910,
+   "from": "217 - for the subs_it - -",
+   "to": "- - 217 - for the subsat - -"
+  },
+  {
+   "g": 682577,
+   "from": "q:a.bk you, sir.",
+   "to": "Thank you, sir."
+  },
+  {
+   "g": 645625,
+   "from": "I thought that the EXPERIMENT was ON but it looks like it's OFF. I don't know whether we didn't turn it on or it got knocked o_f. But it's ON now and SOURCE is in ST_Ai'_DBY.",
+   "to": "I thought that the EXPERIMENT was ON but it looks like it's OFF. I don't know whether we didn't turn it on or it got knocked off. But it's ON now and SOURCE is in STANDBY."
+  },
+  {
+   "g": 644865,
+   "from": "Ar:d, Orion. We were wondering, you know whether yon hei_u_l the - -",
+   "to": "And, Orion. We were wondering, you know, whether you begun the - -"
+  },
+  {
+   "g": 644864,
+   "from": "Okay, ,1ira, I guess he's not _oT;yin_ you.",
+   "to": "Okay, Jim, I guess he's not copying you."
+  },
+  {
+   "g": 632018,
+   "from": "i _ge:'. Looking 6oo,i.",
+   "to": "Roger. Looking good."
+  },
+  {
+   "g": 631857,
+   "from": ".... _'oe_i. We saw lift-off.",
+   "to": "Roger. We saw lift-off."
+  },
+  {
+   "g": 631627,
+   "from": "Okay, Houston. },RSTER ARM is coming CN.",
+   "to": "Okay, Houston. MASTER ARM is coming ON."
+  },
+  {
+   "g": 606067,
+   "from": "I can see you .... Here's old ... center. Okay. *** it into - Oh I know - That pattern on the grol_d at the - mirror reflecting. Boy. That faked me out. I thought we'd really found something, Tony.",
+   "to": "I can see you. ... Here's old ... center. Okay. *** it into - Oh I know - That pattern on the ground at the - mirror reflecting. Boy. That faked me out. I thought we'd really found something, Tony."
+  },
+  {
+   "g": 605680,
+   "from": "Tony, we just topped a - there's that - no, it can't be that. There's a big rock over there, but this other one is down at the bottom of this hill here, John, we came by. We just topped another rise, and wetre looking to the southeast across the - towards the back - towards the Kent Plateau. It's an undulating surface, and indented for about - I can't - It's difficult to dudge - judge distances.",
+   "to": "Tony, we just topped a - there's that - no, it can't be that. There's a big rock over there, but this other one is down at the bottom of this hill here, John, we came by. We just topped another rise, and we're looking to the southeast across the - towards the back - towards the Kent Plateau. It's an undulating surface, and indented for about - I can't - It's difficult to dudge - judge distances."
+  },
+  {
+   "g": 602877,
+   "from": "Of course, it could be just a hunk of matrix that got busted loose. But as fine as these clasts are in it - That's going into bag 387. As fine as vhese rocks are, I don't see how you can miss - miss one.",
+   "to": "Of course, it could be just a hunk of matrix that got busted loose. But as fine as these clasts are in it - That's going into bag 387. As fine as these rocks are, I don't see how you can miss - miss one."
+  },
+  {
+   "g": 602759,
+   "from": "Hey, John. I'm beat - I'm chipping out this little tee_r - this big black clast here. It's coming right out.",
+   "to": "Hey, John. I'm beat - I'm chipping out this little teeny - this big black clast here. It's coming right out."
+  },
+  {
+   "g": 529850,
+   "from": "Okay, why don't you try to chip out some of those elasts there, and we won't worry about overturning this one, but maybe you can get - maybe you can ge_ a fillet here. If you haven't messed up the fillet by getting in there too close.",
+   "to": "Okay, why don't you try to chip out some of those clasts there, and we won't worry about overturning this one, but maybe you can get - maybe you can get a fillet here. If you haven't messed up the fillet by getting in there too close."
+  },
+  {
+   "g": 449527,
+   "from": "But - one of - one of the things, I was just sitting here looking at the equipment and some of the things that have caused more interest than others in what we were doing. And - one of the things that is at the heart of a lot of your time in this spacecraft is fixing something to eat. Now, I'm - Without discussing whether or not you need to eat this much, just the idea that if you try to eat part of it, it takes an awful long time to fix each of these things. And one of the big hangups is we all get clustered around the water gun. We've talked about gas coming out of the water gun, and this is not the drink port, but the food-preparation station. And the - if you - one of the ways we found we could induce gas bubbles into the water was b2f deRress- lng the plunger before it had had a chance to complete its stroke. If you let it complete its stroke, it seems to give you a nice, relatively gas-free shot of water. And it looks like the dribble, and the rest of it from there on is easy. I really don't expect anything to be done with these comments. I just want to - we're supposed to evaluate these things, Hank. And rather than write them down - it's a lot easier to put here, and I'll get it off the tape after the flight.",
+   "to": "But - one of - one of the things, I was just sitting here looking at the equipment and some of the things that have caused more interest than others in what we were doing. And - one of the things that is at the heart of a lot of your time in this spacecraft is fixing something to eat. Now, I'm - Without discussing whether or not you need to eat this much, just the idea that if you try to eat part of it, it takes an awful long time to fix each of these things. And one of the big hangups is we all get clustered around the water gun. We've talked about gas coming out of the water gun, and this is not the drink port, but the food-preparation station. And the - if you - one of the ways we found we could induce gas bubbles into the water was by depressing the plunger before it had had a chance to complete its stroke. If you let it complete its stroke, it seems to give you a nice, relatively gas-free shot of water. And it looks like the dribble, and the rest of it from there on is easy. I really don't expect anything to be done with these comments. I just want to - we're supposed to evaluate these things, Hank. And rather than write them down - it's a lot easier to put here, and I'll get it off the tape after the flight."
+  },
+  {
+   "g": 370550,
+   "from": "_d, Casper, when you get through with the up-links do a P52.",
+   "to": "And, Casper, when you get through with the up-link, we want to go to an attitude of 000, 060, 000 and do a P52."
+  },
+  {
+   "g": 370550,
+   "from": "I'm al_nost 90 degrees to that attitude and I could do it. Instead of pointing and doing it along the X-axis, suppose I come down and do this 90 degrees out and do it with the B/D thruster? Put in that 1 foot per second?",
+   "to": "I'm almost 90 degrees to that attitude and I could do it. Instead of pointing and doing it along the X-axis, suppose I come down and do this 90 degrees out and do it with the B/D thruster? Put in that 1 foot per second?"
+  },
+  {
+   "g": 370550,
+   "from": "How about if I do this 90 degrees to that attitude to save - save the maneuver. I'll have to go prettM fast to get there.",
+   "to": "How about if I do this 90 degrees to that attitude to save - save the maneuver. I'll have to go pretty fast to get there."
+  },
+  {
+   "g": 370550,
+   "from": "Okay. Orion can always tell Casper what his problem is, but it looks like an open circuit in the rate feedback and your servo loop. We've run exhaustive tests down here on the west coast and east coast on controllability aspects and structural aspects, and everything looks satisfactory. On Apollo 9, we ran - a similar test was run, as you probably remember. And if such a - such a problem did occur up there, you could expect oscillations, of course, with the gimbal, but you could expect a steady attituae_ It would be a limit cycle. So we're convinced down here that we have a satisfactory control mode if we have to revert to that one. Over.",
+   "to": "Okay, Orion can always tell Casper what his problem is, but it looks like an open circuit in the rate feedback and your servo loop. We've run exhaustive tests down here on the west coast and east coast on controllability aspects and structural aspects, and everything looks satisfactory. On Apollo 9, we ran - a similar test was run, as you probably remember. And if such a - such a problem did occur up there, you could expect oscillations, of course, with the gimbal, but you could expect a steady attitude. It would be a limit cycle. So we're convinced down here that we have a satisfactory control mode if we have to revert to that one. Over."
+  },
+  {
+   "g": 370535,
+   "from": "Okay, Hank; and one question that comes to my mind is, do you want the secondary yaw gi=£Dal brought ox the line or not?",
+   "to": "Okay, Hank; and one question that comes to my mind is, do you want the secondary yaw gimbal brought on the line or not?"
+  },
+  {
+   "g": 370535,
+   "from": "And would you like for me to go to A/C ROLL for the norr_ai roil coming up _o control?",
+   "to": "And would you like for me to go to A/C ROLL for the normal roll coming up to control?"
+  },
+  {
+   "g": 370535,
+   "from": "Okays it's circ, SPS/G&N; 39095; plus 0.49, plus 1.19; 103:21:42.43; plus 0069.1, all zips; minus 0043.5, 000, 139, 358; 0068.0, plus 0053.1; 0081.6, 0:05, 0070.1. Sirius and Rigel; 131, 071, 014. Two jets, 16 seconds; quads Alfa and Charlie. Manually roll 90 degrees for burns.",
+   "to": "Okay, it's circ, SPS/G&N; 39095; plus 0.49, plus 1.19; 103:21:42.43; plus 0069.1, all zips; minus 0043.5, 000, 139, 358; 0068.0, plus 0053.1; 0081.6, 0:05, 0070.1. Sirius and Rigel; 131, 071, 014. Two jets, 16 seconds; quads Alfa and Charlie. Manually roll 90 degrees for burns."
+  },
+  {
+   "g": 370535,
+   "from": "Yes. You know, Jim was talking about the Apollo 9 test, and he said that - that they really - you really feel it in the spacecraft. But this thing is stable. They have - they've really checked that out, and it'lk rattle and roll a little bit, if you have to use it, but it's stable.",
+   "to": "Yes. You know, Jim was talking about the Apollo 9 test, and he said that - that they really - you really feel it in the spacecraft. But this thing is stable. They have - they've really checked that out, and it'll rattle and roll a little bit, if you have to use it, but it's stable."
+  },
+  {
+   "g": 369185,
+   "from": "Jim, John amd i are just maughl._g. ·r, We'd like to go back to the sims, please.",
+   "to": "Jim, John and I are just laughing. We'd like to go back to the sims, please."
+  },
+  {
+   "g": 368753,
+   "from": "Okay, sep pad is at 102.30, all zeros. Arid on this circ pad, ignition 103:21:42.43; NOUN 81 plus 0069.1, plus all zeros, minus 0043.5. Over.",
+   "to": "Okay, sep pad is at 102.30, all zeros. And on this circ pad, ignition 103:21:42.43; NOUN 81 plus 0069.1, plus all zeros, minus 0043.5. Over."
+  },
+  {
+   "g": 347677,
+   "from": "Okay, let's go normal _ _on_gmca_±cn _ ' _-' on your _. RCS and then we want you to transfer 3 percent mere out of system A because we see the pressure gcln6 up on A.",
+   "to": "Okay, let's go normal configuration on your RCS and then we want you to transfer 3 percent more out of system A because we see the pressure going up on A."
+  },
+  {
+   "g": 293989,
+   "from": "Roger. TEI-12, SPS/G&N; 39817; plus 0.61, plus i.19 097:45:53.09; plus 3163.2, plus 1040.3, minus 0234.6; 181, 080, 020; NA; Sirius and Rigel; and information is same as DOI, two jets, 17 seconds; burn undock, assumes no circ; longitude of Moon at T.lg minus 171.47; landing site REFSMMAT.",
+   "to": "Roger. TEI-12, SPS/G&N; 39817; plus 0.61, plus 1.19 097:45:53.09; plus 3163.2, plus 1040.3, minus 0234.6; 181, 080, 020; NA; Sirius and Rigel; and information is same as DOI, two jets, 17 seconds; burn undock, assumes no circ; longitude of Moon at Tig minus 171.47; landing site REFSMMAT."
+  },
+  {
+   "g": 286307,
+   "from": "And looking on up into the Gutenberg Rilles _vo_-csr_ see it cross - one crater jusv climbs right across the crater wall.",
+   "to": "And looking on up into the Gutenberg Rille, you can see it cross - one crater just climbs right across the crater wall."
+  },
+  {
+   "g": 261573,
+   "from": "16, Houston. I've get three items to go in the Flight Plan. At about 79:29 is the first one, and if we can get these in, that wi=± :In=sn up the Flight Plan updates for today.",
+   "to": "16, Houston. I've got three items to go in the Flight Plan. At about 79:29 is the first one, and if we can get these in, that will finish up the Flight Plan updates for today."
+  },
+  {
+   "g": 174062,
+   "from": "Okay. it i:oks like it'll be a couple of hours.",
+   "to": "Okay. It looks like it'll be a couple of hours."
+  },
+  {
+   "g": 95791,
+   "from": "We're reviewing that film that you took - that TIr that you took last night. -r,d there are a lot of sparklies out the windo-,; there. Were those all just loose particles floating around?",
+   "to": "We're reviewing that film that you took - that TV that you took last night. And there are a lot of sparklies out the window there. Were those all just loose particles floating around?"
+  },
+  {
+   "g": 14864,
+   "from": "Houston, Casper [sic] is out of his bag; and we got the S-IVB in the window. And the TV is transmitting pictures of it now, and if you want to do yo_ your maneuver with it, we're well clear.",
+   "to": "Houston, Casper [sic] is out of his bag; and we got the S-IVB in the window. And the TV is transmitting pictures of it now, and if you want to do your maneuver with it, we're well clear."
+  },
+  {
+   "g": 791328,
+   "from": "Okay. What's the next step on the latches, here? I think you read one I did miss. And on It's latched. Okay, let me - I can get that TV switch. Hey - Okay. That's a big help. The switch is OFF. q_at's affirmative. Oh, and the - I can't find that. Wasn't on the checklist. Yes, you do. Right up there. I'm trying to get the visor up so I can see. (Laughter) No, I'm going to use this hatch right here. If I can read through this thing. Beg your pardon? It's right there. ()kay. Dump valve coming close. Okay; the PRESSURE EQUALIZATION VALVE is CLOSED. Okay, watch this. I'll just sort of hit it once and see how it works.",
+   "to": "Okay. What's the next step on the latches, here? I think you read one I did miss. And on ... It's latched. Okay, let me - I can get that TV switch. Hey - Okay. That's a big help. The switch is OFF. That's affirmative. Oh, and the - I can't find that. Wasn't on the checklist. Yes, you do. Right up there. I'm trying to get the visor up so I can see. (Laughter) No, I'm going to use this hatch right here. If I can read through this thing. Beg your pardon? It's right there. Okay. Dump valve coming close. Okay; the PRESSURE EQUALIZATION VALVE is CLOSED. Okay, watch this. I'll just sort of hit it once and see how it works."
+  },
+  {
+   "g": 733038,
+   "from": "Okay. You remember the first look I gave - The first look that I reported to you indicated that the aI_m_num-to-silicon ratio was sort of intermediate. Well, they've gone back; and with the newer data ar.d a better analysis, it turns out that Descartes has one of the highest ratios on the Moon. The only place we've seen like it right now is on the east side of Smythii. We don't really have a good com- psrison yet with the east of Crisium. But anyway, it indicates that if any place has anorthosites, ycu've found them.",
+   "to": "Okay. You remember the first look I gave - The first look that I reported to you indicated that the aluminum-to-silicon ratio was sort of intermediate. Well, they've gone back; and with the newer data and a better analysis, it turns out that Descartes has one of the highest ratios on the Moon. The only place we've seen like it right now is on the east side of Smythii. We don't really have a good comparison yet with the east of Crisium. But anyway, it indicates that if any place has anorthosites, you've found them."
+  },
+  {
+   "g": 732997,
+   "from": "Right. We - From your description, we had thought there was a good chance that you might have gotten a tuff breccia there. I think, also, the fact that a lot of the breccias were one-rock breccias would iz - would mean that you may have your basalts or gabbroic anorthosites or whatever, and that they're just broken up. If they're one-rock breccias or two-rock breccias, it still has most of the information of the - of the rocks we're looking for. It's not like a - you know - if you remember, it's not like a soil breccia, where everything is lost. So we - we're very happy with what you found. Also, did anyone brief you on the newest on the X-ray results?",
+   "to": "Right. We - From your description, we had thought there was a good chance that you might have gotten a tuff breccia there. I think, also, the fact that a lot of the breccias were one-rock breccias would it - would mean that you may have your basalts or gabbroic anorthosites or whatever, and that they're just broken up. If they're one-rock breccias or two-rock breccias, it still has most of the information of the - of the rocks we're looking for. It's not like a - you know - if you remember, it's not like a soil breccia, where everything is lost. So we - we're very happy with what you found. Also, did anyone brief you on the newest on the X-ray results?"
+  },
+  {
+   "g": 732942,
+   "from": "Hey, Tony. I was sitting here today thinking about those rocks we got, and the thing that really strikes me is that there was - i really don't think we got any volcanic rocks to speak of. Maybe some of those little black clasts were volcanics, but osherwise - I don't think we got any. There wasn't any there. The - there was one other - one other point that could have been - Those ones we were calling shocks could have been a tuff breccia, since they were so friable. But - that we might - that might prove to be the case; but to us, they looked shocked due to the other features that we saw that - that - applied a shocked metamorphism. Over.",
+   "to": "Hey, Tony. I was sitting here today thinking about those rocks we got, and the thing that really strikes me is that there was - I really don't think we got any volcanic rocks to speak of. Maybe some of those little black clasts were volcanics, but otherwise - I don't think we got any. There wasn't any there. The - there was one other - one other point that could have been - Those ones we were calling shocks could have been a tuff breccia, since they were so friable. But - that we might - that might prove to be the case; but to us, they looked shocked due to the other features that we saw that - that - applied a shocked metamorphism. Over."
+  },
+  {
+   "g": 703822,
+   "from": "iiega%iYe. This gives you couple jets in all axes but roll, and we want quad 3 providing rail control. Now this is so FDO can get good tracking for Tel, and this is being coordinated with OS( and is acceptable to the mapping camera pads.",
+   "to": "Negative. This gives you couple jets in all axes but roll, and we want quad 3 providing roll control. Now this is so FDO can get good tracking for TEI, and this is being coordinated with OSC and is acceptable to the mapping camera pads."
+  },
+  {
+   "g": 690719,
+   "from": "kkoj .....,real good ....W_ _ _ikc >o brin-i that thing home.",
+   "to": "Okay; real good. We'd like to bring that thing home."
+  },
+  {
+   "g": 690150,
+   "from": "Third row down, the \"PRi:,IARYS-BAID Pot,,_R_f,_, open; S-B_2[D Y2'ITENNA,open.\"",
+   "to": "Third row down, the \"PRIMARY S-BAND POWER AMP, open; S-BAND ANTENNA, open.\""
+  },
+  {
+   "g": 690143,
+   "from": "\"ATCA, open,\" and \"_T _a 'c_ (AGS), or)eh.\"",
+   "to": "\"ATCA, open,\" and \"ATCA (AGS), open.\""
+  },
+  {
+   "g": 690074,
+   "from": "_d the \"SUIT' GAS DIV!!_i_,n_'\"- to",
+   "to": "And the \"SUIT GAS DIVERTER to EGRESS.\""
+  },
+  {
+   "g": 689804,
+   "from": "±na_ _ affirmative, Char!lo.",
+   "to": "That's affirmative, Charlie."
+  },
+  {
+   "g": 689433,
+   "from": "Okay plus 4.5. Re,er. Okay e_'s go v.c 2-_i, which is a pretty easy page.",
+   "to": "Okay; plus 4.5. Roger. Okay; let's go to 2-6, which is a pretty easy page."
+  },
+  {
+   "g": 688954,
+   "from": "Okay. Page 2-2, i_nder stee i s you ce__ scratch everything in parentheses.",
+   "to": "Okay. Page 2-2, under step 1, you can scratch everything in parentheses."
+  },
+  {
+   "g": 688020,
+   "from": "Well, Kens to fill you in on a little bit here, we originally planned a clock sync and that's why some of the confusion this morning. Then we found out that it wouldn't work, because it put the lift-off time prior to time of midnight and wasn't sure it would work, and we couldn't find out in time enough before we had to start giving you this up through the LM jett, so we're going to work on that possibility.",
+   "to": "Well, Ken, to fill you in on a little bit here, we originally planned a clock sync and that's why some of the confusion this morning. Then we found out that it wouldn't work, because it put the lift-off time prior to time of midnight and wasn't sure it would work, and we couldn't find out in time enough before we had to start giving you this up through the LM jett, so we're going to work on that possibility."
+  },
+  {
+   "g": 683512,
+   "from": ",q._q/. At - at 193:10, VERS 49 maneuver to rS1 _._tt fad attitude.",
+   "to": "Okay. At - at 193:10, VERB 49 maneuver to LM Jett pad attitude."
+  },
+  {
+   "g": 683402,
+   "from": "If you pull it out, i thim, you'll probably ?ind mote behind it there. Okay, hank.",
+   "to": "If you pull it out, I think you'll probably find more behind it there. Okay, Hank."
+  },
+  {
+   "g": 683348,
+   "from": "At 193:04, we're gonm_ give you the hc{ jettison p_cl.",
+   "to": "At 193:04, we're gonna give you the LM jettison pad."
+  },
+  {
+   "g": 683202,
+   "from": "In fact, delete everything C _n %h,_% page '_.nel.hen, a% .._._l,c}°'';- activation 3_-sins.",
+   "to": "In fact, delete everything in that page, and then, at 192:23, LM activation begins. Actually, everything in the left-hand column, I should of said, should be deleted."
+  },
+  {
+   "g": 683166,
+   "from": "I'm We got - w_ F, t _. let cf thiP.gs going at one time hare. Okay.. l,. -. ,,: euo _aalo 323 times corrected now, if you want to - if you want to correct those - %hose events b_z Jr_ T work on the next pa_ e?",
+   "to": "I'm sorry. We got - we got a lot of things going at one time here. Okay. I've got page 323 times corrected now, if you want to - if you want to correct those - those events before I work on the next page?"
+  },
+  {
+   "g": 682901,
+   "from": "}'r_a:_ now - just a seconu - -",
+   "to": "Okay, now - just a second - -"
+  },
+  {
+   "g": 681578,
+   "from": "Okay. The first thing I want to do, Hank, is to clneck on the lithuim canister. I go% - I had some trouble getting that one out of - out of B last night; and let me go down and check that other one before I do anything else and make sure I don't get it stuck. These things are swelling a little bit now, and they've been a little - a little difficult to get to.",
+   "to": "Okay. The first thing I want to do, Hank, is to check on the lithuim canister. I got - I had some trouble getting that one out of - out of B last night; and let me go down and check that other one before I do anything else and make sure I don't get it stuck. These things are swelling a little bit now, and they've been a little - a little difficult to get to."
+  },
+  {
+   "g": 652406,
+   "from": "Okay, Ken. All the p_m will be used up, but it looks like we'll have several h_mdred feet of the mapping camera.",
+   "to": "Okay, Ken. All the pan will be used up, but it looks like we'll have several hundred feet of the mapping camera."
+  },
+  {
+   "g": 644531,
+   "from": "Ken, do you know whether John and Charlie still have their co_n carriers on? Are them monitoring cozr_mwith us?",
+   "to": "Ken, do you know whether John and Charlie still have their comm carriers on? Are they monitoring comm with us?"
+  },
+  {
+   "g": 640464,
+   "from": "i 6oJ i_ ali, Jim. Step _: \"Verify MASTER ALUM, OFF\"; delete \"AUDIO, CCMMANDER; MODE CONTROL, both, OFF, verify.\" \"Window shades and commander transfer,\" delete. We'll just leave him over here, huh?",
+   "to": "I got it all, Jim. Step 4: \"Verify MASTER ARM, OFF\"; delete \"AUDIO, COMMANDER; MODE CONTROL, both, OFF, verify.\" \"Window shades and commander transfer,\" delete. We'll just leave him over here, huh?"
+  },
+  {
+   "g": 630077,
+   "from": "Okay, the LM is right on the time line; in _',__, quite a bit ahead. You can terminate vour cabin huiliu_ at the present time.",
+   "to": "Okay, the LM is right on the time line; in fact, quite a bit ahead. You can terminate your cabin buildup at the present time."
+  },
+  {
+   "g": 630026,
+   "from": "Thank you. Oh, that's right. I forgot absut +hat.",
+   "to": "Thank you. Oh, that's right. I forgot about that."
+  },
+  {
+   "g": 629884,
+   "from": "Tim, what does ... say on our consu___able sta_",
+   "to": "Jim, what does ... say on our consumable status?"
+  },
+  {
+   "g": 626602,
+   "from": "'_'},ac sounds best. Thank you.",
+   "to": "That sounds best. Thank you."
+  },
+  {
+   "g": 626294,
+   "from": "Okay, on the coelliptic: 175:46:09.37; 5523.5, 0039.0, plus 000.2; plus 37762; minus 76550; plus 58519; plus 57018; plus 00390; plus 0h04.6; TPI, NA. Over.",
+   "to": "Okay, on the coelliptic: 175:46:09.37; 5523.5, 0039.0, plus 000.2; plus 37762; minus 76550; plus 58519; plus 57018; plus 00390; plus 0404.6; TPI, NA. Over."
+  },
+  {
+   "g": 625446,
+   "from": "Okay, Jim, it'll be - you can hoia of -_ for 10 minutes c_r so. I'm - gonna - I'm gutting the ,iP_Js on tne floor now.",
+   "to": "Okay, Jim, it'll be - you can hold off for 10 minutes or so. I'm - gonna - I'm putting the OPSs on the floor now."
+  },
+  {
+   "g": 611368,
+   "from": "Okay, Tony. I've picked up a rock here that has a aphanitic matrix with perhaps BO percent of it white - whitish millimeter-size clasts or phenocrysts, and it doesn't look glassy to me.",
+   "to": "Okay, Tony. I've picked up a rock here that has a aphanitic matrix with perhaps 30 percent of it white - whitish millimeter-size clasts or phenocrysts, and it doesn't look glassy to me."
+  },
+  {
+   "g": 607947,
+   "from": "That's a couple of meter black rock. Houston, we've talked about that one when we passed by it the first time. That's the same rock that - that we saw on the - on the rim. That's the same class of rock, I would think, zhat we - that was that big house rock.",
+   "to": "That's a couple of meter black rock. Houston, we've talked about that one when we passed by it the first time. That's the same rock that - that we saw on the - on the rim. That's the same class of rock, I would think, that we - that was that big house rock."
+  },
+  {
+   "g": 596411,
+   "from": "Hey, Ckar!ie, I'm putting the ETB on the floorboard, and I'm going back _nd get the ...",
+   "to": "Hey, Charlie, I'm putting the ETB on the floorboard, and I'm going back and get the ..."
+  },
+  {
+   "g": 541896,
+   "from": "Wait a minute, they said we had 2 hours extra _:onight where we could jusv sit around and talk to each other.",
+   "to": "Wait a minute, they said we had 2 hours extra tonight where we could just sit around and talk to each other."
+  },
+  {
+   "g": 535615,
+   "from": "Okay. We're coming up on that area now as we top a rise - a ridge that is bouldery, about i0 to 12 percent of area is covered with boulders greater than 50 centimeters. And it's cobbley covering about 60 percent. Looks like we - apparently a secondary around here somewhere caused all this. But we don't see the crater.",
+   "to": "Okay. We're coming up on that area now as we top a rise - a ridge that is bouldery, about 10 to 12 percent of area is covered with boulders greater than 50 centimeters. And it's cobbley covering about 60 percent. Looks like we - apparently a secondary around here somewhere caused all this. But we don't see the crater."
+  },
+  {
+   "g": 527787,
+   "from": "__cay,_ we suggest you head o:'*_awarcs c a_ _ :_. on fairly flat ground, and we wot:: ur z 15 procedure.",
+   "to": "Okay; we suggest you head on towards 8 and stay on fairly flat ground, and we'll work up a procedure."
+  },
+  {
+   "g": 517602,
+   "from": "It is. It was an east-west split there, Tony. Very undulating terrain, b,_mmocky; the d_mmockl - the - the h_mmocks are - Oh -",
+   "to": "It is. It was an east-west split there, Tony. Very undulating terrain, hummocky; the dummockl - the - the hummocks are - Oh -"
+  },
+  {
+   "g": 385145,
+   "from": "Tony, one other comment from my side, distances are pretty deceiving here for me. I'm looking out over John's shoulder, and it looks like to me you could throw a rock into South Ray from our present position; which is, I know, impossible. A second comment has to do with the orbital, since we got so muck [sic] so much look at the ground sailing around waiting to come down. Everywhere that we could see - everywhere we saw the ground, which is just about the whole sunlit side. In the crater walls and on the ridges, you had to - we had the same lineations that the Apollo 15 photography showed on Hadley Delta and Hadley Mountains. It was really remarkable how in the crater walls primarily, and in the ridges, and it gave you the impression that it was a fracture pattern that was all trending parallel to the - concentric around the craters, in the craters and - on the ridge, though they were sort of either parallel to the ground or at some depth, be what that may. Over.",
+   "to": "Tony, one other comment from my side, distances are pretty deceiving here for me. I'm looking out over John's shoulder, and it looks like to me you could throw a rock into South Ray from our present position; which is, I know, impossible. A second comment has to do with the orbital, since we got so muck [sic] so much look at the ground sailing around waiting to come down. Everywhere that we could see - everywhere we saw the ground, which is just about the whole sunlit side. In the crater walls and on the ridges, you had to - we had the same lineation that the Apollo 15 photography showed on Hadley Delta and Hadley Mountains. It was really remarkable how in the crater walls primarily, and in the ridges, and it gave you the impression that it was a fracture pattern that was all trending parallel to the - concentric around the craters, in the craters and - on the ridge, though they were sort of either parallel to the ground or at some depth, be what that may. Over."
+  },
+  {
+   "g": 369608,
+   "from": "Okay, we want you to open the SECONDARY you open POWER AMPs circuit breaker on panel 11. And, of course, you _- lose e,3_m when yo_- open =_'._; ar_d _hax 3,f-,_ -_ __l- uve; close i%, and then .¢e:11 reestablish ,_om:_",
+   "to": "Okay, we want you to open the SECONDARY POWER AMPs circuit breaker on panel 11. And, of course, you'll lose comm when you open that; and then after 1 minute, close it, and then we'll reestablish comm"
+  },
+  {
+   "g": 294126,
+   "from": "Roger. You have it. And readback TEI-19, SPS/G&N; 394h5; plus 0.61, 1.15; 111:31:49.81; plus, 2909.4, plus 0785.3, minus 0224.0; 181, 100, 017. Sirius and Rigel; two jets, 17 seconds; burn undock, assume circ; LM to at T. minus 166.09.",
+   "to": "Roger. You have it. And readback TEI-19, SPS/G&N; 39445; plus 0.61, 1.15; 111:31:49.81; plus, 2909.4, plus 0785.3, minus 0224.0; 181, 100, 017. Sirius and Rigel; two jets, 17 seconds; burn undock, assume circ; LM to at T. minus 166.09."
+  },
+  {
+   "g": 271729,
+   "from": "In this lighting, you can see the Crater Descartes, and it stands out much bid_Ker than you wouldexpect to look in to my map in order to make sure that was what I was looking at. And the material that the things we talk about as being that bright reflective area, in this low Sun angle, has a much blockier and Jumbled appearance than it does on any of the high-Sun photographs.",
+   "to": "In this lighting, you can see the Crater Descartes, and it stands out much bigger than you would expect because of the low Sun angle. And - in fact I had to look in to my map in order to make sure that was what I was looking at. And the material that runs out of it - that - that's in the area, are the things we talk about as being that bright reflective area, in this low Sun angle, has a much blockier and jumbled appearance than it does on any of the high-Sun photographs."
+  },
+  {
+   "g": 244948,
+   "from": "Okay. At the top of the card, I've added a note that says, \"No VERB 48 changes after entering 509. T_ The first step on the card is \"EMP 509 is called.\" I have deleted, \"Load the DAP.\" Under the \"Boresight sextant star check,\" I have deleted VERB 41 NOUN 91. I have replaced that with a note that says \"No VERB 41 and use manual, monitor 1691.\" I have changed the \"BUS TIE, on time from 54 minutes to 4C minutes, and that changes \"minus 6\" to \"minus 20.\" I have deleted the tape recorder line at minus 6 minutes. I've changed the time 55 to be 41, minus 5 to be minus 19, and that's all the changes I have on the front side of the burn card. On the back side, next to the \"Proceed after the gimbal test option\": if the - if we get a glitch, it's \"RHC to stop rates, VERB 23 NOUN 20 ENTER ENTER, VERB 40 ENTER, and then VERB 62 ENTER, manually maneuver to attitude.\" After \"RATE, HIGH,\" and before 59 minuves, terminate EMP 509. At minus 6 minutes, \"TAPE RECORDER goes to HIGH BIT RATE, RECORD, FORWARD, and COMMAND RESET.\" At 00:XX, at engine cut-off, it's \"Be prepared for SCS takeover.\" At \"TVC SERVO POWER, 1 and 2, OFF,\" we've added a note, \"Prior to trimming NOUN 85, check NOUN 20 against the IMU.\" And that's all the comments I have on the burn card.",
+   "to": "Okay. At the top of the card, I've added a note that says, \"No VERB 48 changes after entering 509.\" The first step on the card is \"EMP 509 is called.\" I have deleted, \"Load the DAP.\" Under the \"Boresight sextant star check,\" I have deleted VERB 41 NOUN 91. I have replaced that with a note that says \"No VERB 41 and use manual, monitor 1691.\" I have changed the \"BUS TIE, on\" time from 54 minutes to 40 minutes, and that changes \"minus 6\" to \"minus 20.\" I have deleted the tape recorder line at minus 6 minutes. I've changed the time 55 to be 41, minus 5 to be minus 19, and that's all the changes I have on the front side of the burn card. On the back side, next to the \"Proceed after the gimbal test option\": if the - if we get a glitch, it's \"RHC to stop rates, VERB 23 NOUN 20 ENTER ENTER, VERB 40 ENTER, and then VERB 62 ENTER, manually maneuver to attitude.\" After \"RATE, HIGH,\" and before 59 minutes, terminate EMP 509. At minus 6 minutes, \"TAPE RECORDER goes to HIGH BIT RATE, RECORD, FORWARD, and COMMAND RESET.\" At 00:XX, at engine cut-off, it's \"Be prepared for SCS takeover.\" At \"TVC SERVO POWER, 1 and 2, OFF,\" we've added a note, \"Prior to trimming NOUN 85, check NOUN 20 against the IMU.\" And that's all the comments I have on the burn card."
+  },
+  {
+   "g": 185862,
+   "from": "Do:a, we're gonna put off the Skylab ... until our ... and take the time to do it right. And we're gonna - gonna mix up ... snacks _nd try to get back ...",
+   "to": "Don, we're gonna put off the Skylab ... until our ... and take the time to do it right. And we're gonna - gonna mix up ... snacks and try to get back ..."
+  },
+  {
+   "g": 183349,
+   "from": "Okay. And the other thing, thav out of curiosity - if the guys in the back room, after they get through getting all the important things squared away, that they could kind of think some more about their list of things that causes this enable relay to change state. I'll compile a list of those things in case we come across something later on that we hadn't thought about.",
+   "to": "Okay. And the other thing, that out of curiosity - if the guys in the back room, after they get through getting all the important things squared away, that they could kind of think some more about their list of things that causes this enable relay to change state. I'll compile a list of those things in case we come across something later on that we hadn't thought about."
+  },
+  {
+   "g": 182984,
+   "from": "Okay, Don. If we tumble the thing again, we're going to release the platform by setting NOUN 20 to - to zeros, and we do that with the VERB 23 NOUN 20 ENTER, ENTER. Then we release the platform- with the VERB 40 ENTER, and then we go through Now that - that assumes that what happened to us was the glitch in the middle gimba!. If I understood your conversation, it's possible to have a glitch in one of the other gimbals. Es that correct?",
+   "to": "Okay, Don. If we tumble the thing again, we're going to release the platform by setting NOUN 20 to - to zeros, and we do that with the VERB 23 NOUN 20 ENTER, ENTER. Then we release the platform with the VERB 40 ENTER, and then we go through page G/7-1 and get a rapid alignment to the GDC. Now that - that assumes that what happened to us was the glitch in the middle gimbal. If I understood your conversation, it's possible to have a glitch in one of the other gimbals. Is that correct?"
+  },
+  {
+   "g": 174002,
+   "from": "Okay. Ana /o_ chink you are seeing enough light flashes to make it valid?",
+   "to": "Okay. And you think you are seeing enough light flashes to make it valid?"
+  },
+  {
+   "g": 169006,
+   "from": "Okay, and a couple of other words here on the - We got ALFMED coming up; and, to date, Charlie saw some flashes the other night and not a whole heck of a lot of them last night. And I'm not sure I have seen any at all yet, and John may or may not. So, what we thought we'd do here is - We've got a our chores. And we'll probably take a look at what we see, and if Charlie is seeing sufficient - you know, enough flashes shat he's pretty sure he's seeing _'_ why, _-_'_-,,Te_i[ _c. ahead and r x the experiment now. And i _ we aren't seeing a _=uffi- cient n'o/nYer 30 lock like it flies sifT_nb here for _ hour with it. why, -s!]st wou!{: loi Lhli.k about saving {1 until such _L';'_ as it looks like maybe we see more of them?",
+   "to": "Okay, and a couple of other words here on the - We got ALFMED coming up; and, to date, Charlie saw some flashes the other night and not a whole heck of a lot of them last night. And I'm not sure I have seen any at all yet, and John may or may not. So, what we thought we'd do here is - We've got a little more housecleaning to do here and finish our chores. And we'll probably take a look at what we see, and if Charlie is seeing sufficient - you know, enough flashes that he's pretty sure he's seeing things, why, we'll go ahead and run the experiment now. And if we aren't seeing a sufficient number to look like it justifies sitting here for an hour with it, why, we just would like to think about saving it until such time as it looks like maybe we see more of them?"
+  },
+  {
+   "g": 138852,
+   "from": "Casper, Houston. We'd like you to hold up on the VERB 41 NOUN 20. We're working on a procedure to try to get _'id of the gimba! lock.",
+   "to": "Casper, Houston. We'd like you to hold up on the VERB 41 NOUN 20. We're working on a procedure to try to get rid of the gimbal lock."
+  },
+  {
+   "g": 689872,
+   "from": "You. i _xc_ it",
+   "to": "Yeah. I got it."
+  },
+  {
+   "g": 682959,
+   "from": "Jh_ o_:av.",
+   "to": "Oh, okay."
+  },
+  {
+   "g": 631899,
+   "from": "D.kat a - what a riie. Wkat _, ride. .",
+   "to": "What a - what a ride. What a ride."
+  },
+  {
+   "g": 621516,
+   "from": "Okay, Houston. We're going through the Eurface 3heck!ist.",
+   "to": "Okay, Houston. We're going through the Surface Checklist."
+  },
+  {
+   "g": 620579,
+   "from": "Okay. I'm gonna go AUTO - valve to AUTO. RRFRESS is gon:ta go AUTO ... Here we go. Circuit breaker's coming in. MA, cabin light.",
+   "to": "Okay. I'm gonna go AUTO - valve to AUTO. REPRESS is gonna go AUTO ... Here we go. Circuit breaker's coming in. MA, cabin light."
+  },
+  {
+   "g": 876773,
+   "from": "Yes, I think there's a distinctly different morphology involved in these two units. Our preflight training is a little different in impression than what I think I saw; and, again, we have, like I say, a 10-power resolution. I think the - the real answer of what this material is, is going to lay in analyzing the data postflight. We have some good film records, and I think the - When you put that together with the rocks we picked up, we'll have a pretty powerful story that'll explain a lot of things we don't know now. But I think that there are sections of material we called Descartes, particularly the material that makes Stone up Stone and Smoky, and that stuff runs all the way south down to the old Descartes Crater for which the region is named. And that does look texturally entirely different from the Cayley formation.",
+   "to": "Yes, I think there's a distinctly different morphology involved in these two units. Our preflight training is a little different in impression than what I think I saw; and, again, we have, like I say, a 10-power resolution. I think the - the real answer of what this material is, is going to lay in analyzing the data postflight. We have some good film records, and I think the - When you put that together with the rocks we picked up, we'll have a pretty powerful story that'll explain a lot of things we don't know now. But I think that there are sections of material we called Descartes, particularly the material that makes up Stone and Smoky, and that stuff runs all the way south down to the old Descartes Crater for which the region is named. And that does look texturally entirely different from the Cayley formation."
+  },
+  {
+   "g": 808686,
+   "from": "Okay; got another little thing here in the local paper you might be interested in. Houston paper reports that the city is moving to annex a 50- square-mile area west of Houston, including the Federally-owned Addicks and Barker Reservoirs and the land between them and the present city limits. The annexation reportedly would open the way for the city to develop the reservoir areas for recreational purposes. And I guess that does not - the annexation would not include about 4 square miles of Barker Reservoir in Fort Bend County, which is outside the city's extraterritorial jurisdiction. And three U.S. Representatives have studied a feasibility study of deepwater ports in the Gulf of Mexico and have recommended the Texas Coast as a possible site. Texas Representatives Jack Brooks of Beaumont, Bob Eckhardt of Houston, and John Young of Corpus Christi appeared here Monday at a U.S. Corps of Engineer public hearing to voice their opinions on such a",
+   "to": "Okay; got another little thing here in the local paper you might be interested in. Houston paper reports that the city is moving to annex a 50- square-mile area west of Houston, including the Federally-owned Addicks and Barker Reservoirs and the land between them and the present city limits. The annexation reportedly would open the way for the city to develop the reservoir areas for recreational purposes. And I guess that does not - the annexation would not include about 4 square miles of Barker Reservoir in Fort Bend County, which is outside the city's extraterritorial jurisdiction. And three U.S. Representatives have studied a feasibility study of deepwater ports in the Gulf of Mexico and have recommended the Texas Coast as a possible site. Texas Representatives Jack Brooks of Beaumont, Bob Eckhardt of Houston, and John Young of Corpus Christi appeared here Monday at a U.S. Corps of Engineer public hearing to voice their opinions on such a facility."
+  },
+  {
+   "g": 689630,
+   "from": "Okay; the third row, we wasst the \"A TRANSMITTER and B RECEIVER, close.\" Ye're going to get some ¥qfF ranging.",
+   "to": "Okay; the third row, we want the \"A TRANSMITTER and B RECEIVER, close.\" We're going to get some VHF ranging."
+  },
+  {
+   "g": 652388,
+   "from": "Okay, Apollo 16. For 'tomorrow, we'll give you a Flight Plan update in the morning, but just a resume here. We'll have you wake up at 189:30. That'tl give you a good night's sleep, there. And we'll transfer back over the L_ and get the rest of the gear back over mhd activate the LM. Corse back to the command module and don the suits, and jettison the LM, and jettison the satellite. Fred towards the end of the day, we'll do a TEI. We've got a plazi for using the mapping camera and altimeter most of the - I think it's most of the day. Arid we have some pan camera passes also. We'll get the details on that up tomorrow.",
+   "to": "Okay, Apollo 16. For tomorrow, we'll give you a Flight Plan update in the morning, but just a resume here. We'll have you wake up at 189:30. That'll give you a good night's sleep, there. And we'll transfer back over the LM and get the rest of the gear back over and activate the LM. Come back to the command module and don the suits, and jettison the LM, and jettison the satellite. And towards the end of the day, we'll do a TEI. We've got a plan for using the mapping camera and altimeter most of the - I think it's most of the day. And we have some pan camera passes also. We'll get the details on that up tomorrow."
+  },
+  {
+   "g": 548294,
+   "from": "Hey, ineideutly, the backroom is really impressed. They are very excited about your choice of sampling on that inner wall of that crater - I guess it was at 5 or 6 - and think that you did - you had a good chance there of getting real Descartes. In fact, they think they've got it in the box. What they're thinking right now is that the mat - the areas where you're able to kick up and see white underneath are ray materials. But you didn't see that at 5 and 6. So, we think we may - you may have got Descartes there.",
+   "to": "Hey, incidently, the backroom is really impressed. They are very excited about your choice of sampling on that inner wall of that crater - I guess it was at 5 or 6 - and think that you did - you had a good chance there of getting real Descartes. In fact, they think they've got it in the box. What they're thinking right now is that the mat - the areas where you're able to kick up and see white underneath are ray materials. But you didn't see that at 5 and 6. So, we think we may - you may have got Descartes there."
+  },
+  {
+   "g": 538756,
+   "from": "Amd we don't have big muley yet - don't let us forget to get big muley here.",
+   "to": "And we don't have big muley yet - don't let us forget to get big muley here."
+  },
+  {
+   "g": 527800,
+   "from": "John, why don't we check can l_c'__- c_:: _.o turn the - board off and see if we _?,ova?",
+   "to": "John, why don't we check it? Can you - can you turn the - board off and see if we move?"
+  },
+  {
+   "g": 329682,
+   "from": "Johns the lead we're concerned with is the sternal lead - the one on your breastbone. You might jmggme my a little bit.",
+   "to": "John, the lead we're concerned with is the sternal lead - the one on your breastbone. You might jiggle it a little bit."
+  },
+  {
+   "g": 263088,
+   "from": "And you can make out all the features on the thing. I can see and you can see up into the Pro_el- larum - and in the basins in there. You can even see the outer rings of Orientale. And you can't see the basin itself but you can see it's outer rings.",
+   "to": "And you can make out all the features on the thing. I can see ..., and you can see up into the Procellarum - and in the basins in there. You can even see the outer rings of Orientale. And you can't see the basin itself but you can see it's outer rings."
+  },
+  {
+   "g": 187592,
+   "from": "Okay, after the film cycling, it normally calls for our taking the SM/AC POWER OFF, and you asked that we hold there. Do you want us to complete the rest of that powerdown, or cioyou waist us '_.c just stop there and you're going to pick it up later or - what would you have in mind?",
+   "to": "Okay, after the film cycling, it normally calls for our taking the SM/AC POWER OFF, and you asked that we hold there. Do you want us to complete the rest of that powerdown, or do you want us to just stop there and you're going to pick it up later or - what would you have in mind?"
+  },
+  {
+   "g": 171401,
+   "from": "Okay, is. Or the burn card, we will probably have to ao some more updating, we'll. get to that to- mczz'_w. And on the midcourses, course _, right now, is - looks like it's less than 1 foot ter second _ it gets much aigge:, we'll probably da it. EuL advise you.",
+   "to": "Okay, 16. On the burn card, we will probably have to do some more updating. We'll get to that tomorrow. And on the midcourses, midcourse 4, right now, is - looks like it's less than 1 foot per second. If it gets much bigger, we'll probably do it. But we'll advise you."
+  },
+  {
+   "g": 168386,
+   "from": "Roger. iou were loud and uiea_ _ a=! she time. Apparently, jou just lost us.",
+   "to": "Roger. You were loud and clear all the time. Apparently, you just lost us."
+  },
+  {
+   "g": 17742,
+   "from": "Then when we - when we scooted out here and you started your nonpropulsive vent, we could see - First, it just looked like it was a little mist around the outside when you looked at the Sun. And then the Sun hit it at such an angle that you started getting a spectral reflection, and it looked like a rainbow out over the LM. And then after that, you could look out my number 1 window, and apparently the lighting was just right so that it - it had the appearance of light streaming off to a point source at infinity. There was a little blank spot in it at the - at what looked like the origin. And then all these streaks were coming back towards you, like you were right in the center of a cone. And these things would change colors. They go to a light - light purple, and then they'd They a little sandy color to them. That was another one that I don't remember ever hearing before, and it was - maybe it was just the lighting on it, but it .sure was pretty.",
+   "to": "Then when we - when we scooted out here and you started your nonpropulsive vent, we could see - First, it just looked like it was a little mist around the outside when you looked at the Sun. And then the Sun hit it at such an angle that you started getting a spectral reflection, and it looked like a rainbow out over the LM. And then after that, you could look out my number 1 window, and apparently the lighting was just right so that it - it had the appearance of light streaming off to a point source at infinity. There was a little blank spot in it at the - at what looked like the origin. And then all these streaks were coming back towards you, like you were right in the center of a cone. And these things would change colors. They go to a light - light purple, and then they'd have a little sandy color to them. That was another one that I don't remember ever hearing before, and it was - maybe it was just the lighting on it, but it sure was pretty."
+  },
+  {
+   "g": 879132,
+   "from": "Okay. MCC-7, RCS/G&N; 27318; hours, 187:22:56. 28 [sic]; minus 0003.1, all balls, minus 0000.1; 102, 126, o4o;MA is NA, _ is 21.7; is 3.1; burn time, 7 seconds; DELTA-V C is 3.1; sextant star 13, plus 312.7, plus 33.7; not applicable on the boresight; latitude, minus 007.1; longitude, minus 156.17; 1045.9, plus 36276; 290:23:59. Sirius and Rigel are set stars; 219; 166; 313. Four jets, plus-X. EMS not biased for drift and the PTC REFSMMAT.",
+   "to": "Okay. MCC-7, RCS/G&N; 27318; hours, 187:22:56. 28 [sic]; minus 0003.1, all balls, minus 0000.1; 102, 126, 040; H_A is NA, H_P is 21.7; DELTA-V_T is 3.1; burn time, 7 seconds; DELTA-V_C is 3.1; sextant star 13, plus 312.7, plus 33.7; not applicable on the boresight; latitude, minus 007.1; longitude, minus 156.17; 1045.9, plus 36276; 290:23:59. Sirius and Rigel are set stars; 219; 166; 313. Four jets, plus-X. EMS not biased for drift and the PTC REFSMMAT."
+  },
+  {
+   "g": 723625,
+   "from": "You know, as we move out from the Moon, I think that by looking at the varied structures on the surface, that we can see from here, I guess n'/ impression of it is that the Moon may be 4 billion years old plus, but it sure had a - and i% may eventually have stopped growing after the first 500 million or changing dynamically, like ttte Earth changes, but during that first 500 million years, it was certainly busy cause it reail? has a lot of variety down there, and we haven't even begun to scratch the surface of mae cc:l - complexity of the stet% r. That's my personal opinion.",
+   "to": "You know, as we move out from the Moon, I think that by looking at the varied structures on the surface, that we can see from here, I guess my impression of it is that the Moon may be 4 billion years old plus, but it sure had a - and it may eventually have stopped growing after the first 500 million or changing dynamically, like the Earth changes, but during that first 500 million years, it was certainly busy cause it really has a lot of variety down there, and we haven't even begun to scratch the surface of the com - complexity of the story. That's my personal opinion."
+  },
+  {
+   "g": 723624,
+   "from": "Pete, did CST come back with anything o_ those wrisz rings?",
+   "to": "Pete, did CST come back with anything on those wrist rings?"
+  },
+  {
+   "g": 723599,
+   "from": "Taat's right. We'll get Ken':_ oyinion.",
+   "to": "That's right. We'll get Ken's opinion. Stand by."
+  },
+  {
+   "g": 723439,
+   "from": "Charlie, these maria are broe_ish-L31ank cauls.",
+   "to": "Charlie, these maria are brownish-black casts."
+  },
+  {
+   "g": 694230,
+   "from": "'_ :i. Well. we're gonna ,!e about four times the w-rk tcic, ;,hatever it is they would have done. Al? Not really 10C percent sire we're going _,_ be right on this, b-_\"_u_ never t-r_c%icei.",
+   "to": "Yeah. Well, we're gonna do about four times the work to do whatever it is they would have done. And I'm not really 100 percent sure we're going to be right on this, because we never practiced it."
+  },
+  {
+   "g": 690720,
+   "from": "It was the cne I took out last night it should he - Okay; I had a little trouble with the one yesterday morning, but net so much, and it's already in the LN. Last rli_{i't_ was setting and cerr_ed that we a_ some some humidity and it was Swelling.",
+   "to": "It was the one I took out last night; it should be - Okay; I had a little trouble with the one yesterday morning, but not so much, and it's already in the LM. Last night I was getting concerned that we picked up some humidity and it was swelling."
+  },
+  {
+   "g": 689814,
+   "from": "We just went to the sveerable attitude, so we can s_t all these ue-links in.",
+   "to": "We just went to the steerable attitude, so we can get all these up-links in."
+  },
+  {
+   "g": 688715,
+   "from": "C4av; you can scratch the b__s!_l ...... vo AUTO true next line, e4_d substitute \"PRES!\" PZ}S A and B to egress,\" and that is indicated as ' C _ _' ZFL_ _J ve.",
+   "to": "Okay; you can scratch the \"CABIN REPRESS to AUTO,\" the next line, and substitute \"PRESS REGS A and B to EGRESS,\" and that is indicated as being a verify."
+  },
+  {
+   "g": 688693,
+   "from": "Oxay; item 3, first line, matte that \"ASC_I.T H.C,\" ana the second line, make it the - -",
+   "to": "Okay; item 3, first line, make that \"ASCENT H2O,\" and the second line, make it the - -"
+  },
+  {
+   "g": 688661,
+   "from": "Okay; at the end of step 2 - And irr.i-t_r._'_7_,_ we Need the hose because we're not self:{ to going bring on the suit fans - At the end of stee 2 there, put 4 note in that sap's to give as the CB configuration on il and 16. And I guess ail we really need is the ones closed, because there shoulin't be too many that are closed.",
+   "to": "Okay; at the end of step 2 - And incidentally, we need the hose because we're not going to bring on the suit fans - At the end of step 2 there, put a note in that says to give us the CB configuration on 11 and 16. And I guess all we really need is the ones closed, because there shouldn't be too many that are closed."
+  },
+  {
+   "g": 687791,
+   "from": "' re's a towel that's ci ht ever your _'v s shoulder, if you Need il ]f you'll wrap't around there.",
+   "to": "There's a towel that's right over your left shoulder, if you need it. If you'll wrap it around there."
+  },
+  {
+   "g": 683543,
+   "from": "lh:lete the shaE:e tarplu_u load there {n the H_;FI",
+   "to": "Delete the shape target load there in the MSFN up-link."
+  },
+  {
+   "g": 682969,
+   "from": "Phat'il LO sr_e trick et L!., j,'eN, r.",
+   "to": "That'll be the trick of the year."
+  },
+  {
+   "g": 682862,
+   "from": "Oki,<,,,.We'ra gonP,a do t?__ [t-?__ [n the Flight Plan a_, Lo 92:00, and then we're going to Go over to 2iL hours in the Flight Plan anu pick up these items in there - until w,: get over to about 216:15. &!ia %U n we're gonna }tun_ LOCK !:o 17{:55 and pick a: the Let procedure::. And wNen we _{et throlg[ with that, we're c.onna ,ilrr_ ., '.'k%.. - -",
+   "to": "Okay. We're gonna do the items in the Flight Plan up to 192:00, and then we're gonna go over to 214 hours in the Flight Plan and pick up these items in there - until we get over to about 216:15. And then we're gonna jump back to 176:55, and pick up the LM jett procedures. And when we get through with that, we're gonna jump back to - -"
+  },
+  {
+   "g": 682593,
+   "from": "*** TL nk ye2. I'm sial s meooay is awake this morning Okay.",
+   "to": "*** Thank you. I'm glad somebody is awake this morning."
+  },
+  {
+   "g": 646129,
+   "from": "- -cet INVERTER 1, ciosed_ on _s_el !1.",
+   "to": "- - get INVERTER 1, closed, on panel 11."
+  },
+  {
+   "g": 646083,
+   "from": "Rc6er. A fey things that we want you to activate here so put a icad on that water soileP. Have five items, if you're ready,' to copy.",
+   "to": "Roger. A few things that we want you to activate here to put a load on that water boiler. Have five items, if you're ready to copy."
+  },
+  {
+   "g": 626119,
+   "from": "Okay, Charlie, I'll give you the direct pad firsv and I'm reading: 175:43:35.18. I'll verify that one. Next line, 5525.2, 0032.0, plus 000.2; plus 37762; minus 76550 elus 58556 plus 58556; plus 0032.0; elus 0397.9; 176:37:52.00; LH watt,ha, !09k5; one rev late, 177:42:06; and the Ciy.l Tig , _ . .. orbit is 65 by 55. Over.",
+   "to": "Okay, Charlie, I'll give you the direct pad first and I'm reading: 175:43:35.18. I'll verify that one. Next line, 5525.2, 0032.0, plus 000.2; plus 37762; minus 76550; plus 58556; plus 57018; plus 0032.0; plus 0397.9; 176:37:52.00; LM weight, 10945; Tig, one rev late, 177:42:06; and the CSM orbit is 65 by 55. Over."
+  },
+  {
+   "g": 620672,
+   "from": "... _Id verify._ it's stable at 4.6 to 5.",
+   "to": "... and verify it's stable at 4.6 to 5."
+  },
+  {
+   "g": 620672,
+   "from": "Verif[._ c_cin pressure's increasing.",
+   "to": "Verify cabin pressure's increasing."
+  },
+  {
+   "g": 620281,
+   "from": "Overhead or forward dump valve, OPEN, %hen Ab_O.",
+   "to": "Overhead or forward dump valve, OPEN, then AUTO."
+  },
+  {
+   "g": 527781,
+   "from": "And with that in mind, I'd jusz ;-,ssso_ r:sz ,::,_' = to this ridge, Charlie.",
+   "to": "And with that in mind, I'd just as soon not go up to this ridge, Charlie."
+  },
+  {
+   "g": 370535,
+   "from": "Just loaded to so clarify, that it Ken. would You're point going you in to the burn a_i_er the direction, and by taking it this way, I'll - the dummy load we put in was a - a minus, and we normally burned it to a plus 2. I_m going to burn towards the Moon, which is going to make this come out to be plus 2.",
+   "to": "Just to clarify, Ken. You're going to burn the loaded so that it would point you in the other direction, and by taking it this way, I'll - the dummy load we put in was a - a minus, and we normally burned it to a plus 2. I'm going to burn towards the Moon, which is going to make this come out to be plus 2."
+  },
+  {
+   "g": 176287,
+   "from": "Hey, Don. Can you help us ... record our ... 12 ... 0.15 1.2, ... a% 3 fee% shows Charlie in tue Alfred with his face sticking out. I'm taking a picture from the LEB looking up towards the center couch.",
+   "to": "Hey, Don. Can you help us ... record our ... 12 ... 0.15, 1.2, ... at 3 feet shows Charlie in the ALFMED with his face sticking out. I'm taking a picture from the LEB looking up towards the center couch."
+  },
+  {
+   "g": 174007,
+   "from": "Time _kvei_ gotten around to aclh_- that yeL, but we _'a!s_i_S an ih.",
+   "to": "They haven't gotten around to doing that yet, but we're working on it."
+  },
+  {
+   "g": 169065,
+   "from": "Ok_y_ K_n we _Li - we'll think on that a Little. And also, r r?e got a note on _ _ [_ikcn a a-r. er:< iigh'5 meter horn in connection with i.'__} ALv;.ZD photography.",
+   "to": "Okay, Ken. we'll - we'll think on that a little. And also, I've got a note on the Nikon camera light meter here in connection with the ALFMED photography."
+  },
+  {
+   "g": 900362,
+   "from": "Okay. I guess the biggest news was Vhat President Nixon went on national television tonight to discus the military situation in Vietnam. He said efforts toward Vietn_m_ zation of the war were proving effective. And he announced additional U.S. troop withdrawals of 20 000 men by July the first. At the same time, the President characterized the current North Vietnamese advances into South Vietnam as an open invasion. And he said U.S. air and naval forces will continue to attack military targets in North Vietnam to assure the safety of remaining U.S. forces in South Vietnam and to prevent a military takeover of South Vietnam by the North. The President also said U.S. negotiators would return to the Paris peace talks, as he put it, \"To get on with the constructive business of obtaining peace.\" \"The first order of business,\" he said, \"will be to get the North Vietnamese to stop their invasion and to secure the release of Americans being held prisoner.\" And we got an item here on Apollo 16. The headline says, \"Spaceship Speeds Up, Zeros in on Earth.\" Apollo 16 picked up speed today from the gravitational em- brace of Earth as scientists awaited the delivery of samples that may rewrite the history of the Moon. Astronauts John Young, Charles Duke, and Thomas Mattingly II, were due to enter the atmosphere of Earth Thursday afternoon at 24 000 miles per hour. Apollo 16 is returning 240 pounds of Moon samples. But the flight's lunar legacy consists of more than just rocks. Mattingly spent an hour walking in space Tuesday to retrieve two holders containing the exposed film of powerful mapping and panoramic cameras. With only one mission remaining in the Apollo Program, the cameras' pictures, taken from lunar orbit, are expected to provide much knowledge about areas of the Moon that man will not visit for a long time. And a little - little bit on the Democratic campaign here. \"Muskie dealt 1-2 blow by Mcgovern in Massachusetts and HHH in Pennsylvania. Senator George Mcgovern, triumphant in Massachusetts, and Senator Hubert H. Humphrey, the Pennsylvania victor, joined head-on political battle today after dealing a 1-2 blow to the Presidential campaign of Senator Edmund Muskie. Muskie finished a far-back second in Massachusetts, and managed only a virtual third-place tie with Mcgovern and Wallace in Pennsylvania where he concentrated his campaign. Alabama Governor George C. Wallace got 21 percent with 97 percent of the precincts tallied in Pennsylvania, after staging a 1-day campaign. Massachusetts gave Wallace 8 percent of the vote in partial returns, just ahead of Humphrey. Next Tuesday Mcgovern and Humphrey confront each other, Muskie, and Senator Henry M. Jackson of Washington in Ohio battle for 153 convention delegates.\" A couple of items on - on the reentry area. The USS Ticonderoga, the primary recovery ship for Apollo 16, has arrived at the new splashdown site, 1500 miles south of Honolulu. The forecast for Thursday splash was unlimited visibility with temperatures in the 80s. Seas are expected to be 1 to 3 feet with swells to 5 feet. And the weather here in Houston is low tonight in the low 6Os, high Thursday in the low 80s, and the weather's been clear to partly cloudy today. And the Houston Astros did it again. They won their eighth consecutive baseball victory last night, a hard-fought 5 to 4 verdict over the Chicago Cubs. The win kept Houston in a tie with Los Angeles for first place in the National League West. And let's see, I guess we'll close - -",
+   "to": "Okay. I guess the biggest news was that President Nixon went on national television tonight to discus the military situation in Vietnam. He said efforts toward Vietnamization of the war were proving effective. And he announced additional U.S. troop withdrawals of 20 000 men by July the first. At the same time, the President characterized the current North Vietnamese advances into South Vietnam as an open invasion. And he said U.S. air and naval forces will continue to attack military targets in North Vietnam to assure the safety of remaining U.S. forces in South Vietnam and to prevent a military takeover of South Vietnam by the North. The President also said U.S. negotiators would return to the Paris peace talks, as he put it, \"To get on with the constructive business of obtaining peace.\" \"The first order of business,\" he said, \"will be to get the North Vietnamese to stop their invasion and to secure the release of Americans being held prisoner.\" And we got an item here on Apollo 16. The headline says, \"Spaceship Speeds Up, Zeros in on Earth.\" Apollo 16 picked up speed today from the gravitational em- brace of Earth as scientists awaited the delivery of samples that may rewrite the history of the Moon. Astronauts John Young, Charles Duke, and Thomas Mattingly II, were due to enter the atmosphere of Earth Thursday afternoon at 24 000 miles per hour. Apollo 16 is returning 240 pounds of Moon samples. But the flight's lunar legacy consists of more than just rocks. Mattingly spent an hour walking in space Tuesday to retrieve two holders containing the exposed film of powerful mapping and panoramic cameras. With only one mission remaining in the Apollo Program, the cameras' pictures, taken from lunar orbit, are expected to provide much knowledge about areas of the Moon that man will not visit for a long time. And a little - little bit on the Democratic campaign here. \"Muskie dealt 1-2 blow by McGovern in Massachusetts and HHH in Pennsylvania. Senator George McGovern, triumphant in Massachusetts, and Senator Hubert H. Humphrey, the Pennsylvania victor, joined head-on political battle today after dealing a 1-2 blow to the Presidential campaign of Senator Edmund Muskie. Muskie finished a far-back second in Massachusetts, and managed only a virtual third-place tie with McGovern and Wallace in Pennsylvania where he concentrated his campaign. Alabama Governor George C. Wallace got 21 percent with 97 percent of the precincts tallied in Pennsylvania, after staging a 1-day campaign. Massachusetts gave Wallace 8 percent of the vote in partial returns, just ahead of Humphrey. Next Tuesday McGovern and Humphrey confront each other, Muskie, and Senator Henry M. Jackson of Washington in Ohio battle for 153 convention delegates.\" A couple of items on - on the reentry area. The USS Ticonderoga, the primary recovery ship for Apollo 16, has arrived at the new splashdown site, 1500 miles south of Honolulu. The forecast for Thursday splash was unlimited visibility with temperatures in the 80s. Seas are expected to be 1 to 3 feet with swells to 5 feet. And the weather here in Houston is low tonight in the low 60s, high Thursday in the low 80s, and the weather's been clear to partly cloudy today. And the Houston Astros did it again. They won their eighth consecutive baseball victory last night, a hard-fought 5 to 4 verdict over the Chicago Cubs. The win kept Houston in a tie with Los Angeles for first place in the National League West. And let's see, I guess we'll close - -"
+  },
+  {
+   "g": 694322,
+   "from": "Rank, we've got a - the vacu'&m c__a._e__ _ _' _alze,_' t , x sometime on us, and if you guys want it hack tor failure analysis, we'll bring it hack. Otherwise, we're gonna Loss it out. Do you have _! ', thoughts cn that?",
+   "to": "Hank, we've got a - the vacuum cleaner stalled out sometime on us, and if you guys want it back for failure analysis, we'll bring it back. Otherwise, we're gonna toss it out. Do you have any thoughts on that?"
+  },
+  {
+   "g": 690392,
+   "from": "All right, iienry. I'll be there in just a minute i jusv finished your SIM _ay stuff. Amd, Henry, could you have an EECOM check and see if our sensor and accumulator looks like it's been working properly in the last hour?",
+   "to": "All right, Henry. I'll be there in just a minute. I just finished your SIM bay stuff. And, Henry, could you have an EECOM check and see if our sensor and accumulator looks like it's been working properly in the last hour?"
+  },
+  {
+   "g": 690096,
+   "from": "Panel I1 , top row \"_ o-_YlD ' _ Al[Tell[A,o_en. AG2 .,lC_._USB, open.\"",
+   "to": "Panel 11, top row, \"S-BAND ANTENNA, open. AGS AC BUS B, open.\""
+  },
+  {
+   "g": 683622,
+   "from": "_,1-=_ down Lhrel_h \"i'APr_!ls ?/ci_-iR_2 LASER _._, ITl-''L'r'r_,__, .... 2 .",
+   "to": "Delete down through \"MAPPING CAMERA LASER ALTIMETER/ COVER, CLOSE.\""
+  },
+  {
+   "g": 683269,
+   "from": ",lk:e y. Jvart over again now in tNe next cohm.",
+   "to": "Okay. Start over again now in the next column."
+  },
+  {
+   "g": 683254,
+   "from": "k:_-:. i.cw, what scout this 2k,'i_£u,.zont_ninatien _v _:1.._ bottom of' the cage?",
+   "to": "Okay. Now, what about this Skylab contamination at the bottom of the page?"
+  },
+  {
+   "g": 621684,
+   "from": "Okav_ , Houston. The PRD reading - _aar___ _, 2112 - 2' - 29. Al:d, mine is 22060. please?",
+   "to": "Okay, Houston. The PRD reading - Charlie, 2112 - 2 - 29. And, mine is 22060."
+  },
+  {
+   "g": 589820,
+   "from": "(Okay. Fine. And, on the LRV, we're going to ask you to go back to the normal configuration on -the PWM. If you experience any difficulty, then, we'll go back to the PWM configuration you're in now. And the attitude indicator on that pitchup problem won't - won't cause us any serious problem. Just when you do the nay update, try to park in a level area, and the backroom is hoping that the nav problem was a temporary one; that'll be okay for your EVA-3 either way, you shouldn't really have any problem because you can probably see the area you're going to, and you're going to go right back along your tracks so we're not too worried about it if you don't have the distance. And we're projecting hot battery again on EVA-3, and we may have some changes during the EVA on that. Your - your mobility rates during EVA-2 were very near those predicted, and we have a large margin of battery power so we're in good shape there. Also, they mentioned that if you have a dust prob- Lem from that missing fender - rear fender, there is a way of putting one of the front fenders on the back, but, golly, I don't know whether you really want to do that.",
+   "to": "Okay. Fine. And, on the LRV, we're going to ask you to go back to the normal configuration on the PWM. If you experience any difficulty, then, we'll go back to the PWM configuration you're in now. And the attitude indicator on that pitchup problem won't - won't cause us any serious problem. Just when you do the nav update, try to park in a level area, and the backroom is hoping that the nav problem was a temporary one; that'll be okay for your EVA-3 either way, you shouldn't really have any problem because you can probably see the area you're going to, and you're going to go right back along your tracks so we're not too worried about it if you don't have the distance. And we're projecting hot battery again on EVA-3, and we may have some changes during the EVA on that. Your - your mobility rates during EVA-2 were very near those predicted, and we have a large margin of battery power so we're in good shape there. Also, they mentioned that if you have a dust problem from that missing fender - rear fender, there is a way of putting one of the front fenders on the back, but, golly, I don't know whether you really want to do that."
+  },
+  {
+   "g": 532339,
+   "from": "No, jusv a scosh [sic] - The only trouble is, John, this rock's so big you can't even reach over it.",
+   "to": "No, just a scosh [sic] - The only trouble is, John, this rock's so big you can't even reach over it."
+  },
+  {
+   "g": 384634,
+   "from": "Now we're coming across Hevelius again, and I can see Grimaldi and a couple of fractures that go across its rim. You can really see a lot of detail here. You can see the rilles, you can see - as everybody pointed out, the - they look like ribbons that are just dropped down, and they go all the way across the crater like Hevelius. And it looks like they go out from and they come down - in fact, they go all the way down to Grimaldi. And just before they get to Grimaldi, they run into a crater. And it looks like they might have been : filled a little bit. In fact, it looks the same way that some of the rilles that dot the Fra Mauro, look like they've been filled in. Then there is a very smooth patch that's lined up with this graben that runs from there to Grimaldi. No, I'm sorry. I'm calling Riccioli, Grimaldi. The crater I'm talking about now is Riccioli, and it's got quite a few fractures that run out. And it looks like a flow pattern. It looks just like looking down on a - on a long tongue of lava like we've seen ter- restrially. I don't mean to infer that there is lava, but I'm just saying that it has the same appearance. It is coming out of the northeastern corner of Riccioli. And it has what looks like little ripple patterns on it, like you'd expect for flow bands, but they aren't quite as arcuate, and they don't take quite the same - the same concentric pattern that you'd expect from a flow front. But this little crater coming down from Hevelius - the rille it comes down to there and then it hits the crater, and then it gets a very, very smooth spot. And then it runs in and you can see continuations of these lineaments right on across Riceioli.",
+   "to": "Now we're coming across Hevelius again, and I can see Grimaldi and a couple of fractures that go across its rim. You can really see a lot of detail here. You can see the rilles, you can see - as everybody pointed out, the - they look like ribbons that are just dropped down, and they go all the way across the crater like Hevelius. And it looks like they go out from ..., and they come down - in fact, they go all the way down to Grimaldi. And just before they get to Grimaldi, they run into a crater. And it looks like they might have been filled a little bit. In fact, it looks the same way that some of the rilles that dot the Fra Mauro, look like they've been filled in. Then there is a very smooth patch that's lined up with this graben that runs from there to Grimaldi. No, I'm sorry. I'm calling Riccioli, Grimaldi. The crater I'm talking about now is Riccioli, and it's got quite a few fractures that run out. And it looks like a flow pattern. It looks just like looking down on a - on a long tongue of lava like we've seen ter- restrially. I don't mean to infer that there is lava, but I'm just saying that it has the same appearance. It is coming out of the northeastern corner of Riccioli. And it has what looks like little ripple patterns on it, like you'd expect for flow bands, but they aren't quite as arcuate, and they don't take quite the same - the same concentric pattern that you'd expect from a flow front. But this little crater coming down from Hevelius - the rille it comes down to there and then it hits the crater, and then it gets a very, very smooth spot. And then it runs in and you can see contin- uations of these lineaments right on across Riccioli."
+  },
+  {
+   "g": 293884,
+   "from": "Okay. TEI-12, SPS/G&N; 39817; plus 0.61, plus 1.19 097:45:53.09; plus 3163.2, plus 1040.3, minus 0234.0, 181, 080, 020. Rest of the pad is NA. The set stars are the same as for DOI. Won't re_eaz unless you want. Ullage two jets, 17 seconds; o_l_er remarks: burn undock, assumes no circ. Longitude of Moon at T. minus 171.47. Landing site REFSMMAT.",
+   "to": "Okay. TEI-12, SPS/G&N; 39817; plus 0.61, plus 1.19 097:45:53.09; plus 3163.2, plus 1040.3, minus 0234.6, 181, 080, 020. Rest of the pad is NA. The set stars are the same as for DOI. Won't repeat unless you want. Ullage two jets, 17 seconds; other remarks: burn undock, assumes no circ. Longitude of Moon at T. minus 171.47. Landing site REFSMMAT."
+  },
+  {
+   "g": 287663,
+   "from": "Okey, Houston. We released the tiedc_s _i _ke c_or'd kear_ _as_ a var_ tlr?",
+   "to": "Okay, Houston. We released the tiedowns and the door and heard just a very tiny little sound on each of those activities."
+  },
+  {
+   "g": 185450,
+   "from": "Okay. Former President Lyndon Johnson is resting comfortably after he was hospitalized again following an increase in his heart rate. He's hospitalized in San Antonio. Vice President Agnew, speaking here in Houston, has asked the nation's supermarket executives to hold the line on prices. If prices for food continue to soar, Mr. Agnew hinted at mandatory Federal controls. President Nixon added a stop during his scheduled trip to Moscow. Prior to returning home, he will stop off in Poland to discuss Polish-American relations. The Moscow trip in late May is still on, despite some fears that recent developments in the Vietnamese conflict could affect the President's visit to the Soviet Union. State news: The Texas governor's race is still a hot item, but no word yet from John Connolly, who said he may speak out on the wide-open race. Congressman Pcb Eckhardt says the U. S. needs at least three large super ocean ports to keep in contention with the world market. He says the Galveston-Houston area is a prime superport site. And on sports news: The Astros captured their first victory of the year with a 7-2 win over the L. A. Giants. Arc some scores on the other games: in the American League, Cleveland 4, Boston 0; Baltimore L New York 0. In the National League, St. Louis 5, Philadelphia 4; Los Angeles 8, Atlanta 3. The Boston marathon, run yesterday on Patriots Day in Best. Town, was won by a 25-year-old engineering student from Finland. Strangely enough, they have omitted his name. A 33-year-old Long Island, New York, womsm, Nina Kuscsik, won the special ladies division. The Los Angeles Lakers and the Milwaukee Sucks are tied 2-2 in their Western division playoffs in the NBA.",
+   "to": "Okay. Former President Lyndon Johnson is resting comfortably after he was hospitalized again following an increase in his heart rate. He's hospitalized in San Antonio. Vice President Agnew, speaking here in Houston, has asked the nation's supermarket executives to hold the line on prices. If prices for food continue to soar, Mr. Agnew hinted at mandatory Federal controls. President Nixon added a stop during his scheduled trip to Moscow. Prior to returning home, he will stop off in Poland to discuss Polish-American relations. The Moscow trip in late May is still on, despite some fears that recent developments in the Vietnamese conflict could affect the President's visit to the Soviet Union. State news: The Texas governor's race is still a hot item, but no word yet from John Connally, who said he may speak out on the wide-open race. Congressman Bob Eckhardt says the U. S. needs at least three large super ocean ports to keep in contention with the world market. He says the Galveston-Houston area is a prime superport site. And on sports news: The Astros captured their first victory of the year with a 7-2 win over the L. A. Giants. And some scores on the other games: in the American League, Cleveland 4, Boston 0; Baltimore 4, New York 0. In the National League, St. Louis 5, Philadelphia 4; Los Angeles 8, Atlanta 3. The Boston marathon, run yesterday on Patriots Day in Bean Town, was won by a 25-year-old engineering student from Finland. Strangely enough, they have omitted his name. A 33-year-old Long Island, New York, woman, Nina Kuscsik, won the special ladies division. The Los Angeles Lakers and the Milwaukee Bucks are tied 2-2 in their Western division playoffs in the NBA."
+  },
+  {
+   "g": 688737,
+   "from": "_.l{.'ilike _o rezsin she _aext ii:lc _Rere, --- .... _I(A_Z'T REPRESS bresRers_' sl ?su've esl the '_}'rllicn",
+   "to": "We'd like to retain the next line there, that \"CABIN REPRESS breakers,\" so you've got the caution and warnings"
+  },
+  {
+   "g": 687872,
+   "from": "Azt.i 17 hours Uccc.mos . :_ , ard _'_-u_::.._ '_'_, the same' ' hLas frc-_2 then on, if you want ts start updating your times, Ana, where we :sine beck in there is az % _e riaee - r.lsce where we're Supposed to tlr- l!n_: ' the vector, i',]2erc we start there is",
+   "to": "And 217 hours becomes 195:10, and that's the time bias from then on, if you want to start updating your times. And, where we come back in there is at the place - place where we're supposed to uplink the vector. Where we start there is 95:18."
+  },
+  {
+   "g": 687853,
+   "from": "i, n, I _quess I mean% for 3.'-_bo do evez'vt-_ixF_· t ere except dcffln_ the biomed h_Trness, area 3. r -- of course, delete the up-links and tne {ii:er stuff.",
+   "to": "Ken, I guess I meant for you to do everything there except doffing the biomed harness, and the - of course, delete the up-links and the other stuff."
+  },
+  {
+   "g": 683614,
+   "from": "I guess just when the {n_ i en,:i. I - L_-,'.' - let's lock here at the next csl'_r.n, 1i3:_.1.",
+   "to": "I guess just when the end is end. I - Let's - let's look here at the next column, 193:40. Delete - -"
+  },
+  {
+   "g": 682494,
+   "from": "2ia.¥., and I'll - stand ct,rr.:_:tea on that update block. We'll give yotl a TEI pad there.",
+   "to": "Okay, and I'll - stand corrected on that update block. We'll give you a TEI pad there."
+  },
+  {
+   "g": 177023,
+   "from": "PIARK. Okay, a bright dot in the - in _y _\"[!_bt eye in [ne upper - upper le_. Center.",
+   "to": "MARK. Okay, a bright dot in the - in my right eye in the upper - upper left center."
+  },
+  {
+   "g": 176033,
+   "from": "Okay, Don. We were just about ready to call this:: thing off and try it another cay. And then !_ _i like Charlie was starting i? see them at - a ,_ pretty fair rate. That five in 5 minutes warn Lke four in the last minute or 2. And John has _: one; have not seen ._y p_. Bat s _d_ ilk, Charlie is gonna be able to see these and I'm gonna go ahead and take the photographs and f_ _ - get all set and wait for y, ur answer.",
+   "to": "Okay, Don. We were just about ready to call this thing off and try it another day. And then looked like Charlie was starting to see them at - at a pretty fair rate. That five in 15 minutes was like four in the last minute or 2. And John has seen one; I have not seen any yet. But sounds like Charlie is gonna be able to see these and I'm gonna go ahead and take the photographs and get - get all set and wait for your answer."
+  },
+  {
+   "g": 173989,
+   "from": "Okay, Houston on. We're going to start on the AiPN_E [1OW. _ gus _ - t iii %a'_%_ tls aho_t _Ln hour anc a hal from t c L{me we star __ to %ne time we i _ish Lii).",
+   "to": "Okay, Houston. We're going to start on the ALFMED now. I guess it'll take us about an hour and a half from the time we start to the time we finish up."
+  },
+  {
+   "g": 168413,
+   "from": "And, i6, one comm plo_lem may have been on the gro_id, i_e'il try to zina ous and let you know in a minute.",
+   "to": "And, 16, the comm problem may have been on the ground. We'll try to find out and let you know in a minute."
+  },
+  {
+   "g": 689911,
+   "from": "_\"''- bJ i , unar±_e. _' '_ }[en, it's ec,o_t 30 secon,is to slaz.t brin_!in__ up the 2I>[ ba'/ configuration.",
+   "to": "Stand by 1, Charlie. Ken, it's about 30 seconds to start bringing up the SIM bay configuration."
+  },
+  {
+   "g": 689833,
+   "from": "±he ' ' , it's \"\" window sheQes _ L:IF_'. _ O1DSCC . TM knri% 'S t_ l',ep the heat leak down 2',r t__i,l%_' _ CllrS' 1 it 'r time the LP< hari.",
+   "to": "Then it's \"Window shades, three, closed.\" That's to keep the heat leak down for that 8 hours' loiter time the LM has to do."
+  },
+  {
+   "g": 687920,
+   "from": "C{ 'al:. And then we fell.0w ti.e res' tf The Fiisht ?l_ el ttx _ ,_ay",
+   "to": "Okay. And then we follow the rest of the Flight Plan all the way out?"
+  },
+  {
+   "g": 683642,
+   "from": "Are you - art 7 u sure ;._( wculln't to ket%er .:taz_ti;:;wiLh a clea__a T:_s_ like :,;eii: tho ath r ,;'i[- 3file?",
+   "to": "Okay. Are you - are you sure we wouldn't do better starting with a clean page like we did the other day once?"
+  },
+  {
+   "g": 682945,
+   "from": "Andy cf those - 0h_ oka/. All alright, i ',,'as{enna s'z2,,_boca'ass we're itl - w 'Pe on a iroundtrack that isn't very compatible with some of those thin, 7 . {kzS', sc then you're 6snF_a dc ¥hkt and then you're 6onnu a_e hack and do txe _i{ jettlzon, and bhen come sack us to the cuLT:t?",
+   "to": "And, of those - Oh, okay. All right. I was gonna say, because we're in - we're on a groundtrack that isn't very compatible with some of those things. Okay, so then you're gonna do that and then you're gonna go back and do the LM jettison, and then come back up to the subsat?"
+  },
+  {
+   "g": 682941,
+   "from": ".,_._tae±x,. ....... [_ , we're sorubting most __ -=' tilat.",
+   "to": "Actually, we're scrubbing most of that."
+  },
+  {
+   "g": 682917,
+   "from": "- - W_ft a minute - wai%. let :n2 absorb what you're saying. Okay, hank. When you say you're fionna pick ut, these thinEs ever here at rev 72, I :fliers you're [UOK.LD_ at f:z_i these visual targets and photo targets.",
+   "to": "- - Wait a minute - wait. Let me absorb what you're saying. Okay, Hank. When you say you're gonna pick up these things over here at rev 72, I guess you're looking at all these visual targets and photo targets."
+  },
+  {
+   "g": 631397,
+   "from": "Ohw. We're crossfeeding with Uae ne},'prscedur, yol jus% gave as, Houston.",
+   "to": "Okay. We're crossfeeding with the new procedure you just gave us, Houston."
+  },
+  {
+   "g": 630129,
+   "from": "Ji:_ thet has 500 feet to go on terminatin!_ _h_- ascent 2. Do you want that just nominally - i, ne nominally?",
+   "to": "Jim, that has 500 feet to go on terminating the ascent 2. Do you want that just nominally - done nominally?"
+  },
+  {
+   "g": 629972,
+   "from": "Roger. You look great on consumables, f,ct-_a] i_'_ you have about 15 hours left on your electric:.: and about 10 more pounds of water. Over. kcuh: you like to do a fourth EVA?",
+   "to": "Roger. You look great on consumables. Actually, you have about 18 hours left on your electrical, and about 10 more pounds of water. Over. Would you like to do a fourth EVA?"
+  },
+  {
+   "g": 374059,
+   "from": "(13py, i(:4:l'i'::-')_ ._t _ ; pius 56990, for 231",
+   "to": "Copy. 104:17:24.66; plus 56990, for 231."
+  },
+  {
+   "g": 370535,
+   "from": "Okay, 000, 060, and 000 and a P52, option 3. And i take it that I should enter 509 jusv before the P52, and leave it in until after the gimba! drive check in P40. The s_e procedure we had !as_ time is that affirmative?",
+   "to": "Okay, 000, 060, and 000 and a P52, option 3. And I take it that I should enter 509 just before the P52, and leave it in until after the gimbal drive check in P40. The same procedure we had last time. Is that affirmative?"
+  },
+  {
+   "g": 370535,
+   "from": "would i surely short, would, and Stu. some of them was just very close to the point at which it became stable. And on some of the - the longer ones, we did see the stability, but those that you called as diverging were short of reaching this stable point, it appears that the controllability is not going to be any problem when - If you would have to burn with this, according to the stroking tests on 9, you'll get a lot of - of oscillations and you'll feel the spacecraft shaking, but the attitude will not be changing. You'll probably see the rate needles moving around a little bit. And just for your info also, most probably do the burns wivh the 90 degree roll, so we'll have a - so we_ii have the redundancy in the - in the yaw axis p±a_fo_m consideration. have been a little smarter, we'd have pressed on on",
+   "to": "would short, and some of them was just very close to the point at which it became stable. And on some of the - the longer ones, we did see the stability, but those that you called as diverging were short of reaching this stable point. It appears that the controllability is not going to be any problem when - If you would have to burn with this, according to the stroking tests on 9, you'll get a lot of - of oscillations and you'll feel the spacecraft shaking, but the attitude will not be changing. You'll probably see the rate needles moving around a little bit. And just for your info also, most probably do the burns with the 90 degree roll, so we'll have a - so we'll have the redundancy in the - in the yaw axis platform consideration."
+  },
+  {
+   "g": 808545,
+   "from": "And, 16, we've got some national and local news here for you while you're finishing up with your chores there. The - first of all, Ken Mattingly made the headlines today in connection with the EVA, and we got a big cartoon here showing the Apollo 16 Celestial Hauling Company coming back from the Moon with a big load of rocks. Looks like they've made a - a railroad car out of a SIM bay here and got a big pile of rocks on it there. Moon in the background, and all that sort of thing. Got a couple of things here, one from Vietnam. Communist tanks drove retreating South Vietnamese soldiers toward the provincial capital of Kontum in the Central Highlands today, forcing Government troops to abandon two more artillery bases in the town of Dac To. Seven bases in the Central Highlands have fallen to the Communists since Sunday. Ten waves of B52s bombed Communist troop positions during the night in an effort to stop the offensive that appeared aimed at Kontum. And from Northern Ireland, some guy found a new use for a baby carriage. He packed it with gelignite, which one of our backroom guys here tells me is a - an explosive, and bombed Northern Ireland's main telephone exchange during the night in a major attempt to disrupt the province's communications. The carriage exploded in a sheet of flames shortly before midnight Monday outside the Belfast Telephone Exchange, injuring two British soldiers and a civilian, and toppling part of the wall of the seven-story brown brick building. And the Astros amazed everybody, I guess, by winning a - their seventh straight today. Chicago's Ron Santo and Houston's Lee May bashed two-run homers for each side in the first inning, and then the two teams battled tenaciously without another score until John Edwards smashed an llth inning home run that gave the Houston team a 3-to-2 victory. That makes it seven in a row for the Astros, and brought them a first-place tie with Los Angeles in the National League West, and gave them the best nine-game start, that's seven wins and two losses, in the team's 10-year history.",
+   "to": "And, 16, we've got some national and local news here for you while you're finishing up with your chores there. The - first of all, Ken Mattingly made the headlines today in connection with the EVA, and we got a big cartoon here showing the Apollo 16 Intercelestial Hauling Company coming back from the Moon with a big load of rocks. Looks like they've made a - a railroad car out of a SIM bay here and got a big pile of rocks on it there. Moon in the background, and all that sort of thing. Got a couple of things here, one from Vietnam. Communist tanks drove retreating South Vietnamese soldiers toward the provincial capital of Kontum in the Central Highlands today, forcing Government troops to abandon two more artillery bases in the town of Dac To. Seven bases in the Central Highlands have fallen to the Communists since Sunday. Ten waves of B52s bombed Communist troop positions during the night in an effort to stop the offensive that appeared aimed at Kontum. And from Northern Ireland, some guy found a new use for a baby carriage. He packed it with gelignite, which one of our backroom guys here tells me is a - an explosive, and bombed Northern Ireland's main telephone exchange during the night in a major attempt to disrupt the province's communications. The carriage exploded in a sheet of flames shortly before midnight Monday outside the Belfast Telephone Exchange, injuring two British soldiers and a civilian, and toppling part of the wall of the seven-story brown brick building. And the Astros amazed everybody, I guess, by winning a - their seventh straight today. Chicago's Ron Santo and Houston's Lee May bashed two-run homers for each side in the first inning, and then the two teams battled tenaciously without another score until John Edwards smashed an 11th inning home run that gave the Houston team a 3-to-2 victory. That makes it seven in a row for the Astros, and brought them a first-place tie with Los Angeles in the National League West, and gave them the best nine-game start, that's seven wins and two losses, in the team's 10-year history."
+  },
+  {
+   "g": 690741,
+   "from": "Okay. Hen, ,;hat we'd like to is, is set _axisler n_iI_Ler 13 sc the !2',:in e!_2e of ihe she we're bringing { home.",
+   "to": "Okay. Ken, what we'd like to do, is get canister number 13 to the LM in place of the one we're bringing home."
+  },
+  {
+   "g": 689926,
+   "from": "..:ell, if' the hats can io ..... _ for's; 3_a[.'. i'!1 S;41'e 2eL i% Orl tllere as fasb as - cg.n, br.i - 'd L{ke t'} []ave some elarlfication, i .-'ism -' _'_-_; 3ft' Cwo I[$iFcKex fs_ls - %heir heaters ,:_:'l have h,_! :_stPirtn in the way of fmcs 2n tar k 3.",
+   "to": "Well, if the hats can do that for us; okay. I'll sure get it on there as fast as I can, and I'd like to have some clarification. I just turned off two hydrogen fans - their heaters, and I have had nothing in the way of fans on tank 3."
+  },
+  {
+   "g": 689888,
+   "from": "Yeah, !:ut ! think I know what ts ds. ,'us% i%r-.-i ti: PGNS and _{et a go for c!oses:_t, ]s3fs l:.-_ il's all I ?3t tca©.",
+   "to": "Yeah, but I think I know what to do. Just target the PGNS and get a go for closeout, looks like it's all I got to do."
+  },
+  {
+   "g": 689874,
+   "from": "Oks}. iho whole left co-'tzar there is .'asr a_.... %1, a/id I ?mess t?_s}y need +D _ifi3w }Jr_tit Kind er shape you're its over sr. the right side. I understand you scratched through ri hxmck cf this already.",
+   "to": "Okay. The whole left column there is just scratched, and I guess they need to know what kind of shape you're in over on the right side. I understand you scratched through a bunch of this already."
+  },
+  {
+   "g": 688747,
+   "from": ",_ a}leat. _e the left there, label it \"transfer irons.\" i_.,1,ma-;De vo-a',se already done sortie of these, bdt tlis will tore acre of the ones we ntissci having? ¥, ]l ii v{.sverdav. Y_d they're tRe Ppi'[ *_ mq'_h% il!%_ ti: m': t___=..... _} i}a_a File, the curse with -}._ 2'Js{'d l'{)oii_ _icd the used £'eaal-urina bags, _r2i last! '_ she DS'2A.",
+   "to": "Okay. Another little block you might write out to the left there, label it \"Transfer items.\" And, maybe you've already done some of these, but this will take care of the ones we missed having you do yesterday. And they're the PPK, the Flight Kit, the Flight Data File, the purse with the unused food, and the used fecal-urine bags, and lastly the DSEA."
+  },
+  {
+   "g": 687733,
+   "from": ",_...... ,.- sir. Now, we want to do {t_4 these sties that are down here at 1p9:2'0 er so, don't we? It says \"Doff PGAs\" thor,:, but we really want to, do all these things that ape in thet {Folio right?",
+   "to": "Yes, sir. Now, we want to do all these steps that are down here at 195:20 or so, don't we? It says \"Doff PGAs\" there, but we really want to do all these things that are in that group, right?"
+  },
+  {
+   "g": 683678,
+   "from": "L;eil, if wc had it to ic .2:vet, I think 5tis is _.:_'_%w,} sug,ct to ia. ills thin 6 ',-;_slust h':tniei to ',:- x few iinuLes ;igc, __hd we're tll,qn 6 ts ; _i ;_ _:___n . _ cat You w'_rlt %,; 2,5rlli._iuewittl this , cr ic y,_u want to try to s_.!vaxe - -",
+   "to": "Well, if we had it to do over, I think this is what we ought to do. This thing was just handed to me a few minutes ago, and we're trying to straighten it out. You want to continue with this, or do you want to try to salvage - -"
+  },
+  {
+   "g": 683651,
+   "from": "-' .:' b-an thinking the :,c:.:thir'. : _icse it seems like '! doing more deleting S than _{ ..;rivin(7, and it'_ ;_ u_i._6 s3 that - :.t's a'ct: 'nl sc confused, i lrkiCjI_.[ss writing, aewn - !'c'u_:now, when it comes time to execute, - rnafr _ !s something S.",
+   "to": "I've been thinking the same thing. I don't mean to be facetious about that, Hank - because it seems like I'm doing more deleting than I am writing, and it's getting so that - it's getting so confused, I may miss writing down - You know, when it comes time to execute, I may miss something."
+  },
+  {
+   "g": 683600,
+   "from": "_'_kav.._, And we're all waitlnz with baited breath to EinJ cdt what time _rcu end salt donning S.",
+   "to": "Okay. And we're all waiting with bated breath to find out what time you end suit donning."
+  },
+  {
+   "g": 620031,
+   "from": "Nearing right in here. OAS DIVERTER PULL to EGRESS. Veri_.",
+   "to": "Starting right in here. GAS DIVERTER, PULL to EGRESS. Verify."
+  },
+  {
+   "g": 620031,
+   "text": "Starting right in here. GAS DIVERTER, PULL to EGRESS. Verify.",
+   "split": "GAS DIVERTER, PULL",
+   "speaker": "Young"
+  },
+  {
+   "g": 632000,
+   "from": "Looks _;oot. ltl,n, you're GC' at 3.",
+   "to": "Looks good. Orion, you're GO at 3."
+  },
+  {
+   "g": 632000,
+   "text": "Looks good. Orion, you're GO at 3.",
+   "split": "Orion, you're GO at 3.",
+   "speaker": "Irwin"
+  },
+  {
+   "g": 9832,
+   "text": "Madrid, and Honeysuckle.",
+   "retime": true
+  },
+  {
+   "g": 683202,
+   "from": "should be deleted.ctecl_... _ '_ -[ , eveF.'-. ih-ng L}i tho left-hand __ t_...... _:_., ! _%hol[i t_' :28-d_ shca!d i;e al{late!.",
+   "to": "should be deleted."
+  }
+ ],
+ "17": []
 }

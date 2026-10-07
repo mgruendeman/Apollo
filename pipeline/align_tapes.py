@@ -235,6 +235,19 @@ def main():
         if not l.get('c') and not l.get('fixed'):
             l['t'] = scrap_after_sentence(l['t'], known)
     lines = [l for l in lines if l.get('c') or l.get('fixed') or not junk_row(l['t'], known)]
+    # A typed line the scan broke in two: the second half read as a row of its own, with no speaker (and often
+    # no time). It starts with a small letter and the line before doesn't end its sentence: it's that line's tail.
+    merged, out_ = 0, []
+    for l in lines:
+        p_ = out_[-1] if out_ else None
+        if (p_ is not None and l['s'] == 'Unknown' and not l.get('c') and not p_.get('c') and not l.get('fixed')
+                and 0 <= l['g'] - p_['g'] <= 90 and re.match(r"[\s.,'_-]*[a-z]", l['t'])
+                and not re.search(r"[.?!\"')]\s*$|-\s*-\s*$", p_['t'].strip())):
+            p_['t'] = p_['t'].rstrip() + ' ' + l['t'].lstrip(" ,'_")
+            merged += 1
+            continue
+        out_.append(l)
+    lines = out_
     # (and on Apollo 8's scan, the page's fold and edge lines read as rows of scraps, with no speaker and no time)
     if m == '08':
         lines = [l for l in lines if l.get('c') or l.get('fixed') or l['s'] != 'Unknown' or not l.get('a') or not fold_row(l['t'], known)]

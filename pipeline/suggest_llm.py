@@ -118,6 +118,7 @@ def main():
     ap.add_argument('--limit', type=int, default=0, help='only the first N listed lines (most doubtful first)')
     ap.add_argument('--workers', type=int, default=3)
     ap.add_argument('--min-conf', type=float, default=0.5, help='keep answers at least this confident')
+    ap.add_argument('--apply-only', action='store_true', help='ask nothing: put the cached answers on the list (after a re-alignment)')
     args = ap.parse_args()
     m = f'{int(args.mission):02d}'
     media = Path(args.media).expanduser()
@@ -140,7 +141,7 @@ def main():
     cache_path = media / 'suggest' / f'{m}.json'
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache = json.loads(cache_path.read_text()) if cache_path.exists() else {}
-    todo = [x for x in listed if f"{x['g']}|{x['t']}" not in cache][:args.limit or None]
+    todo = [] if args.apply_only else [x for x in listed if f"{x['g']}|{x['t']}" not in cache][:args.limit or None]
     print(f'{len(listed)} lines listed, {len(todo)} to ask about ({args.via}, {model})')
 
     def context(x):

@@ -73051,65 +73051,191 @@
 "page": 552
 },
 {
-"getSeconds": 424078,
-"getApprox": true,
+"getSeconds": 424080,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "I can't",
+"speaker": "CDR",
+"text": "There we go.",
 "unsure": [],
 "page": 553
 },
 {
-"getSeconds": 424078,
-"getApprox": true,
+"getSeconds": 424120,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "0PS, remove",
+"speaker": "CDR",
+"text": "See what happened, Charlie?",
 "unsure": [],
 "page": 553
 },
 {
-"getSeconds": 424078,
-"getApprox": true,
+"getSeconds": 424121,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "go on spacecraft",
+"speaker": "LMP",
+"text": "... just here?",
 "unsure": [],
 "page": 553
 },
 {
-"getSeconds": 424078,
-"getApprox": true,
+"getSeconds": 424122,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "we run the water?",
+"speaker": "CDR",
+"text": "Yeah.",
 "unsure": [],
 "page": 553
 },
 {
-"getSeconds": 424078,
-"getApprox": true,
+"getSeconds": 424124,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "of them. Okay.",
+"speaker": "LMP",
+"text": "The other ...",
 "unsure": [],
 "page": 553
 },
 {
-"getSeconds": 424078,
-"getApprox": true,
+"getSeconds": 424137,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "Cool it.",
+"speaker": "CDR",
+"text": "Yeah? Okay. Got it. Okay. Yeah, I can't believe it. Okay. Unstow - LMP 0PS, remove pallet, stow in jett bag.",
 "unsure": [],
 "page": 553
 },
 {
-"getSeconds": 424078,
+"getSeconds": 424166,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay ....",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424166,
 "getApprox": true,
 "hourOnly": false,
-"speaker": "?",
-"text": "FirsV sVuff",
+"speaker": "CDR",
+"text": "Okay.",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424208,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. Whew. Let's go - either go on spacecraft hoses or use the water. Let's go on spacecraft hoses, okay? So do I. Why don't we run the water?",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424238,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "... have to switch the ... to off.",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424242,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Yeah. And don't take long. One of them. Okay. Okay. That's good, isn't it? Cool it.",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424270,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "...",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424278,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, that should do it.",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424282,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "... Oh, I ...",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424285,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "...",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424302,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Here's your tissue.",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424323,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Here.",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424325,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "...",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424340,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "...",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424356,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "You'd better give me your scissors ... I'm over here on the ...",
+"unsure": [],
+"page": 553
+},
+{
+"getSeconds": 424411,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Here's one for you and one for me. FirsV sVuff I've spilled since I've been here.",
 "unsure": [],
 "page": 553
 },
@@ -74887,47 +75013,191 @@
 "page": 563
 },
 {
-"getSeconds": 426704,
-"getApprox": true,
+"getSeconds": 426707,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "to open",
+"speaker": "CDR",
+"text": "REPRESS, closed, verify. SUIT FAN DELTA-P to open",
 "unsure": [],
 "page": 564
 },
 {
-"getSeconds": 426704,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "and",
-"unsure": [],
-"page": 564
-},
-{
-"getSeconds": 426704,
-"getApprox": true,
+"getSeconds": 426710,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "first. SUIT",
+"text": "_o.",
 "unsure": [],
 "page": 564
 },
 {
-"getSeconds": 426704,
-"getApprox": true,
+"getSeconds": 426711,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "have that",
+"speaker": "CDR",
+"text": "SUIT FAN DELTA-P number 2. That ain't right.",
 "unsure": [],
 "page": 564
 },
 {
-"getSeconds": 426704,
-"getApprox": true,
+"getSeconds": 426714,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "....",
+"speaker": "LMP",
+"text": "SUIT FAN 2?",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426716,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "BUIT FAN 2, open.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426717,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426720,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "SUIT FAN selector to 2. Verify ECS caution and _ATER SEP lights come on in about a minute.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426731,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426732,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "SUIT GAS DIVERTER, PULL to EGRESS. Verify.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426735,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Do.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426736,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "_AB GAS RETURN to EGRESS. Verify.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426738,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "_o.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426739,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "SUIT CIRCUIT RELIEF to AUTO. Verify.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426741,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "Do.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426742,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Dkay; 102 hours, 0PS - OPS connect, LMP first. SUIT ISOLATION valve, actuate - no, we don't have that :yet.... goes to SUIT ISOL, though. At both of them. Okay, let me get at your OPS hose ....",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426767,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "It's hot in here.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426768,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Yeah.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426773,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "there's a SEP light.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426777,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay. Got a WATER SEP light, Houston.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426779,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "LMP",
+"text": "... on that.",
+"unsure": [],
+"page": 564
+},
+{
+"getSeconds": 426782,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay.",
 "unsure": [],
 "page": 564
 },
@@ -111628,65 +111898,29 @@
 "page": 821
 },
 {
-"getSeconds": 454497,
-"getApprox": true,
+"getSeconds": 454719,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "Verify DESCENT 02 greater than 56 percent.",
+"speaker": "CDR",
+"text": "Okay. Verify DESCENT 02 greater than 56 percent. LMP first; connect your 02 for 10 minutes - 4 minutes. It takes 2 minutes and 15 - yeah, we got 80 percent.",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454497,
-"getApprox": true,
+"getSeconds": 454732,
+"getApprox": false,
 "hourOnly": false,
 "speaker": "LMP",
-"text": "first; connect your 02 for 10 minutes -",
+"text": "Yeah. Well, I hope.",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454497,
-"getApprox": true,
+"getSeconds": 454736,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "minutes. It takes 2 minutes and 15 - yeah, we",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454497,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "80 percent.",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454497,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "Well, I hope.",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454497,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "Charlie. I don't know if I can - I keep",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454497,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "up on something back there. What - -",
+"speaker": "CDR",
+"text": "Okay, Charlie. I don't know if I can - I keep hanging up on something back there. What - -",
 "unsure": [],
 "page": 824
 },
@@ -111694,44 +111928,35 @@
 "getSeconds": 454740,
 "getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "your hoses. Let me disconnect these because",
+"speaker": "LMP",
+"text": "Watch your hoses. Let me disconnect these because we don't need those dadgum things around like that. Okay; now can you spin around there?",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454740,
-"getApprox": true,
+"getSeconds": 454755,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "don't need those dadgum things around like that.",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454740,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "now can you spin around there?",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454740,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "Here comes all the checklist and cards.",
+"speaker": "CDR",
+"text": "Yeah. Here comes all the checklist and cards.",
 "unsure": [],
 "page": 824
 },
 {
 "getSeconds": 454758,
-"getApprox": true,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "need that one, that might be an APS card.",
+"speaker": "LMP",
+"text": "Okay.",
+"unsure": [],
+"page": 824
+},
+{
+"getSeconds": 454760,
+"getApprox": false,
+"hourOnly": false,
+"speaker": "CDR",
+"text": "Okay, need that one, that might be an APS card.",
 "unsure": [],
 "page": 824
 },
@@ -111739,80 +111964,53 @@
 "getSeconds": 454769,
 "getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "Okay, turn ... up.",
+"speaker": "LMP",
+"text": "Okay. Okay, turn ... up.",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454769,
-"getApprox": true,
+"getSeconds": 454773,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "way, Charlie?",
+"speaker": "CDR",
+"text": "Which way, Charlie?",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454769,
-"getApprox": true,
+"getSeconds": 454775,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "your hoses are coming from this side, so",
+"speaker": "LMP",
+"text": "Well, your hoses are coming from this side, so you got to get to that valve behind you. There you go.",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454769,
-"getApprox": true,
+"getSeconds": 454787,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "got to get to that valve behind you. There",
+"speaker": "CDR",
+"text": "If that's the valve I got to get to, it's behind me, Charlie. (Laughter)",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454769,
-"getApprox": true,
+"getSeconds": 454791,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "go.",
+"speaker": "LMP",
+"text": "Okay, PISS Mode. Houston, how do you read? Over.",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454769,
-"getApprox": true,
+"getSeconds": 454803,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "that's the valve I got to get to, it's behind",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454769,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "MS",
-"text": "Charlie. (Laughter)",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454769,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "PISS Mode. Houston, how do you read? Over.",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454769,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "sideways, Charlie, and let me get you some",
+"speaker": "CDR",
+"text": "Turn sideways, Charlie, and let me get you some o_ygen.",
 "unsure": [],
 "page": 824
 },
@@ -111820,26 +112018,17 @@
 "getSeconds": 454810,
 "getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "are still in DOWN-VOICE BACKUP, we should be",
+"speaker": "LMP",
+"text": "We are still in DOWN-VOICE BACKUP, we should be hot mike.",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454810,
-"getApprox": true,
+"getSeconds": 454814,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "mike.",
-"unsure": [],
-"page": 824
-},
-{
-"getSeconds": 454810,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "what I figured.",
+"speaker": "CDR",
+"text": "That's what I figured.",
 "unsure": [],
 "page": 824
 },
@@ -111847,8 +112036,8 @@
 "getSeconds": 454815,
 "getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "how do you read? Over.",
+"speaker": "LMP",
+"text": "Houston, how do you read? Over.",
 "unsure": [],
 "page": 824
 },
@@ -111856,17 +112045,17 @@
 "getSeconds": 454819,
 "getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "this is Houston. You're hot mike to us.",
+"speaker": "CC",
+"text": "Orion, this is Houston. You're hot mike to us.",
 "unsure": [],
 "page": 824
 },
 {
-"getSeconds": 454819,
-"getApprox": true,
+"getSeconds": 454822,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "you got to - -",
+"speaker": "CDR",
+"text": "Okay, you got to - -",
 "unsure": [],
 "page": 824
 },
@@ -177094,35 +177283,17 @@
 "getSeconds": 586676,
 "getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "Orion, we just want to remind you again",
+"speaker": "CC",
+"text": "And, Orion, we just want to remind you again that we want to put the commander's 0PS on the LMP PLSS.",
 "unsure": [],
 "page": 1319
 },
 {
-"getSeconds": 586676,
-"getApprox": true,
+"getSeconds": 586687,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "we want to put the commander's 0PS on the",
-"unsure": [],
-"page": 1319
-},
-{
-"getSeconds": 586676,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "LMP",
-"text": "PLSS.",
-"unsure": [],
-"page": 1319
-},
-{
-"getSeconds": 586676,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "E - the EVCs is not in the OPS?",
+"speaker": "CDR",
+"text": "Okay. E - the EVCs is not in the OPS?",
 "unsure": [],
 "page": 1319
 },
@@ -177130,44 +177301,17 @@
 "getSeconds": 586694,
 "getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "didn't copy the question, John.",
+"speaker": "CC",
+"text": "We didn't copy the question, John.",
 "unsure": [],
 "page": 1319
 },
 {
-"getSeconds": 586694,
-"getApprox": true,
+"getSeconds": 586699,
+"getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "say I thought there was something about a radio",
-"unsure": [],
-"page": 1319
-},
-{
-"getSeconds": 586694,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "that had to be - is the radio trans-",
-"unsure": [],
-"page": 1319
-},
-{
-"getSeconds": 586694,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "located out on the PLSS? Is that - is that",
-"unsure": [],
-"page": 1319
-},
-{
-"getSeconds": 586694,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "answer to that?",
+"speaker": "CDR",
+"text": "I say I thought there was something about a radio transmitter that had to be - is the radio transmitter located out on the PLSS? Is that - is that the answer to that?",
 "unsure": [],
 "page": 1319
 },
@@ -177175,28 +177319,20 @@
 "getSeconds": 586712,
 "getApprox": false,
 "hourOnly": false,
-"speaker": "?",
-"text": "affirmative, John.",
+"speaker": "CC",
+"text": "That's affirmative, John.",
 "unsure": [],
 "page": 1319
 },
 {
-"getSeconds": 586712,
+"getSeconds": 0,
 "getApprox": true,
 "hourOnly": false,
 "speaker": "?",
-"text": "PERIOD - NO COMMUNICATIONS",
+"text": "REST PERIOD - NO COMMUNICATIONS",
 "unsure": [],
-"page": 1319
-},
-{
-"getSeconds": 586712,
-"getApprox": true,
-"hourOnly": false,
-"speaker": "?",
-"text": "BETWEEN /1",
-"unsure": [],
-"page": 1319
+"page": 1319,
+"loop": "CM"
 },
 {
 "getSeconds": 586712,

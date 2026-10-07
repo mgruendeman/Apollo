@@ -3,51 +3,51 @@
   "announcerLines": 2373,
   "checkedFine": 0,
   "corrected": 94,
-  "flagged": 1241,
-  "lines": 9157,
-  "notOnRecording": 262,
+  "flagged": 1160,
+  "lines": 8982,
+  "notOnRecording": 261,
   "recordedHours": 131.9,
-  "updated": "2026-10-06"
+  "updated": "2026-10-07"
  },
  "09": {
   "announcerLines": 2569,
   "checkedFine": 0,
   "corrected": 2,
-  "flagged": 4417,
-  "lines": 11795,
+  "flagged": 4379,
+  "lines": 11756,
   "notOnRecording": 104,
   "recordedHours": 47.6,
-  "updated": "2026-10-05"
+  "updated": "2026-10-07"
  },
  "10": {
   "announcerLines": 2080,
   "checkedFine": 0,
   "corrected": 13,
-  "flagged": 2979,
-  "lines": 12544,
+  "flagged": 2916,
+  "lines": 12426,
   "notOnRecording": 254,
   "recordedHours": 97.5,
-  "updated": "2026-10-06"
+  "updated": "2026-10-07"
  },
  "11": {
   "announcerLines": 2384,
   "checkedFine": 225,
-  "corrected": 501,
-  "flagged": 28,
+  "corrected": 504,
+  "flagged": 24,
   "lines": 8445,
   "notOnRecording": 55,
   "recordedHours": 101.2,
-  "updated": "2026-10-05"
+  "updated": "2026-10-07"
  },
  "12": {
   "announcerLines": 2637,
   "checkedFine": 14,
-  "corrected": 515,
-  "flagged": 337,
-  "lines": 15483,
+  "corrected": 517,
+  "flagged": 332,
+  "lines": 15477,
   "notOnRecording": 113,
   "recordedHours": 127.9,
-  "updated": "2026-10-06"
+  "updated": "2026-10-07"
  },
  "14": {
   "announcerLines": 2466,
@@ -57,36 +57,36 @@
   "lines": 13969,
   "notOnRecording": 1221,
   "recordedHours": 146.1,
-  "updated": "2026-10-06"
+  "updated": "2026-10-07"
  },
  "15": {
   "announcerLines": 1904,
   "checkedFine": 0,
-  "corrected": 7,
-  "flagged": 615,
-  "lines": 21081,
-  "notOnRecording": 1957,
+  "corrected": 91,
+  "flagged": 482,
+  "lines": 21109,
+  "notOnRecording": 1961,
   "recordedHours": 122.0,
-  "updated": "2026-10-06"
+  "updated": "2026-10-07"
  },
  "16": {
   "announcerLines": 3034,
   "checkedFine": 0,
-  "corrected": 0,
-  "flagged": 1372,
-  "lines": 28980,
-  "notOnRecording": 3367,
+  "corrected": 201,
+  "flagged": 1113,
+  "lines": 28992,
+  "notOnRecording": 3358,
   "recordedHours": 154.6,
-  "updated": "2026-10-05"
+  "updated": "2026-10-07"
  },
  "17": {
-  "announcerLines": 2657,
+  "announcerLines": 2656,
   "checkedFine": 0,
   "corrected": 0,
-  "flagged": 4869,
-  "lines": 32924,
-  "notOnRecording": 3681,
+  "flagged": 4775,
+  "lines": 32977,
+  "notOnRecording": 3680,
   "recordedHours": 186.1,
-  "updated": "2026-10-05"
+  "updated": "2026-10-07"
  }
 }
