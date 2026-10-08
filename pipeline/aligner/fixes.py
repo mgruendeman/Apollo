@@ -200,7 +200,7 @@ def apply_fixes(mission, lines, strict=True, segments=None, tape_words=None):
             ok = True
         else:   # unheard
             ok = any(abs(l['g'] - f['g']) <= 3600 and _norm(f['text']) in _norm(l['t']) and l.get('n') for l in lines)
-        if not ok:
+        if not ok and not f.get('by') == 'model':   # (a model's reading approved automatically: nothing to stop a run for)
             missing.append(f)
     if missing:
         msg = '\n'.join(f"  GET {f['g']}: {f.get('from', f.get('text'))!r}" for f in missing)
