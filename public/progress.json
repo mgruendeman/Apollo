@@ -1,9 +1,9 @@
 {
  "08": {
   "announcerLines": 2373,
-  "checkedFine": 280,
-  "corrected": 476,
-  "flagged": 503,
+  "checkedFine": 354,
+  "corrected": 493,
+  "flagged": 410,
   "lines": 8982,
   "notOnRecording": 253,
   "recordedHours": 131.9,
@@ -21,13 +21,13 @@
  },
  "10": {
   "announcerLines": 2080,
-  "checkedFine": 0,
-  "corrected": 13,
-  "flagged": 2916,
-  "lines": 12426,
+  "checkedFine": 1,
+  "corrected": 413,
+  "flagged": 2517,
+  "lines": 12428,
   "notOnRecording": 254,
   "recordedHours": 97.5,
-  "updated": "2026-10-07"
+  "updated": "2026-10-08"
  },
  "11": {
   "announcerLines": 2384,
