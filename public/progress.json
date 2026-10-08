@@ -21,11 +21,11 @@
  },
  "10": {
   "announcerLines": 2080,
-  "checkedFine": 1,
-  "corrected": 413,
-  "flagged": 2517,
+  "checkedFine": 21,
+  "corrected": 1036,
+  "flagged": 1851,
   "lines": 12428,
-  "notOnRecording": 254,
+  "notOnRecording": 255,
   "recordedHours": 97.5,
   "updated": "2026-10-08"
  },
