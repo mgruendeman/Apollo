@@ -1,13 +1,13 @@
 {
  "08": {
   "announcerLines": 2373,
-  "checkedFine": 0,
-  "corrected": 94,
-  "flagged": 1160,
+  "checkedFine": 280,
+  "corrected": 476,
+  "flagged": 503,
   "lines": 8982,
-  "notOnRecording": 261,
+  "notOnRecording": 253,
   "recordedHours": 131.9,
-  "updated": "2026-10-07"
+  "updated": "2026-10-08"
  },
  "09": {
   "announcerLines": 2569,
@@ -51,13 +51,13 @@
  },
  "13": {
   "announcerLines": 1787,
-  "checkedFine": 160,
-  "corrected": 251,
-  "flagged": 253,
+  "checkedFine": 277,
+  "corrected": 292,
+  "flagged": 94,
   "lines": 11176,
   "notOnRecording": 74,
   "recordedHours": 145.3,
-  "updated": "2026-10-07"
+  "updated": "2026-10-08"
  },
  "14": {
   "announcerLines": 2466,
@@ -91,12 +91,12 @@
  },
  "17": {
   "announcerLines": 2656,
-  "checkedFine": 3807,
+  "checkedFine": 3809,
   "corrected": 624,
-  "flagged": 309,
+  "flagged": 307,
   "lines": 32977,
   "notOnRecording": 3681,
   "recordedHours": 186.1,
-  "updated": "2026-10-07"
+  "updated": "2026-10-08"
  }
 }
