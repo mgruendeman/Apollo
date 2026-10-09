@@ -33,9 +33,19 @@ td.w { width:38%; padding-left:10px; } td.w i { display:block; height:8px; backg
 #viewer img { max-width:100%; max-height:80vh; border-radius:6px; }
 #viewer p { color:#ddd; margin:0; font-size:.9rem; text-align:center; } #viewer a { color:#e3a444; }
 .tip { position:fixed; pointer-events:none; background:var(--ink); color:var(--ground); font-size:.8rem; padding:3px 7px; border-radius:4px; display:none; }
+
+.bo-nav { position:sticky; top:0; z-index:40; display:flex; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; align-items:center; gap:4px 6px; padding:8px 16px;
+  background:var(--surface, #fff); border-bottom:1px solid var(--rule, #d3dad6); font:14px/1.4 system-ui, sans-serif; margin:-20px -16px 14px; }
+.bo-nav b { margin-right:8px; font-size:.95rem; }
+.bo-nav a { color:var(--ink, #1b2320); text-decoration:none; padding:4px 10px; border-radius:999px; }
+.bo-nav a:hover { background:var(--ground, #eef1ee); }
+.bo-nav a[aria-current=page] { background:var(--ink, #1b2320); color:var(--ground, #eef1ee); }
+.bo-nav .site { margin-left:auto; color:var(--accent, #b8741a); }
+@media (max-width: 640px) { .bo-nav b .long { display:none; } }
+[hidden] { display:none !important; }
 </style>
+<nav class="bo-nav" aria-label="Back office"><b>Apollo Rewind<span class="long"> back office</span></b><a href="./">Home</a><a href="photos.html">Photos</a><a href="transcript.html">Transcript lines</a><a href="reports.html">Reports</a><a href="stats.html" aria-current=page>Statistics</a><a class="site" href="/" target="_blank" rel="noreferrer">The site ↗</a></nav>
 <main>
-  <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a> · <a href="transcript.html">Transcript lines</a></p>
   <h1>Site statistics</h1>
   <p class="meta">Counted by the site itself: totals by day, with no cookies, no addresses and nothing that follows a visitor. A visitor is a device on a day; a person is a visitor who tapped, scrolled or pressed a key. Bots are counted apart: those that run the page by their name, and every page request (script or not) as browser or bot.</p>
   <div class="bar" role="group" aria-label="Period"><button data-d="7" aria-pressed="false">7 days</button><button data-d="30" aria-pressed="true">30 days</button><button data-d="90" aria-pressed="false">90 days</button><button data-d="365" aria-pressed="false">A year</button></div>

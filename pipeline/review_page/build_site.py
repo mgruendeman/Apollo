@@ -25,6 +25,26 @@ OUT = ROOT / 'public' / 'review'
 ASU = 'https://tothemoon.im-ldi.com'
 DIALS = ('brightness', 'contrast', 'shadows', 'highlights', 'warmth', 'tint', 'saturation', 'straighten', 'rotate')
 
+# The back office's menu, the same bar on every page (the page's own entry marked)
+NAV_ITEMS = [('./', 'Home'), ('photos.html', 'Photos'), ('transcript.html', 'Transcript lines'), ('reports.html', 'Reports'), ('stats.html', 'Statistics')]
+NAV_CSS = """
+.bo-nav { position:sticky; top:0; z-index:40; display:flex; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; align-items:center; gap:4px 6px; padding:8px 16px;
+  background:var(--surface, #fff); border-bottom:1px solid var(--rule, #d3dad6); font:14px/1.4 system-ui, sans-serif; margin:-20px -16px 14px; }
+.bo-nav b { margin-right:8px; font-size:.95rem; }
+.bo-nav a { color:var(--ink, #1b2320); text-decoration:none; padding:4px 10px; border-radius:999px; }
+.bo-nav a:hover { background:var(--ground, #eef1ee); }
+.bo-nav a[aria-current=page] { background:var(--ink, #1b2320); color:var(--ground, #eef1ee); }
+.bo-nav .site { margin-left:auto; color:var(--accent, #b8741a); }
+@media (max-width: 640px) { .bo-nav b .long { display:none; } }
+[hidden] { display:none !important; }
+"""
+
+
+def nav(current):
+    links = ''.join(f'<a href="{href}"{" aria-current=page" if href == current else ""}>{label}</a>' for href, label in NAV_ITEMS)
+    return (f'<nav class="bo-nav" aria-label="Back office"><b>Apollo Rewind<span class="long"> back office</span></b>{links}'
+            f'<a class="site" href="/" target="_blank" rel="noreferrer">The site ↗</a></nav>')
+
 
 def scan_url(fid, fmt):
     roll = fid[:4].upper()
@@ -49,17 +69,19 @@ def main():
     page = (HERE / 'template.html').read_text()
     page = page.replace('__SCRIPT__', (HERE / 'site_shim.js').read_text() + '\n' + script)
     page = page.replace("Reviews can't be saved in this view. Open the page in Claude to review.", 'Sign in to review.')
-    page = page.replace('<nav class="strip"', '<p class="notice" style="background:none;padding:4px 16px"><a href="reports.html">Problem reports →</a> · <a href="transcript.html">Transcript lines to check →</a> · <a href="stats.html">Site statistics →</a></p>\n  <nav class="strip"', 1)
-    page = page.replace('</style>', SIGNIN_CSS + '</style>', 1)
+    page = page.replace('<nav class="strip"', nav('photos.html').replace('margin:-20px -16px 14px', '') + '\n  <nav class="strip"', 1)
+    page = page.replace('</style>', SIGNIN_CSS + NAV_CSS.replace('margin:-20px -16px 14px;', 'margin:0 0 6px;') + '</style>', 1)
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / 'index.html').write_text('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex">\n' + page)
-    (OUT / 'reports.html').write_text(REPORTS)
-    (OUT / 'stats.html').write_text(STATS)
+    (OUT / 'photos.html').write_text('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex">\n' + page)
+    (OUT / 'index.html').write_text(HUB.replace('__NAV__', nav('./')).replace('__NAVCSS__', NAV_CSS).replace('__PHOTOS__', str(len(frames))))
+    (OUT / 'reports.html').write_text(REPORTS.replace('<main>', nav('reports.html') + '\n<main>', 1).replace('</style>', NAV_CSS + '</style>', 1))
+    (OUT / 'stats.html').write_text(STATS.replace('<main>', nav('stats.html') + '\n<main>', 1).replace('</style>', NAV_CSS + '</style>', 1))
     # a button for each mission with a review list (public/review/transcript/apolloNN.json)
     listed = sorted(int(p.stem.removeprefix('apollo')) for p in (OUT / 'transcript').glob('apollo*.json'))
     buttons = ' '.join(f'<button data-m="{n:02d}" aria-pressed="{str(k == 0).lower()}">Apollo {n}</button>' for k, n in enumerate(listed))
-    (OUT / 'transcript.html').write_text(TRANSCRIPT.replace('__MISSION_BUTTONS__', buttons))
-    print(f'wrote {OUT}/index.html ({len(frames)} photos), reports.html and transcript.html')
+    (OUT / 'transcript.html').write_text(TRANSCRIPT.replace('__MISSION_BUTTONS__', buttons)
+                                         .replace('<main>', nav('transcript.html') + '\n<main>', 1).replace('</style>', NAV_CSS + '</style>', 1))
+    print(f'wrote {OUT}/index.html (the back office), photos.html ({len(frames)} photos), transcript.html, reports.html and stats.html')
 
 
 SIGNIN_CSS = """
@@ -95,7 +117,6 @@ pre { margin:0; white-space:pre-wrap; font-size:.8rem; color:var(--muted); backg
 a { color:var(--accent); }
 </style>
 <main>
-  <p><a href="./">← Photo review</a></p>
   <h1>Problem reports</h1>
   <p class="meta">Reports you send while signed in go straight to Claude's fix list. Visitors' reports wait here until you send them on.</p>
   <div class="bar" role="group" aria-label="Show">
@@ -153,6 +174,77 @@ countWaiting()
 </script>
 """
 
+HUB = r"""<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Back Office</title>
+<style>
+:root { --ground:#eef1ee; --surface:#fff; --ink:#1b2320; --muted:#5d6a65; --rule:#d3dad6; --accent:#b8741a; --good:#2f7d4f; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --ground:#101513; --surface:#182019; --ink:#e3eae5; --muted:#98a69f; --rule:#2c3830; --accent:#e3a444; --good:#6cc48f; color-scheme: dark; } }
+body { margin:0; background:var(--ground); color:var(--ink); font:15px/1.5 system-ui, sans-serif; padding:20px 16px 40px; }
+main { max-width:900px; margin:0 auto; display:grid; gap:16px; }
+h1 { margin:0; font-size:1.6rem; } .meta { color:var(--muted); font-size:.88rem; margin:0; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; }
+.card { display:grid; gap:6px; align-content:start; background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:16px; color:inherit; text-decoration:none; }
+.card:hover { border-color:var(--accent); }
+.card h2 { margin:0; font-size:1.1rem; } .card p { margin:0; color:var(--muted); font-size:.88rem; }
+.card .big { font-size:1.7rem; font-weight:700; color:var(--ink); line-height:1.1; } .card .big small { font-size:.85rem; font-weight:400; color:var(--muted); }
+.signin { display:grid; gap:10px; max-width:340px; background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:20px; }
+.signin input { font:1rem system-ui; padding:8px 10px; border:1px solid var(--rule); border-radius:6px; background:var(--ground); color:var(--ink); }
+.signin button { font:600 1rem system-ui; padding:9px; border:0; border-radius:6px; background:var(--accent); color:#fff; cursor:pointer; }
+.err { color:#c0392b; min-height:1.2em; margin:0; font-size:.88rem; }
+__NAVCSS__
+</style>
+__NAV__
+<main>
+  <h1>Back office</h1>
+  <p class="meta">Everything behind the scenes of apollorewind.com in one place: the photo review, the transcript lines to check, listeners' problem reports and the site's statistics.</p>
+  <form class="signin" id="signin" hidden><strong>Sign in</strong><span class="meta">Enter the review password.</span>
+    <input type="password" autocomplete="current-password" aria-label="Password" required><button type="submit">Sign in</button><p class="err" role="alert"></p></form>
+  <div class="cards" id="cards">
+    <a class="card" href="photos.html"><h2>Photos</h2><div class="big" id="c-photos">…</div><p>Check each cleaned-up photo: good, a crop or colour fix, or reject.</p></a>
+    <a class="card" href="transcript.html"><h2>Transcript lines</h2><div class="big" id="c-lines">…</div><p>NASA's typed lines that look doubtful, with the tape, the page and the model's reading.</p></a>
+    <a class="card" href="reports.html"><h2>Problem reports</h2><div class="big" id="c-reports">…</div><p>Visitors' reports wait here for you; yours go straight to the fix list.</p></a>
+    <a class="card" href="stats.html"><h2>Site statistics</h2><div class="big" id="c-stats">…</div><p>Visits, where they come from, people or bots, and what gets listened to.</p></a>
+    <a class="card" href="/" target="_blank" rel="noreferrer"><h2>The site ↗</h2><div class="big">apollorewind.com</div><p>The public site, in a new tab.</p></a>
+  </div>
+</main>
+<script>
+const PHOTOS = __PHOTOS__
+const MISSIONS = ['08', '09', '10', '11', '12', '13', '14', '15', '16', '17']
+const get = (p) => fetch('/api/review' + p, { credentials: 'same-origin' })
+const set = (id, html) => { document.getElementById(id).innerHTML = html }
+async function load() {
+  const me = await get('/me')
+  if (me.status === 401) {
+    const f = document.getElementById('signin'); f.hidden = false; f.querySelector('input').focus()
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const r = await fetch('/api/review/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: f.querySelector('input').value }) })
+      if (r.ok) location.reload(); else f.querySelector('.err').textContent = (await r.json().catch(() => ({}))).error || 'Sign-in failed.'
+    })
+    for (const id of ['c-photos', 'c-lines', 'c-reports', 'c-stats']) set(id, '<small>sign in to see</small>')
+    return
+  }
+  get('/marks').then((r) => r.json()).then(({ reviews }) => {
+    const done = reviews.length
+    set('c-photos', `${Math.max(0, PHOTOS - done).toLocaleString()} <small>to review, of ${PHOTOS.toLocaleString()}</small>`)
+  }).catch(() => set('c-photos', '<small>could not load</small>'))
+  Promise.all(MISSIONS.map((m) => fetch('transcript/apollo' + m + '.json').then((r) => (r.ok ? r.json() : [])).catch(() => []))).then((lists) => {
+    const lines = lists.reduce((a, l) => a + l.length, 0), sug = lists.reduce((a, l) => a + l.filter((x) => 'suggest' in x).length, 0)
+    set('c-lines', `${lines.toLocaleString()} <small>to check, ${sug.toLocaleString()} with a suggested reading</small>`)
+  })
+  Promise.all(['pending', 'new'].map((s) => get('/reports?status=' + s).then((r) => r.json()).then((d) => (d.reports || []).length))).then(([pending, fresh]) => {
+    set('c-reports', `${pending} <small>waiting for you, ${fresh} with Claude</small>`)
+  }).catch(() => set('c-reports', '<small>could not load</small>'))
+  get('/stats?days=7').then((r) => r.json()).then(({ visitors, humans = [] }) => {
+    const v = visitors.reduce((a, x) => a + x.n, 0), h = humans.reduce((a, x) => a + x.n, 0)
+    set('c-stats', `${v.toLocaleString()} <small>visitor-days this week, ${h.toLocaleString()} of them people</small>`)
+  }).catch(() => set('c-stats', '<small>could not load</small>'))
+}
+load()
+</script>
+"""
+
+
 STATS = r"""<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
 <title>Site Statistics</title>
 <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
@@ -190,7 +282,6 @@ td.w { width:38%; padding-left:10px; } td.w i { display:block; height:8px; backg
 .tip { position:fixed; pointer-events:none; background:var(--ink); color:var(--ground); font-size:.8rem; padding:3px 7px; border-radius:4px; display:none; }
 </style>
 <main>
-  <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a> · <a href="transcript.html">Transcript lines</a></p>
   <h1>Site statistics</h1>
   <p class="meta">Counted by the site itself: totals by day, with no cookies, no addresses and nothing that follows a visitor. A visitor is a device on a day; a person is a visitor who tapped, scrolled or pressed a key. Bots are counted apart: those that run the page by their name, and every page request (script or not) as browser or bot.</p>
   <div class="bar" role="group" aria-label="Period"><button data-d="7" aria-pressed="false">7 days</button><button data-d="30" aria-pressed="true">30 days</button><button data-d="90" aria-pressed="false">90 days</button><button data-d="365" aria-pressed="false">A year</button></div>
@@ -440,7 +531,6 @@ button.play { border-color:var(--accent); color:var(--accent); }
 .fix textarea { font:inherit; padding:8px; border:1px solid var(--rule); border-radius:6px; background:var(--ground); color:var(--ink); resize:vertical; }
 </style>
 <main>
-  <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a></p>
   <h1>Transcript lines to check</h1>
   <p class="intro">Lines that look doubtful — damaged words, a speaker or time the scan lost, or words the tape hears differently — each shown with the lines around it, since mistakes come in clusters. Under each listed line: what the tape says over it, the row as NASA typed it on the scanned page, and where the tape's words mend a damaged word, a suggested reading to Accept with one tap. Press ▶ to hear a line (all of it, from a few seconds before; as often as you like) and Report to say what it should be. A line you've reported is put aside here straight away, and leaves the list at the next run.</p>
   <audio id="player" preload="none"></audio>

@@ -51,9 +51,19 @@ button.play { border-color:var(--accent); color:var(--accent); }
 .done { color:var(--ok); font-size:.85rem; }
 .fix { display:grid; gap:6px; margin-top:4px; }
 .fix textarea { font:inherit; padding:8px; border:1px solid var(--rule); border-radius:6px; background:var(--ground); color:var(--ink); resize:vertical; }
+
+.bo-nav { position:sticky; top:0; z-index:40; display:flex; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; align-items:center; gap:4px 6px; padding:8px 16px;
+  background:var(--surface, #fff); border-bottom:1px solid var(--rule, #d3dad6); font:14px/1.4 system-ui, sans-serif; margin:-20px -16px 14px; }
+.bo-nav b { margin-right:8px; font-size:.95rem; }
+.bo-nav a { color:var(--ink, #1b2320); text-decoration:none; padding:4px 10px; border-radius:999px; }
+.bo-nav a:hover { background:var(--ground, #eef1ee); }
+.bo-nav a[aria-current=page] { background:var(--ink, #1b2320); color:var(--ground, #eef1ee); }
+.bo-nav .site { margin-left:auto; color:var(--accent, #b8741a); }
+@media (max-width: 640px) { .bo-nav b .long { display:none; } }
+[hidden] { display:none !important; }
 </style>
+<nav class="bo-nav" aria-label="Back office"><b>Apollo Rewind<span class="long"> back office</span></b><a href="./">Home</a><a href="photos.html">Photos</a><a href="transcript.html" aria-current=page>Transcript lines</a><a href="reports.html">Reports</a><a href="stats.html">Statistics</a><a class="site" href="/" target="_blank" rel="noreferrer">The site ↗</a></nav>
 <main>
-  <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a></p>
   <h1>Transcript lines to check</h1>
   <p class="intro">Lines that look doubtful — damaged words, a speaker or time the scan lost, or words the tape hears differently — each shown with the lines around it, since mistakes come in clusters. Under each listed line: what the tape says over it, the row as NASA typed it on the scanned page, and where the tape's words mend a damaged word, a suggested reading to Accept with one tap. Press ▶ to hear a line (all of it, from a few seconds before; as often as you like) and Report to say what it should be. A line you've reported is put aside here straight away, and leaves the list at the next run.</p>
   <audio id="player" preload="none"></audio>

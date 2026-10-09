@@ -19,9 +19,19 @@ pre { margin:0; white-space:pre-wrap; font-size:.8rem; color:var(--muted); backg
 .from.public { border-color:var(--accent); color:var(--accent); }
 .actions .go { border-color:var(--good); color:var(--good); }
 a { color:var(--accent); }
+
+.bo-nav { position:sticky; top:0; z-index:40; display:flex; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; align-items:center; gap:4px 6px; padding:8px 16px;
+  background:var(--surface, #fff); border-bottom:1px solid var(--rule, #d3dad6); font:14px/1.4 system-ui, sans-serif; margin:-20px -16px 14px; }
+.bo-nav b { margin-right:8px; font-size:.95rem; }
+.bo-nav a { color:var(--ink, #1b2320); text-decoration:none; padding:4px 10px; border-radius:999px; }
+.bo-nav a:hover { background:var(--ground, #eef1ee); }
+.bo-nav a[aria-current=page] { background:var(--ink, #1b2320); color:var(--ground, #eef1ee); }
+.bo-nav .site { margin-left:auto; color:var(--accent, #b8741a); }
+@media (max-width: 640px) { .bo-nav b .long { display:none; } }
+[hidden] { display:none !important; }
 </style>
+<nav class="bo-nav" aria-label="Back office"><b>Apollo Rewind<span class="long"> back office</span></b><a href="./">Home</a><a href="photos.html">Photos</a><a href="transcript.html">Transcript lines</a><a href="reports.html" aria-current=page>Reports</a><a href="stats.html">Statistics</a><a class="site" href="/" target="_blank" rel="noreferrer">The site ↗</a></nav>
 <main>
-  <p><a href="./">← Photo review</a></p>
   <h1>Problem reports</h1>
   <p class="meta">Reports you send while signed in go straight to Claude's fix list. Visitors' reports wait here until you send them on.</p>
   <div class="bar" role="group" aria-label="Show">
