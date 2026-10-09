@@ -180,6 +180,13 @@ td.n { text-align:right; white-space:nowrap; padding-left:10px; font-variant-num
 td.w { width:38%; padding-left:10px; } td.w i { display:block; height:8px; background:var(--bar); border-radius:4px; }
 .grid2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:14px; }
 .meta, .empty { color:var(--muted); font-size:.85rem; }
+.thumbs { display:grid; grid-template-columns:repeat(auto-fill, minmax(110px, 1fr)); gap:10px; }
+.thumbs button { all:unset; cursor:pointer; display:grid; gap:3px; font-size:.78rem; color:var(--muted); }
+.thumbs img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; background:var(--empty); }
+.thumbs b { color:var(--ink); }
+#viewer { position:fixed; inset:0; background:rgba(0,0,0,.88); display:none; align-items:center; justify-content:center; flex-direction:column; gap:10px; z-index:9; padding:16px; }
+#viewer img { max-width:100%; max-height:80vh; border-radius:6px; }
+#viewer p { color:#ddd; margin:0; font-size:.9rem; text-align:center; } #viewer a { color:#e3a444; }
 .tip { position:fixed; pointer-events:none; background:var(--ink); color:var(--ground); font-size:.8rem; padding:3px 7px; border-radius:4px; display:none; }
 </style>
 <main>
@@ -204,10 +211,11 @@ td.w { width:38%; padding-left:10px; } td.w i { display:block; height:8px; backg
     <section><h2>Pages</h2><table id="pages"></table></section>
     <section><h2>Countries</h2><table id="countries"></table></section>
     <section><h2>Reactions</h2><table id="reacts"></table></section>
-    <section><h2>Photos opened</h2><table id="photos"></table></section>
+    <section style="grid-column:1/-1"><h2>Photos opened</h2><div id="photos" class="thumbs"></div></section>
   </div>
 </main>
 <div class="tip" id="tip"></div>
+<div id="viewer"><img alt=""><p></p></div>
 <script>
 let days = 30, world = null
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
@@ -328,8 +336,42 @@ async function load() {
   table('pages', sum(rows, 'page', (x) => x.item))
   table('countries', [...byCountry.entries()].sort((a, b) => b[1] - a[1]), country)
   table('reacts', sum(rows, 'react', (x) => x.item + ' ' + mname(x.mission)))
-  table('photos', sum(rows, 'photo', (x) => x.item))
+  photos(sum(rows, 'photo', (x) => x.item).slice(0, 48))
 }
+// A photo by its id: a film frame ("AS11-40-5875": our cleaned copy, else the film scan) or a NASA
+// image ("S69-25862"): the picture to try first, the ones after it, and where it comes from.
+const MEDIA = 'https://pub-7070d40e34dc47deaf91a77ffc426969.r2.dev'
+function photoSources(id) {
+  const m = /^AS(\d\d)-/i.exec(id)
+  if (m) return {
+    thumbs: [`${MEDIA}/photos/${m[1]}/${id}.thumb.jpg`, `https://tothemoon.im-ldi.com/data_a70/${id.slice(0, 4).toUpperCase()}/extra/${id}.thumb.png`, `https://tothemoon.im-ldi.com/data_a/${id.slice(0, 4).toUpperCase()}/png/${id}_THM.png`],
+    fulls: [`${MEDIA}/photos/${m[1]}/${id}.jpg`, `https://tothemoon.im-ldi.com/data_a70/${id.slice(0, 4).toUpperCase()}/extra/${id}.small.png`, `https://tothemoon.im-ldi.com/data_a/${id.slice(0, 4).toUpperCase()}/png/${id}_SML.png`],
+    source: `https://tothemoon.im-ldi.com/gallery/Apollo/${Number(m[1])}`, label: 'Apollo Image Gallery (ASU)' }
+  const n = id.toLowerCase()
+  return { thumbs: [`https://images-assets.nasa.gov/image/${id}/${id}~small.jpg`, `https://images-assets.nasa.gov/image/${n}/${n}~small.jpg`],
+    fulls: [`https://images-assets.nasa.gov/image/${id}/${id}~large.jpg`, `https://images-assets.nasa.gov/image/${n}/${n}~large.jpg`],
+    source: `https://images.nasa.gov/details/${id}`, label: 'NASA Image Library' }
+}
+function tryNext(img, list) {   // on a failed picture, the next address in its list
+  img.onerror = () => { const next = list.shift(); if (next) img.src = next; else img.onerror = null }
+  img.src = list.shift()
+}
+function photos(entries) {
+  const el = document.getElementById('photos')
+  if (!entries.length) { el.innerHTML = '<p class="empty">Nothing yet.</p>'; return }
+  el.innerHTML = entries.map(([id, n]) => `<button data-id="${esc(id)}" title="${esc(id)}"><img alt="${esc(id)}" loading="lazy"><span><b>${esc(id)}</b> · ${n}×</span></button>`).join('')
+  el.querySelectorAll('button').forEach((b) => tryNext(b.querySelector('img'), photoSources(b.dataset.id).thumbs))
+}
+const viewer = document.getElementById('viewer')
+document.getElementById('photos').addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return
+  const src = photoSources(b.dataset.id)
+  tryNext(viewer.querySelector('img'), src.fulls.slice())
+  viewer.querySelector('p').innerHTML = `${esc(b.dataset.id)} · <a href="${src.source}" target="_blank" rel="noreferrer">${src.label} ↗</a> · tap anywhere to close`
+  viewer.style.display = 'flex'
+})
+viewer.addEventListener('click', (e) => { if (!e.target.closest('a')) viewer.style.display = 'none' })
+addEventListener('keydown', (e) => { if (e.key === 'Escape') viewer.style.display = 'none' })
 document.querySelector('.bar').addEventListener('click', (e) => {
   const b = e.target.closest('button'); if (!b) return
   days = Number(b.dataset.d)
