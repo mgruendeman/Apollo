@@ -26,11 +26,61 @@ const SCHEMA = [
      n INTEGER NOT NULL, PRIMARY KEY (day, kind, mission, item))`,
   // a day's distinct visitors: a hash of the address salted with the day, so it can't be followed from one day to the next
   `CREATE TABLE IF NOT EXISTS stats_visitors (day TEXT NOT NULL, visitor TEXT NOT NULL, PRIMARY KEY (day, visitor))`,
+  // the day's visitors who did something a person does (tapped, scrolled, pressed a key, played)
+  `CREATE TABLE IF NOT EXISTS stats_humans (day TEXT NOT NULL, visitor TEXT NOT NULL, PRIMARY KEY (day, visitor))`,
 ]
 const LIMITS = { like: 1000, report: 60, react: 5000, stat: 3000 } // per scrambled IP address, per day
 // what the site counts (src/lib/track.js): a page, a mission opened, the tapes played, minutes listened
 // (item: the mission hour), a highlight, a photo opened, a reaction, a search, a report sent
-const STAT_KINDS = new Set(['page', 'mission', 'play', 'listen', 'highlight', 'photo', 'react', 'report', 'clip'])
+const STAT_KINDS = new Set(['page', 'mission', 'play', 'listen', 'highlight', 'photo', 'react', 'report', 'clip', 'landing', 'engaged'])
+
+// A user agent that says it's a crawler, a preview fetcher or a script. (Most bots never run the page's
+// script at all; those show up only in the server's own count of page requests, kind 'hit'.)
+const BOT_UA = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora link|whatsapp|telegram|discord|slack|skype|vkshare|pinterest|headless|lighthouse|pagespeed|gtmetrix|curl|wget|python|httpx|axios|node-fetch|go-http|java\/|okhttp|scrapy|phantom|selenium|puppeteer|playwright|monitor|uptime|preview/i
+function botName(ua) {
+  if (!ua) return 'no user agent'
+  const m = ua.match(BOT_UA)
+  if (!m) return null
+  const named = ua.match(/([A-Za-z][\w-]*(?:bot|Bot|crawler|spider|Spider))/)
+  return (named ? named[1] : m[0]).toLowerCase().slice(0, 40)
+}
+function device(ua) {
+  if (/iPad|Tablet|Nexus (7|9|10)|SM-T/i.test(ua)) return 'tablet'
+  if (/Mobi|iPhone|Android/i.test(ua)) return 'phone'
+  return 'computer'
+}
+function browser(ua) {
+  if (/Edg\//.test(ua)) return 'Edge'
+  if (/OPR\/|Opera/.test(ua)) return 'Opera'
+  if (/SamsungBrowser/.test(ua)) return 'Samsung Internet'
+  if (/Firefox\//.test(ua)) return 'Firefox'
+  if (/Chrome\//.test(ua)) return 'Chrome'
+  if (/Safari\//.test(ua)) return 'Safari'
+  return 'other'
+}
+// Where a visit came from, by the referring site: a search engine, social media, another site's link, or nothing (typed, bookmarked, an app)
+const SEARCH = /(^|\.)(google|bing|duckduckgo|yahoo|ecosia|baidu|yandex|startpage|brave|qwant|kagi|aol|ask|naver)\./i
+const SOCIAL = /(^|\.)(facebook|fb|instagram|t\.co|twitter|x\.com|reddit|redd\.it|youtube|youtu\.be|linkedin|lnkd|tiktok|pinterest|tumblr|mastodon|threads|bsky|bluesky|discord|whatsapp|telegram|news\.ycombinator|lemmy)/i
+function source(host) {
+  if (!host) return 'direct'
+  host = host.replace(/^www\./, '').toLowerCase()
+  if (/apollorewind|workers\.dev|localhost/.test(host)) return ''
+  if (SEARCH.test(host)) return 'search:' + host.split('.').slice(-2, -1)[0]
+  if (SOCIAL.test(host) || host === 'x.com' || host === 't.co') return 'social:' + host
+  return 'link:' + host
+}
+
+// The server's own count of page requests (the site's pages, not its files): every request, script or no
+// script, so the bots that never run the page show here; 'browser' for the rest.
+async function countHit(env, request) {
+  try {
+    await ready(env)
+    const ua = request.headers.get('User-Agent') || ''
+    const bot = botName(ua)
+    await env.DB.prepare(`INSERT INTO stats (day, kind, mission, item, n) VALUES (?1, 'hit', '', ?2, 1)
+      ON CONFLICT(day, kind, mission, item) DO UPDATE SET n = n + 1`).bind(today(), bot ? 'bot: ' + bot : 'browser').run()
+  } catch {}
+}
 // 🤣 funny, 😲 wow, ‼️ big moment, ❤️ moving, 😬 tense (src/lib/reactions.js has the same list)
 const EMOJIS = ['🤣', '😲', '‼️', '❤️', '😬']
 const SESSION_DAYS = 30
@@ -78,19 +128,34 @@ async function addStat(env, request) {
   if (!(await underLimit(env, request, 'stat'))) return json({ ok: true })   // (quietly: no point telling a bot)
   const day = today()
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown'
-  const visitor = (await sha256(`${env.HASH_SALT || ''}|visit|${day}|${ip}|${request.headers.get('User-Agent') || ''}`)).slice(0, 24)
+  const ua = request.headers.get('User-Agent') || ''
+  const add = (kind, item, n = 1, mission = '') => env.DB.prepare(`INSERT INTO stats (day, kind, mission, item, n) VALUES (?1, ?2, ?3, ?4, ?5)
+      ON CONFLICT(day, kind, mission, item) DO UPDATE SET n = n + ?5`).bind(day, kind, mission, item, n)
+  const bot = botName(ua)
+  if (bot) {   // a bot that runs scripts: counted as one, and nothing else of it kept
+    await add('bot', bot).run()
+    return json({ ok: true })
+  }
+  const visitor = (await sha256(`${env.HASH_SALT || ''}|visit|${day}|${ip}|${ua}`)).slice(0, 24)
   const country = (request.cf && request.cf.country) || ''
   const stmts = [env.DB.prepare(`INSERT OR IGNORE INTO stats_visitors (day, visitor) VALUES (?1, ?2)`).bind(day, visitor)]
   for (const e of events) {
     const kind = String(e.kind || '')
     if (!STAT_KINDS.has(kind)) continue
     const mission = String(e.mission || '').slice(0, 4)
-    const item = String(e.item || '').slice(0, 80)
+    let item = String(e.item || '').slice(0, 80)
     const n = Math.max(1, Math.min(120, Math.round(Number(e.n) || 1)))
-    stmts.push(env.DB.prepare(`INSERT INTO stats (day, kind, mission, item, n) VALUES (?1, ?2, ?3, ?4, ?5)
-      ON CONFLICT(day, kind, mission, item) DO UPDATE SET n = n + ?5`).bind(day, kind, mission, item, n))
-    if (kind === 'page' && country) stmts.push(env.DB.prepare(`INSERT INTO stats (day, kind, mission, item, n) VALUES (?1, 'country', '', ?2, 1)
-      ON CONFLICT(day, kind, mission, item) DO UPDATE SET n = n + 1`).bind(day, country))
+    if (kind === 'engaged') {
+      stmts.push(env.DB.prepare(`INSERT OR IGNORE INTO stats_humans (day, visitor) VALUES (?1, ?2)`).bind(day, visitor))
+      continue
+    }
+    if (kind === 'landing') {   // the first page of a visit: where it came from, the device, the hour (UTC)
+      item = source(item)
+      if (item === '') continue
+      stmts.push(add('device', device(ua)), add('browser', browser(ua)), add('hour', String(new Date().getUTCHours())))
+    }
+    stmts.push(add(kind, item, n, mission))
+    if (kind === 'page' && country) stmts.push(add('country', country))
   }
   await env.DB.batch(stmts)
   return json({ ok: true })
@@ -99,12 +164,13 @@ async function addStat(env, request) {
 async function getStats(env, url) {
   const days = Math.max(1, Math.min(365, Number(url.searchParams.get('days')) || 30))
   const since = new Date(Date.now() - (days - 1) * 86400000).toISOString().slice(0, 10)
-  const [rows, visitors, reports] = await Promise.all([
+  const [rows, visitors, humans, reports] = await Promise.all([
     env.DB.prepare(`SELECT day, kind, mission, item, n FROM stats WHERE day >= ?1`).bind(since).all(),
     env.DB.prepare(`SELECT day, COUNT(*) AS n FROM stats_visitors WHERE day >= ?1 GROUP BY day`).bind(since).all(),
+    env.DB.prepare(`SELECT day, COUNT(*) AS n FROM stats_humans WHERE day >= ?1 GROUP BY day`).bind(since).all(),
     env.DB.prepare(`SELECT substr(at, 1, 10) AS day, COUNT(*) AS n FROM reports WHERE at >= ?1 GROUP BY day`).bind(since).all(),
   ])
-  return json({ since, rows: rows.results, visitors: visitors.results, reports: reports.results })
+  return json({ since, rows: rows.results, visitors: visitors.results, humans: humans.results, reports: reports.results })
 }
 
 // ---------- reviewer sign-in: a password, then a signed cookie ----------
@@ -317,11 +383,16 @@ async function media(env, key, request) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url)
     const { pathname } = url
     const method = request.method
-    if (!pathname.startsWith('/api/')) return env.ASSETS.fetch(request)
+    if (!pathname.startsWith('/api/')) {
+      // a page (the site itself, not one of its files, and not the reviewer pages): counted, script or no script
+      const page = method === 'GET' && (pathname === '/' || pathname.endsWith('.html') || !/\.[a-z0-9]{2,5}$/i.test(pathname))
+      if (page && !pathname.startsWith('/review') && ctx) ctx.waitUntil(countHit(env, request))
+      return env.ASSETS.fetch(request)
+    }
     try {
       await ready(env)
       if (pathname === '/api/likes' && method === 'GET') return getLikes(env, url)

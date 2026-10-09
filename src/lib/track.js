@@ -1,7 +1,8 @@
 // Anonymous site statistics: counts only, sent to our server's /api/stat
 // (worker/index.js keeps them as totals by day). No cookies, no visitor id,
-// nothing about who you are; a page, a mission, a highlight or a photo, and
-// how many minutes of tape were played, by mission hour.
+// nothing about who you are; a page, a mission, a highlight or a photo, how
+// many minutes of tape were played, by mission hour, the name of the site a
+// visit came from, and whether the visitor did anything a person does.
 
 const queue = []
 let timer = null
@@ -22,6 +23,24 @@ export function track(kind, mission = '', item = '', n = 1) {
   const m = /^\d+$/.test(String(mission)) ? String(mission).padStart(2, '0') : String(mission || '')   // ("8" and "08" alike)
   queue.push({ kind, mission: m, item: item ? String(item) : '', n })
   if (!timer) timer = setTimeout(flush, 2000)
+}
+
+if (typeof window !== 'undefined' && !/^(localhost|127\.)/.test(location.hostname)) {
+  // where this visit came from (the referring site's name only; '' when typed or bookmarked), once per visit
+  try {
+    if (!sessionStorage.getItem('landed')) {
+      sessionStorage.setItem('landed', '1')
+      let ref = ''
+      try { ref = document.referrer ? new URL(document.referrer).hostname : '' } catch {}
+      track('landing', '', ref)
+    }
+  } catch { track('landing', '', '') }
+  // the first thing a person does on a page (a tap, a key, a scroll): a visitor that is a person, not a bot
+  const engaged = () => {
+    track('engaged')
+    for (const ev of ['pointerdown', 'keydown', 'scroll', 'touchstart']) removeEventListener(ev, engaged, true)
+  }
+  for (const ev of ['pointerdown', 'keydown', 'scroll', 'touchstart']) addEventListener(ev, engaged, { capture: true, passive: true })
 }
 
 if (typeof window !== 'undefined') {

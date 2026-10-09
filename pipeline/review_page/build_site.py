@@ -155,52 +155,71 @@ countWaiting()
 
 STATS = r"""<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
 <title>Site Statistics</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
 <style>
-:root { --ground:#eef1ee; --surface:#fff; --ink:#1b2320; --muted:#5d6a65; --rule:#d3dad6; --accent:#b8741a; --bar:#c9873a; color-scheme: light; }
-@media (prefers-color-scheme: dark) { :root { --ground:#101513; --surface:#182019; --ink:#e3eae5; --muted:#98a69f; --rule:#2c3830; --accent:#e3a444; --bar:#e3a444; color-scheme: dark; } }
+:root { --ground:#eef1ee; --surface:#fff; --ink:#1b2320; --muted:#5d6a65; --rule:#d3dad6; --accent:#b8741a; --bar:#c9873a; --c2:#3f7f9a; --c3:#7a9a3f; --empty:#e6ebe7; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root { --ground:#101513; --surface:#182019; --ink:#e3eae5; --muted:#98a69f; --rule:#2c3830; --accent:#e3a444; --bar:#e3a444; --c2:#6db3d1; --c3:#a9cc6a; --empty:#232d27; color-scheme: dark; } }
 body { margin:0; background:var(--ground); color:var(--ink); font:15px/1.5 system-ui, sans-serif; padding:20px 16px 40px; }
-main { max-width:900px; margin:0 auto; display:grid; gap:14px; }
+main { max-width:1000px; margin:0 auto; display:grid; gap:14px; }
 h1 { margin:0; font-size:1.5rem; } h2 { margin:0 0 8px; font-size:1.05rem; }
 a { color:var(--accent); }
 .bar { display:flex; flex-wrap:wrap; gap:8px; }
 .bar button { font:inherit; padding:5px 12px; border:1px solid var(--rule); border-radius:999px; background:var(--surface); color:var(--ink); cursor:pointer; }
 .bar button[aria-pressed=true] { background:var(--ink); color:var(--ground); }
 .tiles { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px; }
-.tile, section { background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:12px 14px; }
+.tile, section { background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:12px 14px; min-width:0; }
 .tile b { display:block; font-size:1.6rem; line-height:1.2; } .tile span { color:var(--muted); font-size:.82rem; }
-.chart { display:flex; align-items:flex-end; gap:2px; height:120px; }
-.chart div { flex:1; background:var(--bar); border-radius:2px 2px 0 0; min-height:1px; position:relative; }
-.axis { display:flex; justify-content:space-between; color:var(--muted); font-size:.75rem; margin-top:4px; }
+svg { display:block; width:100%; height:auto; overflow:visible; }
+svg text { fill:var(--muted); font-size:11px; }
+.axis line, .axis path { stroke:var(--rule); }
+.legend { display:flex; gap:14px; flex-wrap:wrap; font-size:.82rem; color:var(--muted); margin-top:6px; }
+.legend i { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
 table { width:100%; border-collapse:collapse; font-size:.9rem; }
 td { padding:4px 0; border-bottom:1px solid var(--rule); vertical-align:middle; }
 td.n { text-align:right; white-space:nowrap; padding-left:10px; font-variant-numeric:tabular-nums; }
-td.w { width:40%; padding-left:10px; } td.w i { display:block; height:8px; background:var(--bar); border-radius:4px; }
-.grid2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px; }
+td.w { width:38%; padding-left:10px; } td.w i { display:block; height:8px; background:var(--bar); border-radius:4px; }
+.grid2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:14px; }
 .meta, .empty { color:var(--muted); font-size:.85rem; }
+.tip { position:fixed; pointer-events:none; background:var(--ink); color:var(--ground); font-size:.8rem; padding:3px 7px; border-radius:4px; display:none; }
 </style>
 <main>
   <p><a href="./">← Photo review</a> · <a href="reports.html">Problem reports</a> · <a href="transcript.html">Transcript lines</a></p>
   <h1>Site statistics</h1>
-  <p class="meta">Counted by the site itself: totals by day, with no cookies, no addresses and nothing that follows a visitor. Visitors are distinct devices per day. Cloudflare's Web Analytics has the traffic side (referrers, devices, speed).</p>
+  <p class="meta">Counted by the site itself: totals by day, with no cookies, no addresses and nothing that follows a visitor. A visitor is a device on a day; a person is a visitor who tapped, scrolled or pressed a key. Bots are counted apart: those that run the page by their name, and every page request (script or not) as browser or bot.</p>
   <div class="bar" role="group" aria-label="Period"><button data-d="7" aria-pressed="false">7 days</button><button data-d="30" aria-pressed="true">30 days</button><button data-d="90" aria-pressed="false">90 days</button><button data-d="365" aria-pressed="false">A year</button></div>
   <div class="tiles" id="tiles"></div>
-  <section><h2>Visitors a day</h2><div class="chart" id="daily"></div><div class="axis" id="axis"></div></section>
+  <section><h2>Visits a day</h2><div id="daily"></div><div class="legend"><span><i style="background:var(--c2)"></i>page views</span><span><i style="background:var(--bar)"></i>visitors</span><span><i style="background:var(--c3)"></i>people (did something)</span></div></section>
+  <section><h2>Where visitors are</h2><div id="map"></div><p class="meta" id="mapnote"></p></section>
   <div class="grid2">
+    <section><h2>How visitors arrived</h2><div id="kinds"></div><table id="sources"></table></section>
+    <section><h2>People or bots</h2><div id="humans"></div><table id="bots"></table></section>
+    <section><h2>Time of day (your time)</h2><div id="hours"></div></section>
+    <section><h2>Tape listened a day</h2><div id="listenDaily"></div></section>
+    <section><h2>Devices</h2><table id="devices"></table></section>
+    <section><h2>Browsers</h2><table id="browsers"></table></section>
     <section><h2>Missions opened</h2><table id="missions"></table></section>
     <section><h2>Hours of tape listened</h2><table id="listened"></table></section>
     <section><h2>Highlights played</h2><table id="highlights"></table></section>
+    <section><h2>Most-heard mission hours</h2><table id="mhours"></table></section>
     <section><h2>Pages</h2><table id="pages"></table></section>
     <section><h2>Countries</h2><table id="countries"></table></section>
     <section><h2>Reactions</h2><table id="reacts"></table></section>
-    <section><h2>Most-heard mission hours</h2><table id="hours"></table></section>
     <section><h2>Photos opened</h2><table id="photos"></table></section>
   </div>
 </main>
+<div class="tip" id="tip"></div>
 <script>
-let days = 30
+let days = 30, world = null
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])
 const fmt = (n) => n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'k' : String(Math.round(n))
 const mname = (m) => m ? 'Apollo ' + Number(m) : '(none)'
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim()
+const tip = document.getElementById('tip')
+const showTip = (e, text) => { tip.textContent = text; tip.style.display = 'block'; tip.style.left = e.clientX + 12 + 'px'; tip.style.top = e.clientY + 12 + 'px' }
+const hideTip = () => { tip.style.display = 'none' }
+let regionName = null
+try { regionName = new Intl.DisplayNames(['en'], { type: 'region' }) } catch {}
+const country = (c) => { try { return regionName ? regionName.of(c) : c } catch { return c } }
 function sum(rows, kind, key) {
   const out = new Map()
   for (const r of rows) if (r.kind === kind) { const k = key(r); out.set(k, (out.get(k) || 0) + r.n) }
@@ -211,31 +230,105 @@ function table(id, entries, label = (k) => k, value = fmt, limit = 12) {
   el.innerHTML = top.length ? top.map(([k, n]) => `<tr><td>${esc(label(k))}</td><td class="w"><i style="width:${Math.max(2, 100 * n / max)}%"></i></td><td class="n">${value(n)}</td></tr>`).join('')
     : '<tr><td class="empty">Nothing yet.</td></tr>'
 }
+// lines over the days: series [{name, color, values: Map(day -> n)}]
+function lines(id, dayList, series, h = 190) {
+  const el = document.getElementById(id), W = el.clientWidth || 600, m = { t: 8, r: 8, b: 22, l: 34 }
+  const x = d3.scalePoint().domain(dayList).range([m.l, W - m.r])
+  const max = d3.max(series, (s) => d3.max(dayList, (d) => s.values.get(d) || 0)) || 1
+  const y = d3.scaleLinear().domain([0, max]).nice().range([h - m.b, m.t])
+  const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${h}`)
+  svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${h - m.b})`)
+    .call(d3.axisBottom(x).tickValues(dayList.filter((_, i) => i % Math.ceil(dayList.length / 7) === 0)).tickFormat((d) => d.slice(5)))
+  svg.append('g').attr('class', 'axis').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(fmt))
+  for (const s of series) {
+    svg.append('path').attr('fill', 'none').attr('stroke', css(s.color)).attr('stroke-width', 2)
+      .attr('d', d3.line().x((d) => x(d)).y((d) => y(s.values.get(d) || 0))(dayList))
+    svg.selectAll(null).data(dayList).join('circle').attr('cx', (d) => x(d)).attr('cy', (d) => y(s.values.get(d) || 0)).attr('r', 3).attr('fill', css(s.color))
+      .on('mousemove', (e, d) => showTip(e, `${d}: ${s.values.get(d) || 0} ${s.name}`)).on('mouseleave', hideTip)
+  }
+  el.replaceChildren(svg.node())
+}
+function bars(id, labels, values, color = '--bar', h = 160, fmtTip = (l, v) => `${l}: ${v}`) {
+  const el = document.getElementById(id), W = el.clientWidth || 600, m = { t: 8, r: 6, b: 22, l: 34 }
+  const x = d3.scaleBand().domain(labels).range([m.l, W - m.r]).padding(0.15)
+  const y = d3.scaleLinear().domain([0, d3.max(values) || 1]).nice().range([h - m.b, m.t])
+  const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${h}`)
+  svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${h - m.b})`)
+    .call(d3.axisBottom(x).tickValues(labels.filter((_, i) => i % Math.ceil(labels.length / Math.max(4, Math.min(12, W / 55))) === 0)))
+  svg.append('g').attr('class', 'axis').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat(fmt))
+  svg.selectAll(null).data(labels).join('rect').attr('x', (d) => x(d)).attr('width', x.bandwidth())
+    .attr('y', (d, i) => y(values[i])).attr('height', (d, i) => y(0) - y(values[i])).attr('fill', css(color)).attr('rx', 2)
+    .on('mousemove', (e, d) => showTip(e, fmtTip(d, values[labels.indexOf(d)]))).on('mouseleave', hideTip)
+  el.replaceChildren(svg.node())
+}
+function split(id, parts) {   // one bar split by share: [[label, n, color]]
+  const total = parts.reduce((a, p) => a + p[1], 0) || 1
+  document.getElementById(id).innerHTML = `<div style="display:flex;height:16px;border-radius:5px;overflow:hidden;margin-bottom:6px">${
+    parts.map(([l, n, c]) => n ? `<div title="${esc(l)}: ${n}" style="width:${100 * n / total}%;background:var(${c})"></div>` : '').join('')}</div>
+    <div class="legend">${parts.map(([l, n, c]) => `<span><i style="background:var(${c})"></i>${esc(l)} ${Math.round(100 * n / total)}% (${fmt(n)})</span>`).join('')}</div>`
+}
+async function drawMap(byCountry) {
+  const el = document.getElementById('map')
+  if (!world) {
+    try { world = await (await fetch('https://cdn.jsdelivr.net/gh/nvkelso/natural-earth-vector@v5.1.2/geojson/ne_110m_admin_0_countries.geojson')).json() }
+    catch { el.innerHTML = '<p class="empty">The map could not be loaded.</p>'; return }
+  }
+  const W = el.clientWidth || 800, H = Math.round(W * 0.5)
+  const projection = d3.geoNaturalEarth1().fitSize([W, H], { type: 'Sphere' })
+  const path = d3.geoPath(projection)
+  const max = d3.max([...byCountry.values()]) || 1
+  const color = d3.scaleSequentialLog([1, Math.max(2, max)], d3.interpolate(css('--empty'), css('--bar')))
+  const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`)
+  svg.append('path').attr('d', path({ type: 'Sphere' })).attr('fill', 'none').attr('stroke', css('--rule'))
+  svg.selectAll(null).data(world.features).join('path').attr('d', path)
+    .attr('fill', (f) => { const n = byCountry.get(f.properties.ISO_A2_EH); return n ? color(n) : css('--empty') })
+    .attr('stroke', css('--surface')).attr('stroke-width', 0.5)
+    .on('mousemove', (e, f) => showTip(e, `${f.properties.NAME}: ${byCountry.get(f.properties.ISO_A2_EH) || 0} page views`)).on('mouseleave', hideTip)
+  el.replaceChildren(svg.node())
+  document.getElementById('mapnote').textContent = byCountry.size ? `${byCountry.size} countries; darker is more page views.` : 'No visits counted yet.'
+}
 async function load() {
   const r = await fetch('/api/review/stats?days=' + days)
   if (r.status === 401) { location.href = './'; return }
-  const { since, rows, visitors, reports } = await r.json()
+  const { since, rows, visitors, humans = [], reports } = await r.json()
   const dayList = []
   for (let t = Date.parse(since + 'T00:00:00Z'); t <= Date.now(); t += 86400000) dayList.push(new Date(t).toISOString().slice(0, 10))
-  const vis = new Map(visitors.map((v) => [v.day, v.n]))
-  const total = (kind) => rows.filter((r) => r.kind === kind).reduce((a, r) => a + r.n, 0)
+  const byDay = (kind) => { const m = new Map(); for (const x of rows) if (x.kind === kind) m.set(x.day, (m.get(x.day) || 0) + x.n); return m }
+  const vis = new Map(visitors.map((v) => [v.day, v.n])), hum = new Map(humans.map((v) => [v.day, v.n]))
+  const total = (kind) => rows.filter((x) => x.kind === kind).reduce((a, x) => a + x.n, 0)
+  const visitorDays = visitors.reduce((a, v) => a + v.n, 0), peopleDays = humans.reduce((a, v) => a + v.n, 0)
+  const hits = sum(rows, 'hit', (x) => x.item), botHits = hits.filter(([k]) => k.startsWith('bot')).reduce((a, h) => a + h[1], 0)
+  const allHits = hits.reduce((a, h) => a + h[1], 0)
   const tiles = [
-    [visitors.reduce((a, v) => a + v.n, 0), 'visitor-days'], [total('page'), 'pages viewed'], [total('play'), 'times the tapes were played'],
+    [visitorDays, 'visitor-days'], [peopleDays, 'people (did something)'], [total('page'), 'pages viewed'], [total('play'), 'times the tapes were played'],
     [total('listen') / 60, 'hours of tape listened'], [total('highlight'), 'highlights played'], [total('photo'), 'photos opened'],
-    [reports.reduce((a, v) => a + v.n, 0), 'reports sent'],
+    [reports.reduce((a, v) => a + v.n, 0), 'reports sent'], [allHits ? Math.round(100 * botHits / allHits) : 0, '% of page requests from bots'],
   ]
   document.getElementById('tiles').innerHTML = tiles.map(([n, l]) => `<div class="tile"><b>${fmt(n)}</b><span>${l}</span></div>`).join('')
-  const max = Math.max(1, ...dayList.map((d) => vis.get(d) || 0))
-  document.getElementById('daily').innerHTML = dayList.map((d) => `<div title="${d}: ${vis.get(d) || 0}" style="height:${100 * (vis.get(d) || 0) / max}%"></div>`).join('')
-  document.getElementById('axis').innerHTML = `<span>${dayList[0]}</span><span>most ${max}</span><span>${dayList[dayList.length - 1]}</span>`
-  table('missions', sum(rows, 'mission', (r) => r.mission), mname)
-  table('listened', sum(rows, 'listen', (r) => r.mission), mname, (n) => (n / 60).toFixed(1) + ' h')
-  table('highlights', sum(rows, 'highlight', (r) => r.item), (k) => k)
-  table('pages', sum(rows, 'page', (r) => r.item), (k) => k)
-  table('countries', sum(rows, 'country', (r) => r.item), (k) => k)
-  table('reacts', sum(rows, 'react', (r) => r.item + ' ' + mname(r.mission)), (k) => k)
-  table('hours', sum(rows, 'listen', (r) => mname(r.mission) + ', hour ' + r.item), (k) => k, (n) => n + ' min')
-  table('photos', sum(rows, 'photo', (r) => r.item), (k) => k)
+  lines('daily', dayList, [{ name: 'page views', color: '--c2', values: byDay('page') }, { name: 'visitors', color: '--bar', values: vis }, { name: 'people', color: '--c3', values: hum }])
+  const byCountry = new Map(sum(rows, 'country', (x) => x.item))
+  drawMap(byCountry)
+  const src = sum(rows, 'landing', (x) => x.item)
+  const cat = (k) => k === 'direct' ? 'Typed or bookmarked' : k.startsWith('search:') ? 'Search' : k.startsWith('social:') ? 'Social media' : 'Links on other sites'
+  const cats = new Map(); for (const [k, n] of src) cats.set(cat(k), (cats.get(cat(k)) || 0) + n)
+  split('kinds', [['Search', cats.get('Search') || 0, '--c2'], ['Social media', cats.get('Social media') || 0, '--c3'], ['Links on other sites', cats.get('Links on other sites') || 0, '--bar'], ['Typed or bookmarked', cats.get('Typed or bookmarked') || 0, '--muted']])
+  table('sources', src.filter(([k]) => k !== 'direct'), (k) => k.replace(/^(search|social|link):/, (m0, t) => ({ search: 'Search · ', social: 'Social · ', link: '' })[t]))
+  split('humans', [['browsers', allHits - botHits, '--c3'], ['bots', botHits, '--bar']])
+  table('bots', [...hits.filter(([k]) => k.startsWith('bot')).map(([k, n]) => [k.slice(5), n]), ...sum(rows, 'bot', (x) => x.item + ' (ran the page)')], (k) => k)
+  const off = -new Date().getTimezoneOffset() / 60, hrs = sum(rows, 'hour', (x) => x.item)
+  const local = Array(24).fill(0); for (const [h, n] of hrs) local[((Number(h) + off) % 24 + 24) % 24] += n
+  bars('hours', [...Array(24).keys()].map(String), local, '--c2', 150, (l, v) => `${l}:00 to ${l}:59 · ${v} visits`)
+  const ld = byDay('listen'); bars('listenDaily', dayList.map((d) => d.slice(5)), dayList.map((d) => Math.round((ld.get(d) || 0) / 6) / 10), '--bar', 150, (l, v) => `${l}: ${v} h`)
+  table('devices', sum(rows, 'device', (x) => x.item), (k) => k[0].toUpperCase() + k.slice(1))
+  table('browsers', sum(rows, 'browser', (x) => x.item))
+  table('missions', sum(rows, 'mission', (x) => x.mission), mname)
+  table('listened', sum(rows, 'listen', (x) => x.mission), mname, (n) => (n / 60).toFixed(1) + ' h')
+  table('highlights', sum(rows, 'highlight', (x) => x.item))
+  table('mhours', sum(rows, 'listen', (x) => mname(x.mission) + ', hour ' + x.item), (k) => k, (n) => n + ' min')
+  table('pages', sum(rows, 'page', (x) => x.item))
+  table('countries', [...byCountry.entries()].sort((a, b) => b[1] - a[1]), country)
+  table('reacts', sum(rows, 'react', (x) => x.item + ' ' + mname(x.mission)))
+  table('photos', sum(rows, 'photo', (x) => x.item))
 }
 document.querySelector('.bar').addEventListener('click', (e) => {
   const b = e.target.closest('button'); if (!b) return
@@ -243,6 +336,8 @@ document.querySelector('.bar').addEventListener('click', (e) => {
   document.querySelectorAll('.bar button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)))
   load()
 })
+let resizeTimer = null
+addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(load, 300) })
 load()
 </script>
 """
